@@ -192,6 +192,9 @@ This website/book and attached software is free to use, and is licensed under [t
 Some other connected publications and initiatives describing collation 
 and import of soil spectroscopy data:
 
+- Dudek, M., Kabała, C., Łabaz, B., Mituła, P., Bednik, M., & Medyńska-Juraszek, A. (2021). Mid-Infrared Spectroscopy Supports Identification of the Origin of Organic Matter in Soils. Land, 10(2), 215. <https://doi.org/10.3390/land10020215>  
+- [GLOSOLAN's Standard Operating Procedures (SOPs)](http://www.fao.org/global-soil-partnership/glosolan/soil-analysis/standard-operating-procedures/en/#c763834); 
+- Sanderman, J., Savage, K., Dangal, S. R., Duran, G., Rivard, C., Cavigelli, M. A., ... & Stewart, C. (2021). [Can Agricultural Management Induced Changes in Soil Organic Carbon Be Detected Using Mid-Infrared Spectroscopy?](https://doi.org/10.3390/rs13122265). Remote Sensing, 13(12), 2265. <https://doi.org/10.3390/rs13122265>  
 - Sanderman, J., Savage, K., & Dangal, S. R. (2020). [Mid-infrared
 spectroscopy for prediction of soil health indicators in the United
 States](https://doi.org/10.1002/saj2.20009). Soil Science Society of America Journal, 84(1), 251–261.
@@ -200,6 +203,5 @@ States](https://doi.org/10.1002/saj2.20009). Soil Science Society of America Jou
 physical and chemical properties of US soils with a mid-infrared
 reflectance spectral library](https://doi.org/10.2136/sssaj2017.10.0361). Soil Science Society of America Journal,
 82(3), 722–731. <https://doi.org/10.2136/sssaj2017.10.0361>   
-- [GLOSOLAN's Standard Operating Procedures (SOPs)](http://www.fao.org/global-soil-partnership/glosolan/soil-analysis/standard-operating-procedures/en/#c763834);  
 - Wadoux, A.M.J.-C., Malone, B., McBratney, A.B., Fajardo, M., Minasny, B., (2021). [Soil Spectral Inference with R: Analysing Digital Soil Spectra Using the R Programming Environment](https://books.google.nl/books?id=4kQgEAAAQBAJ).  
 Progress in Soil Science, Springer Nature, ISBN: 9783030648961, 274 pp.  
