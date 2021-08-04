@@ -1,0 +1,15 @@
+image: r-base
+
+pages:
+  before_script:
+  - apt-get update -qq
+  - apt-get install -y --no-install-recommends git pandoc pandoc-citeproc
+  - R -q -e 'install.packages(c("bookdown", "dplyr", "ggplot2", "rmarkdown"), repos = "https://cloud.r-project.org/")'
+  script:
+  - R -q -e 'bookdown::render_book("index.Rmd", "bookdown::gitbook")'
+  - mv docs public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master

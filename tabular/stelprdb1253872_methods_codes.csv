@@ -1,0 +1,566 @@
+Method Title,Method Code,Page
+SAMPLE COLLECTION AND PREPARATION,1,1
+Field Sample Collection and Preparation,1A,1
+Site Selection,1A1,1
+Geomorphic,1A1a,1
+Pedon,1A1b,1
+Water,1A1c,1
+Biological,1A1d,1
+Laboratory Sample Collection and Preparation,1B,25
+Soil,1B1,25
+Samples,1B1a,25
+Bulk Samples,1B1a1,26
+Natural Fabrics,1B1a2,27
+Clods,1B1a3,27
+Cores,1B1a4,27
+Soil Sample Preparation,1B1b,27
+Field-Moist Preparation,1B1b1,31
+Whole-Soil,1B1b1a,31
+Histosol Analysis,1B1b1a1,31
+Biological Analysis,1B1b1a2,31
+<2-mm Fraction,1B1b1b,31
+Chemical and Selected Physical Analysis,1B1b1b1,31
+1500-kPa Water Content,1B1b1b2,31
+Field-Moist/Oven-dry Ratio,1B1b1b3,32
+<2-mm Fraction Sieved to <0.425 mm,1B1b1c,32
+Atterberg Limits,1B1b1c1,32
+Air-Dry Preparation,1B1b2,32
+Whole-Soil,1B1b2a,32
+Aggregate Stability Analysis,1B1b2a1,32
+Repository Samples,1B1b2a2,33
+<2-mm Fraction,1B1b2b,33
+"Standard Chemical, Physical, and 
+Mineralogical Analysis",1B1b2b1,33
+Salt Analysis,1B1b2b2,33
+1500-kPa Water Content,1B1b2b3,33
+Air-Dry/Oven-Dry Ratio,1B1b2b4,34
+Visible and Near-Infrared Diffuse Reflectance Spectroscopy (VNIR–DRS),1B1b2b6,34
+<2-mm Fraction Sieved to <0.425 mm,1B1b2c,34
+Atterberg Limits,1B1b2c1,34
+<2-mm Fraction Processed to ≈180 µm,1B1b2d,34
+"Total Carbon, Nitrogen, and Sulfur Analysis",1B1b2d1,34
+Calcium Carbonate and Gypsum,1B1b2d2,34
+Chemical Analysis of Organic Materials,1B1b2d3,34
+Presence of Carbonates,1B1b2d4,35
+Mid-Infrared Diffuse Reflectance Spectroscopy (MIR–DRS),1B1b2d5,35
+<2-mm Fraction Processed to 75 µm,1B1b2e,35
+Total Major and/or Trace Elements,1B1b2e1,35
+>2-mm Fraction,1B1b2f,35
+Particle-Size Analysis,1B1b2f1,36
+"Particle-Size Analysis, Recorded",1B1b2f1a,36
+"Particle-Size Analysis, Not Recorded",1B1b2f1b,36
+2- to 20-mm Fraction Processed to <2-mm,1B1b2f1a1,36
+"Chemical, Physical, and Mineralogical Analysis",1B1b2f1a1a,36
+2- to 20-mm Fraction Processed to <2-mm and Recombined with <2-mm Fraction,1B1b2f1a2,37
+"Chemical, Physical, and Mineralogical Analysis",1B1b2f1a2a,37
+Proportion and Particle-Size of Air-Dry Rock Fragments that Resist Abrupt Immersion in Tap Water,1B1b2f1a3,38
+"Particle-Size Analysis, Not Recorded",1B1b2f1b,37
+Whole-Soil Processed to <2-mm,1B1b2f1b1,37
+"Chemical, Physical, and Mineralogical Analysis",1B1b2f1b1a,37
+Water,1B2,41
+Samples,1B2a,41
+Water Sample Preparation,1B2b,41
+Biological Materials,1B3,42
+Samples,1B3a,42
+Biology Bulk Sample,1B3a1,42
+Microbial Biomass Sample,1B3a2,42
+Biological Material Preparation,1B3b,42
+Field-Moist Preparation,1B3b1,42
+<2-mm Fraction,1B3b1a,42
+Microbial Biomass,1B3b1a1,42
+Air-Dry Preparation,1B3b2,43
+"<2-mm Fraction Sieved <53 µm, with ≥53 µm (Particulate Organic Matter) and <53 µm (C-Mineral) Processed to ≈180 µm",1B3b2a,43
+"Total Carbon, Nitrogen, and Sulfur",1B3b2a1,43
+<2-mm Fraction,1B3b2b,43
+Other Biological Analyses,1B3b2b1,43
+Dry (50˚C) Preparation,1B3b3,43
+Roots,1B3b3a,43
+Root Biomass,1B3B3a1,43
+Roots Processed to ≈180 µm,1B3b3a1a,43
+"Total Carbon, Nitrogen, and Sulfur",1B3b3a1a1,43
+Plants,1B3b3b,43
+Plant Biomass,1B3b3b1,43
+Plants Processed to ≈180 µm,1B3b3b1a,43
+"Total Carbon, Nitrogen, and Sulfur",1B3b3b1a1,43
+CONVENTIONS,2,44
+Methods and Codes,2A,44
+Data Types,2B,45
+Particle-Size Fraction Base for Reporting Data,2C,46
+Particles <2 mm,2C1,46
+Particles >2 mm,2C2,46
+Sample Weight Base for Reporting Data,2D,46
+Air-Dry/Oven-Dry,2D1,46
+Field-Moist/Oven-Dry,2D2,46
+Correction for Crystal Water,2D3,46
+Significant Figures and Rounding,2E,47
+Data Sheet Symbols,2F,47
+SOIL PHYSICAL AND FABRIC-RELATED ANALYSES,3,48
+Particle-Size Distribution Analysis,3A,48
+Particles <2 mm,3A1,48
+Pipette Analysis,3A1a,48
+Standard Pretreatments and Dispersion,3A1a1,60
+Air-Dry,3A1a1a,60
+Field-Moist,3A1a1b,72
+Carbonate Removal,3A1a2,66
+Air-Dry,3A1a2a,66
+Field-Moist,3A1a2b,73
+Iron Removal,3A1a3,67
+Air-Dry,3A1a3a,67
+Field-Moist,3A1a3b,74
+Silica Removal,3A1a4,67
+Air-Dry,3A1a4a,67
+Field-Moist,3A1a4b,75
+Ultrasonic Dispersion,3A1a5,68
+Air-Dry,3A1a5a,68
+Field-Moist,3A1a5b,76
+Water Dispersion,3A1a6,70
+Air-Dry,3A1a6a,70
+Field-Moist,3A1a6b,76
+Gypseous Soils,3A1a7,71
+Air-Dry,3A1a7a,71
+Particles >2 mm,3A2,89
+Weight Estimates,3A2a,91
+By Field and Laboratory Weighing,3A2a1,91
+From Volume and Weight Estimates,3A2a2,95
+Volume Estimates,3A2b,95
+Bulk Density,3B,99
+Saran-Coated Clods,3B1,101
+Field State,3B1a,101
+33-kPa Desorption,3B1b,107
+Oven-dry,3B1c,114
+Rewet,3B1d,119
+Reconstituted,3B2,125
+33-kPa Desorption,3B2a,125
+Oven-Dry,3B2b,125
+Compliant Cavity,3B3,130
+Field-State,3B3a,130
+Ring Excavation,3B4,133
+Field-State,3B4a,133
+Frame Excavation,3B5,136
+Field-State,3B5a,136
+Soil Cores,3B6,138
+Field-State,3B6a,138
+Water Retention,3C,140
+Pressure-Plate Extraction,3C1,141
+"6, 10, 33, 100, or 200 kPa Water Retention",3C1a-e,141
+"<2-mm (Sieved), Air-Dry",3C1a-e1a,141
+Natural Clods,3C1a-d2,144
+Soil Cores,3C1a-d3,150
+Rewet,3C1c4,155
+Reconstituted,3C1c5,160
+Pressure-Membrane Extraction,3C2,165
+1500-kPa Water Retention,3C2a,165
+"<2-mm (Sieved), Air-Dry or Field-Moist",3C2a1a-b,165
+Water Retention at Field State,3C3,169
+"Ratios and Estimates Related to Particle-Size Analysis, Bulk Density, and Water Retention",3D,171
+Air-Dry/Oven-Dry Ratio,3D1,171
+Field-Moist/Oven-Dry Ratio,3D2,171
+Correction for Crystal Water,3D3,171
+Coefficient of Linear Extensibility,3D4,175
+Air-Dry or Oven-Dry to 33-kPa Tension,3D4a,175
+Water Retention Difference,3D5,177
+Between 33-kPa and 1500-kPa Tension,3D5a,177
+Between 10-kPa and 1500-kPa Tension,3D5b,178
+Between 33-kPa Rewet and 1500-kPa (Air Dry) Tension,3D5c,178
+1500-kPa Water Content/Total Clay,3D6,179
+Total Silt Fraction,3D7,179
+Total Sand Fraction,3D8,179
+2- to 5-mm Fraction,3D9,180
+5- to 20-mm Fraction,3D10,180
+20- to 75-mm Fraction,3D11,180
+0.1- to 75-mm Fraction,3D12,181
+>2-mm Fraction,3D13,181
+Micromorphology,3E,181
+Thin sections,30,181
+Preparation,3E1a,181
+Interpretation,3E1b,186
+Wet Aggregate Stability,3F,213
+Wet Sieving,3F1,213
+Air-Dry,3F1a,213
+2 to 1 mm,3F1a1,213
+2- to 0.5-mm Aggregates Retained,3F1a1a,213
+Particle Density,3G,216
+Pycnometer Gas Displacement,3G1,216
+"Oven-dry, <2 mm",3G1a1,216
+"Oven-dry, >2 mm",3G1a2,216
+Atterberg Limits,3H,218
+Liquid Limit,3H1,218
+"Air-Dry or Field-Moist, <0.4 mm",3H1a-b1,218
+Plasticity Index,3H2,219
+"Air-Dry or Field-Moist, <0.4 mm",3H2a-b1,219
+SOIL AND WATER CHEMICAL EXTRACTIONS AND ANALYSES,4,219
+Acid Standardization,4A,219
+Ion Exchange and Extractable Cations,4B,226
+Displacement after Washing,4B1,230
+"NH4OAc, pH 7",4B1a,230
+Automatic Extractor,4B1a1,230
+2 M KCl Rinse,4B1a1a,230
+Steam Distillation,4B1a1a1,230
+HCl Titration,4B1a1a1a,230
+Cation Exchange Capacity (CEC-7),4B1a1a1a1,230
+"Air-Dry or Field-Moist, <2 mm",4B1a1a1a1a-b1,230
+Atomic Absorption Spectrophotometer,4B1a1b,241
+"Calcium, Magnesium, Potassium, and Sodium",4B1a1b1-4,241
+"Air-Dry or Field-Moist, <2 mm",4B1a1b1-4a-b1,241
+NH4Cl,4B1b,236
+Automatic Extractor,4B1b1,236
+2 M KCl Rinse,4B1b1a,236
+Steam Distillation,4B1b1a1,236
+HCl Titration,4B1b1a1a,236
+Cation Exchange Capacity,4B1b1a1a1,236
+"Air-Dry or Field-Moist, <2 mm",4B1b1a1a1a-b1,236
+Atomic Absorption Spectrophotometer,4B1b1b,246
+"Calcium, Magnesium, Potassium, and Sodium",4B1b1b1-4,246
+"Air-Dry or Field-Moist, <2 mm",4B1b1b1-4a-b1,246
+"BaCl2-Triethanolamine, pH 8.2 Extraction",4B2,251
+Centrifuge,4B2b,251
+Automatic Titrator,4B2b1,251
+Back Titration with HCl,4B2b1a,251
+Extractable Acidity,4B2b1a1,251
+"Air-Dry or Field-Moist, <2 mm",4B2b1a1a-b1,251
+1 N KCl Extraction,4B3,254
+Automatic Extractor,4B3a,254
+Inductively Coupled Plasma Atomic Emission Spectrophotometer,4B3a1,254
+Radial Mode,4B3a1a,254
+Al and Mn,4B3a1a1-2,254
+"Air-Dry or Field-Moist, <2 mm",4B3a1a1-2a-b1,254
+Ratios and Estimates Related to Ion Exchange and Extractable Cations,4B4,260
+Sum of Extractable Bases,4B4a,261
+"Sum of Extractable Bases by NH4OAc, pH 7",4B4a1,261
+"Sum of Extractable Bases by NH4OAc, pH 7, Calculated",4B4a1a,261
+Sum of Extractable Bases by NH4Cl,4B4a2,261
+"Sum of Extractable Bases by NH4Cl, 
+Calculated",4B4a2a,261
+Cation Exchange Capacity (CEC),4B4b,261
+CEC-8.2 (Sum of Cations),4B4b1,261
+"CEC-8.2, Reported",4B4b1a,261
+"CEC-8.2, Not Reported",4B4b1b,261
+Effective Cation Exchange Capacity (ECEC),4B4b2,262
+"Sum of NH4OAc Extractable Bases + 1 N KCl Extractable Aluminum, Reported",4B4b2a,262
+"Sum of NH4OAc Extractable Bases + 1 N KCl Extractable Aluminum, Not Reported",4B4b2b,262
+Base Saturation,4B4c,262
+"Base Saturation by NH4OAc, pH 7 (CEC-7)",4B4c1,262
+"Base Saturation by CEC-7, Reported",4B4c1a,262
+"Base Saturation by CEC-7, Set to 100%",4B4c1b,262
+Base Saturation by NH4Cl,4B4c2,263
+"Base Saturation by NH4Cl, Reported",4B4c2a,263
+"Base Saturation by NH4Cl, Set to 100%",4B4c2b,263
+Base Saturation by CEC-8.2,4B4c3,263
+"Base Saturation by CEC-8.2, Reported",4B4c3a,263
+"Base Saturation by CEC-8.2, Set to 100%",4B4c3b,263
+Base Saturation by ECEC,4B4c4,264
+"Base Saturation by Sum of NH4OAc 
+Extractable Bases + 1 N KCl Extractable Aluminum, Reported",4B4c4a,264
+"Base Saturation by Sum of NH4OAc 
+Extractable Bases + 1 N KCl Extractable Aluminum, Not Reported",4B4c4b,264
+Aluminum Saturation,4B4d,264
+Aluminum Saturation by ECEC,4B4d1,264
+"Aluminum Saturation by Sum of NH4OAc Extractable Bases + 1 N KCl Extractable Aluminum, Reported",4B4d1a,264
+"Aluminum Saturation by Sum of NH4OAc Extractable Bases + 1 N KCl Extractable Aluminum, Not Reported",4B4d1b,264
+Activity,4B4e,265
+CEC-7/Clay,4B4e1,265
+Hydrogen-Ion Activity (pH),4C,265
+Soil Suspensions,4C1,265
+Electrode,4C1a,265
+Standard Glass Body Combination,4C1a1,265
+Digital pH/Ion Meter,4C1a1a,265
+"1 N NaF, pH 7.5–7.8",4C1a1a1,267
+"Air-Dry or Field-Moist, <2 mm",4C1a1a1a-b1,267
+Saturated Paste pH,4C1a1a2,269
+"Air-Dry, <2 mm",4C1a1a2a1,269
+Oxidized pH,4C1a1a3,271
+"Organic Materials CaCl2 pH, Final Solution ≈0.01 M CaCl2",4C1a1a4,274
+Combination pH-Reference Electrode,4C1a2,276
+Automatic Titrator,4C1a2a,276
+1:1 water pH,4C1a2a1,276
+"Air-Dry or Field-Moist, <2 mm",4C1a2a1a-b1,276
+1:2 0.01 M CaCl2 pH,4C1a2a2,276
+"Air-Dry or Field-Moist, <2 mm",4C1a2a2a-b1,276
+1 N KCl pH,4C1a2a3,279
+"Air-Dry or Field-Moist, <2 mm",4C1a2a3a-b1,279
+Soil Extracts,4C2,281
+Electrode,4C2a,281
+Standard Glass Body Combination,4C2a1,281
+Digital pH/Ion Meter,4C2a1a,281
+Aqueous Extraction,4C2a1a1,281
+Single-Point Extraction,4C2a1a1a,281
+"1:5, 23-h, 1-h",4C2a1a1a1,281
+"Air-dry or Field-Moist, <2 mm",4C2a1a1a1a-b1,281
+Soil Test Analyses,4D,283
+Anion Resin Exchange Extraction,4D1,287
+Double-Point Extraction,4D1a,287
+"1-h, 23-h, 1 M NaCl",4D1a1a1,287
+"UV-Visible Spectrophotometer, Dual-Beam",4D1a1a1a,287
+"Phosphorus, Two Points",4D1a1a1a1-2,287
+"Air-Dry or Field-Moist, <2 mm","4D1a1a1a1- 
+2a-b1",287
+Aqueous Extraction,4D2,292
+Single-Point Extraction,4D2a,292
+"1:10, 30-min",4D2a1,292
+"UV-Visible Spectrophotometer, Dual-Beam",4D2a1a,292
+Phosphorus,4D2a1a1,292
+"Air-Dry or Field-Moist, <2 mm",4D2a1a1a-b1,292
+"1:5, 23-h, 1-h",4D2a2,296
+Ion Chromatograph,4D2a2a,298
+Conductivity Detector,4D2a2a1,298
+Self-Generation Suppressor,4D2a2a1a,298
+"Bromide, Chloride, Fluoride, Nitrate, Nitrite, Phosphate, Sulfate",4D2a2a1a1-7,298
+Automatic Titrator,4D2a2b,304
+Combination pH-Reference Electrode,4D2a2b1,304
+"Acid Titration, H2SO4",4D2a2b1a,304
+Carbonate and Bicarbonate,4D2a2b1a1-2,304
+Cadmium-Copper Reduction,4D2a2c,307
+Sulfanilamide N-1-Naphthylethylenediamine Dihydrochloride,4D2a2c1,307
+"Flow-Injection, Automated Ion Analyzer",4D2a2c1a,307
+Nitrate,4D2a2c1a1,307
+"Inductively Coupled Plasma Mass 
+Spectrophotometer",4D2a2d,312
+"Aluminum, Arsenic, Barium, Boron, Cadmium, Calcium, Chromium, Cobalt, Copper, 
+Iron, Lead, Magnesium, Manganese, 
+Molybdenum, Nickel, Phosphorus, 
+Potassium, Selenium, Silicon, Sodium, Strontium, and Zinc",4D2a2d1-22,312
+"Air-Dry or Field-Moist, <2-mm","4D2a2d1- 
+22a-b1",312
+"1:500, 12-h",4D2a3,322
+Ion Chromatograph,4D2a3a,322
+Conductivity Detector,4D2a3a1,322
+Self-Generation Suppressor,4D2a3a1a,322
+Sulfate,4D2a3a1a1,322
+"Air-Dry or Field-Moist, <2 mm",4D2a3a1a1a-b1,322
+Bray P-1 Extraction,4D3,327
+"UV-Visible Spectrophotometer, Dual Beam",4D3a,327
+Phosphorus,4D3a1,327
+"Air-Dry or Field-Moist, <2 mm",4D3a1a-b1,327
+Bray P-2 Extraction,4D4,331
+"UV-Visible Spectrophotometer, Dual-Beam",4D4a,331
+Phosphorus,4D4a1,331
+"Air-Dry or Field-Moist, <2 mm",4D4a1a-b1,331
+Olsen Sodium-Bicarbonate Extraction,4D5,336
+"UV-Visible Spectrophotometer, Dual Beam",4D5a,336
+Phosphorus,4D5a1,336
+"Air-Dry or Field-Moist, <2 mm",4D5a1a-b1,336
+Mehlich No. 3 Extraction,4D6,340
+"UV-Visible Spectrophotometer, Dual Beam",4D6a,340
+Phosphorus,4D6a1,340
+Inductively Coupled Plasma Atomic Emission Spectrophotometer,4D6b,345
+Axial Mode,4D6b1,345
+Cross-Flow Nebulizer,4D6b1b,345
+"Aluminum, Arsenic, Barium, Calcium, 
+Cadmium, Cobalt, Chromium, Copper, 
+Iron, Potassium, Magnesium, Manganese, Sodium, Nickel, Phosphorus, Lead, 
+Selenium, and Zinc",4D6b1b1-18,345
+"Air-Dry or Field-Moist, <2 mm","4D6b1a1- 
+18a-b1",345
+Citric Acid Soluble,4D7,351
+"UV-Visible Spectrophotometer, Dual Beam",4D7a,351
+Phosphorus,4D7a1,351
+"Air-Dry or Field-Moist, <2 mm",4D7a1a-b1,351
+New Zealand P Retention,4D8,356
+"UV-Visible Spectrophotometer, Dual Beam",4D8a,356
+Phosphorus,4D8a1,356
+"Air-Dry or Field-Moist, <2 mm",4D8a1a-b1,356
+1 M KCl Extraction,4D9,360
+Cadmium-Copper Reduction,4D9a,360
+Sulfanilamide N-1-Naphthylethylenediamine Dihydrochloride,4D9a1,360
+"Flow-Injection, Automated Ion Analyzer",4D9a1a,360
+Nitrate,4D9a1a1-2,360
+"Air-Dry or Field-Moist, <2 mm",4D9a1a1-2a-b1,360
+Anaerobic Incubation,4D10,365
+2 M KCl Extraction,4D10a,365
+Ammonia—Salicylate,4D10a1,365
+"Flow Injection, Automated Ion Analyzer",4D10a1a,365
+N as NH3 (Mineralizable N),4D10a1a1,365
+"Air-Dry or Field-Moist, <2 mm",4D10a1a1a-b1,365
+Carbonate and Gypsum,4E,370
+3 N HCl Treatment,4.00E+01,370
+CO2 Analysis,4E1a,370
+"Manometer, Electronic",4E1a1,370
+Calcium Carbonates,4E1a1a1,370
+"Air-Dry, <2 mm or <20 mm",4E1a1a1a1-2,370
+Aqueous Extraction,4.00E+02,375
+Precipitation in Acetone,4E2a,375
+Conductivity Bridge,4E2a1,375
+Electrical Conductivity,4E2a1a,375
+"Gypsum, Qualitative and Quantitative",4E2a1a1,375
+"Air-Dry, <2 mm or <20 mm",4E2a1a1a1-2,375
+"1:400, 24-h",4E2b,380
+Conductivity Bridge,4E2b 1,380
+Electrical Conductivity,4E2b1a,380
+"Equivalent Gypsum Content, Semiquantitative",4E2b1a1,380
+"Air-Dry, <2 mm or <20 mm",4E2b1a1a1-2,380
+Electrical Conductivity and Soluble Salts,4F,383
+Aqueous Extraction,4F1,383
+1:2 Extraction,4F1a,383
+Conductivity Bridge,4F1a1,383
+Electrical Conductivity,4F1a1a,383
+Salt Prediction,4F1a1a1,383
+"Air-Dry, <2 mm",4F1a1a1a1,383
+Single-Point Extraction,4F1b,385
+"1:5, 23-h, 1-h Aqueous Extraction",4F1b1,385
+Conductivity Bridge,4F1b1a,385
+Electrical Conductivity,4F1b1a1,385
+"Air-Dry or Field-Moist, <2 mm",4F1b1a1a-b1,385
+Subaqueous Soils,4F1c,387
+1:5 Aqueous Mixture by Volume (EC1:5vol),4F1c1,387
+Conductivity Bridge,4F1c1a,387
+Electrical Conductivity,4F1c1a1,387
+"Field-Moist, Whole-Soil",4F1c1b2,387
+Saturated Paste,4F2,390
+Gravimetric,4F2a,394
+Water Percentage,4F2a1,394
+"Air-Dry, <2 mm",4F2a1a1,394
+Conductivity Bridge,4F2b,397
+Electrical Conductivity,4F2b1,397
+"Air-Dry, <2 mm",4F2b1a1,397
+Resistivity,4F2b2,399
+"Air-Dry, <2 mm",4F2b2a1,399
+Saturated Paste Extraction,4F2c,403
+Automatic Extractor,4F2c1,403
+Atomic Absorption Spectrophotometer,4F2c1a,405
+"Calcium, Magnesium, Potassium, and Sodium",4F2c1a1-4,405
+"Air-Dry, <2 mm",4F2c1a1-4a1,405
+Ion Chromatograph,4F2c1b,410
+Conductivity Detector,4F2c1b1,410
+Self-Regeneration Suppressor,4F2c1b1a,410
+"Bromide, Chloride, Fluoride, Nitrate, Nitrite, Phosphate, and Sulfate",4F2c1b1a1-7,410
+"Air-Dry, <2 mm",4F2c1b1a1-8a1,410
+Automatic Titrator,4F2c1c,415
+Combination pH-Reference Electrode,4F2c1c1,415
+"Acid Titration, H2SO4",4F2c1c1a,415
+Carbonate and Bicarbonate,4F2c1c1a1-2,415
+"Air-Dry, <2 mm",4F2c1c1a1-2a1,415
+Ratios and Estimates Related to Soluble Salts,4F3,418
+Exchangeable Sodium Percentage (ESP),4F3a,418
+"ESP, Calculated without Saturated Paste Extraction",4F3a1,418
+"ESP, Calculated with Saturated Paste 
+Extraction",4F3a2,418
+Sodium Adsorption Ratio (SAR),4F3b,419
+Estimated Total Salt,4F3c,420
+Selective Dissolutions,4G,420
+Dithionite-Citrate Extraction,4G1,426
+Atomic Absorption Spectrophotometer,4G1a,426
+"Aluminum, Iron, and Manganese",4G1a1-3,426
+"Air-Dry or Field-Moist, <2 mm",4G1a1-3a-b1,426
+Ammonium Oxalate Extraction,4G2,432
+Automatic Extractor,4G2a,432
+Inductively Coupled Plasma Atomic Emission Spectrophotometer,4G2a1,432
+Radial Mode,4G2a1a,432
+"Aluminum, Iron, Manganese, Phosphorus, and Silicon",4G2a1a1-5,432
+"Air-Dry or Field-Moist, <2 mm",4G2a1a1-5a-b1,432
+"UV-Visible Spectrophotometer, Dual Beam",4G2a2,432
+Transmittance,4G2a2a,432
+Optical Density,4G2a2a1,432
+"Air-Dry or Field-Moist, <2 mm",4G2a2a1a-b1,432
+Ratios and Estimates Related to Ammonium Oxalate Extraction,4G2b,440
+Al + ½ Fe,4G2b1,440
+Sodium Pyrophosphate Extraction,4G3,440
+Atomic Absorption Spectrophotometer,4G3a,440
+"Aluminum, Iron, and Manganese",4G3a1-3,440
+"Air-Dry or Field-Moist, <2 mm",4G3a1-3a1,440
+Total Analysis,4H,445
+Acid Digestion,4H1,445
+HNO3 + HCl Digestion,4H1a,445
+Microwave,4H1a1,445
+"Inductively Coupled Plasma Mass 
+Spectrophotometer",4H1a1b,445
+"Antimony, Arsenic, Barium, Beryllium, 
+Cadmium, Cobalt, Chromium, Copper, 
+Lead, Manganese, Mercury, Molybdenum, Nickel, Phosphorus, Selenium, Silver, 
+Strontium, Tin, Tungsten, Vanadium, and Zinc",4H1a1b1-21,445
+"Air-Dry, <2 mm",4H1a1b1-21a1,445
+HF + HNO3 + HCl Digestion,4H1b,456
+Microwave,4H1b1,456
+Boric Acid,4H1b1a,456
+Inductively Coupled Plasma Atomic Emission Spectrophotometer,4H1b1a1,456
+Radial Mode,4H1b1a1a,456
+"Aluminum, Calcium, Iron, Potassium, 
+Magnesium, Manganese, Sodium, 
+Phosphorus, Silicon, Strontium, Zirconium, and Titanium",4H1b1a1a1-12,456
+"Air-Dry, <2 mm","4H1b1a1a1- 
+12a1",456
+"Oven-Dry, <2 µm","4H1b1a1a1- 
+12c3",456
+Dry Combustion,4H2,464
+Thermal Conductivity Detector,4H2a,464
+"Total Carbon, Nitrogen, and Sulfur",4H2a1-3,464
+"Air-Dry, <2 mm",4H2a1-3a1,464
+Ground and Surface Water Analyses,4I,471
+Hydrogen-Ion Activity,4I1,471
+Electrode,4I1a,471
+Standard Glass Body Combination,4I1a1,471
+Digital pH/Ion Meter,4I1a1a,471
+pH,4I1a1a1,471
+Electrical Conductivity and Salts,4I2,472
+Conductivity Bridge and Cup,4I2a,472
+Electrical Conductivity,4I2a1,472
+Atomic Absorption Spectrophotometer,4I2b,474
+"Calcium, Magnesium, Potassium, and Sodium",4I2b1-4,474
+Ion Chromatograph,4I2c,479
+Conductivity Detector,4I2c1,479
+Self-Regeneration Suppressor,4I2c1a,479
+"Bromide, Chloride, Fluoride, Nitrate, Nitrite, Phosphate, and Sulfate",4I2c1a1-7,479
+Automatic Titrator,4I2d,484
+Combination pH-reference Electrode,4I2d1,484
+"Acid Titration, H2SO4",4I2d1a,484
+Carbonate and Bicarbonate,4I2d1a1-2,484
+Total Analysis,4I3,487
+"Inductively Coupled Plasma Mass 
+Spectrophotometer",4I3b,487
+"Aluminum, Arsenic, Barium, Boron, Cadmium, Calcium, Chromium, Cobalt, Copper, 
+Iron, Lead, Magnesium, Manganese, 
+Molybdenum, Nickel, Phosphorus, 
+Potassium, Selenium, Silicon, Sodium, Strontium, and Zinc",4I3b1-22,487
+"ANALYSIS OF ORGANIC SOILS OR 
+MATERIALS",5,495
+Mineral Content,5A,495
+Pyrophosphate Color,5B,497
+Fiber Volume,5C,499
+Melanic Index,5D,502
+Ratios and Estimates Related to Organic Matter,5E,504
+SOIL BIOLOGICAL AND PLANT ANALYSES,6,505
+Soil Analyses,6A,505
+0.02 M KMnO4 Extraction,6A2,505
+"UV-Visible Spectrophotometer, Dual Beam",6A2a,505
+Permanganate Oxidizable (POx C) or Reactive Carbon,6A2a1,505
+"Air-Dry, <2 mm",6A2a1a1,505
+Particulate Organic Matter and C-Mineral,6A4,509
+Total Analysis,6A4a,509
+Dry Combustion,6A4a1,509
+Thermal Conductivity Detector,6A4a1a,509
+"Carbon, Nitrogen, Sulfur",6A4a1a1-3,509
+Air-Dry,6A4a1a1-3a,509
+"≥53 µm, Particulate Organic Matter",6A4a1a1-3a1,509
+"<53 µm, C-Mineral, Calculated",6A4a1a1-3a3,509
+Soil Enzymes,6A5,513
+p-Nitrophenol,6A5a,513
+ß-Glucosidase,6A5a1,513
+"Air-Dry, <2 mm",6A5a1a1,513
+"Field-Moist, <2 mm",6A5a1a2,513
+Ratios and Estimates Related to Biological Analyses,6D,518
+MINERALOGY,7,518
+Instrumental Analyses,7A,518
+X-Ray Diffractometer,7A1,520
+Filter Peel on Glass,7A1b,520
+"Mg Room Temperature, Mg Glycerol Solvated, K 300 °C, K 500 °C",7A1b1,520
+Thermogravimetric Analysis,7A2,533
+Thermal Analyzer,7A2a,533
+Surface Area,7A5,540
+N2 Adsorption,7A5a,540
+"Brunauer, Emmett, and Teller Theory",7A5a1,540
+Vacuum Degassing,7A5a1a,540
+Multi-Point or Single-Point,7A5a1a1-2,540
+"Air-Dry, <2 mm",7A5a1a1-2a1,540
+Visible and Near-Infrared Diffuse Reflectance Spectroscopy (VNIR–DRS),7A6,545
+"Air-Dry, <2 mm",7A6a1,545
+Mid-Infrared Diffuse Reflectance Spectroscopy (MIR–DRS),7A7,551
+"Air-Dry, <2 mm",7A7a1,551
+Optical Analyses,7B,557
+Grain Studies,7B1,557
+Analysis and Interpretation,7B1a,557
+Separation by Heavy Liquids,7B1a1,565
+"Grain Mounts, Epoxy",7B1a2,566
+Platy Grains,7B2,573
+Magnetic Separation,7B2a,573
+Ratios and Estimates Related to Optical Analysis,7C,577
+Total Resistant Minerals,7C1,577
+Mineralogy Codes,,578
