@@ -1,104 +1,38 @@
-![Build Status](https://gitlab.com/pages/gitbook/badges/master/build.svg)
 
----
+# Open Soil Spectral Library Manual
 
-Example [GitBook] website using GitLab Pages.
+[**SoilSpec4GG**](https://soilspectroscopy.org/) is a USDA-funded [Food and Agriculture Cyberinformatics
+Tools Coordinated Innovation Network NIFA Award #2020-67021-32467](https://nifa.usda.gov/press-release/nifa-invests-over-7-million-big-data-artificial-intelligence-and-other) project.
 
-Learn more about GitLab Pages at https://pages.gitlab.io and the official
-documentation https://docs.gitlab.com/ce/user/project/pages/.
+<img src="img/ossl_page.jpg" alt="To learn more about this project please visit: https://soilspectroscopy.org." width="90%" />
 
----
+## Contributing
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+Please feel free to contribute datasets by using [pull requests](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
-- [GitLab CI](#gitlab-ci)
-- [Building locally](#building-locally)
-- [GitLab User or Group Pages](#gitlab-user-or-group-pages)
-- [Did you fork this project?](#did-you-fork-this-project)
-- [Troubleshooting](#troubleshooting)
+All datasets are welcome, however, not well documented, incomplete and duplicate 
+datasets might be removed.
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+The format for adding bibliography entries is:
 
-## GitLab CI
+**\#\# [Name of the dataset]**
 
-This project's static Pages are built by [GitLab CI][ci], following the steps
-defined in [`.gitlab-ci.yml`](.gitlab-ci.yml):
+**[Brief description of the dataset]**
 
-```yaml
-# requiring the environment of NodeJS 8.9.x LTS (carbon)
-image: node:8.9
+**Note: mention the data licenses and if there the use is restricted in any way** 
 
-# add 'node_modules' to cache for speeding up builds
-cache:
-  paths:
-    - node_modules/ # Node modules and dependencies
+**[Publication / how to cite]**
 
-before_script:
-  - npm install gitbook-cli -g # install gitbook
-  - gitbook fetch latest # fetch latest stable version
-  - gitbook install # add any requested plugins in book.json
-  #- gitbook fetch pre # fetch latest pre-release version
-  #- gitbook fetch 2.6.7 # fetch specific version
+**[Project] - link to project homepage / blog**
 
-# the 'pages' job will deploy and build your site to the 'public' path
-pages:
-  stage: deploy
-  script:
-    - gitbook build . public # build to public path
-  artifacts:
-    paths:
-      - public
-  only:
-    - master # this job will affect only the 'master' branch
-```
+**[Unique locations] - number of unique spatial locations**
 
-## Building locally
 
-To work locally with this project, you'll have to follow the steps below:
+If you have an addition or correction, make changes to the Rmd's and make pull-request.
 
-1. Fork, clone or download this project
-1. [Install][] GitBook `npm install gitbook-cli -g`
-1. Fetch GitBook's latest stable version `gitbook fetch latest`
-1. Preview your project: `gitbook serve`
-1. Add content
-1. Generate the website: `gitbook build` (optional)
-1. Push your changes to the master branch: `git push`
+Ideally, all datasets including various versions should come with a DOI. 
+Don't have a DOI yet, please upload and register your dataset via <https://zenodo.org> or 
+similar.
 
-Read more at GitBook's [documentation][].
-
-## GitLab User or Group Pages
-
-To use this project as your user/group website, you will need one additional
-step: just rename your project to `namespace.gitlab.io`, where `namespace` is
-your `username` or `groupname`. This can be done by navigating to your
-project's **Settings**.
-
-Read more about [user/group Pages][userpages] and [project Pages][projpages].
-
-## Did you fork this project?
-
-If you forked this project for your own use, please go to your project's
-**Settings** and remove the forking relationship, which won't be necessary
-unless you want to contribute back to the upstream project.
-
-## Troubleshooting
-
-1. CSS is missing! That means two things:
-
-    Either that you have wrongly set up the CSS URL in your templates, or
-    your static generator has a configuration option that needs to be explicitly
-    set in order to serve static assets under a relative URL.
-
-----
-
-Forked from @virtuacreative
-
-[ci]: https://about.gitlab.com/gitlab-ci/
-[GitBook]: https://www.gitbook.com/
-[host the book]: https://gitlab.com/pages/gitbook/tree/pages
-[install]: http://toolchain.gitbook.com/setup.html
-[documentation]: http://toolchain.gitbook.com
-[userpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#user-or-group-pages
-[projpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#project-pages
+Commercial datasets can be also listed, however promotional materials, commercial offers 
+and similar will be removed.
