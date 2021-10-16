@@ -14,3 +14,16 @@ soc_stock <- function(oc_est.calc_wpct, bd.od_3b2b_gcm3, wpg2_usda_vpct=0, hor.t
   }
   return(data.frame(response=OCSKG, sd=OCSKG.sd))
 }
+
+saveRDS.gz <- function(object,file,threads=parallel::detectCores()) {
+  con <- pipe(paste0("pigz -p",threads," > ",file),"wb")
+  saveRDS(object, file = con)
+  close(con)
+}
+
+readRDS.gz <- function(file,threads=parallel::detectCores()) {
+  con <- pipe(paste0("pigz -d -c -p",threads," ",file))
+  object <- readRDS(file = con)
+  close(con)
+  return(object)
+}

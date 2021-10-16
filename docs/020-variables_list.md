@@ -6,6 +6,8 @@ editor_options:
 
 # Database
 
+
+
 ## Sites table {#sites-table}
 
 Observations and measurements at site. For the **site** table please use (at least) the following columns.
@@ -74,6 +76,10 @@ Approximate location error (for [GPS coordinates](https://www.gps.gov/systems/gp
 ### dataset.title_utf8_txt
 
 Title of the dataset; example: `dataset.title_utf8_txt = 'Kellog's lab SSL'`\
+
+### dataset.owner_utf8_txt
+
+Name of organization that is the dataset owner;\
 
 ### dataset.code_ascii_txt
 
@@ -252,11 +258,22 @@ Total sulfur; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/ste
 
 ### oc_usda.calc_wpct
 
-Organic carbon in dg/kg; description: `oc_usda.calc_wpct` = Estimated Organic Carbon based on Total C, GP prep.\
+Organic carbon in weight percent (dag/kg); [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=464): `oc_usda.calc_wpct` = Estimated Organic Carbon based on Total C, GP prep.\
+
+
+```r
+openair::scatterPlot(kssl.yw, x = "depth", y = "oc_usda.calc_wpct", method = "hexbin", 
+                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="SOC wprm", xlab="depth in cm")
+```
+
+<div class="figure">
+<img src="020-variables_list_files/figure-html/hist-oc_usda.calc_wpct-1.png" alt="Soil-depth histogram for soil organic carbon in wpct." width="70%" />
+<p class="caption">(\#fig:hist-oc_usda.calc_wpct)Soil-depth histogram for soil organic carbon in wpct.</p>
+</div>
 
 ### oc_usda.4h2_wpct
 
-Organic carbon based on dry combustion in dg/kg; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=464): `oc_usda.4h2_wpct` = CMS analyte. Organic carbon is a measure of all organic forms of carbon in the soil, including organic carbon within minerals.\
+Organic carbon based on dry combustion in weight percent (dag/kg); [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=464): `oc_usda.4h2_wpct` = CMS analyte. Organic carbon is a measure of all organic forms of carbon in the soil, including organic carbon within minerals.\
 
 ### oc_iso.10694.1995_wpct
 
@@ -344,6 +361,17 @@ Aluminum saturation; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUME
 ### ph.h2o_usda.4c1_index
 
 Soil pH 1:1 water; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=304): `ph.h2o_usda.4c1_index` = The pH, 1:1 soil-water suspension is the pH of a sample measured in distilled water at a 1:1 soil:solution ratio. If wider ratios increase the pH, salts are indicated.\
+
+
+```r
+openair::scatterPlot(kssl.yw, x = "depth", y = "ph.h2o_usda.4c1_index", method = "hexbin", 
+                     col = "increment", log.x = TRUE, ylab="Soil pH", xlab="depth in cm")
+```
+
+<div class="figure">
+<img src="020-variables_list_files/figure-html/hist-ph.h2o_usda.4c1-1.png" alt="Soil-depth histogram for soil pH." width="70%" />
+<p class="caption">(\#fig:hist-ph.h2o_usda.4c1)Soil-depth histogram for soil pH.</p>
+</div>
 
 ### ph.cacl2_usda.4c1_index
 
