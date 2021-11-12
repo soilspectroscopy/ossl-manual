@@ -258,7 +258,7 @@ Total sulfur; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/ste
 
 ### oc_usda.calc_wpct
 
-Organic carbon in weight percent (dag/kg); [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=464): `oc_usda.calc_wpct` = Estimated Organic Carbon based on Total C, GP prep.\
+Organic carbon in weight percent (dag/kg); [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492): `oc_usda.calc_wpct` = Estimated Organic Carbon based on Total C minus the inorganic carbon, GP prep.\
 
 
 ```r
@@ -273,7 +273,7 @@ openair::scatterPlot(kssl.yw, x = "depth", y = "oc_usda.calc_wpct", method = "he
 
 ### oc_usda.4h2_wpct
 
-Organic carbon based on dry combustion in weight percent (dag/kg); [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=464): `oc_usda.4h2_wpct` = CMS analyte. Organic carbon is a measure of all organic forms of carbon in the soil, including organic carbon within minerals.\
+Organic carbon based on dry combustion in weight percent (dag/kg); [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492): `oc_usda.4h2_wpct` = CMS analyte equivalent to the Walkley-Black organic C method. Organic carbon is a measure of all organic forms of carbon in the soil, including organic carbon within minerals.\
 
 ### oc_iso.10694.1995_wpct
 
@@ -284,9 +284,13 @@ Organic carbon based on [ISO 10694:1995(en)](https://www.iso.org/obp/ui/#iso:std
 Organic carbon based on [ISO 17184:2014(en)](https://www.iso.org/obp/ui/#iso:std:iso:17184:ed-1:v1:en)
 Soil quality — Determination of carbon and nitrogen by near-infrared spectrometry (NIRS).\
 
-### na2co3.pres_usda.1b1_c
+### humus_usda.4h2_wpct
 
-Effervescence, 1N HCl; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=63): `na2co3.pres_usda.1b1_c` = The visual effervescence of the prepared sample when treated with 1N HCl.\
+Organic matter or humus content; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492): `humus_usda.4h2_wpct` = Total organic matter in weight percent (dag/kg) lost on ignition (400 °C) (LOI). Values for organic C can be determined by using the “Van Bemmelen factor” (1/1.724 = 0.58) to calculate organic carbon.\
+
+### caco3.pres_usda.1b1_c
+
+Effervescence, 1N HCl; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=63): `caco3.pres_usda.1b1_c` = The visual effervescence of the prepared sample when treated with 1N HCl.\
 
 ### caco3_usda.4e1_wpct
 
@@ -461,14 +465,36 @@ From `humus_usda.4h2_wpct` to `oc_usda.4h2_wpct` based on @nelson1983total:
 
 ```r
 humus = 4
-oc = humus*10 / 1.724
+oc = humus / 1.724
 oc
 ```
 
 ```
-## [1] 23.20186
+## [1] 2.320186
 ```
 
+From `humus_usda.4h2_wpct` to `oc_usda.4h2_wpct` based on @jensen2018converting:
+
+
+```r
+humus = 4; clay = 10
+oc1 = 0.513 * humus - (0.047 * clay - 0.00025 * clay^2)
+oc1
+```
+
+```
+## [1] 1.607
+```
+
+```r
+humus = 4; clay = 20
+oc2 = 0.513 * humus - (0.047 * clay - 0.00025 * clay^2)
+oc2
+```
+
+```
+## [1] 1.212
+```
 
 ### Phosphorous
 

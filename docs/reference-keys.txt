@@ -93,6 +93,7 @@ oc_usda.calc_wpct
 oc_usda.4h2_wpct
 oc_iso.10694.1995_wpct
 oc_iso.17184.2014_wpct
+humus_usda.4h2_wpct
 na2co3.pres_usda.1b1_c
 caco3_usda.4e1_wpct
 caco3_iso.10693.1995_vpct
@@ -136,3 +137,4 @@ reference-soil-spectroscopy-models
 fitting-soil-spectroscopy-callibrarion-models
 registering-and-using-models
 worked-out-examples
+caco3.pres_usda.1b1_c
