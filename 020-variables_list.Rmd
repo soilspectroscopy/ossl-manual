@@ -47,6 +47,7 @@ for(j in c("wpg2_usda.3a2_wpct", "ecec_usda.4b4_cmolkg", "ec.w_usda.4f1_dsm", "o
   }
 }
 ## without log-transform
+kssl.yw$silt.tot_usda.3a1_wpct = ifelse(kssl.yw$silt.tot_usda.3a1_wpct>100, 100, kssl.yw$silt.tot_usda.3a1_wpct)
 for(j in c("sand.tot_usda.3a1_wpct", "silt.tot_usda.3a1_wpct", "clay.tot_usda.3a1_wpct", 
            "bd.od_usda.3b2_gcm3", "ph.kcl_usda.4c1_index", "ph.h2o_usda.4c1_index", 
            "ph.cacl2_usda.4c1_index", "wr.33kbar_usda.3c1_wpct", "wr.1500kbar_usda.3c2_wpct")){
