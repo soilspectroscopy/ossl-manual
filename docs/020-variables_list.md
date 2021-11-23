@@ -314,6 +314,10 @@ CEC, NH4OAc, pH 7.0, 2M KCl displacement; [description](https://www.nrcs.usda.go
 Cation Exchange Capacity based on [ISO 13536:1995(en)](https://www.iso.org/obp/ui/#iso:std:iso:13536:ed-1:v1:en)
 Soil quality — Determination of the potential cation exchange capacity and exchangeable cations using barium chloride solution buffered at pH = 8.1.\
 
+### ecec_usda.4b4_cmolkg
+
+Effective Effective Cation Exchange Capacity; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=258): `ecec_usda.4b4_cmolkg` = Sum of bases + AL_KCL 	 the effective cation exchange capacity is calculated by BASE_SUM+AL_KCL. It is not calculated if soluble salts are present. It is reported as meq per 100 grams on a <2 mm base.\
+
 ### mg.ext_usda.4b1_cmolkg
 
 Magnesium, NH4OAc Extractable, 2M KCl displacement; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=269): `mg.ext_usda.4b1_cmolkg` = NH4OAC extractable magnesium is the fraction removed by pH 7.0 NH4OAC. It is assumed to represent the exchangeable Mg if MgCO3 is not present. It is reported as meq per 100 grams on a <2 mm base.\

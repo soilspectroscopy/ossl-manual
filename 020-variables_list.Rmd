@@ -11,8 +11,8 @@ library(captioner)
 library(openair)
 fig_nums <- captioner(prefix = "Fig.")
 source("R/ossl_functions.R")
-kssl.yw = readRDS.gz("/mnt/diskstation/data/ossl/dataset/KSSL/kssl_ossl.soillab.rds")
-kssl.sitef = readRDS.gz("/mnt/diskstation/data/ossl/dataset/KSSL/kssl_ossl.soilsite.rds")
+kssl.yw = readRDS.gz("/mnt/diskstation/data/ossl/dataset/KSSL/ossl_soillab_v1.rds")
+kssl.sitef = readRDS.gz("/mnt/diskstation/data/ossl/dataset/KSSL/ossl_soilsite_v1.rds")
 kssl.yw$layer.upper.depth_usda_cm = plyr::join(kssl.yw["id.sample_uuid_c"], kssl.sitef, match="first")$layer.upper.depth_usda_cm
 kssl.yw$layer.lower.depth_usda_cm = plyr::join(kssl.yw["id.sample_uuid_c"], kssl.sitef, match="first")$layer.lower.depth_usda_cm
 kssl.yw$depth = kssl.yw$layer.upper.depth_usda_cm + (kssl.yw$layer.lower.depth_usda_cm - kssl.yw$layer.upper.depth_usda_cm)/2
@@ -317,6 +317,10 @@ CEC, NH4OAc, pH 7.0, 2M KCl displacement; [description](https://www.nrcs.usda.go
 
 Cation Exchange Capacity based on [ISO 13536:1995(en)](https://www.iso.org/obp/ui/#iso:std:iso:13536:ed-1:v1:en)
 Soil quality — Determination of the potential cation exchange capacity and exchangeable cations using barium chloride solution buffered at pH = 8.1.\
+
+### ecec_usda.4b4_cmolkg
+
+Effective Effective Cation Exchange Capacity; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=258): `ecec_usda.4b4_cmolkg` = Sum of bases + AL_KCL 	 the effective cation exchange capacity is calculated by BASE_SUM+AL_KCL. It is not calculated if soluble salts are present. It is reported as meq per 100 grams on a <2 mm base.\
 
 ### mg.ext_usda.4b1_cmolkg
 

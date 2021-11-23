@@ -2,6 +2,12 @@
 
 ## Soil Spectroscopy Instruments
 
+<div class="figure">
+<img src="img/ssl_instruments_list.png" alt="Most frequently used MIR / VISNIR instruments based on @BenedettiEgmond2021." width="100%" />
+<p class="caption">(\#fig:soil-db)Most frequently used MIR / VISNIR instruments based on @BenedettiEgmond2021.</p>
+</div>
+
+
 ### Bruker Alpha 1_FT-MIR_Zn Se
 
 - 🆔 Bruker_Alpha1_FT.MIR.Zn.Se
@@ -34,6 +40,22 @@
 - 📂 Model type: NIR (350nm - 2500nm)  
 - 📅 Production year: 2018  
 
+### ASD FieldSpec FR
+
+- 🆔 ASD_FieldSpec_FR  
+- 🏭 Producer: Analytical Spectral Devices, Inc.  
+- 🔗 Documentation: <https://www.laboratorynetwork.com/doc/fieldspec-pro-fr-portable-spectroradiometer-0001>  
+- 📂 Model type: NIR (350nm - 2500nm)  
+- 📅 Production year: 2016  
+
+### XDS Rapid Content Analyzer
+
+- 🆔 XDS_Rapid_Content_Analyzer  
+- 🏭 Producer: FOSS NIRSystems Inc.  
+- 🔗 Documentation: <https://www.selectscience.net/products/xds-rapid-content-analyzer/?prodID=106696>  
+- 📂 Model type: NIR (Si 400–1100 nm and PbS 1100–2500 nm detectors)  
+- 📅 Production year: 2008  
+
 ## Registered soil spectral libraries
 
 ### KSSL.SSL
@@ -50,8 +72,8 @@ includes >50,000 MIR spectra collected on soils primarily from the United States
 
 ### ICRAF.ISRIC
 
-_Description_: A Globally Distributed Soil Spectral Library Mid Infrared Diffuse 
-Reflectance Spectra. MIR scans for some 785 profiles from the ISRIC World Soil Reference Collection.
+_Description_: [A Globally Distributed Soil Spectral Library Mid Infrared Diffuse 
+Reflectance Spectra](https://data.isric.org/geonetwork/srv/eng/catalog.search#/metadata/1b65024a-cd9f-11e9-a8f9-a0481ca9e724). MIR scans for some 785 profiles from the ISRIC World Soil Reference Collection.
 The samples are from 58 countries spanning Africa, Asia, Europe, North America, and South America. 
 Data available under the CC-BY 4.0 license.
 
@@ -60,9 +82,33 @@ Nations Avenue, Nairobi, Kenya.
 - 🔗 Project website: <https://www.worldagroforestry.org/sd/landhealth/soil-plant-spectral-diagnostics-laboratory/soil-spectra-library>  
 - ©️ Data license: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)  
 - 📍 Unique locations: 785  
-- 📋 Unique complete scans:  
+- 📋 Unique complete scans: 4308  
 - 📝 Import steps:  
 
+
+### LUCAS.SSL
+
+_Description_: [LUCAS 2009, 2015 top-soil data](https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data). VisNIR scans of some 19,860 in 2009 (2012) and 21,859 points in 2015. 
+Data available publicly under condition that _"Graphical representation of individual units on a map is permitted as far as the geographical location of the soil samples is not detectable"_.
+
+- 📕 Jones, A, Fernandez-Ugalde, O., Scarpa, S., (2020). [LUCAS 2015 Topsoil Survey. Presentation of dataset and results](https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data), EUR 30332 EN, Publications Office of the European Union: Luxembourg, ISBN 978-92-76-21080-1, doi:10.2760/616084, JRC121325.  
+- 🔗 Project website: <https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data>  
+- ©️ Data license: [JRC License Agreement](https://esdac.jrc.ec.europa.eu/content/lucas2015-topsoil-data)  
+- 📍 Unique locations: 41,719  
+- 📋 Unique complete scans: 41,719  
+- 📝 Import steps:  
+
+### AFSIS1.SSL
+
+_Description_: [LUCAS 2009, 2015 top-soil data](https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data). VisNIR scans of some 19,860 in 2009 (2012) and 21,859 points in 2015. 
+Data available publicly under condition that _"Graphical representation of individual units on a map is permitted as far as the geographical location of the soil samples is not detectable"_.
+
+- 📕 Jones, A, Fernandez-Ugalde, O., Scarpa, S., (2020). [LUCAS 2015 Topsoil Survey. Presentation of dataset and results](https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data), EUR 30332 EN, Publications Office of the European Union: Luxembourg, ISBN 978-92-76-21080-1, doi:10.2760/616084, JRC121325.  
+- 🔗 Project website: <https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data>  
+- ©️ Data license: [JRC License Agreement](https://esdac.jrc.ec.europa.eu/content/lucas2015-topsoil-data)  
+- 📍 Unique locations: 41,719  
+- 📋 Unique complete scans: 41,719  
+- 📝 Import steps:  
 
 ## Soil spetroscopy organizations
 

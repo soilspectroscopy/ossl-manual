@@ -168,7 +168,8 @@ below:
 
 ## Disclaimer
 
-The data is provided "as is". [Woodwell Climate Research Center](https://www.woodwellclimate.org/), [University of Florida](https://faculty.eng.ufl.edu/ktoddbrown/), [OpenGeoHub foundation](https://opengeohub.org/about) and its 
+Whilst utmost care has been taken by the Soil Spectroscopy project and data authors while
+collecting and compiling the data, the data is provided "as is". [Woodwell Climate Research Center](https://www.woodwellclimate.org/), [University of Florida](https://faculty.eng.ufl.edu/ktoddbrown/), [OpenGeoHub foundation](https://opengeohub.org/about) and its 
 suppliers and licensors hereby disclaim all warranties of any kind, express or implied, 
 including, without limitation, the warranties of merchantability, fitness for a particular 
 purpose and non-infringement. Neither [Woodwell Climate Research Center](https://www.woodwellclimate.org/), [University of Florida](https://faculty.eng.ufl.edu/ktoddbrown/), [OpenGeoHub foundation](https://opengeohub.org/about) nor its suppliers and licensors, 
@@ -176,12 +177,20 @@ makes any warranty that the Website will be error free or that access thereto wi
 continuous or uninterrupted. You understand that you download from, or otherwise obtain 
 content or services through, the Website at your own discretion and risk.
 
+In no event shall the data authors, the Soil Spectroscopy project, or relevant funding
+agencies be liable for any actual, incidental or consequential damages arising from use of the data.
+By using the Soil Spectroscopy project data, the user expressly acknowledges that the Data
+may contain some nonconformities, defects, or errors. No warranty is given that the data will meet
+the user's needs or expectations or that all nonconformities, defects, or errors can or will be
+corrected. The user should always verify actual data; therefore the user bears all responsibility in
+determining whether the data is fit for the user’s intended use.
+
 This document is **under construction**. If you notice an error or outdated information, 
 please submit a correction / pull request or open an issue.  
 
 This is a community project. No profits are being made from building and serving 
 Open Spectral Library. If you would like to become a sponsor of the project, please 
-contact us via: <https://soilspectroscopy.org/contact/>.
+contact us via: <https://soilspectroscopy.org/contact/>.  
 
 ## Licence
 
@@ -206,3 +215,16 @@ reflectance spectral library](https://doi.org/10.2136/sssaj2017.10.0361). Soil S
 82(3), 722–731. <https://doi.org/10.2136/sssaj2017.10.0361>   
 - Wadoux, A.M.J.-C., Malone, B., McBratney, A.B., Fajardo, M., Minasny, B., (2021). [Soil Spectral Inference with R: Analysing Digital Soil Spectra Using the R Programming Environment](https://books.google.nl/books?id=4kQgEAAAQBAJ).  
 Progress in Soil Science, Springer Nature, ISBN: 9783030648961, 274 pp.  
+
+## Acknowledgments
+
+Open Soil Spectral Library was possible due to the kind contributions by public and private 
+organizations. Listed at the order of importance:
+
+- **[USDA-NRCS Kellogg Soil Survey Laboratory](https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/)** mid-infrared (MIR) spectral library was use as the basis for this data set and corresponding services; we are especially grateful to **Rich Ferguson & Scarlett Murphy (NRCS USDA)** for their help with 
+importing and using the KSSL Soil Spectral Library;  
+- [ICRAF-ISRIC Soil VNIR Spectral Library](https://doi.org/10.34725/DVN/MFHA9C) is based on the Soil Information System (ISIS) of the International Soil Reference and Information Centre (ISRIC);  
+- [AfSIS-I Soil Spectral Library](https://doi.org/10.34725/DVN/QXCWP1) Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013, a collaborative projective funded by the Bill and Melinda Gates Foundation (BMGF). Partners included, CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF);  
+- [LUCAS topsoil (VisNIR) Soil Spectral Library](http://esdac.jrc.ec.europa.eu/) was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>;  
+
+We are also grateful to **[USDA National Institute of Food and Agriculture](USDA National Institute of Food and Agriculture)** for providing funding for this project.
