@@ -332,7 +332,7 @@ Total sulfur; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/ste
 
 Organic carbon in weight percent (dag/kg); [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492): `oc_usda.calc_wpct` = Estimated Organic Carbon based on Total C minus the inorganic carbon, GP prep.\
 
-```{r, hist-oc_usda.calc_wpct, fig.width=6, out.width="70%", fig.cap="Soil-depth histogram for soil organic carbon in wpct."}
+```{r, plot-oc, fig.width=6, out.width="70%", fig.cap="Soil-depth histogram for soil organic carbon in wpct."}
 openair::scatterPlot(kssl.yw, x = "depth", y = "oc_usda.calc_wpct", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="SOC wprm", xlab="depth in cm")
 ```
@@ -442,12 +442,12 @@ Aluminum saturation; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUME
 
 Soil pH 1:1 water; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=304): `ph.h2o_usda.4c1_index` = The pH, 1:1 soil-water suspension is the pH of a sample measured in distilled water at a 1:1 soil:solution ratio. If wider ratios increase the pH, salts are indicated.\
 
-```{r, hist-ph.h2o_usda.4c1, fig.width=6, out.width="70%", fig.cap="Soil-depth histogram for soil pH."}
+```{r, plot-phh2o, fig.width=6, out.width="70%", fig.cap="Soil-depth histogram for soil pH."}
 openair::scatterPlot(kssl.yw, x = "depth", y = "ph.h2o_usda.4c1_index", method = "hexbin", 
                      col = "increment", log.x = TRUE, ylab="Soil pH", xlab="depth in cm")
 ```
 
-```{r hist-ph.h2o, echo=FALSE, fig.cap="Soil pH 1:1 water histograms.", out.width="70%"}
+```{r hist-phh2o, echo=FALSE, fig.cap="Soil pH 1:1 water histograms.", out.width="70%"}
 knitr::include_graphics("hist/ph.h2o_usda.4c1_index_hist.png")
 ```
 

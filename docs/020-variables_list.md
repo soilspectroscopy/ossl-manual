@@ -284,8 +284,8 @@ openair::scatterPlot(kssl.yw, x = "depth", y = "oc_usda.calc_wpct", method = "he
 ```
 
 <div class="figure">
-<img src="020-variables_list_files/figure-html/hist-oc_usda.calc_wpct-1.png" alt="Soil-depth histogram for soil organic carbon in wpct." width="70%" />
-<p class="caption">(\#fig:hist-oc_usda.calc_wpct)Soil-depth histogram for soil organic carbon in wpct.</p>
+<img src="020-variables_list_files/figure-html/plot-oc-1.png" alt="Soil-depth histogram for soil organic carbon in wpct." width="70%" />
+<p class="caption">(\#fig:plot-oc)Soil-depth histogram for soil organic carbon in wpct.</p>
 </div>
 
 
@@ -401,13 +401,13 @@ openair::scatterPlot(kssl.yw, x = "depth", y = "ph.h2o_usda.4c1_index", method =
 ```
 
 <div class="figure">
-<img src="020-variables_list_files/figure-html/hist-ph.h2o_usda.4c1-1.png" alt="Soil-depth histogram for soil pH." width="70%" />
-<p class="caption">(\#fig:hist-ph.h2o_usda.4c1)Soil-depth histogram for soil pH.</p>
+<img src="020-variables_list_files/figure-html/plot-phh2o-1.png" alt="Soil-depth histogram for soil pH." width="70%" />
+<p class="caption">(\#fig:plot-phh2o)Soil-depth histogram for soil pH.</p>
 </div>
 
 <div class="figure">
 <img src="hist/ph.h2o_usda.4c1_index_hist.png" alt="Soil pH 1:1 water histograms." width="70%" />
-<p class="caption">(\#fig:hist-ph.h2o)Soil pH 1:1 water histograms.</p>
+<p class="caption">(\#fig:hist-phh2o)Soil pH 1:1 water histograms.</p>
 </div>
 
 

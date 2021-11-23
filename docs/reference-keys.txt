@@ -6,7 +6,10 @@ fig:pull-request
 fig:hist-sand
 fig:hist-silt
 fig:hist-clay
+fig:plot-oc
 fig:hist-oc1
+fig:plot-phh2o
+fig:hist-phh2o
 about
 soil-spectroscopy-for-global-good
 what-is-soil-spectroscopy
