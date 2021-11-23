@@ -8,6 +8,8 @@ editor_options:
 
 
 
+
+
 ## Sites table {#sites-table}
 
 Observations and measurements at site. For the **site** table please use (at least) the following columns.
@@ -177,6 +179,11 @@ To estimate the field texture-by-hand please follow [these guidelines](https://w
 
 Total sand content; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=76): `sand.tot_usda.3a1_wpct` = Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported a gravimetric percent on a <2 mm base. H prep.\
 
+<div class="figure">
+<img src="hist/sand.tot_usda.3a1_wpct_hist.png" alt="Total sand content histograms." width="70%" />
+<p class="caption">(\#fig:hist-sand)Total sand content histograms.</p>
+</div>
+
 ### sand.tot_iso.11277.2020_wpct
 
 Total laboratory-estimated sand (0.05 to 2.0 mm particle diameter) based on [ISO 11277:2020(en)](https://www.iso.org/obp/ui/#iso:std:iso:11277:ed-3:v1:en)
@@ -186,6 +193,11 @@ Soil quality — Determination of particle size distribution in mineral soil mat
 
 Total silt content; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=76): `silt.tot_usda.3a1_wpct` = Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported as a gravimetric percent on a <2 mm base.\
 
+<div class="figure">
+<img src="hist/silt.tot_usda.3a1_wpct_hist.png" alt="Total silt content histograms." width="70%" />
+<p class="caption">(\#fig:hist-silt)Total silt content histograms.</p>
+</div>
+
 ### silt.tot_iso.11277.2020_wpct
 
 Total laboratory-estimated silt (0.002 to 0.05 mm particle size) based on [ISO 11277:2020(en)](https://www.iso.org/obp/ui/#iso:std:iso:11277:ed-3:v1:en)
@@ -194,6 +206,11 @@ Soil quality — Determination of particle size distribution in mineral soil mat
 ### clay.tot_usda.3a1_wpct
 
 Total clay content; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=76): `clay.tot_usda.3a1_wpct` = Total clay is the soil separate with <0.002 mm particle diameter. Clay size carbonate is included. Total clay is reported as a weight percent of the <2 mm fraction.\
+
+<div class="figure">
+<img src="hist/clay.tot_usda.3a1_wpct_hist.png" alt="Total clay content histograms." width="70%" />
+<p class="caption">(\#fig:hist-clay)Total clay content histograms.</p>
+</div>
 
 ### clay.tot_iso.11277.2020_wpct
 
@@ -270,6 +287,13 @@ openair::scatterPlot(kssl.yw, x = "depth", y = "oc_usda.calc_wpct", method = "he
 <img src="020-variables_list_files/figure-html/hist-oc_usda.calc_wpct-1.png" alt="Soil-depth histogram for soil organic carbon in wpct." width="70%" />
 <p class="caption">(\#fig:hist-oc_usda.calc_wpct)Soil-depth histogram for soil organic carbon in wpct.</p>
 </div>
+
+
+<div class="figure">
+<img src="hist/oc_usda.calc_wpct_hist.png" alt="Organic carbon in weight percent histograms." width="70%" />
+<p class="caption">(\#fig:hist-oc1)Organic carbon in weight percent histograms.</p>
+</div>
+
 
 ### oc_usda.4h2_wpct
 
@@ -381,6 +405,12 @@ openair::scatterPlot(kssl.yw, x = "depth", y = "ph.h2o_usda.4c1_index", method =
 <p class="caption">(\#fig:hist-ph.h2o_usda.4c1)Soil-depth histogram for soil pH.</p>
 </div>
 
+<div class="figure">
+<img src="hist/ph.h2o_usda.4c1_index_hist.png" alt="Soil pH 1:1 water histograms." width="70%" />
+<p class="caption">(\#fig:hist-ph.h2o)Soil pH 1:1 water histograms.</p>
+</div>
+
+
 ### ph.cacl2_usda.4c1_index
 
 Soil pH 1:2 0.01-M calcium choride; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=304): `ph.cacl2_usda.4c1_index` = The pH, 1:2 soil-CaCl2 is the pH of a sample measured in 0.01M CaCl2 at a 1:2 soil:solution ratio.\
@@ -435,7 +465,7 @@ Disclaimer: use at own risk. See also our general disclaimer.
 
 ### pH
 
-From `ph.kcl_4c1a2a3a.b1_index` to `ph.h2o_usda.4c1_index` based on @bohner2008saga:
+From `ph.kcl_usda.4c1_index` to `ph.h2o_usda.4c1_index` based on @bohner2008saga:
 
 
 ```r

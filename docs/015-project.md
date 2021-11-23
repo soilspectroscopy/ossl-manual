@@ -110,6 +110,17 @@ Data available publicly under condition that _"Graphical representation of indiv
 - 📋 Unique complete scans: 41,719  
 - 📝 Import steps:  
 
+### CAF.SSL
+
+_Description_: [The Central African Soil Spectral Library](https://doi.org/10.5194/soil-7-693-2021). MIR scans of some collected based on 1800 samples in Central Africa. 
+
+- 📕 Summerauer, L., Baumann, P., Ramirez-Lopez, L., Barthel, M., Bauters, M., Bukombe, B., Reichenbach, M., Boeckx, P., Kearsley, E., Van Oost, K., Vanlauwe, B., Chiragaga, D., Heri-Kazi, A. B., Moonen, P., Sila, A., Shepherd, K., Bazirake Mujinya, B., Van Ranst, E., Baert, G., Doetterl, S., and Six, J. (2021). [The central African soil spectral library: a new soil infrared repository and a geographical prediction analysis](https://doi.org/10.5194/soil-7-693-2021), SOIL, 7, 693–715, <https://doi.org/10.5194/soil-7-693-2021>  
+- 🔗 Project website: <https://github.com/laura-summerauer/ssl-central-africa>  
+- ©️ Data license: CC-BY?  
+- 📍 Unique locations:   
+- 📋 Unique complete scans: 1852  
+- 📝 Import steps:  
+
 ## Soil spetroscopy organizations
 
 National and regional soil spectral laboratories actively processing soil samples 

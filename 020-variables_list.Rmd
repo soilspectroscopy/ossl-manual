@@ -11,11 +11,61 @@ library(captioner)
 library(openair)
 fig_nums <- captioner(prefix = "Fig.")
 source("R/ossl_functions.R")
-kssl.yw = readRDS.gz("/mnt/diskstation/data/ossl/dataset/KSSL/ossl_soillab_v1.rds")
-kssl.sitef = readRDS.gz("/mnt/diskstation/data/ossl/dataset/KSSL/ossl_soilsite_v1.rds")
+kssl.yw = readRDS(url("http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_import/ossl_soillab_v1.rds", "rb"))
+kssl.sitef = readRDS(url("http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_import/ossl_soilsite_v1.rds", "rb"))
 kssl.yw$layer.upper.depth_usda_cm = plyr::join(kssl.yw["id.sample_uuid_c"], kssl.sitef, match="first")$layer.upper.depth_usda_cm
 kssl.yw$layer.lower.depth_usda_cm = plyr::join(kssl.yw["id.sample_uuid_c"], kssl.sitef, match="first")$layer.lower.depth_usda_cm
 kssl.yw$depth = kssl.yw$layer.upper.depth_usda_cm + (kssl.yw$layer.lower.depth_usda_cm - kssl.yw$layer.upper.depth_usda_cm)/2
+kssl.yw$dataset.code_ascii_c = plyr::join(kssl.yw["id.layer_local_c"], kssl.sitef, match="first")$dataset.code_ascii_c
+```
+
+```{r, include=FALSE}
+library(ggplot2)
+library(viridis)
+library(ggridges)
+## log-normal variables
+for(j in c("wpg2_usda.3a2_wpct", "ecec_usda.4b4_cmolkg", "ec.w_usda.4f1_dsm", "oc_usda.calc_wpct",
+           "ca.ext_usda.4b1_cmolkg", "c.tot_usda.4h2_wpct", "caco3_usda.4e1_wpct", "cec.ext_usda.4b1_cmolkg",
+           "sum.bases_4b4b2a_cmolkg", "mg.ext_usda.4b1_cmolkg", "n.tot_usda.4h2_wpct",
+           "al.kcl_usda.4b3_cmolkg", "p.meh3_usda.4d6_mgkg", "k.meh3_usda.4d6_mgkg", 
+           "na.meh3_usda.4d6_mgkg", "mg.meh3_usda.4d6_mgkg", "fe.meh3_usda.4d6_mgkg")){
+  out.png = paste0("./hist/", j, "_hist.png")
+  if(!file.exists(out.png)){
+    sel.df = kssl.yw[,c("dataset.code_ascii_c", j)]
+    sel.df$response = sel.df[,2]+1
+    ggplot(sel.df, aes(x = response, y = dataset.code_ascii_c, fill = ..x..)) +
+      geom_density_ridges_gradient(scale = 3, rel_min_height = 0.01, gradient_lwd = 1.) +
+      scale_x_continuous(expand = c(0.01, 0)) +
+      scale_x_continuous(trans='log2') +
+      scale_y_discrete(expand = c(0.01, 0)) +
+      scale_fill_viridis(name = j, option = "C") +
+      labs(
+        title = j
+      ) +
+      theme_ridges(font_size = 13, grid = TRUE) + theme(axis.title.y = element_blank())
+    ggsave(out.png, width = 7, height = 7)
+  }
+}
+## without log-transform
+for(j in c("sand.tot_usda.3a1_wpct", "silt.tot_usda.3a1_wpct", "clay.tot_usda.3a1_wpct", 
+           "bd.od_usda.3b2_gcm3", "ph.kcl_usda.4c1_index", "ph.h2o_usda.4c1_index", 
+           "ph.cacl2_usda.4c1_index", "wr.33kbar_usda.3c1_wpct", "wr.1500kbar_usda.3c2_wpct")){
+  out.png = paste0("./hist/", j, "_hist.png")
+  if(!file.exists(out.png)){
+    sel.df = kssl.yw[,c("dataset.code_ascii_c", j)]
+    sel.df$response = sel.df[,2]
+    ggplot(sel.df, aes(x = response, y = dataset.code_ascii_c, fill = ..x..)) +
+      geom_density_ridges_gradient(scale = 3, rel_min_height = 0.01, gradient_lwd = 1.) +
+      scale_x_continuous(expand = c(0.01, 0)) +
+      scale_y_discrete(expand = c(0.01, 0)) +
+      scale_fill_viridis(name = j, option = "C") +
+      labs(
+        title = j
+      ) +
+      theme_ridges(font_size = 13, grid = TRUE) + theme(axis.title.y = element_blank())
+    ggsave(out.png, width = 7, height = 7)
+  }
+}
 ```
 
 ## Sites table {#sites-table}
@@ -187,6 +237,10 @@ To estimate the field texture-by-hand please follow [these guidelines](https://w
 
 Total sand content; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=76): `sand.tot_usda.3a1_wpct` = Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported a gravimetric percent on a <2 mm base. H prep.\
 
+```{r hist-sand, echo=FALSE, fig.cap="Total sand content histograms.", out.width="70%"}
+knitr::include_graphics("hist/sand.tot_usda.3a1_wpct_hist.png")
+```
+
 ### sand.tot_iso.11277.2020_wpct
 
 Total laboratory-estimated sand (0.05 to 2.0 mm particle diameter) based on [ISO 11277:2020(en)](https://www.iso.org/obp/ui/#iso:std:iso:11277:ed-3:v1:en)
@@ -196,6 +250,10 @@ Soil quality — Determination of particle size distribution in mineral soil mat
 
 Total silt content; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=76): `silt.tot_usda.3a1_wpct` = Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported as a gravimetric percent on a <2 mm base.\
 
+```{r hist-silt, echo=FALSE, fig.cap="Total silt content histograms.", out.width="70%"}
+knitr::include_graphics("hist/silt.tot_usda.3a1_wpct_hist.png")
+```
+
 ### silt.tot_iso.11277.2020_wpct
 
 Total laboratory-estimated silt (0.002 to 0.05 mm particle size) based on [ISO 11277:2020(en)](https://www.iso.org/obp/ui/#iso:std:iso:11277:ed-3:v1:en)
@@ -204,6 +262,10 @@ Soil quality — Determination of particle size distribution in mineral soil mat
 ### clay.tot_usda.3a1_wpct
 
 Total clay content; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=76): `clay.tot_usda.3a1_wpct` = Total clay is the soil separate with <0.002 mm particle diameter. Clay size carbonate is included. Total clay is reported as a weight percent of the <2 mm fraction.\
+
+```{r hist-clay, echo=FALSE, fig.cap="Total clay content histograms.", out.width="70%"}
+knitr::include_graphics("hist/clay.tot_usda.3a1_wpct_hist.png")
+```
 
 ### clay.tot_iso.11277.2020_wpct
 
@@ -274,6 +336,12 @@ Organic carbon in weight percent (dag/kg); [description](https://www.nrcs.usda.g
 openair::scatterPlot(kssl.yw, x = "depth", y = "oc_usda.calc_wpct", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="SOC wprm", xlab="depth in cm")
 ```
+
+
+```{r hist-oc1, echo=FALSE, fig.cap="Organic carbon in weight percent histograms.", out.width="70%"}
+knitr::include_graphics("hist/oc_usda.calc_wpct_hist.png")
+```
+
 
 ### oc_usda.4h2_wpct
 
@@ -379,6 +447,11 @@ openair::scatterPlot(kssl.yw, x = "depth", y = "ph.h2o_usda.4c1_index", method =
                      col = "increment", log.x = TRUE, ylab="Soil pH", xlab="depth in cm")
 ```
 
+```{r hist-ph.h2o, echo=FALSE, fig.cap="Soil pH 1:1 water histograms.", out.width="70%"}
+knitr::include_graphics("hist/ph.h2o_usda.4c1_index_hist.png")
+```
+
+
 ### ph.cacl2_usda.4c1_index
 
 Soil pH 1:2 0.01-M calcium choride; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=304): `ph.cacl2_usda.4c1_index` = The pH, 1:2 soil-CaCl2 is the pH of a sample measured in 0.01M CaCl2 at a 1:2 soil:solution ratio.\
@@ -433,7 +506,7 @@ Disclaimer: use at own risk. See also our general disclaimer.
 
 ### pH
 
-From `ph.kcl_4c1a2a3a.b1_index` to `ph.h2o_usda.4c1_index` based on @bohner2008saga:
+From `ph.kcl_usda.4c1_index` to `ph.h2o_usda.4c1_index` based on @bohner2008saga:
 
 ```{r}
 ph.kcl = 6.5

@@ -1,6 +1,12 @@
 fig:soil-pnts
 fig:soil-db
+fig:pnts-vnir
+fig:pnts-mir
 fig:pull-request
+fig:hist-sand
+fig:hist-silt
+fig:hist-clay
+fig:hist-oc1
 about
 soil-spectroscopy-for-global-good
 what-is-soil-spectroscopy
@@ -29,6 +35,7 @@ kssl.ssl
 icraf.isric
 lucas.ssl
 afsis1.ssl
+caf.ssl
 soil-spetroscopy-organizations
 kssl
 soil-spectroscopy-software

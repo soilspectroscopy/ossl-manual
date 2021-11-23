@@ -79,6 +79,18 @@ and metadata + legends organized in other tables:
 To access global compilation of soil legacy point data sets refer to <https://github.com/OpenGeoHub/SoilSamples> repository.
 To access and use Soil Spectroscopy tools also refer to <https://soilspectroscopy.org/>.
 
+<div class="figure">
+<img src="img/visnir.pnts_sites.png" alt="Up-to-date distribution of points with VisNIR scans." width="100%" />
+<p class="caption">(\#fig:pnts-vnir)Up-to-date distribution of points with VisNIR scans.</p>
+</div>
+
+
+<div class="figure">
+<img src="img/mir.pnts_sites.png" alt="Up-to-date distribution of points with MIR scans." width="100%" />
+<p class="caption">(\#fig:pnts-mir)Up-to-date distribution of points with MIR scans.</p>
+</div>
+
+
 ## Target variables of interest
 
 Soil spectral scan, through the calibration procedure, are used to determine various soil variables. 
@@ -225,8 +237,13 @@ organizations. Listed at the order of importance:
 
 - **[USDA-NRCS Kellogg Soil Survey Laboratory](https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/)** mid-infrared (MIR) spectral library was use as the basis for this data set and corresponding services; we are especially grateful to **Rich Ferguson & Scarlett Murphy (NRCS USDA)** for their help with 
 importing and using the KSSL Soil Spectral Library;  
-- [ICRAF-ISRIC Soil VNIR Spectral Library](https://doi.org/10.34725/DVN/MFHA9C) is based on the Soil Information System (ISIS) of the International Soil Reference and Information Centre (ISRIC);  
-- [AfSIS-I Soil Spectral Library](https://doi.org/10.34725/DVN/QXCWP1) Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013, a collaborative projective funded by the Bill and Melinda Gates Foundation (BMGF). Partners included, CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF);  
-- [LUCAS topsoil (VisNIR) Soil Spectral Library](http://esdac.jrc.ec.europa.eu/) was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>;  
+- **[ICRAF-ISRIC Soil VNIR Spectral Library](https://doi.org/10.34725/DVN/MFHA9C)** is based on the Soil Information System (ISIS) of the International Soil Reference and Information Centre (ISRIC);  
+- **[AfSIS-I Soil Spectral Library](https://doi.org/10.34725/DVN/QXCWP1)** Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013, a collaborative projective funded by the Bill and Melinda Gates Foundation (BMGF). Partners included, CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF);  
+- **[LUCAS topsoil (VisNIR) Soil Spectral Library](http://esdac.jrc.ec.europa.eu/)** was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>;  
+- **[LUCAS topsoil (VisNIR) Soil Spectral Library](http://esdac.jrc.ec.europa.eu/)** was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>; we have degraded location accuracy of points so that exact locations are about 1-km off;
+- **[The Central African Soil Spectral Library](https://github.com/laura-summerauer/ssl-central-africa)** described in detail in @Summerauer2021 contains limited number of samples representing Central Africa;
 
-We are also grateful to **[USDA National Institute of Food and Agriculture](USDA National Institute of Food and Agriculture)** for providing funding for this project.
+For more advanced used of the soil spectral libraries **we advise to contact the original data producers** 
+especially to get help with using, extending and improving the original SSL data.
+
+We are also grateful to **[USDA National Institute of Food and Agriculture #2020-67021-32467](https://nifa.usda.gov/press-release/nifa-invests-over-7-million-big-data-artificial-intelligence-and-other)** for providing funding for this project.
