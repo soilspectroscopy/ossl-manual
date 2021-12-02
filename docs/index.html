@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Open Soil Spectral Library</title>
   <meta name="description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, callibrate own models and extend beyond." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22.2 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Open Soil Spectral Library" />
   <meta property="og:type" content="book" />
@@ -31,10 +31,9 @@
   
   
 
-<link rel="next" href="new-to-markdown.-start-here.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link rel="next" href="new-to-markdown-start-here.html"/>
+<script src="libs/header-attrs-2.8.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,6 +41,7 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
 
 
 
@@ -171,10 +171,10 @@ div.csl-indent {
 <li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#suggested-literature"><i class="fa fa-check"></i><b>1.10</b> Suggested literature</a></li>
 <li class="chapter" data-level="1.11" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.11</b> Acknowledgments</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="new-to-markdown.-start-here.html"><a href="new-to-markdown.-start-here.html"><i class="fa fa-check"></i><b>2</b> New to markdown. Start here</a>
+<li class="chapter" data-level="2" data-path="new-to-markdown-start-here.html"><a href="new-to-markdown-start-here.html"><i class="fa fa-check"></i><b>2</b> New to markdown. Start here</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="new-to-markdown.-start-here.html"><a href="new-to-markdown.-start-here.html#clone-add-reference-submit-merge-request"><i class="fa fa-check"></i><b>2.1</b> Clone, add reference, submit merge request…</a></li>
-<li class="chapter" data-level="2.2" data-path="new-to-markdown.-start-here.html"><a href="new-to-markdown.-start-here.html#video-course-getting-started-with-r"><i class="fa fa-check"></i><b>2.2</b> Video Course: Getting started with R</a></li>
+<li class="chapter" data-level="2.1" data-path="new-to-markdown-start-here.html"><a href="new-to-markdown-start-here.html#clone-add-reference-submit-merge-request"><i class="fa fa-check"></i><b>2.1</b> Clone, add reference, submit merge request…</a></li>
+<li class="chapter" data-level="2.2" data-path="new-to-markdown-start-here.html"><a href="new-to-markdown-start-here.html#video-course-getting-started-with-r"><i class="fa fa-check"></i><b>2.2</b> Video Course: Getting started with R</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html"><i class="fa fa-check"></i><b>3</b> Soil spectroscopy tools and users</a>
 <ul>
@@ -390,7 +390,7 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">Open Soil Spectral Library</h1>
 <p class="author"><em>Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors</em></p>
-<p class="date"><em>02 December, 2021</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>02 December, 2021</em></p>
 </div>
 <div id="about" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> About</h1>
@@ -417,7 +417,7 @@ a <a href="http://www.fao.org/3/ca8431en/ca8431en.pdf">GSP Soil Spectral Calibra
 infrared (Vis–NIR–MIR) regions of the electromagnetic spectrum</a> is applied to a soil surface. The proportion
 of the incident radiation reflected by soil is sensed through Vis–NIR–MIR reflectance spectroscopy.
 These characteristic spectra (see Fig. below) can then be used to estimate numerous soil attributes including: minerals, organic compounds and water.</p>
-<div class="figure"><span style="display:block;" id="fig:soil-pnts"></span>
+<div class="figure"><span id="fig:soil-pnts"></span>
 <img src="img/Spectroscopy-Schematic.jpeg" alt="Schematic explanation of the soil spectroscopy. For more info see: https://soilspectroscopy.org/." width="100%" />
 <p class="caption">
 Figure 1.1: Schematic explanation of the soil spectroscopy. For more info see: <a href="https://soilspectroscopy.org/" class="uri">https://soilspectroscopy.org/</a>.
@@ -445,7 +445,7 @@ It includes (see also <a href="https://github.com/soilspectroscopy" class="uri">
 <p>As a general rule of thumb we recommend all contributors to use the following
 general OSSL scheme to organize Soil Observations &amp; Measurements with four main tables
 and metadata + legends organized in other tables:</p>
-<div class="figure"><span style="display:block;" id="fig:soil-db"></span>
+<div class="figure"><span id="fig:soil-db"></span>
 <img src="img/design_soil_om_sheme.png" alt="Recommended OSSL database schema." width="100%" />
 <p class="caption">
 Figure 1.2: Recommended OSSL database schema.
@@ -453,13 +453,13 @@ Figure 1.2: Recommended OSSL database schema.
 </div>
 <p>To access global compilation of soil legacy point data sets refer to <a href="https://github.com/OpenGeoHub/SoilSamples" class="uri">https://github.com/OpenGeoHub/SoilSamples</a> repository.
 To access and use Soil Spectroscopy tools also refer to <a href="https://soilspectroscopy.org/" class="uri">https://soilspectroscopy.org/</a>.</p>
-<div class="figure"><span style="display:block;" id="fig:pnts-vnir"></span>
+<div class="figure"><span id="fig:pnts-vnir"></span>
 <img src="img/visnir.pnts_sites.png" alt="Up-to-date distribution of points with VisNIR scans." width="100%" />
 <p class="caption">
 Figure 1.3: Up-to-date distribution of points with VisNIR scans.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:pnts-mir"></span>
+<div class="figure"><span id="fig:pnts-mir"></span>
 <img src="img/mir.pnts_sites.png" alt="Up-to-date distribution of points with MIR scans." width="100%" />
 <p class="caption">
 Figure 1.4: Up-to-date distribution of points with MIR scans.
@@ -673,10 +673,11 @@ Vagen, Tor-Gunnar, Leigh Ann Winowiecki, Luseged Desta, Ebagnerin Jerome Tondoh,
         </div>
       </div>
 
-<a href="new-to-markdown.-start-here.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="new-to-markdown-start-here.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -716,10 +717,6 @@ gitbook.start({
 "text": null
 },
 "download": ["OSSL_book.pdf", "OSSL_book.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true

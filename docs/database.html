@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Database | Open Soil Spectral Library</title>
   <meta name="description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, callibrate own models and extend beyond." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22.2 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Database | Open Soil Spectral Library" />
   <meta property="og:type" content="book" />
@@ -32,9 +32,8 @@
   
 <link rel="prev" href="soil-spectroscopy-tools-and-users.html"/>
 <link rel="next" href="reference-soil-spectroscopy-models.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<script src="libs/header-attrs-2.8.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,6 +41,7 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
 
 
 
@@ -171,10 +171,10 @@ div.csl-indent {
 <li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#suggested-literature"><i class="fa fa-check"></i><b>1.10</b> Suggested literature</a></li>
 <li class="chapter" data-level="1.11" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.11</b> Acknowledgments</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="new-to-markdown.-start-here.html"><a href="new-to-markdown.-start-here.html"><i class="fa fa-check"></i><b>2</b> New to markdown. Start here</a>
+<li class="chapter" data-level="2" data-path="new-to-markdown-start-here.html"><a href="new-to-markdown-start-here.html"><i class="fa fa-check"></i><b>2</b> New to markdown. Start here</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="new-to-markdown.-start-here.html"><a href="new-to-markdown.-start-here.html#clone-add-reference-submit-merge-request"><i class="fa fa-check"></i><b>2.1</b> Clone, add reference, submit merge request…</a></li>
-<li class="chapter" data-level="2.2" data-path="new-to-markdown.-start-here.html"><a href="new-to-markdown.-start-here.html#video-course-getting-started-with-r"><i class="fa fa-check"></i><b>2.2</b> Video Course: Getting started with R</a></li>
+<li class="chapter" data-level="2.1" data-path="new-to-markdown-start-here.html"><a href="new-to-markdown-start-here.html#clone-add-reference-submit-merge-request"><i class="fa fa-check"></i><b>2.1</b> Clone, add reference, submit merge request…</a></li>
+<li class="chapter" data-level="2.2" data-path="new-to-markdown-start-here.html"><a href="new-to-markdown-start-here.html#video-course-getting-started-with-r"><i class="fa fa-check"></i><b>2.2</b> Video Course: Getting started with R</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html"><i class="fa fa-check"></i><b>3</b> Soil spectroscopy tools and users</a>
 <ul>
@@ -622,22 +622,15 @@ To estimate the field texture-by-hand please follow <a href="https://www.nrcs.us
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-thomas1982exchangeable" role="doc-biblioref">Thomas</a> (<a href="#ref-thomas1982exchangeable" role="doc-biblioref">1982</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="database.html#cb1-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;sand.tot_usda.3a1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb1-2"><a href="database.html#cb1-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Sand wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-sand"></span>
-<img src="020-variables_list_files/figure-html/plot-sand-1.png" alt="Soil-depth histogram for total sand content in wpct." width="70%" />
-=======
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="database.html#cb1-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;al.kcl_usda.4b3_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="database.html#cb1-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;al.kcl_usda.4b3_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb1-2"><a href="database.html#cb1-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ExAl in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-alkcl"></span>
+<div class="figure"><span id="fig:plot-alkcl"></span>
 <img src="020-variables_list_files/figure-html/plot-alkcl-1.png" alt="Soil-depth histogram for Aluminum, KCl extractable in cmol/kg." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.1: Soil-depth histogram for Aluminum, KCl extractable in cmol/kg.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-alkcl1"></span>
+<div class="figure"><span id="fig:hist-alkcl1"></span>
 <img src="hist/al.kcl_usda.4b3_cmolkg_hist.png" alt="Aluminum, KCl extractable in cmol/kg histograms." width="70%" />
 <p class="caption">
 Figure 4.2: Aluminum, KCl extractable in cmol/kg histograms.
@@ -649,31 +642,9 @@ Figure 4.2: Aluminum, KCl extractable in cmol/kg histograms.
 <p>Aluminum, ammonium oxalate extractable; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=460">description</a>: <code>al.ox_usda.4g2_wpct</code> = Ammonium oxalate extractable aluminum is an estimate of the total pedogenic Al, much of which may be in noncrystalline materials or complexed by organic matter. It is reported as gravimetric percent on a &lt;2 mm base.<br />
 </p>
 </div>
-<<<<<<< HEAD
-<div id="silt.tot_usda.3a1_wpct" class="section level3" number="4.2.16">
-<h3><span class="header-section-number">4.2.16</span> silt.tot_usda.3a1_wpct</h3>
-<p>Total silt content; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=76">description</a>: <code>silt.tot_usda.3a1_wpct</code> = Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported as a gravimetric percent on a &lt;2 mm base.<br />
-</p>
-<ul>
-<li>🆔 <code>code</code> silt.tot_usda.3a1_wpct<br />
-</li>
-<li>📚 Measurement unit: weight percent<br />
-</li>
-<li>🔬 Laboratory method: Particle-Size Distribution Analysis using Pipette<br />
-</li>
-<li>📖 Scientific reference: <span class="citation"><a href="#ref-agriculture2019soil" role="doc-biblioref">USDA NRCS</a> (<a href="#ref-agriculture2019soil" role="doc-biblioref">2019</a>)</span></li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="database.html#cb2-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;silt.tot_usda.3a1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb2-2"><a href="database.html#cb2-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Silt wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-silt"></span>
-<img src="020-variables_list_files/figure-html/plot-silt-1.png" alt="Soil-depth histogram for total silt content in wpct." width="70%" />
-<p class="caption">
-Figure 4.3: Soil-depth histogram for total silt content in wpct.
-=======
 <div id="al.pyp_usda.4g3_wpct" class="section level3" number="4.2.18">
 <h3><span class="header-section-number">4.2.18</span> al.pyp_usda.4g3_wpct</h3>
 <p>Aluminum, sodium pyrophosphate extractable; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=468">description</a>: <code>al.pyp_usda.4g3_wpct</code> = Sodium pyrophosphate extractable aluminum is the fraction extracted by 0.1M sodium pyrophosphate. It was originally considered the portion associated with organic compounds, although subsequent evidence indicates other forms are also removed.<br />
->>>>>>> main
 </p>
 </div>
 <div id="alsat_usda.4b4_wpct" class="section level3" number="4.2.19">
@@ -705,22 +676,15 @@ Soil quality — Determination of dry bulk density.<br />
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-grossman20022" role="doc-biblioref">Grossman and Reinsch</a> (<a href="#ref-grossman20022" role="doc-biblioref">2002</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="database.html#cb3-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;clay.tot_usda.3a1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb3-2"><a href="database.html#cb3-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Clay wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-clay"></span>
-<img src="020-variables_list_files/figure-html/plot-clay-1.png" alt="Soil-depth histogram for total clay in wpct." width="70%" />
-=======
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="database.html#cb2-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;bd.od_usda.3b2_gcm3&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="database.html#cb2-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;bd.od_usda.3b2_gcm3&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb2-2"><a href="database.html#cb2-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;BD t/m3&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-bd"></span>
+<div class="figure"><span id="fig:plot-bd"></span>
 <img src="020-variables_list_files/figure-html/plot-bd-1.png" alt="Soil-depth histogram for Bulk density in t/m3." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.3: Soil-depth histogram for Bulk density in t/m3.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-bd1"></span>
+<div class="figure"><span id="fig:hist-bd1"></span>
 <img src="hist/bd.od_usda.3b2_gcm3_hist.png" alt="Bulk density in t/m3 percent histograms." width="70%" />
 <p class="caption">
 Figure 4.4: Bulk density in t/m3 percent histograms.
@@ -740,22 +704,15 @@ Figure 4.4: Bulk density in t/m3 percent histograms.
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-thomas1982exchangeable" role="doc-biblioref">Thomas</a> (<a href="#ref-thomas1982exchangeable" role="doc-biblioref">1982</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="database.html#cb4-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;wpg2_usda.3a2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb4-2"><a href="database.html#cb4-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;WPG2 wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-wpg"></span>
-<img src="020-variables_list_files/figure-html/plot-wpg-1.png" alt="Soil-depth histogram for coarse fragments in wpct." width="70%" />
-=======
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="database.html#cb3-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;bsat_usda.4b4_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="database.html#cb3-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;bsat_usda.4b4_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb3-2"><a href="database.html#cb3-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;BS in wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-bs"></span>
+<div class="figure"><span id="fig:plot-bs"></span>
 <img src="020-variables_list_files/figure-html/plot-bs-1.png" alt="Soil-depth histogram for Base saturation in wpct." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.5: Soil-depth histogram for Base saturation in wpct.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-bs1"></span>
+<div class="figure"><span id="fig:hist-bs1"></span>
 <img src="hist/bsat_usda.4b4_wpct_hist.png" alt="Base saturation in weight percent histograms." width="70%" />
 <p class="caption">
 Figure 4.6: Base saturation in weight percent histograms.
@@ -780,22 +737,15 @@ Soil quality — Determination of organic and total carbon after dry combustion 
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-nelson1983total" role="doc-biblioref">Nelson and Sommers</a> (<a href="#ref-nelson1983total" role="doc-biblioref">1983</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="database.html#cb5-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;wr.1500kbar_usda.3c2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb5-2"><a href="database.html#cb5-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;PWP wprm&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-wp"></span>
-<img src="020-variables_list_files/figure-html/plot-wp-1.png" alt="Soil-depth histogram for Water Retention at 15 Bar (Permanent Wilting Point) in wpct." width="70%" />
-=======
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="database.html#cb4-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;c.tot_usda.4h2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="database.html#cb4-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;c.tot_usda.4h2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb4-2"><a href="database.html#cb4-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;SOC wprm&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-toc"></span>
+<div class="figure"><span id="fig:plot-toc"></span>
 <img src="020-variables_list_files/figure-html/plot-toc-1.png" alt="Soil-depth histogram for total carbon in wpct." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.7: Soil-depth histogram for total carbon in wpct.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-toc1"></span>
+<div class="figure"><span id="fig:hist-toc1"></span>
 <img src="hist/c.tot_usda.4h2_wpct_hist.png" alt="Total carbon in weight percent histograms." width="70%" />
 <p class="caption">
 Figure 4.8: Total carbon in weight percent histograms.
@@ -815,22 +765,15 @@ Figure 4.8: Total carbon in weight percent histograms.
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-thomas1982exchangeable" role="doc-biblioref">Thomas</a> (<a href="#ref-thomas1982exchangeable" role="doc-biblioref">1982</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="database.html#cb6-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;wr.33kbar_usda.3c1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb6-2"><a href="database.html#cb6-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;FC wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-fc"></span>
-<img src="020-variables_list_files/figure-html/plot-fc-1.png" alt="Soil-depth histogram for Water Retention at 1/3 Bar (Field Capacity) in wpct." width="70%" />
-=======
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="database.html#cb5-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ca.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="database.html#cb5-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ca.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb5-2"><a href="database.html#cb5-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ExCa cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-exca"></span>
+<div class="figure"><span id="fig:plot-exca"></span>
 <img src="020-variables_list_files/figure-html/plot-exca-1.png" alt="Soil-depth histogram for Calcium, NH4OAc Extractable in cmol/kg." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.9: Soil-depth histogram for Calcium, NH4OAc Extractable in cmol/kg.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-exca1"></span>
+<div class="figure"><span id="fig:hist-exca1"></span>
 <img src="hist/ca.ext_usda.4b1_cmolkg_hist.png" alt="Calcium, NH4OAc Extractable in cmol/kg histograms." width="70%" />
 <p class="caption">
 Figure 4.10: Calcium, NH4OAc Extractable in cmol/kg histograms.
@@ -854,24 +797,17 @@ Soil quality — Determination of carbonate content — Volumetric method.<br />
 </li>
 <li>🔬 Laboratory method: 3 N HCl Treatment<br />
 </li>
-<li>📖 Scientific reference: <span class="citation"><a href="#ref-loeppert1996carbonate" role="doc-biblioref">Loeppert, Suarez, et al.</a> (<a href="#ref-loeppert1996carbonate" role="doc-biblioref">1996</a>)</span></li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-loeppert1996carbonate" role="doc-biblioref">Loeppert, Suarez, and others</a> (<a href="#ref-loeppert1996carbonate" role="doc-biblioref">1996</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="database.html#cb7-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;bd.od_usda.3b2_gcm3&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb7-2"><a href="database.html#cb7-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;BD t/m3&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-bd"></span>
-<img src="020-variables_list_files/figure-html/plot-bd-1.png" alt="Soil-depth histogram for Bulk density in t/m3." width="70%" />
-=======
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="database.html#cb6-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;caco3_usda.4e1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="database.html#cb6-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;caco3_usda.4e1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb6-2"><a href="database.html#cb6-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;CaCO3 wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-caco"></span>
+<div class="figure"><span id="fig:plot-caco"></span>
 <img src="020-variables_list_files/figure-html/plot-caco-1.png" alt="Soil-depth histogram for CaCO3 in wpct." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.11: Soil-depth histogram for CaCO3 in wpct.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-caco1"></span>
+<div class="figure"><span id="fig:hist-caco1"></span>
 <img src="hist/caco3_usda.4e1_wpct_hist.png" alt="Organic carbon in weight percent histograms." width="70%" />
 <p class="caption">
 Figure 4.12: Organic carbon in weight percent histograms.
@@ -902,22 +838,15 @@ Soil quality — Determination of the potential cation exchange capacity and exc
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-thomas1982exchangeable" role="doc-biblioref">Thomas</a> (<a href="#ref-thomas1982exchangeable" role="doc-biblioref">1982</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="database.html#cb8-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;c.tot_usda.4h2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb8-2"><a href="database.html#cb8-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;SOC wprm&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-toc"></span>
-<img src="020-variables_list_files/figure-html/plot-toc-1.png" alt="Soil-depth histogram for total carbon in wpct." width="70%" />
-=======
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="database.html#cb7-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;cec.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="database.html#cb7-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;cec.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb7-2"><a href="database.html#cb7-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;CEC in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-cec"></span>
+<div class="figure"><span id="fig:plot-cec"></span>
 <img src="020-variables_list_files/figure-html/plot-cec-1.png" alt="Soil-depth histogram for CEC in cmol/kg." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.13: Soil-depth histogram for CEC in cmol/kg.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-cec1"></span>
+<div class="figure"><span id="fig:hist-cec1"></span>
 <img src="hist/cec.ext_usda.4b1_cmolkg_hist.png" alt="CEC in cmol/kg histograms." width="70%" />
 <p class="caption">
 Figure 4.14: CEC in cmol/kg histograms.
@@ -943,22 +872,15 @@ Soil quality — Determination of particle size distribution in mineral soil mat
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-agriculture2019soil" role="doc-biblioref">USDA NRCS</a> (<a href="#ref-agriculture2019soil" role="doc-biblioref">2019</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="database.html#cb9-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;n.tot_usda.4h2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb9-2"><a href="database.html#cb9-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;N wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-ntot"></span>
-<img src="020-variables_list_files/figure-html/plot-ntot-1.png" alt="Soil-depth histogram for total N in wpct." width="70%" />
-=======
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="database.html#cb8-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;clay.tot_usda.3a1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb8-2"><a href="database.html#cb8-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Clay wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-clay"></span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="database.html#cb8-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;clay.tot_usda.3a1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb8-2"><a href="database.html#cb8-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Clay in wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-clay"></span>
 <img src="020-variables_list_files/figure-html/plot-clay-1.png" alt="Soil-depth histogram for total clay in wpct." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.15: Soil-depth histogram for total clay in wpct.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-clay1"></span>
+<div class="figure"><span id="fig:hist-clay1"></span>
 <img src="hist/clay.tot_usda.3a1_wpct_hist.png" alt="Total clay content in weight percent histograms." width="70%" />
 <p class="caption">
 Figure 4.16: Total clay content in weight percent histograms.
@@ -982,22 +904,15 @@ Figure 4.16: Total clay content in weight percent histograms.
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-nelson1983total" role="doc-biblioref">Nelson and Sommers</a> (<a href="#ref-nelson1983total" role="doc-biblioref">1983</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="database.html#cb10-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;oc_usda.calc_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb10-2"><a href="database.html#cb10-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;SOC wprm&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-oc"></span>
-<img src="020-variables_list_files/figure-html/plot-oc-1.png" alt="Soil-depth histogram for soil organic carbon in wpct." width="70%" />
-=======
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="database.html#cb9-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ec.w_usda.4f1_dsm&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="database.html#cb9-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ec.w_usda.4f1_dsm&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb9-2"><a href="database.html#cb9-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;EC in dS/m&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-ec"></span>
+<div class="figure"><span id="fig:plot-ec"></span>
 <img src="020-variables_list_files/figure-html/plot-ec-1.png" alt="Soil-depth histogram for Electrical Conductivity in dS/m." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.17: Soil-depth histogram for Electrical Conductivity in dS/m.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-ec1"></span>
+<div class="figure"><span id="fig:hist-ec1"></span>
 <img src="hist/ec.w_usda.4f1_dsm_hist.png" alt="Electrical Conductivity in dS/m histograms." width="70%" />
 <p class="caption">
 Figure 4.18: Electrical Conductivity in dS/m histograms.
@@ -1017,22 +932,15 @@ Figure 4.18: Electrical Conductivity in dS/m histograms.
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-sumner1996cation" role="doc-biblioref">Sumner and Miller</a> (<a href="#ref-sumner1996cation" role="doc-biblioref">1996</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="database.html#cb11-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;caco3_usda.4e1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb11-2"><a href="database.html#cb11-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;CaCO3 wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-caco"></span>
-<img src="020-variables_list_files/figure-html/plot-caco-1.png" alt="Soil-depth histogram for CaCO3 in wpct." width="70%" />
-=======
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="database.html#cb10-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ecec_usda.4b4_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="database.html#cb10-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ecec_usda.4b4_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb10-2"><a href="database.html#cb10-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ECEC in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-ecec"></span>
+<div class="figure"><span id="fig:plot-ecec"></span>
 <img src="020-variables_list_files/figure-html/plot-ecec-1.png" alt="Soil-depth histogram for ECEC in cmol/kg." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.19: Soil-depth histogram for ECEC in cmol/kg.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-ecec1"></span>
+<div class="figure"><span id="fig:hist-ecec1"></span>
 <img src="hist/ecec_usda.4b4_cmolkg_hist.png" alt="ECEC in cmol/kg histograms." width="70%" />
 <p class="caption">
 Figure 4.20: ECEC in cmol/kg histograms.
@@ -1044,31 +952,9 @@ Figure 4.20: ECEC in cmol/kg histograms.
 <p>Iron, dithionite-citrate extractable; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=454">description</a>: <code>fe.dith_usda.4g1_wpct</code> = Dithionite citrate extractable iron is considered a general measure of total pedogenic iron. It provides inferences on the amount of iron in various forms, P fixing potential, aggregate stability, and degree of weathering. Reported as grav % on &lt;2 mm.<br />
 </p>
 </div>
-<<<<<<< HEAD
-<div id="ca.ext_usda.4b1_cmolkg" class="section level3" number="4.2.41">
-<h3><span class="header-section-number">4.2.41</span> ca.ext_usda.4b1_cmolkg</h3>
-<p>Calcium, NH4OAc Extractable, 2M KCl displacement; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=269">description</a>: <code>ca.ext_usda.4b1_cmolkg</code> = NH4OAC extractable calcium is the fraction removed by pH 7.0 NH4OAC. It is assumed to represent the exchangeable Ca. It is reported as meq per 100 grams on a &lt;2 mm base. It is not reported for samples containing carbonates or soluble salts.<br />
-</p>
-<ul>
-<li>🆔 <code>ca.ext_usda.4b1_cmolkg</code><br />
-</li>
-<li>📚 Measurement unit: cmol/kg<br />
-</li>
-<li>🔬 Laboratory method: Displacement after Washing, NH4OAC, pH 7 / Atomic Absorption Spectrophotometer<br />
-</li>
-<li>📖 Scientific reference: <span class="citation"><a href="#ref-thomas1982exchangeable" role="doc-biblioref">Thomas</a> (<a href="#ref-thomas1982exchangeable" role="doc-biblioref">1982</a>)</span></li>
-</ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="database.html#cb12-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ca.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb12-2"><a href="database.html#cb12-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ExCa cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-exca"></span>
-<img src="020-variables_list_files/figure-html/plot-exca-1.png" alt="Soil-depth histogram for Calcium, NH4OAc Extractable in cmol/kg." width="70%" />
-<p class="caption">
-Figure 4.23: Soil-depth histogram for Calcium, NH4OAc Extractable in cmol/kg.
-=======
 <div id="fe.ox_usda.4g2_wpct" class="section level3" number="4.2.38">
 <h3><span class="header-section-number">4.2.38</span> fe.ox_usda.4g2_wpct</h3>
 <p>Iron, ammonium oxalate extractable; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=460">description</a>: <code>fe.ox_usda.4g2_wpct</code> = Ammonium oxalate extractable iron is considered a measure of the noncrystalline Fe in soils. It provides some inferences of the amount of Fe in various forms. It is reported as gravimetric % on a &lt;2 mm base.<br />
->>>>>>> main
 </p>
 </div>
 <div id="fe.pyp_usda.4g3_wpct" class="section level3" number="4.2.39">
@@ -1089,22 +975,15 @@ Figure 4.23: Soil-depth histogram for Calcium, NH4OAc Extractable in cmol/kg.
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-elrashidi2007application" role="doc-biblioref">Elrashidi et al.</a> (<a href="#ref-elrashidi2007application" role="doc-biblioref">2007</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="database.html#cb13-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;cec.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb13-2"><a href="database.html#cb13-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;CEC in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-cec"></span>
-<img src="020-variables_list_files/figure-html/plot-cec-1.png" alt="Soil-depth histogram for CEC in cmol/kg." width="70%" />
-=======
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="database.html#cb11-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;gyp_usda.4e2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="database.html#cb11-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;gyp_usda.4e2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb11-2"><a href="database.html#cb11-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Gypsum in wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-gyp"></span>
+<div class="figure"><span id="fig:plot-gyp"></span>
 <img src="020-variables_list_files/figure-html/plot-gyp-1.png" alt="Soil-depth histogram for Exchangeable sodium percentage." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.21: Soil-depth histogram for Exchangeable sodium percentage.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-gyp1"></span>
+<div class="figure"><span id="fig:hist-gyp1"></span>
 <img src="hist/gyp_usda.4e2_wpct_hist.png" alt="Exchangeable sodium percentage histograms." width="70%" />
 <p class="caption">
 Figure 4.22: Exchangeable sodium percentage histograms.
@@ -1129,22 +1008,15 @@ Figure 4.22: Exchangeable sodium percentage histograms.
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-thomas1982exchangeable" role="doc-biblioref">Thomas</a> (<a href="#ref-thomas1982exchangeable" role="doc-biblioref">1982</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="database.html#cb14-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ecec_usda.4b4_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb14-2"><a href="database.html#cb14-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ECEC in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-ecec"></span>
-<img src="020-variables_list_files/figure-html/plot-ecec-1.png" alt="Soil-depth histogram for ECEC in cmol/kg." width="70%" />
-=======
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="database.html#cb12-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;k.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="database.html#cb12-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;k.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb12-2"><a href="database.html#cb12-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ExK in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-exk"></span>
+<div class="figure"><span id="fig:plot-exk"></span>
 <img src="020-variables_list_files/figure-html/plot-exk-1.png" alt="Soil-depth histogram for Potassium, NH4OAc Extractable in cmol/kg." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.23: Soil-depth histogram for Potassium, NH4OAc Extractable in cmol/kg.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-exk1"></span>
+<div class="figure"><span id="fig:hist-exk1"></span>
 <img src="hist/k.ext_usda.4b1_cmolkg_hist.png" alt="Potassium, NH4OAc Extractable in cmol/kg histograms." width="70%" />
 <p class="caption">
 Figure 4.24: Potassium, NH4OAc Extractable in cmol/kg histograms.
@@ -1164,21 +1036,15 @@ Figure 4.24: Potassium, NH4OAc Extractable in cmol/kg histograms.
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-thomas1982exchangeable" role="doc-biblioref">Thomas</a> (<a href="#ref-thomas1982exchangeable" role="doc-biblioref">1982</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="database.html#cb15-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;mg.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb15-2"><a href="database.html#cb15-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ExMg in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-exmg"></span>
-=======
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="database.html#cb13-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;mg.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="database.html#cb13-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;mg.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb13-2"><a href="database.html#cb13-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ExMg in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-exmg"></span>
->>>>>>> main
+<div class="figure"><span id="fig:plot-exmg"></span>
 <img src="020-variables_list_files/figure-html/plot-exmg-1.png" alt="Soil-depth histogram for Magnesium, NH4OAc Extractable in cmol/kg." width="70%" />
 <p class="caption">
 Figure 4.25: Soil-depth histogram for Magnesium, NH4OAc Extractable in cmol/kg.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-exmg1"></span>
+<div class="figure"><span id="fig:hist-exmg1"></span>
 <img src="hist/mg.ext_usda.4b1_cmolkg_hist.png" alt="Magnesium, NH4OAc Extractable in cmol/kg histograms." width="70%" />
 <p class="caption">
 Figure 4.26: Magnesium, NH4OAc Extractable in cmol/kg histograms.
@@ -1204,22 +1070,15 @@ Soil quality — Determination of total nitrogen content by dry combustion (“e
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-bremner1996nitrogen" role="doc-biblioref">Bremner</a> (<a href="#ref-bremner1996nitrogen" role="doc-biblioref">1996</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="database.html#cb16-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;k.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb16-2"><a href="database.html#cb16-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ExK in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-exk"></span>
-<img src="020-variables_list_files/figure-html/plot-exk-1.png" alt="Soil-depth histogram for Potassium, NH4OAc Extractable in cmol/kg." width="70%" />
-=======
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="database.html#cb14-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;n.tot_usda.4h2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="database.html#cb14-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;n.tot_usda.4h2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb14-2"><a href="database.html#cb14-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;N wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-ntot"></span>
+<div class="figure"><span id="fig:plot-ntot"></span>
 <img src="020-variables_list_files/figure-html/plot-ntot-1.png" alt="Soil-depth histogram for total N in wpct." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.27: Soil-depth histogram for total N in wpct.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-ntot1"></span>
+<div class="figure"><span id="fig:hist-ntot1"></span>
 <img src="hist/n.tot_usda.4h2_wpct_hist.png" alt="Total N in weight percent histograms." width="70%" />
 <p class="caption">
 Figure 4.28: Total N in weight percent histograms.
@@ -1244,21 +1103,15 @@ Figure 4.28: Total N in weight percent histograms.
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-thomas1982exchangeable" role="doc-biblioref">Thomas</a> (<a href="#ref-thomas1982exchangeable" role="doc-biblioref">1982</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="database.html#cb17-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;na.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb17-2"><a href="database.html#cb17-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ExNa in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-exna"></span>
-=======
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="database.html#cb15-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;na.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="database.html#cb15-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;na.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb15-2"><a href="database.html#cb15-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ExNa in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-exna"></span>
->>>>>>> main
+<div class="figure"><span id="fig:plot-exna"></span>
 <img src="020-variables_list_files/figure-html/plot-exna-1.png" alt="Soil-depth histogram for Sodium, NH4OAc Extractable in cmol/kg." width="70%" />
 <p class="caption">
 Figure 4.29: Soil-depth histogram for Sodium, NH4OAc Extractable in cmol/kg.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-exna1"></span>
+<div class="figure"><span id="fig:hist-exna1"></span>
 <img src="hist/na.ext_usda.4b1_cmolkg_hist.png" alt="Sodium, NH4OAc Extractable histograms." width="70%" />
 <p class="caption">
 Figure 4.30: Sodium, NH4OAc Extractable histograms.
@@ -1294,22 +1147,15 @@ Soil quality — Determination of carbon and nitrogen by near-infrared spectrome
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-nelson1983total" role="doc-biblioref">Nelson and Sommers</a> (<a href="#ref-nelson1983total" role="doc-biblioref">1983</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="database.html#cb18-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;al.kcl_usda.4b3_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb18-2"><a href="database.html#cb18-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ExAl in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-alkcl"></span>
-<img src="020-variables_list_files/figure-html/plot-alkcl-1.png" alt="Soil-depth histogram for Aluminum, KCl extractable in cmol/kg." width="70%" />
-=======
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="database.html#cb16-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;oc_usda.calc_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="database.html#cb16-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;oc_usda.calc_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb16-2"><a href="database.html#cb16-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;SOC wprm&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-oc"></span>
+<div class="figure"><span id="fig:plot-oc"></span>
 <img src="020-variables_list_files/figure-html/plot-oc-1.png" alt="Soil-depth histogram for soil organic carbon in wpct." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.31: Soil-depth histogram for soil organic carbon in wpct.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-oc1"></span>
+<div class="figure"><span id="fig:hist-oc1"></span>
 <img src="hist/oc_usda.calc_wpct_hist.png" alt="Organic carbon in weight percent histograms." width="70%" />
 <p class="caption">
 Figure 4.32: Organic carbon in weight percent histograms.
@@ -1344,22 +1190,15 @@ Figure 4.32: Organic carbon in weight percent histograms.
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-mclean1983soil" role="doc-biblioref">McLean</a> (<a href="#ref-mclean1983soil" role="doc-biblioref">1983</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="database.html#cb19-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;bsat_usda.4b4_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb19-2"><a href="database.html#cb19-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;BS in wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-bs"></span>
-<img src="020-variables_list_files/figure-html/plot-bs-1.png" alt="Soil-depth histogram for Base saturation in wpct." width="70%" />
-=======
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="database.html#cb17-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ph.cacl2_usda.4c1_index&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="database.html#cb17-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ph.cacl2_usda.4c1_index&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb17-2"><a href="database.html#cb17-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;pH CaCl&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-phcl"></span>
+<div class="figure"><span id="fig:plot-phcl"></span>
 <img src="020-variables_list_files/figure-html/plot-phcl-1.png" alt="Soil-depth histogram for Soil pH 1:2 0.01-M calcium chloride." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.33: Soil-depth histogram for Soil pH 1:2 0.01-M calcium chloride.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-phcl1"></span>
+<div class="figure"><span id="fig:hist-phcl1"></span>
 <img src="hist/ph.cacl2_usda.4c1_index_hist.png" alt="Soil pH 1:2 0.01-M calcium chloride histograms." width="70%" />
 <p class="caption">
 Figure 4.34: Soil pH 1:2 0.01-M calcium chloride histograms.
@@ -1379,21 +1218,15 @@ Figure 4.34: Soil pH 1:2 0.01-M calcium chloride histograms.
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-mclean1983soil" role="doc-biblioref">McLean</a> (<a href="#ref-mclean1983soil" role="doc-biblioref">1983</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="database.html#cb20-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ph.h2o_usda.4c1_index&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb20-2"><a href="database.html#cb20-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Soil pH&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-phh2o"></span>
-=======
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="database.html#cb18-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ph.h2o_usda.4c1_index&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="database.html#cb18-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ph.h2o_usda.4c1_index&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb18-2"><a href="database.html#cb18-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Soil pH&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-phh2o"></span>
->>>>>>> main
+<div class="figure"><span id="fig:plot-phh2o"></span>
 <img src="020-variables_list_files/figure-html/plot-phh2o-1.png" alt="Soil-depth histogram for soil pH." width="70%" />
 <p class="caption">
 Figure 4.35: Soil-depth histogram for soil pH.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-phh2o"></span>
+<div class="figure"><span id="fig:hist-phh2o"></span>
 <img src="hist/ph.h2o_usda.4c1_index_hist.png" alt="Soil pH 1:1 water histograms." width="70%" />
 <p class="caption">
 Figure 4.36: Soil pH 1:1 water histograms.
@@ -1424,22 +1257,15 @@ Soil quality — Determination of particle size distribution in mineral soil mat
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-agriculture2019soil" role="doc-biblioref">USDA NRCS</a> (<a href="#ref-agriculture2019soil" role="doc-biblioref">2019</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="database.html#cb21-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ph.cacl2_usda.4c1_index&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb21-2"><a href="database.html#cb21-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;pH CaCl&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-phcl"></span>
-<img src="020-variables_list_files/figure-html/plot-phcl-1.png" alt="Soil-depth histogram for Soil pH 1:2 0.01-M calcium chloride." width="70%" />
-=======
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="database.html#cb19-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;sand.tot_usda.3a1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb19-2"><a href="database.html#cb19-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Sand wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-sand"></span>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="database.html#cb19-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;sand.tot_usda.3a1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb19-2"><a href="database.html#cb19-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Sand in wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-sand"></span>
 <img src="020-variables_list_files/figure-html/plot-sand-1.png" alt="Soil-depth histogram for total sand content in wpct." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.37: Soil-depth histogram for total sand content in wpct.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-sand1"></span>
+<div class="figure"><span id="fig:hist-sand1"></span>
 <img src="hist/sand.tot_usda.3a1_wpct_hist.png" alt="Total sand content in weight percent histograms." width="70%" />
 <p class="caption">
 Figure 4.38: Total sand content in weight percent histograms.
@@ -1465,22 +1291,15 @@ Soil quality — Determination of particle size distribution in mineral soil mat
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-agriculture2019soil" role="doc-biblioref">USDA NRCS</a> (<a href="#ref-agriculture2019soil" role="doc-biblioref">2019</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="database.html#cb22-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ec.w_usda.4f1_dsm&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb22-2"><a href="database.html#cb22-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;EC in dS/m&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-ec"></span>
-<img src="020-variables_list_files/figure-html/plot-ec-1.png" alt="Soil-depth histogram for Electrical Conductivity in dS/m." width="70%" />
-=======
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="database.html#cb20-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;silt.tot_usda.3a1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb20-2"><a href="database.html#cb20-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Silt wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-silt"></span>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="database.html#cb20-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;silt.tot_usda.3a1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb20-2"><a href="database.html#cb20-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Silt in wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-silt"></span>
 <img src="020-variables_list_files/figure-html/plot-silt-1.png" alt="Soil-depth histogram for total silt content in wpct." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.39: Soil-depth histogram for total silt content in wpct.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-silt1"></span>
+<div class="figure"><span id="fig:hist-silt1"></span>
 <img src="hist/silt.tot_usda.3a1_wpct_hist.png" alt="Total silt content in weight percent histograms." width="70%" />
 <p class="caption">
 Figure 4.40: Total silt content in weight percent histograms.
@@ -1511,15 +1330,15 @@ Soil quality — Determination of particle size distribution in mineral soil mat
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-grossman20022" role="doc-biblioref">Grossman and Reinsch</a> (<a href="#ref-grossman20022" role="doc-biblioref">2002</a>)</span>, <span class="citation"><a href="#ref-american2006standard" role="doc-biblioref">Testing et al.</a> (<a href="#ref-american2006standard" role="doc-biblioref">2006</a>)</span></li>
 </ul>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="database.html#cb21-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;wpg2_usda.3a2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="database.html#cb21-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;wpg2_usda.3a2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb21-2"><a href="database.html#cb21-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;WPG2 wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-wpg"></span>
+<div class="figure"><span id="fig:plot-wpg"></span>
 <img src="020-variables_list_files/figure-html/plot-wpg-1.png" alt="Soil-depth histogram for coarse fragments in wpct." width="70%" />
 <p class="caption">
 Figure 4.41: Soil-depth histogram for coarse fragments in wpct.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-wpg1"></span>
+<div class="figure"><span id="fig:hist-wpg1"></span>
 <img src="hist/wpg2_usda.3a2_wpct_hist.png" alt="Coarse fragments in weight percent histograms." width="70%" />
 <p class="caption">
 Figure 4.42: Coarse fragments in weight percent histograms.
@@ -1539,22 +1358,15 @@ Figure 4.42: Coarse fragments in weight percent histograms.
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-agriculture2019soil" role="doc-biblioref">USDA NRCS</a> (<a href="#ref-agriculture2019soil" role="doc-biblioref">2019</a>)</span></li>
 </ul>
-<<<<<<< HEAD
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="database.html#cb23-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;gyp_usda.4e2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb23-2"><a href="database.html#cb23-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Gypsum in wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:plot-gyp"></span>
-<img src="020-variables_list_files/figure-html/plot-gyp-1.png" alt="Soil-depth histogram for Exchangeable sodium percentage." width="70%" />
-=======
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="database.html#cb22-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;wr.1500kbar_usda.3c2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="database.html#cb22-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;wr.1500kbar_usda.3c2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb22-2"><a href="database.html#cb22-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;PWP wprm&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-wp"></span>
+<div class="figure"><span id="fig:plot-wp"></span>
 <img src="020-variables_list_files/figure-html/plot-wp-1.png" alt="Soil-depth histogram for Water Retention at 15 Bar (Permanent Wilting Point) in wpct." width="70%" />
->>>>>>> main
 <p class="caption">
 Figure 4.43: Soil-depth histogram for Water Retention at 15 Bar (Permanent Wilting Point) in wpct.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-wp1"></span>
+<div class="figure"><span id="fig:hist-wp1"></span>
 <img src="hist/wr.1500kbar_usda.3c2_wpct_hist.png" alt="Organic carbon in weight percent histograms." width="70%" />
 <p class="caption">
 Figure 4.44: Organic carbon in weight percent histograms.
@@ -1574,15 +1386,15 @@ Figure 4.44: Organic carbon in weight percent histograms.
 </li>
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-agriculture2019soil" role="doc-biblioref">USDA NRCS</a> (<a href="#ref-agriculture2019soil" role="doc-biblioref">2019</a>)</span></li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="database.html#cb23-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;wr.33kbar_usda.3c1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="database.html#cb23-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;wr.33kbar_usda.3c1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
 <span id="cb23-2"><a href="database.html#cb23-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;FC wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:plot-fc"></span>
+<div class="figure"><span id="fig:plot-fc"></span>
 <img src="020-variables_list_files/figure-html/plot-fc-1.png" alt="Soil-depth histogram for Water Retention at 1/3 Bar (Field Capacity) in wpct." width="70%" />
 <p class="caption">
 Figure 4.45: Soil-depth histogram for Water Retention at 1/3 Bar (Field Capacity) in wpct.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:hist-fc1"></span>
+<div class="figure"><span id="fig:hist-fc1"></span>
 <img src="hist/wr.33kbar_usda.3c1_wpct_hist.png" alt="Water Retention at 1/3 Bar in weight percent histograms." width="70%" />
 <p class="caption">
 Figure 4.46: Water Retention at 1/3 Bar in weight percent histograms.
@@ -1868,17 +1680,44 @@ specify exact method.<br />
 <div id="ref-bohner2008saga" class="csl-entry">
 Böhner, J, T Blaschke, and L Montanarella. 2008. <em>SAGA—Seconds Out, Vol. 19</em>. Hamburg, Germany: Hamburger Beitr<span>ä</span>ge zur Physischen Geographie und Landschafts<span>ö</span>kologie.
 </div>
+<div id="ref-bremner1996nitrogen" class="csl-entry">
+Bremner, John M. 1996. <span>“Nitrogen-Total.”</span> In <em>Methods of Soil Analysis: Part 3 Chemical Methods</em>, 5:1085–1121. Wiley Online Library.
+</div>
+<div id="ref-elrashidi2007application" class="csl-entry">
+Elrashidi, MA, D Hammer, CA Seybold, RJ Engel, R Burt, and P Jones. 2007. <span>“Application of Equivalent Gypsum Content to Estimate Potential Subsidence of Gypsiferous Soils.”</span> <em>Soil Science</em> 172 (3): 209–24.
+</div>
+<div id="ref-grossman20022" class="csl-entry">
+Grossman, RB, and TG Reinsch. 2002. <span>“2.1 Bulk Density and Linear Extensibility.”</span> In <em>Methods of Soil Analysis: Part 4 Physical Methods</em>, 5:201–28. Wiley Online Library.
+</div>
 <div id="ref-helling1964contribution" class="csl-entry">
 Helling, Charles S, G Chesters, and RB Corey. 1964. <span>“Contribution of Organic Matter and Clay to Soil Cation-Exchange Capacity as Affected by the pH of the Saturating Solution.”</span> <em>Soil Science Society of America Journal</em> 28 (4): 517–20.
 </div>
 <div id="ref-jensen2018converting" class="csl-entry">
 Jensen, JL, BT Christensen, P Schjønning, CW Watts, and LJ Munkholm. 2018. <span>“Converting Loss-on-Ignition to Organic Carbon Content in Arable Topsoil: Pitfalls and Proposed Procedure.”</span> <em>European Journal of Soil Science</em> 69 (4): 604–12. <a href="https://doi.org/10.1111/ejss.12558">https://doi.org/10.1111/ejss.12558</a>.
 </div>
+<div id="ref-loeppert1996carbonate" class="csl-entry">
+Loeppert, Richard H, Donald L Suarez, and others. 1996. <span>“Carbonate and Gypsum.”</span> In <em>Methods of Soil Analysis. Part 3 Chemical Methods</em>, 3:437–74. Wiley Online Library.
+</div>
+<div id="ref-mclean1983soil" class="csl-entry">
+McLean, EO. 1983. <span>“<span class="nocase">Soil pH and lime requirement</span>.”</span> In <em>Methods of Soil Analysis: Part 2 Chemical and Microbiological Properties</em>, 9:199–224. Wiley Online Library.
+</div>
 <div id="ref-miller2010comparison" class="csl-entry">
 Miller, Robert O, and David E Kissel. 2010. <span>“Comparison of Soil pH Methods on Soils of North America.”</span> <em>Soil Science Society of America Journal</em> 74 (1): 310–16.
 </div>
 <div id="ref-nelson1983total" class="csl-entry">
 Nelson, DW, and L_E Sommers. 1983. <span>“Total Carbon, Organic Carbon, and Organic Matter.”</span> In <em>Methods of Soil Analysis: Part 2 Chemical and Microbiological Properties</em>, 9:539–79. Wiley Online Library.
+</div>
+<div id="ref-sumner1996cation" class="csl-entry">
+Sumner, Malcolm E, and William P Miller. 1996. <span>“Cation Exchange Capacity and Exchange Coefficients.”</span> In <em>Methods of Soil Analysis: Part 3 Chemical Methods</em>, 5:1201–29. Wiley Online Library.
+</div>
+<div id="ref-american2006standard" class="csl-entry">
+Testing, American Society for, Materials. Committee D18 on Soils, Rock, American Society for Testing, Materials. Subcommittee D18.07 on Identification, Classification of Soils, and ASTM International. 2006. <em>Standard Practice for Description and Identification of Soils (Visual-Manual Procedure)</em>. Philadelphia, PA: ASTM International.
+</div>
+<div id="ref-thomas1982exchangeable" class="csl-entry">
+Thomas, GW. 1982. <span>“Exchangeable Cations. P. 159–165. AL Page Et Al.(ed.) Methods of Soil Analysis. Part 2. Agron. Monogr. 9. ASA and SSSA.”</span> In <em>Exchangeable Cations. P. 159–165. In AL Page Et Al.(ed.) Methods of Soil Analysis. Part 2. 2nd Ed. Agron. Monogr. 9</em>. Madison, WI: ASA; SSSA.
+</div>
+<div id="ref-agriculture2019soil" class="csl-entry">
+USDA NRCS. 2019. <em>Soil Survey Field and Laboratory Methods Manual - Soil Survey Investigations Report No. 51 (Version 2) Issued 2014</em>. Lincoln, Nebraska: U.S. Department of Agriculture, Natural Resources Conservation Service.
 </div>
 </div>
             </section>
@@ -1891,6 +1730,7 @@ Nelson, DW, and L_E Sommers. 1983. <span>“Total Carbon, Organic Carbon, and Or
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1930,10 +1770,6 @@ gitbook.start({
 "text": null
 },
 "download": ["OSSL_book.pdf", "OSSL_book.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true
