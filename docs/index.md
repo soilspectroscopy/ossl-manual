@@ -167,10 +167,10 @@ and kept safely, closely following our [privacy policy and terms of use](https:/
 ## Contributing documentation
 
 Please feel free to contribute technical documentation. See [GitHub
-repository](https://gitlab.com/soilspectroscopy) for more detailed
+repository](https://github.com/soilspectroscopy/ossl-manual) for more detailed
 instructions.
 
-Information outdated or missing? Please open an issue or best do a
+Information outdated or missing? Please [open an issue](https://github.com/soilspectroscopy/ossl-manual/issues) or best do a
 correction in the text and then make a [pull
 request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
@@ -185,7 +185,7 @@ below:
 ## Disclaimer
 
 Whilst utmost care has been taken by the Soil Spectroscopy project and data authors while
-collecting and compiling the data, the data is provided "as is". [Woodwell Climate Research Center](https://www.woodwellclimate.org/), [University of Florida](https://faculty.eng.ufl.edu/ktoddbrown/), [OpenGeoHub foundation](https://opengeohub.org/about) and its 
+collecting and compiling the data, the data is provided _"as is"_. [Woodwell Climate Research Center](https://www.woodwellclimate.org/), [University of Florida](https://faculty.eng.ufl.edu/ktoddbrown/), [OpenGeoHub foundation](https://opengeohub.org/about) and its 
 suppliers and licensors hereby disclaim all warranties of any kind, express or implied, 
 including, without limitation, the warranties of merchantability, fitness for a particular 
 purpose and non-infringement. Neither [Woodwell Climate Research Center](https://www.woodwellclimate.org/), [University of Florida](https://faculty.eng.ufl.edu/ktoddbrown/), [OpenGeoHub foundation](https://opengeohub.org/about) nor its suppliers and licensors, 
@@ -202,7 +202,7 @@ corrected. The user should always verify actual data; therefore the user bears a
 determining whether the data is fit for the user’s intended use.
 
 This document is **under construction**. If you notice an error or outdated information, 
-please submit a correction / pull request or open an issue.  
+please submit a correction / pull request or **[open an issue](https://github.com/soilspectroscopy/ossl-manual/issues)**.  
 
 This is a community project. No profits are being made from building and serving 
 Open Spectral Library. If you would like to become a sponsor of the project, please 
@@ -245,7 +245,7 @@ importing and using the KSSL Soil Spectral Library;
 - **[LUCAS topsoil (VisNIR) Soil Spectral Library](http://esdac.jrc.ec.europa.eu/)** [@orgiazzi2018lucas] was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>; we have degraded location accuracy of points so that exact locations are about 1-km off;
 - **[The Central African Soil Spectral Library](https://github.com/laura-summerauer/ssl-central-africa)** described in detail in @Summerauer2021 contains limited number of samples representing Central Africa;
 
-For more advanced used of the soil spectral libraries **we advise to contact the original data producers** 
+For more advanced uses of the soil spectral libraries **we advise to contact the original data producers** 
 especially to get help with using, extending and improving the original SSL data.
 
 We are also grateful to **[USDA National Institute of Food and Agriculture #2020-67021-32467](https://nifa.usda.gov/press-release/nifa-invests-over-7-million-big-data-artificial-intelligence-and-other)** for providing funding for this project.

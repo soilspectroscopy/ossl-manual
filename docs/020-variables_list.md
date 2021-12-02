@@ -197,8 +197,8 @@ Total sand content; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMEN
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "sand.tot_usda.3a1_wpct", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="Sand wpct", xlab="depth in cm")
+openair::scatterPlot(ossl.yw, x = "depth", y = "sand.tot_usda.3a1_wpct", method = "hexbin", 
+                     col = "increment", log.x = TRUE, ylab="Sand wpct", xlab="depth in cm")
 ```
 
 <div class="figure">
@@ -229,8 +229,8 @@ Total silt content; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMEN
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "silt.tot_usda.3a1_wpct", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="Silt wpct", xlab="depth in cm")
+openair::scatterPlot(ossl.yw, x = "depth", y = "silt.tot_usda.3a1_wpct", method = "hexbin", 
+                     col = "increment", log.x = TRUE, ylab="Silt wpct", xlab="depth in cm")
 ```
 
 <div class="figure">
@@ -261,8 +261,8 @@ Total clay content; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMEN
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "clay.tot_usda.3a1_wpct", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="Clay wpct", xlab="depth in cm")
+openair::scatterPlot(ossl.yw, x = "depth", y = "clay.tot_usda.3a1_wpct", method = "hexbin", 
+                     col = "increment", log.x = TRUE, ylab="Clay wpct", xlab="depth in cm")
 ```
 
 <div class="figure">
@@ -293,7 +293,7 @@ Coarse Fragments, Greater than 2mm; [description](https://www.nrcs.usda.gov/Inte
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "wpg2_usda.3a2_wpct", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "wpg2_usda.3a2_wpct", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="WPG2 wpct", xlab="depth in cm")
 ```
 
@@ -325,7 +325,7 @@ Water Retention, 15 Bar, <2mm,  Air-dry (Permanent Wilting Point); [description]
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "wr.1500kbar_usda.3c2_wpct", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "wr.1500kbar_usda.3c2_wpct", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="PWP wprm", xlab="depth in cm")
 ```
 
@@ -352,7 +352,7 @@ Water Retention, 1/3 Bar, <2mm Clod; [description](https://www.nrcs.usda.gov/Int
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "wr.33kbar_usda.3c1_wpct", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "wr.33kbar_usda.3c1_wpct", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="FC wpct", xlab="depth in cm")
 ```
 
@@ -387,7 +387,7 @@ Bulk density, Oven-Dry, <2 mm fraction; [description](https://www.nrcs.usda.gov/
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "bd.od_usda.3b2_gcm3", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "bd.od_usda.3b2_gcm3", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="BD t/m3", xlab="depth in cm")
 ```
 
@@ -419,7 +419,7 @@ Total carbon; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/ste
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "c.tot_usda.4h2_wpct", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "c.tot_usda.4h2_wpct", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="SOC wprm", xlab="depth in cm")
 ```
 
@@ -451,7 +451,7 @@ Total nitrogen; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/s
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "n.tot_usda.4h2_wpct", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "n.tot_usda.4h2_wpct", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="N wpct", xlab="depth in cm")
 ```
 
@@ -487,7 +487,7 @@ Organic carbon in weight percent (dag/kg); [description](https://www.nrcs.usda.g
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "oc_usda.calc_wpct", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "oc_usda.calc_wpct", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="SOC wprm", xlab="depth in cm")
 ```
 
@@ -536,7 +536,7 @@ Calcium carbonate content; [description](https://www.nrcs.usda.gov/Internet/FSE_
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "caco3_usda.4e1_wpct", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "caco3_usda.4e1_wpct", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="CaCO3 wpct", xlab="depth in cm")
 ```
 
@@ -568,7 +568,7 @@ Calcium, NH4OAc Extractable, 2M KCl displacement; [description](https://www.nrcs
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "ca.ext_usda.4b1_cmolkg", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "ca.ext_usda.4b1_cmolkg", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="ExCa cmol/kg", xlab="depth in cm")
 ```
 
@@ -595,7 +595,7 @@ Cation Exchange Capacity (CEC), NH4OAc, pH 7.0, 2M KCl displacement; [descriptio
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "cec.ext_usda.4b1_cmolkg", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "cec.ext_usda.4b1_cmolkg", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="CEC in cmol/kg", xlab="depth in cm")
 ```
 
@@ -627,7 +627,7 @@ Effective Effective Cation Exchange Capacity; [description](https://www.nrcs.usd
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "ecec_usda.4b4_cmolkg", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "ecec_usda.4b4_cmolkg", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="ECEC in cmol/kg", xlab="depth in cm")
 ```
 
@@ -654,7 +654,7 @@ Magnesium, NH4OAc Extractable, 2M KCl displacement; [description](https://www.nr
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "mg.ext_usda.4b1_cmolkg", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "mg.ext_usda.4b1_cmolkg", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="ExMg in cmol/kg", xlab="depth in cm")
 ```
 
@@ -681,7 +681,7 @@ Potassium, NH4OAc Extractable, 2M KCl displacement; [description](https://www.nr
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "k.ext_usda.4b1_cmolkg", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "k.ext_usda.4b1_cmolkg", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="ExK in cmol/kg", xlab="depth in cm")
 ```
 
@@ -708,7 +708,7 @@ Sodium, NH4OAc Extractable, 2M KCl displacement; [description](https://www.nrcs.
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "na.ext_usda.4b1_cmolkg", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "na.ext_usda.4b1_cmolkg", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="ExNa in cmol/kg", xlab="depth in cm")
 ```
 
@@ -759,7 +759,7 @@ Aluminum, KCl extractable; [description](https://www.nrcs.usda.gov/Internet/FSE_
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "al.kcl_usda.4b3_cmolkg", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "al.kcl_usda.4b3_cmolkg", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="ExAl in cmol/kg", xlab="depth in cm")
 ```
 
@@ -786,7 +786,7 @@ Base saturation, NH4OAc, pH7; [description](https://www.nrcs.usda.gov/Internet/F
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "bsat_usda.4b4_wpct", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "bsat_usda.4b4_wpct", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="BS in wpct", xlab="depth in cm")
 ```
 
@@ -817,7 +817,7 @@ Soil pH 1:1 water; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENT
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "ph.h2o_usda.4c1_index", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "ph.h2o_usda.4c1_index", method = "hexbin", 
                      col = "increment", log.x = TRUE, ylab="Soil pH", xlab="depth in cm")
 ```
 
@@ -844,7 +844,7 @@ Soil pH 1:2 0.01-M calcium chloride; [description](https://www.nrcs.usda.gov/Int
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "ph.cacl2_usda.4c1_index", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "ph.cacl2_usda.4c1_index", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="pH CaCl", xlab="depth in cm")
 ```
 
@@ -875,7 +875,7 @@ Electrical Conductivity, Predict, 1:2 (w/w); [description](https://www.nrcs.usda
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "ec.w_usda.4f1_dsm", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "ec.w_usda.4f1_dsm", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="EC in dS/m", xlab="depth in cm")
 ```
 
@@ -914,7 +914,7 @@ Corrected Gypsum, < 2mm; [description](https://www.nrcs.usda.gov/Internet/FSE_DO
 
 
 ```r
-openair::scatterPlot(kssl.yw, x = "depth", y = "gyp_usda.4e2_wpct", method = "hexbin", 
+openair::scatterPlot(ossl.yw, x = "depth", y = "gyp_usda.4e2_wpct", method = "hexbin", 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="Gypsum in wpct", xlab="depth in cm")
 ```
 

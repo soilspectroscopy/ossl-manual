@@ -61,7 +61,7 @@
 ### KSSL.SSL
 
 _Description_: MIR and NIR spectral library and associated soil characterization database, which now
-includes >50,000 MIR spectra collected on soils primarily from the United States. Currently not available publicly for use. 
+includes >50,000 MIR spectra collected on soils primarily from the United States. Freely available by request (see below). 
 
 - 📕 Seybold, C. A., Ferguson, R., Wysocki, D., Bailey, S., Anderson, J., Nester, B., ... & Thomas, P. (2019). [Application of Mid‐Infrared Spectroscopy in Soil Survey](https://doi.org/10.2136/sssaj2019.06.0205). Soil Science Society of America Journal, 83(6), 1746-1759. <https://doi.org/10.2136/sssaj2019.06.0205> / Sanderman, J., Savage, K., & Dangal, S. R. (2020). Mid‐infrared spectroscopy for prediction of soil health indicators in the United States. Soil Science Society of America Journal, 84(1), 251-261. <https://doi.org/10.1002/saj2.20009>  
 - 🔗 Project website: <https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/>  
