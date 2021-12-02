@@ -89,6 +89,7 @@ Nations Avenue, Nairobi, Kenya.
 
 _Description_: [LUCAS 2009, 2015 top-soil data](https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data). VisNIR scans of some 19,860 in 2009 (2012) and 21,859 points in 2015. 
 Data available publicly under condition that _"Graphical representation of individual units on a map is permitted as far as the geographical location of the soil samples is not detectable"_.
+Additional 600 samples have been scanned by Woodwell Climate Research using an MIR instrument.
 
 - `r emo::ji("closed_book")` Jones, A, Fernandez-Ugalde, O., Scarpa, S., (2020). [LUCAS 2015 Topsoil Survey. Presentation of dataset and results](https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data), EUR 30332 EN, Publications Office of the European Union: Luxembourg, ISBN 978-92-76-21080-1, doi:10.2760/616084, JRC121325.  
 - `r emo::ji("link")` Project website: <https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data>  
@@ -119,6 +120,18 @@ _Description_: [The Central African Soil Spectral Library](https://doi.org/10.51
 - `r emo::ji("round_pushpin")` Unique locations:   
 - `r emo::ji("clipboard")` Unique complete scans: 1852  
 - `r emo::ji("memo")` Import steps:  
+
+### NEON.SSL
+
+_Description_: [The National Ecological Observatory Network (NEON) Soil Spectral Library](https://www.neonscience.org/samples/soil-archive). Soil samples were sent to KSSL and scanned using standard procedures. 
+
+- `r emo::ji("closed_book")` National Ecological Observatory Network, (2021). [Data Product DP1.00096.001, Soil physical and chemical properties, Megapit](https://data.neonscience.org/data-products/DP1.00096.001). Provisional data downloaded from <https://data.neonscience.org>. Battelle, Boulder, CO, USA NEON. / Dangal & Sanderman (2020). Is Standardization Necessary for Sharing of a Large Mid-Infrared Soil Spectral Library? Sensors 20, 6729. <https://doi.org/10.3390/s20236729>  
+- `r emo::ji("link")` Project website: <https://www.neonscience.org/samples/soil-archive>  
+- `r emo::ji("copyright")` Data license: CC-BY  
+- `r emo::ji("round_pushpin")` Unique locations:   
+- `r emo::ji("clipboard")` Unique complete scans: 305  
+- `r emo::ji("memo")` Import steps:  
+
 
 ## Soil spetroscopy organizations
 

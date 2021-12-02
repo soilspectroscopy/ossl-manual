@@ -194,6 +194,7 @@ div.csl-indent {
 <li class="chapter" data-level="3.2.3" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#lucas.ssl"><i class="fa fa-check"></i><b>3.2.3</b> LUCAS.SSL</a></li>
 <li class="chapter" data-level="3.2.4" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#afsis1.ssl"><i class="fa fa-check"></i><b>3.2.4</b> AFSIS1.SSL</a></li>
 <li class="chapter" data-level="3.2.5" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#caf.ssl"><i class="fa fa-check"></i><b>3.2.5</b> CAF.SSL</a></li>
+<li class="chapter" data-level="3.2.6" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#neon.ssl"><i class="fa fa-check"></i><b>3.2.6</b> NEON.SSL</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#soil-spetroscopy-organizations"><i class="fa fa-check"></i><b>3.3</b> Soil spetroscopy organizations</a>
 <ul>
@@ -208,7 +209,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="4.1" data-path="database.html"><a href="database.html#sites-table"><i class="fa fa-check"></i><b>4.1</b> Sites table</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="database.html"><a href="database.html#id.site_uuid_c"><i class="fa fa-check"></i><b>4.1.1</b> id.site_uuid_c</a></li>
+<li class="chapter" data-level="4.1.1" data-path="database.html"><a href="database.html#id.layer_uuid_c"><i class="fa fa-check"></i><b>4.1.1</b> id.layer_uuid_c</a></li>
 <li class="chapter" data-level="4.1.2" data-path="database.html"><a href="database.html#id.location_olc_c"><i class="fa fa-check"></i><b>4.1.2</b> id.location_olc_c</a></li>
 <li class="chapter" data-level="4.1.3" data-path="database.html"><a href="database.html#observation.ogc.schema.title_ogc_txt"><i class="fa fa-check"></i><b>4.1.3</b> observation.ogc.schema.title_ogc_txt</a></li>
 <li class="chapter" data-level="4.1.4" data-path="database.html"><a href="database.html#observation.ogc.schema_idn_url"><i class="fa fa-check"></i><b>4.1.4</b> observation.ogc.schema_idn_url</a></li>
@@ -235,87 +236,129 @@ div.csl-indent {
 <li class="chapter" data-level="4.1.25" data-path="database.html"><a href="database.html#id.dataset.site_ascii_c"><i class="fa fa-check"></i><b>4.1.25</b> id.dataset.site_ascii_c</a></li>
 <li class="chapter" data-level="4.1.26" data-path="database.html"><a href="database.html#id.user.site_ascii_c"><i class="fa fa-check"></i><b>4.1.26</b> id.user.site_ascii_c</a></li>
 <li class="chapter" data-level="4.1.27" data-path="database.html"><a href="database.html#id.project_ascii_c"><i class="fa fa-check"></i><b>4.1.27</b> id.project_ascii_c</a></li>
+<li class="chapter" data-level="4.1.28" data-path="database.html"><a href="database.html#pedon.taxa_usda_c"><i class="fa fa-check"></i><b>4.1.28</b> pedon.taxa_usda_c</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="database.html"><a href="database.html#soillab-table"><i class="fa fa-check"></i><b>4.2</b> Soillab table</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="database.html"><a href="database.html#id.site_uuid_c-1"><i class="fa fa-check"></i><b>4.2.1</b> id.site_uuid_c</a></li>
-<li class="chapter" data-level="4.2.2" data-path="database.html"><a href="database.html#id.sample_uuid_c"><i class="fa fa-check"></i><b>4.2.2</b> id.sample_uuid_c</a></li>
-<li class="chapter" data-level="4.2.3" data-path="database.html"><a href="database.html#layer.sequence_usda_uint16"><i class="fa fa-check"></i><b>4.2.3</b> layer.sequence_usda_uint16</a></li>
-<li class="chapter" data-level="4.2.4" data-path="database.html"><a href="database.html#layer.type_usda_c"><i class="fa fa-check"></i><b>4.2.4</b> layer.type_usda_c</a></li>
-<li class="chapter" data-level="4.2.5" data-path="database.html"><a href="database.html#layer.field.label_any_c"><i class="fa fa-check"></i><b>4.2.5</b> layer.field.label_any_c</a></li>
-<li class="chapter" data-level="4.2.6" data-path="database.html"><a href="database.html#layer.upper.depth_usda_cm"><i class="fa fa-check"></i><b>4.2.6</b> layer.upper.depth_usda_cm</a></li>
-<li class="chapter" data-level="4.2.7" data-path="database.html"><a href="database.html#layer.lower.depth_usda_cm"><i class="fa fa-check"></i><b>4.2.7</b> layer.lower.depth_usda_cm</a></li>
-<li class="chapter" data-level="4.2.8" data-path="database.html"><a href="database.html#horizon.designation_usda_c"><i class="fa fa-check"></i><b>4.2.8</b> horizon.designation_usda_c</a></li>
-<li class="chapter" data-level="4.2.9" data-path="database.html"><a href="database.html#horizon.designation.discontinuity_usda_c"><i class="fa fa-check"></i><b>4.2.9</b> horizon.designation.discontinuity_usda_c</a></li>
-<li class="chapter" data-level="4.2.10" data-path="database.html"><a href="database.html#layer.structure.type_usda_c"><i class="fa fa-check"></i><b>4.2.10</b> layer.structure.type_usda_c</a></li>
-<li class="chapter" data-level="4.2.11" data-path="database.html"><a href="database.html#layer.structure.grade_usda_c"><i class="fa fa-check"></i><b>4.2.11</b> layer.structure.grade_usda_c</a></li>
-<li class="chapter" data-level="4.2.12" data-path="database.html"><a href="database.html#layer.texture_usda_c"><i class="fa fa-check"></i><b>4.2.12</b> layer.texture_usda_c</a></li>
-<li class="chapter" data-level="4.2.13" data-path="database.html"><a href="database.html#sand.tot_usda.3a1_wpct"><i class="fa fa-check"></i><b>4.2.13</b> sand.tot_usda.3a1_wpct</a></li>
-<li class="chapter" data-level="4.2.14" data-path="database.html"><a href="database.html#sand.tot_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.14</b> sand.tot_iso.11277.2020_wpct</a></li>
-<li class="chapter" data-level="4.2.15" data-path="database.html"><a href="database.html#silt.tot_usda.3a1_wpct"><i class="fa fa-check"></i><b>4.2.15</b> silt.tot_usda.3a1_wpct</a></li>
-<li class="chapter" data-level="4.2.16" data-path="database.html"><a href="database.html#silt.tot_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.16</b> silt.tot_iso.11277.2020_wpct</a></li>
-<li class="chapter" data-level="4.2.17" data-path="database.html"><a href="database.html#clay.tot_usda.3a1_wpct"><i class="fa fa-check"></i><b>4.2.17</b> clay.tot_usda.3a1_wpct</a></li>
-<li class="chapter" data-level="4.2.18" data-path="database.html"><a href="database.html#clay.tot_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.18</b> clay.tot_iso.11277.2020_wpct</a></li>
-<li class="chapter" data-level="4.2.19" data-path="database.html"><a href="database.html#wpg2_usda.3a2_wpct"><i class="fa fa-check"></i><b>4.2.19</b> wpg2_usda.3a2_wpct</a></li>
-<li class="chapter" data-level="4.2.20" data-path="database.html"><a href="database.html#wpg2_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.20</b> wpg2_iso.11277.2020_wpct</a></li>
-<li class="chapter" data-level="4.2.21" data-path="database.html"><a href="database.html#wr.1500kbar_usda.3c2_wpct"><i class="fa fa-check"></i><b>4.2.21</b> wr.1500kbar_usda.3c2_wpct</a></li>
-<li class="chapter" data-level="4.2.22" data-path="database.html"><a href="database.html#wr.33kbar_usda.3c1_wpct"><i class="fa fa-check"></i><b>4.2.22</b> wr.33kbar_usda.3c1_wpct</a></li>
-<li class="chapter" data-level="4.2.23" data-path="database.html"><a href="database.html#agg.stb_usda.1b1_wpct"><i class="fa fa-check"></i><b>4.2.23</b> agg.stb_usda.1b1_wpct</a></li>
-<li class="chapter" data-level="4.2.24" data-path="database.html"><a href="database.html#bd.clod_usda.3b1_gcm3"><i class="fa fa-check"></i><b>4.2.24</b> bd.clod_usda.3b1_gcm3</a></li>
-<li class="chapter" data-level="4.2.25" data-path="database.html"><a href="database.html#bd.core_usda.3b4_gcm3"><i class="fa fa-check"></i><b>4.2.25</b> bd.core_usda.3b4_gcm3</a></li>
-<li class="chapter" data-level="4.2.26" data-path="database.html"><a href="database.html#bd.core_iso.11272.2017_gcm3"><i class="fa fa-check"></i><b>4.2.26</b> bd.core_iso.11272.2017_gcm3</a></li>
-<li class="chapter" data-level="4.2.27" data-path="database.html"><a href="database.html#c.tot_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.27</b> c.tot_usda.4h2_wpct</a></li>
-<li class="chapter" data-level="4.2.28" data-path="database.html"><a href="database.html#c.tot_iso.10694.1995_wpct"><i class="fa fa-check"></i><b>4.2.28</b> c.tot_iso.10694.1995_wpct</a></li>
-<li class="chapter" data-level="4.2.29" data-path="database.html"><a href="database.html#n.tot_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.29</b> n.tot_usda.4h2_wpct</a></li>
-<li class="chapter" data-level="4.2.30" data-path="database.html"><a href="database.html#n.tot_iso.13878.1998_wpct"><i class="fa fa-check"></i><b>4.2.30</b> n.tot_iso.13878.1998_wpct</a></li>
-<li class="chapter" data-level="4.2.31" data-path="database.html"><a href="database.html#s.tot_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.31</b> s.tot_usda.4h2_wpct</a></li>
-<li class="chapter" data-level="4.2.32" data-path="database.html"><a href="database.html#oc_usda.calc_wpct"><i class="fa fa-check"></i><b>4.2.32</b> oc_usda.calc_wpct</a></li>
-<li class="chapter" data-level="4.2.33" data-path="database.html"><a href="database.html#oc_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.33</b> oc_usda.4h2_wpct</a></li>
-<li class="chapter" data-level="4.2.34" data-path="database.html"><a href="database.html#oc_iso.10694.1995_wpct"><i class="fa fa-check"></i><b>4.2.34</b> oc_iso.10694.1995_wpct</a></li>
-<li class="chapter" data-level="4.2.35" data-path="database.html"><a href="database.html#oc_iso.17184.2014_wpct"><i class="fa fa-check"></i><b>4.2.35</b> oc_iso.17184.2014_wpct</a></li>
-<li class="chapter" data-level="4.2.36" data-path="database.html"><a href="database.html#humus_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.36</b> humus_usda.4h2_wpct</a></li>
-<li class="chapter" data-level="4.2.37" data-path="database.html"><a href="database.html#caco3.pres_usda.1b1_c"><i class="fa fa-check"></i><b>4.2.37</b> caco3.pres_usda.1b1_c</a></li>
-<li class="chapter" data-level="4.2.38" data-path="database.html"><a href="database.html#caco3_usda.4e1_wpct"><i class="fa fa-check"></i><b>4.2.38</b> caco3_usda.4e1_wpct</a></li>
-<li class="chapter" data-level="4.2.39" data-path="database.html"><a href="database.html#caco3_iso.10693.1995_vpct"><i class="fa fa-check"></i><b>4.2.39</b> caco3_iso.10693.1995_vpct</a></li>
-<li class="chapter" data-level="4.2.40" data-path="database.html"><a href="database.html#ca.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.40</b> ca.ext_usda.4b1_cmolkg</a></li>
-<li class="chapter" data-level="4.2.41" data-path="database.html"><a href="database.html#cec.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.41</b> cec.ext_usda.4b1_cmolkg</a></li>
-<li class="chapter" data-level="4.2.42" data-path="database.html"><a href="database.html#cec.ext_iso.13536.1995_cmolkg"><i class="fa fa-check"></i><b>4.2.42</b> cec.ext_iso.13536.1995_cmolkg</a></li>
-<li class="chapter" data-level="4.2.43" data-path="database.html"><a href="database.html#ecec_usda.4b4_cmolkg"><i class="fa fa-check"></i><b>4.2.43</b> ecec_usda.4b4_cmolkg</a></li>
-<li class="chapter" data-level="4.2.44" data-path="database.html"><a href="database.html#mg.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.44</b> mg.ext_usda.4b1_cmolkg</a></li>
-<li class="chapter" data-level="4.2.45" data-path="database.html"><a href="database.html#k.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.45</b> k.ext_usda.4b1_cmolkg</a></li>
-<li class="chapter" data-level="4.2.46" data-path="database.html"><a href="database.html#na.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.46</b> na.ext_usda.4b1_cmolkg</a></li>
-<li class="chapter" data-level="4.2.47" data-path="database.html"><a href="database.html#fe.ox_usda.4g2_wpct"><i class="fa fa-check"></i><b>4.2.47</b> fe.ox_usda.4g2_wpct</a></li>
-<li class="chapter" data-level="4.2.48" data-path="database.html"><a href="database.html#fe.dith_usda.4g1_wpct"><i class="fa fa-check"></i><b>4.2.48</b> fe.dith_usda.4g1_wpct</a></li>
-<li class="chapter" data-level="4.2.49" data-path="database.html"><a href="database.html#fe.pyp_usda.4g3_wpct"><i class="fa fa-check"></i><b>4.2.49</b> fe.pyp_usda.4g3_wpct</a></li>
-<li class="chapter" data-level="4.2.50" data-path="database.html"><a href="database.html#al.ox_usda.4g2_wpct"><i class="fa fa-check"></i><b>4.2.50</b> al.ox_usda.4g2_wpct</a></li>
-<li class="chapter" data-level="4.2.51" data-path="database.html"><a href="database.html#al.dith_usda.4g1_wpct"><i class="fa fa-check"></i><b>4.2.51</b> al.dith_usda.4g1_wpct</a></li>
-<li class="chapter" data-level="4.2.52" data-path="database.html"><a href="database.html#al.pyp_usda.4g3_wpct"><i class="fa fa-check"></i><b>4.2.52</b> al.pyp_usda.4g3_wpct</a></li>
-<li class="chapter" data-level="4.2.53" data-path="database.html"><a href="database.html#al.kcl_usda.4b3_cmolkg"><i class="fa fa-check"></i><b>4.2.53</b> al.kcl_usda.4b3_cmolkg</a></li>
-<li class="chapter" data-level="4.2.54" data-path="database.html"><a href="database.html#bsat_usda.4b4_wpct"><i class="fa fa-check"></i><b>4.2.54</b> bsat_usda.4b4_wpct</a></li>
-<li class="chapter" data-level="4.2.55" data-path="database.html"><a href="database.html#alsat_usda.4b4_wpct"><i class="fa fa-check"></i><b>4.2.55</b> alsat_usda.4b4_wpct</a></li>
-<li class="chapter" data-level="4.2.56" data-path="database.html"><a href="database.html#ph.h2o_usda.4c1_index"><i class="fa fa-check"></i><b>4.2.56</b> ph.h2o_usda.4c1_index</a></li>
-<li class="chapter" data-level="4.2.57" data-path="database.html"><a href="database.html#ph.cacl2_usda.4c1_index"><i class="fa fa-check"></i><b>4.2.57</b> ph.cacl2_usda.4c1_index</a></li>
-<li class="chapter" data-level="4.2.58" data-path="database.html"><a href="database.html#ph.cacl2_iso.10390.1994_index"><i class="fa fa-check"></i><b>4.2.58</b> ph.cacl2_iso.10390.1994_index</a></li>
-<li class="chapter" data-level="4.2.59" data-path="database.html"><a href="database.html#ec.w_usda.4f1_dsm"><i class="fa fa-check"></i><b>4.2.59</b> ec.w_usda.4f1_dsm</a></li>
-<li class="chapter" data-level="4.2.60" data-path="database.html"><a href="database.html#ec.ext.sat_usda.4f2_dsm"><i class="fa fa-check"></i><b>4.2.60</b> ec.ext.sat_usda.4f2_dsm</a></li>
-<li class="chapter" data-level="4.2.61" data-path="database.html"><a href="database.html#sodium.ads.ratio_usda.4f3_index"><i class="fa fa-check"></i><b>4.2.61</b> sodium.ads.ratio_usda.4f3_index</a></li>
-<li class="chapter" data-level="4.2.62" data-path="database.html"><a href="database.html#na.exch_usda.4f3_wpct"><i class="fa fa-check"></i><b>4.2.62</b> na.exch_usda.4f3_wpct</a></li>
-<li class="chapter" data-level="4.2.63" data-path="database.html"><a href="database.html#gyp_usda.4e2_wpct"><i class="fa fa-check"></i><b>4.2.63</b> gyp_usda.4e2_wpct</a></li>
-<li class="chapter" data-level="4.2.64" data-path="database.html"><a href="database.html#p.ext_usda.4d6_mgkg"><i class="fa fa-check"></i><b>4.2.64</b> p.ext_usda.4d6_mgkg</a></li>
-<li class="chapter" data-level="4.2.65" data-path="database.html"><a href="database.html#p.olsn_usda.4d5_mgkg"><i class="fa fa-check"></i><b>4.2.65</b> p.olsn_usda.4d5_mgkg</a></li>
+<li class="chapter" data-level="4.2.1" data-path="database.html"><a href="database.html#id.layer_uuid_c-1"><i class="fa fa-check"></i><b>4.2.1</b> id.layer_uuid_c</a></li>
+<li class="chapter" data-level="4.2.2" data-path="database.html"><a href="database.html#id.layer_local_c"><i class="fa fa-check"></i><b>4.2.2</b> id.layer_local_c</a></li>
+<li class="chapter" data-level="4.2.3" data-path="database.html"><a href="database.html#sample.doi_idf_c"><i class="fa fa-check"></i><b>4.2.3</b> sample.doi_idf_c</a></li>
+<li class="chapter" data-level="4.2.4" data-path="database.html"><a href="database.html#layer.sequence_usda_uint16"><i class="fa fa-check"></i><b>4.2.4</b> layer.sequence_usda_uint16</a></li>
+<li class="chapter" data-level="4.2.5" data-path="database.html"><a href="database.html#layer.type_usda_c"><i class="fa fa-check"></i><b>4.2.5</b> layer.type_usda_c</a></li>
+<li class="chapter" data-level="4.2.6" data-path="database.html"><a href="database.html#layer.field.label_any_c"><i class="fa fa-check"></i><b>4.2.6</b> layer.field.label_any_c</a></li>
+<li class="chapter" data-level="4.2.7" data-path="database.html"><a href="database.html#layer.upper.depth_usda_cm"><i class="fa fa-check"></i><b>4.2.7</b> layer.upper.depth_usda_cm</a></li>
+<li class="chapter" data-level="4.2.8" data-path="database.html"><a href="database.html#layer.lower.depth_usda_cm"><i class="fa fa-check"></i><b>4.2.8</b> layer.lower.depth_usda_cm</a></li>
+<li class="chapter" data-level="4.2.9" data-path="database.html"><a href="database.html#horizon.designation_usda_c"><i class="fa fa-check"></i><b>4.2.9</b> horizon.designation_usda_c</a></li>
+<li class="chapter" data-level="4.2.10" data-path="database.html"><a href="database.html#horizon.designation.discontinuity_usda_c"><i class="fa fa-check"></i><b>4.2.10</b> horizon.designation.discontinuity_usda_c</a></li>
+<li class="chapter" data-level="4.2.11" data-path="database.html"><a href="database.html#layer.structure.type_usda_c"><i class="fa fa-check"></i><b>4.2.11</b> layer.structure.type_usda_c</a></li>
+<li class="chapter" data-level="4.2.12" data-path="database.html"><a href="database.html#layer.structure.grade_usda_c"><i class="fa fa-check"></i><b>4.2.12</b> layer.structure.grade_usda_c</a></li>
+<li class="chapter" data-level="4.2.13" data-path="database.html"><a href="database.html#layer.texture_usda_c"><i class="fa fa-check"></i><b>4.2.13</b> layer.texture_usda_c</a></li>
+<li class="chapter" data-level="4.2.14" data-path="database.html"><a href="database.html#sand.tot_usda.3a1_wpct"><i class="fa fa-check"></i><b>4.2.14</b> sand.tot_usda.3a1_wpct</a></li>
+<li class="chapter" data-level="4.2.15" data-path="database.html"><a href="database.html#sand.tot_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.15</b> sand.tot_iso.11277.2020_wpct</a></li>
+<li class="chapter" data-level="4.2.16" data-path="database.html"><a href="database.html#silt.tot_usda.3a1_wpct"><i class="fa fa-check"></i><b>4.2.16</b> silt.tot_usda.3a1_wpct</a></li>
+<li class="chapter" data-level="4.2.17" data-path="database.html"><a href="database.html#silt.tot_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.17</b> silt.tot_iso.11277.2020_wpct</a></li>
+<li class="chapter" data-level="4.2.18" data-path="database.html"><a href="database.html#clay.tot_usda.3a1_wpct"><i class="fa fa-check"></i><b>4.2.18</b> clay.tot_usda.3a1_wpct</a></li>
+<li class="chapter" data-level="4.2.19" data-path="database.html"><a href="database.html#clay.tot_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.19</b> clay.tot_iso.11277.2020_wpct</a></li>
+<li class="chapter" data-level="4.2.20" data-path="database.html"><a href="database.html#wpg2_usda.3a2_wpct"><i class="fa fa-check"></i><b>4.2.20</b> wpg2_usda.3a2_wpct</a></li>
+<li class="chapter" data-level="4.2.21" data-path="database.html"><a href="database.html#wpg2_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.21</b> wpg2_iso.11277.2020_wpct</a></li>
+<li class="chapter" data-level="4.2.22" data-path="database.html"><a href="database.html#wr.1500kbar_usda.3c2_wpct"><i class="fa fa-check"></i><b>4.2.22</b> wr.1500kbar_usda.3c2_wpct</a></li>
+<li class="chapter" data-level="4.2.23" data-path="database.html"><a href="database.html#wr.33kbar_usda.3c1_wpct"><i class="fa fa-check"></i><b>4.2.23</b> wr.33kbar_usda.3c1_wpct</a></li>
+<li class="chapter" data-level="4.2.24" data-path="database.html"><a href="database.html#agg.stb_usda.1b1_wpct"><i class="fa fa-check"></i><b>4.2.24</b> agg.stb_usda.1b1_wpct</a></li>
+<li class="chapter" data-level="4.2.25" data-path="database.html"><a href="database.html#bd.clod_usda.3b1_gcm3"><i class="fa fa-check"></i><b>4.2.25</b> bd.clod_usda.3b1_gcm3</a></li>
+<li class="chapter" data-level="4.2.26" data-path="database.html"><a href="database.html#bd.od_usda.3b2_gcm3"><i class="fa fa-check"></i><b>4.2.26</b> bd.od_usda.3b2_gcm3</a></li>
+<li class="chapter" data-level="4.2.27" data-path="database.html"><a href="database.html#bd.core_iso.11272.2017_gcm3"><i class="fa fa-check"></i><b>4.2.27</b> bd.core_iso.11272.2017_gcm3</a></li>
+<li class="chapter" data-level="4.2.28" data-path="database.html"><a href="database.html#c.tot_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.28</b> c.tot_usda.4h2_wpct</a></li>
+<li class="chapter" data-level="4.2.29" data-path="database.html"><a href="database.html#c.tot_iso.10694.1995_wpct"><i class="fa fa-check"></i><b>4.2.29</b> c.tot_iso.10694.1995_wpct</a></li>
+<li class="chapter" data-level="4.2.30" data-path="database.html"><a href="database.html#n.tot_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.30</b> n.tot_usda.4h2_wpct</a></li>
+<li class="chapter" data-level="4.2.31" data-path="database.html"><a href="database.html#n.tot_iso.13878.1998_wpct"><i class="fa fa-check"></i><b>4.2.31</b> n.tot_iso.13878.1998_wpct</a></li>
+<li class="chapter" data-level="4.2.32" data-path="database.html"><a href="database.html#s.tot_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.32</b> s.tot_usda.4h2_wpct</a></li>
+<li class="chapter" data-level="4.2.33" data-path="database.html"><a href="database.html#oc_usda.calc_wpct"><i class="fa fa-check"></i><b>4.2.33</b> oc_usda.calc_wpct</a></li>
+<li class="chapter" data-level="4.2.34" data-path="database.html"><a href="database.html#oc_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.34</b> oc_usda.4h2_wpct</a></li>
+<li class="chapter" data-level="4.2.35" data-path="database.html"><a href="database.html#oc_iso.10694.1995_wpct"><i class="fa fa-check"></i><b>4.2.35</b> oc_iso.10694.1995_wpct</a></li>
+<li class="chapter" data-level="4.2.36" data-path="database.html"><a href="database.html#oc_iso.17184.2014_wpct"><i class="fa fa-check"></i><b>4.2.36</b> oc_iso.17184.2014_wpct</a></li>
+<li class="chapter" data-level="4.2.37" data-path="database.html"><a href="database.html#humus_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.37</b> humus_usda.4h2_wpct</a></li>
+<li class="chapter" data-level="4.2.38" data-path="database.html"><a href="database.html#caco3.pres_usda.1b1_c"><i class="fa fa-check"></i><b>4.2.38</b> caco3.pres_usda.1b1_c</a></li>
+<li class="chapter" data-level="4.2.39" data-path="database.html"><a href="database.html#caco3_usda.4e1_wpct"><i class="fa fa-check"></i><b>4.2.39</b> caco3_usda.4e1_wpct</a></li>
+<li class="chapter" data-level="4.2.40" data-path="database.html"><a href="database.html#caco3_iso.10693.1995_vpct"><i class="fa fa-check"></i><b>4.2.40</b> caco3_iso.10693.1995_vpct</a></li>
+<li class="chapter" data-level="4.2.41" data-path="database.html"><a href="database.html#ca.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.41</b> ca.ext_usda.4b1_cmolkg</a></li>
+<li class="chapter" data-level="4.2.42" data-path="database.html"><a href="database.html#cec.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.42</b> cec.ext_usda.4b1_cmolkg</a></li>
+<li class="chapter" data-level="4.2.43" data-path="database.html"><a href="database.html#cec.ext_iso.13536.1995_cmolkg"><i class="fa fa-check"></i><b>4.2.43</b> cec.ext_iso.13536.1995_cmolkg</a></li>
+<li class="chapter" data-level="4.2.44" data-path="database.html"><a href="database.html#ecec_usda.4b4_cmolkg"><i class="fa fa-check"></i><b>4.2.44</b> ecec_usda.4b4_cmolkg</a></li>
+<li class="chapter" data-level="4.2.45" data-path="database.html"><a href="database.html#mg.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.45</b> mg.ext_usda.4b1_cmolkg</a></li>
+<li class="chapter" data-level="4.2.46" data-path="database.html"><a href="database.html#k.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.46</b> k.ext_usda.4b1_cmolkg</a></li>
+<li class="chapter" data-level="4.2.47" data-path="database.html"><a href="database.html#na.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.47</b> na.ext_usda.4b1_cmolkg</a></li>
+<li class="chapter" data-level="4.2.48" data-path="database.html"><a href="database.html#fe.ox_usda.4g2_wpct"><i class="fa fa-check"></i><b>4.2.48</b> fe.ox_usda.4g2_wpct</a></li>
+<li class="chapter" data-level="4.2.49" data-path="database.html"><a href="database.html#fe.dith_usda.4g1_wpct"><i class="fa fa-check"></i><b>4.2.49</b> fe.dith_usda.4g1_wpct</a></li>
+<li class="chapter" data-level="4.2.50" data-path="database.html"><a href="database.html#fe.pyp_usda.4g3_wpct"><i class="fa fa-check"></i><b>4.2.50</b> fe.pyp_usda.4g3_wpct</a></li>
+<li class="chapter" data-level="4.2.51" data-path="database.html"><a href="database.html#al.ox_usda.4g2_wpct"><i class="fa fa-check"></i><b>4.2.51</b> al.ox_usda.4g2_wpct</a></li>
+<li class="chapter" data-level="4.2.52" data-path="database.html"><a href="database.html#al.dith_usda.4g1_wpct"><i class="fa fa-check"></i><b>4.2.52</b> al.dith_usda.4g1_wpct</a></li>
+<li class="chapter" data-level="4.2.53" data-path="database.html"><a href="database.html#al.pyp_usda.4g3_wpct"><i class="fa fa-check"></i><b>4.2.53</b> al.pyp_usda.4g3_wpct</a></li>
+<li class="chapter" data-level="4.2.54" data-path="database.html"><a href="database.html#al.kcl_usda.4b3_cmolkg"><i class="fa fa-check"></i><b>4.2.54</b> al.kcl_usda.4b3_cmolkg</a></li>
+<li class="chapter" data-level="4.2.55" data-path="database.html"><a href="database.html#bsat_usda.4b4_wpct"><i class="fa fa-check"></i><b>4.2.55</b> bsat_usda.4b4_wpct</a></li>
+<li class="chapter" data-level="4.2.56" data-path="database.html"><a href="database.html#alsat_usda.4b4_wpct"><i class="fa fa-check"></i><b>4.2.56</b> alsat_usda.4b4_wpct</a></li>
+<li class="chapter" data-level="4.2.57" data-path="database.html"><a href="database.html#ph.h2o_usda.4c1_index"><i class="fa fa-check"></i><b>4.2.57</b> ph.h2o_usda.4c1_index</a></li>
+<li class="chapter" data-level="4.2.58" data-path="database.html"><a href="database.html#ph.cacl2_usda.4c1_index"><i class="fa fa-check"></i><b>4.2.58</b> ph.cacl2_usda.4c1_index</a></li>
+<li class="chapter" data-level="4.2.59" data-path="database.html"><a href="database.html#ph.cacl2_iso.10390.1994_index"><i class="fa fa-check"></i><b>4.2.59</b> ph.cacl2_iso.10390.1994_index</a></li>
+<li class="chapter" data-level="4.2.60" data-path="database.html"><a href="database.html#ec.w_usda.4f1_dsm"><i class="fa fa-check"></i><b>4.2.60</b> ec.w_usda.4f1_dsm</a></li>
+<li class="chapter" data-level="4.2.61" data-path="database.html"><a href="database.html#ec.ext.sat_usda.4f2_dsm"><i class="fa fa-check"></i><b>4.2.61</b> ec.ext.sat_usda.4f2_dsm</a></li>
+<li class="chapter" data-level="4.2.62" data-path="database.html"><a href="database.html#sodium.ads.ratio_usda.4f3_index"><i class="fa fa-check"></i><b>4.2.62</b> sodium.ads.ratio_usda.4f3_index</a></li>
+<li class="chapter" data-level="4.2.63" data-path="database.html"><a href="database.html#na.exch_usda.4f3_wpct"><i class="fa fa-check"></i><b>4.2.63</b> na.exch_usda.4f3_wpct</a></li>
+<li class="chapter" data-level="4.2.64" data-path="database.html"><a href="database.html#gyp_usda.4e2_wpct"><i class="fa fa-check"></i><b>4.2.64</b> gyp_usda.4e2_wpct</a></li>
+<li class="chapter" data-level="4.2.65" data-path="database.html"><a href="database.html#p.ext_usda.4d6_mgkg"><i class="fa fa-check"></i><b>4.2.65</b> p.ext_usda.4d6_mgkg</a></li>
+<li class="chapter" data-level="4.2.66" data-path="database.html"><a href="database.html#p.olsn_usda.4d5_mgkg"><i class="fa fa-check"></i><b>4.2.66</b> p.olsn_usda.4d5_mgkg</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="database.html"><a href="database.html#harmonization-rules"><i class="fa fa-check"></i><b>4.3</b> Harmonization rules</a>
+<li class="chapter" data-level="4.3" data-path="database.html"><a href="database.html#mir-table"><i class="fa fa-check"></i><b>4.3</b> MIR scans table</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="database.html"><a href="database.html#ph"><i class="fa fa-check"></i><b>4.3.1</b> pH</a></li>
-<li class="chapter" data-level="4.3.2" data-path="database.html"><a href="database.html#carbon"><i class="fa fa-check"></i><b>4.3.2</b> Carbon</a></li>
-<li class="chapter" data-level="4.3.3" data-path="database.html"><a href="database.html#phosphorous"><i class="fa fa-check"></i><b>4.3.3</b> Phosphorous</a></li>
-<li class="chapter" data-level="4.3.4" data-path="database.html"><a href="database.html#potassium"><i class="fa fa-check"></i><b>4.3.4</b> Potassium</a></li>
-<li class="chapter" data-level="4.3.5" data-path="database.html"><a href="database.html#nitrogen"><i class="fa fa-check"></i><b>4.3.5</b> Nitrogen</a></li>
-<li class="chapter" data-level="4.3.6" data-path="database.html"><a href="database.html#exchangeable-cations-and-cec"><i class="fa fa-check"></i><b>4.3.6</b> Exchangeable cations and CEC</a></li>
-<li class="chapter" data-level="4.3.7" data-path="database.html"><a href="database.html#texture-fractions"><i class="fa fa-check"></i><b>4.3.7</b> Texture fractions</a></li>
-<li class="chapter" data-level="4.3.8" data-path="database.html"><a href="database.html#bulk-density"><i class="fa fa-check"></i><b>4.3.8</b> Bulk density</a></li>
-<li class="chapter" data-level="4.3.9" data-path="database.html"><a href="database.html#soil-biological-variables"><i class="fa fa-check"></i><b>4.3.9</b> Soil biological variables</a></li>
-<li class="chapter" data-level="4.3.10" data-path="database.html"><a href="database.html#soil-contaminants"><i class="fa fa-check"></i><b>4.3.10</b> Soil contaminants</a></li>
+<li class="chapter" data-level="4.3.1" data-path="database.html"><a href="database.html#id.scan_uuid_c"><i class="fa fa-check"></i><b>4.3.1</b> id.scan_uuid_c</a></li>
+<li class="chapter" data-level="4.3.2" data-path="database.html"><a href="database.html#id.scan_local_c"><i class="fa fa-check"></i><b>4.3.2</b> id.scan_local_c</a></li>
+<li class="chapter" data-level="4.3.3" data-path="database.html"><a href="database.html#id.layer_uuid_c-2"><i class="fa fa-check"></i><b>4.3.3</b> id.layer_uuid_c</a></li>
+<li class="chapter" data-level="4.3.4" data-path="database.html"><a href="database.html#id.layer_local_c-1"><i class="fa fa-check"></i><b>4.3.4</b> id.layer_local_c</a></li>
+<li class="chapter" data-level="4.3.5" data-path="database.html"><a href="database.html#model.name_utf8_txt"><i class="fa fa-check"></i><b>4.3.5</b> model.name_utf8_txt</a></li>
+<li class="chapter" data-level="4.3.6" data-path="database.html"><a href="database.html#model.code_any_c"><i class="fa fa-check"></i><b>4.3.6</b> model.code_any_c</a></li>
+<li class="chapter" data-level="4.3.7" data-path="database.html"><a href="database.html#method.light.source_any_c"><i class="fa fa-check"></i><b>4.3.7</b> method.light.source_any_c</a></li>
+<li class="chapter" data-level="4.3.8" data-path="database.html"><a href="database.html#method.preparation_any_c"><i class="fa fa-check"></i><b>4.3.8</b> method.preparation_any_c</a></li>
+<li class="chapter" data-level="4.3.9" data-path="database.html"><a href="database.html#scan.file_any_c"><i class="fa fa-check"></i><b>4.3.9</b> scan.file_any_c</a></li>
+<li class="chapter" data-level="4.3.10" data-path="database.html"><a href="database.html#scan.date.begin_iso.8601_yyyy.mm.dd"><i class="fa fa-check"></i><b>4.3.10</b> scan.date.begin_iso.8601_yyyy.mm.dd</a></li>
+<li class="chapter" data-level="4.3.11" data-path="database.html"><a href="database.html#scan.date.end_iso.8601_yyyy.mm.dd"><i class="fa fa-check"></i><b>4.3.11</b> scan.date.end_iso.8601_yyyy.mm.dd</a></li>
+<li class="chapter" data-level="4.3.12" data-path="database.html"><a href="database.html#scan.license.title_ascii_txt"><i class="fa fa-check"></i><b>4.3.12</b> scan.license.title_ascii_txt</a></li>
+<li class="chapter" data-level="4.3.13" data-path="database.html"><a href="database.html#scan.license.address_idn_url"><i class="fa fa-check"></i><b>4.3.13</b> scan.license.address_idn_url</a></li>
+<li class="chapter" data-level="4.3.14" data-path="database.html"><a href="database.html#scan.doi_idf_c"><i class="fa fa-check"></i><b>4.3.14</b> scan.doi_idf_c</a></li>
+<li class="chapter" data-level="4.3.15" data-path="database.html"><a href="database.html#scan.contact.name_utf8_txt"><i class="fa fa-check"></i><b>4.3.15</b> scan.contact.name_utf8_txt</a></li>
+<li class="chapter" data-level="4.3.16" data-path="database.html"><a href="database.html#scan.contact.email_ietf_email"><i class="fa fa-check"></i><b>4.3.16</b> scan.contact.email_ietf_email</a></li>
+<li class="chapter" data-level="4.3.17" data-path="database.html"><a href="database.html#scan_mir._abs"><i class="fa fa-check"></i><b>4.3.17</b> scan_mir.****_abs</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="database.html"><a href="database.html#visnir-table"><i class="fa fa-check"></i><b>4.4</b> VisNIR scans table</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="database.html"><a href="database.html#id.scan_uuid_c-1"><i class="fa fa-check"></i><b>4.4.1</b> id.scan_uuid_c</a></li>
+<li class="chapter" data-level="4.4.2" data-path="database.html"><a href="database.html#id.scan_local_c-1"><i class="fa fa-check"></i><b>4.4.2</b> id.scan_local_c</a></li>
+<li class="chapter" data-level="4.4.3" data-path="database.html"><a href="database.html#id.layer_uuid_c-3"><i class="fa fa-check"></i><b>4.4.3</b> id.layer_uuid_c</a></li>
+<li class="chapter" data-level="4.4.4" data-path="database.html"><a href="database.html#id.layer_local_c-2"><i class="fa fa-check"></i><b>4.4.4</b> id.layer_local_c</a></li>
+<li class="chapter" data-level="4.4.5" data-path="database.html"><a href="database.html#model.name_utf8_txt-1"><i class="fa fa-check"></i><b>4.4.5</b> model.name_utf8_txt</a></li>
+<li class="chapter" data-level="4.4.6" data-path="database.html"><a href="database.html#model.code_any_c-1"><i class="fa fa-check"></i><b>4.4.6</b> model.code_any_c</a></li>
+<li class="chapter" data-level="4.4.7" data-path="database.html"><a href="database.html#method.light.source_any_c-1"><i class="fa fa-check"></i><b>4.4.7</b> method.light.source_any_c</a></li>
+<li class="chapter" data-level="4.4.8" data-path="database.html"><a href="database.html#method.preparation_any_c-1"><i class="fa fa-check"></i><b>4.4.8</b> method.preparation_any_c</a></li>
+<li class="chapter" data-level="4.4.9" data-path="database.html"><a href="database.html#scan.file_any_c-1"><i class="fa fa-check"></i><b>4.4.9</b> scan.file_any_c</a></li>
+<li class="chapter" data-level="4.4.10" data-path="database.html"><a href="database.html#scan.date.begin_iso.8601_yyyy.mm.dd-1"><i class="fa fa-check"></i><b>4.4.10</b> scan.date.begin_iso.8601_yyyy.mm.dd</a></li>
+<li class="chapter" data-level="4.4.11" data-path="database.html"><a href="database.html#scan.date.end_iso.8601_yyyy.mm.dd-1"><i class="fa fa-check"></i><b>4.4.11</b> scan.date.end_iso.8601_yyyy.mm.dd</a></li>
+<li class="chapter" data-level="4.4.12" data-path="database.html"><a href="database.html#scan.license.title_ascii_txt-1"><i class="fa fa-check"></i><b>4.4.12</b> scan.license.title_ascii_txt</a></li>
+<li class="chapter" data-level="4.4.13" data-path="database.html"><a href="database.html#scan.license.address_idn_url-1"><i class="fa fa-check"></i><b>4.4.13</b> scan.license.address_idn_url</a></li>
+<li class="chapter" data-level="4.4.14" data-path="database.html"><a href="database.html#scan.doi_idf_c-1"><i class="fa fa-check"></i><b>4.4.14</b> scan.doi_idf_c</a></li>
+<li class="chapter" data-level="4.4.15" data-path="database.html"><a href="database.html#scan.contact.name_utf8_txt-1"><i class="fa fa-check"></i><b>4.4.15</b> scan.contact.name_utf8_txt</a></li>
+<li class="chapter" data-level="4.4.16" data-path="database.html"><a href="database.html#scan.contact.email_ietf_email-1"><i class="fa fa-check"></i><b>4.4.16</b> scan.contact.email_ietf_email</a></li>
+<li class="chapter" data-level="4.4.17" data-path="database.html"><a href="database.html#scan_visnir._pcnt"><i class="fa fa-check"></i><b>4.4.17</b> scan_visnir.****_pcnt</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="database.html"><a href="database.html#harmonization-rules"><i class="fa fa-check"></i><b>4.5</b> Harmonization rules</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="database.html"><a href="database.html#ph"><i class="fa fa-check"></i><b>4.5.1</b> pH</a></li>
+<li class="chapter" data-level="4.5.2" data-path="database.html"><a href="database.html#carbon"><i class="fa fa-check"></i><b>4.5.2</b> Carbon</a></li>
+<li class="chapter" data-level="4.5.3" data-path="database.html"><a href="database.html#phosphorous"><i class="fa fa-check"></i><b>4.5.3</b> Phosphorous</a></li>
+<li class="chapter" data-level="4.5.4" data-path="database.html"><a href="database.html#potassium"><i class="fa fa-check"></i><b>4.5.4</b> Potassium</a></li>
+<li class="chapter" data-level="4.5.5" data-path="database.html"><a href="database.html#nitrogen"><i class="fa fa-check"></i><b>4.5.5</b> Nitrogen</a></li>
+<li class="chapter" data-level="4.5.6" data-path="database.html"><a href="database.html#exchangeable-cations-and-cec"><i class="fa fa-check"></i><b>4.5.6</b> Exchangeable cations and CEC</a></li>
+<li class="chapter" data-level="4.5.7" data-path="database.html"><a href="database.html#texture-fractions"><i class="fa fa-check"></i><b>4.5.7</b> Texture fractions</a></li>
+<li class="chapter" data-level="4.5.8" data-path="database.html"><a href="database.html#bulk-density"><i class="fa fa-check"></i><b>4.5.8</b> Bulk density</a></li>
+<li class="chapter" data-level="4.5.9" data-path="database.html"><a href="database.html#soil-biological-variables"><i class="fa fa-check"></i><b>4.5.9</b> Soil biological variables</a></li>
+<li class="chapter" data-level="4.5.10" data-path="database.html"><a href="database.html#soil-contaminants"><i class="fa fa-check"></i><b>4.5.10</b> Soil contaminants</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html"><i class="fa fa-check"></i><b>5</b> Reference soil spectroscopy models</a>
@@ -357,10 +400,22 @@ div.csl-indent {
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div class="csl-entry">
+Aitkenhead, Matt J, and Helaina IJ Black. 2018. <span>“<span class="nocase">Exploring the impact of different input data types on soil variable estimation using the ICRAF-ISRIC global soil spectral database</span>.”</span> <em>Applied Spectroscopy</em> 72 (2): 188–98.
+</div>
+<div class="csl-entry">
 Benedetti, F., and F. van Egmond. 2021. <em><span class="nocase">Global Soil Spectroscopy Assessment. Spectral soil data — Needs and capacities</span></em>. Rome, Italy: FAO. <a href="https://doi.org/10.4060/cb6265en">https://doi.org/10.4060/cb6265en</a>.
 </div>
 <div class="csl-entry">
 Böhner, J, T Blaschke, and L Montanarella. 2008. <em>SAGA—Seconds Out, Vol. 19</em>. Hamburg, Germany: Hamburger Beitr<span>ä</span>ge zur Physischen Geographie und Landschafts<span>ö</span>kologie.
+</div>
+<div class="csl-entry">
+Bremner, John M. 1996. <span>“Nitrogen-Total.”</span> In <em>Methods of Soil Analysis: Part 3 Chemical Methods</em>, 5:1085–1121. Wiley Online Library.
+</div>
+<div class="csl-entry">
+Elrashidi, MA, D Hammer, CA Seybold, RJ Engel, R Burt, and P Jones. 2007. <span>“Application of Equivalent Gypsum Content to Estimate Potential Subsidence of Gypsiferous Soils.”</span> <em>Soil Science</em> 172 (3): 209–24.
+</div>
+<div class="csl-entry">
+Grossman, RB, and TG Reinsch. 2002. <span>“2.1 Bulk Density and Linear Extensibility.”</span> In <em>Methods of Soil Analysis: Part 4 Physical Methods</em>, 5:201–28. Wiley Online Library.
 </div>
 <div class="csl-entry">
 Helling, Charles S, G Chesters, and RB Corey. 1964. <span>“Contribution of Organic Matter and Clay to Soil Cation-Exchange Capacity as Affected by the pH of the Saturating Solution.”</span> <em>Soil Science Society of America Journal</em> 28 (4): 517–20.
@@ -369,13 +424,37 @@ Helling, Charles S, G Chesters, and RB Corey. 1964. <span>“Contribution of Org
 Jensen, JL, BT Christensen, P Schjønning, CW Watts, and LJ Munkholm. 2018. <span>“Converting Loss-on-Ignition to Organic Carbon Content in Arable Topsoil: Pitfalls and Proposed Procedure.”</span> <em>European Journal of Soil Science</em> 69 (4): 604–12. <a href="https://doi.org/10.1111/ejss.12558">https://doi.org/10.1111/ejss.12558</a>.
 </div>
 <div class="csl-entry">
+Loeppert, Richard H, Donald L Suarez, and others. 1996. <span>“Carbonate and Gypsum.”</span> In <em>Methods of Soil Analysis. Part 3 Chemical Methods</em>, 3:437–74. Wiley Online Library.
+</div>
+<div class="csl-entry">
+McLean, EO. 1983. <span>“<span class="nocase">Soil pH and lime requirement</span>.”</span> In <em>Methods of Soil Analysis: Part 2 Chemical and Microbiological Properties</em>, 9:199–224. Wiley Online Library.
+</div>
+<div class="csl-entry">
 Miller, Robert O, and David E Kissel. 2010. <span>“Comparison of Soil pH Methods on Soils of North America.”</span> <em>Soil Science Society of America Journal</em> 74 (1): 310–16.
 </div>
 <div class="csl-entry">
 Nelson, DW, and L_E Sommers. 1983. <span>“Total Carbon, Organic Carbon, and Organic Matter.”</span> In <em>Methods of Soil Analysis: Part 2 Chemical and Microbiological Properties</em>, 9:539–79. Wiley Online Library.
 </div>
 <div class="csl-entry">
+Orgiazzi, Alberto, Cristiano Ballabio, Panagiotis Panagos, Arwyn Jones, and Oihane Fernández-Ugalde. 2018. <span>“<span class="nocase">LUCAS Soil, the largest expandable soil dataset for Europe: a review</span>.”</span> <em>European Journal of Soil Science</em> 69 (1): 140–53.
+</div>
+<div class="csl-entry">
 Summerauer, L., P. Baumann, L. Ramirez-Lopez, M. Barthel, M. Bauters, B. Bukombe, M. Reichenbach, et al. 2021. <span>“The Central African Soil Spectral Library: A New Soil Infrared Repository and a Geographical Prediction Analysis.”</span> <em>SOIL</em> 7 (2): 693–715. <a href="https://doi.org/10.5194/soil-7-693-2021">https://doi.org/10.5194/soil-7-693-2021</a>.
+</div>
+<div class="csl-entry">
+Sumner, Malcolm E, and William P Miller. 1996. <span>“Cation Exchange Capacity and Exchange Coefficients.”</span> In <em>Methods of Soil Analysis: Part 3 Chemical Methods</em>, 5:1201–29. Wiley Online Library.
+</div>
+<div class="csl-entry">
+Testing, American Society for, Materials. Committee D18 on Soils, Rock, American Society for Testing, Materials. Subcommittee D18.07 on Identification, Classification of Soils, and ASTM International. 2006. <em>Standard Practice for Description and Identification of Soils (Visual-Manual Procedure)</em>. Philadelphia, PA: ASTM International.
+</div>
+<div class="csl-entry">
+Thomas, GW. 1982. <span>“Exchangeable Cations. P. 159–165. AL Page Et Al.(ed.) Methods of Soil Analysis. Part 2. Agron. Monogr. 9. ASA and SSSA.”</span> In <em>Exchangeable Cations. P. 159–165. In AL Page Et Al.(ed.) Methods of Soil Analysis. Part 2. 2nd Ed. Agron. Monogr. 9</em>. Madison, WI: ASA; SSSA.
+</div>
+<div class="csl-entry">
+USDA NRCS. 2019. <em>Soil Survey Field and Laboratory Methods Manual - Soil Survey Investigations Report No. 51 (Version 2) Issued 2014</em>. Lincoln, Nebraska: U.S. Department of Agriculture, Natural Resources Conservation Service.
+</div>
+<div class="csl-entry">
+Vagen, Tor-Gunnar, Leigh Ann Winowiecki, Luseged Desta, Ebagnerin Jerome Tondoh, Elvis Weullow, Keith Shepherd, and Andrew Sila. 2020. <em><span class="nocase">Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory: Africa Soil Information Service (AfSIS) Phase I 2009-2013</span></em>. World Agroforestry - Research Data Repository. <a href="https://doi.org/10.34725/DVN/QXCWP1">https://doi.org/10.34725/DVN/QXCWP1</a>.
 </div>
 <div class="csl-entry">
 Wadoux, A. M. J. C., B. Malone, A. B. McBratney, M. Fajardo, and B. Minasny. 2021. <em><span class="nocase">Soil Spectral Inference with R: Analysing Digital Soil Spectra Using the R Programming Environment</span></em>. Progress in Soil Science. Springer International Publishing.

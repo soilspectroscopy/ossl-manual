@@ -194,6 +194,7 @@ div.csl-indent {
 <li class="chapter" data-level="3.2.3" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#lucas.ssl"><i class="fa fa-check"></i><b>3.2.3</b> LUCAS.SSL</a></li>
 <li class="chapter" data-level="3.2.4" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#afsis1.ssl"><i class="fa fa-check"></i><b>3.2.4</b> AFSIS1.SSL</a></li>
 <li class="chapter" data-level="3.2.5" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#caf.ssl"><i class="fa fa-check"></i><b>3.2.5</b> CAF.SSL</a></li>
+<li class="chapter" data-level="3.2.6" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#neon.ssl"><i class="fa fa-check"></i><b>3.2.6</b> NEON.SSL</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#soil-spetroscopy-organizations"><i class="fa fa-check"></i><b>3.3</b> Soil spetroscopy organizations</a>
 <ul>
@@ -208,7 +209,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="4.1" data-path="database.html"><a href="database.html#sites-table"><i class="fa fa-check"></i><b>4.1</b> Sites table</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="database.html"><a href="database.html#id.site_uuid_c"><i class="fa fa-check"></i><b>4.1.1</b> id.site_uuid_c</a></li>
+<li class="chapter" data-level="4.1.1" data-path="database.html"><a href="database.html#id.layer_uuid_c"><i class="fa fa-check"></i><b>4.1.1</b> id.layer_uuid_c</a></li>
 <li class="chapter" data-level="4.1.2" data-path="database.html"><a href="database.html#id.location_olc_c"><i class="fa fa-check"></i><b>4.1.2</b> id.location_olc_c</a></li>
 <li class="chapter" data-level="4.1.3" data-path="database.html"><a href="database.html#observation.ogc.schema.title_ogc_txt"><i class="fa fa-check"></i><b>4.1.3</b> observation.ogc.schema.title_ogc_txt</a></li>
 <li class="chapter" data-level="4.1.4" data-path="database.html"><a href="database.html#observation.ogc.schema_idn_url"><i class="fa fa-check"></i><b>4.1.4</b> observation.ogc.schema_idn_url</a></li>
@@ -235,87 +236,129 @@ div.csl-indent {
 <li class="chapter" data-level="4.1.25" data-path="database.html"><a href="database.html#id.dataset.site_ascii_c"><i class="fa fa-check"></i><b>4.1.25</b> id.dataset.site_ascii_c</a></li>
 <li class="chapter" data-level="4.1.26" data-path="database.html"><a href="database.html#id.user.site_ascii_c"><i class="fa fa-check"></i><b>4.1.26</b> id.user.site_ascii_c</a></li>
 <li class="chapter" data-level="4.1.27" data-path="database.html"><a href="database.html#id.project_ascii_c"><i class="fa fa-check"></i><b>4.1.27</b> id.project_ascii_c</a></li>
+<li class="chapter" data-level="4.1.28" data-path="database.html"><a href="database.html#pedon.taxa_usda_c"><i class="fa fa-check"></i><b>4.1.28</b> pedon.taxa_usda_c</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="database.html"><a href="database.html#soillab-table"><i class="fa fa-check"></i><b>4.2</b> Soillab table</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="database.html"><a href="database.html#id.site_uuid_c-1"><i class="fa fa-check"></i><b>4.2.1</b> id.site_uuid_c</a></li>
-<li class="chapter" data-level="4.2.2" data-path="database.html"><a href="database.html#id.sample_uuid_c"><i class="fa fa-check"></i><b>4.2.2</b> id.sample_uuid_c</a></li>
-<li class="chapter" data-level="4.2.3" data-path="database.html"><a href="database.html#layer.sequence_usda_uint16"><i class="fa fa-check"></i><b>4.2.3</b> layer.sequence_usda_uint16</a></li>
-<li class="chapter" data-level="4.2.4" data-path="database.html"><a href="database.html#layer.type_usda_c"><i class="fa fa-check"></i><b>4.2.4</b> layer.type_usda_c</a></li>
-<li class="chapter" data-level="4.2.5" data-path="database.html"><a href="database.html#layer.field.label_any_c"><i class="fa fa-check"></i><b>4.2.5</b> layer.field.label_any_c</a></li>
-<li class="chapter" data-level="4.2.6" data-path="database.html"><a href="database.html#layer.upper.depth_usda_cm"><i class="fa fa-check"></i><b>4.2.6</b> layer.upper.depth_usda_cm</a></li>
-<li class="chapter" data-level="4.2.7" data-path="database.html"><a href="database.html#layer.lower.depth_usda_cm"><i class="fa fa-check"></i><b>4.2.7</b> layer.lower.depth_usda_cm</a></li>
-<li class="chapter" data-level="4.2.8" data-path="database.html"><a href="database.html#horizon.designation_usda_c"><i class="fa fa-check"></i><b>4.2.8</b> horizon.designation_usda_c</a></li>
-<li class="chapter" data-level="4.2.9" data-path="database.html"><a href="database.html#horizon.designation.discontinuity_usda_c"><i class="fa fa-check"></i><b>4.2.9</b> horizon.designation.discontinuity_usda_c</a></li>
-<li class="chapter" data-level="4.2.10" data-path="database.html"><a href="database.html#layer.structure.type_usda_c"><i class="fa fa-check"></i><b>4.2.10</b> layer.structure.type_usda_c</a></li>
-<li class="chapter" data-level="4.2.11" data-path="database.html"><a href="database.html#layer.structure.grade_usda_c"><i class="fa fa-check"></i><b>4.2.11</b> layer.structure.grade_usda_c</a></li>
-<li class="chapter" data-level="4.2.12" data-path="database.html"><a href="database.html#layer.texture_usda_c"><i class="fa fa-check"></i><b>4.2.12</b> layer.texture_usda_c</a></li>
-<li class="chapter" data-level="4.2.13" data-path="database.html"><a href="database.html#sand.tot_usda.3a1_wpct"><i class="fa fa-check"></i><b>4.2.13</b> sand.tot_usda.3a1_wpct</a></li>
-<li class="chapter" data-level="4.2.14" data-path="database.html"><a href="database.html#sand.tot_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.14</b> sand.tot_iso.11277.2020_wpct</a></li>
-<li class="chapter" data-level="4.2.15" data-path="database.html"><a href="database.html#silt.tot_usda.3a1_wpct"><i class="fa fa-check"></i><b>4.2.15</b> silt.tot_usda.3a1_wpct</a></li>
-<li class="chapter" data-level="4.2.16" data-path="database.html"><a href="database.html#silt.tot_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.16</b> silt.tot_iso.11277.2020_wpct</a></li>
-<li class="chapter" data-level="4.2.17" data-path="database.html"><a href="database.html#clay.tot_usda.3a1_wpct"><i class="fa fa-check"></i><b>4.2.17</b> clay.tot_usda.3a1_wpct</a></li>
-<li class="chapter" data-level="4.2.18" data-path="database.html"><a href="database.html#clay.tot_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.18</b> clay.tot_iso.11277.2020_wpct</a></li>
-<li class="chapter" data-level="4.2.19" data-path="database.html"><a href="database.html#wpg2_usda.3a2_wpct"><i class="fa fa-check"></i><b>4.2.19</b> wpg2_usda.3a2_wpct</a></li>
-<li class="chapter" data-level="4.2.20" data-path="database.html"><a href="database.html#wpg2_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.20</b> wpg2_iso.11277.2020_wpct</a></li>
-<li class="chapter" data-level="4.2.21" data-path="database.html"><a href="database.html#wr.1500kbar_usda.3c2_wpct"><i class="fa fa-check"></i><b>4.2.21</b> wr.1500kbar_usda.3c2_wpct</a></li>
-<li class="chapter" data-level="4.2.22" data-path="database.html"><a href="database.html#wr.33kbar_usda.3c1_wpct"><i class="fa fa-check"></i><b>4.2.22</b> wr.33kbar_usda.3c1_wpct</a></li>
-<li class="chapter" data-level="4.2.23" data-path="database.html"><a href="database.html#agg.stb_usda.1b1_wpct"><i class="fa fa-check"></i><b>4.2.23</b> agg.stb_usda.1b1_wpct</a></li>
-<li class="chapter" data-level="4.2.24" data-path="database.html"><a href="database.html#bd.clod_usda.3b1_gcm3"><i class="fa fa-check"></i><b>4.2.24</b> bd.clod_usda.3b1_gcm3</a></li>
-<li class="chapter" data-level="4.2.25" data-path="database.html"><a href="database.html#bd.core_usda.3b4_gcm3"><i class="fa fa-check"></i><b>4.2.25</b> bd.core_usda.3b4_gcm3</a></li>
-<li class="chapter" data-level="4.2.26" data-path="database.html"><a href="database.html#bd.core_iso.11272.2017_gcm3"><i class="fa fa-check"></i><b>4.2.26</b> bd.core_iso.11272.2017_gcm3</a></li>
-<li class="chapter" data-level="4.2.27" data-path="database.html"><a href="database.html#c.tot_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.27</b> c.tot_usda.4h2_wpct</a></li>
-<li class="chapter" data-level="4.2.28" data-path="database.html"><a href="database.html#c.tot_iso.10694.1995_wpct"><i class="fa fa-check"></i><b>4.2.28</b> c.tot_iso.10694.1995_wpct</a></li>
-<li class="chapter" data-level="4.2.29" data-path="database.html"><a href="database.html#n.tot_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.29</b> n.tot_usda.4h2_wpct</a></li>
-<li class="chapter" data-level="4.2.30" data-path="database.html"><a href="database.html#n.tot_iso.13878.1998_wpct"><i class="fa fa-check"></i><b>4.2.30</b> n.tot_iso.13878.1998_wpct</a></li>
-<li class="chapter" data-level="4.2.31" data-path="database.html"><a href="database.html#s.tot_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.31</b> s.tot_usda.4h2_wpct</a></li>
-<li class="chapter" data-level="4.2.32" data-path="database.html"><a href="database.html#oc_usda.calc_wpct"><i class="fa fa-check"></i><b>4.2.32</b> oc_usda.calc_wpct</a></li>
-<li class="chapter" data-level="4.2.33" data-path="database.html"><a href="database.html#oc_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.33</b> oc_usda.4h2_wpct</a></li>
-<li class="chapter" data-level="4.2.34" data-path="database.html"><a href="database.html#oc_iso.10694.1995_wpct"><i class="fa fa-check"></i><b>4.2.34</b> oc_iso.10694.1995_wpct</a></li>
-<li class="chapter" data-level="4.2.35" data-path="database.html"><a href="database.html#oc_iso.17184.2014_wpct"><i class="fa fa-check"></i><b>4.2.35</b> oc_iso.17184.2014_wpct</a></li>
-<li class="chapter" data-level="4.2.36" data-path="database.html"><a href="database.html#humus_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.36</b> humus_usda.4h2_wpct</a></li>
-<li class="chapter" data-level="4.2.37" data-path="database.html"><a href="database.html#caco3.pres_usda.1b1_c"><i class="fa fa-check"></i><b>4.2.37</b> caco3.pres_usda.1b1_c</a></li>
-<li class="chapter" data-level="4.2.38" data-path="database.html"><a href="database.html#caco3_usda.4e1_wpct"><i class="fa fa-check"></i><b>4.2.38</b> caco3_usda.4e1_wpct</a></li>
-<li class="chapter" data-level="4.2.39" data-path="database.html"><a href="database.html#caco3_iso.10693.1995_vpct"><i class="fa fa-check"></i><b>4.2.39</b> caco3_iso.10693.1995_vpct</a></li>
-<li class="chapter" data-level="4.2.40" data-path="database.html"><a href="database.html#ca.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.40</b> ca.ext_usda.4b1_cmolkg</a></li>
-<li class="chapter" data-level="4.2.41" data-path="database.html"><a href="database.html#cec.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.41</b> cec.ext_usda.4b1_cmolkg</a></li>
-<li class="chapter" data-level="4.2.42" data-path="database.html"><a href="database.html#cec.ext_iso.13536.1995_cmolkg"><i class="fa fa-check"></i><b>4.2.42</b> cec.ext_iso.13536.1995_cmolkg</a></li>
-<li class="chapter" data-level="4.2.43" data-path="database.html"><a href="database.html#ecec_usda.4b4_cmolkg"><i class="fa fa-check"></i><b>4.2.43</b> ecec_usda.4b4_cmolkg</a></li>
-<li class="chapter" data-level="4.2.44" data-path="database.html"><a href="database.html#mg.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.44</b> mg.ext_usda.4b1_cmolkg</a></li>
-<li class="chapter" data-level="4.2.45" data-path="database.html"><a href="database.html#k.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.45</b> k.ext_usda.4b1_cmolkg</a></li>
-<li class="chapter" data-level="4.2.46" data-path="database.html"><a href="database.html#na.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.46</b> na.ext_usda.4b1_cmolkg</a></li>
-<li class="chapter" data-level="4.2.47" data-path="database.html"><a href="database.html#fe.ox_usda.4g2_wpct"><i class="fa fa-check"></i><b>4.2.47</b> fe.ox_usda.4g2_wpct</a></li>
-<li class="chapter" data-level="4.2.48" data-path="database.html"><a href="database.html#fe.dith_usda.4g1_wpct"><i class="fa fa-check"></i><b>4.2.48</b> fe.dith_usda.4g1_wpct</a></li>
-<li class="chapter" data-level="4.2.49" data-path="database.html"><a href="database.html#fe.pyp_usda.4g3_wpct"><i class="fa fa-check"></i><b>4.2.49</b> fe.pyp_usda.4g3_wpct</a></li>
-<li class="chapter" data-level="4.2.50" data-path="database.html"><a href="database.html#al.ox_usda.4g2_wpct"><i class="fa fa-check"></i><b>4.2.50</b> al.ox_usda.4g2_wpct</a></li>
-<li class="chapter" data-level="4.2.51" data-path="database.html"><a href="database.html#al.dith_usda.4g1_wpct"><i class="fa fa-check"></i><b>4.2.51</b> al.dith_usda.4g1_wpct</a></li>
-<li class="chapter" data-level="4.2.52" data-path="database.html"><a href="database.html#al.pyp_usda.4g3_wpct"><i class="fa fa-check"></i><b>4.2.52</b> al.pyp_usda.4g3_wpct</a></li>
-<li class="chapter" data-level="4.2.53" data-path="database.html"><a href="database.html#al.kcl_usda.4b3_cmolkg"><i class="fa fa-check"></i><b>4.2.53</b> al.kcl_usda.4b3_cmolkg</a></li>
-<li class="chapter" data-level="4.2.54" data-path="database.html"><a href="database.html#bsat_usda.4b4_wpct"><i class="fa fa-check"></i><b>4.2.54</b> bsat_usda.4b4_wpct</a></li>
-<li class="chapter" data-level="4.2.55" data-path="database.html"><a href="database.html#alsat_usda.4b4_wpct"><i class="fa fa-check"></i><b>4.2.55</b> alsat_usda.4b4_wpct</a></li>
-<li class="chapter" data-level="4.2.56" data-path="database.html"><a href="database.html#ph.h2o_usda.4c1_index"><i class="fa fa-check"></i><b>4.2.56</b> ph.h2o_usda.4c1_index</a></li>
-<li class="chapter" data-level="4.2.57" data-path="database.html"><a href="database.html#ph.cacl2_usda.4c1_index"><i class="fa fa-check"></i><b>4.2.57</b> ph.cacl2_usda.4c1_index</a></li>
-<li class="chapter" data-level="4.2.58" data-path="database.html"><a href="database.html#ph.cacl2_iso.10390.1994_index"><i class="fa fa-check"></i><b>4.2.58</b> ph.cacl2_iso.10390.1994_index</a></li>
-<li class="chapter" data-level="4.2.59" data-path="database.html"><a href="database.html#ec.w_usda.4f1_dsm"><i class="fa fa-check"></i><b>4.2.59</b> ec.w_usda.4f1_dsm</a></li>
-<li class="chapter" data-level="4.2.60" data-path="database.html"><a href="database.html#ec.ext.sat_usda.4f2_dsm"><i class="fa fa-check"></i><b>4.2.60</b> ec.ext.sat_usda.4f2_dsm</a></li>
-<li class="chapter" data-level="4.2.61" data-path="database.html"><a href="database.html#sodium.ads.ratio_usda.4f3_index"><i class="fa fa-check"></i><b>4.2.61</b> sodium.ads.ratio_usda.4f3_index</a></li>
-<li class="chapter" data-level="4.2.62" data-path="database.html"><a href="database.html#na.exch_usda.4f3_wpct"><i class="fa fa-check"></i><b>4.2.62</b> na.exch_usda.4f3_wpct</a></li>
-<li class="chapter" data-level="4.2.63" data-path="database.html"><a href="database.html#gyp_usda.4e2_wpct"><i class="fa fa-check"></i><b>4.2.63</b> gyp_usda.4e2_wpct</a></li>
-<li class="chapter" data-level="4.2.64" data-path="database.html"><a href="database.html#p.ext_usda.4d6_mgkg"><i class="fa fa-check"></i><b>4.2.64</b> p.ext_usda.4d6_mgkg</a></li>
-<li class="chapter" data-level="4.2.65" data-path="database.html"><a href="database.html#p.olsn_usda.4d5_mgkg"><i class="fa fa-check"></i><b>4.2.65</b> p.olsn_usda.4d5_mgkg</a></li>
+<li class="chapter" data-level="4.2.1" data-path="database.html"><a href="database.html#id.layer_uuid_c-1"><i class="fa fa-check"></i><b>4.2.1</b> id.layer_uuid_c</a></li>
+<li class="chapter" data-level="4.2.2" data-path="database.html"><a href="database.html#id.layer_local_c"><i class="fa fa-check"></i><b>4.2.2</b> id.layer_local_c</a></li>
+<li class="chapter" data-level="4.2.3" data-path="database.html"><a href="database.html#sample.doi_idf_c"><i class="fa fa-check"></i><b>4.2.3</b> sample.doi_idf_c</a></li>
+<li class="chapter" data-level="4.2.4" data-path="database.html"><a href="database.html#layer.sequence_usda_uint16"><i class="fa fa-check"></i><b>4.2.4</b> layer.sequence_usda_uint16</a></li>
+<li class="chapter" data-level="4.2.5" data-path="database.html"><a href="database.html#layer.type_usda_c"><i class="fa fa-check"></i><b>4.2.5</b> layer.type_usda_c</a></li>
+<li class="chapter" data-level="4.2.6" data-path="database.html"><a href="database.html#layer.field.label_any_c"><i class="fa fa-check"></i><b>4.2.6</b> layer.field.label_any_c</a></li>
+<li class="chapter" data-level="4.2.7" data-path="database.html"><a href="database.html#layer.upper.depth_usda_cm"><i class="fa fa-check"></i><b>4.2.7</b> layer.upper.depth_usda_cm</a></li>
+<li class="chapter" data-level="4.2.8" data-path="database.html"><a href="database.html#layer.lower.depth_usda_cm"><i class="fa fa-check"></i><b>4.2.8</b> layer.lower.depth_usda_cm</a></li>
+<li class="chapter" data-level="4.2.9" data-path="database.html"><a href="database.html#horizon.designation_usda_c"><i class="fa fa-check"></i><b>4.2.9</b> horizon.designation_usda_c</a></li>
+<li class="chapter" data-level="4.2.10" data-path="database.html"><a href="database.html#horizon.designation.discontinuity_usda_c"><i class="fa fa-check"></i><b>4.2.10</b> horizon.designation.discontinuity_usda_c</a></li>
+<li class="chapter" data-level="4.2.11" data-path="database.html"><a href="database.html#layer.structure.type_usda_c"><i class="fa fa-check"></i><b>4.2.11</b> layer.structure.type_usda_c</a></li>
+<li class="chapter" data-level="4.2.12" data-path="database.html"><a href="database.html#layer.structure.grade_usda_c"><i class="fa fa-check"></i><b>4.2.12</b> layer.structure.grade_usda_c</a></li>
+<li class="chapter" data-level="4.2.13" data-path="database.html"><a href="database.html#layer.texture_usda_c"><i class="fa fa-check"></i><b>4.2.13</b> layer.texture_usda_c</a></li>
+<li class="chapter" data-level="4.2.14" data-path="database.html"><a href="database.html#sand.tot_usda.3a1_wpct"><i class="fa fa-check"></i><b>4.2.14</b> sand.tot_usda.3a1_wpct</a></li>
+<li class="chapter" data-level="4.2.15" data-path="database.html"><a href="database.html#sand.tot_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.15</b> sand.tot_iso.11277.2020_wpct</a></li>
+<li class="chapter" data-level="4.2.16" data-path="database.html"><a href="database.html#silt.tot_usda.3a1_wpct"><i class="fa fa-check"></i><b>4.2.16</b> silt.tot_usda.3a1_wpct</a></li>
+<li class="chapter" data-level="4.2.17" data-path="database.html"><a href="database.html#silt.tot_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.17</b> silt.tot_iso.11277.2020_wpct</a></li>
+<li class="chapter" data-level="4.2.18" data-path="database.html"><a href="database.html#clay.tot_usda.3a1_wpct"><i class="fa fa-check"></i><b>4.2.18</b> clay.tot_usda.3a1_wpct</a></li>
+<li class="chapter" data-level="4.2.19" data-path="database.html"><a href="database.html#clay.tot_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.19</b> clay.tot_iso.11277.2020_wpct</a></li>
+<li class="chapter" data-level="4.2.20" data-path="database.html"><a href="database.html#wpg2_usda.3a2_wpct"><i class="fa fa-check"></i><b>4.2.20</b> wpg2_usda.3a2_wpct</a></li>
+<li class="chapter" data-level="4.2.21" data-path="database.html"><a href="database.html#wpg2_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.21</b> wpg2_iso.11277.2020_wpct</a></li>
+<li class="chapter" data-level="4.2.22" data-path="database.html"><a href="database.html#wr.1500kbar_usda.3c2_wpct"><i class="fa fa-check"></i><b>4.2.22</b> wr.1500kbar_usda.3c2_wpct</a></li>
+<li class="chapter" data-level="4.2.23" data-path="database.html"><a href="database.html#wr.33kbar_usda.3c1_wpct"><i class="fa fa-check"></i><b>4.2.23</b> wr.33kbar_usda.3c1_wpct</a></li>
+<li class="chapter" data-level="4.2.24" data-path="database.html"><a href="database.html#agg.stb_usda.1b1_wpct"><i class="fa fa-check"></i><b>4.2.24</b> agg.stb_usda.1b1_wpct</a></li>
+<li class="chapter" data-level="4.2.25" data-path="database.html"><a href="database.html#bd.clod_usda.3b1_gcm3"><i class="fa fa-check"></i><b>4.2.25</b> bd.clod_usda.3b1_gcm3</a></li>
+<li class="chapter" data-level="4.2.26" data-path="database.html"><a href="database.html#bd.od_usda.3b2_gcm3"><i class="fa fa-check"></i><b>4.2.26</b> bd.od_usda.3b2_gcm3</a></li>
+<li class="chapter" data-level="4.2.27" data-path="database.html"><a href="database.html#bd.core_iso.11272.2017_gcm3"><i class="fa fa-check"></i><b>4.2.27</b> bd.core_iso.11272.2017_gcm3</a></li>
+<li class="chapter" data-level="4.2.28" data-path="database.html"><a href="database.html#c.tot_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.28</b> c.tot_usda.4h2_wpct</a></li>
+<li class="chapter" data-level="4.2.29" data-path="database.html"><a href="database.html#c.tot_iso.10694.1995_wpct"><i class="fa fa-check"></i><b>4.2.29</b> c.tot_iso.10694.1995_wpct</a></li>
+<li class="chapter" data-level="4.2.30" data-path="database.html"><a href="database.html#n.tot_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.30</b> n.tot_usda.4h2_wpct</a></li>
+<li class="chapter" data-level="4.2.31" data-path="database.html"><a href="database.html#n.tot_iso.13878.1998_wpct"><i class="fa fa-check"></i><b>4.2.31</b> n.tot_iso.13878.1998_wpct</a></li>
+<li class="chapter" data-level="4.2.32" data-path="database.html"><a href="database.html#s.tot_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.32</b> s.tot_usda.4h2_wpct</a></li>
+<li class="chapter" data-level="4.2.33" data-path="database.html"><a href="database.html#oc_usda.calc_wpct"><i class="fa fa-check"></i><b>4.2.33</b> oc_usda.calc_wpct</a></li>
+<li class="chapter" data-level="4.2.34" data-path="database.html"><a href="database.html#oc_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.34</b> oc_usda.4h2_wpct</a></li>
+<li class="chapter" data-level="4.2.35" data-path="database.html"><a href="database.html#oc_iso.10694.1995_wpct"><i class="fa fa-check"></i><b>4.2.35</b> oc_iso.10694.1995_wpct</a></li>
+<li class="chapter" data-level="4.2.36" data-path="database.html"><a href="database.html#oc_iso.17184.2014_wpct"><i class="fa fa-check"></i><b>4.2.36</b> oc_iso.17184.2014_wpct</a></li>
+<li class="chapter" data-level="4.2.37" data-path="database.html"><a href="database.html#humus_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.37</b> humus_usda.4h2_wpct</a></li>
+<li class="chapter" data-level="4.2.38" data-path="database.html"><a href="database.html#caco3.pres_usda.1b1_c"><i class="fa fa-check"></i><b>4.2.38</b> caco3.pres_usda.1b1_c</a></li>
+<li class="chapter" data-level="4.2.39" data-path="database.html"><a href="database.html#caco3_usda.4e1_wpct"><i class="fa fa-check"></i><b>4.2.39</b> caco3_usda.4e1_wpct</a></li>
+<li class="chapter" data-level="4.2.40" data-path="database.html"><a href="database.html#caco3_iso.10693.1995_vpct"><i class="fa fa-check"></i><b>4.2.40</b> caco3_iso.10693.1995_vpct</a></li>
+<li class="chapter" data-level="4.2.41" data-path="database.html"><a href="database.html#ca.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.41</b> ca.ext_usda.4b1_cmolkg</a></li>
+<li class="chapter" data-level="4.2.42" data-path="database.html"><a href="database.html#cec.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.42</b> cec.ext_usda.4b1_cmolkg</a></li>
+<li class="chapter" data-level="4.2.43" data-path="database.html"><a href="database.html#cec.ext_iso.13536.1995_cmolkg"><i class="fa fa-check"></i><b>4.2.43</b> cec.ext_iso.13536.1995_cmolkg</a></li>
+<li class="chapter" data-level="4.2.44" data-path="database.html"><a href="database.html#ecec_usda.4b4_cmolkg"><i class="fa fa-check"></i><b>4.2.44</b> ecec_usda.4b4_cmolkg</a></li>
+<li class="chapter" data-level="4.2.45" data-path="database.html"><a href="database.html#mg.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.45</b> mg.ext_usda.4b1_cmolkg</a></li>
+<li class="chapter" data-level="4.2.46" data-path="database.html"><a href="database.html#k.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.46</b> k.ext_usda.4b1_cmolkg</a></li>
+<li class="chapter" data-level="4.2.47" data-path="database.html"><a href="database.html#na.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.47</b> na.ext_usda.4b1_cmolkg</a></li>
+<li class="chapter" data-level="4.2.48" data-path="database.html"><a href="database.html#fe.ox_usda.4g2_wpct"><i class="fa fa-check"></i><b>4.2.48</b> fe.ox_usda.4g2_wpct</a></li>
+<li class="chapter" data-level="4.2.49" data-path="database.html"><a href="database.html#fe.dith_usda.4g1_wpct"><i class="fa fa-check"></i><b>4.2.49</b> fe.dith_usda.4g1_wpct</a></li>
+<li class="chapter" data-level="4.2.50" data-path="database.html"><a href="database.html#fe.pyp_usda.4g3_wpct"><i class="fa fa-check"></i><b>4.2.50</b> fe.pyp_usda.4g3_wpct</a></li>
+<li class="chapter" data-level="4.2.51" data-path="database.html"><a href="database.html#al.ox_usda.4g2_wpct"><i class="fa fa-check"></i><b>4.2.51</b> al.ox_usda.4g2_wpct</a></li>
+<li class="chapter" data-level="4.2.52" data-path="database.html"><a href="database.html#al.dith_usda.4g1_wpct"><i class="fa fa-check"></i><b>4.2.52</b> al.dith_usda.4g1_wpct</a></li>
+<li class="chapter" data-level="4.2.53" data-path="database.html"><a href="database.html#al.pyp_usda.4g3_wpct"><i class="fa fa-check"></i><b>4.2.53</b> al.pyp_usda.4g3_wpct</a></li>
+<li class="chapter" data-level="4.2.54" data-path="database.html"><a href="database.html#al.kcl_usda.4b3_cmolkg"><i class="fa fa-check"></i><b>4.2.54</b> al.kcl_usda.4b3_cmolkg</a></li>
+<li class="chapter" data-level="4.2.55" data-path="database.html"><a href="database.html#bsat_usda.4b4_wpct"><i class="fa fa-check"></i><b>4.2.55</b> bsat_usda.4b4_wpct</a></li>
+<li class="chapter" data-level="4.2.56" data-path="database.html"><a href="database.html#alsat_usda.4b4_wpct"><i class="fa fa-check"></i><b>4.2.56</b> alsat_usda.4b4_wpct</a></li>
+<li class="chapter" data-level="4.2.57" data-path="database.html"><a href="database.html#ph.h2o_usda.4c1_index"><i class="fa fa-check"></i><b>4.2.57</b> ph.h2o_usda.4c1_index</a></li>
+<li class="chapter" data-level="4.2.58" data-path="database.html"><a href="database.html#ph.cacl2_usda.4c1_index"><i class="fa fa-check"></i><b>4.2.58</b> ph.cacl2_usda.4c1_index</a></li>
+<li class="chapter" data-level="4.2.59" data-path="database.html"><a href="database.html#ph.cacl2_iso.10390.1994_index"><i class="fa fa-check"></i><b>4.2.59</b> ph.cacl2_iso.10390.1994_index</a></li>
+<li class="chapter" data-level="4.2.60" data-path="database.html"><a href="database.html#ec.w_usda.4f1_dsm"><i class="fa fa-check"></i><b>4.2.60</b> ec.w_usda.4f1_dsm</a></li>
+<li class="chapter" data-level="4.2.61" data-path="database.html"><a href="database.html#ec.ext.sat_usda.4f2_dsm"><i class="fa fa-check"></i><b>4.2.61</b> ec.ext.sat_usda.4f2_dsm</a></li>
+<li class="chapter" data-level="4.2.62" data-path="database.html"><a href="database.html#sodium.ads.ratio_usda.4f3_index"><i class="fa fa-check"></i><b>4.2.62</b> sodium.ads.ratio_usda.4f3_index</a></li>
+<li class="chapter" data-level="4.2.63" data-path="database.html"><a href="database.html#na.exch_usda.4f3_wpct"><i class="fa fa-check"></i><b>4.2.63</b> na.exch_usda.4f3_wpct</a></li>
+<li class="chapter" data-level="4.2.64" data-path="database.html"><a href="database.html#gyp_usda.4e2_wpct"><i class="fa fa-check"></i><b>4.2.64</b> gyp_usda.4e2_wpct</a></li>
+<li class="chapter" data-level="4.2.65" data-path="database.html"><a href="database.html#p.ext_usda.4d6_mgkg"><i class="fa fa-check"></i><b>4.2.65</b> p.ext_usda.4d6_mgkg</a></li>
+<li class="chapter" data-level="4.2.66" data-path="database.html"><a href="database.html#p.olsn_usda.4d5_mgkg"><i class="fa fa-check"></i><b>4.2.66</b> p.olsn_usda.4d5_mgkg</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="database.html"><a href="database.html#harmonization-rules"><i class="fa fa-check"></i><b>4.3</b> Harmonization rules</a>
+<li class="chapter" data-level="4.3" data-path="database.html"><a href="database.html#mir-table"><i class="fa fa-check"></i><b>4.3</b> MIR scans table</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="database.html"><a href="database.html#ph"><i class="fa fa-check"></i><b>4.3.1</b> pH</a></li>
-<li class="chapter" data-level="4.3.2" data-path="database.html"><a href="database.html#carbon"><i class="fa fa-check"></i><b>4.3.2</b> Carbon</a></li>
-<li class="chapter" data-level="4.3.3" data-path="database.html"><a href="database.html#phosphorous"><i class="fa fa-check"></i><b>4.3.3</b> Phosphorous</a></li>
-<li class="chapter" data-level="4.3.4" data-path="database.html"><a href="database.html#potassium"><i class="fa fa-check"></i><b>4.3.4</b> Potassium</a></li>
-<li class="chapter" data-level="4.3.5" data-path="database.html"><a href="database.html#nitrogen"><i class="fa fa-check"></i><b>4.3.5</b> Nitrogen</a></li>
-<li class="chapter" data-level="4.3.6" data-path="database.html"><a href="database.html#exchangeable-cations-and-cec"><i class="fa fa-check"></i><b>4.3.6</b> Exchangeable cations and CEC</a></li>
-<li class="chapter" data-level="4.3.7" data-path="database.html"><a href="database.html#texture-fractions"><i class="fa fa-check"></i><b>4.3.7</b> Texture fractions</a></li>
-<li class="chapter" data-level="4.3.8" data-path="database.html"><a href="database.html#bulk-density"><i class="fa fa-check"></i><b>4.3.8</b> Bulk density</a></li>
-<li class="chapter" data-level="4.3.9" data-path="database.html"><a href="database.html#soil-biological-variables"><i class="fa fa-check"></i><b>4.3.9</b> Soil biological variables</a></li>
-<li class="chapter" data-level="4.3.10" data-path="database.html"><a href="database.html#soil-contaminants"><i class="fa fa-check"></i><b>4.3.10</b> Soil contaminants</a></li>
+<li class="chapter" data-level="4.3.1" data-path="database.html"><a href="database.html#id.scan_uuid_c"><i class="fa fa-check"></i><b>4.3.1</b> id.scan_uuid_c</a></li>
+<li class="chapter" data-level="4.3.2" data-path="database.html"><a href="database.html#id.scan_local_c"><i class="fa fa-check"></i><b>4.3.2</b> id.scan_local_c</a></li>
+<li class="chapter" data-level="4.3.3" data-path="database.html"><a href="database.html#id.layer_uuid_c-2"><i class="fa fa-check"></i><b>4.3.3</b> id.layer_uuid_c</a></li>
+<li class="chapter" data-level="4.3.4" data-path="database.html"><a href="database.html#id.layer_local_c-1"><i class="fa fa-check"></i><b>4.3.4</b> id.layer_local_c</a></li>
+<li class="chapter" data-level="4.3.5" data-path="database.html"><a href="database.html#model.name_utf8_txt"><i class="fa fa-check"></i><b>4.3.5</b> model.name_utf8_txt</a></li>
+<li class="chapter" data-level="4.3.6" data-path="database.html"><a href="database.html#model.code_any_c"><i class="fa fa-check"></i><b>4.3.6</b> model.code_any_c</a></li>
+<li class="chapter" data-level="4.3.7" data-path="database.html"><a href="database.html#method.light.source_any_c"><i class="fa fa-check"></i><b>4.3.7</b> method.light.source_any_c</a></li>
+<li class="chapter" data-level="4.3.8" data-path="database.html"><a href="database.html#method.preparation_any_c"><i class="fa fa-check"></i><b>4.3.8</b> method.preparation_any_c</a></li>
+<li class="chapter" data-level="4.3.9" data-path="database.html"><a href="database.html#scan.file_any_c"><i class="fa fa-check"></i><b>4.3.9</b> scan.file_any_c</a></li>
+<li class="chapter" data-level="4.3.10" data-path="database.html"><a href="database.html#scan.date.begin_iso.8601_yyyy.mm.dd"><i class="fa fa-check"></i><b>4.3.10</b> scan.date.begin_iso.8601_yyyy.mm.dd</a></li>
+<li class="chapter" data-level="4.3.11" data-path="database.html"><a href="database.html#scan.date.end_iso.8601_yyyy.mm.dd"><i class="fa fa-check"></i><b>4.3.11</b> scan.date.end_iso.8601_yyyy.mm.dd</a></li>
+<li class="chapter" data-level="4.3.12" data-path="database.html"><a href="database.html#scan.license.title_ascii_txt"><i class="fa fa-check"></i><b>4.3.12</b> scan.license.title_ascii_txt</a></li>
+<li class="chapter" data-level="4.3.13" data-path="database.html"><a href="database.html#scan.license.address_idn_url"><i class="fa fa-check"></i><b>4.3.13</b> scan.license.address_idn_url</a></li>
+<li class="chapter" data-level="4.3.14" data-path="database.html"><a href="database.html#scan.doi_idf_c"><i class="fa fa-check"></i><b>4.3.14</b> scan.doi_idf_c</a></li>
+<li class="chapter" data-level="4.3.15" data-path="database.html"><a href="database.html#scan.contact.name_utf8_txt"><i class="fa fa-check"></i><b>4.3.15</b> scan.contact.name_utf8_txt</a></li>
+<li class="chapter" data-level="4.3.16" data-path="database.html"><a href="database.html#scan.contact.email_ietf_email"><i class="fa fa-check"></i><b>4.3.16</b> scan.contact.email_ietf_email</a></li>
+<li class="chapter" data-level="4.3.17" data-path="database.html"><a href="database.html#scan_mir._abs"><i class="fa fa-check"></i><b>4.3.17</b> scan_mir.****_abs</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="database.html"><a href="database.html#visnir-table"><i class="fa fa-check"></i><b>4.4</b> VisNIR scans table</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="database.html"><a href="database.html#id.scan_uuid_c-1"><i class="fa fa-check"></i><b>4.4.1</b> id.scan_uuid_c</a></li>
+<li class="chapter" data-level="4.4.2" data-path="database.html"><a href="database.html#id.scan_local_c-1"><i class="fa fa-check"></i><b>4.4.2</b> id.scan_local_c</a></li>
+<li class="chapter" data-level="4.4.3" data-path="database.html"><a href="database.html#id.layer_uuid_c-3"><i class="fa fa-check"></i><b>4.4.3</b> id.layer_uuid_c</a></li>
+<li class="chapter" data-level="4.4.4" data-path="database.html"><a href="database.html#id.layer_local_c-2"><i class="fa fa-check"></i><b>4.4.4</b> id.layer_local_c</a></li>
+<li class="chapter" data-level="4.4.5" data-path="database.html"><a href="database.html#model.name_utf8_txt-1"><i class="fa fa-check"></i><b>4.4.5</b> model.name_utf8_txt</a></li>
+<li class="chapter" data-level="4.4.6" data-path="database.html"><a href="database.html#model.code_any_c-1"><i class="fa fa-check"></i><b>4.4.6</b> model.code_any_c</a></li>
+<li class="chapter" data-level="4.4.7" data-path="database.html"><a href="database.html#method.light.source_any_c-1"><i class="fa fa-check"></i><b>4.4.7</b> method.light.source_any_c</a></li>
+<li class="chapter" data-level="4.4.8" data-path="database.html"><a href="database.html#method.preparation_any_c-1"><i class="fa fa-check"></i><b>4.4.8</b> method.preparation_any_c</a></li>
+<li class="chapter" data-level="4.4.9" data-path="database.html"><a href="database.html#scan.file_any_c-1"><i class="fa fa-check"></i><b>4.4.9</b> scan.file_any_c</a></li>
+<li class="chapter" data-level="4.4.10" data-path="database.html"><a href="database.html#scan.date.begin_iso.8601_yyyy.mm.dd-1"><i class="fa fa-check"></i><b>4.4.10</b> scan.date.begin_iso.8601_yyyy.mm.dd</a></li>
+<li class="chapter" data-level="4.4.11" data-path="database.html"><a href="database.html#scan.date.end_iso.8601_yyyy.mm.dd-1"><i class="fa fa-check"></i><b>4.4.11</b> scan.date.end_iso.8601_yyyy.mm.dd</a></li>
+<li class="chapter" data-level="4.4.12" data-path="database.html"><a href="database.html#scan.license.title_ascii_txt-1"><i class="fa fa-check"></i><b>4.4.12</b> scan.license.title_ascii_txt</a></li>
+<li class="chapter" data-level="4.4.13" data-path="database.html"><a href="database.html#scan.license.address_idn_url-1"><i class="fa fa-check"></i><b>4.4.13</b> scan.license.address_idn_url</a></li>
+<li class="chapter" data-level="4.4.14" data-path="database.html"><a href="database.html#scan.doi_idf_c-1"><i class="fa fa-check"></i><b>4.4.14</b> scan.doi_idf_c</a></li>
+<li class="chapter" data-level="4.4.15" data-path="database.html"><a href="database.html#scan.contact.name_utf8_txt-1"><i class="fa fa-check"></i><b>4.4.15</b> scan.contact.name_utf8_txt</a></li>
+<li class="chapter" data-level="4.4.16" data-path="database.html"><a href="database.html#scan.contact.email_ietf_email-1"><i class="fa fa-check"></i><b>4.4.16</b> scan.contact.email_ietf_email</a></li>
+<li class="chapter" data-level="4.4.17" data-path="database.html"><a href="database.html#scan_visnir._pcnt"><i class="fa fa-check"></i><b>4.4.17</b> scan_visnir.****_pcnt</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="database.html"><a href="database.html#harmonization-rules"><i class="fa fa-check"></i><b>4.5</b> Harmonization rules</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="database.html"><a href="database.html#ph"><i class="fa fa-check"></i><b>4.5.1</b> pH</a></li>
+<li class="chapter" data-level="4.5.2" data-path="database.html"><a href="database.html#carbon"><i class="fa fa-check"></i><b>4.5.2</b> Carbon</a></li>
+<li class="chapter" data-level="4.5.3" data-path="database.html"><a href="database.html#phosphorous"><i class="fa fa-check"></i><b>4.5.3</b> Phosphorous</a></li>
+<li class="chapter" data-level="4.5.4" data-path="database.html"><a href="database.html#potassium"><i class="fa fa-check"></i><b>4.5.4</b> Potassium</a></li>
+<li class="chapter" data-level="4.5.5" data-path="database.html"><a href="database.html#nitrogen"><i class="fa fa-check"></i><b>4.5.5</b> Nitrogen</a></li>
+<li class="chapter" data-level="4.5.6" data-path="database.html"><a href="database.html#exchangeable-cations-and-cec"><i class="fa fa-check"></i><b>4.5.6</b> Exchangeable cations and CEC</a></li>
+<li class="chapter" data-level="4.5.7" data-path="database.html"><a href="database.html#texture-fractions"><i class="fa fa-check"></i><b>4.5.7</b> Texture fractions</a></li>
+<li class="chapter" data-level="4.5.8" data-path="database.html"><a href="database.html#bulk-density"><i class="fa fa-check"></i><b>4.5.8</b> Bulk density</a></li>
+<li class="chapter" data-level="4.5.9" data-path="database.html"><a href="database.html#soil-biological-variables"><i class="fa fa-check"></i><b>4.5.9</b> Soil biological variables</a></li>
+<li class="chapter" data-level="4.5.10" data-path="database.html"><a href="database.html#soil-contaminants"><i class="fa fa-check"></i><b>4.5.10</b> Soil contaminants</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html"><i class="fa fa-check"></i><b>5</b> Reference soil spectroscopy models</a>
@@ -349,9 +392,9 @@ div.csl-indent {
 <div id="sites-table" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Sites table</h2>
 <p>Observations and measurements at site. For the <strong>site</strong> table please use (at least) the following columns.</p>
-<div id="id.site_uuid_c" class="section level3" number="4.1.1">
-<h3><span class="header-section-number">4.1.1</span> id.site_uuid_c</h3>
-<p><strong>Unique site ID</strong>: Should be best generated using some <a href="https://cran.r-project.org/package=uuid">UUID generator tool</a>; example: <code>id.site_uuid_c = '672d1fd6-b186-11eb-8a61-7446a0925130'</code><br />
+<div id="id.layer_uuid_c" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> id.layer_uuid_c</h3>
+<p><strong>Unique layer ID</strong>: Should be best generated using some <a href="https://cran.r-project.org/package=uuid">UUID generator tool</a>; example: <code>id.layer_uuid_c = '672d1fd6-b186-11eb-8a61-7446a0925130'</code><br />
 </p>
 </div>
 <div id="id.location_olc_c" class="section level3" number="4.1.2">
@@ -366,7 +409,7 @@ We recommend rounding the latitude and longitude coordinates to 6 decimal places
 </div>
 <div id="observation.ogc.schema_idn_url" class="section level3" number="4.1.4">
 <h3><span class="header-section-number">4.1.4</span> observation.ogc.schema_idn_url</h3>
-<p><a href="https://www.ogc.org/standards/om">Observation OGC</a> schema URL; example: <code>observation.ogc.schema_idn_url = 'https://github.com/soilspectroscopy/ossl-schema'</code><br />
+<p><a href="https://www.ogc.org/standards/om">Observation OGC</a> schema URL; example: <code>observation.ogc.schema_idn_url = 'https://github.com/soilspectroscopy/'</code><br />
 </p>
 </div>
 <div id="observation.date.begin_iso.8601_yyyy.mm.dd" class="section level3" number="4.1.5">
@@ -483,391 +526,1007 @@ We recommend rounding the latitude and longitude coordinates to 6 decimal places
 <p>Unique project code; example: <code>id.project_ascii_c = 'TEX18'</code><br />
 </p>
 </div>
+<div id="pedon.taxa_usda_c" class="section level3" number="4.1.28">
+<h3><span class="header-section-number">4.1.28</span> pedon.taxa_usda_c</h3>
+<p>Soil classification based on the <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/class/taxonomy/?cid=nrcs142p2_053580">USDA Keys to Soil Taxonomy</a>; example: <code>pedon.taxa_usda_c = 'Mollisols_Ustolls_Haplustolls'</code>.<br />
+Complete list of possible great groups is available <a href="https://github.com/OpenGeoHub/SoilSamples/tree/main/tabular">here</a>.</p>
+</div>
 </div>
 <div id="soillab-table" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Soillab table</h2>
-<div id="id.site_uuid_c-1" class="section level3" number="4.2.1">
-<h3><span class="header-section-number">4.2.1</span> id.site_uuid_c</h3>
+<div id="id.layer_uuid_c-1" class="section level3" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> id.layer_uuid_c</h3>
 <p>Unique site ID generated using some <a href="https://cran.r-project.org/package=uuid">UUID generator tool</a>; example: <code>id.site_uuid_c = '672d1fd6-b186-11eb-8a61-7446a0925130'</code><br />
 This ID links with the <a href="database.html#sites-table">Sites table</a>.</p>
 </div>
-<div id="id.sample_uuid_c" class="section level3" number="4.2.2">
-<h3><span class="header-section-number">4.2.2</span> id.sample_uuid_c</h3>
-<p>Unique sample ID generated using some <a href="https://cran.r-project.org/package=uuid">UUID generator tool</a>; example: <code>id.sample_uuid_c = '31d454be-b1ac-11eb-8a61-7446a0925130'</code><br />
+<div id="id.layer_local_c" class="section level3" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> id.layer_local_c</h3>
+<p>Local original layer ID; example: <code>id.site_uuid_c = '456002'</code><br />
+This ID links with the <a href="database.html#sites-table">Sites table</a>.</p>
+</div>
+<div id="sample.doi_idf_c" class="section level3" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> sample.doi_idf_c</h3>
+<p>Unique DOI that can be used when citing the dataset; example: <code>sample.doi_idf_c = '10.3390/s20236729'</code><br />
 </p>
 </div>
-<div id="layer.sequence_usda_uint16" class="section level3" number="4.2.3">
-<h3><span class="header-section-number">4.2.3</span> layer.sequence_usda_uint16</h3>
+<div id="layer.sequence_usda_uint16" class="section level3" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> layer.sequence_usda_uint16</h3>
 <p>Layer sequence number <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/research/guide/?cid=nrcs142p2_054184">based on the USDA system</a>; example: <code>layer.sequence_usda_uint16 = '1'</code><br />
 </p>
 </div>
-<div id="layer.type_usda_c" class="section level3" number="4.2.4">
-<h3><span class="header-section-number">4.2.4</span> layer.type_usda_c</h3>
+<div id="layer.type_usda_c" class="section level3" number="4.2.5">
+<h3><span class="header-section-number">4.2.5</span> layer.type_usda_c</h3>
 <p>Layer type <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/research/guide/?cid=nrcs142p2_054184">based on the USDA system</a>; example: <code>layer.type_usda_c = 'horizon'</code><br />
 </p>
 </div>
-<div id="layer.field.label_any_c" class="section level3" number="4.2.5">
-<h3><span class="header-section-number">4.2.5</span> layer.field.label_any_c</h3>
+<div id="layer.field.label_any_c" class="section level3" number="4.2.6">
+<h3><span class="header-section-number">4.2.6</span> layer.field.label_any_c</h3>
 <p>Layer field label used e.g. for soil samples; example: <code>layer.field.label_any_c = 'S00OR-039-001-2'</code><br />
 </p>
 </div>
-<div id="layer.upper.depth_usda_cm" class="section level3" number="4.2.6">
-<h3><span class="header-section-number">4.2.6</span> layer.upper.depth_usda_cm</h3>
+<div id="layer.upper.depth_usda_cm" class="section level3" number="4.2.7">
+<h3><span class="header-section-number">4.2.7</span> layer.upper.depth_usda_cm</h3>
 <p>Layer upper depth in cm; example: <code>layer.upper.depth_usda_cm = '13'</code><br />
 </p>
 </div>
-<div id="layer.lower.depth_usda_cm" class="section level3" number="4.2.7">
-<h3><span class="header-section-number">4.2.7</span> layer.lower.depth_usda_cm</h3>
+<div id="layer.lower.depth_usda_cm" class="section level3" number="4.2.8">
+<h3><span class="header-section-number">4.2.8</span> layer.lower.depth_usda_cm</h3>
 <p>Layer lower depth in cm; example: <code>layer.lower.depth_usda_cm = '36'</code><br />
 </p>
 </div>
-<div id="horizon.designation_usda_c" class="section level3" number="4.2.8">
-<h3><span class="header-section-number">4.2.8</span> horizon.designation_usda_c</h3>
+<div id="horizon.designation_usda_c" class="section level3" number="4.2.9">
+<h3><span class="header-section-number">4.2.9</span> horizon.designation_usda_c</h3>
 <p>Layer horizon designation <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/research/guide/?cid=nrcs142p2_054184">based on the USDA system</a>; example: <code>horizon.designation_usda_c = 'A2'</code><br />
 </p>
 </div>
-<div id="horizon.designation.discontinuity_usda_c" class="section level3" number="4.2.9">
-<h3><span class="header-section-number">4.2.9</span> horizon.designation.discontinuity_usda_c</h3>
+<div id="horizon.designation.discontinuity_usda_c" class="section level3" number="4.2.10">
+<h3><span class="header-section-number">4.2.10</span> horizon.designation.discontinuity_usda_c</h3>
 <p>Layer horizon designation discontinuity <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/research/guide/?cid=nrcs142p2_054184">based on the USDA system</a>; example: <code>horizon.designation.discontinuity_usda_c = ''</code><br />
 </p>
 </div>
-<div id="layer.structure.type_usda_c" class="section level3" number="4.2.10">
-<h3><span class="header-section-number">4.2.10</span> layer.structure.type_usda_c</h3>
+<div id="layer.structure.type_usda_c" class="section level3" number="4.2.11">
+<h3><span class="header-section-number">4.2.11</span> layer.structure.type_usda_c</h3>
 <p>Layer horizon structure type <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/research/guide/?cid=nrcs142p2_054184">based on the USDA system</a>; example: <code>layer.structure.type_usda_c = ''</code><br />
 </p>
 </div>
-<div id="layer.structure.grade_usda_c" class="section level3" number="4.2.11">
-<h3><span class="header-section-number">4.2.11</span> layer.structure.grade_usda_c</h3>
+<div id="layer.structure.grade_usda_c" class="section level3" number="4.2.12">
+<h3><span class="header-section-number">4.2.12</span> layer.structure.grade_usda_c</h3>
 <p>Layers horizon structure grade <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/research/guide/?cid=nrcs142p2_054184">based on the USDA system</a>; example: <code>layer.structure.grade_usda_c = ''</code><br />
 </p>
 </div>
-<div id="layer.texture_usda_c" class="section level3" number="4.2.12">
-<h3><span class="header-section-number">4.2.12</span> layer.texture_usda_c</h3>
+<div id="layer.texture_usda_c" class="section level3" number="4.2.13">
+<h3><span class="header-section-number">4.2.13</span> layer.texture_usda_c</h3>
 <p>Layer field-estimated texture-by-hand class <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/?cid=nrcs142p2_054167">based on the USDA system</a>; example: <code>layer.texture_usda_c = 'Gravelly Clay'</code><br />
 To estimate the field texture-by-hand please follow <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054311">these guidelines</a>.<br />
 </p>
 </div>
-<div id="sand.tot_usda.3a1_wpct" class="section level3" number="4.2.13">
-<h3><span class="header-section-number">4.2.13</span> sand.tot_usda.3a1_wpct</h3>
+<div id="sand.tot_usda.3a1_wpct" class="section level3" number="4.2.14">
+<h3><span class="header-section-number">4.2.14</span> sand.tot_usda.3a1_wpct</h3>
 <p>Total sand content; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=76">description</a>: <code>sand.tot_usda.3a1_wpct</code> = Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported a gravimetric percent on a &lt;2 mm base. H prep.<br />
 </p>
-<div class="figure"><span id="fig:hist-sand"></span>
-<img src="hist/sand.tot_usda.3a1_wpct_hist.png" alt="Total sand content histograms." width="70%" />
+<ul>
+<li>🆔 <code>code</code> sand.tot_usda.3a1_wpct<br />
+</li>
+<li>📚 Measurement unit: weight percent<br />
+</li>
+<li>🔬 Laboratory method: Particle-Size Distribution Analysis using Pipette<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-agriculture2019soil" role="doc-biblioref">USDA NRCS</a> (<a href="#ref-agriculture2019soil" role="doc-biblioref">2019</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="database.html#cb1-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;sand.tot_usda.3a1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb1-2"><a href="database.html#cb1-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Sand wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-sand"></span>
+<img src="020-variables_list_files/figure-html/plot-sand-1.png" alt="Soil-depth histogram for total sand content in wpct." width="70%" />
 <p class="caption">
-Figure 4.1: Total sand content histograms.
+Figure 4.1: Soil-depth histogram for total sand content in wpct.
+</p>
+</div>
+<div class="figure"><span id="fig:hist-sand1"></span>
+<img src="hist/sand.tot_usda.3a1_wpct_hist.png" alt="Total sand content in weight percent histograms." width="70%" />
+<p class="caption">
+Figure 4.2: Total sand content in weight percent histograms.
 </p>
 </div>
 </div>
-<div id="sand.tot_iso.11277.2020_wpct" class="section level3" number="4.2.14">
-<h3><span class="header-section-number">4.2.14</span> sand.tot_iso.11277.2020_wpct</h3>
+<div id="sand.tot_iso.11277.2020_wpct" class="section level3" number="4.2.15">
+<h3><span class="header-section-number">4.2.15</span> sand.tot_iso.11277.2020_wpct</h3>
 <p>Total laboratory-estimated sand (0.05 to 2.0 mm particle diameter) based on <a href="https://www.iso.org/obp/ui/#iso:std:iso:11277:ed-3:v1:en">ISO 11277:2020(en)</a>
 Soil quality — Determination of particle size distribution in mineral soil material — Method by sieving and sedimentation.<br />
 </p>
 </div>
-<div id="silt.tot_usda.3a1_wpct" class="section level3" number="4.2.15">
-<h3><span class="header-section-number">4.2.15</span> silt.tot_usda.3a1_wpct</h3>
+<div id="silt.tot_usda.3a1_wpct" class="section level3" number="4.2.16">
+<h3><span class="header-section-number">4.2.16</span> silt.tot_usda.3a1_wpct</h3>
 <p>Total silt content; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=76">description</a>: <code>silt.tot_usda.3a1_wpct</code> = Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported as a gravimetric percent on a &lt;2 mm base.<br />
 </p>
-<div class="figure"><span id="fig:hist-silt"></span>
-<img src="hist/silt.tot_usda.3a1_wpct_hist.png" alt="Total silt content histograms." width="70%" />
+<ul>
+<li>🆔 <code>code</code> silt.tot_usda.3a1_wpct<br />
+</li>
+<li>📚 Measurement unit: weight percent<br />
+</li>
+<li>🔬 Laboratory method: Particle-Size Distribution Analysis using Pipette<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-agriculture2019soil" role="doc-biblioref">USDA NRCS</a> (<a href="#ref-agriculture2019soil" role="doc-biblioref">2019</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="database.html#cb2-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;silt.tot_usda.3a1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb2-2"><a href="database.html#cb2-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Silt wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-silt"></span>
+<img src="020-variables_list_files/figure-html/plot-silt-1.png" alt="Soil-depth histogram for total silt content in wpct." width="70%" />
 <p class="caption">
-Figure 4.2: Total silt content histograms.
+Figure 4.3: Soil-depth histogram for total silt content in wpct.
+</p>
+</div>
+<div class="figure"><span id="fig:hist-silt1"></span>
+<img src="hist/silt.tot_usda.3a1_wpct_hist.png" alt="Total silt content in weight percent histograms." width="70%" />
+<p class="caption">
+Figure 4.4: Total silt content in weight percent histograms.
 </p>
 </div>
 </div>
-<div id="silt.tot_iso.11277.2020_wpct" class="section level3" number="4.2.16">
-<h3><span class="header-section-number">4.2.16</span> silt.tot_iso.11277.2020_wpct</h3>
+<div id="silt.tot_iso.11277.2020_wpct" class="section level3" number="4.2.17">
+<h3><span class="header-section-number">4.2.17</span> silt.tot_iso.11277.2020_wpct</h3>
 <p>Total laboratory-estimated silt (0.002 to 0.05 mm particle size) based on <a href="https://www.iso.org/obp/ui/#iso:std:iso:11277:ed-3:v1:en">ISO 11277:2020(en)</a>
 Soil quality — Determination of particle size distribution in mineral soil material — Method by sieving and sedimentation.<br />
 </p>
 </div>
-<div id="clay.tot_usda.3a1_wpct" class="section level3" number="4.2.17">
-<h3><span class="header-section-number">4.2.17</span> clay.tot_usda.3a1_wpct</h3>
+<div id="clay.tot_usda.3a1_wpct" class="section level3" number="4.2.18">
+<h3><span class="header-section-number">4.2.18</span> clay.tot_usda.3a1_wpct</h3>
 <p>Total clay content; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=76">description</a>: <code>clay.tot_usda.3a1_wpct</code> = Total clay is the soil separate with &lt;0.002 mm particle diameter. Clay size carbonate is included. Total clay is reported as a weight percent of the &lt;2 mm fraction.<br />
 </p>
-<div class="figure"><span id="fig:hist-clay"></span>
-<img src="hist/clay.tot_usda.3a1_wpct_hist.png" alt="Total clay content histograms." width="70%" />
+<ul>
+<li>🆔 <code>code</code> clay.tot_usda.3a1_wpct<br />
+</li>
+<li>📚 Measurement unit: weight percent<br />
+</li>
+<li>🔬 Laboratory method: Particle-Size Distribution Analysis using Pipette<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-agriculture2019soil" role="doc-biblioref">USDA NRCS</a> (<a href="#ref-agriculture2019soil" role="doc-biblioref">2019</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="database.html#cb3-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;clay.tot_usda.3a1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb3-2"><a href="database.html#cb3-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Clay wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-clay"></span>
+<img src="020-variables_list_files/figure-html/plot-clay-1.png" alt="Soil-depth histogram for total clay in wpct." width="70%" />
 <p class="caption">
-Figure 4.3: Total clay content histograms.
+Figure 4.5: Soil-depth histogram for total clay in wpct.
+</p>
+</div>
+<div class="figure"><span id="fig:hist-clay1"></span>
+<img src="hist/clay.tot_usda.3a1_wpct_hist.png" alt="Total clay content in weight percent histograms." width="70%" />
+<p class="caption">
+Figure 4.6: Total clay content in weight percent histograms.
 </p>
 </div>
 </div>
-<div id="clay.tot_iso.11277.2020_wpct" class="section level3" number="4.2.18">
-<h3><span class="header-section-number">4.2.18</span> clay.tot_iso.11277.2020_wpct</h3>
+<div id="clay.tot_iso.11277.2020_wpct" class="section level3" number="4.2.19">
+<h3><span class="header-section-number">4.2.19</span> clay.tot_iso.11277.2020_wpct</h3>
 <p>Total clay (&lt;0.002 mm particle diameter) based on <a href="https://www.iso.org/obp/ui/#iso:std:iso:11277:ed-3:v1:en">ISO 11277:2020(en)</a>
 Soil quality — Determination of particle size distribution in mineral soil material — Method by sieving and sedimentation.<br />
 </p>
 </div>
-<div id="wpg2_usda.3a2_wpct" class="section level3" number="4.2.19">
-<h3><span class="header-section-number">4.2.19</span> wpg2_usda.3a2_wpct</h3>
+<div id="wpg2_usda.3a2_wpct" class="section level3" number="4.2.20">
+<h3><span class="header-section-number">4.2.20</span> wpg2_usda.3a2_wpct</h3>
 <p>Coarse Fragments, Greater than 2mm; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=119">description</a>: <code>wpg2_usda.3a2_wpct</code> = The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.<br />
 </p>
+<ul>
+<li>🆔 <code>wpg2_usda.3a2_wpct</code><br />
+</li>
+<li>📚 Measurement unit: weigth percent<br />
+</li>
+<li>🔬 Laboratory method: Particle-Size Distribution Analysis by weight estimates<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-grossman20022" role="doc-biblioref">Grossman and Reinsch</a> (<a href="#ref-grossman20022" role="doc-biblioref">2002</a>)</span>, <span class="citation"><a href="#ref-american2006standard" role="doc-biblioref">Testing et al.</a> (<a href="#ref-american2006standard" role="doc-biblioref">2006</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="database.html#cb4-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;wpg2_usda.3a2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb4-2"><a href="database.html#cb4-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;WPG2 wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-wpg"></span>
+<img src="020-variables_list_files/figure-html/plot-wpg-1.png" alt="Soil-depth histogram for coarse fragments in wpct." width="70%" />
+<p class="caption">
+Figure 4.7: Soil-depth histogram for coarse fragments in wpct.
+</p>
 </div>
-<div id="wpg2_iso.11277.2020_wpct" class="section level3" number="4.2.20">
-<h3><span class="header-section-number">4.2.20</span> wpg2_iso.11277.2020_wpct</h3>
+<div class="figure"><span id="fig:hist-wpg1"></span>
+<img src="hist/wpg2_usda.3a2_wpct_hist.png" alt="Coarse fragments in weight percent histograms." width="70%" />
+<p class="caption">
+Figure 4.8: Coarse fragments in weight percent histograms.
+</p>
+</div>
+</div>
+<div id="wpg2_iso.11277.2020_wpct" class="section level3" number="4.2.21">
+<h3><span class="header-section-number">4.2.21</span> wpg2_iso.11277.2020_wpct</h3>
 <p>The gravimetric percentage of coarse fragments greater than 2 mm diameter particles reported on a whole soil base based on <a href="https://www.iso.org/obp/ui/#iso:std:iso:11277:ed-3:v1:en">ISO 11277:2020(en)</a>
 Soil quality — Determination of particle size distribution in mineral soil material — Method by sieving and sedimentation.<br />
 </p>
 </div>
-<div id="wr.1500kbar_usda.3c2_wpct" class="section level3" number="4.2.21">
-<h3><span class="header-section-number">4.2.21</span> wr.1500kbar_usda.3c2_wpct</h3>
-<p>Water Retention, 15 Bar, &lt;2mm, Air-dry; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=205">description</a>: <code>wr.1500kbar_usda.3c2_wpct</code> = 15 bar water on air dry soil is the gravimetric water content of &lt;2 mm air dry samples after equilibration at 15 bars water tension. It is reported on a &lt;2 mm base. The value is influenced by clay %, mineralogy, and organic carbon %.<br />
+<div id="wr.1500kbar_usda.3c2_wpct" class="section level3" number="4.2.22">
+<h3><span class="header-section-number">4.2.22</span> wr.1500kbar_usda.3c2_wpct</h3>
+<p>Water Retention, 15 Bar, &lt;2mm, Air-dry (Permanent Wilting Point); <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=205">description</a>: <code>wr.1500kbar_usda.3c2_wpct</code> = 15 bar water on air dry soil is the gravimetric water content of &lt;2 mm air dry samples after equilibration at 15 bars water tension. It is reported on a &lt;2 mm base. The value is influenced by clay %, mineralogy, and organic carbon %.<br />
+</p>
+<ul>
+<li>🆔 <code>wr.1500kbar_usda.3c2_wpct</code><br />
+</li>
+<li>📚 Measurement unit: weight percent<br />
+</li>
+<li>🔬 Laboratory method: Pressure-Membrane Extraction<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-agriculture2019soil" role="doc-biblioref">USDA NRCS</a> (<a href="#ref-agriculture2019soil" role="doc-biblioref">2019</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="database.html#cb5-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;wr.1500kbar_usda.3c2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb5-2"><a href="database.html#cb5-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;PWP wprm&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-wp"></span>
+<img src="020-variables_list_files/figure-html/plot-wp-1.png" alt="Soil-depth histogram for Water Retention at 15 Bar (Permanent Wilting Point) in wpct." width="70%" />
+<p class="caption">
+Figure 4.9: Soil-depth histogram for Water Retention at 15 Bar (Permanent Wilting Point) in wpct.
 </p>
 </div>
-<div id="wr.33kbar_usda.3c1_wpct" class="section level3" number="4.2.22">
-<h3><span class="header-section-number">4.2.22</span> wr.33kbar_usda.3c1_wpct</h3>
+<div class="figure"><span id="fig:hist-wp1"></span>
+<img src="hist/wr.1500kbar_usda.3c2_wpct_hist.png" alt="Organic carbon in weight percent histograms." width="70%" />
+<p class="caption">
+Figure 4.10: Organic carbon in weight percent histograms.
+</p>
+</div>
+</div>
+<div id="wr.33kbar_usda.3c1_wpct" class="section level3" number="4.2.23">
+<h3><span class="header-section-number">4.2.23</span> wr.33kbar_usda.3c1_wpct</h3>
 <p>Water Retention, 1/3 Bar, &lt;2mm Clod; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=205">description</a>: <code>wr.33kbar_usda.3c1_wpct</code> = 1/3 bar water, clods is the gravimetric percent water in natural fabric (clods) after equilibration at 1/3 bar water tension. It is reported on a &lt;2 mm base.<br />
 </p>
+<ul>
+<li>🆔 <code>wr.33kbar_usda.3c1_wpct</code><br />
+</li>
+<li>📚 Measurement unit: weight percent<br />
+</li>
+<li>🔬 Laboratory method: Pressure-Membrane Extraction<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-agriculture2019soil" role="doc-biblioref">USDA NRCS</a> (<a href="#ref-agriculture2019soil" role="doc-biblioref">2019</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="database.html#cb6-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;wr.33kbar_usda.3c1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb6-2"><a href="database.html#cb6-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;FC wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-fc"></span>
+<img src="020-variables_list_files/figure-html/plot-fc-1.png" alt="Soil-depth histogram for Water Retention at 1/3 Bar (Field Capacity) in wpct." width="70%" />
+<p class="caption">
+Figure 4.11: Soil-depth histogram for Water Retention at 1/3 Bar (Field Capacity) in wpct.
+</p>
 </div>
-<div id="agg.stb_usda.1b1_wpct" class="section level3" number="4.2.23">
-<h3><span class="header-section-number">4.2.23</span> agg.stb_usda.1b1_wpct</h3>
+<div class="figure"><span id="fig:hist-fc1"></span>
+<img src="hist/wr.33kbar_usda.3c1_wpct_hist.png" alt="Water Retention at 1/3 Bar in weight percent histograms." width="70%" />
+<p class="caption">
+Figure 4.12: Water Retention at 1/3 Bar in weight percent histograms.
+</p>
+</div>
+</div>
+<div id="agg.stb_usda.1b1_wpct" class="section level3" number="4.2.24">
+<h3><span class="header-section-number">4.2.24</span> agg.stb_usda.1b1_wpct</h3>
 <p>Aggregate stability; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=119">description</a>: <code>aggstb_usda.1b1_wpct</code> = Aggregate stability is the weight percent of 0.5mm - 2mm aggregates remaining after wet sieving.</p>
 </div>
-<div id="bd.clod_usda.3b1_gcm3" class="section level3" number="4.2.24">
-<h3><span class="header-section-number">4.2.24</span> bd.clod_usda.3b1_gcm3</h3>
+<div id="bd.clod_usda.3b1_gcm3" class="section level3" number="4.2.25">
+<h3><span class="header-section-number">4.2.25</span> bd.clod_usda.3b1_gcm3</h3>
 <p>Bulk density clod, &lt;2 mm fraction, 1/3 bar; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=130">description</a>: <code>bd.clod_usda.3b1_gcm3</code> = Bulk density, &lt;2 mm fraction, 1/3 bar is the weight per unit volume of the &lt;2 mm fraction, with volume being measured after equilibration at 1/3 bar water tension. It is reported as grams per cubic centimeter on a &lt;2 mm base.<br />
 </p>
 </div>
-<div id="bd.core_usda.3b4_gcm3" class="section level3" number="4.2.25">
-<h3><span class="header-section-number">4.2.25</span> bd.core_usda.3b4_gcm3</h3>
-<p>Bulk density, core, &lt;2 mm fraction; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=161">description</a>: <code>bd.core_usda.3b4_gcm3</code> = Bulk density, &lt;2mm fraction, field moist is the weight per unit volume of the &lt;2 mm fraction, with volume measured at field (sampling) moisture. Measurements are made on known volume cores. It is reported as grams per cubic centimeter, &lt;2 mm base.<br />
+<div id="bd.od_usda.3b2_gcm3" class="section level3" number="4.2.26">
+<h3><span class="header-section-number">4.2.26</span> bd.od_usda.3b2_gcm3</h3>
+<p>Bulk density, Oven-Dry, &lt;2 mm fraction; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=161">description</a>: <code>bd.od_usda.3b4_gcm3</code> = Bulk density, &lt;2mm fraction, field moist is the weight per unit volume of the &lt;2 mm fraction, with volume measured at field (sampling) moisture. Measurements are made on known volume cores. It is reported as grams per cubic centimeter, &lt;2 mm base.<br />
+</p>
+<ul>
+<li>🆔 <code>bd.od_usda.3b2_gcm3</code><br />
+</li>
+<li>📚 Measurement unit: g/cm3<br />
+</li>
+<li>🔬 Laboratory method: Oven-Dry<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-grossman20022" role="doc-biblioref">Grossman and Reinsch</a> (<a href="#ref-grossman20022" role="doc-biblioref">2002</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="database.html#cb7-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;bd.od_usda.3b2_gcm3&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb7-2"><a href="database.html#cb7-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;BD t/m3&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-bd"></span>
+<img src="020-variables_list_files/figure-html/plot-bd-1.png" alt="Soil-depth histogram for Bulk density in t/m3." width="70%" />
+<p class="caption">
+Figure 4.13: Soil-depth histogram for Bulk density in t/m3.
 </p>
 </div>
-<div id="bd.core_iso.11272.2017_gcm3" class="section level3" number="4.2.26">
-<h3><span class="header-section-number">4.2.26</span> bd.core_iso.11272.2017_gcm3</h3>
+<div class="figure"><span id="fig:hist-bd1"></span>
+<img src="hist/bd.od_usda.3b2_gcm3_hist.png" alt="Bulk density in t/m3 percent histograms." width="70%" />
+<p class="caption">
+Figure 4.14: Bulk density in t/m3 percent histograms.
+</p>
+</div>
+</div>
+<div id="bd.core_iso.11272.2017_gcm3" class="section level3" number="4.2.27">
+<h3><span class="header-section-number">4.2.27</span> bd.core_iso.11272.2017_gcm3</h3>
 <p>Dry bulk density based on <a href="https://www.iso.org/obp/ui/#iso:std:iso:11272:ed-2:v1:en">ISO 11272:2017(en)</a>
 Soil quality — Determination of dry bulk density.<br />
 </p>
 </div>
-<div id="c.tot_usda.4h2_wpct" class="section level3" number="4.2.27">
-<h3><span class="header-section-number">4.2.27</span> c.tot_usda.4h2_wpct</h3>
+<div id="c.tot_usda.4h2_wpct" class="section level3" number="4.2.28">
+<h3><span class="header-section-number">4.2.28</span> c.tot_usda.4h2_wpct</h3>
 <p>Total carbon; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492">description</a>: <code>c.tot_usda.4h2_wpct</code> = Total carbon is a measure of all organic and inorganic carbon, including that found in carbonate minerals.<br />
 </p>
+<ul>
+<li>🆔 <code>c.tot_usda.4h2_wpct</code><br />
+</li>
+<li>📚 Measurement unit: weigth percent<br />
+</li>
+<li>🔬 Laboratory method: Walkley-Black<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-nelson1983total" role="doc-biblioref">Nelson and Sommers</a> (<a href="#ref-nelson1983total" role="doc-biblioref">1983</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="database.html#cb8-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;c.tot_usda.4h2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb8-2"><a href="database.html#cb8-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;SOC wprm&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-toc"></span>
+<img src="020-variables_list_files/figure-html/plot-toc-1.png" alt="Soil-depth histogram for total carbon in wpct." width="70%" />
+<p class="caption">
+Figure 4.15: Soil-depth histogram for total carbon in wpct.
+</p>
 </div>
-<div id="c.tot_iso.10694.1995_wpct" class="section level3" number="4.2.28">
-<h3><span class="header-section-number">4.2.28</span> c.tot_iso.10694.1995_wpct</h3>
+<div class="figure"><span id="fig:hist-toc1"></span>
+<img src="hist/c.tot_usda.4h2_wpct_hist.png" alt="Total carbon in weight percent histograms." width="70%" />
+<p class="caption">
+Figure 4.16: Total carbon in weight percent histograms.
+</p>
+</div>
+</div>
+<div id="c.tot_iso.10694.1995_wpct" class="section level3" number="4.2.29">
+<h3><span class="header-section-number">4.2.29</span> c.tot_iso.10694.1995_wpct</h3>
 <p>Total soil carbon based on <a href="https://www.iso.org/obp/ui/#iso:std:iso:10694:ed-1:v1:en">ISO 10694:1995(en)</a>
 Soil quality — Determination of organic and total carbon after dry combustion (elementary analysis).</p>
 </div>
-<div id="n.tot_usda.4h2_wpct" class="section level3" number="4.2.29">
-<h3><span class="header-section-number">4.2.29</span> n.tot_usda.4h2_wpct</h3>
+<div id="n.tot_usda.4h2_wpct" class="section level3" number="4.2.30">
+<h3><span class="header-section-number">4.2.30</span> n.tot_usda.4h2_wpct</h3>
 <p>Total nitrogen; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492">description</a>: <code>n.tot_usda.4h2_wpct</code> = Total nitrogen is a measure of all organic and inorganic nitrogen, including that found in nitrogen minerals.<br />
 </p>
+<ul>
+<li>🆔 <code>n.tot_usda.4h2_wpct</code><br />
+</li>
+<li>📚 Measurement unit: weight percent<br />
+</li>
+<li>🔬 Laboratory method: Dry oxidation (combustion) procedure<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-bremner1996nitrogen" role="doc-biblioref">Bremner</a> (<a href="#ref-bremner1996nitrogen" role="doc-biblioref">1996</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="database.html#cb9-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;n.tot_usda.4h2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb9-2"><a href="database.html#cb9-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;N wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-ntot"></span>
+<img src="020-variables_list_files/figure-html/plot-ntot-1.png" alt="Soil-depth histogram for total N in wpct." width="70%" />
+<p class="caption">
+Figure 4.17: Soil-depth histogram for total N in wpct.
+</p>
 </div>
-<div id="n.tot_iso.13878.1998_wpct" class="section level3" number="4.2.30">
-<h3><span class="header-section-number">4.2.30</span> n.tot_iso.13878.1998_wpct</h3>
+<div class="figure"><span id="fig:hist-ntot1"></span>
+<img src="hist/n.tot_usda.4h2_wpct_hist.png" alt="Total N in weight percent histograms." width="70%" />
+<p class="caption">
+Figure 4.18: Total N in weight percent histograms.
+</p>
+</div>
+</div>
+<div id="n.tot_iso.13878.1998_wpct" class="section level3" number="4.2.31">
+<h3><span class="header-section-number">4.2.31</span> n.tot_iso.13878.1998_wpct</h3>
 <p>Total nitrogen based on <a href="https://www.iso.org/obp/ui/#iso:std:iso:13878:ed-1:v1:en">ISO 13878:1998(en)</a>
 Soil quality — Determination of total nitrogen content by dry combustion (“elemental analysis”).<br />
 </p>
 </div>
-<div id="s.tot_usda.4h2_wpct" class="section level3" number="4.2.31">
-<h3><span class="header-section-number">4.2.31</span> s.tot_usda.4h2_wpct</h3>
+<div id="s.tot_usda.4h2_wpct" class="section level3" number="4.2.32">
+<h3><span class="header-section-number">4.2.32</span> s.tot_usda.4h2_wpct</h3>
 <p>Total sulfur; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492">description</a>: <code>s.tot_usda.4h2_wpct</code> = Total sulfur is a measure of all organic and inorganic sulfur, including that found in sulfide minerals.<br />
 </p>
 </div>
-<div id="oc_usda.calc_wpct" class="section level3" number="4.2.32">
-<h3><span class="header-section-number">4.2.32</span> oc_usda.calc_wpct</h3>
-<p>Organic carbon in weight percent (dag/kg); <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492">description</a>: <code>oc_usda.calc_wpct</code> = Estimated Organic Carbon based on Total C minus the inorganic carbon, GP prep.<br />
+<div id="oc_usda.calc_wpct" class="section level3" number="4.2.33">
+<h3><span class="header-section-number">4.2.33</span> oc_usda.calc_wpct</h3>
+<p>Organic carbon in weight percent (dag/kg); <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492">description</a>: <code>oc_usda.calc_wpct</code> = Estimated (calculated) Organic Carbon based on Total C minus the inorganic carbon, GP prep.<br />
 </p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="database.html#cb1-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;oc_usda.calc_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb1-2"><a href="database.html#cb1-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;SOC wprm&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<ul>
+<li>🆔 <code>oc_usda.calc_wpct</code><br />
+</li>
+<li>📚 Measurement unit: weight percent<br />
+</li>
+<li>🔬 Laboratory method: Walkley-Black organic C method<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-nelson1983total" role="doc-biblioref">Nelson and Sommers</a> (<a href="#ref-nelson1983total" role="doc-biblioref">1983</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="database.html#cb10-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;oc_usda.calc_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb10-2"><a href="database.html#cb10-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;SOC wprm&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:plot-oc"></span>
 <img src="020-variables_list_files/figure-html/plot-oc-1.png" alt="Soil-depth histogram for soil organic carbon in wpct." width="70%" />
 <p class="caption">
-Figure 4.4: Soil-depth histogram for soil organic carbon in wpct.
+Figure 4.19: Soil-depth histogram for soil organic carbon in wpct.
 </p>
 </div>
 <div class="figure"><span id="fig:hist-oc1"></span>
 <img src="hist/oc_usda.calc_wpct_hist.png" alt="Organic carbon in weight percent histograms." width="70%" />
 <p class="caption">
-Figure 4.5: Organic carbon in weight percent histograms.
+Figure 4.20: Organic carbon in weight percent histograms.
 </p>
 </div>
 </div>
-<div id="oc_usda.4h2_wpct" class="section level3" number="4.2.33">
-<h3><span class="header-section-number">4.2.33</span> oc_usda.4h2_wpct</h3>
+<div id="oc_usda.4h2_wpct" class="section level3" number="4.2.34">
+<h3><span class="header-section-number">4.2.34</span> oc_usda.4h2_wpct</h3>
 <p>Organic carbon based on dry combustion in weight percent (dag/kg); <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492">description</a>: <code>oc_usda.4h2_wpct</code> = CMS analyte equivalent to the Walkley-Black organic C method. Organic carbon is a measure of all organic forms of carbon in the soil, including organic carbon within minerals.<br />
 </p>
 </div>
-<div id="oc_iso.10694.1995_wpct" class="section level3" number="4.2.34">
-<h3><span class="header-section-number">4.2.34</span> oc_iso.10694.1995_wpct</h3>
+<div id="oc_iso.10694.1995_wpct" class="section level3" number="4.2.35">
+<h3><span class="header-section-number">4.2.35</span> oc_iso.10694.1995_wpct</h3>
 <p>Organic carbon based on <a href="https://www.iso.org/obp/ui/#iso:std:iso:10694:ed-1:v1:en">ISO 10694:1995(en)</a> Soil quality — Determination of organic and total carbon after dry combustion (elementary analysis).<br />
 </p>
 </div>
-<div id="oc_iso.17184.2014_wpct" class="section level3" number="4.2.35">
-<h3><span class="header-section-number">4.2.35</span> oc_iso.17184.2014_wpct</h3>
+<div id="oc_iso.17184.2014_wpct" class="section level3" number="4.2.36">
+<h3><span class="header-section-number">4.2.36</span> oc_iso.17184.2014_wpct</h3>
 <p>Organic carbon based on <a href="https://www.iso.org/obp/ui/#iso:std:iso:17184:ed-1:v1:en">ISO 17184:2014(en)</a>
 Soil quality — Determination of carbon and nitrogen by near-infrared spectrometry (NIRS).<br />
 </p>
 </div>
-<div id="humus_usda.4h2_wpct" class="section level3" number="4.2.36">
-<h3><span class="header-section-number">4.2.36</span> humus_usda.4h2_wpct</h3>
-<p>Organic matter or humus content; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492">description</a>: <code>humus_usda.4h2_wpct</code> = Total organic matter in weight percent (dag/kg) lost on ignition (400 °C) (LOI). Values for organic C can be determined by using the “Van Bemmelen factor” (1/1.724 = 0.58) to calculate organic carbon.<br />
+<div id="humus_usda.4h2_wpct" class="section level3" number="4.2.37">
+<h3><span class="header-section-number">4.2.37</span> humus_usda.4h2_wpct</h3>
+<p>Organic matter or humus content; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492">description</a>: <code>humus_usda.4h2_wpct</code> = Total organic matter in weight percent (dag/kg) lost on ignition (400°C) (LOI). Values for organic C can be determined by using the “Van Bemmelen factor” (1/1.724 = 0.58) to calculate organic carbon.<br />
 </p>
 </div>
-<div id="caco3.pres_usda.1b1_c" class="section level3" number="4.2.37">
-<h3><span class="header-section-number">4.2.37</span> caco3.pres_usda.1b1_c</h3>
+<div id="caco3.pres_usda.1b1_c" class="section level3" number="4.2.38">
+<h3><span class="header-section-number">4.2.38</span> caco3.pres_usda.1b1_c</h3>
 <p>Effervescence, 1N HCl; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=63">description</a>: <code>caco3.pres_usda.1b1_c</code> = The visual effervescence of the prepared sample when treated with 1N HCl.<br />
 </p>
 </div>
-<div id="caco3_usda.4e1_wpct" class="section level3" number="4.2.38">
-<h3><span class="header-section-number">4.2.38</span> caco3_usda.4e1_wpct</h3>
+<div id="caco3_usda.4e1_wpct" class="section level3" number="4.2.39">
+<h3><span class="header-section-number">4.2.39</span> caco3_usda.4e1_wpct</h3>
 <p>Calcium carbonate content; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=398">description</a>: <code>caco3_usda.4e1_wpct</code> = Carbonate in the &lt; 2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a &lt;2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid.<br />
 </p>
+<ul>
+<li>🆔 <code>caco3_usda.4e1_wpct</code><br />
+</li>
+<li>📚 Measurement unit: weight percentage<br />
+</li>
+<li>🔬 Laboratory method: 3 N HCl Treatment<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-loeppert1996carbonate" role="doc-biblioref">Loeppert, Suarez, and others</a> (<a href="#ref-loeppert1996carbonate" role="doc-biblioref">1996</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="database.html#cb11-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;caco3_usda.4e1_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb11-2"><a href="database.html#cb11-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;CaCO3 wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-caco"></span>
+<img src="020-variables_list_files/figure-html/plot-caco-1.png" alt="Soil-depth histogram for CaCO3 in wpct." width="70%" />
+<p class="caption">
+Figure 4.21: Soil-depth histogram for CaCO3 in wpct.
+</p>
 </div>
-<div id="caco3_iso.10693.1995_vpct" class="section level3" number="4.2.39">
-<h3><span class="header-section-number">4.2.39</span> caco3_iso.10693.1995_vpct</h3>
+<div class="figure"><span id="fig:hist-caco1"></span>
+<img src="hist/caco3_usda.4e1_wpct_hist.png" alt="Organic carbon in weight percent histograms." width="70%" />
+<p class="caption">
+Figure 4.22: Organic carbon in weight percent histograms.
+</p>
+</div>
+</div>
+<div id="caco3_iso.10693.1995_vpct" class="section level3" number="4.2.40">
+<h3><span class="header-section-number">4.2.40</span> caco3_iso.10693.1995_vpct</h3>
 <p>Total carbonate in the &lt; 2mm fraction (measured by CO2 evolution after acid treatment) based on <a href="https://www.iso.org/obp/ui/#iso:std:iso:10693:ed-1:v1:en">ISO 10693:1995</a>
 Soil quality — Determination of carbonate content — Volumetric method.<br />
 </p>
 </div>
-<div id="ca.ext_usda.4b1_cmolkg" class="section level3" number="4.2.40">
-<h3><span class="header-section-number">4.2.40</span> ca.ext_usda.4b1_cmolkg</h3>
+<div id="ca.ext_usda.4b1_cmolkg" class="section level3" number="4.2.41">
+<h3><span class="header-section-number">4.2.41</span> ca.ext_usda.4b1_cmolkg</h3>
 <p>Calcium, NH4OAc Extractable, 2M KCl displacement; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=269">description</a>: <code>ca.ext_usda.4b1_cmolkg</code> = NH4OAC extractable calcium is the fraction removed by pH 7.0 NH4OAC. It is assumed to represent the exchangeable Ca. It is reported as meq per 100 grams on a &lt;2 mm base. It is not reported for samples containing carbonates or soluble salts.<br />
 </p>
-</div>
-<div id="cec.ext_usda.4b1_cmolkg" class="section level3" number="4.2.41">
-<h3><span class="header-section-number">4.2.41</span> cec.ext_usda.4b1_cmolkg</h3>
-<p>CEC, NH4OAc, pH 7.0, 2M KCl displacement; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=258">description</a>: <code>cec.ext_usda.4b1_cmolkg</code> = CEC by NH4OAC is the Cation Exchange Capacity of the sample, determined by 1N NH4OAC in a system highly buffered at pH 7.0 The NH4 is displaced by 2M KCl to obtain a solution without solids. It is reported as meq per 100 grams sample, on a &lt;2 mm base.<br />
+<ul>
+<li>🆔 <code>ca.ext_usda.4b1_cmolkg</code><br />
+</li>
+<li>📚 Measurement unit: cmol/kg<br />
+</li>
+<li>🔬 Laboratory method: Displacement after Washing, NH4OAC, pH 7 / Atomic Absorption Spectrophotometer<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-thomas1982exchangeable" role="doc-biblioref">Thomas</a> (<a href="#ref-thomas1982exchangeable" role="doc-biblioref">1982</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="database.html#cb12-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ca.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb12-2"><a href="database.html#cb12-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ExCa cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-exca"></span>
+<img src="020-variables_list_files/figure-html/plot-exca-1.png" alt="Soil-depth histogram for Calcium, NH4OAc Extractable in cmol/kg." width="70%" />
+<p class="caption">
+Figure 4.23: Soil-depth histogram for Calcium, NH4OAc Extractable in cmol/kg.
 </p>
 </div>
-<div id="cec.ext_iso.13536.1995_cmolkg" class="section level3" number="4.2.42">
-<h3><span class="header-section-number">4.2.42</span> cec.ext_iso.13536.1995_cmolkg</h3>
+<div class="figure"><span id="fig:hist-exca1"></span>
+<img src="hist/ca.ext_usda.4b1_cmolkg_hist.png" alt="Calcium, NH4OAc Extractable in cmol/kg histograms." width="70%" />
+<p class="caption">
+Figure 4.24: Calcium, NH4OAc Extractable in cmol/kg histograms.
+</p>
+</div>
+</div>
+<div id="cec.ext_usda.4b1_cmolkg" class="section level3" number="4.2.42">
+<h3><span class="header-section-number">4.2.42</span> cec.ext_usda.4b1_cmolkg</h3>
+<p>Cation Exchange Capacity (CEC), NH4OAc, pH 7.0, 2M KCl displacement; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=258">description</a>: <code>cec.ext_usda.4b1_cmolkg</code> = CEC by NH4OAC is the Cation Exchange Capacity of the sample, determined by 1N NH4OAC in a system highly buffered at pH 7.0 The NH4 is displaced by 2M KCl to obtain a solution without solids. It is reported as meq per 100 grams sample, on a &lt;2 mm base.<br />
+</p>
+<ul>
+<li>🆔 <code>cec.ext_usda.4b1_cmolkg</code><br />
+</li>
+<li>📚 Measurement unit: cmol/kg<br />
+</li>
+<li>🔬 Laboratory method: Displacement after Washing, NH4OAC, pH 7 / Atomic Absorption Spectrophotometer<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-thomas1982exchangeable" role="doc-biblioref">Thomas</a> (<a href="#ref-thomas1982exchangeable" role="doc-biblioref">1982</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="database.html#cb13-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;cec.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb13-2"><a href="database.html#cb13-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;CEC in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-cec"></span>
+<img src="020-variables_list_files/figure-html/plot-cec-1.png" alt="Soil-depth histogram for CEC in cmol/kg." width="70%" />
+<p class="caption">
+Figure 4.25: Soil-depth histogram for CEC in cmol/kg.
+</p>
+</div>
+<div class="figure"><span id="fig:hist-cec1"></span>
+<img src="hist/cec.ext_usda.4b1_cmolkg_hist.png" alt="CEC in cmol/kg histograms." width="70%" />
+<p class="caption">
+Figure 4.26: CEC in cmol/kg histograms.
+</p>
+</div>
+</div>
+<div id="cec.ext_iso.13536.1995_cmolkg" class="section level3" number="4.2.43">
+<h3><span class="header-section-number">4.2.43</span> cec.ext_iso.13536.1995_cmolkg</h3>
 <p>Cation Exchange Capacity based on <a href="https://www.iso.org/obp/ui/#iso:std:iso:13536:ed-1:v1:en">ISO 13536:1995(en)</a>
 Soil quality — Determination of the potential cation exchange capacity and exchangeable cations using barium chloride solution buffered at pH = 8.1.<br />
 </p>
 </div>
-<div id="ecec_usda.4b4_cmolkg" class="section level3" number="4.2.43">
-<h3><span class="header-section-number">4.2.43</span> ecec_usda.4b4_cmolkg</h3>
+<div id="ecec_usda.4b4_cmolkg" class="section level3" number="4.2.44">
+<h3><span class="header-section-number">4.2.44</span> ecec_usda.4b4_cmolkg</h3>
 <p>Effective Effective Cation Exchange Capacity; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=258">description</a>: <code>ecec_usda.4b4_cmolkg</code> = Sum of bases + AL_KCL the effective cation exchange capacity is calculated by BASE_SUM+AL_KCL. It is not calculated if soluble salts are present. It is reported as meq per 100 grams on a &lt;2 mm base.<br />
 </p>
+<ul>
+<li>🆔 <code>ecec_usda.4b4_cmolkg</code><br />
+</li>
+<li>📚 Measurement unit: cmol/kg<br />
+</li>
+<li>🔬 Laboratory method: Displacement after Washing, NH4OAC, pH 7 / Atomic Absorption Spectrophotometer<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-sumner1996cation" role="doc-biblioref">Sumner and Miller</a> (<a href="#ref-sumner1996cation" role="doc-biblioref">1996</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="database.html#cb14-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ecec_usda.4b4_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb14-2"><a href="database.html#cb14-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ECEC in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-ecec"></span>
+<img src="020-variables_list_files/figure-html/plot-ecec-1.png" alt="Soil-depth histogram for ECEC in cmol/kg." width="70%" />
+<p class="caption">
+Figure 4.27: Soil-depth histogram for ECEC in cmol/kg.
+</p>
 </div>
-<div id="mg.ext_usda.4b1_cmolkg" class="section level3" number="4.2.44">
-<h3><span class="header-section-number">4.2.44</span> mg.ext_usda.4b1_cmolkg</h3>
+<div class="figure"><span id="fig:hist-ecec1"></span>
+<img src="hist/ecec_usda.4b4_cmolkg_hist.png" alt="ECEC in cmol/kg histograms." width="70%" />
+<p class="caption">
+Figure 4.28: ECEC in cmol/kg histograms.
+</p>
+</div>
+</div>
+<div id="mg.ext_usda.4b1_cmolkg" class="section level3" number="4.2.45">
+<h3><span class="header-section-number">4.2.45</span> mg.ext_usda.4b1_cmolkg</h3>
 <p>Magnesium, NH4OAc Extractable, 2M KCl displacement; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=269">description</a>: <code>mg.ext_usda.4b1_cmolkg</code> = NH4OAC extractable magnesium is the fraction removed by pH 7.0 NH4OAC. It is assumed to represent the exchangeable Mg if MgCO3 is not present. It is reported as meq per 100 grams on a &lt;2 mm base.<br />
 </p>
+<ul>
+<li>🆔 <code>mg.ext_usda.4b1_cmolkg</code><br />
+</li>
+<li>📚 Measurement unit: cmol/kg<br />
+</li>
+<li>🔬 Laboratory method: Displacement after Washing, NH4OAC, pH 7 / Atomic Absorption Spectrophotometer<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-thomas1982exchangeable" role="doc-biblioref">Thomas</a> (<a href="#ref-thomas1982exchangeable" role="doc-biblioref">1982</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="database.html#cb15-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;mg.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb15-2"><a href="database.html#cb15-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ExMg in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-exmg"></span>
+<img src="020-variables_list_files/figure-html/plot-exmg-1.png" alt="Soil-depth histogram for Magnesium, NH4OAc Extractable in cmol/kg." width="70%" />
+<p class="caption">
+Figure 4.29: Soil-depth histogram for Magnesium, NH4OAc Extractable in cmol/kg.
+</p>
 </div>
-<div id="k.ext_usda.4b1_cmolkg" class="section level3" number="4.2.45">
-<h3><span class="header-section-number">4.2.45</span> k.ext_usda.4b1_cmolkg</h3>
+<div class="figure"><span id="fig:hist-exmg1"></span>
+<img src="hist/mg.ext_usda.4b1_cmolkg_hist.png" alt="Magnesium, NH4OAc Extractable in cmol/kg histograms." width="70%" />
+<p class="caption">
+Figure 4.30: Magnesium, NH4OAc Extractable in cmol/kg histograms.
+</p>
+</div>
+</div>
+<div id="k.ext_usda.4b1_cmolkg" class="section level3" number="4.2.46">
+<h3><span class="header-section-number">4.2.46</span> k.ext_usda.4b1_cmolkg</h3>
 <p>Potassium, NH4OAc Extractable, 2M KCl displacement; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=269">description</a>: <code>k.ext_usda.4b1_cmolkg</code> = NH4OAC extractable potassium is the fraction removed by pH 7.0 NH4OAC. It is assumed to represent the exchangeable K. It is reported as meq per 100 grams on a &lt;2 mm base.<br />
 </p>
-</div>
-<div id="na.ext_usda.4b1_cmolkg" class="section level3" number="4.2.46">
-<h3><span class="header-section-number">4.2.46</span> na.ext_usda.4b1_cmolkg</h3>
-<p>Sodium, NH4OAc Extractable, 2M KCl displacement; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=269">description</a>: <code>na.ext_usda.4b1_cmolkg</code> = NH4OAC extractable sodium is the fraction removed by pH 7.0 NH4OAC. It is assumed to represent the exchangeable Na. It is reported as meq per 100 grams on a &lt;2 mm base.<br />
+<ul>
+<li>🆔 <code>k.ext_usda.4b1_cmolkg</code><br />
+</li>
+<li>📚 Measurement unit: cmol/kg<br />
+</li>
+<li>🔬 Laboratory method: Displacement after Washing, NH4OAC, pH 7 / Atomic Absorption Spectrophotometer<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-thomas1982exchangeable" role="doc-biblioref">Thomas</a> (<a href="#ref-thomas1982exchangeable" role="doc-biblioref">1982</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="database.html#cb16-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;k.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb16-2"><a href="database.html#cb16-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ExK in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-exk"></span>
+<img src="020-variables_list_files/figure-html/plot-exk-1.png" alt="Soil-depth histogram for Potassium, NH4OAc Extractable in cmol/kg." width="70%" />
+<p class="caption">
+Figure 4.31: Soil-depth histogram for Potassium, NH4OAc Extractable in cmol/kg.
 </p>
 </div>
-<div id="fe.ox_usda.4g2_wpct" class="section level3" number="4.2.47">
-<h3><span class="header-section-number">4.2.47</span> fe.ox_usda.4g2_wpct</h3>
+<div class="figure"><span id="fig:hist-exk1"></span>
+<img src="hist/k.ext_usda.4b1_cmolkg_hist.png" alt="Potassium, NH4OAc Extractable in cmol/kg histograms." width="70%" />
+<p class="caption">
+Figure 4.32: Potassium, NH4OAc Extractable in cmol/kg histograms.
+</p>
+</div>
+</div>
+<div id="na.ext_usda.4b1_cmolkg" class="section level3" number="4.2.47">
+<h3><span class="header-section-number">4.2.47</span> na.ext_usda.4b1_cmolkg</h3>
+<p>Sodium, NH4OAc Extractable, 2M KCl displacement; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=269">description</a>: <code>na.ext_usda.4b1_cmolkg</code> = NH4OAC extractable sodium is the fraction removed by pH 7.0 NH4OAC. It is assumed to represent the exchangeable Na. It is reported as meq per 100 grams on a &lt;2 mm base.<br />
+</p>
+<ul>
+<li>🆔 <code>na.ext_usda.4b1_cmolkg</code><br />
+</li>
+<li>📚 Measurement unit: cmol/kg<br />
+</li>
+<li>🔬 Laboratory method: Displacement after Washing, NH4OAC, pH 7 / Atomic Absorption Spectrophotometer<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-thomas1982exchangeable" role="doc-biblioref">Thomas</a> (<a href="#ref-thomas1982exchangeable" role="doc-biblioref">1982</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="database.html#cb17-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;na.ext_usda.4b1_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb17-2"><a href="database.html#cb17-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ExNa in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-exna"></span>
+<img src="020-variables_list_files/figure-html/plot-exna-1.png" alt="Soil-depth histogram for Sodium, NH4OAc Extractable in cmol/kg." width="70%" />
+<p class="caption">
+Figure 4.33: Soil-depth histogram for Sodium, NH4OAc Extractable in cmol/kg.
+</p>
+</div>
+<div class="figure"><span id="fig:hist-exna1"></span>
+<img src="hist/na.ext_usda.4b1_cmolkg_hist.png" alt="Sodium, NH4OAc Extractable histograms." width="70%" />
+<p class="caption">
+Figure 4.34: Sodium, NH4OAc Extractable histograms.
+</p>
+</div>
+</div>
+<div id="fe.ox_usda.4g2_wpct" class="section level3" number="4.2.48">
+<h3><span class="header-section-number">4.2.48</span> fe.ox_usda.4g2_wpct</h3>
 <p>Iron, ammonium oxalate extractable; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=460">description</a>: <code>fe.ox_usda.4g2_wpct</code> = Ammonium oxalate extractable iron is considered a measure of the noncrystalline Fe in soils. It provides some inferences of the amount of Fe in various forms. It is reported as gravimetric % on a &lt;2mm base.<br />
 </p>
 </div>
-<div id="fe.dith_usda.4g1_wpct" class="section level3" number="4.2.48">
-<h3><span class="header-section-number">4.2.48</span> fe.dith_usda.4g1_wpct</h3>
+<div id="fe.dith_usda.4g1_wpct" class="section level3" number="4.2.49">
+<h3><span class="header-section-number">4.2.49</span> fe.dith_usda.4g1_wpct</h3>
 <p>Iron, dithinoite-citrate extractable; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=454">description</a>: <code>fe.dith_usda.4g1_wpct</code> = Dithionite citrate extractable iron is considered a general measure of total pedogenic iron. It provides inferences on the amount of iron in various forms, P fixing potential, aggregate stability, and degree of weathering. Reported as grav % on &lt;2mm.<br />
 </p>
 </div>
-<div id="fe.pyp_usda.4g3_wpct" class="section level3" number="4.2.49">
-<h3><span class="header-section-number">4.2.49</span> fe.pyp_usda.4g3_wpct</h3>
+<div id="fe.pyp_usda.4g3_wpct" class="section level3" number="4.2.50">
+<h3><span class="header-section-number">4.2.50</span> fe.pyp_usda.4g3_wpct</h3>
 <p>Iron, sodium pyrophosphate extractable; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=468">description</a>: <code>fe.pyp_usda.4g3_wpct</code> = Sodium pyrophosphate extractable iron is assumed to be the fraction associated with organic complexes. It is reported as gravimetric percent on a &lt;2 mm base.<br />
 </p>
 </div>
-<div id="al.ox_usda.4g2_wpct" class="section level3" number="4.2.50">
-<h3><span class="header-section-number">4.2.50</span> al.ox_usda.4g2_wpct</h3>
+<div id="al.ox_usda.4g2_wpct" class="section level3" number="4.2.51">
+<h3><span class="header-section-number">4.2.51</span> al.ox_usda.4g2_wpct</h3>
 <p>Aluminum, ammonium oxalate extractable; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=460">description</a>: <code>al.ox_usda.4g2_wpct</code> = Ammonium oxalate extractable aluminum is an estimate of the total pedogenic Al, much of which may be in noncrystalline materials or complexed by organic matter. It is reported as gravimetric percent on a &lt;2 mm base.<br />
 </p>
 </div>
-<div id="al.dith_usda.4g1_wpct" class="section level3" number="4.2.51">
-<h3><span class="header-section-number">4.2.51</span> al.dith_usda.4g1_wpct</h3>
+<div id="al.dith_usda.4g1_wpct" class="section level3" number="4.2.52">
+<h3><span class="header-section-number">4.2.52</span> al.dith_usda.4g1_wpct</h3>
 <p>Aluminum, dithinoite-citrate extractable; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=460">description</a>: <code>al.dith_usda.4g1_wpct</code> = Dithionite citrate extractable aluminum is an indicator of the amount of aluminum substituted for iron in iron oxides. It does not necessarily represent total pedogenic Al.<br />
 </p>
 </div>
-<div id="al.pyp_usda.4g3_wpct" class="section level3" number="4.2.52">
-<h3><span class="header-section-number">4.2.52</span> al.pyp_usda.4g3_wpct</h3>
+<div id="al.pyp_usda.4g3_wpct" class="section level3" number="4.2.53">
+<h3><span class="header-section-number">4.2.53</span> al.pyp_usda.4g3_wpct</h3>
 <p>Aluminum, sodium pyrophosphate extractable; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=468">description</a>: <code>al.pyp_usda.4g3_wpct</code> = Sodium pyrophosphate extractable aluminum is the fraction extracted by 0.1M sodium pyrophosphate. It was originally considered the portion associated with organic compounds, although subsequent evidence indicates other forms are also removed.<br />
 </p>
 </div>
-<div id="al.kcl_usda.4b3_cmolkg" class="section level3" number="4.2.53">
-<h3><span class="header-section-number">4.2.53</span> al.kcl_usda.4b3_cmolkg</h3>
+<div id="al.kcl_usda.4b3_cmolkg" class="section level3" number="4.2.54">
+<h3><span class="header-section-number">4.2.54</span> al.kcl_usda.4b3_cmolkg</h3>
 <p>Aluminum, KCl extractable; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=282">description</a>: <code>al.kcl_usda.4b3_cmolkg</code> = KCl extractable aluminum approximates the exchangeable Al, and is a measure of the active acidity present in soils with a 1:1 water pH less than 5.5. It relates to the immediate lime requirement and the CEC of the soil.<br />
 </p>
-</div>
-<div id="bsat_usda.4b4_wpct" class="section level3" number="4.2.54">
-<h3><span class="header-section-number">4.2.54</span> bsat_usda.4b4_wpct</h3>
-<p>Base saturation, NH4OAc, pH7; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=290">description</a>: <code>bsat_usda.4b4_wpct</code> = NH4OAC base saturation (pH 7.0) is calculated by (BASE_SUM/CEC_NH4)*100.<br />
+<ul>
+<li>🆔 <code>al.kcl_usda.4b3_cmolkg</code><br />
+</li>
+<li>📚 Measurement unit: cmol/kg<br />
+</li>
+<li>🔬 Laboratory method: KCl extractable<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-thomas1982exchangeable" role="doc-biblioref">Thomas</a> (<a href="#ref-thomas1982exchangeable" role="doc-biblioref">1982</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="database.html#cb18-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;al.kcl_usda.4b3_cmolkg&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb18-2"><a href="database.html#cb18-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;ExAl in cmol/kg&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-alkcl"></span>
+<img src="020-variables_list_files/figure-html/plot-alkcl-1.png" alt="Soil-depth histogram for Aluminum, KCl extractable in cmol/kg." width="70%" />
+<p class="caption">
+Figure 4.35: Soil-depth histogram for Aluminum, KCl extractable in cmol/kg.
 </p>
 </div>
-<div id="alsat_usda.4b4_wpct" class="section level3" number="4.2.55">
-<h3><span class="header-section-number">4.2.55</span> alsat_usda.4b4_wpct</h3>
+<div class="figure"><span id="fig:hist-alkcl1"></span>
+<img src="hist/al.kcl_usda.4b3_cmolkg_hist.png" alt="Aluminum, KCl extractable in cmol/kg histograms." width="70%" />
+<p class="caption">
+Figure 4.36: Aluminum, KCl extractable in cmol/kg histograms.
+</p>
+</div>
+</div>
+<div id="bsat_usda.4b4_wpct" class="section level3" number="4.2.55">
+<h3><span class="header-section-number">4.2.55</span> bsat_usda.4b4_wpct</h3>
+<p>Base saturation, NH4OAc, pH7; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=290">description</a>: <code>bsat_usda.4b4_wpct</code> = NH4OAC base saturation (pH 7.0) is calculated by (BASE_SUM/CEC_NH4)*100.<br />
+</p>
+<ul>
+<li>🆔 <code>bsat_usda.4b4_wpct</code><br />
+</li>
+<li>📚 Measurement unit: weight percent<br />
+</li>
+<li>🔬 Laboratory method: Displacement after Washing, NH4OAC, pH 7 / Atomic Absorption Spectrophotometer<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-thomas1982exchangeable" role="doc-biblioref">Thomas</a> (<a href="#ref-thomas1982exchangeable" role="doc-biblioref">1982</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="database.html#cb19-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;bsat_usda.4b4_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb19-2"><a href="database.html#cb19-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;BS in wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-bs"></span>
+<img src="020-variables_list_files/figure-html/plot-bs-1.png" alt="Soil-depth histogram for Base saturation in wpct." width="70%" />
+<p class="caption">
+Figure 4.37: Soil-depth histogram for Base saturation in wpct.
+</p>
+</div>
+<div class="figure"><span id="fig:hist-bs1"></span>
+<img src="hist/bsat_usda.4b4_wpct_hist.png" alt="Base saturation in weight percent histograms." width="70%" />
+<p class="caption">
+Figure 4.38: Base saturation in weight percent histograms.
+</p>
+</div>
+</div>
+<div id="alsat_usda.4b4_wpct" class="section level3" number="4.2.56">
+<h3><span class="header-section-number">4.2.56</span> alsat_usda.4b4_wpct</h3>
 <p>Aluminum saturation; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=292">description</a>: <code>alsat_usda.4b4_wpct</code> = Aluminum saturation is calculated by (AL_KCL/(Sum of bases))*100. It provides some inference of potential Al toxicity problems, although many other factors influence Al toxicity.<br />
 </p>
 </div>
-<div id="ph.h2o_usda.4c1_index" class="section level3" number="4.2.56">
-<h3><span class="header-section-number">4.2.56</span> ph.h2o_usda.4c1_index</h3>
+<div id="ph.h2o_usda.4c1_index" class="section level3" number="4.2.57">
+<h3><span class="header-section-number">4.2.57</span> ph.h2o_usda.4c1_index</h3>
 <p>Soil pH 1:1 water; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=304">description</a>: <code>ph.h2o_usda.4c1_index</code> = The pH, 1:1 soil-water suspension is the pH of a sample measured in distilled water at a 1:1 soil:solution ratio. If wider ratios increase the pH, salts are indicated.<br />
 </p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="database.html#cb2-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ph.h2o_usda.4c1_index&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb2-2"><a href="database.html#cb2-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Soil pH&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<ul>
+<li>🆔 <code>ph.h2o_usda.4c1_index</code><br />
+</li>
+<li>📚 Measurement unit: index<br />
+</li>
+<li>🔬 Laboratory method: Soil suspension combination pH-Reference Electrode<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-mclean1983soil" role="doc-biblioref">McLean</a> (<a href="#ref-mclean1983soil" role="doc-biblioref">1983</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="database.html#cb20-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ph.h2o_usda.4c1_index&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb20-2"><a href="database.html#cb20-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Soil pH&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:plot-phh2o"></span>
 <img src="020-variables_list_files/figure-html/plot-phh2o-1.png" alt="Soil-depth histogram for soil pH." width="70%" />
 <p class="caption">
-Figure 4.6: Soil-depth histogram for soil pH.
+Figure 4.39: Soil-depth histogram for soil pH.
 </p>
 </div>
 <div class="figure"><span id="fig:hist-phh2o"></span>
 <img src="hist/ph.h2o_usda.4c1_index_hist.png" alt="Soil pH 1:1 water histograms." width="70%" />
 <p class="caption">
-Figure 4.7: Soil pH 1:1 water histograms.
+Figure 4.40: Soil pH 1:1 water histograms.
 </p>
 </div>
 </div>
-<div id="ph.cacl2_usda.4c1_index" class="section level3" number="4.2.57">
-<h3><span class="header-section-number">4.2.57</span> ph.cacl2_usda.4c1_index</h3>
-<p>Soil pH 1:2 0.01-M calcium choride; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=304">description</a>: <code>ph.cacl2_usda.4c1_index</code> = The pH, 1:2 soil-CaCl2 is the pH of a sample measured in 0.01M CaCl2 at a 1:2 soil:solution ratio.<br />
+<div id="ph.cacl2_usda.4c1_index" class="section level3" number="4.2.58">
+<h3><span class="header-section-number">4.2.58</span> ph.cacl2_usda.4c1_index</h3>
+<p>Soil pH 1:2 0.01-M calcium chloride; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=304">description</a>: <code>ph.cacl2_usda.4c1_index</code> = The pH, 1:2 soil-CaCl2 is the pH of a sample measured in 0.01M CaCl2 at a 1:2 soil:solution ratio.<br />
+</p>
+<ul>
+<li>🆔 <code>ph.cacl2_usda.4c1_index</code><br />
+</li>
+<li>📚 Measurement unit: index<br />
+</li>
+<li>🔬 Laboratory method: Soil suspension combination pH-Reference Electrode<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-mclean1983soil" role="doc-biblioref">McLean</a> (<a href="#ref-mclean1983soil" role="doc-biblioref">1983</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="database.html#cb21-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ph.cacl2_usda.4c1_index&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb21-2"><a href="database.html#cb21-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;pH CaCl&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-phcl"></span>
+<img src="020-variables_list_files/figure-html/plot-phcl-1.png" alt="Soil-depth histogram for Soil pH 1:2 0.01-M calcium chloride." width="70%" />
+<p class="caption">
+Figure 4.41: Soil-depth histogram for Soil pH 1:2 0.01-M calcium chloride.
 </p>
 </div>
-<div id="ph.cacl2_iso.10390.1994_index" class="section level3" number="4.2.58">
-<h3><span class="header-section-number">4.2.58</span> ph.cacl2_iso.10390.1994_index</h3>
+<div class="figure"><span id="fig:hist-phcl1"></span>
+<img src="hist/ph.cacl2_usda.4c1_index_hist.png" alt="Soil pH 1:2 0.01-M calcium chloride histograms." width="70%" />
+<p class="caption">
+Figure 4.42: Soil pH 1:2 0.01-M calcium chloride histograms.
+</p>
+</div>
+</div>
+<div id="ph.cacl2_iso.10390.1994_index" class="section level3" number="4.2.59">
+<h3><span class="header-section-number">4.2.59</span> ph.cacl2_iso.10390.1994_index</h3>
 <p>Soil pH 1:2 0.01-M calcium choride based on <a href="https://www.iso.org/obp/ui/#iso:std:iso:10390:ed-1:en">ISO 10390:1994</a> Soil quality — Determination of pH.<br />
 </p>
 </div>
-<div id="ec.w_usda.4f1_dsm" class="section level3" number="4.2.59">
-<h3><span class="header-section-number">4.2.59</span> ec.w_usda.4f1_dsm</h3>
+<div id="ec.w_usda.4f1_dsm" class="section level3" number="4.2.60">
+<h3><span class="header-section-number">4.2.60</span> ec.w_usda.4f1_dsm</h3>
 <p>Electrical Conductivity, Predict, 1:2 (w/w); <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=425">description</a>: <code>ec.w_usda.4f1_dsm</code> = The salt predict electrical conductivity is used to determine whether additional salt analyses are needed, and to estimate appropriate dilution ratios for additional tests. It is reported as mmhos per centimeter of a 1:2 soil:water mixture by weight.<br />
 </p>
+<ul>
+<li>🆔 <code>ec.w_usda.4f1_dsm</code><br />
+</li>
+<li>📚 Measurement unit: dS/m<br />
+</li>
+<li>🔬 Laboratory method: ??<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-nelson1983total" role="doc-biblioref">Nelson and Sommers</a> (<a href="#ref-nelson1983total" role="doc-biblioref">1983</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="database.html#cb22-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;ec.w_usda.4f1_dsm&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb22-2"><a href="database.html#cb22-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;EC in dS/m&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-ec"></span>
+<img src="020-variables_list_files/figure-html/plot-ec-1.png" alt="Soil-depth histogram for Electrical Conductivity in dS/m." width="70%" />
+<p class="caption">
+Figure 4.43: Soil-depth histogram for Electrical Conductivity in dS/m.
+</p>
 </div>
-<div id="ec.ext.sat_usda.4f2_dsm" class="section level3" number="4.2.60">
-<h3><span class="header-section-number">4.2.60</span> ec.ext.sat_usda.4f2_dsm</h3>
+<div class="figure"><span id="fig:hist-ec1"></span>
+<img src="hist/ec.w_usda.4f1_dsm_hist.png" alt="Electrical Conductivity in dS/m histograms." width="70%" />
+<p class="caption">
+Figure 4.44: Electrical Conductivity in dS/m histograms.
+</p>
+</div>
+</div>
+<div id="ec.ext.sat_usda.4f2_dsm" class="section level3" number="4.2.61">
+<h3><span class="header-section-number">4.2.61</span> ec.ext.sat_usda.4f2_dsm</h3>
 <p>Electrical Conductivity, Saturation Extract; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=425">description</a>: <code>ec.ext.sat_usda.4f2_dsm</code> = Electrical Conductivity, Saturation Extract</p>
 </div>
-<div id="sodium.ads.ratio_usda.4f3_index" class="section level3" number="4.2.61">
-<h3><span class="header-section-number">4.2.61</span> sodium.ads.ratio_usda.4f3_index</h3>
+<div id="sodium.ads.ratio_usda.4f3_index" class="section level3" number="4.2.62">
+<h3><span class="header-section-number">4.2.62</span> sodium.ads.ratio_usda.4f3_index</h3>
 <p>Sodium adsorption ratio; description: <code>sodium.ads.ratio_usda.4f3_index</code> = The sodium absorption ratio is calculated by NA_SATX/sqrt((CA_SATX+MG_SATX)/2). It is approximately equal to the exchangeable sodium percentage.<br />
 </p>
 </div>
-<div id="na.exch_usda.4f3_wpct" class="section level3" number="4.2.62">
-<h3><span class="header-section-number">4.2.62</span> na.exch_usda.4f3_wpct</h3>
+<div id="na.exch_usda.4f3_wpct" class="section level3" number="4.2.63">
+<h3><span class="header-section-number">4.2.63</span> na.exch_usda.4f3_wpct</h3>
 <p>Exchangeable sodium percentage saturated; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=446">description</a>: <code>na.exch_usda.4f3_wpct</code> = This is the exchangeable sodium percentage (ESP), reported on a &lt;2 mm base. If salts are present, ESP has been corrected for the water soluble Na.<br />
 </p>
 </div>
-<div id="gyp_usda.4e2_wpct" class="section level3" number="4.2.63">
-<h3><span class="header-section-number">4.2.63</span> gyp_usda.4e2_wpct</h3>
+<div id="gyp_usda.4e2_wpct" class="section level3" number="4.2.64">
+<h3><span class="header-section-number">4.2.64</span> gyp_usda.4e2_wpct</h3>
 <p>Corrected Gypsum, &lt; 2mm; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=408">description</a>: <code>gyp_usda.4e2_wpct</code> = Corrected Gypsum (Uncorrected Gypsum * Factor)<br />
 </p>
+<ul>
+<li>🆔 <code>gyp_usda.4e2_wpct</code><br />
+</li>
+<li>📚 Measurement unit: weight percent<br />
+</li>
+<li>🔬 Laboratory method: Aqueous Extraction, Electrical Conductivity<br />
+</li>
+<li>📖 Scientific reference: <span class="citation"><a href="#ref-elrashidi2007application" role="doc-biblioref">Elrashidi et al.</a> (<a href="#ref-elrashidi2007application" role="doc-biblioref">2007</a>)</span></li>
+</ul>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="database.html#cb23-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(kssl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;gyp_usda.4e2_wpct&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
+<span id="cb23-2"><a href="database.html#cb23-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;Gypsum in wpct&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:plot-gyp"></span>
+<img src="020-variables_list_files/figure-html/plot-gyp-1.png" alt="Soil-depth histogram for Exchangeable sodium percentage." width="70%" />
+<p class="caption">
+Figure 4.45: Soil-depth histogram for Exchangeable sodium percentage.
+</p>
 </div>
-<div id="p.ext_usda.4d6_mgkg" class="section level3" number="4.2.64">
-<h3><span class="header-section-number">4.2.64</span> p.ext_usda.4d6_mgkg</h3>
+<div class="figure"><span id="fig:hist-gyp1"></span>
+<img src="hist/gyp_usda.4e2_wpct_hist.png" alt="Exchangeable sodium percentage histograms." width="70%" />
+<p class="caption">
+Figure 4.46: Exchangeable sodium percentage histograms.
+</p>
+</div>
+</div>
+<div id="p.ext_usda.4d6_mgkg" class="section level3" number="4.2.65">
+<h3><span class="header-section-number">4.2.65</span> p.ext_usda.4d6_mgkg</h3>
 <p>Phosphorus, Mehlich3 extractable; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=364">description</a>: <code>p.ext_usda.4d6_mgkg</code> = The phosphorus extracted by the Mehlich III solution.<br />
 </p>
 </div>
-<div id="p.olsn_usda.4d5_mgkg" class="section level3" number="4.2.65">
-<h3><span class="header-section-number">4.2.65</span> p.olsn_usda.4d5_mgkg</h3>
+<div id="p.olsn_usda.4d5_mgkg" class="section level3" number="4.2.66">
+<h3><span class="header-section-number">4.2.66</span> p.olsn_usda.4d5_mgkg</h3>
 <p>Phosphorus, Olsen extractable; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=364">description</a>: <code>p.olsn_usda.4d5_mgkg</code> = The Olsen extractable phosphorus is used as an indicator of available phosphorus in calcareous soil materials (pH &gt;6).<br />
 </p>
 </div>
 </div>
-<div id="harmonization-rules" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Harmonization rules</h2>
+<div id="mir-table" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> MIR scans table</h2>
+<div id="id.scan_uuid_c" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> id.scan_uuid_c</h3>
+</div>
+<div id="id.scan_local_c" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> id.scan_local_c</h3>
+</div>
+<div id="id.layer_uuid_c-2" class="section level3" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> id.layer_uuid_c</h3>
+</div>
+<div id="id.layer_local_c-1" class="section level3" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> id.layer_local_c</h3>
+</div>
+<div id="model.name_utf8_txt" class="section level3" number="4.3.5">
+<h3><span class="header-section-number">4.3.5</span> model.name_utf8_txt</h3>
+</div>
+<div id="model.code_any_c" class="section level3" number="4.3.6">
+<h3><span class="header-section-number">4.3.6</span> model.code_any_c</h3>
+</div>
+<div id="method.light.source_any_c" class="section level3" number="4.3.7">
+<h3><span class="header-section-number">4.3.7</span> method.light.source_any_c</h3>
+</div>
+<div id="method.preparation_any_c" class="section level3" number="4.3.8">
+<h3><span class="header-section-number">4.3.8</span> method.preparation_any_c</h3>
+</div>
+<div id="scan.file_any_c" class="section level3" number="4.3.9">
+<h3><span class="header-section-number">4.3.9</span> scan.file_any_c</h3>
+</div>
+<div id="scan.date.begin_iso.8601_yyyy.mm.dd" class="section level3" number="4.3.10">
+<h3><span class="header-section-number">4.3.10</span> scan.date.begin_iso.8601_yyyy.mm.dd</h3>
+</div>
+<div id="scan.date.end_iso.8601_yyyy.mm.dd" class="section level3" number="4.3.11">
+<h3><span class="header-section-number">4.3.11</span> scan.date.end_iso.8601_yyyy.mm.dd</h3>
+</div>
+<div id="scan.license.title_ascii_txt" class="section level3" number="4.3.12">
+<h3><span class="header-section-number">4.3.12</span> scan.license.title_ascii_txt</h3>
+</div>
+<div id="scan.license.address_idn_url" class="section level3" number="4.3.13">
+<h3><span class="header-section-number">4.3.13</span> scan.license.address_idn_url</h3>
+</div>
+<div id="scan.doi_idf_c" class="section level3" number="4.3.14">
+<h3><span class="header-section-number">4.3.14</span> scan.doi_idf_c</h3>
+</div>
+<div id="scan.contact.name_utf8_txt" class="section level3" number="4.3.15">
+<h3><span class="header-section-number">4.3.15</span> scan.contact.name_utf8_txt</h3>
+</div>
+<div id="scan.contact.email_ietf_email" class="section level3" number="4.3.16">
+<h3><span class="header-section-number">4.3.16</span> scan.contact.email_ietf_email</h3>
+</div>
+<div id="scan_mir._abs" class="section level3" number="4.3.17">
+<h3><span class="header-section-number">4.3.17</span> scan_mir.****_abs</h3>
+<p>Absorbance values per band usually ranging between 0–3000 (multiplied by 1000).
+To generate the band names use e.g.:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="database.html#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&quot;scan_mir.&quot;</span>, <span class="fu">seq</span>(<span class="dv">600</span>, <span class="dv">4000</span>, <span class="at">by=</span><span class="dv">2</span>), <span class="st">&quot;_abs&quot;</span>)</span>
+<span id="cb24-2"><a href="database.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(x)</span></code></pre></div>
+<pre><code>##  chr [1:1701] &quot;scan_mir.600_abs&quot; &quot;scan_mir.602_abs&quot; &quot;scan_mir.604_abs&quot; ...</code></pre>
+</div>
+</div>
+<div id="visnir-table" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> VisNIR scans table</h2>
+<div id="id.scan_uuid_c-1" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> id.scan_uuid_c</h3>
+</div>
+<div id="id.scan_local_c-1" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> id.scan_local_c</h3>
+</div>
+<div id="id.layer_uuid_c-3" class="section level3" number="4.4.3">
+<h3><span class="header-section-number">4.4.3</span> id.layer_uuid_c</h3>
+</div>
+<div id="id.layer_local_c-2" class="section level3" number="4.4.4">
+<h3><span class="header-section-number">4.4.4</span> id.layer_local_c</h3>
+</div>
+<div id="model.name_utf8_txt-1" class="section level3" number="4.4.5">
+<h3><span class="header-section-number">4.4.5</span> model.name_utf8_txt</h3>
+</div>
+<div id="model.code_any_c-1" class="section level3" number="4.4.6">
+<h3><span class="header-section-number">4.4.6</span> model.code_any_c</h3>
+</div>
+<div id="method.light.source_any_c-1" class="section level3" number="4.4.7">
+<h3><span class="header-section-number">4.4.7</span> method.light.source_any_c</h3>
+</div>
+<div id="method.preparation_any_c-1" class="section level3" number="4.4.8">
+<h3><span class="header-section-number">4.4.8</span> method.preparation_any_c</h3>
+</div>
+<div id="scan.file_any_c-1" class="section level3" number="4.4.9">
+<h3><span class="header-section-number">4.4.9</span> scan.file_any_c</h3>
+</div>
+<div id="scan.date.begin_iso.8601_yyyy.mm.dd-1" class="section level3" number="4.4.10">
+<h3><span class="header-section-number">4.4.10</span> scan.date.begin_iso.8601_yyyy.mm.dd</h3>
+</div>
+<div id="scan.date.end_iso.8601_yyyy.mm.dd-1" class="section level3" number="4.4.11">
+<h3><span class="header-section-number">4.4.11</span> scan.date.end_iso.8601_yyyy.mm.dd</h3>
+</div>
+<div id="scan.license.title_ascii_txt-1" class="section level3" number="4.4.12">
+<h3><span class="header-section-number">4.4.12</span> scan.license.title_ascii_txt</h3>
+</div>
+<div id="scan.license.address_idn_url-1" class="section level3" number="4.4.13">
+<h3><span class="header-section-number">4.4.13</span> scan.license.address_idn_url</h3>
+</div>
+<div id="scan.doi_idf_c-1" class="section level3" number="4.4.14">
+<h3><span class="header-section-number">4.4.14</span> scan.doi_idf_c</h3>
+</div>
+<div id="scan.contact.name_utf8_txt-1" class="section level3" number="4.4.15">
+<h3><span class="header-section-number">4.4.15</span> scan.contact.name_utf8_txt</h3>
+</div>
+<div id="scan.contact.email_ietf_email-1" class="section level3" number="4.4.16">
+<h3><span class="header-section-number">4.4.16</span> scan.contact.email_ietf_email</h3>
+</div>
+<div id="scan_visnir._pcnt" class="section level3" number="4.4.17">
+<h3><span class="header-section-number">4.4.17</span> scan_visnir.****_pcnt</h3>
+<p>Reflectance values per band usually ranging between 0–100 (multiplied by 100).
+To generate the band names use e.g.:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="database.html#cb26-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&quot;scan_visnir.&quot;</span>, <span class="fu">seq</span>(<span class="dv">350</span>, <span class="dv">2500</span>, <span class="at">by=</span><span class="dv">2</span>), <span class="st">&quot;_pcnt&quot;</span>)</span>
+<span id="cb26-2"><a href="database.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(x)</span></code></pre></div>
+<pre><code>##  chr [1:1076] &quot;scan_visnir.350_pcnt&quot; &quot;scan_visnir.352_pcnt&quot; ...</code></pre>
+<p>To convert reflectance values to absorbances use:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="database.html#cb28-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">3000</span>, <span class="at">by=</span><span class="dv">10</span>)</span>
+<span id="cb28-2"><a href="database.html#cb28-2" aria-hidden="true" tabindex="-1"></a>r <span class="ot">=</span> <span class="dv">1</span><span class="sc">/</span><span class="fu">exp</span>(a<span class="sc">/</span><span class="dv">1000</span>) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb28-3"><a href="database.html#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">data.frame</span>(a,r), <span class="at">type=</span><span class="st">&quot;l&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;Absorbance&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Reflectance [%]&quot;</span>)</span></code></pre></div>
+<p><img src="020-variables_list_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+</div>
+<div id="harmonization-rules" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Harmonization rules</h2>
 <p>The following text includes harmonization / conversion rules recommended in this project.
 For each conversion rule, a reference and an example are provided to prevent from
 misusing the rules. The following principle of harmonization are highly recommended:</p>
@@ -885,75 +1544,75 @@ specify exact method.<br />
 </li>
 </ol>
 <p>Disclaimer: use at own risk. See also our general disclaimer.</p>
-<div id="ph" class="section level3" number="4.3.1">
-<h3><span class="header-section-number">4.3.1</span> pH</h3>
+<div id="ph" class="section level3" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> pH</h3>
 <p>From <code>ph.kcl_usda.4c1_index</code> to <code>ph.h2o_usda.4c1_index</code> based on <span class="citation"><a href="#ref-bohner2008saga" role="doc-biblioref">Böhner, Blaschke, and Montanarella</a> (<a href="#ref-bohner2008saga" role="doc-biblioref">2008</a>)</span>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="database.html#cb3-1" aria-hidden="true" tabindex="-1"></a>ph.kcl <span class="ot">=</span> <span class="fl">6.5</span></span>
-<span id="cb3-2"><a href="database.html#cb3-2" aria-hidden="true" tabindex="-1"></a>ph.h2o <span class="ot">=</span> ph.kcl <span class="sc">/</span> <span class="fl">0.87</span></span>
-<span id="cb3-3"><a href="database.html#cb3-3" aria-hidden="true" tabindex="-1"></a>ph.h2o</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="database.html#cb29-1" aria-hidden="true" tabindex="-1"></a>ph.kcl <span class="ot">=</span> <span class="fl">6.5</span></span>
+<span id="cb29-2"><a href="database.html#cb29-2" aria-hidden="true" tabindex="-1"></a>ph.h2o <span class="ot">=</span> ph.kcl <span class="sc">/</span> <span class="fl">0.87</span></span>
+<span id="cb29-3"><a href="database.html#cb29-3" aria-hidden="true" tabindex="-1"></a>ph.h2o</span></code></pre></div>
 <pre><code>## [1] 7.471264</code></pre>
 <p>From <code>ph.cacl2_usda.4c1_index</code> to <code>ph.h2o_usda.4c1_index</code> based on <span class="citation"><a href="#ref-miller2010comparison" role="doc-biblioref">Miller and Kissel</a> (<a href="#ref-miller2010comparison" role="doc-biblioref">2010</a>)</span>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="database.html#cb5-1" aria-hidden="true" tabindex="-1"></a>ph.cacl2 <span class="ot">=</span> <span class="fl">6.5</span></span>
-<span id="cb5-2"><a href="database.html#cb5-2" aria-hidden="true" tabindex="-1"></a>ph.h2o <span class="ot">=</span> (ph.cacl2 <span class="sc">+</span> <span class="fl">0.973</span> ) <span class="sc">/</span> <span class="fl">1.08</span></span>
-<span id="cb5-3"><a href="database.html#cb5-3" aria-hidden="true" tabindex="-1"></a>ph.h2o</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="database.html#cb31-1" aria-hidden="true" tabindex="-1"></a>ph.cacl2 <span class="ot">=</span> <span class="fl">6.5</span></span>
+<span id="cb31-2"><a href="database.html#cb31-2" aria-hidden="true" tabindex="-1"></a>ph.h2o <span class="ot">=</span> (ph.cacl2 <span class="sc">+</span> <span class="fl">0.973</span> ) <span class="sc">/</span> <span class="fl">1.08</span></span>
+<span id="cb31-3"><a href="database.html#cb31-3" aria-hidden="true" tabindex="-1"></a>ph.h2o</span></code></pre></div>
 <pre><code>## [1] 6.919444</code></pre>
 </div>
-<div id="carbon" class="section level3" number="4.3.2">
-<h3><span class="header-section-number">4.3.2</span> Carbon</h3>
+<div id="carbon" class="section level3" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> Carbon</h3>
 <p>From <code>humus_usda.4h2_wpct</code> to <code>oc_usda.4h2_wpct</code> based on <span class="citation"><a href="#ref-nelson1983total" role="doc-biblioref">Nelson and Sommers</a> (<a href="#ref-nelson1983total" role="doc-biblioref">1983</a>)</span>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="database.html#cb7-1" aria-hidden="true" tabindex="-1"></a>humus <span class="ot">=</span> <span class="dv">4</span></span>
-<span id="cb7-2"><a href="database.html#cb7-2" aria-hidden="true" tabindex="-1"></a>oc <span class="ot">=</span> humus <span class="sc">/</span> <span class="fl">1.724</span></span>
-<span id="cb7-3"><a href="database.html#cb7-3" aria-hidden="true" tabindex="-1"></a>oc</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="database.html#cb33-1" aria-hidden="true" tabindex="-1"></a>humus <span class="ot">=</span> <span class="dv">4</span></span>
+<span id="cb33-2"><a href="database.html#cb33-2" aria-hidden="true" tabindex="-1"></a>oc <span class="ot">=</span> humus <span class="sc">/</span> <span class="fl">1.724</span></span>
+<span id="cb33-3"><a href="database.html#cb33-3" aria-hidden="true" tabindex="-1"></a>oc</span></code></pre></div>
 <pre><code>## [1] 2.320186</code></pre>
 <p>From <code>humus_usda.4h2_wpct</code> to <code>oc_usda.4h2_wpct</code> based on <span class="citation"><a href="#ref-jensen2018converting" role="doc-biblioref">Jensen et al.</a> (<a href="#ref-jensen2018converting" role="doc-biblioref">2018</a>)</span>:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="database.html#cb9-1" aria-hidden="true" tabindex="-1"></a>humus <span class="ot">=</span> <span class="dv">4</span>; clay <span class="ot">=</span> <span class="dv">10</span></span>
-<span id="cb9-2"><a href="database.html#cb9-2" aria-hidden="true" tabindex="-1"></a>oc1 <span class="ot">=</span> <span class="fl">0.513</span> <span class="sc">*</span> humus <span class="sc">-</span> (<span class="fl">0.047</span> <span class="sc">*</span> clay <span class="sc">-</span> <span class="fl">0.00025</span> <span class="sc">*</span> clay<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb9-3"><a href="database.html#cb9-3" aria-hidden="true" tabindex="-1"></a>oc1</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="database.html#cb35-1" aria-hidden="true" tabindex="-1"></a>humus <span class="ot">=</span> <span class="dv">4</span>; clay <span class="ot">=</span> <span class="dv">10</span></span>
+<span id="cb35-2"><a href="database.html#cb35-2" aria-hidden="true" tabindex="-1"></a>oc1 <span class="ot">=</span> <span class="fl">0.513</span> <span class="sc">*</span> humus <span class="sc">-</span> (<span class="fl">0.047</span> <span class="sc">*</span> clay <span class="sc">-</span> <span class="fl">0.00025</span> <span class="sc">*</span> clay<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb35-3"><a href="database.html#cb35-3" aria-hidden="true" tabindex="-1"></a>oc1</span></code></pre></div>
 <pre><code>## [1] 1.607</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="database.html#cb11-1" aria-hidden="true" tabindex="-1"></a>humus <span class="ot">=</span> <span class="dv">4</span>; clay <span class="ot">=</span> <span class="dv">20</span></span>
-<span id="cb11-2"><a href="database.html#cb11-2" aria-hidden="true" tabindex="-1"></a>oc2 <span class="ot">=</span> <span class="fl">0.513</span> <span class="sc">*</span> humus <span class="sc">-</span> (<span class="fl">0.047</span> <span class="sc">*</span> clay <span class="sc">-</span> <span class="fl">0.00025</span> <span class="sc">*</span> clay<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb11-3"><a href="database.html#cb11-3" aria-hidden="true" tabindex="-1"></a>oc2</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="database.html#cb37-1" aria-hidden="true" tabindex="-1"></a>humus <span class="ot">=</span> <span class="dv">4</span>; clay <span class="ot">=</span> <span class="dv">20</span></span>
+<span id="cb37-2"><a href="database.html#cb37-2" aria-hidden="true" tabindex="-1"></a>oc2 <span class="ot">=</span> <span class="fl">0.513</span> <span class="sc">*</span> humus <span class="sc">-</span> (<span class="fl">0.047</span> <span class="sc">*</span> clay <span class="sc">-</span> <span class="fl">0.00025</span> <span class="sc">*</span> clay<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb37-3"><a href="database.html#cb37-3" aria-hidden="true" tabindex="-1"></a>oc2</span></code></pre></div>
 <pre><code>## [1] 1.212</code></pre>
 </div>
-<div id="phosphorous" class="section level3" number="4.3.3">
-<h3><span class="header-section-number">4.3.3</span> Phosphorous</h3>
+<div id="phosphorous" class="section level3" number="4.5.3">
+<h3><span class="header-section-number">4.5.3</span> Phosphorous</h3>
 </div>
-<div id="potassium" class="section level3" number="4.3.4">
-<h3><span class="header-section-number">4.3.4</span> Potassium</h3>
+<div id="potassium" class="section level3" number="4.5.4">
+<h3><span class="header-section-number">4.5.4</span> Potassium</h3>
 </div>
-<div id="nitrogen" class="section level3" number="4.3.5">
-<h3><span class="header-section-number">4.3.5</span> Nitrogen</h3>
+<div id="nitrogen" class="section level3" number="4.5.5">
+<h3><span class="header-section-number">4.5.5</span> Nitrogen</h3>
 </div>
-<div id="exchangeable-cations-and-cec" class="section level3" number="4.3.6">
-<h3><span class="header-section-number">4.3.6</span> Exchangeable cations and CEC</h3>
+<div id="exchangeable-cations-and-cec" class="section level3" number="4.5.6">
+<h3><span class="header-section-number">4.5.6</span> Exchangeable cations and CEC</h3>
 <p>From <code>k.ext</code> extracted by Mehlich-3 (cmol/kg) to <code>ecec.ext_usda.4b1_cmolkg</code> based on <span class="citation"><a href="#ref-helling1964contribution" role="doc-biblioref">Helling, Chesters, and Corey</a> (<a href="#ref-helling1964contribution" role="doc-biblioref">1964</a>)</span>:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="database.html#cb13-1" aria-hidden="true" tabindex="-1"></a>ph.h2o <span class="ot">=</span> <span class="fl">6.5</span></span>
-<span id="cb13-2"><a href="database.html#cb13-2" aria-hidden="true" tabindex="-1"></a>k.ext <span class="ot">=</span> <span class="dv">2</span></span>
-<span id="cb13-3"><a href="database.html#cb13-3" aria-hidden="true" tabindex="-1"></a>ca.ext <span class="ot">=</span> <span class="dv">12</span></span>
-<span id="cb13-4"><a href="database.html#cb13-4" aria-hidden="true" tabindex="-1"></a>na.ext <span class="ot">=</span> <span class="dv">2</span></span>
-<span id="cb13-5"><a href="database.html#cb13-5" aria-hidden="true" tabindex="-1"></a>mg.ext <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb13-6"><a href="database.html#cb13-6" aria-hidden="true" tabindex="-1"></a>ecec.ext <span class="ot">=</span> <span class="fu">ifelse</span>(ph.h2o <span class="sc">&lt;</span> <span class="fl">7.5</span> <span class="sc">&amp;</span> ph.h2o<span class="sc">&gt;</span><span class="dv">4</span>, (k.ext <span class="sc">+</span> ca.ext <span class="sc">+</span> na.ext <span class="sc">+</span> mg.ext), <span class="cn">NA</span>)</span>
-<span id="cb13-7"><a href="database.html#cb13-7" aria-hidden="true" tabindex="-1"></a>ecec.ext</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="database.html#cb39-1" aria-hidden="true" tabindex="-1"></a>ph.h2o <span class="ot">=</span> <span class="fl">6.5</span></span>
+<span id="cb39-2"><a href="database.html#cb39-2" aria-hidden="true" tabindex="-1"></a>k.ext <span class="ot">=</span> <span class="dv">2</span></span>
+<span id="cb39-3"><a href="database.html#cb39-3" aria-hidden="true" tabindex="-1"></a>ca.ext <span class="ot">=</span> <span class="dv">12</span></span>
+<span id="cb39-4"><a href="database.html#cb39-4" aria-hidden="true" tabindex="-1"></a>na.ext <span class="ot">=</span> <span class="dv">2</span></span>
+<span id="cb39-5"><a href="database.html#cb39-5" aria-hidden="true" tabindex="-1"></a>mg.ext <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb39-6"><a href="database.html#cb39-6" aria-hidden="true" tabindex="-1"></a>ecec.ext <span class="ot">=</span> <span class="fu">ifelse</span>(ph.h2o <span class="sc">&lt;</span> <span class="fl">7.5</span> <span class="sc">&amp;</span> ph.h2o<span class="sc">&gt;</span><span class="dv">4</span>, (k.ext <span class="sc">+</span> ca.ext <span class="sc">+</span> na.ext <span class="sc">+</span> mg.ext), <span class="cn">NA</span>)</span>
+<span id="cb39-7"><a href="database.html#cb39-7" aria-hidden="true" tabindex="-1"></a>ecec.ext</span></code></pre></div>
 <pre><code>## [1] 17</code></pre>
 <p>From <code>oc_usda.4h2_wpct</code> to <code>ecec.ext_usda.4b1_cmolkg</code> based on <span class="citation"><a href="#ref-helling1964contribution" role="doc-biblioref">Helling, Chesters, and Corey</a> (<a href="#ref-helling1964contribution" role="doc-biblioref">1964</a>)</span>:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="database.html#cb15-1" aria-hidden="true" tabindex="-1"></a>clay.tot <span class="ot">=</span> <span class="dv">28</span></span>
-<span id="cb15-2"><a href="database.html#cb15-2" aria-hidden="true" tabindex="-1"></a>ph.h2o <span class="ot">=</span> <span class="fl">6.5</span></span>
-<span id="cb15-3"><a href="database.html#cb15-3" aria-hidden="true" tabindex="-1"></a>oc <span class="ot">=</span> <span class="dv">2</span></span>
-<span id="cb15-4"><a href="database.html#cb15-4" aria-hidden="true" tabindex="-1"></a>ecec.ext <span class="ot">=</span> ((clay.tot<span class="sc">*</span><span class="dv">10</span><span class="sc">/</span><span class="dv">100</span><span class="sc">*</span>(<span class="dv">30</span><span class="fl">+4.4</span><span class="sc">*</span>ph.h2o))<span class="sc">+</span>(oc<span class="sc">/</span><span class="dv">100</span><span class="sc">*</span>(<span class="sc">-</span><span class="dv">59</span><span class="sc">+</span><span class="dv">51</span><span class="sc">*</span>ph.h2o)))<span class="sc">/</span><span class="dv">10</span></span>
-<span id="cb15-5"><a href="database.html#cb15-5" aria-hidden="true" tabindex="-1"></a>ecec.ext</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="database.html#cb41-1" aria-hidden="true" tabindex="-1"></a>clay.tot <span class="ot">=</span> <span class="dv">28</span></span>
+<span id="cb41-2"><a href="database.html#cb41-2" aria-hidden="true" tabindex="-1"></a>ph.h2o <span class="ot">=</span> <span class="fl">6.5</span></span>
+<span id="cb41-3"><a href="database.html#cb41-3" aria-hidden="true" tabindex="-1"></a>oc <span class="ot">=</span> <span class="dv">2</span></span>
+<span id="cb41-4"><a href="database.html#cb41-4" aria-hidden="true" tabindex="-1"></a>ecec.ext <span class="ot">=</span> ((clay.tot<span class="sc">*</span><span class="dv">10</span><span class="sc">/</span><span class="dv">100</span><span class="sc">*</span>(<span class="dv">30</span><span class="fl">+4.4</span><span class="sc">*</span>ph.h2o))<span class="sc">+</span>(oc<span class="sc">/</span><span class="dv">100</span><span class="sc">*</span>(<span class="sc">-</span><span class="dv">59</span><span class="sc">+</span><span class="dv">51</span><span class="sc">*</span>ph.h2o)))<span class="sc">/</span><span class="dv">10</span></span>
+<span id="cb41-5"><a href="database.html#cb41-5" aria-hidden="true" tabindex="-1"></a>ecec.ext</span></code></pre></div>
 <pre><code>## [1] 16.953</code></pre>
 </div>
-<div id="texture-fractions" class="section level3" number="4.3.7">
-<h3><span class="header-section-number">4.3.7</span> Texture fractions</h3>
+<div id="texture-fractions" class="section level3" number="4.5.7">
+<h3><span class="header-section-number">4.5.7</span> Texture fractions</h3>
 </div>
-<div id="bulk-density" class="section level3" number="4.3.8">
-<h3><span class="header-section-number">4.3.8</span> Bulk density</h3>
+<div id="bulk-density" class="section level3" number="4.5.8">
+<h3><span class="header-section-number">4.5.8</span> Bulk density</h3>
 </div>
-<div id="soil-biological-variables" class="section level3" number="4.3.9">
-<h3><span class="header-section-number">4.3.9</span> Soil biological variables</h3>
+<div id="soil-biological-variables" class="section level3" number="4.5.9">
+<h3><span class="header-section-number">4.5.9</span> Soil biological variables</h3>
 </div>
-<div id="soil-contaminants" class="section level3" number="4.3.10">
-<h3><span class="header-section-number">4.3.10</span> Soil contaminants</h3>
+<div id="soil-contaminants" class="section level3" number="4.5.10">
+<h3><span class="header-section-number">4.5.10</span> Soil contaminants</h3>
 
 </div>
 </div>
@@ -963,17 +1622,44 @@ specify exact method.<br />
 <div id="ref-bohner2008saga" class="csl-entry">
 Böhner, J, T Blaschke, and L Montanarella. 2008. <em>SAGA—Seconds Out, Vol. 19</em>. Hamburg, Germany: Hamburger Beitr<span>ä</span>ge zur Physischen Geographie und Landschafts<span>ö</span>kologie.
 </div>
+<div id="ref-bremner1996nitrogen" class="csl-entry">
+Bremner, John M. 1996. <span>“Nitrogen-Total.”</span> In <em>Methods of Soil Analysis: Part 3 Chemical Methods</em>, 5:1085–1121. Wiley Online Library.
+</div>
+<div id="ref-elrashidi2007application" class="csl-entry">
+Elrashidi, MA, D Hammer, CA Seybold, RJ Engel, R Burt, and P Jones. 2007. <span>“Application of Equivalent Gypsum Content to Estimate Potential Subsidence of Gypsiferous Soils.”</span> <em>Soil Science</em> 172 (3): 209–24.
+</div>
+<div id="ref-grossman20022" class="csl-entry">
+Grossman, RB, and TG Reinsch. 2002. <span>“2.1 Bulk Density and Linear Extensibility.”</span> In <em>Methods of Soil Analysis: Part 4 Physical Methods</em>, 5:201–28. Wiley Online Library.
+</div>
 <div id="ref-helling1964contribution" class="csl-entry">
 Helling, Charles S, G Chesters, and RB Corey. 1964. <span>“Contribution of Organic Matter and Clay to Soil Cation-Exchange Capacity as Affected by the pH of the Saturating Solution.”</span> <em>Soil Science Society of America Journal</em> 28 (4): 517–20.
 </div>
 <div id="ref-jensen2018converting" class="csl-entry">
 Jensen, JL, BT Christensen, P Schjønning, CW Watts, and LJ Munkholm. 2018. <span>“Converting Loss-on-Ignition to Organic Carbon Content in Arable Topsoil: Pitfalls and Proposed Procedure.”</span> <em>European Journal of Soil Science</em> 69 (4): 604–12. <a href="https://doi.org/10.1111/ejss.12558">https://doi.org/10.1111/ejss.12558</a>.
 </div>
+<div id="ref-loeppert1996carbonate" class="csl-entry">
+Loeppert, Richard H, Donald L Suarez, and others. 1996. <span>“Carbonate and Gypsum.”</span> In <em>Methods of Soil Analysis. Part 3 Chemical Methods</em>, 3:437–74. Wiley Online Library.
+</div>
+<div id="ref-mclean1983soil" class="csl-entry">
+McLean, EO. 1983. <span>“<span class="nocase">Soil pH and lime requirement</span>.”</span> In <em>Methods of Soil Analysis: Part 2 Chemical and Microbiological Properties</em>, 9:199–224. Wiley Online Library.
+</div>
 <div id="ref-miller2010comparison" class="csl-entry">
 Miller, Robert O, and David E Kissel. 2010. <span>“Comparison of Soil pH Methods on Soils of North America.”</span> <em>Soil Science Society of America Journal</em> 74 (1): 310–16.
 </div>
 <div id="ref-nelson1983total" class="csl-entry">
 Nelson, DW, and L_E Sommers. 1983. <span>“Total Carbon, Organic Carbon, and Organic Matter.”</span> In <em>Methods of Soil Analysis: Part 2 Chemical and Microbiological Properties</em>, 9:539–79. Wiley Online Library.
+</div>
+<div id="ref-sumner1996cation" class="csl-entry">
+Sumner, Malcolm E, and William P Miller. 1996. <span>“Cation Exchange Capacity and Exchange Coefficients.”</span> In <em>Methods of Soil Analysis: Part 3 Chemical Methods</em>, 5:1201–29. Wiley Online Library.
+</div>
+<div id="ref-american2006standard" class="csl-entry">
+Testing, American Society for, Materials. Committee D18 on Soils, Rock, American Society for Testing, Materials. Subcommittee D18.07 on Identification, Classification of Soils, and ASTM International. 2006. <em>Standard Practice for Description and Identification of Soils (Visual-Manual Procedure)</em>. Philadelphia, PA: ASTM International.
+</div>
+<div id="ref-thomas1982exchangeable" class="csl-entry">
+Thomas, GW. 1982. <span>“Exchangeable Cations. P. 159–165. AL Page Et Al.(ed.) Methods of Soil Analysis. Part 2. Agron. Monogr. 9. ASA and SSSA.”</span> In <em>Exchangeable Cations. P. 159–165. In AL Page Et Al.(ed.) Methods of Soil Analysis. Part 2. 2nd Ed. Agron. Monogr. 9</em>. Madison, WI: ASA; SSSA.
+</div>
+<div id="ref-agriculture2019soil" class="csl-entry">
+USDA NRCS. 2019. <em>Soil Survey Field and Laboratory Methods Manual - Soil Survey Investigations Report No. 51 (Version 2) Issued 2014</em>. Lincoln, Nebraska: U.S. Department of Agriculture, Natural Resources Conservation Service.
 </div>
 </div>
             </section>

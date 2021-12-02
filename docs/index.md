@@ -1,7 +1,7 @@
 ---
 title: "Open Soil Spectral Library"
 author: "Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors"
-date: "23 November, 2021"
+date: "02 December, 2021"
 knit: bookdown::render_book
 site: bookdown::bookdown_site
 documentclass: svmono
@@ -37,6 +37,8 @@ transfer, model choice, outreach & demonstration, and use of
 spectroscopy to inform global carbon cycle modeling. For more info refer
 to: <https://soilspectroscopy.org/>.
 
+R tutorials and software developed to implement OSSL is available via: <https://github.com/soilspectroscopy>.
+
 Soil spectroscopy for global good project works closely in collaboration with 
 [FAO Global Soil Partnership](http://www.fao.org/global-soil-partnership/pillars-action/5-harmonization/glosolan/en/), who also aim at building and providing 
 a [GSP Soil Spectral Calibration Library and Estimation Service](http://www.fao.org/3/ca8431en/ca8431en.pdf).
@@ -56,7 +58,7 @@ These characteristic spectra (see Fig. below) can then be used to estimate numer
 ## Open Soil Spectral Library
 
 **Open Soil Spectral Library** (OSSL) is a suite of datasets, web-services, software and tutorials.
-It includes:
+It includes (see also <https://github.com/soilspectroscopy>):
 
 - A soil spectral DB available from <https://db.soilspectroscopy.org>,  
 - API calibration service available from <https://api.soilspectroscopy.org>,  
@@ -68,12 +70,12 @@ It includes:
 The OSSL-DB has been prepared following the OSSL schema which is available at:
 
 As a general rule of thumb we recommend all contributors to use the following 
-general scheme to organize Soil Observations & Measurements with three main tables 
+general OSSL scheme to organize Soil Observations & Measurements with four main tables 
 and metadata + legends organized in other tables:
 
 <div class="figure">
-<img src="img/design_soil_om_sheme.png" alt="Recommended soil profiles and soil samples database schema." width="100%" />
-<p class="caption">(\#fig:soil-db)Recommended soil profiles and soil samples database schema.</p>
+<img src="img/design_soil_om_sheme.png" alt="Recommended OSSL database schema." width="100%" />
+<p class="caption">(\#fig:soil-db)Recommended OSSL database schema.</p>
 </div>
 
 To access global compilation of soil legacy point data sets refer to <https://github.com/OpenGeoHub/SoilSamples> repository.
@@ -215,9 +217,10 @@ This website/book and attached software is free to use, and is licensed under [t
 Some other connected publications and initiatives describing collation 
 and import of soil spectroscopy data:
 
-- Benedetti, F. and van Egmond, F. 2021. Global Soil Spectroscopy Assessment. Spectral soil data – Needs and capacities. Rome, FAO. <https://doi.org/10.4060/cb6265en>  
-- Dudek, M., Kabała, C., Łabaz, B., Mituła, P., Bednik, M., & Medyńska-Juraszek, A. (2021). Mid-Infrared Spectroscopy Supports Identification of the Origin of Organic Matter in Soils. Land, 10(2), 215. <https://doi.org/10.3390/land10020215>  
+- Benedetti, F. and van Egmond, F. (2021). [Global Soil Spectroscopy Assessment](https://doi.org/10.4060/cb6265en). Spectral soil data – Needs and capacities. Rome, FAO. <https://doi.org/10.4060/cb6265en>  
+- Dudek, M., Kabała, C., Łabaz, B., Mituła, P., Bednik, M., & Medyńska-Juraszek, A. (2021). [Mid-Infrared Spectroscopy Supports Identification of the Origin of Organic Matter in Soils](https://doi.org/10.3390/land10020215). Land, 10(2), 215. <https://doi.org/10.3390/land10020215>  
 - [GLOSOLAN's Standard Operating Procedures (SOPs)](http://www.fao.org/global-soil-partnership/glosolan/soil-analysis/standard-operating-procedures/en/#c763834); 
+- Nocita, M., Stevens, A., van Wesemael, B., Aitkenhead, M., Bachmann, M., Barthès, B., ... & Wetterlind, J. (2015). [Soil spectroscopy: An alternative to wet chemistry for soil monitoring](https://doi.org/10.1016/bs.agron.2015.02.002). Advances in agronomy, 132, 139-159. <https://doi.org/10.1016/bs.agron.2015.02.002>  
 - Sanderman, J., Savage, K., Dangal, S. R., Duran, G., Rivard, C., Cavigelli, M. A., ... & Stewart, C. (2021). [Can Agricultural Management Induced Changes in Soil Organic Carbon Be Detected Using Mid-Infrared Spectroscopy?](https://doi.org/10.3390/rs13122265). Remote Sensing, 13(12), 2265. <https://doi.org/10.3390/rs13122265>  
 - Sanderman, J., Savage, K., & Dangal, S. R. (2020). [Mid-infrared
 spectroscopy for prediction of soil health indicators in the United
@@ -237,10 +240,9 @@ organizations. Listed at the order of importance:
 
 - **[USDA-NRCS Kellogg Soil Survey Laboratory](https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/)** mid-infrared (MIR) spectral library was use as the basis for this data set and corresponding services; we are especially grateful to **Rich Ferguson & Scarlett Murphy (NRCS USDA)** for their help with 
 importing and using the KSSL Soil Spectral Library;  
-- **[ICRAF-ISRIC Soil VNIR Spectral Library](https://doi.org/10.34725/DVN/MFHA9C)** is based on the Soil Information System (ISIS) of the International Soil Reference and Information Centre (ISRIC);  
-- **[AfSIS-I Soil Spectral Library](https://doi.org/10.34725/DVN/QXCWP1)** Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013, a collaborative projective funded by the Bill and Melinda Gates Foundation (BMGF). Partners included, CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF);  
-- **[LUCAS topsoil (VisNIR) Soil Spectral Library](http://esdac.jrc.ec.europa.eu/)** was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>;  
-- **[LUCAS topsoil (VisNIR) Soil Spectral Library](http://esdac.jrc.ec.europa.eu/)** was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>; we have degraded location accuracy of points so that exact locations are about 1-km off;
+- **[ICRAF-ISRIC Soil VNIR Spectral Library](https://doi.org/10.34725/DVN/MFHA9C)** [@aitkenhead2018exploring] is based on the Soil Information System (ISIS) of the International Soil Reference and Information Centre (ISRIC);  
+- **[AfSIS-I Soil Spectral Library](https://doi.org/10.34725/DVN/QXCWP1)** Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013 [@Vagen_2020], a collaborative project funded by the Bill and Melinda Gates Foundation (BMGF). Partners included, CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF);  
+- **[LUCAS topsoil (VisNIR) Soil Spectral Library](http://esdac.jrc.ec.europa.eu/)** [@orgiazzi2018lucas] was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>; we have degraded location accuracy of points so that exact locations are about 1-km off;
 - **[The Central African Soil Spectral Library](https://github.com/laura-summerauer/ssl-central-africa)** described in detail in @Summerauer2021 contains limited number of samples representing Central Africa;
 
 For more advanced used of the soil spectral libraries **we advise to contact the original data producers** 
