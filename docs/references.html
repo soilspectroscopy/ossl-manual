@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Reference soil spectroscopy models | Open Soil Spectral Library</title>
+  <title>References | Open Soil Spectral Library</title>
   <meta name="description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, callibrate own models and extend beyond." />
   <meta name="generator" content="bookdown 0.22.2 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Reference soil spectroscopy models | Open Soil Spectral Library" />
+  <meta property="og:title" content="References | Open Soil Spectral Library" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://soilspectroscopy.github.io/ossl-manual" />
   <meta property="og:image" content="http://soilspectroscopy.github.io/ossl-manual/img/Spectroscopy-Schematic.jpeg" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="soilspectroscopy/ossl-manual" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Reference soil spectroscopy models | Open Soil Spectral Library" />
+  <meta name="twitter:title" content="References | Open Soil Spectral Library" />
   <meta name="twitter:site" content="@soilspec" />
   <meta name="twitter:description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, callibrate own models and extend beyond." />
   <meta name="twitter:image" content="http://soilspectroscopy.github.io/ossl-manual/img/Spectroscopy-Schematic.jpeg" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="database.html"/>
-<link rel="next" href="references.html"/>
+<link rel="prev" href="reference-soil-spectroscopy-models.html"/>
+
 <script src="libs/header-attrs-2.8.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -391,78 +391,76 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="reference-soil-spectroscopy-models" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Reference soil spectroscopy models</h1>
-<p>The following sections describe steps used to produce OSSL models, which
-are used in the OSSL calibration service and API. For more in-depth insight of
-the modeling steps please refer to the <a href="https://github.com/soilspectroscopy/ossl-models">ossl-models</a> repository.</p>
-<div id="fitting-soil-spectroscopy-callibrarion-models" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Fitting soil spectroscopy callibrarion models</h2>
-<p>In this tutorial we use a sample dataset to fit calibration models using MIR and VisNIR spectra
-and combination of additional covariates. For modeling we use the Ensemble Machine Learning
-framework as implemented in the R <a href="https://mlr.mlr-org.com/">mlr</a> programming environment.</p>
-<p>We can explore prediction power of multiple calibration frameworks including:</p>
-<ol style="list-style-type: decimal">
-<li>Using only MIR spectra for calibration.</li>
-<li>Using only VisNIR spectra for calibration.</li>
-<li>Using combination of MIR and VisNIR spectra.</li>
-<li>Using combination of MIR and VisNIR spectra + geographic covariates.</li>
-</ol>
-<p>The methods 1 &amp; 2 are standard methods described in literature <span class="citation">(<a href="#ref-malone2021soil" role="doc-biblioref">Wadoux et al. 2021</a>)</span>. The method
-3 &amp; 4 are referred to as the <em>“MIR-VisNIR fusion”</em> <span class="citation">(<a href="#ref-vohland2022quantification" role="doc-biblioref">Vohland et al. 2022</a>)</span>.
-The method 4 is the <em>“field-specific calibration approach”</em>; we refer to it here
-as the <em>“bundle approach”</em> as we basically use all information available
-to help produce best predictions of targeted soil properties.</p>
-</div>
-<div id="soil-spectral-calibration-using-ensemble-machine-learning" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Soil spectral calibration using Ensemble Machine Learning</h2>
-</div>
-<div id="predicting-values-for-new-spectra" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Predicting values for new spectra</h2>
-</div>
-<div id="calibration-of-models-across-different-datasets" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Calibration of models across different datasets</h2>
-<p>Soil spectral scans obtained by different spectroscopic instruments often cannot be
-modeled or analyzed together i.e. they require some kind of calibration <span class="citation">(<a href="#ref-lei2022achieving" role="doc-biblioref">Lei and Sun 2022</a>)</span>
-before one can fit cross-instrument / cross-dataset calibration models.</p>
-</div>
-<div id="using-default-ossl-models" class="section level2" number="5.5">
-<h2><span class="header-section-number">5.5</span> Using default OSSL models</h2>
-<p>OSSL model registry (RDS) S3 file services currently includes large number of
-prediction models fitted for a list of soil properties. The complete list is available <a href="https://github.com/soilspectroscopy/ossl-models">here</a>.</p>
-</div>
-<div id="registering-your-own-model" class="section level2" number="5.6">
-<h2><span class="header-section-number">5.6</span> Registering your own model</h2>
-<p>If you plan to use the models fitted by the Soil Spectroscopy for Global Good project
-or share your own models please follow these steps:</p>
-<ol style="list-style-type: decimal">
-<li>We recommend registration and sharing of new models that runs via S3 file
-service system (e.g. via OpenGeoHub’s Wasabi.com cloud-service) with RDS files /
-<a href="https://github.com/nuest/docker-reproducible-research">Dockerized solution for full scientific reproducibility</a>.<br />
-</li>
-<li>For each model the following metadata need to be supplied:
-<ul>
-<li>Registered <a href="https://hub.docker.com/r/opengeohub/r-geo">docker image</a>; which should specify in detail: software in
-use, R package versions;</li>
-<li>DOI of the zenodo repository with a back-up for the data (i.e. how to cite your models);</li>
-<li>URL for accessing the RDS file via S3;</li>
-</ul></li>
-</ol>
-<p>We can host your models on our infrastructure at no additional costs. Please
-contact us and apply for sharing your models <a href="https://soilspectroscopy.org/contact/">here</a>.</p>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
 
-</div>
-</div>
-<h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-lei2022achieving" class="csl-entry">
+<div class="csl-entry">
+Aitkenhead, Matt J, and Helaina IJ Black. 2018. <span>“<span class="nocase">Exploring the impact of different input data types on soil variable estimation using the ICRAF-ISRIC global soil spectral database</span>.”</span> <em>Applied Spectroscopy</em> 72 (2): 188–98.
+</div>
+<div class="csl-entry">
+Benedetti, F., and F. van Egmond. 2021. <em><span class="nocase">Global Soil Spectroscopy Assessment. Spectral soil data — Needs and capacities</span></em>. Rome, Italy: FAO. <a href="https://doi.org/10.4060/cb6265en">https://doi.org/10.4060/cb6265en</a>.
+</div>
+<div class="csl-entry">
+Böhner, J, T Blaschke, and L Montanarella. 2008. <em>SAGA—Seconds Out, Vol. 19</em>. Hamburg, Germany: Hamburger Beitr<span>ä</span>ge zur Physischen Geographie und Landschafts<span>ö</span>kologie.
+</div>
+<div class="csl-entry">
+Bremner, John M. 1996. <span>“Nitrogen-Total.”</span> In <em>Methods of Soil Analysis: Part 3 Chemical Methods</em>, 5:1085–1121. Wiley Online Library.
+</div>
+<div class="csl-entry">
+Elrashidi, MA, D Hammer, CA Seybold, RJ Engel, R Burt, and P Jones. 2007. <span>“Application of Equivalent Gypsum Content to Estimate Potential Subsidence of Gypsiferous Soils.”</span> <em>Soil Science</em> 172 (3): 209–24.
+</div>
+<div class="csl-entry">
+Grossman, RB, and TG Reinsch. 2002. <span>“2.1 Bulk Density and Linear Extensibility.”</span> In <em>Methods of Soil Analysis: Part 4 Physical Methods</em>, 5:201–28. Wiley Online Library.
+</div>
+<div class="csl-entry">
+Helling, Charles S, G Chesters, and RB Corey. 1964. <span>“Contribution of Organic Matter and Clay to Soil Cation-Exchange Capacity as Affected by the pH of the Saturating Solution.”</span> <em>Soil Science Society of America Journal</em> 28 (4): 517–20.
+</div>
+<div class="csl-entry">
+Jensen, JL, BT Christensen, P Schjønning, CW Watts, and LJ Munkholm. 2018. <span>“Converting Loss-on-Ignition to Organic Carbon Content in Arable Topsoil: Pitfalls and Proposed Procedure.”</span> <em>European Journal of Soil Science</em> 69 (4): 604–12. <a href="https://doi.org/10.1111/ejss.12558">https://doi.org/10.1111/ejss.12558</a>.
+</div>
+<div class="csl-entry">
 Lei, Tong, and Da-Wen Sun. 2022. <span>“Achieving Joint Calibration of Soil Vis-NIR Spectra Across Instruments, Soil Types and Properties by an Attention-Based Spectra Encoding-Spectra/Property Decoding Architecture.”</span> <em>Geoderma</em> 405: 115449. <a href="https://doi.org/10.1016/j.geoderma.2021.115449">https://doi.org/10.1016/j.geoderma.2021.115449</a>.
 </div>
-<div id="ref-vohland2022quantification" class="csl-entry">
+<div class="csl-entry">
+Loeppert, Richard H, Donald L Suarez, and others. 1996. <span>“Carbonate and Gypsum.”</span> In <em>Methods of Soil Analysis. Part 3 Chemical Methods</em>, 3:437–74. Wiley Online Library.
+</div>
+<div class="csl-entry">
+McLean, EO. 1983. <span>“<span class="nocase">Soil pH and lime requirement</span>.”</span> In <em>Methods of Soil Analysis: Part 2 Chemical and Microbiological Properties</em>, 9:199–224. Wiley Online Library.
+</div>
+<div class="csl-entry">
+Miller, Robert O, and David E Kissel. 2010. <span>“Comparison of Soil pH Methods on Soils of North America.”</span> <em>Soil Science Society of America Journal</em> 74 (1): 310–16.
+</div>
+<div class="csl-entry">
+Nelson, DW, and L_E Sommers. 1983. <span>“Total Carbon, Organic Carbon, and Organic Matter.”</span> In <em>Methods of Soil Analysis: Part 2 Chemical and Microbiological Properties</em>, 9:539–79. Wiley Online Library.
+</div>
+<div class="csl-entry">
+Orgiazzi, Alberto, Cristiano Ballabio, Panagiotis Panagos, Arwyn Jones, and Oihane Fernández-Ugalde. 2018. <span>“<span class="nocase">LUCAS Soil, the largest expandable soil dataset for Europe: a review</span>.”</span> <em>European Journal of Soil Science</em> 69 (1): 140–53.
+</div>
+<div class="csl-entry">
+Summerauer, L., P. Baumann, L. Ramirez-Lopez, M. Barthel, M. Bauters, B. Bukombe, M. Reichenbach, et al. 2021. <span>“The Central African Soil Spectral Library: A New Soil Infrared Repository and a Geographical Prediction Analysis.”</span> <em>SOIL</em> 7 (2): 693–715. <a href="https://doi.org/10.5194/soil-7-693-2021">https://doi.org/10.5194/soil-7-693-2021</a>.
+</div>
+<div class="csl-entry">
+Sumner, Malcolm E, and William P Miller. 1996. <span>“Cation Exchange Capacity and Exchange Coefficients.”</span> In <em>Methods of Soil Analysis: Part 3 Chemical Methods</em>, 5:1201–29. Wiley Online Library.
+</div>
+<div class="csl-entry">
+Testing, American Society for, Materials. Committee D18 on Soils, Rock, American Society for Testing, Materials. Subcommittee D18.07 on Identification, Classification of Soils, and ASTM International. 2006. <em>Standard Practice for Description and Identification of Soils (Visual-Manual Procedure)</em>. Philadelphia, PA: ASTM International.
+</div>
+<div class="csl-entry">
+Thomas, GW. 1982. <span>“Exchangeable Cations. P. 159–165. AL Page Et Al.(ed.) Methods of Soil Analysis. Part 2. Agron. Monogr. 9. ASA and SSSA.”</span> In <em>Exchangeable Cations. P. 159–165. In AL Page Et Al.(ed.) Methods of Soil Analysis. Part 2. 2nd Ed. Agron. Monogr. 9</em>. Madison, WI: ASA; SSSA.
+</div>
+<div class="csl-entry">
+USDA NRCS. 2019. <em>Soil Survey Field and Laboratory Methods Manual - Soil Survey Investigations Report No. 51 (Version 2) Issued 2014</em>. Lincoln, Nebraska: U.S. Department of Agriculture, Natural Resources Conservation Service.
+</div>
+<div class="csl-entry">
+Vagen, Tor-Gunnar, Leigh Ann Winowiecki, Luseged Desta, Ebagnerin Jerome Tondoh, Elvis Weullow, Keith Shepherd, and Andrew Sila. 2020. <em><span class="nocase">Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory: Africa Soil Information Service (AfSIS) Phase I 2009-2013</span></em>. World Agroforestry - Research Data Repository. <a href="https://doi.org/10.34725/DVN/QXCWP1">https://doi.org/10.34725/DVN/QXCWP1</a>.
+</div>
+<div class="csl-entry">
 Vohland, Michael, Bernard Ludwig, Michael Seidel, and Christopher Hutengs. 2022. <span>“<span class="nocase">Quantification of soil organic carbon at regional scale: Benefits of fusing vis-NIR and MIR diffuse reflectance data are greater for in situ than for laboratory-based modelling approaches</span>.”</span> <em>Geoderma</em> 405: 115426. <a href="https://doi.org/10.1016/j.geoderma.2021.115426">https://doi.org/10.1016/j.geoderma.2021.115426</a>.
 </div>
-<div id="ref-malone2021soil" class="csl-entry">
+<div class="csl-entry">
 Wadoux, A. M. J. C., B. Malone, A. B. McBratney, M. Fajardo, and B. Minasny. 2021. <em><span class="nocase">Soil Spectral Inference with R: Analysing Digital Soil Spectra Using the R Programming Environment</span></em>. Progress in Soil Science. Springer International Publishing.
+</div>
 </div>
 </div>
             </section>
@@ -470,8 +468,8 @@ Wadoux, A. M. J. C., B. Malone, A. B. McBratney, M. Fajardo, and B. Minasny. 202
           </div>
         </div>
       </div>
-<a href="database.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="reference-soil-spectroscopy-models.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -503,7 +501,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/soilspectroscopy/ossl-manual/edit/main/025-modeling.Rmd",
+"link": "https://github.com/soilspectroscopy/ossl-manual/edit/main/references.Rmd",
 "text": "Edit"
 },
 "history": {

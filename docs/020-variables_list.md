@@ -244,7 +244,7 @@ Soil quality — Determination of dry bulk density.\
 
 ### bd.od_usda.3b2_gcm3
 
-Bulk density, Oven-Dry, <2 mm fraction; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=161): `bd.od_usda.3b4_gcm3` = Bulk density, <2mm fraction, field moist is the weight per unit volume of the <2 mm fraction, with volume measured at field (sampling) moisture. Measurements are made on known volume cores. It is reported as grams per cubic centimeter, <2 mm base.\
+Bulk density fine earth, Oven-Dry, <2 mm fraction; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=161): `bd.od_usda.3b4_gcm3` = Bulk density, <2mm fraction, field moist is the weight per unit volume of the <2 mm fraction, with volume measured at field (sampling) moisture. Measurements are made on known volume cores. It is reported as grams per cubic centimeter, <2 mm base.\
 
 - 🆔 `bd.od_usda.3b2_gcm3`  
 - 📚 Measurement unit: g/cm3  
@@ -255,18 +255,18 @@ Bulk density, Oven-Dry, <2 mm fraction; [description](https://www.nrcs.usda.gov/
 
 ```r
 openair::scatterPlot(ossl.yw, x = "depth", y = "bd.od_usda.3b2_gcm3", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="BD t/m3", xlab="depth in cm")
+                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="BD g/cm3", xlab="depth in cm")
 ```
 
 <div class="figure">
-<img src="020-variables_list_files/figure-html/plot-bd-1.png" alt="Soil-depth histogram for Bulk density in t/m3." width="70%" />
-<p class="caption">(\#fig:plot-bd)Soil-depth histogram for Bulk density in t/m3.</p>
+<img src="020-variables_list_files/figure-html/plot-bd-1.png" alt="Soil-depth histogram for Bulk density in g/cm3." width="70%" />
+<p class="caption">(\#fig:plot-bd)Soil-depth histogram for Bulk density in g/cm3.</p>
 </div>
 
 
 <div class="figure">
-<img src="hist/bd.od_usda.3b2_gcm3_hist.png" alt="Bulk density in t/m3 percent histograms." width="70%" />
-<p class="caption">(\#fig:hist-bd1)Bulk density in t/m3 percent histograms.</p>
+<img src="hist/bd.od_usda.3b2_gcm3_hist.png" alt="Bulk density in g/cm3 percent histograms." width="70%" />
+<p class="caption">(\#fig:hist-bd1)Bulk density in g/cm3 percent histograms.</p>
 </div>
 
 ### bsat_usda.4b4_wpct

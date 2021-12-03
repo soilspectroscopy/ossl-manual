@@ -364,9 +364,13 @@ div.csl-indent {
 <li class="chapter" data-level="5" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html"><i class="fa fa-check"></i><b>5</b> Reference soil spectroscopy models</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#fitting-soil-spectroscopy-callibrarion-models"><i class="fa fa-check"></i><b>5.1</b> Fitting soil spectroscopy callibrarion models</a></li>
-<li class="chapter" data-level="5.2" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#registering-and-using-models"><i class="fa fa-check"></i><b>5.2</b> Registering and using models</a></li>
-<li class="chapter" data-level="5.3" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#worked-out-examples"><i class="fa fa-check"></i><b>5.3</b> Worked out examples</a></li>
+<li class="chapter" data-level="5.2" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#soil-spectral-calibration-using-ensemble-machine-learning"><i class="fa fa-check"></i><b>5.2</b> Soil spectral calibration using Ensemble Machine Learning</a></li>
+<li class="chapter" data-level="5.3" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#predicting-values-for-new-spectra"><i class="fa fa-check"></i><b>5.3</b> Predicting values for new spectra</a></li>
+<li class="chapter" data-level="5.4" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#calibration-of-models-across-different-datasets"><i class="fa fa-check"></i><b>5.4</b> Calibration of models across different datasets</a></li>
+<li class="chapter" data-level="5.5" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#using-default-ossl-models"><i class="fa fa-check"></i><b>5.5</b> Using default OSSL models</a></li>
+<li class="chapter" data-level="5.6" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#registering-your-own-model"><i class="fa fa-check"></i><b>5.6</b> Registering your own model</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://soilspectroscopy.org">J. (Jon) Sanderman and contributors</a></li>
 
@@ -665,7 +669,7 @@ Soil quality — Determination of dry bulk density.<br />
 </div>
 <div id="bd.od_usda.3b2_gcm3" class="section level3" number="4.2.22">
 <h3><span class="header-section-number">4.2.22</span> bd.od_usda.3b2_gcm3</h3>
-<p>Bulk density, Oven-Dry, &lt;2 mm fraction; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=161">description</a>: <code>bd.od_usda.3b4_gcm3</code> = Bulk density, &lt;2mm fraction, field moist is the weight per unit volume of the &lt;2 mm fraction, with volume measured at field (sampling) moisture. Measurements are made on known volume cores. It is reported as grams per cubic centimeter, &lt;2 mm base.<br />
+<p>Bulk density fine earth, Oven-Dry, &lt;2 mm fraction; <a href="https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=161">description</a>: <code>bd.od_usda.3b4_gcm3</code> = Bulk density, &lt;2mm fraction, field moist is the weight per unit volume of the &lt;2 mm fraction, with volume measured at field (sampling) moisture. Measurements are made on known volume cores. It is reported as grams per cubic centimeter, &lt;2 mm base.<br />
 </p>
 <ul>
 <li>🆔 <code>bd.od_usda.3b2_gcm3</code><br />
@@ -677,17 +681,17 @@ Soil quality — Determination of dry bulk density.<br />
 <li>📖 Scientific reference: <span class="citation"><a href="#ref-grossman20022" role="doc-biblioref">Grossman and Reinsch</a> (<a href="#ref-grossman20022" role="doc-biblioref">2002</a>)</span></li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="database.html#cb2-1" aria-hidden="true" tabindex="-1"></a>openair<span class="sc">::</span><span class="fu">scatterPlot</span>(ossl.yw, <span class="at">x =</span> <span class="st">&quot;depth&quot;</span>, <span class="at">y =</span> <span class="st">&quot;bd.od_usda.3b2_gcm3&quot;</span>, <span class="at">method =</span> <span class="st">&quot;hexbin&quot;</span>, </span>
-<span id="cb2-2"><a href="database.html#cb2-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;BD t/m3&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
+<span id="cb2-2"><a href="database.html#cb2-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">col =</span> <span class="st">&quot;increment&quot;</span>, <span class="at">log.x =</span> <span class="cn">TRUE</span>, <span class="at">log.y=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="st">&quot;BD g/cm3&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;depth in cm&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:plot-bd"></span>
-<img src="020-variables_list_files/figure-html/plot-bd-1.png" alt="Soil-depth histogram for Bulk density in t/m3." width="70%" />
+<img src="020-variables_list_files/figure-html/plot-bd-1.png" alt="Soil-depth histogram for Bulk density in g/cm3." width="70%" />
 <p class="caption">
-Figure 4.3: Soil-depth histogram for Bulk density in t/m3.
+Figure 4.3: Soil-depth histogram for Bulk density in g/cm3.
 </p>
 </div>
 <div class="figure"><span id="fig:hist-bd1"></span>
-<img src="hist/bd.od_usda.3b2_gcm3_hist.png" alt="Bulk density in t/m3 percent histograms." width="70%" />
+<img src="hist/bd.od_usda.3b2_gcm3_hist.png" alt="Bulk density in g/cm3 percent histograms." width="70%" />
 <p class="caption">
-Figure 4.4: Bulk density in t/m3 percent histograms.
+Figure 4.4: Bulk density in g/cm3 percent histograms.
 </p>
 </div>
 </div>

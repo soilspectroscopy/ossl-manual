@@ -229,5 +229,8 @@ soil-biological-variables
 soil-contaminants
 reference-soil-spectroscopy-models
 fitting-soil-spectroscopy-callibrarion-models
-registering-and-using-models
-worked-out-examples
+soil-spectral-calibration-using-ensemble-machine-learning
+predicting-values-for-new-spectra
+calibration-of-models-across-different-datasets
+using-default-ossl-models
+registering-your-own-model

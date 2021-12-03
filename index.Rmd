@@ -176,7 +176,7 @@ If you've contribute, add also your name and Twitter, ORCID or blog link
 below:
 
 [Jonathan Sanderman](https://twitter.com/sandersoil), [Tomislav Hengl](https://twitter.com/tom_hengl),
-[Katherine Todd-Brown](https://www.essie.ufl.edu/people/name/kathe-todd-brown/),  
+[Katherine Todd-Brown](https://www.essie.ufl.edu/people/name/kathe-todd-brown/), [Wanderson de Sousa Mendes](https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/)  
 
 ## Disclaimer
 
@@ -232,14 +232,14 @@ Progress in Soil Science, Springer Nature, ISBN: 9783030648961, 274 pp.
 ## Acknowledgments
 
 Open Soil Spectral Library was possible due to the kind contributions by public and private 
-organizations. Listed at the order of importance:
+organizations. Listed based on the date of import:
 
 - **[USDA-NRCS Kellogg Soil Survey Laboratory](https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/)** mid-infrared (MIR) spectral library was use as the basis for this data set and corresponding services; we are especially grateful to **Rich Ferguson & Scarlett Murphy (NRCS USDA)** for their help with 
 importing and using the KSSL Soil Spectral Library;  
-- **[ICRAF-ISRIC Soil VNIR Spectral Library](https://doi.org/10.34725/DVN/MFHA9C)** [@aitkenhead2018exploring] is based on the Soil Information System (ISIS) of the International Soil Reference and Information Centre (ISRIC);  
-- **[AfSIS-I Soil Spectral Library](https://doi.org/10.34725/DVN/QXCWP1)** Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013 [@Vagen_2020], a collaborative project funded by the Bill and Melinda Gates Foundation (BMGF). Partners included, CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF);  
+- **[ICRAF-ISRIC Soil VNIR Spectral Library](https://doi.org/10.34725/DVN/MFHA9C)** [@aitkenhead2018exploring] 785 soil profiles (4,438 samples) selected from the Soil Information System (ISIS) of the International Soil Reference and Information Centre (ISRIC) <https://doi.org/10.34725/DVN/MFHA9C>;  
+- **[AfSIS-I Soil Spectral Library](https://doi.org/10.34725/DVN/QXCWP1)** Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013 [@Vagen_2020], a collaborative project funded by the Bill and Melinda Gates Foundation (BMGF). Partners included, CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF) <https://doi.org/10.34725/DVN/QXCWP1>;  
 - **[LUCAS topsoil (VisNIR) Soil Spectral Library](http://esdac.jrc.ec.europa.eu/)** [@orgiazzi2018lucas] was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>; we have degraded location accuracy of points so that exact locations are about 1-km off;
-- **[The Central African Soil Spectral Library](https://github.com/laura-summerauer/ssl-central-africa)** described in detail in @Summerauer2021 contains limited number of samples representing Central Africa;
+- **[The Central African Soil Spectral Library](https://github.com/laura-summerauer/ssl-central-africa)** described in detail in @Summerauer2021 contains limited number of samples representing Central Africa <https://doi.org/10.5281/zenodo.4320395>;
 
 For more advanced uses of the soil spectral libraries **we advise to contact the original data producers** 
 especially to get help with using, extending and improving the original SSL data.

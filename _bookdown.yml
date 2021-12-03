@@ -7,3 +7,4 @@ rmd_files:
   - "015-project.Rmd"
   - "020-variables_list.Rmd"
   - "025-modeling.Rmd"
+  - "references.Rmd"

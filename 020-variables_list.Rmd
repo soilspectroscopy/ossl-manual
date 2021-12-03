@@ -297,7 +297,7 @@ Soil quality — Determination of dry bulk density.\
 
 ### bd.od_usda.3b2_gcm3
 
-Bulk density, Oven-Dry, <2 mm fraction; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=161): `bd.od_usda.3b4_gcm3` = Bulk density, <2mm fraction, field moist is the weight per unit volume of the <2 mm fraction, with volume measured at field (sampling) moisture. Measurements are made on known volume cores. It is reported as grams per cubic centimeter, <2 mm base.\
+Bulk density fine earth, Oven-Dry, <2 mm fraction; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=161): `bd.od_usda.3b4_gcm3` = Bulk density, <2mm fraction, field moist is the weight per unit volume of the <2 mm fraction, with volume measured at field (sampling) moisture. Measurements are made on known volume cores. It is reported as grams per cubic centimeter, <2 mm base.\
 
 - `r emo::ji("id")` `bd.od_usda.3b2_gcm3`  
 - `r emo::ji("library")` Measurement unit: g/cm3  
@@ -305,13 +305,13 @@ Bulk density, Oven-Dry, <2 mm fraction; [description](https://www.nrcs.usda.gov/
 - `r emo::ji("open_book")` Scientific reference: @grossman20022   
 
 
-```{r, plot-bd, fig.width=6, out.width="70%", fig.cap="Soil-depth histogram for Bulk density in t/m3."}
+```{r, plot-bd, fig.width=6, out.width="70%", fig.cap="Soil-depth histogram for Bulk density in g/cm3."}
 openair::scatterPlot(ossl.yw, x = "depth", y = "bd.od_usda.3b2_gcm3", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="BD t/m3", xlab="depth in cm")
+                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="BD g/cm3", xlab="depth in cm")
 ```
 
 
-```{r hist-bd1, echo=FALSE, fig.cap="Bulk density in t/m3 percent histograms.", out.width="70%"}
+```{r hist-bd1, echo=FALSE, fig.cap="Bulk density in g/cm3 percent histograms.", out.width="70%"}
 knitr::include_graphics("hist/bd.od_usda.3b2_gcm3_hist.png")
 ```
 

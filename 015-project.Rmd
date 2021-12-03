@@ -1,3 +1,9 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
 # Soil spectroscopy tools and users
 
 ## Soil Spectroscopy Instruments

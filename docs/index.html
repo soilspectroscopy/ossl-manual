@@ -364,9 +364,13 @@ div.csl-indent {
 <li class="chapter" data-level="5" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html"><i class="fa fa-check"></i><b>5</b> Reference soil spectroscopy models</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#fitting-soil-spectroscopy-callibrarion-models"><i class="fa fa-check"></i><b>5.1</b> Fitting soil spectroscopy callibrarion models</a></li>
-<li class="chapter" data-level="5.2" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#registering-and-using-models"><i class="fa fa-check"></i><b>5.2</b> Registering and using models</a></li>
-<li class="chapter" data-level="5.3" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#worked-out-examples"><i class="fa fa-check"></i><b>5.3</b> Worked out examples</a></li>
+<li class="chapter" data-level="5.2" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#soil-spectral-calibration-using-ensemble-machine-learning"><i class="fa fa-check"></i><b>5.2</b> Soil spectral calibration using Ensemble Machine Learning</a></li>
+<li class="chapter" data-level="5.3" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#predicting-values-for-new-spectra"><i class="fa fa-check"></i><b>5.3</b> Predicting values for new spectra</a></li>
+<li class="chapter" data-level="5.4" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#calibration-of-models-across-different-datasets"><i class="fa fa-check"></i><b>5.4</b> Calibration of models across different datasets</a></li>
+<li class="chapter" data-level="5.5" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#using-default-ossl-models"><i class="fa fa-check"></i><b>5.5</b> Using default OSSL models</a></li>
+<li class="chapter" data-level="5.6" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#registering-your-own-model"><i class="fa fa-check"></i><b>5.6</b> Registering your own model</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://soilspectroscopy.org">J. (Jon) Sanderman and contributors</a></li>
 
@@ -390,7 +394,7 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">Open Soil Spectral Library</h1>
 <p class="author"><em>Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>02 December, 2021</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>03 December, 2021</em></p>
 </div>
 <div id="about" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> About</h1>
@@ -574,7 +578,7 @@ request</a>.</p>
 <p>If you’ve contribute, add also your name and Twitter, ORCID or blog link
 below:</p>
 <p><a href="https://twitter.com/sandersoil">Jonathan Sanderman</a>, <a href="https://twitter.com/tom_hengl">Tomislav Hengl</a>,
-<a href="https://www.essie.ufl.edu/people/name/kathe-todd-brown/">Katherine Todd-Brown</a>,</p>
+<a href="https://www.essie.ufl.edu/people/name/kathe-todd-brown/">Katherine Todd-Brown</a>, <a href="https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/">Wanderson de Sousa Mendes</a></p>
 </div>
 <div id="disclaimer" class="section level2" number="1.8">
 <h2><span class="header-section-number">1.8</span> Disclaimer</h2>
@@ -634,17 +638,17 @@ Progress in Soil Science, Springer Nature, ISBN: 9783030648961, 274 pp. </li>
 <div id="acknowledgments" class="section level2" number="1.11">
 <h2><span class="header-section-number">1.11</span> Acknowledgments</h2>
 <p>Open Soil Spectral Library was possible due to the kind contributions by public and private
-organizations. Listed at the order of importance:</p>
+organizations. Listed based on the date of import:</p>
 <ul>
 <li><strong><a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/">USDA-NRCS Kellogg Soil Survey Laboratory</a></strong> mid-infrared (MIR) spectral library was use as the basis for this data set and corresponding services; we are especially grateful to <strong>Rich Ferguson &amp; Scarlett Murphy (NRCS USDA)</strong> for their help with
 importing and using the KSSL Soil Spectral Library;<br />
 </li>
-<li><strong><a href="https://doi.org/10.34725/DVN/MFHA9C">ICRAF-ISRIC Soil VNIR Spectral Library</a></strong> <span class="citation">(<a href="#ref-aitkenhead2018exploring" role="doc-biblioref">Aitkenhead and Black 2018</a>)</span> is based on the Soil Information System (ISIS) of the International Soil Reference and Information Centre (ISRIC);<br />
+<li><strong><a href="https://doi.org/10.34725/DVN/MFHA9C">ICRAF-ISRIC Soil VNIR Spectral Library</a></strong> <span class="citation">(<a href="#ref-aitkenhead2018exploring" role="doc-biblioref">Aitkenhead and Black 2018</a>)</span> 785 soil profiles (4,438 samples) selected from the Soil Information System (ISIS) of the International Soil Reference and Information Centre (ISRIC) <a href="https://doi.org/10.34725/DVN/MFHA9C" class="uri">https://doi.org/10.34725/DVN/MFHA9C</a>;<br />
 </li>
-<li><strong><a href="https://doi.org/10.34725/DVN/QXCWP1">AfSIS-I Soil Spectral Library</a></strong> Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013 <span class="citation">(<a href="#ref-Vagen_2020" role="doc-biblioref">Vagen et al. 2020</a>)</span>, a collaborative project funded by the Bill and Melinda Gates Foundation (BMGF). Partners included, CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF);<br />
+<li><strong><a href="https://doi.org/10.34725/DVN/QXCWP1">AfSIS-I Soil Spectral Library</a></strong> Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013 <span class="citation">(<a href="#ref-Vagen_2020" role="doc-biblioref">Vagen et al. 2020</a>)</span>, a collaborative project funded by the Bill and Melinda Gates Foundation (BMGF). Partners included, CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF) <a href="https://doi.org/10.34725/DVN/QXCWP1" class="uri">https://doi.org/10.34725/DVN/QXCWP1</a>;<br />
 </li>
 <li><strong><a href="http://esdac.jrc.ec.europa.eu/">LUCAS topsoil (VisNIR) Soil Spectral Library</a></strong> <span class="citation">(<a href="#ref-orgiazzi2018lucas" role="doc-biblioref">Orgiazzi et al. 2018</a>)</span> was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <a href="http://esdac.jrc.ec.europa.eu/" class="uri">http://esdac.jrc.ec.europa.eu/</a>; we have degraded location accuracy of points so that exact locations are about 1-km off;</li>
-<li><strong><a href="https://github.com/laura-summerauer/ssl-central-africa">The Central African Soil Spectral Library</a></strong> described in detail in <span class="citation"><a href="#ref-Summerauer2021" role="doc-biblioref">Summerauer et al.</a> (<a href="#ref-Summerauer2021" role="doc-biblioref">2021</a>)</span> contains limited number of samples representing Central Africa;</li>
+<li><strong><a href="https://github.com/laura-summerauer/ssl-central-africa">The Central African Soil Spectral Library</a></strong> described in detail in <span class="citation"><a href="#ref-Summerauer2021" role="doc-biblioref">Summerauer et al.</a> (<a href="#ref-Summerauer2021" role="doc-biblioref">2021</a>)</span> contains limited number of samples representing Central Africa <a href="https://doi.org/10.5281/zenodo.4320395" class="uri">https://doi.org/10.5281/zenodo.4320395</a>;</li>
 </ul>
 <p>For more advanced uses of the soil spectral libraries <strong>we advise to contact the original data producers</strong>
 especially to get help with using, extending and improving the original SSL data.</p>
