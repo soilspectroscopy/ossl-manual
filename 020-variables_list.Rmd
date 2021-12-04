@@ -11,8 +11,12 @@ library(captioner)
 library(openair)
 fig_nums <- captioner(prefix = "Fig.")
 source("R/ossl_functions.R")
-ossl.yw = readRDS(url("http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_import/ossl_soillab_v1.rds", "rb"))
-ossl.sitef = readRDS(url("http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_import/ossl_soilsite_v1.rds", "rb"))
+if(!exists("ossl.yw")){
+  ossl.yw = readRDS(url("http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_import/ossl_soillab_v1.rds", "rb"))  
+}
+if(!exists("ossl.sitef")){
+  ossl.sitef = readRDS(url("http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_import/ossl_soilsite_v1.rds", "rb"))
+}
 ossl.yw$layer.upper.depth_usda_cm = plyr::join(ossl.yw["id.layer_uuid_c"], ossl.sitef, match="first")$layer.upper.depth_usda_cm
 ossl.yw$layer.lower.depth_usda_cm = plyr::join(ossl.yw["id.layer_uuid_c"], ossl.sitef, match="first")$layer.lower.depth_usda_cm
 ossl.yw$depth = ossl.yw$layer.upper.depth_usda_cm + (ossl.yw$layer.lower.depth_usda_cm - ossl.yw$layer.upper.depth_usda_cm)/2

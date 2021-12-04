@@ -363,12 +363,9 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html"><i class="fa fa-check"></i><b>5</b> Reference soil spectroscopy models</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#fitting-soil-spectroscopy-callibrarion-models"><i class="fa fa-check"></i><b>5.1</b> Fitting soil spectroscopy callibrarion models</a></li>
-<li class="chapter" data-level="5.2" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#soil-spectral-calibration-using-ensemble-machine-learning"><i class="fa fa-check"></i><b>5.2</b> Soil spectral calibration using Ensemble Machine Learning</a></li>
-<li class="chapter" data-level="5.3" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#predicting-values-for-new-spectra"><i class="fa fa-check"></i><b>5.3</b> Predicting values for new spectra</a></li>
-<li class="chapter" data-level="5.4" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#calibration-of-models-across-different-datasets"><i class="fa fa-check"></i><b>5.4</b> Calibration of models across different datasets</a></li>
-<li class="chapter" data-level="5.5" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#using-default-ossl-models"><i class="fa fa-check"></i><b>5.5</b> Using default OSSL models</a></li>
-<li class="chapter" data-level="5.6" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#registering-your-own-model"><i class="fa fa-check"></i><b>5.6</b> Registering your own model</a></li>
+<li class="chapter" data-level="5.1" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#ossl-global-soil-spectroscopy-callibrarion-models"><i class="fa fa-check"></i><b>5.1</b> OSSL global soil spectroscopy callibrarion models</a></li>
+<li class="chapter" data-level="5.2" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#using-default-ossl-models-to-predict-soil-properties"><i class="fa fa-check"></i><b>5.2</b> Using default OSSL models to predict soil properties</a></li>
+<li class="chapter" data-level="5.3" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#registering-your-own-model"><i class="fa fa-check"></i><b>5.3</b> Registering your own model</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -394,7 +391,7 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">Open Soil Spectral Library</h1>
 <p class="author"><em>Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>03 December, 2021</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>04 December, 2021</em></p>
 </div>
 <div id="about" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> About</h1>
@@ -437,11 +434,11 @@ It includes (see also <a href="https://github.com/soilspectroscopy" class="uri">
 </li>
 <li>API calibration service available from <a href="https://api.soilspectroscopy.org" class="uri">https://api.soilspectroscopy.org</a>,<br />
 </li>
-<li>Front-end solutions,<br />
+<li>Front-end solutions: <strong>OSSL <a href="https://engine.soilspectroscopy.org/">Engine</a></strong> and <strong><a href="https://explorer.soilspectroscopy.org/">Explorer</a></strong>,<br />
 </li>
 <li>An R package <code>ossl</code> with all functionality used by the API,<br />
 </li>
-<li>Registry of global and local calibration models,<br />
+<li>Registry of global and local calibration models (<a href="https://github.com/soilspectroscopy/" class="uri">https://github.com/soilspectroscopy/</a>),<br />
 </li>
 <li>Tutorials included in this book,</li>
 </ul>
@@ -612,11 +609,14 @@ contact us via: <a href="https://soilspectroscopy.org/contact/" class="uri">http
 <p>Some other connected publications and initiatives describing collation
 and import of soil spectroscopy data:</p>
 <ul>
+<li>Ayres, E. (2019). <a href="https://doi.org/10.2136/sssaj2019.02.0050">Quantitative Guidelines for Establishing and Operating Soil Archives</a>. Soil Science Society of America Journal, 83(4), 973-981. <a href="https://doi.org/10.2136/sssaj2019.02.0050" class="uri">https://doi.org/10.2136/sssaj2019.02.0050</a><br />
+</li>
 <li>Benedetti, F. and van Egmond, F. (2021). <a href="https://doi.org/10.4060/cb6265en">Global Soil Spectroscopy Assessment</a>. Spectral soil data – Needs and capacities. Rome, FAO. <a href="https://doi.org/10.4060/cb6265en" class="uri">https://doi.org/10.4060/cb6265en</a><br />
 </li>
 <li>Dudek, M., Kabała, C., Łabaz, B., Mituła, P., Bednik, M., &amp; Medyńska-Juraszek, A. (2021). <a href="https://doi.org/10.3390/land10020215">Mid-Infrared Spectroscopy Supports Identification of the Origin of Organic Matter in Soils</a>. Land, 10(2), 215. <a href="https://doi.org/10.3390/land10020215" class="uri">https://doi.org/10.3390/land10020215</a><br />
 </li>
-<li><a href="http://www.fao.org/global-soil-partnership/glosolan/soil-analysis/standard-operating-procedures/en/#c763834">GLOSOLAN’s Standard Operating Procedures (SOPs)</a>;</li>
+<li><a href="http://www.fao.org/global-soil-partnership/glosolan/soil-analysis/standard-operating-procedures/en/#c763834">GLOSOLAN’s Standard Operating Procedures (SOPs)</a>;<br />
+</li>
 <li>Nocita, M., Stevens, A., van Wesemael, B., Aitkenhead, M., Bachmann, M., Barthès, B., … &amp; Wetterlind, J. (2015). <a href="https://doi.org/10.1016/bs.agron.2015.02.002">Soil spectroscopy: An alternative to wet chemistry for soil monitoring</a>. Advances in agronomy, 132, 139-159. <a href="https://doi.org/10.1016/bs.agron.2015.02.002" class="uri">https://doi.org/10.1016/bs.agron.2015.02.002</a><br />
 </li>
 <li>Sanderman, J., Savage, K., Dangal, S. R., Duran, G., Rivard, C., Cavigelli, M. A., … &amp; Stewart, C. (2021). <a href="https://doi.org/10.3390/rs13122265">Can Agricultural Management Induced Changes in Soil Organic Carbon Be Detected Using Mid-Infrared Spectroscopy?</a>. Remote Sensing, 13(12), 2265. <a href="https://doi.org/10.3390/rs13122265" class="uri">https://doi.org/10.3390/rs13122265</a><br />
@@ -631,8 +631,7 @@ physical and chemical properties of US soils with a mid-infrared
 reflectance spectral library</a>. Soil Science Society of America Journal,
 82(3), 722–731. <a href="https://doi.org/10.2136/sssaj2017.10.0361" class="uri">https://doi.org/10.2136/sssaj2017.10.0361</a><br />
 </li>
-<li>Wadoux, A.M.J.-C., Malone, B., McBratney, A.B., Fajardo, M., Minasny, B., (2021). <a href="https://books.google.nl/books?id=4kQgEAAAQBAJ">Soil Spectral Inference with R: Analysing Digital Soil Spectra Using the R Programming Environment</a>.<br />
-Progress in Soil Science, Springer Nature, ISBN: 9783030648961, 274 pp. </li>
+<li>Wadoux, A.M.J.-C., Malone, B., McBratney, A.B., Fajardo, M., Minasny, B., (2021). <a href="https://books.google.nl/books?id=4kQgEAAAQBAJ">Soil Spectral Inference with R: Analysing Digital Soil Spectra Using the R Programming Environment</a>. Progress in Soil Science, Springer Nature, ISBN: 9783030648961, 274 pp. </li>
 </ul>
 </div>
 <div id="acknowledgments" class="section level2" number="1.11">
@@ -640,16 +639,21 @@ Progress in Soil Science, Springer Nature, ISBN: 9783030648961, 274 pp. </li>
 <p>Open Soil Spectral Library was possible due to the kind contributions by public and private
 organizations. Listed based on the date of import:</p>
 <ul>
-<li><strong><a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/">USDA-NRCS Kellogg Soil Survey Laboratory</a></strong> mid-infrared (MIR) spectral library was use as the basis for this data set and corresponding services; we are especially grateful to <strong>Rich Ferguson &amp; Scarlett Murphy (NRCS USDA)</strong> for their help with
+<li><strong><a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/">USDA-NRCS Kellogg Soil Survey Laboratory</a></strong> mid-infrared (MIR) spectral library <span class="citation">(<a href="#ref-wijewardane2018predicting" role="doc-biblioref">Wijewardane et al. 2018</a>; <a href="#ref-sanderman2020mid" role="doc-biblioref">Sanderman, Savage, and Dangal 2020</a>)</span> was used as the basis for this data set and corresponding services; we are especially grateful to <strong>Rich Ferguson &amp; Scarlett Murphy (NRCS USDA)</strong> for their help with
 importing and using the KSSL Soil Spectral Library;<br />
 </li>
 <li><strong><a href="https://doi.org/10.34725/DVN/MFHA9C">ICRAF-ISRIC Soil VNIR Spectral Library</a></strong> <span class="citation">(<a href="#ref-aitkenhead2018exploring" role="doc-biblioref">Aitkenhead and Black 2018</a>)</span> 785 soil profiles (4,438 samples) selected from the Soil Information System (ISIS) of the International Soil Reference and Information Centre (ISRIC) <a href="https://doi.org/10.34725/DVN/MFHA9C" class="uri">https://doi.org/10.34725/DVN/MFHA9C</a>;<br />
 </li>
 <li><strong><a href="https://doi.org/10.34725/DVN/QXCWP1">AfSIS-I Soil Spectral Library</a></strong> Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013 <span class="citation">(<a href="#ref-Vagen_2020" role="doc-biblioref">Vagen et al. 2020</a>)</span>, a collaborative project funded by the Bill and Melinda Gates Foundation (BMGF). Partners included, CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF) <a href="https://doi.org/10.34725/DVN/QXCWP1" class="uri">https://doi.org/10.34725/DVN/QXCWP1</a>;<br />
 </li>
-<li><strong><a href="http://esdac.jrc.ec.europa.eu/">LUCAS topsoil (VisNIR) Soil Spectral Library</a></strong> <span class="citation">(<a href="#ref-orgiazzi2018lucas" role="doc-biblioref">Orgiazzi et al. 2018</a>)</span> was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <a href="http://esdac.jrc.ec.europa.eu/" class="uri">http://esdac.jrc.ec.europa.eu/</a>; we have degraded location accuracy of points so that exact locations are about 1-km off;</li>
-<li><strong><a href="https://github.com/laura-summerauer/ssl-central-africa">The Central African Soil Spectral Library</a></strong> described in detail in <span class="citation"><a href="#ref-Summerauer2021" role="doc-biblioref">Summerauer et al.</a> (<a href="#ref-Summerauer2021" role="doc-biblioref">2021</a>)</span> contains limited number of samples representing Central Africa <a href="https://doi.org/10.5281/zenodo.4320395" class="uri">https://doi.org/10.5281/zenodo.4320395</a>;</li>
+<li><strong><a href="http://esdac.jrc.ec.europa.eu/">LUCAS topsoil (VisNIR) Soil Spectral Library</a></strong> <span class="citation">(<a href="#ref-orgiazzi2018lucas" role="doc-biblioref">Orgiazzi et al. 2018</a>)</span> was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <a href="http://esdac.jrc.ec.europa.eu/" class="uri">http://esdac.jrc.ec.europa.eu/</a>; we have degraded location accuracy of points so that exact locations are about 1-km off;<br />
+</li>
+<li><strong><a href="https://github.com/laura-summerauer/ssl-central-africa">The Central African Soil Spectral Library</a></strong> described in detail in <span class="citation"><a href="#ref-Summerauer2021" role="doc-biblioref">Summerauer et al.</a> (<a href="#ref-Summerauer2021" role="doc-biblioref">2021</a>)</span> contains limited number of samples representing Central Africa <a href="https://doi.org/10.5281/zenodo.4320395" class="uri">https://doi.org/10.5281/zenodo.4320395</a>;<br />
+</li>
+<li><strong>The National Ecological Observatory Network (NEON) Soil Spectral</strong> is based on the NEON soil data <span class="citation">(<a href="#ref-ayres2019quantitative" role="doc-biblioref">Ayres 2019</a>)</span>, which was scanned by the Woodwell Climate Research and USDA-NRCS Kellogg Soil Survey Laboratory;</li>
 </ul>
+<p>We are grateful to <strong><a href="https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/">Wanderson de Sousa Mendes (Leibniz Centre for Agricultural Landscape Research (ZALF))</a></strong> for
+help with initial screening of the data for the development of the R code for processing soil spectroscopy data.</p>
 <p>For more advanced uses of the soil spectral libraries <strong>we advise to contact the original data producers</strong>
 especially to get help with using, extending and improving the original SSL data.</p>
 <p>We are also grateful to <strong><a href="https://nifa.usda.gov/press-release/nifa-invests-over-7-million-big-data-artificial-intelligence-and-other">USDA National Institute of Food and Agriculture #2020-67021-32467</a></strong> for providing funding for this project.</p>
@@ -659,16 +663,25 @@ especially to get help with using, extending and improving the original SSL data
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-aitkenhead2018exploring" class="csl-entry">
-Aitkenhead, Matt J, and Helaina IJ Black. 2018. <span>“<span class="nocase">Exploring the impact of different input data types on soil variable estimation using the ICRAF-ISRIC global soil spectral database</span>.”</span> <em>Applied Spectroscopy</em> 72 (2): 188–98.
+Aitkenhead, Matt J, and Helaina IJ Black. 2018. <span>“<span class="nocase">Exploring the impact of different input data types on soil variable estimation using the ICRAF-ISRIC global soil spectral database</span>.”</span> <em>Applied Spectroscopy</em> 72 (2): 188–98. <a href="https://doi.org/10.1177/0003702817739013">https://doi.org/10.1177/0003702817739013</a>.
+</div>
+<div id="ref-ayres2019quantitative" class="csl-entry">
+Ayres, Edward. 2019. <span>“Quantitative Guidelines for Establishing and Operating Soil Archives.”</span> <em>Soil Science Society of America Journal</em> 83 (4): 973–81. <a href="https://doi.org/10.2136/sssaj2019.02.0050">https://doi.org/10.2136/sssaj2019.02.0050</a>.
 </div>
 <div id="ref-orgiazzi2018lucas" class="csl-entry">
-Orgiazzi, Alberto, Cristiano Ballabio, Panagiotis Panagos, Arwyn Jones, and Oihane Fernández-Ugalde. 2018. <span>“<span class="nocase">LUCAS Soil, the largest expandable soil dataset for Europe: a review</span>.”</span> <em>European Journal of Soil Science</em> 69 (1): 140–53.
+Orgiazzi, Alberto, Cristiano Ballabio, Panagiotis Panagos, Arwyn Jones, and Oihane Fernández-Ugalde. 2018. <span>“<span class="nocase">LUCAS Soil, the largest expandable soil dataset for Europe: a review</span>.”</span> <em>European Journal of Soil Science</em> 69 (1): 140–53. <a href="https://doi.org/10.1111/ejss.12499">https://doi.org/10.1111/ejss.12499</a>.
+</div>
+<div id="ref-sanderman2020mid" class="csl-entry">
+Sanderman, Jonathan, Kathleen Savage, and Shree RS Dangal. 2020. <span>“<span class="nocase">Mid-infrared spectroscopy for prediction of soil health indicators in the United States</span>.”</span> <em>Soil Science Society of America Journal</em> 84 (1): 251–61. <a href="https://doi.org/10.1002/saj2.20009">https://doi.org/10.1002/saj2.20009</a>.
 </div>
 <div id="ref-Summerauer2021" class="csl-entry">
 Summerauer, L., P. Baumann, L. Ramirez-Lopez, M. Barthel, M. Bauters, B. Bukombe, M. Reichenbach, et al. 2021. <span>“The Central African Soil Spectral Library: A New Soil Infrared Repository and a Geographical Prediction Analysis.”</span> <em>SOIL</em> 7 (2): 693–715. <a href="https://doi.org/10.5194/soil-7-693-2021">https://doi.org/10.5194/soil-7-693-2021</a>.
 </div>
 <div id="ref-Vagen_2020" class="csl-entry">
 Vagen, Tor-Gunnar, Leigh Ann Winowiecki, Luseged Desta, Ebagnerin Jerome Tondoh, Elvis Weullow, Keith Shepherd, and Andrew Sila. 2020. <em><span class="nocase">Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory: Africa Soil Information Service (AfSIS) Phase I 2009-2013</span></em>. World Agroforestry - Research Data Repository. <a href="https://doi.org/10.34725/DVN/QXCWP1">https://doi.org/10.34725/DVN/QXCWP1</a>.
+</div>
+<div id="ref-wijewardane2018predicting" class="csl-entry">
+Wijewardane, Nuwan K, Yufeng Ge, Skye Wills, and Zamir Libohova. 2018. <span>“<span class="nocase">Predicting physical and chemical properties of US soils with a mid-infrared reflectance spectral library</span>.”</span> <em>Soil Science Society of America Journal</em> 82 (3): 722–31. <a href="https://doi.org/10.2136/sssaj2017.10.0361">https://doi.org/10.2136/sssaj2017.10.0361</a>.
 </div>
 </div>
             </section>

@@ -49,6 +49,8 @@ fig:plot-wp
 fig:hist-wp1
 fig:plot-fc
 fig:hist-fc1
+fig:ac-soc1
+fig:ac-soc2
 about
 soil-spectroscopy-for-global-good
 what-is-soil-spectroscopy
@@ -228,9 +230,6 @@ bulk-density
 soil-biological-variables
 soil-contaminants
 reference-soil-spectroscopy-models
-fitting-soil-spectroscopy-callibrarion-models
-soil-spectral-calibration-using-ensemble-machine-learning
-predicting-values-for-new-spectra
-calibration-of-models-across-different-datasets
-using-default-ossl-models
+ossl-global-soil-spectroscopy-callibrarion-models
+using-default-ossl-models-to-predict-soil-properties
 registering-your-own-model
