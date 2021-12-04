@@ -1,3 +1,45 @@
+
+soilspec4gg.init <- function() {
+  print('Creating the access for mongodb collections.')
+  soilspec4gg.db$collections <<- list(
+    soillab = mongo(collection = 'soillab', url = soilspec4gg.db$url, verbose = TRUE),
+    soilsite = mongo(collection = 'soilsite', url = soilspec4gg.db$url, verbose = TRUE),
+    mir = mongo(collection = 'mir', url = soilspec4gg.db$url, verbose = TRUE),
+    visnir = mongo(collection = 'visnir', url = soilspec4gg.db$url, verbose = TRUE)
+  )
+}
+
+soilspec4gg.samplesById <- function (ids) {
+
+  print('Accessing mongodb collections.')
+
+  query <- to_json( list(
+    id_layer_local_c = list("$in"=ids)
+  ))
+
+  do.merge <- function(x, y) {
+    if (nrow(y) > 0) {
+      suppressWarnings(
+        merge(x, y, by="id_layer_local_c", all=TRUE),
+      )
+    } else{
+      x
+    }
+  }
+
+  return(
+    Reduce(f = do.merge,
+           list(
+             soilspec4gg.db$collections$soilsite$find(query = query),
+             soilspec4gg.db$collections$soillab$find(query = query),
+             soilspec4gg.db$collections$mir$find(query = query),
+             soilspec4gg.db$collections$visnir$find(query = query)
+           )
+    )
+  )
+}
+
+
 soc_stock <- function(oc_est.calc_wpct, bd.od_3b2b_gcm3, wpg2_usda_vpct=0, hor.thick_usda_cm=30, oc_est.calc_wpct.sd=10, bd.od_3b2b_gcm3.sd=100, wpg2_usda_vpct.sd=5, se.prop=TRUE){
   if(any(oc_est.calc_wpct[!is.na(oc_est.calc_wpct)]<0)|any(bd.od_3b2b_gcm3[!is.na(bd.od_3b2b_gcm3)]<0)|any(wpg2_usda_vpct[!is.na(wpg2_usda_vpct)]<0)){
     warning("Negative values for 'oc_est.calc_wpct', 'bd.od_3b2b_gcm3', 'wpg2_usda_vpct' found")

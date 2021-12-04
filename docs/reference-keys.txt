@@ -2,6 +2,7 @@ fig:soil-pnts
 fig:soil-db
 fig:pnts-vnir
 fig:pnts-mir
+fig:mongodb-gui
 fig:pull-request
 fig:plot-alkcl
 fig:hist-alkcl1
@@ -55,6 +56,7 @@ about
 soil-spectroscopy-for-global-good
 what-is-soil-spectroscopy
 open-soil-spectral-library
+ossl-mongodb
 target-variables-of-interest
 contributing-data
 contributing-documentation

@@ -25,6 +25,8 @@ graphics: yes
 
 <span style="background-color: #FFFF00">This document is **UNDER CONSTRUCTION**.</span>
 
+<img src="img/soilspec4gg-logo_fc.png" width="60%" />
+
 ## Soil Spectroscopy for Global Good
 
 [**SoilSpec4GG**](https://soilspectroscopy.org/) is a USDA-funded [Food and Agriculture Cyberinformatics
@@ -60,7 +62,7 @@ These characteristic spectra (see Fig. below) can then be used to estimate numer
 **Open Soil Spectral Library** (OSSL) is a suite of datasets, web-services, software and tutorials.
 It includes (see also <https://github.com/soilspectroscopy>):
 
-- A soil spectral DB available from <https://db.soilspectroscopy.org>,  
+- A soil spectral DB (mongoDB),  
 - API calibration service available from <https://api.soilspectroscopy.org>,  
 - Front-end solutions: **OSSL [Engine](https://engine.soilspectroscopy.org/)** and **[Explorer](https://explorer.soilspectroscopy.org/)**,  
 - An R package `ossl` with all functionality used by the API,  
@@ -91,6 +93,98 @@ To access and use Soil Spectroscopy tools also refer to <https://soilspectroscop
 <img src="img/mir.pnts_sites.png" alt="Up-to-date distribution of points with MIR scans." width="100%" />
 <p class="caption">(\#fig:pnts-mir)Up-to-date distribution of points with MIR scans.</p>
 </div>
+
+## OSSL mongoDB
+
+[MongoDB](https://www.mongodb.com/) is an Open Source noSQL DB hence fast and fully scalable and extendable 
+(affordable costs for cloud solutions such as [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and similar). 
+TensorFlow and other cutting-edge ML algorithms can be easily integrated and served through a GUI.
+
+To access OSSL DB best use the mongoDB either through a graphical user 
+interface using [Robo 3T](https://robomongo.org/download), or by using the [mongodb via R](https://www.mongodb.com/languages/mongodb-and-r-example). 
+The following parameters (database credentials) allow ready only access to DB:
+
+- Name: soilspec4gg  
+- Address: api.soilspectroscopy.org  
+- Database: soilspec4gg  
+- Username: soilspec4gg  
+- Password: soilspec4gg  
+
+
+```
+## Loading required package: mongolite
+```
+
+```
+## Loading required package: jsonify
+```
+
+```
+## Registered S3 method overwritten by 'jsonify':
+##   method     from    
+##   print.json jsonlite
+```
+
+<div class="figure">
+<img src="img/mongodb_gui.png" alt="Accessing the OSSL DB using [MongoDB GUI](https://robomongo.org/download)." width="90%" />
+<p class="caption">(\#fig:mongodb-gui)Accessing the OSSL DB using [MongoDB GUI](https://robomongo.org/download).</p>
+</div>
+
+First, we need to specify the parameters:
+
+
+```r
+library(mongolite)
+library(jsonify)
+source("R/ossl_functions.R")
+soilspec4gg.db = list(
+  host = 'api.soilspectroscopy.org',
+  name = 'soilspec4gg',
+  user = 'soilspec4gg',
+  pw = 'soilspec4gg'
+)
+soilspec4gg.db$url <- paste0(
+  'mongodb://', soilspec4gg.db$user, ':', 
+  soilspec4gg.db$pw, '@', 
+  soilspec4gg.db$host, '/', 
+  soilspec4gg.db$name, '?ssl=true'
+)
+```
+
+Next, we can initiate connection:
+
+
+```r
+soilspec4gg.init()
+```
+
+```
+## [1] "Creating the access for mongodb collections."
+```
+
+and now we can query and load data directly into R, for example to get a sample from AfSIS1:
+
+
+```r
+id = "icr006475" 
+soilspec.sample = soilspec4gg.samplesById(id)
+```
+
+```
+## [1] "Accessing mongodb collections."
+##  Found 4 records... Imported 4 records. Simplifying into dataframe...
+##  Found 4 records... Imported 4 records. Simplifying into dataframe...
+##  Found 1 records... Imported 1 records. Simplifying into dataframe...
+##  Imported 0 records. Simplifying into dataframe...
+```
+
+```r
+dim(soilspec.sample)
+```
+
+```
+## [1]   16 1758
+```
 
 
 ## Target variables of interest
