@@ -365,7 +365,12 @@ div.csl-indent {
 <li class="chapter" data-level="5" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html"><i class="fa fa-check"></i><b>5</b> Reference soil spectroscopy models</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#ossl-global-soil-spectroscopy-callibrarion-models"><i class="fa fa-check"></i><b>5.1</b> OSSL global soil spectroscopy callibrarion models</a></li>
-<li class="chapter" data-level="5.2" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#using-default-ossl-models-to-predict-soil-properties"><i class="fa fa-check"></i><b>5.2</b> Using default OSSL models to predict soil properties</a></li>
+<li class="chapter" data-level="5.2" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#using-default-ossl-models-to-predict-soil-properties"><i class="fa fa-check"></i><b>5.2</b> Using default OSSL models to predict soil properties</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#predicting-soil-properties-using-mir-spectra"><i class="fa fa-check"></i><b>5.2.1</b> Predicting soil properties using MIR spectra</a></li>
+<li class="chapter" data-level="5.2.2" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#predicting-soil-properties-using-mir-spectra-and-geographical-covariates"><i class="fa fa-check"></i><b>5.2.2</b> Predicting soil properties using MIR spectra and geographical covariates</a></li>
+<li class="chapter" data-level="5.2.3" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#predicting-soil-properties-using-visnir-spectra"><i class="fa fa-check"></i><b>5.2.3</b> Predicting soil properties using VisNIR spectra</a></li>
+</ul></li>
 <li class="chapter" data-level="5.3" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#registering-your-own-model"><i class="fa fa-check"></i><b>5.3</b> Registering your own model</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -417,13 +422,27 @@ as the <em>“bundle approach”</em> as we basically use all information availa
 to help produce best predictions of targeted soil properties.</p>
 <p>Users can choose to opt for one of the multiple calibration models, which also
 depends on the type of data (VisNIR, MIR, coordinates and depths known yes/no) you use of course.</p>
+<p>Soil spectral scans obtained by different spectroscopic instruments often cannot be
+modeled or analyzed together i.e. they require some kind of calibration <span class="citation">(<a href="#ref-lei2022achieving" role="doc-biblioref">Lei and Sun 2022</a>)</span>
+before one can fit cross-instrument / cross-dataset calibration models.
+In the OSSL library we thus use also instrument / dataset as the indicator variable
+hence the most complex models currently in the OSSL are where users need to define both:</p>
+<ol style="list-style-type: decimal">
+<li>Input MIR spectra,</li>
+<li>Input VisNIR spectra (same samples),</li>
+<li>Geographical location and soil depth,</li>
+<li>Instrument code / dataset code;</li>
+</ol>
 </div>
 <div id="using-default-ossl-models-to-predict-soil-properties" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Using default OSSL models to predict soil properties</h2>
 <p>OSSL model registry (RDS) S3 file services currently includes large number of
 prediction models fitted for a list of soil properties. The complete list is available in the file <strong><a href="https://github.com/soilspectroscopy/ossl-models">OSSL_models_meta.csv</a></strong>.</p>
+<div id="predicting-soil-properties-using-mir-spectra" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Predicting soil properties using MIR spectra</h3>
 <p>For example, to predict <a href="https://soilspectroscopy.github.io/ossl-manual/database.html#oc_usda.calc_wpct">soil organic carbon weight percent</a> (<code>oc_usda.calc_wpct</code>) using MIR spectra, we need to load
-two models (1) principal component model, (2) mlr model for predicting <code>oc_usda.calc_wpct</code>:</p>
+two models (1) principal component model <code>mpca_mir_kssl_v1.rds</code>,
+(2) mlr model for predicting <code>oc_usda.calc_wpct</code>:</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="reference-soil-spectroscopy-models.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;./R/ossl_functions.R&#39;</span>)</span>
 <span id="cb50-2"><a href="reference-soil-spectroscopy-models.html#cb50-2" aria-hidden="true" tabindex="-1"></a>rep <span class="ot">=</span> <span class="st">&quot;http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/&quot;</span></span>
 <span id="cb50-3"><a href="reference-soil-spectroscopy-models.html#cb50-3" aria-hidden="true" tabindex="-1"></a>pcm1 <span class="ot">=</span> <span class="fu">url</span>(<span class="fu">paste0</span>(rep, <span class="st">&quot;pca.ossl/mpca_mir_kssl_v1.rds&quot;</span>), <span class="st">&quot;rb&quot;</span>)</span>
@@ -431,7 +450,10 @@ two models (1) principal component model, (2) mlr model for predicting <code>oc_
 <span id="cb50-5"><a href="reference-soil-spectroscopy-models.html#cb50-5" aria-hidden="true" tabindex="-1"></a>ossl.pca.mir <span class="ot">=</span> <span class="fu">readRDS</span>(pcm1)</span>
 <span id="cb50-6"><a href="reference-soil-spectroscopy-models.html#cb50-6" aria-hidden="true" tabindex="-1"></a>ossl.model <span class="ot">=</span> <span class="fu">readRDS</span>(eml1)</span></code></pre></div>
 <p>Note that the models are between 10 to 200 MB in size, depending on complexity of models
-and the size of the training data used. We can look at the summary of model e.g.</p>
+and the size of the training data used. The Principal Component Analysis is described in
+the <a href="https://github.com/soilspectroscopy/ossl-models/">OSSL models repository</a>. It is a standard way of compressing 1000+ spectral bands before predictive modeling <span class="citation">(<a href="#ref-chang2001near" role="doc-biblioref">Chang et al. 2001</a>)</span>.
+We use the first 60 PCA components for further modeling, which is an arbitrary decisions.</p>
+<p>We can look at the summary of model by typing:</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="reference-soil-spectroscopy-models.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ossl.model<span class="sc">$</span>learner.model<span class="sc">$</span>super.model<span class="sc">$</span>learner.model)</span></code></pre></div>
 <pre><code>Residuals:
     Min      1Q  Median      3Q     Max 
@@ -484,7 +506,7 @@ contain the wavelengths / channels:</p>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="reference-soil-spectroscopy-models.html#cb56-1" aria-hidden="true" tabindex="-1"></a>pred.oc <span class="ot">=</span> <span class="fu">predict.ossl</span>(<span class="at">t.var=</span><span class="st">&quot;log..oc_usda.calc_wpct&quot;</span>, <span class="at">mir.raw=</span>mir.raw, </span>
 <span id="cb56-2"><a href="reference-soil-spectroscopy-models.html#cb56-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">ossl.model=</span>ossl.model, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100</span>),</span>
 <span id="cb56-3"><a href="reference-soil-spectroscopy-models.html#cb56-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">ossl.pca.mir=</span>ossl.pca.mir)</span></code></pre></div>
-<p>where <code>ylim=c(0,100)</code> specifies that the prediction values need to be in the range 0 to 100.
+<p>where <code>ylim=c(0,100)</code> specifies that the prediction values need to be in the range 0 to 100 (values out of these range will be replaced with either 0 or 100).
 The output of this model consists of four parts:</p>
 <pre><code>List of 4
  $ pred :&#39;data.frame&#39;:  20 obs. of  5 variables:
@@ -508,10 +530,13 @@ The output of this model consists of four parts:</p>
 <p>which means that the predicted <code>oc_usda.calc_wpct</code> for first row is 0 etc. The
 <code>lower.1std</code> and <code>upper.1std</code> indicate standard prediction interval based on the
 prediction error derived in the log-space. For higher values of <code>oc_usda.calc_wpct</code>
-prediction interval gets thus proportionally higher e.g. for row 14 it is between 27% and 34%:</p>
+prediction interval gets thus proportionally higher for larger absolute values e.g. for row 14 it is between 27% and 34%:</p>
 <pre><code>#pred.oc$pred[14,]
    pred.mean pred.error tpred.mean lower.1std upper.1std
 14  3.441673  0.1139194   30.23918   26.87566   34.00856</code></pre>
+</div>
+<div id="predicting-soil-properties-using-mir-spectra-and-geographical-covariates" class="section level3" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Predicting soil properties using MIR spectra and geographical covariates</h3>
 <p>Next, we can also predict values at new location using calibration model that is
 field-specific i.e. we use MIR spectra in combination with geographic covariates.
 To predict with such data we also need to load geographical locations for the same
@@ -528,9 +553,9 @@ arguments in the function:</p>
 <span id="cb62-3"><a href="reference-soil-spectroscopy-models.html#cb62-3" aria-hidden="true" tabindex="-1"></a>pred.oc2 <span class="ot">=</span> <span class="fu">predict.ossl</span>(<span class="at">t.var=</span><span class="st">&quot;log..oc_usda.calc_wpct&quot;</span>, <span class="at">mir.raw=</span>mir.raw, <span class="at">ossl.model=</span>ossl.model, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100</span>),</span>
 <span id="cb62-4"><a href="reference-soil-spectroscopy-models.html#cb62-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">ossl.pca.mir=</span>ossl.pca.mir, <span class="at">geo.type=</span><span class="st">&quot;ll&quot;</span>, <span class="at">lon=</span>lon, <span class="at">lat=</span>lat, <span class="at">hzn_depth=</span>hzn_depth, <span class="at">cog.dir=</span><span class="st">&quot;/data/WORLDCLIM/&quot;</span>)</span></code></pre></div>
 <p>This type of prediction is somewhat more complex as the function <code>predict.ossl</code> needs to overlay
-points (<code>lon</code> and <code>lat</code>) vs some 62 GeoTIFFs (containing <a href="https://www.worldclim.org/data/worldclim21.html">WorldClim2.1</a> layers and <a href="https://doi.org/10.5281/zenodo.1420114">MODIS LST</a> layers).
-This is because the calibration model uses both MIR and geographical covariates for prediction, as
-shown for example in the variable importance table:</p>
+points (<code>lon</code> and <code>lat</code>) vs some 62 GeoTIFFs (containing <a href="https://www.worldclim.org/data/worldclim21.html">WorldClim2.1</a> layers and <a href="https://doi.org/10.5281/zenodo.1420114">MODIS LST</a> layers). In this case the layers are located on a local machine, which significantly speeds up predictions function.</p>
+<p>We can look at the variable importance table to try to understand how much the
+additional geographical covariate layers help with producing predictions:</p>
 <div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="reference-soil-spectroscopy-models.html#cb63-1" aria-hidden="true" tabindex="-1"></a>xl <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">importance =</span> ossl.model<span class="sc">$</span>learner.model<span class="sc">$</span>base.models[[<span class="dv">1</span>]]<span class="sc">$</span>learner.model<span class="sc">$</span>variable.importance)</span>
 <span id="cb63-2"><a href="reference-soil-spectroscopy-models.html#cb63-2" aria-hidden="true" tabindex="-1"></a>xl<span class="sc">$</span>relative_importance <span class="ot">=</span> <span class="dv">100</span><span class="sc">*</span>xl<span class="sc">$</span>importance<span class="sc">/</span><span class="fu">sum</span>(xl<span class="sc">$</span>importance)</span>
 <span id="cb63-3"><a href="reference-soil-spectroscopy-models.html#cb63-3" aria-hidden="true" tabindex="-1"></a>xl <span class="ot">=</span> xl[<span class="fu">order</span>(xl<span class="sc">$</span>importance, <span class="at">decreasing =</span> <span class="cn">TRUE</span>),]</span>
@@ -556,9 +581,14 @@ clm_lst_mod11a2.feb.day_m_1km_s0..0cm_2000..2017_v1.0   52.41105           0.421
 mir.PC12                                                41.14582           0.3312366
 mir.PC16                                                38.54017           0.3102603
 mir.PC9                                                 36.17293           0.2912032</code></pre>
-<p>The global layers (global land mask at 1-km spatial resolution) are also available via
-<a href="http://s3.us-east-1.wasabisys.com/soilspectroscopy/layers1km" class="uri">http://s3.us-east-1.wasabisys.com/soilspectroscopy/layers1km</a> but the process of overlay
-can significantly increase prediction time, so something to be aware.</p>
+<p>here <code>hzn_depth</code> comes as an important covariate and so is <code>lst_mod11a2.aug.day</code>
+(MOD11A long-term meand daily temperature for August). The original MIR PCA components, however,
+dominate the prediction model.</p>
+<p>The global layers (global land mask at 1-km spatial resolution) are listed at <a href="https://github.com/soilspectroscopy/ossl-models" class="uri">https://github.com/soilspectroscopy/ossl-models</a> and are available as a Cloud-service / Cloud-Optimized GeoTIFFs. The process of spatial overlay for new prediction locations, however, can significantly increase
+prediction time, so something to be aware.</p>
+</div>
+<div id="predicting-soil-properties-using-visnir-spectra" class="section level3" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Predicting soil properties using VisNIR spectra</h3>
 <p>Finally, we can also load VisNIR spectra and predict values using the same function:</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="reference-soil-spectroscopy-models.html#cb65-1" aria-hidden="true" tabindex="-1"></a>visnir.raw <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;./sample-data/sample_visnir_data.csv&quot;</span>)[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)]</span>
 <span id="cb65-2"><a href="reference-soil-spectroscopy-models.html#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(visnir.raw[,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])</span></code></pre></div>
@@ -568,6 +598,8 @@ can significantly increase prediction time, so something to be aware.</p>
  $ X352: num  0.0816 0.0647 0.2277 0.3184 0.2508 ...
  $ X353: num  0.0811 0.0658 0.2261 0.3134 0.2489 ...
  $ X354: num  0.082 0.0674 0.2258 0.3124 0.2464 ...</code></pre>
+<p>We load another PCA model that we prepared using global VisNIR data and the
+mlr-model that was fitted using VisNIR data:</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="reference-soil-spectroscopy-models.html#cb67-1" aria-hidden="true" tabindex="-1"></a>pmc3 <span class="ot">=</span> <span class="fu">url</span>(<span class="fu">paste0</span>(rep, <span class="st">&quot;pca.ossl/mpca_visnir_kssl_v1.rds&quot;</span>), <span class="st">&quot;rb&quot;</span>)</span>
 <span id="cb67-2"><a href="reference-soil-spectroscopy-models.html#cb67-2" aria-hidden="true" tabindex="-1"></a>eml3 <span class="ot">=</span> <span class="fu">url</span>(<span class="fu">paste0</span>(rep, <span class="st">&quot;log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds&quot;</span>), <span class="st">&quot;rb&quot;</span>)</span>
 <span id="cb67-3"><a href="reference-soil-spectroscopy-models.html#cb67-3" aria-hidden="true" tabindex="-1"></a>ossl.pca.visnir <span class="ot">=</span> <span class="fu">readRDS</span>(pmc3)</span>
@@ -582,17 +614,7 @@ might be significantly lower:</p>
 Figure 5.2: Accuracy plot for <code>log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds</code>.
 </p>
 </div>
-<p>Soil spectral scans obtained by different spectroscopic instruments often cannot be
-modeled or analyzed together i.e. they require some kind of calibration <span class="citation">(<a href="#ref-lei2022achieving" role="doc-biblioref">Lei and Sun 2022</a>)</span>
-before one can fit cross-instrument / cross-dataset calibration models.
-In the OSSL library we thus use also instrument / dataset as the indicator variable
-hence the most complex models currently in the OSSL are where users need to define both:</p>
-<ol style="list-style-type: decimal">
-<li>Input MIR spectra,</li>
-<li>Input VisNIR spectra (same samples),</li>
-<li>Geographical location and soil depth,</li>
-<li>Instrument code / dataset code;</li>
-</ol>
+</div>
 </div>
 <div id="registering-your-own-model" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Registering your own model</h2>
@@ -618,6 +640,9 @@ use, R package versions etc;</li>
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-chang2001near" class="csl-entry">
+Chang, Cheng-Wen, David Laird, Maurice J Mausbach, and Charles R Hurburgh Jr. 2001. <span>“Near-Infrared Reflectance Spectroscopy–Principal Components Regression Analyses of Soil Properties.”</span> <em>Soil Science Society of America Journal</em> 65 (2): 480. <a href="https://doi.org/10.2136/sssaj2001.652480x">https://doi.org/10.2136/sssaj2001.652480x</a>.
+</div>
 <div id="ref-lei2022achieving" class="csl-entry">
 Lei, Tong, and Da-Wen Sun. 2022. <span>“Achieving Joint Calibration of Soil Vis-NIR Spectra Across Instruments, Soil Types and Properties by an Attention-Based Spectra Encoding-Spectra/Property Decoding Architecture.”</span> <em>Geoderma</em> 405: 115449. <a href="https://doi.org/10.1016/j.geoderma.2021.115449">https://doi.org/10.1016/j.geoderma.2021.115449</a>.
 </div>

@@ -33,6 +33,18 @@ to help produce best predictions of targeted soil properties.
 Users can choose to opt for one of the multiple calibration models, which also 
 depends on the type of data (VisNIR, MIR, coordinates and depths known yes/no) you use of course.
 
+Soil spectral scans obtained by different spectroscopic instruments often cannot be 
+modeled or analyzed together i.e. they require some kind of calibration [@lei2022achieving] 
+before one can fit cross-instrument / cross-dataset calibration models.
+In the OSSL library we thus use also instrument / dataset as the indicator variable 
+hence the most complex models currently in the OSSL are where users need to define both:
+
+1. Input MIR spectra,
+2. Input VisNIR spectra (same samples),
+3. Geographical location and soil depth,
+4. Instrument code / dataset code;
+
+
 ## Using default OSSL models to predict soil properties
 
 OSSL model registry (RDS) S3 file services currently includes large number of 
@@ -40,8 +52,11 @@ prediction models fitted for a list of soil properties. The complete list is ava
 
 
 
+### Predicting soil properties using MIR spectra
+
 For example, to predict [soil organic carbon weight percent](https://soilspectroscopy.github.io/ossl-manual/database.html#oc_usda.calc_wpct) (`oc_usda.calc_wpct`) using MIR spectra, we need to load 
-two models (1) principal component model, (2) mlr model for predicting `oc_usda.calc_wpct`:
+two models (1) principal component model `mpca_mir_kssl_v1.rds`, 
+(2) mlr model for predicting `oc_usda.calc_wpct`:
 
 
 ```r
@@ -54,7 +69,11 @@ ossl.model = readRDS(eml1)
 ```
 
 Note that the models are between 10 to 200 MB in size, depending on complexity of models 
-and the size of the training data used. We can look at the summary of model e.g.
+and the size of the training data used. The Principal Component Analysis is described in 
+the [OSSL models repository](https://github.com/soilspectroscopy/ossl-models/). It is a standard way of compressing 1000+ spectral bands before predictive modeling [@chang2001near].
+We use the first 60 PCA components for further modeling, which is an arbitrary decisions.
+
+We can look at the summary of model by typing:
 
 
 ```r
@@ -134,7 +153,7 @@ pred.oc = predict.ossl(t.var="log..oc_usda.calc_wpct", mir.raw=mir.raw,
                        ossl.pca.mir=ossl.pca.mir)
 ```
 
-where `ylim=c(0,100)` specifies that the prediction values need to be in the range 0 to 100.
+where `ylim=c(0,100)` specifies that the prediction values need to be in the range 0 to 100 (values out of these range will be replaced with either 0 or 100).
 The output of this model consists of four parts:
 
 ```
@@ -169,13 +188,15 @@ str(pred.oc$pred)
 which means that the predicted `oc_usda.calc_wpct` for first row is 0 etc. The 
 `lower.1std` and `upper.1std` indicate standard prediction interval based on the 
 prediction error derived in the log-space. For higher values of `oc_usda.calc_wpct` 
-prediction interval gets thus proportionally higher e.g. for row 14 it is between 27% and 34%:
+prediction interval gets thus proportionally higher for larger absolute values e.g. for row 14 it is between 27% and 34%:
 
 ```
 #pred.oc$pred[14,]
    pred.mean pred.error tpred.mean lower.1std upper.1std
 14  3.441673  0.1139194   30.23918   26.87566   34.00856
 ```
+
+### Predicting soil properties using MIR spectra and geographical covariates
 
 Next, we can also predict values at new location using  calibration model that is 
 field-specific i.e. we use MIR spectra in combination with geographic covariates. 
@@ -203,9 +224,10 @@ pred.oc2 = predict.ossl(t.var="log..oc_usda.calc_wpct", mir.raw=mir.raw, ossl.mo
 ```
 
 This type of prediction is somewhat more complex as the function `predict.ossl` needs to overlay 
-points (`lon` and `lat`) vs some 62 GeoTIFFs (containing [WorldClim2.1](https://www.worldclim.org/data/worldclim21.html) layers and [MODIS LST](https://doi.org/10.5281/zenodo.1420114) layers). 
-This is because the calibration model uses both MIR and geographical covariates for prediction, as 
-shown for example in the variable importance table:
+points (`lon` and `lat`) vs some 62 GeoTIFFs (containing [WorldClim2.1](https://www.worldclim.org/data/worldclim21.html) layers and [MODIS LST](https://doi.org/10.5281/zenodo.1420114) layers). In this case the layers are located on a local machine, which significantly speeds up predictions function. 
+
+We can look at the variable importance table to try to understand how much the 
+additional geographical covariate layers help with producing predictions:
 
 
 ```r
@@ -239,9 +261,14 @@ mir.PC16                                                38.54017           0.310
 mir.PC9                                                 36.17293           0.2912032
 ```
 
-The global layers (global land mask at 1-km spatial resolution) are also available via 
-<http://s3.us-east-1.wasabisys.com/soilspectroscopy/layers1km> but the process of overlay 
-can significantly increase prediction time, so something to be aware.
+here `hzn_depth` comes as an important covariate and so is `lst_mod11a2.aug.day` 
+(MOD11A long-term meand daily temperature for August). The original MIR PCA components, however, 
+dominate the prediction model.
+
+The global layers (global land mask at 1-km spatial resolution) are listed at <https://github.com/soilspectroscopy/ossl-models> and are available as a Cloud-service / Cloud-Optimized GeoTIFFs. The process of spatial overlay for new prediction locations, however, can significantly increase 
+prediction time, so something to be aware.
+
+### Predicting soil properties using VisNIR spectra
 
 Finally, we can also load VisNIR spectra and predict values using the same function:
 
@@ -259,6 +286,9 @@ str(visnir.raw[,1:5])
  $ X353: num  0.0811 0.0658 0.2261 0.3134 0.2489 ...
  $ X354: num  0.082 0.0674 0.2258 0.3124 0.2464 ...
  ```
+
+We load another PCA model that we prepared using global VisNIR data and the 
+mlr-model that was fitted using VisNIR data:
  
 
 ```r
@@ -277,17 +307,6 @@ might be significantly lower:
 <img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.visnir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds`." width="60%" />
 <p class="caption">(\#fig:ac-soc2)Accuracy plot for `log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds`.</p>
 </div>
-
-Soil spectral scans obtained by different spectroscopic instruments often cannot be 
-modeled or analyzed together i.e. they require some kind of calibration [@lei2022achieving] 
-before one can fit cross-instrument / cross-dataset calibration models.
-In the OSSL library we thus use also instrument / dataset as the indicator variable 
-hence the most complex models currently in the OSSL are where users need to define both:
-
-1. Input MIR spectra,
-2. Input VisNIR spectra (same samples),
-3. Geographical location and soil depth,
-4. Instrument code / dataset code;
 
 ## Registering your own model
 

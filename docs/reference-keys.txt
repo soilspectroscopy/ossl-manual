@@ -234,4 +234,7 @@ soil-contaminants
 reference-soil-spectroscopy-models
 ossl-global-soil-spectroscopy-callibrarion-models
 using-default-ossl-models-to-predict-soil-properties
+predicting-soil-properties-using-mir-spectra
+predicting-soil-properties-using-mir-spectra-and-geographical-covariates
+predicting-soil-properties-using-visnir-spectra
 registering-your-own-model
