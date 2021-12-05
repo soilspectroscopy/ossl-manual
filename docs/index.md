@@ -1,7 +1,7 @@
 ---
 title: "Open Soil Spectral Library"
 author: "Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors"
-date: "04 December, 2021"
+date: "05 December, 2021"
 knit: bookdown::render_book
 site: bookdown::bookdown_site
 documentclass: svmono
@@ -27,6 +27,11 @@ graphics: yes
 
 <img src="img/soilspec4gg-logo_fc.png" width="60%" />
 
+> "Man’s most human characteristic is not his ability to learn, which he shares 
+> with many other species, but his ability to teach and store what others have 
+> developed and taught him."*
+> Margaret Mead, Culture and Commitment: The New Relationships Between the Generations in the 1970s
+
 ## Soil Spectroscopy for Global Good
 
 [**SoilSpec4GG**](https://soilspectroscopy.org/) is a USDA-funded [Food and Agriculture Cyberinformatics
@@ -41,9 +46,7 @@ to: <https://soilspectroscopy.org/>.
 
 R tutorials and software developed to implement OSSL is available via: <https://github.com/soilspectroscopy>.
 
-Soil spectroscopy for global good project works closely in collaboration with 
-[FAO Global Soil Partnership](http://www.fao.org/global-soil-partnership/pillars-action/5-harmonization/glosolan/en/), who also aim at building and providing 
-a [GSP Soil Spectral Calibration Library and Estimation Service](http://www.fao.org/3/ca8431en/ca8431en.pdf).
+Soil spectroscopy for global good project works with other global initiatives including the **[FAO Global Soil Partnership](https://www.fao.org/global-soil-partnership/glosolan/en/)** and the **[IEEE P4005 Standards and Protocols for Soil Spectroscopy](https://sagroups.ieee.org/4005/)** Working Group.
 
 ## What is soil spectroscopy? 
 
@@ -111,19 +114,6 @@ The following parameters (database credentials) allow ready only access to DB:
 - Password: soilspec4gg  
 
 
-```
-## Loading required package: mongolite
-```
-
-```
-## Loading required package: jsonify
-```
-
-```
-## Registered S3 method overwritten by 'jsonify':
-##   method     from    
-##   print.json jsonlite
-```
 
 <div class="figure">
 <img src="img/mongodb_gui.png" alt="Accessing the OSSL DB using [MongoDB GUI](https://robomongo.org/download)." width="90%" />
@@ -338,7 +328,7 @@ importing and using the KSSL Soil Spectral Library;
 - **[AfSIS-I Soil Spectral Library](https://doi.org/10.34725/DVN/QXCWP1)** Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013 [@Vagen_2020], a collaborative project funded by the Bill and Melinda Gates Foundation (BMGF). Partners included, CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF) <https://doi.org/10.34725/DVN/QXCWP1>;  
 - **[LUCAS topsoil (VisNIR) Soil Spectral Library](http://esdac.jrc.ec.europa.eu/)** [@orgiazzi2018lucas] was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>; we have degraded location accuracy of points so that exact locations are about 1-km off;  
 - **[The Central African Soil Spectral Library](https://github.com/laura-summerauer/ssl-central-africa)** described in detail in @Summerauer2021 contains limited number of samples representing Central Africa <https://doi.org/10.5281/zenodo.4320395>;  
-- **The National Ecological Observatory Network (NEON) Soil Spectral** is based on the NEON soil data [@ayres2019quantitative], which was scanned by the Woodwell Climate Research and USDA-NRCS Kellogg Soil Survey Laboratory;  
+- **The National Ecological Observatory Network (NEON) Soil Spectral** is based on the NEON soil data [@ayres2019quantitative], which were scanned by the Woodwell Climate Research and USDA-NRCS Kellogg Soil Survey Laboratory; the (NEON) Megapit Soil Archive is a program sponsored by the National Science Foundation and operated under cooperative agreement by Battelle;  
 
 We are grateful to **[Wanderson de Sousa Mendes (Leibniz Centre for Agricultural Landscape Research (ZALF))](https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/)** for 
 help with initial screening of the data for the development of the R code for processing soil spectroscopy data.
