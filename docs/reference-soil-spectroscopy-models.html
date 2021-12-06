@@ -401,10 +401,23 @@ are used in the OSSL calibration service and API. For more in-depth insight of
 the modeling steps please refer to the <a href="https://github.com/soilspectroscopy/ossl-models">ossl-models</a> repository.</p>
 <div id="ossl-global-soil-spectroscopy-callibrarion-models" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> OSSL global soil spectroscopy callibrarion models</h2>
-<p>We have fit number of calibration models using MIR and VisNIR spectra
-and combination of additional covariates. For modeling we use the Ensemble Machine Learning
-framework as implemented in the R <a href="https://mlr.mlr-org.com/">mlr</a> programming environment.
-For more details on how were the models fitted refer to: <a href="https://github.com/soilspectroscopy/ossl-models" class="uri">https://github.com/soilspectroscopy/ossl-models</a>.</p>
+<p>We have fitted a number of calibration models using OSSL MIR and VisNIR spectra
+and combination of additional covariates, and which are now publicly available
+for use under the CC-BY license. For modeling we use the Ensemble Machine Learning
+framework as implemented in the R <a href="https://mlr.mlr-org.com/">mlr</a> programming environment
+with the following parameters:</p>
+<ol style="list-style-type: decimal">
+<li>Regression on first 60 Principal Component Analysis PC’s of the raw spectra;<br />
+</li>
+<li>Four base learners: Random Forest, Gradient Boosting, Cubist and Lasso and Elastic-Net Regularized GLM;<br />
+</li>
+<li>Ensemble Machine Learning by <a href="https://mlr.mlr-org.com/reference/makeStackedLearner.html">stacking / meta-learner</a> through 5-fold Cross-Validation;<br />
+</li>
+<li>Blocking using 100×100-km spatial grid to avoid possible overfitting;<br />
+</li>
+<li><a href="https://mlr.mlr-org.com/articles/tutorial/feature_selection.html">Feature selection</a> and model-parameter fine-tuning using random and sequential backward search;</li>
+</ol>
+<p>For more details on how were the models fitted refer to: <a href="https://github.com/soilspectroscopy/ossl-models" class="uri">https://github.com/soilspectroscopy/ossl-models</a>.</p>
 <p>For standard global soil spectral calibration models we use various calibration frameworks including:</p>
 <ol style="list-style-type: decimal">
 <li>Using only MIR spectra for calibration.<br />
@@ -415,18 +428,20 @@ For more details on how were the models fitted refer to: <a href="https://github
 </li>
 <li>Using combination of MIR and VisNIR spectra + geographic covariates.</li>
 </ol>
-<p>The methods 1 &amp; 2 are standard methods described in literature <span class="citation">(<a href="#ref-malone2021soil" role="doc-biblioref">Wadoux et al. 2021</a>)</span>. The method
-3 &amp; 4 are referred to as the <em>“MIR-VisNIR fusion”</em> <span class="citation">(<a href="#ref-vohland2022quantification" role="doc-biblioref">Vohland et al. 2022</a>)</span>.
+<p>The methods 1 &amp; 2 are standard methods described in literature <span class="citation">(<a href="#ref-malone2021soil" role="doc-biblioref">Wadoux et al. 2021</a>)</span>. The methods
+3 &amp; 4 are referred to as the <em>“MIR-VisNIR fusion”</em> approach <span class="citation">(<a href="#ref-vohland2022quantification" role="doc-biblioref">Vohland et al. 2022</a>)</span>.
 The method 4 is the <em>“field-specific calibration approach”</em>; we refer to it here
 as the <em>“bundle approach”</em> as we basically use all information available
 to help produce best predictions of targeted soil properties.</p>
 <p>Users can choose to opt for one of the multiple calibration models, which also
-depends on the type of data (VisNIR, MIR, coordinates and depths known yes/no) you use of course.</p>
+depends on the type of data (VisNIR, MIR, coordinates and depths known yes/no) used of course.
+The online callibration service (<a href="https://engine.soilspectroscopy.org" class="uri">https://engine.soilspectroscopy.org</a>) and the API
+can be used for predicting values of soil properties for smaller datasets (&lt;1000 rows).</p>
 <p>Soil spectral scans obtained by different spectroscopic instruments often cannot be
 modeled or analyzed together i.e. they require some kind of calibration <span class="citation">(<a href="#ref-lei2022achieving" role="doc-biblioref">Lei and Sun 2022</a>)</span>
 before one can fit cross-instrument / cross-dataset calibration models.
-In the OSSL library we thus use also instrument / dataset as the indicator variable
-hence the most complex models currently in the OSSL are where users need to define both:</p>
+In the OSSL library we thus use also instrument / dataset code as the indicator variable.
+The most complex models currently in the OSSL are, thus, one with which users need to define both:</p>
 <ol style="list-style-type: decimal">
 <li>Input MIR spectra,</li>
 <li>Input VisNIR spectra (same samples),</li>
@@ -449,9 +464,10 @@ two models (1) principal component model <code>mpca_mir_kssl_v1.rds</code>,
 <span id="cb50-4"><a href="reference-soil-spectroscopy-models.html#cb50-4" aria-hidden="true" tabindex="-1"></a>eml1 <span class="ot">=</span> <span class="fu">url</span>(<span class="fu">paste0</span>(rep, <span class="st">&quot;log..oc_usda.calc_wpct/mir_mlr..eml_kssl_na_v1.rds&quot;</span>), <span class="st">&quot;rb&quot;</span>)</span>
 <span id="cb50-5"><a href="reference-soil-spectroscopy-models.html#cb50-5" aria-hidden="true" tabindex="-1"></a>ossl.pca.mir <span class="ot">=</span> <span class="fu">readRDS</span>(pcm1)</span>
 <span id="cb50-6"><a href="reference-soil-spectroscopy-models.html#cb50-6" aria-hidden="true" tabindex="-1"></a>ossl.model <span class="ot">=</span> <span class="fu">readRDS</span>(eml1)</span></code></pre></div>
-<p>Note that the models are between 10 to 200 MB in size, depending on complexity of models
-and the size of the training data used. The Principal Component Analysis is described in
-the <a href="https://github.com/soilspectroscopy/ossl-models/">OSSL models repository</a>. It is a standard way of compressing 1000+ spectral bands before predictive modeling <span class="citation">(<a href="#ref-chang2001near" role="doc-biblioref">Chang et al. 2001</a>)</span>.
+<p>Note that the models (RDS files) can be between 10 to 200 MB in size, depending on complexity of models
+and the size of the training data used.</p>
+<p>The Principal Component Analysis is described in the <a href="https://github.com/soilspectroscopy/ossl-models/">OSSL models repository</a>.
+It is a standard way of compressing 1000+ spectral bands before predictive modeling <span class="citation">(<a href="#ref-chang2001near" role="doc-biblioref">Chang et al. 2001</a>)</span>.
 We use the first 60 PCA components for further modeling, which is an arbitrary decisions.</p>
 <p>We can look at the summary of model by typing:</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="reference-soil-spectroscopy-models.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ossl.model<span class="sc">$</span>learner.model<span class="sc">$</span>super.model<span class="sc">$</span>learner.model)</span></code></pre></div>
@@ -473,21 +489,21 @@ Residual standard error: 0.1539 on 57400 degrees of freedom
 Multiple R-squared:  0.9821,    Adjusted R-squared:  0.9821 
 F-statistic: 7.857e+05 on 4 and 57400 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>This shows that the model is an ensemble Machine Learning model based on stacking of
-four individual models <code>regr.ranger</code> (Random Forest), <code>regr.xgboost</code> (Gradient Boosting),
-<code>regr.cvglmnet</code> (Lasso and Elastic-Net Regularized GLM), <code>regr.cubist</code> (Cubist). The RMSE
+four individual models: <code>regr.ranger</code> (Random Forest) <span class="citation">(<a href="#ref-wright2017ranger" role="doc-biblioref">Wright and Ziegler 2017</a>)</span>, <code>regr.xgboost</code> (Gradient Boosting) <span class="citation">(<a href="#ref-chen2015xgboost" role="doc-biblioref">Chen et al. 2015</a>)</span>,
+<code>regr.cvglmnet</code> (Lasso and Elastic-Net Regularized GLM) <span class="citation">(<a href="#ref-friedman2010" role="doc-biblioref">Friedman, Hastie, and Tibshirani 2010</a>)</span> and <code>regr.cubist</code> (Cubist) <span class="citation">(<a href="#ref-kuhn2012cubist" role="doc-biblioref">Kuhn et al. 2012</a>)</span>. The RMSE
 of the model is 0.1539 (R-square = 0.982), based on 5-fold Cross Validation with spatial blocking (global grid with 100 km blocks).
 Model is based on 57,400 training points.</p>
 <p>We can take a look at the accuracy plot for this model:</p>
 <div class="figure"><span id="fig:ac-soc1"></span>
-<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.mir_mlr..eml_kssl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/mir_mlr..eml_kssl_na_v1.rds`." width="60%" />
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.mir_mlr..eml_kssl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/mir_mlr..eml_kssl_na_v1.rds`." width="70%" />
 <p class="caption">
 Figure 5.1: Accuracy plot for <code>log..oc_usda.calc_wpct/mir_mlr..eml_kssl_na_v1.rds</code>.
 </p>
 </div>
 <p>Next, we load the sample MIR data that we can use to predict soil organic carbon:</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="reference-soil-spectroscopy-models.html#cb53-1" aria-hidden="true" tabindex="-1"></a>mir.raw <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;./sample-data/sample_mir_data.csv&quot;</span>)[,<span class="sc">-</span><span class="dv">1</span>]</span></code></pre></div>
-<p>This is a simple table with raw MIR spectral data prepared as a table. Note the column names
-contain the wavelengths / channels:</p>
+<p>This is a simple table with raw MIR spectral data (absorbances) prepared as a table.
+The column names contain the wavelengths / MIR channels:</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="reference-soil-spectroscopy-models.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(mir.raw)</span>
 <span id="cb54-2"><a href="reference-soil-spectroscopy-models.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 20  1765</span></span>
 <span id="cb54-3"><a href="reference-soil-spectroscopy-models.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mir.raw[,<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>])</span></code></pre></div>
@@ -514,9 +530,9 @@ The output of this model consists of four parts:</p>
  $ model:&#39;data.frame&#39;:  57405 obs. of  5 variables:
  $ cf   : num 0.901</code></pre>
 <ol style="list-style-type: decimal">
-<li>Predictions with back-transfromed value and lower and upper prediction intervals (1 std.);</li>
+<li>Predictions with back-transformed value and lower and upper prediction intervals (1 std.);</li>
 <li>Data frame with all covariate layers needed to generate predictions;</li>
-<li>Summary meta-learner;</li>
+<li>Summary meta-learner with predicted and observed values;</li>
 <li>Ratio between variance in predictions produced using base learners and MSE;</li>
 </ol>
 <p>The predictions are in the format:</p>
@@ -552,7 +568,7 @@ arguments in the function:</p>
 <span id="cb62-2"><a href="reference-soil-spectroscopy-models.html#cb62-2" aria-hidden="true" tabindex="-1"></a>ossl.model <span class="ot">=</span> <span class="fu">readRDS</span>(eml2) </span>
 <span id="cb62-3"><a href="reference-soil-spectroscopy-models.html#cb62-3" aria-hidden="true" tabindex="-1"></a>pred.oc2 <span class="ot">=</span> <span class="fu">predict.ossl</span>(<span class="at">t.var=</span><span class="st">&quot;log..oc_usda.calc_wpct&quot;</span>, <span class="at">mir.raw=</span>mir.raw, <span class="at">ossl.model=</span>ossl.model, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100</span>),</span>
 <span id="cb62-4"><a href="reference-soil-spectroscopy-models.html#cb62-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">ossl.pca.mir=</span>ossl.pca.mir, <span class="at">geo.type=</span><span class="st">&quot;ll&quot;</span>, <span class="at">lon=</span>lon, <span class="at">lat=</span>lat, <span class="at">hzn_depth=</span>hzn_depth, <span class="at">cog.dir=</span><span class="st">&quot;/data/WORLDCLIM/&quot;</span>)</span></code></pre></div>
-<p>This type of prediction is somewhat more complex as the function <code>predict.ossl</code> needs to overlay
+<p>This type of prediction is somewhat more complex as the function <code>predict.ossl</code> needs also to overlay
 points (<code>lon</code> and <code>lat</code>) vs some 62 GeoTIFFs (containing <a href="https://www.worldclim.org/data/worldclim21.html">WorldClim2.1</a> layers and <a href="https://doi.org/10.5281/zenodo.1420114">MODIS LST</a> layers). In this case the layers are located on a local machine, which significantly speeds up predictions function.</p>
 <p>We can look at the variable importance table to try to understand how much the
 additional geographical covariate layers help with producing predictions:</p>
@@ -585,11 +601,11 @@ mir.PC9                                                 36.17293           0.291
 (MOD11A long-term meand daily temperature for August). The original MIR PCA components, however,
 dominate the prediction model.</p>
 <p>The global layers (global land mask at 1-km spatial resolution) are listed at <a href="https://github.com/soilspectroscopy/ossl-models" class="uri">https://github.com/soilspectroscopy/ossl-models</a> and are available as a Cloud-service / Cloud-Optimized GeoTIFFs. The process of spatial overlay for new prediction locations, however, can significantly increase
-prediction time, so something to be aware.</p>
+prediction time, so something to be aware of.</p>
 </div>
 <div id="predicting-soil-properties-using-visnir-spectra" class="section level3" number="5.2.3">
 <h3><span class="header-section-number">5.2.3</span> Predicting soil properties using VisNIR spectra</h3>
-<p>Finally, we can also load VisNIR spectra and predict values using the same function:</p>
+<p>We can also load VisNIR spectra (reflectances) and predict values using the same function:</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="reference-soil-spectroscopy-models.html#cb65-1" aria-hidden="true" tabindex="-1"></a>visnir.raw <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;./sample-data/sample_visnir_data.csv&quot;</span>)[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)]</span>
 <span id="cb65-2"><a href="reference-soil-spectroscopy-models.html#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(visnir.raw[,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])</span></code></pre></div>
 <pre><code>&#39;data.frame&#39;:   20 obs. of  5 variables:
@@ -609,7 +625,7 @@ mlr-model that was fitted using VisNIR data:</p>
 <p>This models is similar to MIR model, but the accuracy plot indicates that the accuracy
 might be significantly lower:</p>
 <div class="figure"><span id="fig:ac-soc2"></span>
-<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.visnir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds`." width="60%" />
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.visnir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds`." width="70%" />
 <p class="caption">
 Figure 5.2: Accuracy plot for <code>log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds</code>.
 </p>
@@ -643,6 +659,15 @@ use, R package versions etc;</li>
 <div id="ref-chang2001near" class="csl-entry">
 Chang, Cheng-Wen, David Laird, Maurice J Mausbach, and Charles R Hurburgh Jr. 2001. <span>“Near-Infrared Reflectance Spectroscopy–Principal Components Regression Analyses of Soil Properties.”</span> <em>Soil Science Society of America Journal</em> 65 (2): 480. <a href="https://doi.org/10.2136/sssaj2001.652480x">https://doi.org/10.2136/sssaj2001.652480x</a>.
 </div>
+<div id="ref-chen2015xgboost" class="csl-entry">
+Chen, Tianqi, Tong He, Michael Benesty, Vadim Khotilovich, Yuan Tang, Hyunsu Cho, and others. 2015. <span>“<span class="nocase">Xgboost: extreme gradient boosting</span>.”</span> <em>CRAN R-Project</em>. <a href="https://cran.r-project.org/package=xgboost">https://cran.r-project.org/package=xgboost</a>.
+</div>
+<div id="ref-friedman2010" class="csl-entry">
+Friedman, Jerome, Trevor Hastie, and Robert Tibshirani. 2010. <span>“<span class="nocase">Regularization Paths for Generalized Linear Models via Coordinate Descent</span>.”</span> <em>Journal of Statistical Software</em> 33 (1): 1–22. <a href="https://doi.org/10.18637/jss.v033.i01">https://doi.org/10.18637/jss.v033.i01</a>.
+</div>
+<div id="ref-kuhn2012cubist" class="csl-entry">
+Kuhn, Max, Steve Weston, Chris Keefer, and Nathan Coulter. 2012. <span>“Cubist Models for Regression.”</span> <em>CRAN R-Project</em>. <a href="https://cran.r-project.org/package=Cubist">https://cran.r-project.org/package=Cubist</a>.
+</div>
 <div id="ref-lei2022achieving" class="csl-entry">
 Lei, Tong, and Da-Wen Sun. 2022. <span>“Achieving Joint Calibration of Soil Vis-NIR Spectra Across Instruments, Soil Types and Properties by an Attention-Based Spectra Encoding-Spectra/Property Decoding Architecture.”</span> <em>Geoderma</em> 405: 115449. <a href="https://doi.org/10.1016/j.geoderma.2021.115449">https://doi.org/10.1016/j.geoderma.2021.115449</a>.
 </div>
@@ -651,6 +676,9 @@ Vohland, Michael, Bernard Ludwig, Michael Seidel, and Christopher Hutengs. 2022.
 </div>
 <div id="ref-malone2021soil" class="csl-entry">
 Wadoux, A. M. J. C., B. Malone, A. B. McBratney, M. Fajardo, and B. Minasny. 2021. <em><span class="nocase">Soil Spectral Inference with R: Analysing Digital Soil Spectra Using the R Programming Environment</span></em>. Progress in Soil Science. Springer International Publishing.
+</div>
+<div id="ref-wright2017ranger" class="csl-entry">
+Wright, Marvin N, and Andreas Ziegler. 2017. <span>“<span class="nocase">ranger: A Fast Implementation of Random Forests for High Dimensional Data in C++ and R</span>.”</span> <em>Journal of Statistical Software</em> 77 (1): 1–17. <a href="https://doi.org/10.18637/jss.v077.i01">https://doi.org/10.18637/jss.v077.i01</a>.
 </div>
 </div>
             </section>

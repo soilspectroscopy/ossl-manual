@@ -151,9 +151,7 @@ predict.ossl <- function(t.var, mir.raw, visnir.raw, lon, lat, hzn_depth=10, oss
       out$tpred.mean = ifelse(out$tpred.mean< ylim[1], ylim[1], ifelse(out$tpred.mean > ylim[2], ylim[2], out$tpred.mean))
     }
     out$lower.1std = expm1(out$pred.mean - out$pred.error)
-    out$lower.1std = ifelse(out$lower.1std<0, NA, out$lower.1std)
     out$upper.1std = expm1(out$pred.mean + out$pred.error)
-    out$upper.1std = ifelse(out$upper.1std<0, NA, out$upper.1std)
   } else {
     out$lower.1std = out$pred.mean - out$pred.error
     out$upper.1std = out$pred.mean + out$pred.error

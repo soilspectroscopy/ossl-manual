@@ -12,9 +12,18 @@ the modeling steps please refer to the [ossl-models](https://github.com/soilspec
 
 ## OSSL global soil spectroscopy callibrarion models
 
-We have fit number of calibration models using MIR and VisNIR spectra 
-and combination of additional covariates. For modeling we use the Ensemble Machine Learning 
-framework as implemented in the R [mlr](https://mlr.mlr-org.com/) programming environment.
+We have fitted a number of calibration models using OSSL MIR and VisNIR spectra 
+and combination of additional covariates, and which are now publicly available 
+for use under the CC-BY license. For modeling we use the Ensemble Machine Learning 
+framework as implemented in the R [mlr](https://mlr.mlr-org.com/) programming environment 
+with the following parameters:
+
+1. Regression on first 60 Principal Component Analysis PC's of the raw spectra;  
+2. Four base learners: Random Forest, Gradient Boosting, Cubist and Lasso and Elastic-Net Regularized GLM;  
+3. Ensemble Machine Learning by [stacking / meta-learner](https://mlr.mlr-org.com/reference/makeStackedLearner.html) through 5-fold Cross-Validation;  
+4. Blocking using 100×100-km spatial grid to avoid possible overfitting;  
+5. [Feature selection](https://mlr.mlr-org.com/articles/tutorial/feature_selection.html) and model-parameter fine-tuning using random and sequential backward search;  
+
 For more details on how were the models fitted refer to: <https://github.com/soilspectroscopy/ossl-models>.
 
 For standard global soil spectral calibration models we use various calibration frameworks including:
@@ -24,20 +33,22 @@ For standard global soil spectral calibration models we use various calibration 
 3. Using combination of MIR and VisNIR spectra.  
 4. Using combination of MIR and VisNIR spectra + geographic covariates.  
 
-The methods 1 & 2 are standard methods described in literature [@malone2021soil]. The method 
-3 & 4 are referred to as the _"MIR-VisNIR fusion"_ [@vohland2022quantification].
+The methods 1 & 2 are standard methods described in literature [@malone2021soil]. The methods 
+3 & 4 are referred to as the _"MIR-VisNIR fusion"_ approach [@vohland2022quantification].
 The method 4 is the _"field-specific calibration approach"_; we refer to it here 
 as the _"bundle approach"_ as we basically use all information available 
 to help produce best predictions of targeted soil properties.
 
 Users can choose to opt for one of the multiple calibration models, which also 
-depends on the type of data (VisNIR, MIR, coordinates and depths known yes/no) you use of course.
+depends on the type of data (VisNIR, MIR, coordinates and depths known yes/no) used of course.
+The online callibration service (<https://engine.soilspectroscopy.org>) and the API 
+can be used for predicting values of soil properties for smaller datasets (<1000 rows). 
 
 Soil spectral scans obtained by different spectroscopic instruments often cannot be 
 modeled or analyzed together i.e. they require some kind of calibration [@lei2022achieving] 
 before one can fit cross-instrument / cross-dataset calibration models.
-In the OSSL library we thus use also instrument / dataset as the indicator variable 
-hence the most complex models currently in the OSSL are where users need to define both:
+In the OSSL library we thus use also instrument / dataset code as the indicator variable. 
+The most complex models currently in the OSSL are, thus, one with which users need to define both:
 
 1. Input MIR spectra,
 2. Input VisNIR spectra (same samples),
@@ -68,9 +79,11 @@ ossl.pca.mir = readRDS(pcm1)
 ossl.model = readRDS(eml1)
 ```
 
-Note that the models are between 10 to 200 MB in size, depending on complexity of models 
-and the size of the training data used. The Principal Component Analysis is described in 
-the [OSSL models repository](https://github.com/soilspectroscopy/ossl-models/). It is a standard way of compressing 1000+ spectral bands before predictive modeling [@chang2001near].
+Note that the models (RDS files) can be between 10 to 200 MB in size, depending on complexity of models 
+and the size of the training data used. 
+
+The Principal Component Analysis is described in the [OSSL models repository](https://github.com/soilspectroscopy/ossl-models/). 
+It is a standard way of compressing 1000+ spectral bands before predictive modeling [@chang2001near].
 We use the first 60 PCA components for further modeling, which is an arbitrary decisions.
 
 We can look at the summary of model by typing:
@@ -101,15 +114,15 @@ F-statistic: 7.857e+05 on 4 and 57400 DF,  p-value: < 2.2e-16
 ```
 
 This shows that the model is an ensemble Machine Learning model based on stacking of 
-four individual models `regr.ranger` (Random Forest), `regr.xgboost` (Gradient Boosting), 
-`regr.cvglmnet` (Lasso and Elastic-Net Regularized GLM), `regr.cubist` (Cubist). The RMSE 
+four individual models: `regr.ranger` (Random Forest) [@wright2017ranger], `regr.xgboost` (Gradient Boosting) [@chen2015xgboost], 
+`regr.cvglmnet` (Lasso and Elastic-Net Regularized GLM) [@friedman2010] and `regr.cubist` (Cubist) [@kuhn2012cubist]. The RMSE 
 of the model is 0.1539 (R-square = 0.982), based on 5-fold Cross Validation with spatial blocking (global grid with 100 km blocks). 
 Model is based on 57,400 training points.
 
 We can take a look at the accuracy plot for this model:
 
 <div class="figure">
-<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.mir_mlr..eml_kssl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/mir_mlr..eml_kssl_na_v1.rds`." width="60%" />
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.mir_mlr..eml_kssl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/mir_mlr..eml_kssl_na_v1.rds`." width="70%" />
 <p class="caption">(\#fig:ac-soc1)Accuracy plot for `log..oc_usda.calc_wpct/mir_mlr..eml_kssl_na_v1.rds`.</p>
 </div>
 
@@ -120,8 +133,8 @@ Next, we load the sample MIR data that we can use to predict soil organic carbon
 mir.raw = read.csv("./sample-data/sample_mir_data.csv")[,-1]
 ```
 
-This is a simple table with raw MIR spectral data prepared as a table. Note the column names 
-contain the wavelengths / channels:
+This is a simple table with raw MIR spectral data (absorbances) prepared as a table. 
+The column names contain the wavelengths / MIR channels:
 
 
 ```r
@@ -164,9 +177,9 @@ List of 4
  $ cf   : num 0.901
 ```
 
-1. Predictions with back-transfromed value and lower and upper prediction intervals (1 std.);
+1. Predictions with back-transformed value and lower and upper prediction intervals (1 std.);
 2. Data frame with all covariate layers needed to generate predictions;
-3. Summary meta-learner;
+3. Summary meta-learner with predicted and observed values;
 4. Ratio between variance in predictions produced using base learners and MSE;
 
 The predictions are in the format:
@@ -223,7 +236,7 @@ pred.oc2 = predict.ossl(t.var="log..oc_usda.calc_wpct", mir.raw=mir.raw, ossl.mo
              ossl.pca.mir=ossl.pca.mir, geo.type="ll", lon=lon, lat=lat, hzn_depth=hzn_depth, cog.dir="/data/WORLDCLIM/")
 ```
 
-This type of prediction is somewhat more complex as the function `predict.ossl` needs to overlay 
+This type of prediction is somewhat more complex as the function `predict.ossl` needs also to overlay 
 points (`lon` and `lat`) vs some 62 GeoTIFFs (containing [WorldClim2.1](https://www.worldclim.org/data/worldclim21.html) layers and [MODIS LST](https://doi.org/10.5281/zenodo.1420114) layers). In this case the layers are located on a local machine, which significantly speeds up predictions function. 
 
 We can look at the variable importance table to try to understand how much the 
@@ -266,11 +279,11 @@ here `hzn_depth` comes as an important covariate and so is `lst_mod11a2.aug.day`
 dominate the prediction model.
 
 The global layers (global land mask at 1-km spatial resolution) are listed at <https://github.com/soilspectroscopy/ossl-models> and are available as a Cloud-service / Cloud-Optimized GeoTIFFs. The process of spatial overlay for new prediction locations, however, can significantly increase 
-prediction time, so something to be aware.
+prediction time, so something to be aware of.
 
 ### Predicting soil properties using VisNIR spectra
 
-Finally, we can also load VisNIR spectra and predict values using the same function:
+We can also load VisNIR spectra (reflectances) and predict values using the same function:
 
 
 ```r
@@ -304,7 +317,7 @@ This models is similar to MIR model, but the accuracy plot indicates that the ac
 might be significantly lower:
 
 <div class="figure">
-<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.visnir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds`." width="60%" />
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.visnir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds`." width="70%" />
 <p class="caption">(\#fig:ac-soc2)Accuracy plot for `log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds`.</p>
 </div>
 

@@ -1,7 +1,7 @@
 ---
 title: "Open Soil Spectral Library"
 author: "Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors"
-date: "05 December, 2021"
+date: "06 December, 2021"
 knit: bookdown::render_book
 site: bookdown::bookdown_site
 documentclass: svmono
@@ -29,7 +29,7 @@ graphics: yes
 
 > "Man’s most human characteristic is not his ability to learn, which he shares 
 > with many other species, but his ability to teach and store what others have 
-> developed and taught him."*
+> developed and taught him."
 > Margaret Mead, Culture and Commitment: The New Relationships Between the Generations in the 1970s
 
 ## Soil Spectroscopy for Global Good
@@ -61,6 +61,8 @@ These characteristic spectra (see Fig. below) can then be used to estimate numer
 </div>
 
 ## Open Soil Spectral Library
+
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.5759693.svg)](https://doi.org/10.5281/zenodo.5759693)
 
 **Open Soil Spectral Library** (OSSL) is a suite of datasets, web-services, software and tutorials.
 It includes (see also <https://github.com/soilspectroscopy>):
@@ -263,8 +265,11 @@ request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-re
 If you've contribute, add also your name and Twitter, ORCID or blog link
 below:
 
-[Jonathan Sanderman](https://twitter.com/sandersoil), [Tomislav Hengl](https://twitter.com/tom_hengl),
-[Katherine Todd-Brown](https://www.essie.ufl.edu/people/name/kathe-todd-brown/), [Wanderson de Sousa Mendes](https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/)  
+[Jonathan Sanderman](https://twitter.com/sandersoil), 
+[Tomislav Hengl](https://twitter.com/tom_hengl),
+[Katherine Todd-Brown](https://www.essie.ufl.edu/people/name/kathe-todd-brown/), 
+[Leandro L. Parente](https://www.linkedin.com/in/leal-parente/), 
+[Wanderson de Sousa Mendes](https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/)  
 
 ## Disclaimer
 
@@ -294,7 +299,9 @@ contact us via: <https://soilspectroscopy.org/contact/>.
 
 ## Licence
 
-This website/book and attached software is free to use, and is licensed under [the MIT License](https://en.wikipedia.org/wiki/MIT_License).
+This website/book and attached software is free to use, and is licensed under [the MIT License](https://en.wikipedia.org/wiki/MIT_License). The OSSL training data and models, 
+if not otherwise indicated, is available either under the [Creative Commons Attribution 4.0 International CC-BY](https://creativecommons.org/licenses/by/4.0/legalcode) 
+and/or [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license / [Open Data Commons Open Database License (ODbL) v1.0](https://opendatacommons.org/licenses/odbl/1-0/).
 
 ## Suggested literature
 
@@ -324,7 +331,7 @@ organizations. Listed based on the date of import:
 
 - **[USDA-NRCS Kellogg Soil Survey Laboratory](https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/)** mid-infrared (MIR) spectral library [@wijewardane2018predicting;@sanderman2020mid] was used as the basis for this data set and corresponding services; we are especially grateful to **Rich Ferguson & Scarlett Murphy (NRCS USDA)** for their help with 
 importing and using the KSSL Soil Spectral Library;  
-- **[ICRAF-ISRIC Soil VNIR Spectral Library](https://doi.org/10.34725/DVN/MFHA9C)** [@aitkenhead2018exploring] 785 soil profiles (4,438 samples) selected from the Soil Information System (ISIS) of the International Soil Reference and Information Centre (ISRIC) <https://doi.org/10.34725/DVN/MFHA9C>;  
+- **[ICRAF-ISRIC Soil VNIR Spectral Library](https://doi.org/10.34725/DVN/MFHA9C)** [@garrity2004globally; @aitkenhead2018exploring] 785 soil profiles (4,438 samples) selected from the Soil Information System (ISIS) of the International Soil Reference and Information Centre (ISRIC) <https://doi.org/10.34725/DVN/MFHA9C>;  
 - **[AfSIS-I Soil Spectral Library](https://doi.org/10.34725/DVN/QXCWP1)** Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013 [@Vagen_2020], a collaborative project funded by the Bill and Melinda Gates Foundation (BMGF). Partners included, CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF) <https://doi.org/10.34725/DVN/QXCWP1>;  
 - **[LUCAS topsoil (VisNIR) Soil Spectral Library](http://esdac.jrc.ec.europa.eu/)** [@orgiazzi2018lucas] was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>; we have degraded location accuracy of points so that exact locations are about 1-km off;  
 - **[The Central African Soil Spectral Library](https://github.com/laura-summerauer/ssl-central-africa)** described in detail in @Summerauer2021 contains limited number of samples representing Central Africa <https://doi.org/10.5281/zenodo.4320395>;  
