@@ -61,7 +61,7 @@ The most complex models currently in the OSSL are, thus, one with which users ne
 OSSL model registry (RDS) S3 file services currently includes large number of 
 prediction models fitted for a list of soil properties. The complete list is available in the file **[OSSL_models_meta.csv](https://github.com/soilspectroscopy/ossl-models)**.
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=FALSE, message=FALSE, results='hide'}
 ls <- c("plyr", "rgdal", "terra", "mlr", "ranger", "xgboost", "Cubist", "fastDummies", "prospectr")
 new.packages <- ls[!(ls %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)

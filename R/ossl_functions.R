@@ -76,7 +76,7 @@ predict.ossl <- function(t.var, mir.raw, visnir.raw, lon, lat, hzn_depth=10, oss
     if(!class(mir.raw)=="data.frame"){
       stop("Input dataset '*.raw' not a correctly formated scan file. See https://soilspectroscopy.github.io/ossl-manual/ for examples.")
     }
-    if(nrow(mir.raw)>1000 | ncol(mir.raw)<1700){
+    if(nrow(mir.raw)>1000 | ncol(mir.raw)<1400){
       stop("Input dataset '*.raw' dimensions invalid. See https://soilspectroscopy.github.io/ossl-manual/ for examples.")
     }
   }
@@ -84,7 +84,7 @@ predict.ossl <- function(t.var, mir.raw, visnir.raw, lon, lat, hzn_depth=10, oss
     if(!class(visnir.raw)=="data.frame"){
       stop("Input dataset '*.raw' not a correctly formated scan file. See https://soilspectroscopy.github.io/ossl-manual/ for examples.")
     }
-    if(nrow(visnir.raw)>1000 | ncol(visnir.raw)<1200){
+    if(nrow(visnir.raw)>1000 | ncol(visnir.raw)<1000){
       stop("Input dataset '*.raw' dimensions invalid. See https://soilspectroscopy.github.io/ossl-manual/ for examples.")
     }
   }
@@ -98,7 +98,7 @@ predict.ossl <- function(t.var, mir.raw, visnir.raw, lon, lat, hzn_depth=10, oss
     spc = as.matrix(mir.raw)
     #colnames(spc) = paste(wn)
     spc = as.data.frame(prospectr::resample(spc, wn, seq(600, 4000, by=2), interpol = "spline"))
-    spc = lapply(spc, function(j){ round(ifelse(j<0, NA, ifelse(j>3, NA, j))*1000) })
+    spc = lapply(spc, function(j){ round(ifelse(j<0, NA, ifelse(j>3, 3, j))*1000) })
     spc = as.data.frame(do.call(cbind, spc))
     names(spc) = paste0("scan_mir.", seq(600, 4000, by=2), "_abs")
     class(ossl.pca.mir) = "prcomp"
@@ -112,7 +112,7 @@ predict.ossl <- function(t.var, mir.raw, visnir.raw, lon, lat, hzn_depth=10, oss
     spc = as.matrix(visnir.raw)
     #colnames(spc) = paste(wn)
     spc = as.data.frame(prospectr::resample(spc, wn, seq(350, 2500, by=2), interpol = "spline"))
-    spc = lapply(spc, function(j){ round(ifelse(j<0, NA, ifelse(j>1, NA, j))*100, 1) })
+    spc = lapply(spc, function(j){ round(ifelse(j<0, NA, ifelse(j>1, 1, j))*100, 1) })
     spc = as.data.frame(do.call(cbind, spc))
     names(spc) = paste0("scan_visnir.", seq(350, 2500, by=2), "_pcnt")
     class(ossl.pca.visnir) = "prcomp"
