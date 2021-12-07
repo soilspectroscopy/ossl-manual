@@ -321,6 +321,158 @@ might be significantly lower:
 <p class="caption">(\#fig:ac-soc2)Accuracy plot for `log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds`.</p>
 </div>
 
+### Importing soil spectral scans using raw data formats
+
+The examples shown above demonstrate prediction results based on using sample 
+MIR and VisNIR data (csv files). If you only have raw spectral scan data such as 
+[ASD](http://support.asdi.com/Document/Viewer.aspx?id=95) (PAN Analytics Inc.) and/or 
+[OPUS files](https://www.bruker.com/en/products-and-solutions/infrared-and-raman/opus-spectroscopy-software.html) (Bruker Inc.), 
+you can use various R packages to read files and prepare them for prediction required by OSSL.
+
+Consider for example a sample OPUS file from the [AfSIS-1 project](https://registry.opendata.aws/afsis/), 
+which is an original file from the Bruker_Alpha_ZnSe instrument. We can read this file 
+thanks to the simplerspec package by using:
+
+
+```r
+mir.x = simplerspec::read_opus_bin_univ('sample-data/icr056141.0')
+```
+
+```
+## Extracted spectra data from file: <icr056141.0>
+```
+
+```r
+names(mir.x)
+```
+
+```
+##  [1] "metadata"          "spc"               "spc_nocomp"       
+##  [4] "sc_sm"             "sc_rf"             "ig_sm"            
+##  [7] "ig_rf"             "wavenumbers"       "wavenumbers_sc_sm"
+## [10] "wavenumbers_sc_rf"
+```
+
+which gives a list of object including `spc` which are the spectral bands:
+
+
+```r
+dim(mir.x[["spc"]])
+```
+
+```
+## [1]    1 1715
+```
+
+we can plot the MIR absorbance curve for this scan by using:
+
+
+```r
+x = as.numeric(names(mir.x[["spc"]]))
+matplot(y=as.vector(t(mir.x[["spc"]])), x=x,
+        ylim = c(0,3),
+        type = 'l', 
+        xlab = "Wavelength", 
+        ylab = "Absorbance"
+        )
+```
+
+<div class="figure">
+<img src="025-modeling_files/figure-html/plot-opus-1.png" alt="Spectral absorbances plot using MIR data." width="90%" />
+<p class="caption">(\#fig:plot-opus)Spectral absorbances plot using MIR data.</p>
+</div>
+
+This dataset is hence ready to generate predictions using global OSSL models. We can, 
+for example generate prediction of soil pH using the following model:
+
+<div class="figure">
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/ph.h2o_usda.4c1_index/ap.mir_mlr..eml_ossl_ll_v1.rds.png" alt="Accuracy plot for `ph.h2o_usda.4c1_index/mir_mlr..eml_ossl_ll_v1.rds`." width="70%" />
+<p class="caption">(\#fig:ac-ph1)Accuracy plot for `ph.h2o_usda.4c1_index/mir_mlr..eml_ossl_ll_v1.rds`.</p>
+</div>
+
+in this case we need to add also lon-lat coordinates and specify the soil depth:
+
+
+```r
+pcm3 = url(paste0(rep, "pca.ossl/mpca_mir_ossl_v1.rds"), "rb")
+eml3 = url(paste0(rep, "ph.h2o_usda.4c1_index/mir_mlr..eml_ossl_ll_v1.rds"), "rb")
+ossl.pca.mir = readRDS(pcm3)
+ossl.model = readRDS(eml3)
+pred.ph1 = predict.ossl(t.var="ph.h2o_usda.4c1_index", mir.raw=mir.x[["spc"]], ossl.model=ossl.model, 
+             ossl.pca.mir=ossl.pca.mir, geo.type="ll", lon=28.50299833, lat=-13.10194667, hzn_depth=10, 
+             cog.dir="/data/WORLDCLIM/")
+```
+
+which gives us predictions of `ph.h2o_usda.4c1_index`:
+
+
+```r
+pred.ph1$pred
+```
+
+```
+  pred.mean pred.error lower.1std upper.1std
+1   5.21567   1.221916   3.993754   6.437586
+```
+
+Likewise, we can also read the ASD files to generate predictions using VisNIR spectra.
+Consider for example the sample data from the KSSL VisNIR repository:
+
+
+```r
+asd.raw = as.data.frame(asdreader::get_spectra("sample-data/101453MD01.asd"))
+dim(asd.raw)
+```
+
+```
+## [1]    1 2151
+```
+
+
+```r
+x = as.numeric(names(asd.raw))
+matplot(y=as.vector(t(asd.raw)), x=x,
+        ylim = c(0,0.7),
+        type = 'l', 
+        xlab = "Wavelength", 
+        ylab = "Reflectance"
+        )
+```
+
+<div class="figure">
+<img src="025-modeling_files/figure-html/plot-ads-1.png" alt="Spectral reflectance plot using VisNIR data." width="90%" />
+<p class="caption">(\#fig:plot-ads)Spectral reflectance plot using VisNIR data.</p>
+</div>
+
+we can also directly predict `ph.h2o_usda.4c1_index` by using:
+
+
+```r
+pmc3 = url(paste0(rep, "pca.ossl/mpca_visnir_kssl_v1.rds"), "rb")
+eml4 = url(paste0(rep, "ph.h2o_usda.4c1_index/visnir_mlr..eml_ossl_na_v1.rds"), "rb")
+ossl.pca.visnir = readRDS(pmc3)
+ossl.model = readRDS(eml4)
+pred.ph2 = predict.ossl(t.var="ph.h2o_usda.4c1_index", visnir.raw=asd.raw, 
+        ossl.model=ossl.model, spc.type = "visnir", ossl.pca.visnir = ossl.pca.visnir)
+pred.ph2$pred
+```
+
+```
+  pred.mean pred.error lower.1std upper.1std
+1  6.565335  0.4353427   6.129993   7.000678
+```
+
+We are currently building an API that will work directly with standard raw files 
+coming directly from the instruments. This should help make the OSSL more robust 
+and applicable to thousands of requests on a daily basis.
+
+Wrongly formatted spectral scans can lead to artifacts and should be used with care. 
+Note that complexity of soil spectral scans remains high, including the file sizes that are 
+difficult to open and read (few thousands of columns) 
+and are often not supported in standard tabular software e.g. LibreOffice or similar. 
+We recommend thus to report any issues you might have via our [project GitHub](https://github.com/soilspectroscopy) so we 
+can all help each other produce more accurate primary soil data.
+
 ## Registering your own model
 
 If you plan to contribute your own models to the Soil Spectroscopy for Global Good project 

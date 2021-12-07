@@ -52,6 +52,9 @@ fig:plot-fc
 fig:hist-fc1
 fig:ac-soc1
 fig:ac-soc2
+fig:plot-opus
+fig:ac-ph1
+fig:plot-ads
 about
 soil-spectroscopy-for-global-good
 what-is-soil-spectroscopy
@@ -237,4 +240,5 @@ using-default-ossl-models-to-predict-soil-properties
 predicting-soil-properties-using-mir-spectra
 predicting-soil-properties-using-mir-spectra-and-geographical-covariates
 predicting-soil-properties-using-visnir-spectra
+importing-soil-spectral-scans-using-raw-data-formats
 registering-your-own-model

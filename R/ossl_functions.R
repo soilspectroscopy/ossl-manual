@@ -73,7 +73,7 @@ readRDS.gz <- function(file,threads=parallel::detectCores()) {
 predict.ossl <- function(t.var, mir.raw, visnir.raw, lon, lat, hzn_depth=10, ossl.model, ossl.pca.mir, ossl.pca.visnir, spc.type="mir", subset.type="ossl", geo.type="na", n.spc=60, sd=TRUE, cog.dir="/data/WORLDCLIM/", ylim=NULL, dataset.code_ascii_c="KSSL.SSL"){ ## =c(0,100)
   ## check that input scans pass some minimum checks
   if(spc.type == "mir" | spc.type == "visnir.mir"){
-    if(!class(mir.raw)=="data.frame"){
+    if(!any(class(mir.raw)=="data.frame")){
       stop("Input dataset '*.raw' not a correctly formated scan file. See https://soilspectroscopy.github.io/ossl-manual/ for examples.")
     }
     if(nrow(mir.raw)>1000 | ncol(mir.raw)<1400){
@@ -81,7 +81,7 @@ predict.ossl <- function(t.var, mir.raw, visnir.raw, lon, lat, hzn_depth=10, oss
     }
   }
   if(spc.type == "visnir" | spc.type == "visnir.mir"){
-    if(!class(visnir.raw)=="data.frame"){
+    if(!any(class(visnir.raw)=="data.frame")){
       stop("Input dataset '*.raw' not a correctly formated scan file. See https://soilspectroscopy.github.io/ossl-manual/ for examples.")
     }
     if(nrow(visnir.raw)>1000 | ncol(visnir.raw)<1000){
@@ -165,7 +165,11 @@ predict.ossl <- function(t.var, mir.raw, visnir.raw, lon, lat, hzn_depth=10, oss
 
 extract.cog <- function(pnts, cog.lst, url="http://s3.us-east-1.wasabisys.com/soilspectroscopy/layers1km/", mc.cores = 16, local=TRUE){
   if(local==TRUE){
-    ov.tmp = parallel::mclapply(1:length(cog.lst), function(j){ terra::extract(terra::rast(cog.lst[j]), terra::vect(pnts)) }, mc.cores = mc.cores)
+    if(length(pnts)>1){
+      ov.tmp = parallel::mclapply(1:length(cog.lst), function(j){ terra::extract(terra::rast(cog.lst[j]), terra::vect(pnts)) }, mc.cores = mc.cores)
+    } else {
+      ov.tmp = lapply(1:length(cog.lst), function(j){ terra::extract(terra::rast(cog.lst[j]), pnts@coords)})
+    }
   } else {
     if(mc.cores>1){
       ov.tmp = parallel::mclapply(1:length(cog.lst), function(j){ terra::extract(terra::rast(paste0("/vsicurl/", url, cog.lst[j])), terra::vect(pnts)) }, mc.cores = mc.cores)

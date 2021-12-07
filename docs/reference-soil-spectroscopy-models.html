@@ -370,6 +370,7 @@ div.csl-indent {
 <li class="chapter" data-level="5.2.1" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#predicting-soil-properties-using-mir-spectra"><i class="fa fa-check"></i><b>5.2.1</b> Predicting soil properties using MIR spectra</a></li>
 <li class="chapter" data-level="5.2.2" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#predicting-soil-properties-using-mir-spectra-and-geographical-covariates"><i class="fa fa-check"></i><b>5.2.2</b> Predicting soil properties using MIR spectra and geographical covariates</a></li>
 <li class="chapter" data-level="5.2.3" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#predicting-soil-properties-using-visnir-spectra"><i class="fa fa-check"></i><b>5.2.3</b> Predicting soil properties using VisNIR spectra</a></li>
+<li class="chapter" data-level="5.2.4" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#importing-soil-spectral-scans-using-raw-data-formats"><i class="fa fa-check"></i><b>5.2.4</b> Importing soil spectral scans using raw data formats</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#registering-your-own-model"><i class="fa fa-check"></i><b>5.3</b> Registering your own model</a></li>
 </ul></li>
@@ -630,6 +631,98 @@ might be significantly lower:</p>
 Figure 5.2: Accuracy plot for <code>log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds</code>.
 </p>
 </div>
+</div>
+<div id="importing-soil-spectral-scans-using-raw-data-formats" class="section level3" number="5.2.4">
+<h3><span class="header-section-number">5.2.4</span> Importing soil spectral scans using raw data formats</h3>
+<p>The examples shown above demonstrate prediction results based on using sample
+MIR and VisNIR data (csv files). If you only have raw spectral scan data such as
+<a href="http://support.asdi.com/Document/Viewer.aspx?id=95">ASD</a> (PAN Analytics Inc.) and/or
+<a href="https://www.bruker.com/en/products-and-solutions/infrared-and-raman/opus-spectroscopy-software.html">OPUS files</a> (Bruker Inc.),
+you can use various R packages to read files and prepare them for prediction required by OSSL.</p>
+<p>Consider for example a sample OPUS file from the <a href="https://registry.opendata.aws/afsis/">AfSIS-1 project</a>,
+which is an original file from the Bruker_Alpha_ZnSe instrument. We can read this file
+thanks to the simplerspec package by using:</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="reference-soil-spectroscopy-models.html#cb68-1" aria-hidden="true" tabindex="-1"></a>mir.x <span class="ot">=</span> simplerspec<span class="sc">::</span><span class="fu">read_opus_bin_univ</span>(<span class="st">&#39;sample-data/icr056141.0&#39;</span>)</span></code></pre></div>
+<pre><code>## Extracted spectra data from file: &lt;icr056141.0&gt;</code></pre>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="reference-soil-spectroscopy-models.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(mir.x)</span></code></pre></div>
+<pre><code>##  [1] &quot;metadata&quot;          &quot;spc&quot;               &quot;spc_nocomp&quot;       
+##  [4] &quot;sc_sm&quot;             &quot;sc_rf&quot;             &quot;ig_sm&quot;            
+##  [7] &quot;ig_rf&quot;             &quot;wavenumbers&quot;       &quot;wavenumbers_sc_sm&quot;
+## [10] &quot;wavenumbers_sc_rf&quot;</code></pre>
+<p>which gives a list of object including <code>spc</code> which are the spectral bands:</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="reference-soil-spectroscopy-models.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(mir.x[[<span class="st">&quot;spc&quot;</span>]])</span></code></pre></div>
+<pre><code>## [1]    1 1715</code></pre>
+<p>we can plot the MIR absorbance curve for this scan by using:</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="reference-soil-spectroscopy-models.html#cb74-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">names</span>(mir.x[[<span class="st">&quot;spc&quot;</span>]]))</span>
+<span id="cb74-2"><a href="reference-soil-spectroscopy-models.html#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="fu">matplot</span>(<span class="at">y=</span><span class="fu">as.vector</span>(<span class="fu">t</span>(mir.x[[<span class="st">&quot;spc&quot;</span>]])), <span class="at">x=</span>x,</span>
+<span id="cb74-3"><a href="reference-soil-spectroscopy-models.html#cb74-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">3</span>),</span>
+<span id="cb74-4"><a href="reference-soil-spectroscopy-models.html#cb74-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, </span>
+<span id="cb74-5"><a href="reference-soil-spectroscopy-models.html#cb74-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Wavelength&quot;</span>, </span>
+<span id="cb74-6"><a href="reference-soil-spectroscopy-models.html#cb74-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Absorbance&quot;</span></span>
+<span id="cb74-7"><a href="reference-soil-spectroscopy-models.html#cb74-7" aria-hidden="true" tabindex="-1"></a>        )</span></code></pre></div>
+<div class="figure"><span id="fig:plot-opus"></span>
+<img src="025-modeling_files/figure-html/plot-opus-1.png" alt="Spectral absorbances plot using MIR data." width="90%" />
+<p class="caption">
+Figure 5.3: Spectral absorbances plot using MIR data.
+</p>
+</div>
+<p>This dataset is hence ready to generate predictions using global OSSL models. We can,
+for example generate prediction of soil pH using the following model:</p>
+<div class="figure"><span id="fig:ac-ph1"></span>
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/ph.h2o_usda.4c1_index/ap.mir_mlr..eml_ossl_ll_v1.rds.png" alt="Accuracy plot for `ph.h2o_usda.4c1_index/mir_mlr..eml_ossl_ll_v1.rds`." width="70%" />
+<p class="caption">
+Figure 5.4: Accuracy plot for <code>ph.h2o_usda.4c1_index/mir_mlr..eml_ossl_ll_v1.rds</code>.
+</p>
+</div>
+<p>in this case we need to add also lon-lat coordinates and specify the soil depth:</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="reference-soil-spectroscopy-models.html#cb75-1" aria-hidden="true" tabindex="-1"></a>pcm3 <span class="ot">=</span> <span class="fu">url</span>(<span class="fu">paste0</span>(rep, <span class="st">&quot;pca.ossl/mpca_mir_ossl_v1.rds&quot;</span>), <span class="st">&quot;rb&quot;</span>)</span>
+<span id="cb75-2"><a href="reference-soil-spectroscopy-models.html#cb75-2" aria-hidden="true" tabindex="-1"></a>eml3 <span class="ot">=</span> <span class="fu">url</span>(<span class="fu">paste0</span>(rep, <span class="st">&quot;ph.h2o_usda.4c1_index/mir_mlr..eml_ossl_ll_v1.rds&quot;</span>), <span class="st">&quot;rb&quot;</span>)</span>
+<span id="cb75-3"><a href="reference-soil-spectroscopy-models.html#cb75-3" aria-hidden="true" tabindex="-1"></a>ossl.pca.mir <span class="ot">=</span> <span class="fu">readRDS</span>(pcm3)</span>
+<span id="cb75-4"><a href="reference-soil-spectroscopy-models.html#cb75-4" aria-hidden="true" tabindex="-1"></a>ossl.model <span class="ot">=</span> <span class="fu">readRDS</span>(eml3)</span>
+<span id="cb75-5"><a href="reference-soil-spectroscopy-models.html#cb75-5" aria-hidden="true" tabindex="-1"></a>pred.ph1 <span class="ot">=</span> <span class="fu">predict.ossl</span>(<span class="at">t.var=</span><span class="st">&quot;ph.h2o_usda.4c1_index&quot;</span>, <span class="at">mir.raw=</span>mir.x[[<span class="st">&quot;spc&quot;</span>]], <span class="at">ossl.model=</span>ossl.model, </span>
+<span id="cb75-6"><a href="reference-soil-spectroscopy-models.html#cb75-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">ossl.pca.mir=</span>ossl.pca.mir, <span class="at">geo.type=</span><span class="st">&quot;ll&quot;</span>, <span class="at">lon=</span><span class="fl">28.50299833</span>, <span class="at">lat=</span><span class="sc">-</span><span class="fl">13.10194667</span>, <span class="at">hzn_depth=</span><span class="dv">10</span>, </span>
+<span id="cb75-7"><a href="reference-soil-spectroscopy-models.html#cb75-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">cog.dir=</span><span class="st">&quot;/data/WORLDCLIM/&quot;</span>)</span></code></pre></div>
+<p>which gives us predictions of <code>ph.h2o_usda.4c1_index</code>:</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="reference-soil-spectroscopy-models.html#cb76-1" aria-hidden="true" tabindex="-1"></a>pred.ph1<span class="sc">$</span>pred</span></code></pre></div>
+<pre><code>  pred.mean pred.error lower.1std upper.1std
+1   5.21567   1.221916   3.993754   6.437586</code></pre>
+<p>Likewise, we can also read the ASD files to generate predictions using VisNIR spectra.
+Consider for example the sample data from the KSSL VisNIR repository:</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="reference-soil-spectroscopy-models.html#cb78-1" aria-hidden="true" tabindex="-1"></a>asd.raw <span class="ot">=</span> <span class="fu">as.data.frame</span>(asdreader<span class="sc">::</span><span class="fu">get_spectra</span>(<span class="st">&quot;sample-data/101453MD01.asd&quot;</span>))</span>
+<span id="cb78-2"><a href="reference-soil-spectroscopy-models.html#cb78-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(asd.raw)</span></code></pre></div>
+<pre><code>## [1]    1 2151</code></pre>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="reference-soil-spectroscopy-models.html#cb80-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">names</span>(asd.raw))</span>
+<span id="cb80-2"><a href="reference-soil-spectroscopy-models.html#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="fu">matplot</span>(<span class="at">y=</span><span class="fu">as.vector</span>(<span class="fu">t</span>(asd.raw)), <span class="at">x=</span>x,</span>
+<span id="cb80-3"><a href="reference-soil-spectroscopy-models.html#cb80-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.7</span>),</span>
+<span id="cb80-4"><a href="reference-soil-spectroscopy-models.html#cb80-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, </span>
+<span id="cb80-5"><a href="reference-soil-spectroscopy-models.html#cb80-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Wavelength&quot;</span>, </span>
+<span id="cb80-6"><a href="reference-soil-spectroscopy-models.html#cb80-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Reflectance&quot;</span></span>
+<span id="cb80-7"><a href="reference-soil-spectroscopy-models.html#cb80-7" aria-hidden="true" tabindex="-1"></a>        )</span></code></pre></div>
+<div class="figure"><span id="fig:plot-ads"></span>
+<img src="025-modeling_files/figure-html/plot-ads-1.png" alt="Spectral reflectance plot using VisNIR data." width="90%" />
+<p class="caption">
+Figure 5.5: Spectral reflectance plot using VisNIR data.
+</p>
+</div>
+<p>we can also directly predict <code>ph.h2o_usda.4c1_index</code> by using:</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="reference-soil-spectroscopy-models.html#cb81-1" aria-hidden="true" tabindex="-1"></a>pmc3 <span class="ot">=</span> <span class="fu">url</span>(<span class="fu">paste0</span>(rep, <span class="st">&quot;pca.ossl/mpca_visnir_kssl_v1.rds&quot;</span>), <span class="st">&quot;rb&quot;</span>)</span>
+<span id="cb81-2"><a href="reference-soil-spectroscopy-models.html#cb81-2" aria-hidden="true" tabindex="-1"></a>eml4 <span class="ot">=</span> <span class="fu">url</span>(<span class="fu">paste0</span>(rep, <span class="st">&quot;ph.h2o_usda.4c1_index/visnir_mlr..eml_ossl_na_v1.rds&quot;</span>), <span class="st">&quot;rb&quot;</span>)</span>
+<span id="cb81-3"><a href="reference-soil-spectroscopy-models.html#cb81-3" aria-hidden="true" tabindex="-1"></a>ossl.pca.visnir <span class="ot">=</span> <span class="fu">readRDS</span>(pmc3)</span>
+<span id="cb81-4"><a href="reference-soil-spectroscopy-models.html#cb81-4" aria-hidden="true" tabindex="-1"></a>ossl.model <span class="ot">=</span> <span class="fu">readRDS</span>(eml4)</span>
+<span id="cb81-5"><a href="reference-soil-spectroscopy-models.html#cb81-5" aria-hidden="true" tabindex="-1"></a>pred.ph2 <span class="ot">=</span> <span class="fu">predict.ossl</span>(<span class="at">t.var=</span><span class="st">&quot;ph.h2o_usda.4c1_index&quot;</span>, <span class="at">visnir.raw=</span>asd.raw, </span>
+<span id="cb81-6"><a href="reference-soil-spectroscopy-models.html#cb81-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">ossl.model=</span>ossl.model, <span class="at">spc.type =</span> <span class="st">&quot;visnir&quot;</span>, <span class="at">ossl.pca.visnir =</span> ossl.pca.visnir)</span>
+<span id="cb81-7"><a href="reference-soil-spectroscopy-models.html#cb81-7" aria-hidden="true" tabindex="-1"></a>pred.ph2<span class="sc">$</span>pred</span></code></pre></div>
+<pre><code>  pred.mean pred.error lower.1std upper.1std
+1  6.565335  0.4353427   6.129993   7.000678</code></pre>
+<p>We are currently building an API that will work directly with standard raw files
+coming directly from the instruments. This should help make the OSSL more robust
+and applicable to thousands of requests on a daily basis.</p>
+<p>Wrongly formatted spectral scans can lead to artifacts and should be used with care.
+Note that complexity of soil spectral scans remains high, including the file sizes that are
+difficult to open and read (few thousands of columns)
+and are often not supported in standard tabular software e.g. LibreOffice or similar.
+We recommend thus to report any issues you might have via our <a href="https://github.com/soilspectroscopy">project GitHub</a> so we
+can all help each other produce more accurate primary soil data.</p>
 </div>
 </div>
 <div id="registering-your-own-model" class="section level2" number="5.3">
