@@ -89,7 +89,9 @@ neon.ssl
 soil-spetroscopy-organizations
 kssl
 soil-spectroscopy-software
+asdreader
 prospectr
+simplerspec
 database
 sites-table
 id.layer_uuid_c

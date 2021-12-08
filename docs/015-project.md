@@ -74,7 +74,7 @@ includes >50,000 MIR spectra collected on soils primarily from the United States
 - ©️ Data license: [CC-BY](https://ncsslabdatamart.sc.egov.usda.gov/datause.aspx)  
 - 📍 Unique sites: 61,103  
 - 📋 Unique complete scans:  
-- 📝 Import steps:  
+- 📝 Import steps: [KSSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/KSSL)  
 
 ### ICRAF.ISRIC
 
@@ -89,7 +89,7 @@ Nations Avenue, Nairobi, Kenya.
 - ©️ Data license: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)  
 - 📍 Unique locations: 785  
 - 📋 Unique complete scans: 4308  
-- 📝 Import steps:  
+- 📝 Import steps: [ICRAF_ISRIC](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/ICRAF_ISRIC)  
 
 
 ### LUCAS.SSL
@@ -103,19 +103,22 @@ Additional 600 samples have been scanned by Woodwell Climate Research using an M
 - ©️ Data license: [JRC License Agreement](https://esdac.jrc.ec.europa.eu/content/lucas2015-topsoil-data)  
 - 📍 Unique locations: 41,719  
 - 📋 Unique complete scans: 41,719  
-- 📝 Import steps:  
+- 📝 Import steps: [LUCAS](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/LUCAS)  
 
 ### AFSIS1.SSL
 
-_Description_: [LUCAS 2009, 2015 top-soil data](https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data). VisNIR scans of some 19,860 in 2009 (2012) and 21,859 points in 2015. 
-Data available publicly under condition that _"Graphical representation of individual units on a map is permitted as far as the geographical location of the soil samples is not detectable"_.
+_Description_: [Africa Soil Information Service (AfSIS) Soil Chemistry Phase I](http://africasoils.net/services/data/soil-databases/). 
+MIR and VisNIR scans of 1903 georeferenced soil samples collected from 19 countries in 
+Sub-Saharan Africa including a suite of wet chemistry data. Data available publicly 
+under Open Data Commons Open Database License ("ODbL") version 1.0, with attribution to AfSIS.
+Data retrieved from: <https://registry.opendata.aws/afsis/> and <https://doi.org/10.34725/DVN/QXCWP1>.
 
-- 📕 Jones, A, Fernandez-Ugalde, O., Scarpa, S., (2020). [LUCAS 2015 Topsoil Survey. Presentation of dataset and results](https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data), EUR 30332 EN, Publications Office of the European Union: Luxembourg, ISBN 978-92-76-21080-1, doi:10.2760/616084, JRC121325.  
-- 🔗 Project website: <https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data>  
-- ©️ Data license: [JRC License Agreement](https://esdac.jrc.ec.europa.eu/content/lucas2015-topsoil-data)  
-- 📍 Unique locations: 41,719  
-- 📋 Unique complete scans: 41,719  
-- 📝 Import steps:  
+- 📕 Vågen, T.-G., Winowiecki, L.A., Desta, L., Tondoh, E.J., Weullow, E., Shepherd, K., Sila, A., (2020). Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory: Africa Soil Information Service (AfSIS) Phase I 2009-2013. <https://doi.org/10.34725/DVN/QXCWP1>, World Agroforestry - Research Data Repository, V1, UNF:6:bMN2MBGqFewDKHPgIeRjog== [fileUNF].  
+- 🔗 Project website: <http://africasoils.net/services/data/soil-databases/>  
+- ©️ Data license: [Open Database License ("ODbL")](https://opendatacommons.org/licenses/odbl/)   
+- 📍 Unique locations: 1903  
+- 📋 Unique complete scans: 3806  
+- 📝 Import steps: [AFSIS](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS)  
 
 ### CAF.SSL
 
@@ -126,7 +129,7 @@ _Description_: [The Central African Soil Spectral Library](https://doi.org/10.51
 - ©️ Data license: CC-BY?  
 - 📍 Unique locations:   
 - 📋 Unique complete scans: 1852  
-- 📝 Import steps:  
+- 📝 Import steps: [CASSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL)  
 
 ### NEON.SSL
 
@@ -137,7 +140,7 @@ _Description_: [The National Ecological Observatory Network (NEON) Soil Spectral
 - ©️ Data license: CC-BY  
 - 📍 Unique locations:   
 - 📋 Unique complete scans: 305  
-- 📝 Import steps:  
+- 📝 Import steps: [NEON](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL)  
 
 
 ## Soil spetroscopy organizations
@@ -162,12 +165,33 @@ Open source and commercial software used to process soil spectral scans.
 See also this [detailed review of software used for soil spectroscopy](https://soilspectroscopy.org/soil-spectroscopy-state-of-the-art-open-source-software/).
 Even more in-depth review of R packages used for soil spectroscopy can be found in @malone2021soil.
 
+### asdreader
+
+- 📛 Name: asdreader  
+- 💼 Specialty: Reading ASD Binary Files in R  
+- 💻 Programming language: R project  
+- 🔗 Homepage: <https://github.com/pierreroudier/asdreader>  
+- 📕 Roudier, P. (2020). asdreader: reading ASD binary files in R. R package version 0.1-3 CRAN.  
+- ©️ License: GPL  
+- 📧 Maintainer: [Pierre Roudier](https://github.com/pierreroudier)
+
 ### prospectr
 
 - 📛 Name: prospectr  
 - 💼 Specialty: Signal processing, Resampling  
 - 💻 Programming language: R project  
 - 🔗 Homepage: <https://github.com/l-ramirez-lopez/prospectr>  
-- 📕 Stevens, A., & Ramirez-Lopez, L. (2014). An introduction to the prospectr package. R Package Vignette, Report No.: R Package Version 0.1, 3.
-- ©️ License: [MIT](https://cran.r-project.org/web/licenses/MIT) + [file LICENSE](https://cran.r-project.org/web/packages/prospectr/LICENSE)
+- 📕 Stevens, A., & Ramirez-Lopez, L. (2014). An introduction to the prospectr package. R Package Vignette, Report No.: R Package Version 0.1, 3.  
+- ©️ License: [MIT](https://cran.r-project.org/web/licenses/MIT) + [file LICENSE](https://cran.r-project.org/web/packages/prospectr/LICENSE)  
 - 📧 Maintainer: [Leornardo Ramirez-Lopez](https://orcid.org/0000-0002-5369-5120)
+
+### simplerspec
+
+- 📛 Name: simplerspec  
+- 💼 Specialty: Soil and plant spectroscopic model building and prediction  
+- 💻 Programming language: R project  
+- 🔗 Homepage: <https://philipp-baumann.github.io/simplerspec>  
+- 📕 Baumann, P. (2020). simplerspec: Soil and plant spectroscopic model building and prediction. Packages R CRAN.  
+- ©️ License: [GNU General Public License v3.0](https://github.com/philipp-baumann/simplerspec/blob/master/LICENSE.md)  
+- 📧 Maintainer: [Philipp Baumann](https://github.com/philipp-baumann)
+
