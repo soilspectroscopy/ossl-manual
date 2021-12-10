@@ -1,7 +1,7 @@
 ---
 title: "Open Soil Spectral Library"
 author: "Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors"
-date: "08 December, 2021"
+date: "10 December, 2021"
 knit: bookdown::render_book
 site: bookdown::bookdown_site
 documentclass: svmono
@@ -332,10 +332,10 @@ organizations. Listed based on the date of import:
 - **[USDA-NRCS Kellogg Soil Survey Laboratory](https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/)** mid-infrared (MIR) spectral library [@wijewardane2018predicting;@sanderman2020mid] was used as the basis for this data set and corresponding services; we are especially grateful to **Rich Ferguson & Scarlett Murphy (NRCS USDA)** for their help with 
 importing and using the KSSL Soil Spectral Library;  
 - **[ICRAF-ISRIC Soil VNIR Spectral Library](https://doi.org/10.34725/DVN/MFHA9C)** [@garrity2004globally; @aitkenhead2018exploring] 785 soil profiles (4,438 samples) selected from the Soil Information System (ISIS) of the International Soil Reference and Information Centre (ISRIC) <https://doi.org/10.34725/DVN/MFHA9C>;  
-- **[AfSIS-I Soil Spectral Library](https://doi.org/10.34725/DVN/QXCWP1)** Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013 [@Vagen_2020], a collaborative project funded by the Bill and Melinda Gates Foundation (BMGF). Partners included, CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF) <https://doi.org/10.34725/DVN/QXCWP1>;  
+- **[AfSIS-I Soil Spectral Library](https://doi.org/10.34725/DVN/QXCWP1)** Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013 [@Vagen_2020], a collaborative project funded by the Bill and Melinda Gates Foundation (BMGF). Partners included: CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF) <https://doi.org/10.34725/DVN/QXCWP1>;  
 - **[LUCAS topsoil (VisNIR) Soil Spectral Library](http://esdac.jrc.ec.europa.eu/)** [@orgiazzi2018lucas] was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>; we have degraded location accuracy of points so that exact locations are about 1-km off;  
 - **[The Central African Soil Spectral Library](https://github.com/laura-summerauer/ssl-central-africa)** described in detail in @Summerauer2021 contains limited number of samples representing Central Africa <https://doi.org/10.5281/zenodo.4320395>;  
-- **The National Ecological Observatory Network (NEON) Soil Spectral** is based on the NEON soil data [@ayres2019quantitative], which were scanned by the Woodwell Climate Research and USDA-NRCS Kellogg Soil Survey Laboratory; the (NEON) Megapit Soil Archive is a program sponsored by the National Science Foundation and operated under cooperative agreement by Battelle;  
+- **The National Ecological Observatory Network (NEON) Soil Spectral** is based on the NEON soil data [@ayres2019quantitative], which were scanned by the Woodwell Climate Research and USDA-NRCS Kellogg Soil Survey Laboratory; the [(NEON) Megapit Soil Archive](https://www.neonscience.org/samples/soil-archive) is a program sponsored by the National Science Foundation and operated under cooperative agreement by Battelle;  
 
 We are grateful to **[Wanderson de Sousa Mendes (Leibniz Centre for Agricultural Landscape Research (ZALF))](https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/)** for 
 help with initial screening of the data for the development of the R code for processing soil spectroscopy data.

@@ -373,6 +373,7 @@ div.csl-indent {
 <li class="chapter" data-level="5.2.2" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#predicting-soil-properties-using-mir-spectra-and-geographical-covariates"><i class="fa fa-check"></i><b>5.2.2</b> Predicting soil properties using MIR spectra and geographical covariates</a></li>
 <li class="chapter" data-level="5.2.3" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#predicting-soil-properties-using-visnir-spectra"><i class="fa fa-check"></i><b>5.2.3</b> Predicting soil properties using VisNIR spectra</a></li>
 <li class="chapter" data-level="5.2.4" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#importing-soil-spectral-scans-using-raw-data-formats"><i class="fa fa-check"></i><b>5.2.4</b> Importing soil spectral scans using raw data formats</a></li>
+<li class="chapter" data-level="5.2.5" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#the-bundle-approach-to-soil-spectroscopy-calibration"><i class="fa fa-check"></i><b>5.2.5</b> The bundle approach to soil spectroscopy calibration</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#registering-your-own-model"><i class="fa fa-check"></i><b>5.3</b> Registering your own model</a></li>
 </ul></li>
@@ -400,7 +401,7 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">Open Soil Spectral Library</h1>
 <p class="author"><em>Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>08 December, 2021</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>10 December, 2021</em></p>
 </div>
 <div id="about" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> About</h1>
@@ -726,13 +727,13 @@ importing and using the KSSL Soil Spectral Library;<br />
 </li>
 <li><strong><a href="https://doi.org/10.34725/DVN/MFHA9C">ICRAF-ISRIC Soil VNIR Spectral Library</a></strong> <span class="citation">(<a href="#ref-garrity2004globally" role="doc-biblioref">Garrity and Bindraban 2004</a>; <a href="#ref-aitkenhead2018exploring" role="doc-biblioref">Aitkenhead and Black 2018</a>)</span> 785 soil profiles (4,438 samples) selected from the Soil Information System (ISIS) of the International Soil Reference and Information Centre (ISRIC) <a href="https://doi.org/10.34725/DVN/MFHA9C" class="uri">https://doi.org/10.34725/DVN/MFHA9C</a>;<br />
 </li>
-<li><strong><a href="https://doi.org/10.34725/DVN/QXCWP1">AfSIS-I Soil Spectral Library</a></strong> Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013 <span class="citation">(<a href="#ref-Vagen_2020" role="doc-biblioref">Vagen et al. 2020</a>)</span>, a collaborative project funded by the Bill and Melinda Gates Foundation (BMGF). Partners included, CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF) <a href="https://doi.org/10.34725/DVN/QXCWP1" class="uri">https://doi.org/10.34725/DVN/QXCWP1</a>;<br />
+<li><strong><a href="https://doi.org/10.34725/DVN/QXCWP1">AfSIS-I Soil Spectral Library</a></strong> Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013 <span class="citation">(<a href="#ref-Vagen_2020" role="doc-biblioref">Vagen et al. 2020</a>)</span>, a collaborative project funded by the Bill and Melinda Gates Foundation (BMGF). Partners included: CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF) <a href="https://doi.org/10.34725/DVN/QXCWP1" class="uri">https://doi.org/10.34725/DVN/QXCWP1</a>;<br />
 </li>
 <li><strong><a href="http://esdac.jrc.ec.europa.eu/">LUCAS topsoil (VisNIR) Soil Spectral Library</a></strong> <span class="citation">(<a href="#ref-orgiazzi2018lucas" role="doc-biblioref">Orgiazzi et al. 2018</a>)</span> was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <a href="http://esdac.jrc.ec.europa.eu/" class="uri">http://esdac.jrc.ec.europa.eu/</a>; we have degraded location accuracy of points so that exact locations are about 1-km off;<br />
 </li>
 <li><strong><a href="https://github.com/laura-summerauer/ssl-central-africa">The Central African Soil Spectral Library</a></strong> described in detail in <span class="citation"><a href="#ref-Summerauer2021" role="doc-biblioref">Summerauer et al.</a> (<a href="#ref-Summerauer2021" role="doc-biblioref">2021</a>)</span> contains limited number of samples representing Central Africa <a href="https://doi.org/10.5281/zenodo.4320395" class="uri">https://doi.org/10.5281/zenodo.4320395</a>;<br />
 </li>
-<li><strong>The National Ecological Observatory Network (NEON) Soil Spectral</strong> is based on the NEON soil data <span class="citation">(<a href="#ref-ayres2019quantitative" role="doc-biblioref">Ayres 2019</a>)</span>, which were scanned by the Woodwell Climate Research and USDA-NRCS Kellogg Soil Survey Laboratory; the (NEON) Megapit Soil Archive is a program sponsored by the National Science Foundation and operated under cooperative agreement by Battelle;</li>
+<li><strong>The National Ecological Observatory Network (NEON) Soil Spectral</strong> is based on the NEON soil data <span class="citation">(<a href="#ref-ayres2019quantitative" role="doc-biblioref">Ayres 2019</a>)</span>, which were scanned by the Woodwell Climate Research and USDA-NRCS Kellogg Soil Survey Laboratory; the <a href="https://www.neonscience.org/samples/soil-archive">(NEON) Megapit Soil Archive</a> is a program sponsored by the National Science Foundation and operated under cooperative agreement by Battelle;</li>
 </ul>
 <p>We are grateful to <strong><a href="https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/">Wanderson de Sousa Mendes (Leibniz Centre for Agricultural Landscape Research (ZALF))</a></strong> for
 help with initial screening of the data for the development of the R code for processing soil spectroscopy data.</p>

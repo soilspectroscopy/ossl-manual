@@ -209,6 +209,29 @@ prediction interval gets thus proportionally higher for larger absolute values e
 14  3.441673  0.1139194   30.23918   26.87566   34.00856
 ```
 
+Finally, we can check how well does the new data (MIR scans) reflect the training 
+data used to build the calibration models:
+
+
+```r
+library(hexbin)
+library(grid)
+ossl.pcax.mir = readRDS(url(paste0(rep, "pca.ossl/pca_mir_kssl_v1.rds"), "rb"))
+reds = colorRampPalette(RColorBrewer::brewer.pal(9, "YlOrRd")[-1])
+hb <- hexbin(ossl.pcax.mir$x[,1:2], xbins=60)
+p <- plot(hb, colramp = reds, main='PCA MIR KSSL')
+pushHexport(p$plot.vp)
+grid.points(pred.oc$x$mir.PC1, pred.oc$x$mir.PC2, pch=17)
+```
+
+<div class="figure">
+<img src="img/pca_similarity_plot.png" alt="Similary plot new spectra vs training spectra (PC biplot)." width="80%" />
+<p class="caption">(\#fig:pca-sim)Similary plot new spectra vs training spectra (PC biplot).</p>
+</div>
+
+Based on the plot shown above, it appears that some of scans used are less typical 
+and hence prediction results should be taken with caution.
+
 ### Predicting soil properties using MIR spectra and geographical covariates
 
 Next, we can also predict values at new location using  calibration model that is 
@@ -313,7 +336,7 @@ pred.oc3 = predict.ossl(t.var="log..oc_usda.calc_wpct", visnir.raw=visnir.raw, o
                         ylim=c(0,100), spc.type = "visnir", ossl.pca.visnir = ossl.pca.visnir)
 ```
 
-This models is similar to MIR model, but the accuracy plot indicates that the accuracy 
+This model is similar to the MIR model, but the accuracy plot indicates that the accuracy 
 might be significantly lower:
 
 <div class="figure">
@@ -331,7 +354,7 @@ you can use various R packages to read files and prepare them for prediction req
 
 Consider for example a sample OPUS file from the [AfSIS-1 project](https://registry.opendata.aws/afsis/), 
 which is an original file from the Bruker_Alpha_ZnSe instrument. We can read this file 
-thanks to the simplerspec package by using:
+thanks to the [simplerspec package](https://philipp-baumann.github.io/simplerspec) by using:
 
 
 ```r
@@ -400,7 +423,7 @@ ossl.pca.mir = readRDS(pcm3)
 ossl.model = readRDS(eml3)
 pred.ph1 = predict.ossl(t.var="ph.h2o_usda.4c1_index", mir.raw=mir.x[["spc"]], ossl.model=ossl.model, 
              ossl.pca.mir=ossl.pca.mir, geo.type="ll", lon=28.50299833, lat=-13.10194667, hzn_depth=10, 
-             cog.dir="/data/WORLDCLIM/")
+             cog.dir="/data/WORLDCLIM/", dataset.code_ascii_c="AFSIS1.SSL")
 ```
 
 which gives us predictions of `ph.h2o_usda.4c1_index`:
@@ -412,11 +435,15 @@ pred.ph1$pred
 
 ```
   pred.mean pred.error lower.1std upper.1std
-1   5.21567   1.221916   3.993754   6.437586
+1  8.077812   1.507783   6.570029   9.585594
 ```
 
-Likewise, we can also read the ASD files to generate predictions using VisNIR spectra.
-Consider for example the sample data from the KSSL VisNIR repository:
+Note that we had to now specify that this MIR data is from AfSIS project via the 
+`AFSIS1.SSL` argument.
+
+Likewise, we can also read the ASD files using the [asdreader package](https://github.com/pierreroudier/asdreader), so we can 
+generate predictions using VisNIR spectra. Consider for example the sample data 
+from the KSSL VisNIR repository:
 
 
 ```r
@@ -453,7 +480,7 @@ eml4 = url(paste0(rep, "ph.h2o_usda.4c1_index/visnir_mlr..eml_ossl_na_v1.rds"), 
 ossl.pca.visnir = readRDS(pmc3)
 ossl.model = readRDS(eml4)
 pred.ph2 = predict.ossl(t.var="ph.h2o_usda.4c1_index", visnir.raw=asd.raw, 
-        ossl.model=ossl.model, spc.type = "visnir", ossl.pca.visnir = ossl.pca.visnir)
+        ossl.model=ossl.model, spc.type="visnir", ossl.pca.visnir=ossl.pca.visnir)
 pred.ph2$pred
 ```
 
@@ -472,6 +499,122 @@ difficult to open and read (few thousands of columns)
 and are often not supported in standard tabular software e.g. LibreOffice or similar. 
 We recommend thus to report any issues you might have via our [project GitHub](https://github.com/soilspectroscopy) so we 
 can all help each other produce more accurate primary soil data.
+
+### The bundle approach to soil spectroscopy calibration
+
+One of the approaches used to calibrate soil spectroscopy data in the Soil Spectroscopy 
+for Global Good project is to use a combination of VisNIR, MIR, spatial location 
+and Earth Observation data, basically any additional information that could potentially 
+help with calibration. We refer to this as the _"bundle approach"_. The key 
+assumption of the bundle approach is that accuracy of predictions could be somewhat 
+improved, which is especially important for soil organic carbon monitoring and similar. 
+Some previous research e.g. by @vohland2022quantification and @hong2022fusion indicate 
+that such fusion techniques could help improve accuracy of, especially, _in-situ_ methods.
+
+Because several of the training data sets, especially the KSSL and ICRAF-ISRIC, 
+come with both VisNIR and MIR scans, and are documented in detail, we were able 
+to fit global calibration models that can now be used to predict soil properties from a combination of data.
+
+Consider for example a sample from North Dakota with a profile code `S2014ND095001`, and 
+sample code `235157` (classified as _"Fine-loamy, mixed, superactive, frigid Calcic Hapludoll"_). 
+This sample was taken at location lon=-99.2064444; lat=48.8000056; and covers 
+the depth interval 101--125 cm (B2 horizon). We can predict value of soil pH by 
+using both VisNIR and MIR spectra:
+
+
+```r
+mir.x = simplerspec::read_opus_bin_univ('sample-data/235157XS01.0')
+```
+
+```
+## Extracted spectra data from file: <235157XS01.0>
+```
+
+```r
+asd.raw = as.data.frame(asdreader::get_spectra("sample-data/235157MD01.asd"))
+```
+
+This time we need to load 2 PCA models (1) for VisNIR and (2) MIR spectra, and one 
+model for the bundle calibration `visnir.mir_mlr..eml_ossl_na_v1.rds`: 
+
+To make the prediction, we need to specify multiple inputs:
+
+
+```r
+pcm.m = url(paste0(rep, "pca.ossl/mpca_mir_ossl_v1.rds"), "rb")
+pcm.v = url(paste0(rep, "pca.ossl/mpca_visnir_ossl_v1.rds"), "rb")
+eml.b = url(paste0(rep, "ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds"), "rb")
+ossl.pca.mir = readRDS(pcm.m)
+ossl.pca.visnir = readRDS(pcm.v)
+ossl.model = readRDS(eml.b)
+pred.ph.b = predict.ossl(t.var="ph.h2o_usda.4c1_index", spc.type="visnir.mir", 
+             mir.raw=mir.x[["spc"]], visnir.raw=asd.raw, 
+             ossl.model=ossl.model, ossl.pca.mir=ossl.pca.mir,  
+             ossl.pca.visnir=ossl.pca.visnir, hzn_depth=113)
+```
+
+which gives:
+
+
+```r
+pred.ph.b$pred
+```
+
+```
+  pred.mean pred.error lower.1std upper.1std
+1  8.453564  0.3284695   8.125094   8.782034
+```
+
+We can look at the model prediction accuracy based on 5-fold cross-validation:
+
+```
+summary(ossl.model$learner.model$super.model$learner.model)
+Call:
+stats::lm(formula = f, data = d)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.5169 -0.2364  0.0394  0.2470  3.4846 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   -0.159098   0.015687 -10.142  < 2e-16 ***
+regr.ranger    0.487147   0.008804  55.330  < 2e-16 ***
+regr.xgboost  -0.038330   0.007740  -4.952 7.36e-07 ***
+regr.cvglmnet  0.297675   0.005977  49.807  < 2e-16 ***
+regr.cubist    0.286002   0.004804  59.534  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4726 on 42324 degrees of freedom
+Multiple R-squared:  0.8228,	Adjusted R-squared:  0.8228 
+F-statistic: 4.913e+04 on 4 and 42324 DF,  p-value: < 2.2e-16
+```
+
+This shows that the model has an RMSE of 0.47, which seems to be the [best performing model](https://github.com/soilspectroscopy/ossl-models) 
+for predicting soil pH from spectral scans. Thus, in this specific case, also the 
+prediction error shows relatively narrow range of uncertainty.
+
+<div class="figure">
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/ph.h2o_usda.4c1_index/ap.visnir.mir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination." width="70%" />
+<p class="caption">(\#fig:ac-phm)Accuracy plot for `ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination.</p>
+</div>
+
+The bundle approach in the OSSL is used at the moment by default for all soil 
+variables, although one should keep in mind that the training points are more 
+patchy i.e. are less representative of the global conditions. As more and more 
+training data is added to the OSSL, we should be able to serve more representative 
+calibration models.
+
+The bundle approach could be further extended to using also e.g.: 
+
+- spatial covariates (e.g. WorldClim layers),  
+- bare-Earth Spectra [@dematte2020bare],  
+- soil moisture daily estimates (matching the date of soil sampling) [@brocca2019sm2rain], 
+
+More and more layers will be gradually added to the OSSL registry to enable users to 
+increase accuracy of their predictions. For updates in the OSSL model library 
+please subscribe to our channels to stay up-to-date.
 
 ## Registering your own model
 

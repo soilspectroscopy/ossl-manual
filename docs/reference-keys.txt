@@ -51,10 +51,12 @@ fig:hist-wp1
 fig:plot-fc
 fig:hist-fc1
 fig:ac-soc1
+fig:pca-sim
 fig:ac-soc2
 fig:plot-opus
 fig:ac-ph1
 fig:plot-ads
+fig:ac-phm
 about
 soil-spectroscopy-for-global-good
 what-is-soil-spectroscopy
@@ -243,4 +245,5 @@ predicting-soil-properties-using-mir-spectra
 predicting-soil-properties-using-mir-spectra-and-geographical-covariates
 predicting-soil-properties-using-visnir-spectra
 importing-soil-spectral-scans-using-raw-data-formats
+the-bundle-approach-to-soil-spectroscopy-calibration
 registering-your-own-model
