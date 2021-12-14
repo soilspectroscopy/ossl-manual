@@ -86,6 +86,7 @@ kssl.ssl
 icraf.isric
 lucas.ssl
 afsis1.ssl
+afsis2.ssl
 caf.ssl
 neon.ssl
 soil-spetroscopy-organizations

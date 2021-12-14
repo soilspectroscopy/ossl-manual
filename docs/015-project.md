@@ -120,6 +120,21 @@ Data retrieved from: <https://registry.opendata.aws/afsis/> and <https://doi.org
 - 📋 Unique complete scans: 3806  
 - 📝 Import steps: [AFSIS](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS)  
 
+### AFSIS2.SSL
+
+_Description_: Africa Soil Information Service (AfSIS) Soil Chemistry Phase II. 
+The three datasets for Tanzania (<https://doi.org/10.34725/DVN/XUDGJY>), Ghana (<https://doi.org/10.34725/DVN/SPRSFN>) and Nigeria (<https://doi.org/10.34725/DVN/WLAKR2>). 
+Documentation of the datasets is available in @hengl2021african.
+Data has been analyzed at the ICRAF Soil-Plant Spectral Diagnostics Laboratory, Nairobi, and the Rothamsted Research. From the 31,269 soil scans, only 820 (2.6%) have reference data atteched to it.
+
+- 📕 Hengl, T., Miller, M.A.E., Križan, J., Shepherd, K.D., Sila, A., Kilibarda, M., Antonijevi, O., Glušica, L., Dobermann, A., Haefele, S.M., McGrath, S.P., Acquah, G.E., Collinson, J., Parente, L., Sheykhmousa, M., Saito, K., Johnson, J-M., Chamberlin, J., Silatsa, F.B.T., Yemefack, M., Wendt, J., MacMillan, R.A., Wheeler I. and Crouch, J. (2021) African soil properties and nutrients mapped at 30 m spatial resolution using two-scale ensemble machine learning. Scientific Reports, 11, 6130. <https://www.nature.com/articles/s41598-021-85639-y>.  
+- 🔗 Project website: <https://data.worldagroforestry.org/dataverse/icraf_soils>  
+- ©️ Data license: [Creative Commons — CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)   
+- 📍 Unique locations: 367  
+- 📋 Unique complete scans: 820  
+- 📝 Import steps: [AFSIS2](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS2)  
+
+
 ### CAF.SSL
 
 _Description_: [The Central African Soil Spectral Library](https://doi.org/10.5194/soil-7-693-2021). MIR scans of some collected based on 1800 samples in Central Africa. 

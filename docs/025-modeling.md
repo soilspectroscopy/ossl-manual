@@ -508,18 +508,17 @@ and Earth Observation data, basically any additional information that could pote
 help with calibration. We refer to this as the _"bundle approach"_. The key 
 assumption of the bundle approach is that accuracy of predictions could be somewhat 
 improved, which is especially important for soil organic carbon monitoring and similar. 
-Some previous research e.g. by @vohland2022quantification and @hong2022fusion indicate 
+Some previous research e.g. by @hong2022fusion and @vohland2022quantification indicate 
 that such fusion techniques could help improve accuracy of, especially, _in-situ_ methods.
 
 Because several of the training data sets, especially the KSSL and ICRAF-ISRIC, 
 come with both VisNIR and MIR scans, and are documented in detail, we were able 
 to fit global calibration models that can now be used to predict soil properties from a combination of data.
-
 Consider for example a sample from North Dakota with a profile code `S2014ND095001`, and 
 sample code `235157` (classified as _"Fine-loamy, mixed, superactive, frigid Calcic Hapludoll"_). 
 This sample was taken at location lon=-99.2064444; lat=48.8000056; and covers 
 the depth interval 101--125 cm (B2 horizon). We can predict value of soil pH by 
-using both VisNIR and MIR spectra:
+using both VisNIR and MIR scans for the same sample:
 
 
 ```r
@@ -596,8 +595,8 @@ for predicting soil pH from spectral scans. Thus, in this specific case, also th
 prediction error shows relatively narrow range of uncertainty.
 
 <div class="figure">
-<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/ph.h2o_usda.4c1_index/ap.visnir.mir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination." width="70%" />
-<p class="caption">(\#fig:ac-phm)Accuracy plot for `ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination.</p>
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/ph.h2o_usda.4c1_index/ap.visnir.mir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination. As compared with other calibration models this seems to be most accurate, although difference with the pure MIR model is not significant." width="70%" />
+<p class="caption">(\#fig:ac-phm)Accuracy plot for `ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination. As compared with other calibration models this seems to be most accurate, although difference with the pure MIR model is not significant.</p>
 </div>
 
 The bundle approach in the OSSL is used at the moment by default for all soil 
@@ -614,7 +613,7 @@ The bundle approach could be further extended to using also e.g.:
 
 More and more layers will be gradually added to the OSSL registry to enable users to 
 increase accuracy of their predictions. For updates in the OSSL model library 
-please subscribe to our channels to stay up-to-date.
+please subscribe to [our channels](https://soilspectroscopy.org) to stay up-to-date.
 
 ## Registering your own model
 

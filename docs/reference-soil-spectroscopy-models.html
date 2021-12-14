@@ -194,8 +194,9 @@ div.csl-indent {
 <li class="chapter" data-level="3.2.2" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#icraf.isric"><i class="fa fa-check"></i><b>3.2.2</b> ICRAF.ISRIC</a></li>
 <li class="chapter" data-level="3.2.3" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#lucas.ssl"><i class="fa fa-check"></i><b>3.2.3</b> LUCAS.SSL</a></li>
 <li class="chapter" data-level="3.2.4" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#afsis1.ssl"><i class="fa fa-check"></i><b>3.2.4</b> AFSIS1.SSL</a></li>
-<li class="chapter" data-level="3.2.5" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#caf.ssl"><i class="fa fa-check"></i><b>3.2.5</b> CAF.SSL</a></li>
-<li class="chapter" data-level="3.2.6" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#neon.ssl"><i class="fa fa-check"></i><b>3.2.6</b> NEON.SSL</a></li>
+<li class="chapter" data-level="3.2.5" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#afsis2.ssl"><i class="fa fa-check"></i><b>3.2.5</b> AFSIS2.SSL</a></li>
+<li class="chapter" data-level="3.2.6" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#caf.ssl"><i class="fa fa-check"></i><b>3.2.6</b> CAF.SSL</a></li>
+<li class="chapter" data-level="3.2.7" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#neon.ssl"><i class="fa fa-check"></i><b>3.2.7</b> NEON.SSL</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#soil-spetroscopy-organizations"><i class="fa fa-check"></i><b>3.3</b> Soil spetroscopy organizations</a>
 <ul>
@@ -756,16 +757,16 @@ and Earth Observation data, basically any additional information that could pote
 help with calibration. We refer to this as the <em>“bundle approach”</em>. The key
 assumption of the bundle approach is that accuracy of predictions could be somewhat
 improved, which is especially important for soil organic carbon monitoring and similar.
-Some previous research e.g. by <span class="citation"><a href="#ref-vohland2022quantification" role="doc-biblioref">Vohland et al.</a> (<a href="#ref-vohland2022quantification" role="doc-biblioref">2022</a>)</span> and <span class="citation"><a href="#ref-hong2022fusion" role="doc-biblioref">Hong et al.</a> (<a href="#ref-hong2022fusion" role="doc-biblioref">2022</a>)</span> indicate
+Some previous research e.g. by <span class="citation"><a href="#ref-hong2022fusion" role="doc-biblioref">Hong et al.</a> (<a href="#ref-hong2022fusion" role="doc-biblioref">2022</a>)</span> and <span class="citation"><a href="#ref-vohland2022quantification" role="doc-biblioref">Vohland et al.</a> (<a href="#ref-vohland2022quantification" role="doc-biblioref">2022</a>)</span> indicate
 that such fusion techniques could help improve accuracy of, especially, <em>in-situ</em> methods.</p>
 <p>Because several of the training data sets, especially the KSSL and ICRAF-ISRIC,
 come with both VisNIR and MIR scans, and are documented in detail, we were able
-to fit global calibration models that can now be used to predict soil properties from a combination of data.</p>
-<p>Consider for example a sample from North Dakota with a profile code <code>S2014ND095001</code>, and
+to fit global calibration models that can now be used to predict soil properties from a combination of data.
+Consider for example a sample from North Dakota with a profile code <code>S2014ND095001</code>, and
 sample code <code>235157</code> (classified as <em>“Fine-loamy, mixed, superactive, frigid Calcic Hapludoll”</em>).
 This sample was taken at location lon=-99.2064444; lat=48.8000056; and covers
 the depth interval 101–125 cm (B2 horizon). We can predict value of soil pH by
-using both VisNIR and MIR spectra:</p>
+using both VisNIR and MIR scans for the same sample:</p>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="reference-soil-spectroscopy-models.html#cb84-1" aria-hidden="true" tabindex="-1"></a>mir.x <span class="ot">=</span> simplerspec<span class="sc">::</span><span class="fu">read_opus_bin_univ</span>(<span class="st">&#39;sample-data/235157XS01.0&#39;</span>)</span></code></pre></div>
 <pre><code>## Extracted spectra data from file: &lt;235157XS01.0&gt;</code></pre>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="reference-soil-spectroscopy-models.html#cb86-1" aria-hidden="true" tabindex="-1"></a>asd.raw <span class="ot">=</span> <span class="fu">as.data.frame</span>(asdreader<span class="sc">::</span><span class="fu">get_spectra</span>(<span class="st">&quot;sample-data/235157MD01.asd&quot;</span>))</span></code></pre></div>
@@ -812,9 +813,9 @@ F-statistic: 4.913e+04 on 4 and 42324 DF,  p-value: &lt; 2.2e-16</code></pre>
 for predicting soil pH from spectral scans. Thus, in this specific case, also the
 prediction error shows relatively narrow range of uncertainty.</p>
 <div class="figure"><span id="fig:ac-phm"></span>
-<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/ph.h2o_usda.4c1_index/ap.visnir.mir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination." width="70%" />
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/ph.h2o_usda.4c1_index/ap.visnir.mir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination. As compared with other calibration models this seems to be most accurate, although difference with the pure MIR model is not significant." width="70%" />
 <p class="caption">
-Figure 5.7: Accuracy plot for <code>ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds</code> the VisNIR-MIR combination.
+Figure 5.7: Accuracy plot for <code>ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds</code> the VisNIR-MIR combination. As compared with other calibration models this seems to be most accurate, although difference with the pure MIR model is not significant.
 </p>
 </div>
 <p>The bundle approach in the OSSL is used at the moment by default for all soil
@@ -832,7 +833,7 @@ calibration models.</p>
 </ul>
 <p>More and more layers will be gradually added to the OSSL registry to enable users to
 increase accuracy of their predictions. For updates in the OSSL model library
-please subscribe to our channels to stay up-to-date.</p>
+please subscribe to <a href="https://soilspectroscopy.org">our channels</a> to stay up-to-date.</p>
 </div>
 </div>
 <div id="registering-your-own-model" class="section level2" number="5.3">
@@ -860,7 +861,7 @@ use, R package versions etc;</li>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-brocca2019sm2rain" class="csl-entry">
-Brocca, Luca, Paolo Filippucci, Sebastian Hahn, Luca Ciabatta, Christian Massari, Stefania Camici, Lothar Schüller, Bojan Bojkov, and Wolfgang Wagner. 2019. <span>“Sm2rain–ASCAT (2007–2018): Global Daily Satellite Rainfall Data from ASCAT Soil Moisture Observations.”</span> <em>Earth System Science Data</em> 11 (4): 1583–1601. <a href="https://doi.org/10.5194/essd-11-1583-2019">https://doi.org/10.5194/essd-11-1583-2019</a>.
+Brocca, Luca, Paolo Filippucci, Sebastian Hahn, Luca Ciabatta, Christian Massari, Stefania Camici, Lothar Schüller, Bojan Bojkov, and Wolfgang Wagner. 2019. <span>“<span class="nocase">SM2RAIN–ASCAT (2007–2018): global daily satellite rainfall data from ASCAT soil moisture observations</span>.”</span> <em>Earth System Science Data</em> 11 (4): 1583–1601. <a href="https://doi.org/10.5194/essd-11-1583-2019">https://doi.org/10.5194/essd-11-1583-2019</a>.
 </div>
 <div id="ref-chang2001near" class="csl-entry">
 Chang, Cheng-Wen, David Laird, Maurice J Mausbach, and Charles R Hurburgh Jr. 2001. <span>“Near-Infrared Reflectance Spectroscopy–Principal Components Regression Analyses of Soil Properties.”</span> <em>Soil Science Society of America Journal</em> 65 (2): 480. <a href="https://doi.org/10.2136/sssaj2001.652480x">https://doi.org/10.2136/sssaj2001.652480x</a>.

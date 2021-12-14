@@ -285,9 +285,10 @@ and/or [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/legalcode) lice
 
 ## Suggested literature
 
-Some other connected publications and initiatives describing collation 
-and import of soil spectroscopy data:
+Some other connected publications and initiatives describing collation, 
+import and use of soil spectroscopy data:
 
+- Angelopoulou, T., Balafoutis, A., Zalidis, G., & Bochtis, D. (2020). [From laboratory to proximal sensing spectroscopy for soil organic carbon estimation—a review](https://doi.org/10.3390/su12020443). Sustainability, 12(2), 443. <https://doi.org/10.3390/su12020443>  
 - Ayres, E. (2019). [Quantitative Guidelines for Establishing and Operating Soil Archives](https://doi.org/10.2136/sssaj2019.02.0050). Soil Science Society of America Journal, 83(4), 973-981. <https://doi.org/10.2136/sssaj2019.02.0050>  
 - Benedetti, F. and van Egmond, F. (2021). [Global Soil Spectroscopy Assessment](https://doi.org/10.4060/cb6265en). Spectral soil data – Needs and capacities. Rome, FAO. <https://doi.org/10.4060/cb6265en>  
 - Dudek, M., Kabała, C., Łabaz, B., Mituła, P., Bednik, M., & Medyńska-Juraszek, A. (2021). [Mid-Infrared Spectroscopy Supports Identification of the Origin of Organic Matter in Soils](https://doi.org/10.3390/land10020215). Land, 10(2), 215. <https://doi.org/10.3390/land10020215>  
