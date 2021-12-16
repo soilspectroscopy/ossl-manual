@@ -61,6 +61,10 @@ These characteristic spectra (see Fig. below) can then be used to estimate numer
 knitr::include_graphics("img/Spectroscopy-Schematic.jpeg")
 ```
 
+```{r soil-visnir, echo=FALSE, fig.cap="Example of spectral signatures for large number of VisNIR scans (KSSL).", out.width="80%"}
+knitr::include_graphics("img/VNIR_Raw_Spectra.png")
+```
+
 ## Open Soil Spectral Library
 
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.5759693.svg)](https://doi.org/10.5281/zenodo.5759693)

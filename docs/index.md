@@ -1,7 +1,7 @@
 ---
 title: "Open Soil Spectral Library"
 author: "Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors"
-date: "14 December, 2021"
+date: "16 December, 2021"
 knit: bookdown::render_book
 site: bookdown::bookdown_site
 documentclass: svmono
@@ -58,6 +58,11 @@ These characteristic spectra (see Fig. below) can then be used to estimate numer
 <div class="figure">
 <img src="img/Spectroscopy-Schematic.jpeg" alt="Schematic explanation of the soil spectroscopy. For more info see: https://soilspectroscopy.org/." width="100%" />
 <p class="caption">(\#fig:soil-pnts)Schematic explanation of the soil spectroscopy. For more info see: https://soilspectroscopy.org/.</p>
+</div>
+
+<div class="figure">
+<img src="img/VNIR_Raw_Spectra.png" alt="Example of spectral signatures for large number of VisNIR scans (KSSL)." width="80%" />
+<p class="caption">(\#fig:soil-visnir)Example of spectral signatures for large number of VisNIR scans (KSSL).</p>
 </div>
 
 ## Open Soil Spectral Library

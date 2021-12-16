@@ -1,9 +1,12 @@
 fig:soil-pnts
+fig:soil-visnir
 fig:soil-db
 fig:pnts-vnir
 fig:pnts-mir
 fig:mongodb-gui
 fig:pull-request
+fig:kssl-curves
+fig:icraf-curves
 fig:plot-alkcl
 fig:hist-alkcl1
 fig:plot-bd

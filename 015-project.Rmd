@@ -75,6 +75,10 @@ includes >50,000 MIR spectra collected on soils primarily from the United States
 - `r emo::ji("clipboard")` Unique complete scans:  
 - `r emo::ji("memo")` Import steps: [KSSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/KSSL)  
 
+```{r kssl-curves, echo=FALSE, fig.cap="KSSL VisNIR spectral signatures for different soil texture fractions.", out.width="90%"}
+knitr::include_graphics("img/KSSL_VNIR_Graphs_Particle_Size_Consistency.jpeg")
+```
+
 ### ICRAF.ISRIC
 
 _Description_: [A Globally Distributed Soil Spectral Library Mid Infrared Diffuse 
@@ -90,6 +94,9 @@ Nations Avenue, Nairobi, Kenya.
 - `r emo::ji("clipboard")` Unique complete scans: 4308  
 - `r emo::ji("memo")` Import steps: [ICRAF_ISRIC](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/ICRAF_ISRIC)  
 
+```{r icraf-curves, echo=FALSE, fig.cap="ICRAF-ISRIC VisNIR spectral signatures for different soil texture fractions.", out.width="90%"}
+knitr::include_graphics("img/ICRAF_VNIR_Graphs_Particle_Size_Consistency.jpeg")
+```
 
 ### LUCAS.SSL
 
