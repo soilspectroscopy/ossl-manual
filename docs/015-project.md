@@ -89,7 +89,7 @@ The samples are from 58 countries spanning Africa, Asia, Europe, North America, 
 Data available under the CC-BY 4.0 license.
 
 - 📕 World Agroforestry Centre, (2014). [The ICRAF/ISRIC spectral library](https://worldagroforestry.org/sites/default/files/Description_ICRAF-ISRIC%20Soil%20VNIR%20Spectral%20Library.pdf), Soil-Plant Spectral Diagnostics laboratory, United
-Nations Avenue, Nairobi, Kenya.  
+Nations Avenue, Nairobi, Kenya. <https://doi.org/10.34725/DVN/MFHA9C>  
 - 🔗 Project website: <https://www.worldagroforestry.org/sd/landhealth/soil-plant-spectral-diagnostics-laboratory/soil-spectra-library>  
 - ©️ Data license: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)  
 - 📍 Unique locations: 785  

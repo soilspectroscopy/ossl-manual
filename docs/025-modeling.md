@@ -96,28 +96,28 @@ summary(ossl.model$learner.model$super.model$learner.model)
 ```
 Residuals:
     Min      1Q  Median      3Q     Max 
--3.1506 -0.0525  0.0181  0.0661  3.2965 
+-3.4601 -0.0535 -0.0038  0.0442  3.2730 
 
 Coefficients:
-               Estimate Std. Error t value Pr(>|t|)    
-(Intercept)   -0.038545   0.001042  -36.98   <2e-16 ***
-regr.ranger    0.235387   0.004115   57.20   <2e-16 ***
-regr.xgboost  -0.046506   0.003291  -14.13   <2e-16 ***
-regr.cvglmnet  0.470197   0.004078  115.30   <2e-16 ***
-regr.cubist    0.362526   0.003946   91.88   <2e-16 ***
+                Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   -0.0099587  0.0008464 -11.766  < 2e-16 ***
+regr.ranger    0.1507935  0.0048442  31.129  < 2e-16 ***
+regr.xgboost  -0.0231490  0.0034214  -6.766 1.34e-11 ***
+regr.cvglmnet  0.4153936  0.0049604  83.742  < 2e-16 ***
+regr.cubist    0.4674533  0.0044788 104.371  < 2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.1539 on 57400 degrees of freedom
-Multiple R-squared:  0.9821,	Adjusted R-squared:  0.9821 
-F-statistic: 7.857e+05 on 4 and 57400 DF,  p-value: < 2.2e-16
+Residual standard error: 0.1501 on 72246 degrees of freedom
+Multiple R-squared:  0.9776,	Adjusted R-squared:  0.9776 
+F-statistic: 7.891e+05 on 4 and 72246 DF,  p-value: < 2.2e-16
 ```
 
 This shows that the model is an ensemble Machine Learning model based on stacking of 
 four individual models: `regr.ranger` (Random Forest) [@wright2017ranger], `regr.xgboost` (Gradient Boosting) [@chen2015xgboost], 
 `regr.cvglmnet` (Lasso and Elastic-Net Regularized GLM) [@friedman2010] and `regr.cubist` (Cubist) [@kuhn2012cubist]. The RMSE 
-of the model is 0.1539 (R-square = 0.982), based on 5-fold Cross Validation with spatial blocking (global grid with 100 km blocks). 
-Model is based on 57,400 training points.
+of the model is 0.150 (R-square = 0.978), based on 5-fold Cross Validation with spatial blocking (global grid with 100 km blocks). 
+Model is based on 72,246 training points.
 
 We can take a look at the accuracy plot for this model:
 
@@ -164,6 +164,7 @@ We can generate predictions by using:
 pred.oc = predict.ossl(t.var="log..oc_usda.calc_wpct", mir.raw=mir.raw, 
                        ossl.model=ossl.model, ylim=c(0,100),
                        ossl.pca.mir=ossl.pca.mir)
+str(pred.oc$pred)
 ```
 
 where `ylim=c(0,100)` specifies that the prediction values need to be in the range 0 to 100 (values out of these range will be replaced with either 0 or 100).
@@ -173,8 +174,8 @@ The output of this model consists of four parts:
 List of 4
  $ pred :'data.frame':	20 obs. of  5 variables:
  $ x    :'data.frame':	20 obs. of  68 variables:
- $ model:'data.frame':	57405 obs. of  5 variables:
- $ cf   : num 0.901
+ $ model:'data.frame':	72251 obs. of  5 variables:
+ $ cf   : num 1.38
 ```
 
 1. Predictions with back-transformed value and lower and upper prediction intervals (1 std.);
@@ -191,22 +192,22 @@ str(pred.oc$pred)
 
 ```
 'data.frame':	20 obs. of  5 variables:
- $ pred.mean : num  -0.0278 0.0463 0.2844 0.7926 -0.0312 ...
- $ pred.error: num  0.131 0.199 0.111 0.186 0.211 ...
- $ tpred.mean: num  0 0.0474 0.3289 1.209 0 ...
- $ lower.1std: num  NA NA 0.189 0.834 NA ...
- $ upper.1std: num  0.109 0.278 0.485 1.66 0.197 ...
+ $ pred.mean : num  0.0496 0.1128 0.3848 0.776 -0.0608 ...
+ $ pred.error: num  0.115 0.248 0.085 0.151 0.168 ...
+ $ tpred.mean: num  0.0509 0.1194 0.4693 1.1728 0 ...
+ $ lower.1std: num  0 0 0.35 0.868 0 ...
+ $ upper.1std: num  0.179 0.435 0.6 1.527 0.113 ...
  ```
 
 which means that the predicted `oc_usda.calc_wpct` for first row is 0 etc. The 
 `lower.1std` and `upper.1std` indicate standard prediction interval based on the 
 prediction error derived in the log-space. For higher values of `oc_usda.calc_wpct` 
-prediction interval gets thus proportionally higher for larger absolute values e.g. for row 14 it is between 27% and 34%:
+prediction interval gets thus proportionally higher for larger absolute values e.g. for row 14 it is between 24% and 39%:
 
 ```
 #pred.oc$pred[14,]
    pred.mean pred.error tpred.mean lower.1std upper.1std
-14  3.441673  0.1139194   30.23918   26.87566   34.00856
+14  3.464914  0.2329579    30.9737   24.32914    39.3613
 ```
 
 Finally, we can check how well does the new data (MIR scans) reflect the training 
@@ -275,30 +276,30 @@ xl[1:20,]
 
 ```
                                                       importance relative_importance
-mir.PC3                                               5521.13516          44.4468400
-mir.PC8                                               1787.82570          14.3925480
-mir.PC1                                               1329.03090          10.6991085
-hzn_depth                                             1144.91684           9.2169335
-mir.PC14                                               236.53609           1.9041884
-mir.PC4                                                188.32570           1.5160799
-mir.PC2                                                127.37407           1.0254005
-mir.PC10                                               118.35989           0.9528336
-mir.PC18                                                98.84466           0.7957300
-clm_lst_mod11a2.aug.day_m_1km_s0..0cm_2000..2017_v1.0   89.33596           0.7191820
-mir.PC7                                                 63.62915           0.5122342
-mir.PC17                                                56.04595           0.4511872
-mir.PC6                                                 55.01997           0.4429277
-mir.PC15                                                54.79086           0.4410833
-mir.PC24                                                54.56629           0.4392755
-mir.PC11                                                52.60740           0.4235058
-clm_lst_mod11a2.feb.day_m_1km_s0..0cm_2000..2017_v1.0   52.41105           0.4219251
-mir.PC12                                                41.14582           0.3312366
-mir.PC16                                                38.54017           0.3102603
-mir.PC9                                                 36.17293           0.2912032
+mir.PC3                                               6511.36634          27.9140468
+mir.PC2                                               3603.29854          15.4472409
+hzn_depth                                             2936.76269          12.5898202
+mir.PC5                                               2570.81057          11.0209936
+mir.PC10                                              1767.58676           7.5775954
+mir.PC1                                               1276.53105           5.4724532
+mir.PC4                                                925.96202           3.9695735
+mir.PC11                                               416.65775           1.7862002
+mir.PC24                                               226.11697           0.9693572
+mir.PC26                                               158.90309           0.6812131
+mir.PC8                                                116.63143           0.4999957
+mir.PC16                                               102.35918           0.4388110
+mir.PC7                                                 98.52643           0.4223801
+clm_lst_mod11a2.jul.day_m_1km_s0..0cm_2000..2017_v1.0   65.31996           0.2800248
+mir.PC12                                                62.31378           0.2671374
+mir.PC28                                                60.13722           0.2578066
+mir.PC15                                                59.47144           0.2549524
+clm_lst_mod11a2.jun.day_m_1km_s0..0cm_2000..2017_v1.0   59.17326           0.2536741
+mir.PC6                                                 49.88579           0.2138590
+mir.PC17                                                49.37638           0.2116752
 ```
 
-here `hzn_depth` comes as an important covariate and so is `lst_mod11a2.aug.day` 
-(MOD11A long-term meand daily temperature for August). The original MIR PCA components, however, 
+here `hzn_depth` comes as an important covariate and so is `lst_mod11a2.jul.day` 
+(MOD11A long-term meand daily temperature for July). The original MIR PCA components, however, 
 dominate the prediction model.
 
 The global layers (global land mask at 1-km spatial resolution) are listed at <https://github.com/soilspectroscopy/ossl-models> and are available as a Cloud-service / Cloud-Optimized GeoTIFFs. The process of spatial overlay for new prediction locations, however, can significantly increase 
@@ -409,8 +410,8 @@ This dataset is hence ready to generate predictions using global OSSL models. We
 for example generate prediction of soil pH using the following model:
 
 <div class="figure">
-<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/ph.h2o_usda.4c1_index/ap.mir_mlr..eml_ossl_ll_v1.rds.png" alt="Accuracy plot for `ph.h2o_usda.4c1_index/mir_mlr..eml_ossl_ll_v1.rds`." width="70%" />
-<p class="caption">(\#fig:ac-ph1)Accuracy plot for `ph.h2o_usda.4c1_index/mir_mlr..eml_ossl_ll_v1.rds`.</p>
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.mir_mlr..eml_ossl_ll_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/mir_mlr..eml_ossl_ll_v1.rds`." width="70%" />
+<p class="caption">(\#fig:ac-ph1)Accuracy plot for `log..oc_usda.calc_wpct/mir_mlr..eml_ossl_ll_v1.rds`.</p>
 </div>
 
 in this case we need to add also lon-lat coordinates and specify the soil depth:
@@ -418,24 +419,24 @@ in this case we need to add also lon-lat coordinates and specify the soil depth:
 
 ```r
 pcm3 = url(paste0(rep, "pca.ossl/mpca_mir_ossl_v1.rds"), "rb")
-eml3 = url(paste0(rep, "ph.h2o_usda.4c1_index/mir_mlr..eml_ossl_ll_v1.rds"), "rb")
+eml3 = url(paste0(rep, "log..oc_usda.calc_wpct/mir_mlr..eml_ossl_ll_v1.rds"), "rb")
 ossl.pca.mir = readRDS(pcm3)
 ossl.model = readRDS(eml3)
-pred.ph1 = predict.ossl(t.var="ph.h2o_usda.4c1_index", mir.raw=mir.x[["spc"]], ossl.model=ossl.model, 
+pred.oc1 = predict.ossl(t.var="log..oc_usda.calc_wpct", mir.raw=mir.x[["spc"]], ossl.model=ossl.model, 
              ossl.pca.mir=ossl.pca.mir, geo.type="ll", lon=28.50299833, lat=-13.10194667, hzn_depth=10, 
-             cog.dir="/data/WORLDCLIM/", dataset.code_ascii_c="AFSIS1.SSL")
+             cog.dir="/data/WORLDCLIM/", dataset.code_ascii_c="AFSIS1.SSL", ylim=c(0,100))
 ```
 
-which gives us predictions of `ph.h2o_usda.4c1_index`:
+which gives us predictions of `log..oc_usda.calc_wpct`:
 
 
 ```r
-pred.ph1$pred
+pred.oc1$pred
 ```
 
 ```
-  pred.mean pred.error lower.1std upper.1std
-1  8.077812   1.507783   6.570029   9.585594
+    pred.mean pred.error tpred.mean lower.1std upper.1std
+1 -0.02636144  0.2813155          0          0  0.2904023
 ```
 
 Note that we had to now specify that this MIR data is from AfSIS project via the 
@@ -486,7 +487,7 @@ pred.ph2$pred
 
 ```
   pred.mean pred.error lower.1std upper.1std
-1  6.565335  0.4353427   6.129993   7.000678
+1  6.292328  0.9341607   5.358167   7.226489
 ```
 
 We are currently building an API that will work directly with standard raw files 
@@ -542,11 +543,11 @@ To make the prediction, we need to specify multiple inputs:
 ```r
 pcm.m = url(paste0(rep, "pca.ossl/mpca_mir_ossl_v1.rds"), "rb")
 pcm.v = url(paste0(rep, "pca.ossl/mpca_visnir_ossl_v1.rds"), "rb")
-eml.b = url(paste0(rep, "ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds"), "rb")
+eml.b = url(paste0(rep, "log..oc_usda.calc_wpct/visnir.mir_mlr..eml_ossl_na_v1.rds"), "rb")
 ossl.pca.mir = readRDS(pcm.m)
 ossl.pca.visnir = readRDS(pcm.v)
 ossl.model = readRDS(eml.b)
-pred.ph.b = predict.ossl(t.var="ph.h2o_usda.4c1_index", spc.type="visnir.mir", 
+pred.ph.b = predict.ossl(t.var="log..oc_usda.calc_wpct", spc.type="visnir.mir", 
              mir.raw=mir.x[["spc"]], visnir.raw=asd.raw, 
              ossl.model=ossl.model, ossl.pca.mir=ossl.pca.mir,  
              ossl.pca.visnir=ossl.pca.visnir, hzn_depth=113)
@@ -560,43 +561,39 @@ pred.ph.b$pred
 ```
 
 ```
-  pred.mean pred.error lower.1std upper.1std
-1  8.453564  0.3284695   8.125094   8.782034
+  pred.mean pred.error tpred.mean lower.1std upper.1std
+1 0.2532955 0.02471756  0.2882639  0.2568115  0.3205034
 ```
 
 We can look at the model prediction accuracy based on 5-fold cross-validation:
 
 ```
-summary(ossl.model$learner.model$super.model$learner.model)
-Call:
-stats::lm(formula = f, data = d)
-
 Residuals:
     Min      1Q  Median      3Q     Max 
--4.5169 -0.2364  0.0394  0.2470  3.4846 
+-3.1514 -0.0625 -0.0015  0.0571  3.1702 
 
 Coefficients:
                Estimate Std. Error t value Pr(>|t|)    
-(Intercept)   -0.159098   0.015687 -10.142  < 2e-16 ***
-regr.ranger    0.487147   0.008804  55.330  < 2e-16 ***
-regr.xgboost  -0.038330   0.007740  -4.952 7.36e-07 ***
-regr.cvglmnet  0.297675   0.005977  49.807  < 2e-16 ***
-regr.cubist    0.286002   0.004804  59.534  < 2e-16 ***
+(Intercept)   -0.019667   0.001207 -16.297   <2e-16 ***
+regr.ranger    0.213650   0.006611  32.319   <2e-16 ***
+regr.xgboost  -0.012230   0.005358  -2.283   0.0225 *  
+regr.cvglmnet  0.479673   0.006236  76.923   <2e-16 ***
+regr.cubist    0.337446   0.005674  59.470   <2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.4726 on 42324 degrees of freedom
-Multiple R-squared:  0.8228,	Adjusted R-squared:  0.8228 
-F-statistic: 4.913e+04 on 4 and 42324 DF,  p-value: < 2.2e-16
+Residual standard error: 0.1577 on 37312 degrees of freedom
+Multiple R-squared:  0.9767,	Adjusted R-squared:  0.9767 
+F-statistic: 3.91e+05 on 4 and 37312 DF,  p-value: < 2.2e-16
 ```
 
-This shows that the model has an RMSE of 0.47, which seems to be the [best performing model](https://github.com/soilspectroscopy/ossl-models) 
-for predicting soil pH from spectral scans. Thus, in this specific case, also the 
+This shows that the model has an RMSE of 0.156 (in log-scale), which seems to be the [among the best performing models](https://github.com/soilspectroscopy/ossl-models) 
+for predicting soil organic carbon content in % from spectral scans. Thus, in this specific case, also the 
 prediction error shows relatively narrow range of uncertainty.
 
 <div class="figure">
-<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/ph.h2o_usda.4c1_index/ap.visnir.mir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination. As compared with other calibration models this seems to be most accurate, although difference with the pure MIR model is not significant." width="70%" />
-<p class="caption">(\#fig:ac-phm)Accuracy plot for `ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination. As compared with other calibration models this seems to be most accurate, although difference with the pure MIR model is not significant.</p>
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.visnir.mir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination. As compared with other calibration models this seems to be most accurate, although difference with the pure MIR model is not significant." width="70%" />
+<p class="caption">(\#fig:ac-phm)Accuracy plot for `log..oc_usda.calc_wpct/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination. As compared with other calibration models this seems to be most accurate, although difference with the pure MIR model is not significant.</p>
 </div>
 
 The bundle approach in the OSSL is used at the moment by default for all soil 

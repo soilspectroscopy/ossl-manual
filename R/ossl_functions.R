@@ -70,7 +70,7 @@ readRDS.gz <- function(file,threads=parallel::detectCores()) {
   return(object)
 }
 
-predict.ossl <- function(t.var, mir.raw, visnir.raw, lon, lat, hzn_depth=10, ossl.model, ossl.pca.mir, ossl.pca.visnir, spc.type="mir", subset.type="ossl", geo.type="na", n.spc=60, sd=TRUE, cog.dir="/data/WORLDCLIM/", ylim=NULL, dataset.code_ascii_c="KSSL.SSL"){ ## =c(0,100)
+predict.ossl <- function(t.var, mir.raw, visnir.raw, lon, lat, hzn_depth=10, ossl.model, ossl.pca.mir, ossl.pca.visnir, spc.type="mir", subset.type="ossl", geo.type="na", n.spc=120, sd=TRUE, cog.dir="/data/WORLDCLIM/", ylim=NULL, dataset.code_ascii_c="KSSL.SSL"){ ## =c(0,100)
   ## check that input scans pass some minimum checks
   if(spc.type == "mir" | spc.type == "visnir.mir"){
     if(!any(class(mir.raw)=="data.frame")){
@@ -101,8 +101,10 @@ predict.ossl <- function(t.var, mir.raw, visnir.raw, lon, lat, hzn_depth=10, oss
     spc = lapply(spc, function(j){ round(ifelse(j<0, NA, ifelse(j>3, 3, j))*1000) })
     spc = as.data.frame(do.call(cbind, spc))
     names(spc) = paste0("scan_mir.", seq(600, 4000, by=2), "_abs")
+    ## convert to 1st der:
+    spc = prospectr::gapDer(spc, m=1, w=5, s=1, delta.wav=2)
     class(ossl.pca.mir) = "prcomp"
-    X1.pc = as.data.frame(predict(ossl.pca.mir, newdata=spc))[,1:n.spc]
+    X1.pc = as.data.frame(predict(ossl.pca.mir, newdata=as.data.frame(spc)))[,1:n.spc]
     colnames(X1.pc) = paste0("mir.PC", 1:n.spc)
   } else {
     X1.pc = NA
@@ -115,8 +117,10 @@ predict.ossl <- function(t.var, mir.raw, visnir.raw, lon, lat, hzn_depth=10, oss
     spc = lapply(spc, function(j){ round(ifelse(j<0, NA, ifelse(j>1, 1, j))*100, 1) })
     spc = as.data.frame(do.call(cbind, spc))
     names(spc) = paste0("scan_visnir.", seq(350, 2500, by=2), "_pcnt")
+    ## convert to 1st der:
+    spc = prospectr::gapDer(spc, m=1, w=5, s=1, delta.wav=2)
     class(ossl.pca.visnir) = "prcomp"
-    X2.pc = as.data.frame(predict(ossl.pca.visnir, newdata=spc))[,1:n.spc]
+    X2.pc = as.data.frame(predict(ossl.pca.visnir, newdata=as.data.frame(spc)))[,1:n.spc]
     colnames(X2.pc) = paste0("visnir.PC", 1:n.spc)
   } else {
     X2.pc = NA
@@ -132,9 +136,10 @@ predict.ossl <- function(t.var, mir.raw, visnir.raw, lon, lat, hzn_depth=10, oss
   ## Bind all covariates together
   X = do.call(cbind, list(X1.pc, X2.pc, ov.tmp, data.frame(hzn_depth=hzn_depth)))
   X = X[,which(unlist(lapply(X, function(x) !all(is.na(x)))))]
-  X$dataset.code_ascii_c = factor(rep(dataset.code_ascii_c, nrow(X)), levels = c("NEON.SSL", "KSSL.SSL", "CAF.SSL", "AFSIS1.SSL", "ICRAF.ISRIC", "LUCAS.SSL"))
+  X$dataset.code_ascii_c = factor(rep(dataset.code_ascii_c, nrow(X)), levels = c("NEON.SSL", "KSSL.SSL", "CAF.SSL", "AFSIS1.SSL", "AFSIS2.SSL", "ICRAF.ISRIC", "LUCAS.SSL"))
   X <- fastDummies::dummy_cols(X, select_columns = "dataset.code_ascii_c")
   ## predict
+  ossl.model$features[which(!ossl.model$features %in% names(X))]
   pred = predict(ossl.model, newdata=X[,ossl.model$features])
   ## uncertainty
   if(sd==TRUE){

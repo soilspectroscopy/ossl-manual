@@ -478,26 +478,26 @@ We use the first 60 PCA components for further modeling, which is an arbitrary d
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="reference-soil-spectroscopy-models.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ossl.model<span class="sc">$</span>learner.model<span class="sc">$</span>super.model<span class="sc">$</span>learner.model)</span></code></pre></div>
 <pre><code>Residuals:
     Min      1Q  Median      3Q     Max 
--3.1506 -0.0525  0.0181  0.0661  3.2965 
+-3.4601 -0.0535 -0.0038  0.0442  3.2730 
 
 Coefficients:
-               Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)   -0.038545   0.001042  -36.98   &lt;2e-16 ***
-regr.ranger    0.235387   0.004115   57.20   &lt;2e-16 ***
-regr.xgboost  -0.046506   0.003291  -14.13   &lt;2e-16 ***
-regr.cvglmnet  0.470197   0.004078  115.30   &lt;2e-16 ***
-regr.cubist    0.362526   0.003946   91.88   &lt;2e-16 ***
+                Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   -0.0099587  0.0008464 -11.766  &lt; 2e-16 ***
+regr.ranger    0.1507935  0.0048442  31.129  &lt; 2e-16 ***
+regr.xgboost  -0.0231490  0.0034214  -6.766 1.34e-11 ***
+regr.cvglmnet  0.4153936  0.0049604  83.742  &lt; 2e-16 ***
+regr.cubist    0.4674533  0.0044788 104.371  &lt; 2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.1539 on 57400 degrees of freedom
-Multiple R-squared:  0.9821,    Adjusted R-squared:  0.9821 
-F-statistic: 7.857e+05 on 4 and 57400 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 0.1501 on 72246 degrees of freedom
+Multiple R-squared:  0.9776,    Adjusted R-squared:  0.9776 
+F-statistic: 7.891e+05 on 4 and 72246 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>This shows that the model is an ensemble Machine Learning model based on stacking of
 four individual models: <code>regr.ranger</code> (Random Forest) <span class="citation">(<a href="#ref-wright2017ranger" role="doc-biblioref">Wright and Ziegler 2017</a>)</span>, <code>regr.xgboost</code> (Gradient Boosting) <span class="citation">(<a href="#ref-chen2015xgboost" role="doc-biblioref">Chen et al. 2015</a>)</span>,
 <code>regr.cvglmnet</code> (Lasso and Elastic-Net Regularized GLM) <span class="citation">(<a href="#ref-friedman2010" role="doc-biblioref">Friedman, Hastie, and Tibshirani 2010</a>)</span> and <code>regr.cubist</code> (Cubist) <span class="citation">(<a href="#ref-kuhn2012cubist" role="doc-biblioref">Kuhn et al. 2012</a>)</span>. The RMSE
-of the model is 0.1539 (R-square = 0.982), based on 5-fold Cross Validation with spatial blocking (global grid with 100 km blocks).
-Model is based on 57,400 training points.</p>
+of the model is 0.150 (R-square = 0.978), based on 5-fold Cross Validation with spatial blocking (global grid with 100 km blocks).
+Model is based on 72,246 training points.</p>
 <p>We can take a look at the accuracy plot for this model:</p>
 <div class="figure"><span id="fig:ac-soc1"></span>
 <img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.mir_mlr..eml_kssl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/mir_mlr..eml_kssl_na_v1.rds`." width="70%" />
@@ -526,14 +526,15 @@ The column names contain the wavelengths / MIR channels:</p>
 <p>We can generate predictions by using:</p>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="reference-soil-spectroscopy-models.html#cb56-1" aria-hidden="true" tabindex="-1"></a>pred.oc <span class="ot">=</span> <span class="fu">predict.ossl</span>(<span class="at">t.var=</span><span class="st">&quot;log..oc_usda.calc_wpct&quot;</span>, <span class="at">mir.raw=</span>mir.raw, </span>
 <span id="cb56-2"><a href="reference-soil-spectroscopy-models.html#cb56-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">ossl.model=</span>ossl.model, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100</span>),</span>
-<span id="cb56-3"><a href="reference-soil-spectroscopy-models.html#cb56-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">ossl.pca.mir=</span>ossl.pca.mir)</span></code></pre></div>
+<span id="cb56-3"><a href="reference-soil-spectroscopy-models.html#cb56-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">ossl.pca.mir=</span>ossl.pca.mir)</span>
+<span id="cb56-4"><a href="reference-soil-spectroscopy-models.html#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(pred.oc<span class="sc">$</span>pred)</span></code></pre></div>
 <p>where <code>ylim=c(0,100)</code> specifies that the prediction values need to be in the range 0 to 100 (values out of these range will be replaced with either 0 or 100).
 The output of this model consists of four parts:</p>
 <pre><code>List of 4
  $ pred :&#39;data.frame&#39;:  20 obs. of  5 variables:
  $ x    :&#39;data.frame&#39;:  20 obs. of  68 variables:
- $ model:&#39;data.frame&#39;:  57405 obs. of  5 variables:
- $ cf   : num 0.901</code></pre>
+ $ model:&#39;data.frame&#39;:  72251 obs. of  5 variables:
+ $ cf   : num 1.38</code></pre>
 <ol style="list-style-type: decimal">
 <li>Predictions with back-transformed value and lower and upper prediction intervals (1 std.);</li>
 <li>Data frame with all covariate layers needed to generate predictions;</li>
@@ -543,18 +544,18 @@ The output of this model consists of four parts:</p>
 <p>The predictions are in the format:</p>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="reference-soil-spectroscopy-models.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(pred.oc<span class="sc">$</span>pred)</span></code></pre></div>
 <pre><code>&#39;data.frame&#39;:   20 obs. of  5 variables:
- $ pred.mean : num  -0.0278 0.0463 0.2844 0.7926 -0.0312 ...
- $ pred.error: num  0.131 0.199 0.111 0.186 0.211 ...
- $ tpred.mean: num  0 0.0474 0.3289 1.209 0 ...
- $ lower.1std: num  NA NA 0.189 0.834 NA ...
- $ upper.1std: num  0.109 0.278 0.485 1.66 0.197 ...</code></pre>
+ $ pred.mean : num  0.0496 0.1128 0.3848 0.776 -0.0608 ...
+ $ pred.error: num  0.115 0.248 0.085 0.151 0.168 ...
+ $ tpred.mean: num  0.0509 0.1194 0.4693 1.1728 0 ...
+ $ lower.1std: num  0 0 0.35 0.868 0 ...
+ $ upper.1std: num  0.179 0.435 0.6 1.527 0.113 ...</code></pre>
 <p>which means that the predicted <code>oc_usda.calc_wpct</code> for first row is 0 etc. The
 <code>lower.1std</code> and <code>upper.1std</code> indicate standard prediction interval based on the
 prediction error derived in the log-space. For higher values of <code>oc_usda.calc_wpct</code>
-prediction interval gets thus proportionally higher for larger absolute values e.g. for row 14 it is between 27% and 34%:</p>
+prediction interval gets thus proportionally higher for larger absolute values e.g. for row 14 it is between 24% and 39%:</p>
 <pre><code>#pred.oc$pred[14,]
    pred.mean pred.error tpred.mean lower.1std upper.1std
-14  3.441673  0.1139194   30.23918   26.87566   34.00856</code></pre>
+14  3.464914  0.2329579    30.9737   24.32914    39.3613</code></pre>
 <p>Finally, we can check how well does the new data (MIR scans) reflect the training
 data used to build the calibration models:</p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="reference-soil-spectroscopy-models.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hexbin)</span>
@@ -600,28 +601,28 @@ additional geographical covariate layers help with producing predictions:</p>
 <span id="cb64-3"><a href="reference-soil-spectroscopy-models.html#cb64-3" aria-hidden="true" tabindex="-1"></a>xl <span class="ot">=</span> xl[<span class="fu">order</span>(xl<span class="sc">$</span>importance, <span class="at">decreasing =</span> <span class="cn">TRUE</span>),]</span>
 <span id="cb64-4"><a href="reference-soil-spectroscopy-models.html#cb64-4" aria-hidden="true" tabindex="-1"></a>xl[<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>,]</span></code></pre></div>
 <pre><code>                                                      importance relative_importance
-mir.PC3                                               5521.13516          44.4468400
-mir.PC8                                               1787.82570          14.3925480
-mir.PC1                                               1329.03090          10.6991085
-hzn_depth                                             1144.91684           9.2169335
-mir.PC14                                               236.53609           1.9041884
-mir.PC4                                                188.32570           1.5160799
-mir.PC2                                                127.37407           1.0254005
-mir.PC10                                               118.35989           0.9528336
-mir.PC18                                                98.84466           0.7957300
-clm_lst_mod11a2.aug.day_m_1km_s0..0cm_2000..2017_v1.0   89.33596           0.7191820
-mir.PC7                                                 63.62915           0.5122342
-mir.PC17                                                56.04595           0.4511872
-mir.PC6                                                 55.01997           0.4429277
-mir.PC15                                                54.79086           0.4410833
-mir.PC24                                                54.56629           0.4392755
-mir.PC11                                                52.60740           0.4235058
-clm_lst_mod11a2.feb.day_m_1km_s0..0cm_2000..2017_v1.0   52.41105           0.4219251
-mir.PC12                                                41.14582           0.3312366
-mir.PC16                                                38.54017           0.3102603
-mir.PC9                                                 36.17293           0.2912032</code></pre>
-<p>here <code>hzn_depth</code> comes as an important covariate and so is <code>lst_mod11a2.aug.day</code>
-(MOD11A long-term meand daily temperature for August). The original MIR PCA components, however,
+mir.PC3                                               6511.36634          27.9140468
+mir.PC2                                               3603.29854          15.4472409
+hzn_depth                                             2936.76269          12.5898202
+mir.PC5                                               2570.81057          11.0209936
+mir.PC10                                              1767.58676           7.5775954
+mir.PC1                                               1276.53105           5.4724532
+mir.PC4                                                925.96202           3.9695735
+mir.PC11                                               416.65775           1.7862002
+mir.PC24                                               226.11697           0.9693572
+mir.PC26                                               158.90309           0.6812131
+mir.PC8                                                116.63143           0.4999957
+mir.PC16                                               102.35918           0.4388110
+mir.PC7                                                 98.52643           0.4223801
+clm_lst_mod11a2.jul.day_m_1km_s0..0cm_2000..2017_v1.0   65.31996           0.2800248
+mir.PC12                                                62.31378           0.2671374
+mir.PC28                                                60.13722           0.2578066
+mir.PC15                                                59.47144           0.2549524
+clm_lst_mod11a2.jun.day_m_1km_s0..0cm_2000..2017_v1.0   59.17326           0.2536741
+mir.PC6                                                 49.88579           0.2138590
+mir.PC17                                                49.37638           0.2116752</code></pre>
+<p>here <code>hzn_depth</code> comes as an important covariate and so is <code>lst_mod11a2.jul.day</code>
+(MOD11A long-term meand daily temperature for July). The original MIR PCA components, however,
 dominate the prediction model.</p>
 <p>The global layers (global land mask at 1-km spatial resolution) are listed at <a href="https://github.com/soilspectroscopy/ossl-models" class="uri">https://github.com/soilspectroscopy/ossl-models</a> and are available as a Cloud-service / Cloud-Optimized GeoTIFFs. The process of spatial overlay for new prediction locations, however, can significantly increase
 prediction time, so something to be aware of.</p>
@@ -691,23 +692,23 @@ Figure 5.4: Spectral absorbances plot using MIR data.
 <p>This dataset is hence ready to generate predictions using global OSSL models. We can,
 for example generate prediction of soil pH using the following model:</p>
 <div class="figure"><span id="fig:ac-ph1"></span>
-<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/ph.h2o_usda.4c1_index/ap.mir_mlr..eml_ossl_ll_v1.rds.png" alt="Accuracy plot for `ph.h2o_usda.4c1_index/mir_mlr..eml_ossl_ll_v1.rds`." width="70%" />
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.mir_mlr..eml_ossl_ll_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/mir_mlr..eml_ossl_ll_v1.rds`." width="70%" />
 <p class="caption">
-Figure 5.5: Accuracy plot for <code>ph.h2o_usda.4c1_index/mir_mlr..eml_ossl_ll_v1.rds</code>.
+Figure 5.5: Accuracy plot for <code>log..oc_usda.calc_wpct/mir_mlr..eml_ossl_ll_v1.rds</code>.
 </p>
 </div>
 <p>in this case we need to add also lon-lat coordinates and specify the soil depth:</p>
 <div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="reference-soil-spectroscopy-models.html#cb76-1" aria-hidden="true" tabindex="-1"></a>pcm3 <span class="ot">=</span> <span class="fu">url</span>(<span class="fu">paste0</span>(rep, <span class="st">&quot;pca.ossl/mpca_mir_ossl_v1.rds&quot;</span>), <span class="st">&quot;rb&quot;</span>)</span>
-<span id="cb76-2"><a href="reference-soil-spectroscopy-models.html#cb76-2" aria-hidden="true" tabindex="-1"></a>eml3 <span class="ot">=</span> <span class="fu">url</span>(<span class="fu">paste0</span>(rep, <span class="st">&quot;ph.h2o_usda.4c1_index/mir_mlr..eml_ossl_ll_v1.rds&quot;</span>), <span class="st">&quot;rb&quot;</span>)</span>
+<span id="cb76-2"><a href="reference-soil-spectroscopy-models.html#cb76-2" aria-hidden="true" tabindex="-1"></a>eml3 <span class="ot">=</span> <span class="fu">url</span>(<span class="fu">paste0</span>(rep, <span class="st">&quot;log..oc_usda.calc_wpct/mir_mlr..eml_ossl_ll_v1.rds&quot;</span>), <span class="st">&quot;rb&quot;</span>)</span>
 <span id="cb76-3"><a href="reference-soil-spectroscopy-models.html#cb76-3" aria-hidden="true" tabindex="-1"></a>ossl.pca.mir <span class="ot">=</span> <span class="fu">readRDS</span>(pcm3)</span>
 <span id="cb76-4"><a href="reference-soil-spectroscopy-models.html#cb76-4" aria-hidden="true" tabindex="-1"></a>ossl.model <span class="ot">=</span> <span class="fu">readRDS</span>(eml3)</span>
-<span id="cb76-5"><a href="reference-soil-spectroscopy-models.html#cb76-5" aria-hidden="true" tabindex="-1"></a>pred.ph1 <span class="ot">=</span> <span class="fu">predict.ossl</span>(<span class="at">t.var=</span><span class="st">&quot;ph.h2o_usda.4c1_index&quot;</span>, <span class="at">mir.raw=</span>mir.x[[<span class="st">&quot;spc&quot;</span>]], <span class="at">ossl.model=</span>ossl.model, </span>
+<span id="cb76-5"><a href="reference-soil-spectroscopy-models.html#cb76-5" aria-hidden="true" tabindex="-1"></a>pred.oc1 <span class="ot">=</span> <span class="fu">predict.ossl</span>(<span class="at">t.var=</span><span class="st">&quot;log..oc_usda.calc_wpct&quot;</span>, <span class="at">mir.raw=</span>mir.x[[<span class="st">&quot;spc&quot;</span>]], <span class="at">ossl.model=</span>ossl.model, </span>
 <span id="cb76-6"><a href="reference-soil-spectroscopy-models.html#cb76-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">ossl.pca.mir=</span>ossl.pca.mir, <span class="at">geo.type=</span><span class="st">&quot;ll&quot;</span>, <span class="at">lon=</span><span class="fl">28.50299833</span>, <span class="at">lat=</span><span class="sc">-</span><span class="fl">13.10194667</span>, <span class="at">hzn_depth=</span><span class="dv">10</span>, </span>
-<span id="cb76-7"><a href="reference-soil-spectroscopy-models.html#cb76-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">cog.dir=</span><span class="st">&quot;/data/WORLDCLIM/&quot;</span>, <span class="at">dataset.code_ascii_c=</span><span class="st">&quot;AFSIS1.SSL&quot;</span>)</span></code></pre></div>
-<p>which gives us predictions of <code>ph.h2o_usda.4c1_index</code>:</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="reference-soil-spectroscopy-models.html#cb77-1" aria-hidden="true" tabindex="-1"></a>pred.ph1<span class="sc">$</span>pred</span></code></pre></div>
-<pre><code>  pred.mean pred.error lower.1std upper.1std
-1  8.077812   1.507783   6.570029   9.585594</code></pre>
+<span id="cb76-7"><a href="reference-soil-spectroscopy-models.html#cb76-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">cog.dir=</span><span class="st">&quot;/data/WORLDCLIM/&quot;</span>, <span class="at">dataset.code_ascii_c=</span><span class="st">&quot;AFSIS1.SSL&quot;</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100</span>))</span></code></pre></div>
+<p>which gives us predictions of <code>log..oc_usda.calc_wpct</code>:</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="reference-soil-spectroscopy-models.html#cb77-1" aria-hidden="true" tabindex="-1"></a>pred.oc1<span class="sc">$</span>pred</span></code></pre></div>
+<pre><code>    pred.mean pred.error tpred.mean lower.1std upper.1std
+1 -0.02636144  0.2813155          0          0  0.2904023</code></pre>
 <p>Note that we had to now specify that this MIR data is from AfSIS project via the
 <code>AFSIS1.SSL</code> argument.</p>
 <p>Likewise, we can also read the ASD files using the <a href="https://github.com/pierreroudier/asdreader">asdreader package</a>, so we can
@@ -738,7 +739,7 @@ Figure 5.6: Spectral reflectance plot using VisNIR data.
 <span id="cb82-6"><a href="reference-soil-spectroscopy-models.html#cb82-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">ossl.model=</span>ossl.model, <span class="at">spc.type=</span><span class="st">&quot;visnir&quot;</span>, <span class="at">ossl.pca.visnir=</span>ossl.pca.visnir)</span>
 <span id="cb82-7"><a href="reference-soil-spectroscopy-models.html#cb82-7" aria-hidden="true" tabindex="-1"></a>pred.ph2<span class="sc">$</span>pred</span></code></pre></div>
 <pre><code>  pred.mean pred.error lower.1std upper.1std
-1  6.565335  0.4353427   6.129993   7.000678</code></pre>
+1  6.292328  0.9341607   5.358167   7.226489</code></pre>
 <p>We are currently building an API that will work directly with standard raw files
 coming directly from the instruments. This should help make the OSSL more robust
 and applicable to thousands of requests on a daily basis.</p>
@@ -775,47 +776,43 @@ model for the bundle calibration <code>visnir.mir_mlr..eml_ossl_na_v1.rds</code>
 <p>To make the prediction, we need to specify multiple inputs:</p>
 <div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="reference-soil-spectroscopy-models.html#cb87-1" aria-hidden="true" tabindex="-1"></a>pcm.m <span class="ot">=</span> <span class="fu">url</span>(<span class="fu">paste0</span>(rep, <span class="st">&quot;pca.ossl/mpca_mir_ossl_v1.rds&quot;</span>), <span class="st">&quot;rb&quot;</span>)</span>
 <span id="cb87-2"><a href="reference-soil-spectroscopy-models.html#cb87-2" aria-hidden="true" tabindex="-1"></a>pcm.v <span class="ot">=</span> <span class="fu">url</span>(<span class="fu">paste0</span>(rep, <span class="st">&quot;pca.ossl/mpca_visnir_ossl_v1.rds&quot;</span>), <span class="st">&quot;rb&quot;</span>)</span>
-<span id="cb87-3"><a href="reference-soil-spectroscopy-models.html#cb87-3" aria-hidden="true" tabindex="-1"></a>eml.b <span class="ot">=</span> <span class="fu">url</span>(<span class="fu">paste0</span>(rep, <span class="st">&quot;ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds&quot;</span>), <span class="st">&quot;rb&quot;</span>)</span>
+<span id="cb87-3"><a href="reference-soil-spectroscopy-models.html#cb87-3" aria-hidden="true" tabindex="-1"></a>eml.b <span class="ot">=</span> <span class="fu">url</span>(<span class="fu">paste0</span>(rep, <span class="st">&quot;log..oc_usda.calc_wpct/visnir.mir_mlr..eml_ossl_na_v1.rds&quot;</span>), <span class="st">&quot;rb&quot;</span>)</span>
 <span id="cb87-4"><a href="reference-soil-spectroscopy-models.html#cb87-4" aria-hidden="true" tabindex="-1"></a>ossl.pca.mir <span class="ot">=</span> <span class="fu">readRDS</span>(pcm.m)</span>
 <span id="cb87-5"><a href="reference-soil-spectroscopy-models.html#cb87-5" aria-hidden="true" tabindex="-1"></a>ossl.pca.visnir <span class="ot">=</span> <span class="fu">readRDS</span>(pcm.v)</span>
 <span id="cb87-6"><a href="reference-soil-spectroscopy-models.html#cb87-6" aria-hidden="true" tabindex="-1"></a>ossl.model <span class="ot">=</span> <span class="fu">readRDS</span>(eml.b)</span>
-<span id="cb87-7"><a href="reference-soil-spectroscopy-models.html#cb87-7" aria-hidden="true" tabindex="-1"></a>pred.ph.b <span class="ot">=</span> <span class="fu">predict.ossl</span>(<span class="at">t.var=</span><span class="st">&quot;ph.h2o_usda.4c1_index&quot;</span>, <span class="at">spc.type=</span><span class="st">&quot;visnir.mir&quot;</span>, </span>
+<span id="cb87-7"><a href="reference-soil-spectroscopy-models.html#cb87-7" aria-hidden="true" tabindex="-1"></a>pred.ph.b <span class="ot">=</span> <span class="fu">predict.ossl</span>(<span class="at">t.var=</span><span class="st">&quot;log..oc_usda.calc_wpct&quot;</span>, <span class="at">spc.type=</span><span class="st">&quot;visnir.mir&quot;</span>, </span>
 <span id="cb87-8"><a href="reference-soil-spectroscopy-models.html#cb87-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">mir.raw=</span>mir.x[[<span class="st">&quot;spc&quot;</span>]], <span class="at">visnir.raw=</span>asd.raw, </span>
 <span id="cb87-9"><a href="reference-soil-spectroscopy-models.html#cb87-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">ossl.model=</span>ossl.model, <span class="at">ossl.pca.mir=</span>ossl.pca.mir,  </span>
 <span id="cb87-10"><a href="reference-soil-spectroscopy-models.html#cb87-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">ossl.pca.visnir=</span>ossl.pca.visnir, <span class="at">hzn_depth=</span><span class="dv">113</span>)</span></code></pre></div>
 <p>which gives:</p>
 <div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="reference-soil-spectroscopy-models.html#cb88-1" aria-hidden="true" tabindex="-1"></a>pred.ph.b<span class="sc">$</span>pred</span></code></pre></div>
-<pre><code>  pred.mean pred.error lower.1std upper.1std
-1  8.453564  0.3284695   8.125094   8.782034</code></pre>
+<pre><code>  pred.mean pred.error tpred.mean lower.1std upper.1std
+1 0.2532955 0.02471756  0.2882639  0.2568115  0.3205034</code></pre>
 <p>We can look at the model prediction accuracy based on 5-fold cross-validation:</p>
-<pre><code>summary(ossl.model$learner.model$super.model$learner.model)
-Call:
-stats::lm(formula = f, data = d)
-
-Residuals:
+<pre><code>Residuals:
     Min      1Q  Median      3Q     Max 
--4.5169 -0.2364  0.0394  0.2470  3.4846 
+-3.1514 -0.0625 -0.0015  0.0571  3.1702 
 
 Coefficients:
                Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)   -0.159098   0.015687 -10.142  &lt; 2e-16 ***
-regr.ranger    0.487147   0.008804  55.330  &lt; 2e-16 ***
-regr.xgboost  -0.038330   0.007740  -4.952 7.36e-07 ***
-regr.cvglmnet  0.297675   0.005977  49.807  &lt; 2e-16 ***
-regr.cubist    0.286002   0.004804  59.534  &lt; 2e-16 ***
+(Intercept)   -0.019667   0.001207 -16.297   &lt;2e-16 ***
+regr.ranger    0.213650   0.006611  32.319   &lt;2e-16 ***
+regr.xgboost  -0.012230   0.005358  -2.283   0.0225 *  
+regr.cvglmnet  0.479673   0.006236  76.923   &lt;2e-16 ***
+regr.cubist    0.337446   0.005674  59.470   &lt;2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.4726 on 42324 degrees of freedom
-Multiple R-squared:  0.8228,    Adjusted R-squared:  0.8228 
-F-statistic: 4.913e+04 on 4 and 42324 DF,  p-value: &lt; 2.2e-16</code></pre>
-<p>This shows that the model has an RMSE of 0.47, which seems to be the <a href="https://github.com/soilspectroscopy/ossl-models">best performing model</a>
-for predicting soil pH from spectral scans. Thus, in this specific case, also the
+Residual standard error: 0.1577 on 37312 degrees of freedom
+Multiple R-squared:  0.9767,    Adjusted R-squared:  0.9767 
+F-statistic: 3.91e+05 on 4 and 37312 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>This shows that the model has an RMSE of 0.156 (in log-scale), which seems to be the <a href="https://github.com/soilspectroscopy/ossl-models">among the best performing models</a>
+for predicting soil organic carbon content in % from spectral scans. Thus, in this specific case, also the
 prediction error shows relatively narrow range of uncertainty.</p>
 <div class="figure"><span id="fig:ac-phm"></span>
-<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/ph.h2o_usda.4c1_index/ap.visnir.mir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination. As compared with other calibration models this seems to be most accurate, although difference with the pure MIR model is not significant." width="70%" />
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.visnir.mir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination. As compared with other calibration models this seems to be most accurate, although difference with the pure MIR model is not significant." width="70%" />
 <p class="caption">
-Figure 5.7: Accuracy plot for <code>ph.h2o_usda.4c1_index/visnir.mir_mlr..eml_ossl_na_v1.rds</code> the VisNIR-MIR combination. As compared with other calibration models this seems to be most accurate, although difference with the pure MIR model is not significant.
+Figure 5.7: Accuracy plot for <code>log..oc_usda.calc_wpct/visnir.mir_mlr..eml_ossl_na_v1.rds</code> the VisNIR-MIR combination. As compared with other calibration models this seems to be most accurate, although difference with the pure MIR model is not significant.
 </p>
 </div>
 <p>The bundle approach in the OSSL is used at the moment by default for all soil
