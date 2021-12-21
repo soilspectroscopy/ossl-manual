@@ -4,6 +4,7 @@ fig:soil-db
 fig:pnts-vnir
 fig:pnts-mir
 fig:mongodb-gui
+fig:ossl-api
 fig:pull-request
 fig:kssl-curves
 fig:icraf-curves
@@ -65,6 +66,7 @@ soil-spectroscopy-for-global-good
 what-is-soil-spectroscopy
 open-soil-spectral-library
 ossl-mongodb
+ossl-api
 target-variables-of-interest
 contributing-data
 contributing-documentation
@@ -251,3 +253,5 @@ predicting-soil-properties-using-visnir-spectra
 importing-soil-spectral-scans-using-raw-data-formats
 the-bundle-approach-to-soil-spectroscopy-calibration
 registering-your-own-model
+access-ossl-data-to-fit-your-own-models
+registering-and-hosting-models

@@ -261,7 +261,7 @@ pred.oc2 = predict.ossl(t.var="log..oc_usda.calc_wpct", mir.raw=mir.raw, ossl.mo
 ```
 
 This type of prediction is somewhat more complex as the function `predict.ossl` needs also to overlay 
-points (`lon` and `lat`) vs some 62 GeoTIFFs (containing [WorldClim2.1](https://www.worldclim.org/data/worldclim21.html) layers and [MODIS LST](https://doi.org/10.5281/zenodo.1420114) layers). In this case the layers are located on a local machine, which significantly speeds up predictions function. 
+points (`lon` and `lat`) vs some [60+ GeoTIFFs](https://github.com/soilspectroscopy/ossl-models/blob/main/out/global_layers1km.csv) (containing [WorldClim2.1](https://www.worldclim.org/data/worldclim21.html) layers and [MODIS LST](https://doi.org/10.5281/zenodo.1420114) layers). In this case the layers are located on a local machine, which significantly speeds up predictions function. 
 
 We can look at the variable importance table to try to understand how much the 
 additional geographical covariate layers help with producing predictions:
@@ -613,6 +613,32 @@ increase accuracy of their predictions. For updates in the OSSL model library
 please subscribe to [our channels](https://soilspectroscopy.org) to stay up-to-date.
 
 ## Registering your own model
+
+### Access OSSL data to fit your own models
+
+To load the complete analysis-ready OSSL regression-matrix dataset (486MB) as a 
+single table in R and run predictive modeling please use:
+
+
+```r
+rep2 = "http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_import/"
+rm.ossl = readRDS(url(paste0(rep2, "rm.ossl_v1.rds", "rb")))
+```
+
+```
+dim(rm.ossl)
+## 152,146 obs. of 2962 variables
+```
+
+The compilation currently contains training MIR (70k) and VisNIR (70k) spectral 
+scans + soil calibration data (51,732 unique locations).
+
+We are now fitting [globally-applicable prediction models](https://github.com/soilspectroscopy/ossl-models) 
+to enable free and open production of primary soil data. [The output models](https://doi.org/10.5281/zenodo.5759693) are available via the S3 cloud-service 
+and/or API under CC-BY license. If you fit your own models and/or if you are interested in contributing 
+to this project please contact us and help us make better open soil data for global good!
+
+### Registering and hosting models
 
 If you plan to contribute your own models to the Soil Spectroscopy for Global Good project 
 please follow these steps:
