@@ -833,6 +833,12 @@ calibration models.</p>
 </li>
 <li>soil moisture daily estimates (matching the date of soil sampling) <span class="citation">(<a href="#ref-brocca2019sm2rain" role="doc-biblioref">Brocca et al. 2019</a>)</span>,</li>
 </ul>
+<div class="figure"><span id="fig:map-bareearth"></span>
+<img src="img/bareearth_spectra_250m.jpg" alt="Example of a satellite-based bare-earth spectral product based on @dematte2020bare. The global data is available at 250-m spatial resolution." width="90%" />
+<p class="caption">
+Figure 5.8: Example of a satellite-based bare-earth spectral product based on <span class="citation"><a href="#ref-dematte2020bare" role="doc-biblioref">Demattê et al.</a> (<a href="#ref-dematte2020bare" role="doc-biblioref">2020</a>)</span>. The global data is available at 250-m spatial resolution.
+</p>
+</div>
 <p>More and more layers will be gradually added to the OSSL registry to enable users to
 increase accuracy of their predictions. For updates in the OSSL model library
 please subscribe to <a href="https://soilspectroscopy.org">our channels</a> to stay up-to-date.</p>
@@ -845,7 +851,7 @@ please subscribe to <a href="https://soilspectroscopy.org">our channels</a> to s
 <p>To load the complete analysis-ready OSSL regression-matrix dataset (486MB) as a
 single table in R and run predictive modeling please use:</p>
 <div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="reference-soil-spectroscopy-models.html#cb91-1" aria-hidden="true" tabindex="-1"></a>rep2 <span class="ot">=</span> <span class="st">&quot;http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_import/&quot;</span></span>
-<span id="cb91-2"><a href="reference-soil-spectroscopy-models.html#cb91-2" aria-hidden="true" tabindex="-1"></a>rm.ossl <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="fu">url</span>(<span class="fu">paste0</span>(rep2, <span class="st">&quot;rm.ossl_v1.rds&quot;</span>, <span class="st">&quot;rb&quot;</span>)))</span></code></pre></div>
+<span id="cb91-2"><a href="reference-soil-spectroscopy-models.html#cb91-2" aria-hidden="true" tabindex="-1"></a>rm.ossl <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="fu">url</span>(<span class="fu">paste0</span>(rep2, <span class="st">&quot;rm.ossl_v1.rds&quot;</span>), <span class="st">&quot;rb&quot;</span>))</span></code></pre></div>
 <pre><code>dim(rm.ossl)
 ## 152,146 obs. of 2962 variables</code></pre>
 <p>The compilation currently contains training MIR (70k) and VisNIR (70k) spectral

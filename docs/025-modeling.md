@@ -608,6 +608,11 @@ The bundle approach could be further extended to using also e.g.:
 - bare-Earth Spectra [@dematte2020bare],  
 - soil moisture daily estimates (matching the date of soil sampling) [@brocca2019sm2rain], 
 
+<div class="figure">
+<img src="img/bareearth_spectra_250m.jpg" alt="Example of a satellite-based bare-earth spectral product based on @dematte2020bare. The global data is available at 250-m spatial resolution." width="90%" />
+<p class="caption">(\#fig:map-bareearth)Example of a satellite-based bare-earth spectral product based on @dematte2020bare. The global data is available at 250-m spatial resolution.</p>
+</div>
+
 More and more layers will be gradually added to the OSSL registry to enable users to 
 increase accuracy of their predictions. For updates in the OSSL model library 
 please subscribe to [our channels](https://soilspectroscopy.org) to stay up-to-date.
@@ -622,7 +627,7 @@ single table in R and run predictive modeling please use:
 
 ```r
 rep2 = "http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_import/"
-rm.ossl = readRDS(url(paste0(rep2, "rm.ossl_v1.rds", "rb")))
+rm.ossl = readRDS(url(paste0(rep2, "rm.ossl_v1.rds"), "rb"))
 ```
 
 ```

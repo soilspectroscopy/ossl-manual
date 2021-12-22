@@ -61,6 +61,7 @@ fig:plot-opus
 fig:ac-ph1
 fig:plot-ads
 fig:ac-phm
+fig:map-bareearth
 about
 soil-spectroscopy-for-global-good
 what-is-soil-spectroscopy
