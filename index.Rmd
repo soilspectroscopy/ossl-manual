@@ -55,13 +55,13 @@ Soil spectroscopy for global good project works with other global initiatives in
 Soil spectroscopy is the measurement of light absorption when light in the [visible, near infrared or mid 
 infrared (Vis–NIR–MIR) regions of the electromagnetic spectrum](https://en.wikipedia.org/wiki/Electromagnetic_spectrum) is applied to a soil surface. The proportion 
 of the incident radiation reflected by soil is sensed through Vis–NIR–MIR reflectance spectroscopy. 
-These characteristic spectra (see Fig. below) can then be used to estimate numerous soil attributes including: minerals, organic compounds and water. 
+These characteristic spectra (see Fig. below) can then be used to estimate numerous soil attributes including: contents of minerals, organic compounds and water. 
 
-```{r soil-pnts, echo=FALSE, fig.cap="Schematic explanation of the soil spectroscopy. For more info see: https://soilspectroscopy.org/.", out.width="100%"}
+```{r soil-pnts, echo=FALSE, fig.cap="Schematic explanation of soil spectroscopy. For more info see: https://soilspectroscopy.org/.", out.width="100%"}
 knitr::include_graphics("img/Spectroscopy-Schematic.jpeg")
 ```
 
-```{r soil-visnir, echo=FALSE, fig.cap="Example of spectral signatures for large number of VisNIR scans (KSSL).", out.width="80%"}
+```{r soil-visnir, echo=FALSE, fig.cap="Example of spectral signatures for a large number of VisNIR scans (KSSL).", out.width="80%"}
 knitr::include_graphics("img/VNIR_Raw_Spectra.png")
 ```
 
@@ -81,7 +81,7 @@ It includes (see also <https://github.com/soilspectroscopy>):
 
 The OSSL-DB has been prepared following the OSSL schema which is available at:
 
-As a general rule of thumb we recommend all contributors to use the following 
+As a general rule of thumb, we recommend all contributors to use the following 
 general OSSL scheme to organize Soil Observations & Measurements with four main tables 
 and metadata + legends organized in other tables:
 
@@ -89,8 +89,8 @@ and metadata + legends organized in other tables:
 knitr::include_graphics("img/design_soil_om_sheme.png")
 ```
 
-To access global compilation of soil legacy point data sets refer to <https://github.com/OpenGeoHub/SoilSamples> repository.
-To access and use Soil Spectroscopy tools also refer to <https://soilspectroscopy.org/>.
+To access global compilation of soil legacy point data sets, refer to <https://github.com/OpenGeoHub/SoilSamples>.
+To access and use Soil Spectroscopy tools, also refer to <https://soilspectroscopy.org/>.
 
 ```{r pnts-vnir, echo=FALSE, fig.cap="Up-to-date distribution of points with VisNIR scans.", out.width="100%"}
 knitr::include_graphics("img/visnir.pnts_sites.png")
@@ -109,7 +109,7 @@ TensorFlow and other cutting-edge ML algorithms can be easily integrated and ser
 
 To access OSSL DB best use the mongoDB either through a graphical user 
 interface using [Robo 3T](https://robomongo.org/download), or by using the [mongodb via R](https://www.mongodb.com/languages/mongodb-and-r-example). 
-The following parameters (database credentials) allow ready only access to DB:
+The following parameters (database credentials) allow read-only access to OSSL DB:
 
 - Name: soilspec4gg  
 - Address: api.soilspectroscopy.org  
@@ -128,7 +128,7 @@ x = lapply(ls, require, character.only = TRUE)
 knitr::include_graphics("img/mongodb_gui.png")
 ```
 
-First, we need to specify the parameters:
+First, we need to specify the parameters to initiate a connection to the DB:
 
 ```{r}
 library(mongolite)
@@ -148,13 +148,13 @@ soilspec4gg.db$url <- paste0(
 )
 ```
 
-Next, we can initiate connection:
+Next, we can initiate the connection:
 
 ```{r}
 soilspec4gg.init()
 ```
 
-and now we can query and load data directly into R, for example to get a sample from AfSIS1:
+And now, we can query and load data directly into R, for example to get a sample from AfSIS1:
 
 ```{r}
 id = "icr006475" 
@@ -169,7 +169,7 @@ dim(soilspec.sample)
 to construct requests to fetch data, models and generate predictions. The outputs 
 of predictions can be obtained as [JSON](https://www.json.org/json-en.html) or CSV files, making the system fully 
 interoperable. The OSSL API is at the moment based on using the [plumber package](https://www.rplumber.io/) 
-and is **provided for testing purposes only**. Users can calibrate maximum 20 rows 
+and is **provided for testing purposes only**. Users can make predictions with calibrated soil spectral prediction models for 20 spectra 
 per request, but these limits will be gradually extended.
 
 ```{r ossl-api, echo=FALSE, fig.cap="OSSL API is available for testing.", out.width="100%"}
@@ -229,18 +229,18 @@ there is enough data to fit calibration models.
 We encourage public and private entities to help this project and share SSL data. 
 The following four modes of data sharing are especially encouraged:
 
-1. Open your data by releasing it under Creative Commons ([CC-BY](https://creativecommons.org/licenses/by/4.0/), [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/))  
-or Open Data Commons Open Database License ([ODbL](https://opendatacommons.org/licenses/odbl/)). 
+1. Publish your data open access by releasing it under a Creative Commons license ([CC-BY](https://creativecommons.org/licenses/by/4.0/), [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/))  
+or the Open Data Commons Open Database License ([ODbL](https://opendatacommons.org/licenses/odbl/)). 
 This data can then directly imported into the OSSL.  
 2. Donate a small part (e.g. 5%) of your data (release under [CC-BY](https://creativecommons.org/licenses/by/4.0/), [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) and/or [ODbL](https://opendatacommons.org/licenses/odbl/)). 
-This data can then directly imported into the OSSL.  
-2. Allow SoilSpectroscopy.org project direct access to your data so that we can run data mining 
-and then release ONLY results of data mining under some Open Data license.  
+This data can then be directly imported into the OSSL.  
+2. Allow SoilSpectroscopy.org project direct access to your data so that we can perform data mining 
+and then release ONLY the data mining results under some Open Data license.  
 3. Use OSSL data to produce new derivative products, then share them through own 
 infrastructures OR contact us for providing hosting support.  
 
 We can sign professional **Data Sharing Agreements** with data producers 
-that specify in detail how will the data be used. Our primary interest is in enabling research, 
+that specify in detail how the data will be used. Our primary interest is in enabling research, 
 sharing and use of models (calibration and prediction) and collaboration of groups 
 across borders.
 
@@ -259,7 +259,7 @@ request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-re
 
 ## Contributors
 
-If you've contribute, add also your name and Twitter, ORCID or blog link
+If you've contributed, add also your name and Twitter, ORCID or blog link
 below:
 
 [Jonathan Sanderman](https://twitter.com/sandersoil), 
@@ -270,7 +270,7 @@ below:
 
 ## Disclaimer
 
-Whilst utmost care has been taken by the Soil Spectroscopy project and data authors while
+Whilst outmost care has been taken by the Soil Spectroscopy project and data authors while
 collecting and compiling the data, the data is provided _"as is"_. [Woodwell Climate Research Center](https://www.woodwellclimate.org/), [University of Florida](https://faculty.eng.ufl.edu/ktoddbrown/), [OpenGeoHub foundation](https://opengeohub.org/about) and its 
 suppliers and licensors hereby disclaim all warranties of any kind, express or implied, 
 including, without limitation, the warranties of merchantability, fitness for a particular 
@@ -294,10 +294,10 @@ This is a community project. No profits are being made from building and serving
 Open Spectral Library. If you would like to become a sponsor of the project, please 
 contact us via: <https://soilspectroscopy.org/contact/>.  
 
-## Licence
+## License
 
 This website/book and attached software is free to use, and is licensed under [the MIT License](https://en.wikipedia.org/wiki/MIT_License). The OSSL training data and models, 
-if not otherwise indicated, is available either under the [Creative Commons Attribution 4.0 International CC-BY](https://creativecommons.org/licenses/by/4.0/legalcode) 
+if not otherwise indicated, are available either under the [Creative Commons Attribution 4.0 International CC-BY](https://creativecommons.org/licenses/by/4.0/legalcode) 
 and/or [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license / [Open Data Commons Open Database License (ODbL) v1.0](https://opendatacommons.org/licenses/odbl/1-0/).
 
 ## Suggested literature
