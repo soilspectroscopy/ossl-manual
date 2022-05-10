@@ -971,7 +971,7 @@ Laboratory light source type.
 
 ### method.preparation_any_c
 
-Laboratory method preparation for samples.
+Laboratory method preparation for samples in the lab or in the field.
 
 ### scan.file_any_c
 
@@ -1004,6 +1004,18 @@ Scan contact name; example: `scan.contact.name_utf8_txt = 'Scarlett Murphy'`\
 ### scan.contact.email_ietf_email
 
 Scan contact email; example: `scan.contact.email_ietf_email = 'Scarlett.Murphy@usda.gov'`\
+
+### scan.mir.nafreq_ossl_pct
+
+Percent of absorbances with missing values per scan.
+
+### scan.mir.negfreq_ossl_pct
+
+Percent of absorbances with 0 / negative values per scan.
+
+### scan.mir.extfreq_ossl_pct
+
+Percent of absorbances with extreme values (>= 3) per scan.
 
 ### scan_mir.****_abs
 
@@ -1055,7 +1067,7 @@ Laboratory light source type.
 
 ### method.preparation_any_c
 
-Laboratory method preparation for samples.
+Laboratory method preparation for samples in the lab or in the field.
 
 ### scan.file_any_c
 
@@ -1088,6 +1100,18 @@ Scan contact name; example: `scan.contact.name_utf8_txt = 'Scarlett Murphy'`\
 ### scan.contact.email_ietf_email
 
 Scan contact email; example: `scan.contact.email_ietf_email = 'Scarlett.Murphy@usda.gov'`\
+
+### scan.visnir.nafreq_ossl_pct
+
+Percent of reflectances with missing values per scan.
+
+### scan.visnir.negfreq_ossl_pct
+
+Percent of reflectances with 0 / negative values per scan.
+
+### scan.visnir.extfreq_ossl_pct
+
+Percent of reflectances with extreme values (>= 100) per scan.
 
 ### scan_visnir.****_pcnt
 

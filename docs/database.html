@@ -330,7 +330,10 @@ div.csl-indent {
 <li class="chapter" data-level="4.3.14" data-path="database.html"><a href="database.html#scan.doi_idf_c"><i class="fa fa-check"></i><b>4.3.14</b> scan.doi_idf_c</a></li>
 <li class="chapter" data-level="4.3.15" data-path="database.html"><a href="database.html#scan.contact.name_utf8_txt"><i class="fa fa-check"></i><b>4.3.15</b> scan.contact.name_utf8_txt</a></li>
 <li class="chapter" data-level="4.3.16" data-path="database.html"><a href="database.html#scan.contact.email_ietf_email"><i class="fa fa-check"></i><b>4.3.16</b> scan.contact.email_ietf_email</a></li>
-<li class="chapter" data-level="4.3.17" data-path="database.html"><a href="database.html#scan_mir._abs"><i class="fa fa-check"></i><b>4.3.17</b> scan_mir.****_abs</a></li>
+<li class="chapter" data-level="4.3.17" data-path="database.html"><a href="database.html#scan.mir.nafreq_ossl_pct"><i class="fa fa-check"></i><b>4.3.17</b> scan.mir.nafreq_ossl_pct</a></li>
+<li class="chapter" data-level="4.3.18" data-path="database.html"><a href="database.html#scan.mir.negfreq_ossl_pct"><i class="fa fa-check"></i><b>4.3.18</b> scan.mir.negfreq_ossl_pct</a></li>
+<li class="chapter" data-level="4.3.19" data-path="database.html"><a href="database.html#scan.mir.extfreq_ossl_pct"><i class="fa fa-check"></i><b>4.3.19</b> scan.mir.extfreq_ossl_pct</a></li>
+<li class="chapter" data-level="4.3.20" data-path="database.html"><a href="database.html#scan_mir._abs"><i class="fa fa-check"></i><b>4.3.20</b> scan_mir.****_abs</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="database.html"><a href="database.html#visnir-table"><i class="fa fa-check"></i><b>4.4</b> VisNIR scans table</a>
 <ul>
@@ -350,7 +353,10 @@ div.csl-indent {
 <li class="chapter" data-level="4.4.14" data-path="database.html"><a href="database.html#scan.doi_idf_c-1"><i class="fa fa-check"></i><b>4.4.14</b> scan.doi_idf_c</a></li>
 <li class="chapter" data-level="4.4.15" data-path="database.html"><a href="database.html#scan.contact.name_utf8_txt-1"><i class="fa fa-check"></i><b>4.4.15</b> scan.contact.name_utf8_txt</a></li>
 <li class="chapter" data-level="4.4.16" data-path="database.html"><a href="database.html#scan.contact.email_ietf_email-1"><i class="fa fa-check"></i><b>4.4.16</b> scan.contact.email_ietf_email</a></li>
-<li class="chapter" data-level="4.4.17" data-path="database.html"><a href="database.html#scan_visnir._pcnt"><i class="fa fa-check"></i><b>4.4.17</b> scan_visnir.****_pcnt</a></li>
+<li class="chapter" data-level="4.4.17" data-path="database.html"><a href="database.html#scan.visnir.nafreq_ossl_pct"><i class="fa fa-check"></i><b>4.4.17</b> scan.visnir.nafreq_ossl_pct</a></li>
+<li class="chapter" data-level="4.4.18" data-path="database.html"><a href="database.html#scan.visnir.negfreq_ossl_pct"><i class="fa fa-check"></i><b>4.4.18</b> scan.visnir.negfreq_ossl_pct</a></li>
+<li class="chapter" data-level="4.4.19" data-path="database.html"><a href="database.html#scan.visnir.extfreq_ossl_pct"><i class="fa fa-check"></i><b>4.4.19</b> scan.visnir.extfreq_ossl_pct</a></li>
+<li class="chapter" data-level="4.4.20" data-path="database.html"><a href="database.html#scan_visnir._pcnt"><i class="fa fa-check"></i><b>4.4.20</b> scan_visnir.****_pcnt</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="database.html"><a href="database.html#harmonization-rules"><i class="fa fa-check"></i><b>4.5</b> Harmonization rules</a>
 <ul>
@@ -1457,7 +1463,7 @@ This ID links with the <a href="database.html#sites-table">Sites table</a>.</p>
 </div>
 <div id="method.preparation_any_c" class="section level3" number="4.3.8">
 <h3><span class="header-section-number">4.3.8</span> method.preparation_any_c</h3>
-<p>Laboratory method preparation for samples.</p>
+<p>Laboratory method preparation for samples in the lab or in the field.</p>
 </div>
 <div id="scan.file_any_c" class="section level3" number="4.3.9">
 <h3><span class="header-section-number">4.3.9</span> scan.file_any_c</h3>
@@ -1498,8 +1504,20 @@ This ID links with the <a href="database.html#sites-table">Sites table</a>.</p>
 <p>Scan contact email; example: <code>scan.contact.email_ietf_email = 'Scarlett.Murphy@usda.gov'</code><br />
 </p>
 </div>
-<div id="scan_mir._abs" class="section level3" number="4.3.17">
-<h3><span class="header-section-number">4.3.17</span> scan_mir.****_abs</h3>
+<div id="scan.mir.nafreq_ossl_pct" class="section level3" number="4.3.17">
+<h3><span class="header-section-number">4.3.17</span> scan.mir.nafreq_ossl_pct</h3>
+<p>Percent of absorbances with missing values per scan.</p>
+</div>
+<div id="scan.mir.negfreq_ossl_pct" class="section level3" number="4.3.18">
+<h3><span class="header-section-number">4.3.18</span> scan.mir.negfreq_ossl_pct</h3>
+<p>Percent of absorbances with 0 / negative values per scan.</p>
+</div>
+<div id="scan.mir.extfreq_ossl_pct" class="section level3" number="4.3.19">
+<h3><span class="header-section-number">4.3.19</span> scan.mir.extfreq_ossl_pct</h3>
+<p>Percent of absorbances with extreme values (&gt;= 3) per scan.</p>
+</div>
+<div id="scan_mir._abs" class="section level3" number="4.3.20">
+<h3><span class="header-section-number">4.3.20</span> scan_mir.****_abs</h3>
 <p>Absorbance values per band usually ranging between 0–3000 (multiplied by 1000).
 To generate the band names use e.g.:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="database.html#cb31-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&quot;scan_mir.&quot;</span>, <span class="fu">seq</span>(<span class="dv">600</span>, <span class="dv">4000</span>, <span class="at">by=</span><span class="dv">2</span>), <span class="st">&quot;_abs&quot;</span>)</span>
@@ -1545,7 +1563,7 @@ This ID links with the <a href="database.html#sites-table">Sites table</a>.</p>
 </div>
 <div id="method.preparation_any_c-1" class="section level3" number="4.4.8">
 <h3><span class="header-section-number">4.4.8</span> method.preparation_any_c</h3>
-<p>Laboratory method preparation for samples.</p>
+<p>Laboratory method preparation for samples in the lab or in the field.</p>
 </div>
 <div id="scan.file_any_c-1" class="section level3" number="4.4.9">
 <h3><span class="header-section-number">4.4.9</span> scan.file_any_c</h3>
@@ -1586,8 +1604,20 @@ This ID links with the <a href="database.html#sites-table">Sites table</a>.</p>
 <p>Scan contact email; example: <code>scan.contact.email_ietf_email = 'Scarlett.Murphy@usda.gov'</code><br />
 </p>
 </div>
-<div id="scan_visnir._pcnt" class="section level3" number="4.4.17">
-<h3><span class="header-section-number">4.4.17</span> scan_visnir.****_pcnt</h3>
+<div id="scan.visnir.nafreq_ossl_pct" class="section level3" number="4.4.17">
+<h3><span class="header-section-number">4.4.17</span> scan.visnir.nafreq_ossl_pct</h3>
+<p>Percent of reflectances with missing values per scan.</p>
+</div>
+<div id="scan.visnir.negfreq_ossl_pct" class="section level3" number="4.4.18">
+<h3><span class="header-section-number">4.4.18</span> scan.visnir.negfreq_ossl_pct</h3>
+<p>Percent of reflectances with 0 / negative values per scan.</p>
+</div>
+<div id="scan.visnir.extfreq_ossl_pct" class="section level3" number="4.4.19">
+<h3><span class="header-section-number">4.4.19</span> scan.visnir.extfreq_ossl_pct</h3>
+<p>Percent of reflectances with extreme values (&gt;= 100) per scan.</p>
+</div>
+<div id="scan_visnir._pcnt" class="section level3" number="4.4.20">
+<h3><span class="header-section-number">4.4.20</span> scan_visnir.****_pcnt</h3>
 <p>Reflectance values per band usually ranging between 0–100 (multiplied by 100).
 To generate the band names use e.g.:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="database.html#cb33-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&quot;scan_visnir.&quot;</span>, <span class="fu">seq</span>(<span class="dv">350</span>, <span class="dv">2500</span>, <span class="at">by=</span><span class="dv">2</span>), <span class="st">&quot;_pcnt&quot;</span>)</span>

@@ -215,6 +215,9 @@ scan.license.address_idn_url
 scan.doi_idf_c
 scan.contact.name_utf8_txt
 scan.contact.email_ietf_email
+scan.mir.nafreq_ossl_pct
+scan.mir.negfreq_ossl_pct
+scan.mir.extfreq_ossl_pct
 scan_mir._abs
 visnir-table
 id.scan_uuid_c-1
@@ -233,6 +236,9 @@ scan.license.address_idn_url-1
 scan.doi_idf_c-1
 scan.contact.name_utf8_txt-1
 scan.contact.email_ietf_email-1
+scan.visnir.nafreq_ossl_pct
+scan.visnir.negfreq_ossl_pct
+scan.visnir.extfreq_ossl_pct
 scan_visnir._pcnt
 harmonization-rules
 ph

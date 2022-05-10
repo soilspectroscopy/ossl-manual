@@ -1,7 +1,7 @@
 ---
 title: "Open Soil Spectral Library"
 author: "Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors"
-date: "22 December, 2021"
+date: "10 May, 2022"
 knit: bookdown::render_book
 site: bookdown::bookdown_site
 documentclass: svmono
