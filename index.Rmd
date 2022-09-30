@@ -22,7 +22,7 @@ site: bookdown::bookdown_site
 
 # About {.unnumbered}
 
-[![Access source code](cover.jpg){.cover width="350"}](https://soilspectroscopy.org/)
+[![Access source code](cover.jpg){.cover width="250"}](https://soilspectroscopy.org/)
 
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.5759693.svg)](https://doi.org/10.5281/zenodo.5759693)
 
@@ -42,6 +42,8 @@ of working groups will be formed to address topics including calibration
 transfer, model choice, outreach & demonstration, and use of
 spectroscopy to inform global carbon cycle modeling. For more info refer
 to: <https://soilspectroscopy.org/>.
+
+<img src="img/soilspec4gg-logo_fc.png" width="60%" />
 
 R tutorials and software developed to implement OSSL is available via: <https://github.com/soilspectroscopy>.
 
