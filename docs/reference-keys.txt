@@ -62,21 +62,7 @@ fig:ac-ph1
 fig:plot-ads
 fig:ac-phm
 fig:map-bareearth
-about
-soil-spectroscopy-for-global-good
-what-is-soil-spectroscopy
-open-soil-spectral-library
-ossl-mongodb
-ossl-api
-target-variables-of-interest
-contributing-data
-contributing-documentation
-contributors
-disclaimer
-licence
-suggested-literature
-acknowledgments
-new-to-markdown.-start-here
+new-to-markdown
 clone-add-reference-submit-merge-request
 video-course-getting-started-with-r
 soil-spectroscopy-tools-and-users
@@ -262,3 +248,4 @@ the-bundle-approach-to-soil-spectroscopy-calibration
 registering-your-own-model
 access-ossl-data-to-fit-your-own-models
 registering-and-hosting-models
+references

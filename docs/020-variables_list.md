@@ -1,10 +1,8 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # Database
+
+::: {.rmdnote}
+You are reading the work-in-progress Spatial and spatiotemporal interpolation using Ensemble Machine Learning. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at <https://soilspectroscopy.github.io/ossl-manual/>.
+:::
 
 
 
@@ -209,13 +207,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "al.kcl_usda.4b3_cmolkg", method 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="ExAl in cmol/kg", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-alkcl-1.png" alt="Soil-depth histogram for Aluminum, KCl extractable in cmol/kg." width="70%" />
 <p class="caption">(\#fig:plot-alkcl)Soil-depth histogram for Aluminum, KCl extractable in cmol/kg.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/al.kcl_usda.4b3_cmolkg_hist.png" alt="Aluminum, KCl extractable in cmol/kg histograms." width="70%" />
 <p class="caption">(\#fig:hist-alkcl1)Aluminum, KCl extractable in cmol/kg histograms.</p>
 </div>
@@ -258,13 +256,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "bd.od_usda.3b2_gcm3", method = "
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="BD g/cm3", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-bd-1.png" alt="Soil-depth histogram for Bulk density in g/cm3." width="70%" />
 <p class="caption">(\#fig:plot-bd)Soil-depth histogram for Bulk density in g/cm3.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/bd.od_usda.3b2_gcm3_hist.png" alt="Bulk density in g/cm3 percent histograms." width="70%" />
 <p class="caption">(\#fig:hist-bd1)Bulk density in g/cm3 percent histograms.</p>
 </div>
@@ -285,13 +283,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "bsat_usda.4b4_wpct", method = "h
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="BS in wpct", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-bs-1.png" alt="Soil-depth histogram for Base saturation in wpct." width="70%" />
 <p class="caption">(\#fig:plot-bs)Soil-depth histogram for Base saturation in wpct.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/bsat_usda.4b4_wpct_hist.png" alt="Base saturation in weight percent histograms." width="70%" />
 <p class="caption">(\#fig:hist-bs1)Base saturation in weight percent histograms.</p>
 </div>
@@ -317,13 +315,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "c.tot_usda.4h2_wpct", method = "
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="SOC wprm", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-toc-1.png" alt="Soil-depth histogram for total carbon in wpct." width="70%" />
 <p class="caption">(\#fig:plot-toc)Soil-depth histogram for total carbon in wpct.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/c.tot_usda.4h2_wpct_hist.png" alt="Total carbon in weight percent histograms." width="70%" />
 <p class="caption">(\#fig:hist-toc1)Total carbon in weight percent histograms.</p>
 </div>
@@ -344,13 +342,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "ca.ext_usda.4b1_cmolkg", method 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="ExCa cmol/kg", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-exca-1.png" alt="Soil-depth histogram for Calcium, NH4OAc Extractable in cmol/kg." width="70%" />
 <p class="caption">(\#fig:plot-exca)Soil-depth histogram for Calcium, NH4OAc Extractable in cmol/kg.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/ca.ext_usda.4b1_cmolkg_hist.png" alt="Calcium, NH4OAc Extractable in cmol/kg histograms." width="70%" />
 <p class="caption">(\#fig:hist-exca1)Calcium, NH4OAc Extractable in cmol/kg histograms.</p>
 </div>
@@ -376,13 +374,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "caco3_usda.4e1_wpct", method = "
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="CaCO3 wpct", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-caco-1.png" alt="Soil-depth histogram for CaCO3 in wpct." width="70%" />
 <p class="caption">(\#fig:plot-caco)Soil-depth histogram for CaCO3 in wpct.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/caco3_usda.4e1_wpct_hist.png" alt="Organic carbon in weight percent histograms." width="70%" />
 <p class="caption">(\#fig:hist-caco1)Organic carbon in weight percent histograms.</p>
 </div>
@@ -412,13 +410,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "cec.ext_usda.4b1_cmolkg", method
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="CEC in cmol/kg", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-cec-1.png" alt="Soil-depth histogram for CEC in cmol/kg." width="70%" />
 <p class="caption">(\#fig:plot-cec)Soil-depth histogram for CEC in cmol/kg.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/cec.ext_usda.4b1_cmolkg_hist.png" alt="CEC in cmol/kg histograms." width="70%" />
 <p class="caption">(\#fig:hist-cec1)CEC in cmol/kg histograms.</p>
 </div>
@@ -444,13 +442,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "clay.tot_usda.3a1_wpct", method 
                      col = "increment", log.x = TRUE, ylab="Clay in wpct", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-clay-1.png" alt="Soil-depth histogram for total clay in wpct." width="70%" />
 <p class="caption">(\#fig:plot-clay)Soil-depth histogram for total clay in wpct.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/clay.tot_usda.3a1_wpct_hist.png" alt="Total clay content in weight percent histograms." width="70%" />
 <p class="caption">(\#fig:hist-clay1)Total clay content in weight percent histograms.</p>
 </div>
@@ -475,13 +473,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "ec.w_usda.4f1_dsm", method = "he
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="EC in dS/m", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-ec-1.png" alt="Soil-depth histogram for Electrical Conductivity in dS/m." width="70%" />
 <p class="caption">(\#fig:plot-ec)Soil-depth histogram for Electrical Conductivity in dS/m.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/ec.w_usda.4f1_dsm_hist.png" alt="Electrical Conductivity in dS/m histograms." width="70%" />
 <p class="caption">(\#fig:hist-ec1)Electrical Conductivity in dS/m histograms.</p>
 </div>
@@ -502,13 +500,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "ecec_usda.4b4_cmolkg", method = 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="ECEC in cmol/kg", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-ecec-1.png" alt="Soil-depth histogram for ECEC in cmol/kg." width="70%" />
 <p class="caption">(\#fig:plot-ecec)Soil-depth histogram for ECEC in cmol/kg.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/ecec_usda.4b4_cmolkg_hist.png" alt="ECEC in cmol/kg histograms." width="70%" />
 <p class="caption">(\#fig:hist-ecec1)ECEC in cmol/kg histograms.</p>
 </div>
@@ -541,13 +539,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "gyp_usda.4e2_wpct", method = "he
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="Gypsum in wpct", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-gyp-1.png" alt="Soil-depth histogram for Exchangeable sodium percentage." width="70%" />
 <p class="caption">(\#fig:plot-gyp)Soil-depth histogram for Exchangeable sodium percentage.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/gyp_usda.4e2_wpct_hist.png" alt="Exchangeable sodium percentage histograms." width="70%" />
 <p class="caption">(\#fig:hist-gyp1)Exchangeable sodium percentage histograms.</p>
 </div>
@@ -572,13 +570,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "k.ext_usda.4b1_cmolkg", method =
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="ExK in cmol/kg", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-exk-1.png" alt="Soil-depth histogram for Potassium, NH4OAc Extractable in cmol/kg." width="70%" />
 <p class="caption">(\#fig:plot-exk)Soil-depth histogram for Potassium, NH4OAc Extractable in cmol/kg.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/k.ext_usda.4b1_cmolkg_hist.png" alt="Potassium, NH4OAc Extractable in cmol/kg histograms." width="70%" />
 <p class="caption">(\#fig:hist-exk1)Potassium, NH4OAc Extractable in cmol/kg histograms.</p>
 </div>
@@ -599,13 +597,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "mg.ext_usda.4b1_cmolkg", method 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="ExMg in cmol/kg", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-exmg-1.png" alt="Soil-depth histogram for Magnesium, NH4OAc Extractable in cmol/kg." width="70%" />
 <p class="caption">(\#fig:plot-exmg)Soil-depth histogram for Magnesium, NH4OAc Extractable in cmol/kg.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/mg.ext_usda.4b1_cmolkg_hist.png" alt="Magnesium, NH4OAc Extractable in cmol/kg histograms." width="70%" />
 <p class="caption">(\#fig:hist-exmg1)Magnesium, NH4OAc Extractable in cmol/kg histograms.</p>
 </div>
@@ -631,13 +629,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "n.tot_usda.4h2_wpct", method = "
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="N wpct", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-ntot-1.png" alt="Soil-depth histogram for total N in wpct." width="70%" />
 <p class="caption">(\#fig:plot-ntot)Soil-depth histogram for total N in wpct.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/n.tot_usda.4h2_wpct_hist.png" alt="Total N in weight percent histograms." width="70%" />
 <p class="caption">(\#fig:hist-ntot1)Total N in weight percent histograms.</p>
 </div>
@@ -662,13 +660,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "na.ext_usda.4b1_cmolkg", method 
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="ExNa in cmol/kg", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-exna-1.png" alt="Soil-depth histogram for Sodium, NH4OAc Extractable in cmol/kg." width="70%" />
 <p class="caption">(\#fig:plot-exna)Soil-depth histogram for Sodium, NH4OAc Extractable in cmol/kg.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/na.ext_usda.4b1_cmolkg_hist.png" alt="Sodium, NH4OAc Extractable histograms." width="70%" />
 <p class="caption">(\#fig:hist-exna1)Sodium, NH4OAc Extractable histograms.</p>
 </div>
@@ -702,13 +700,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "oc_usda.calc_wpct", method = "he
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="SOC wprm", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-oc-1.png" alt="Soil-depth histogram for soil organic carbon in wpct." width="70%" />
 <p class="caption">(\#fig:plot-oc)Soil-depth histogram for soil organic carbon in wpct.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/oc_usda.calc_wpct_hist.png" alt="Organic carbon in weight percent histograms." width="70%" />
 <p class="caption">(\#fig:hist-oc1)Organic carbon in weight percent histograms.</p>
 </div>
@@ -741,13 +739,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "ph.cacl2_usda.4c1_index", method
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="pH CaCl", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-phcl-1.png" alt="Soil-depth histogram for Soil pH 1:2 0.01-M calcium chloride." width="70%" />
 <p class="caption">(\#fig:plot-phcl)Soil-depth histogram for Soil pH 1:2 0.01-M calcium chloride.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/ph.cacl2_usda.4c1_index_hist.png" alt="Soil pH 1:2 0.01-M calcium chloride histograms." width="70%" />
 <p class="caption">(\#fig:hist-phcl1)Soil pH 1:2 0.01-M calcium chloride histograms.</p>
 </div>
@@ -768,12 +766,12 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "ph.h2o_usda.4c1_index", method =
                      col = "increment", log.x = TRUE, ylab="Soil pH", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-phh2o-1.png" alt="Soil-depth histogram for soil pH." width="70%" />
 <p class="caption">(\#fig:plot-phh2o)Soil-depth histogram for soil pH.</p>
 </div>
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/ph.h2o_usda.4c1_index_hist.png" alt="Soil pH 1:1 water histograms." width="70%" />
 <p class="caption">(\#fig:hist-phh2o)Soil pH 1:1 water histograms.</p>
 </div>
@@ -803,13 +801,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "sand.tot_usda.3a1_wpct", method 
                      col = "increment", log.x = TRUE, ylab="Sand in wpct", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-sand-1.png" alt="Soil-depth histogram for total sand content in wpct." width="70%" />
 <p class="caption">(\#fig:plot-sand)Soil-depth histogram for total sand content in wpct.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/sand.tot_usda.3a1_wpct_hist.png" alt="Total sand content in weight percent histograms." width="70%" />
 <p class="caption">(\#fig:hist-sand1)Total sand content in weight percent histograms.</p>
 </div>
@@ -835,13 +833,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "silt.tot_usda.3a1_wpct", method 
                      col = "increment", log.x = TRUE, ylab="Silt in wpct", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-silt-1.png" alt="Soil-depth histogram for total silt content in wpct." width="70%" />
 <p class="caption">(\#fig:plot-silt)Soil-depth histogram for total silt content in wpct.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/silt.tot_usda.3a1_wpct_hist.png" alt="Total silt content in weight percent histograms." width="70%" />
 <p class="caption">(\#fig:hist-silt1)Total silt content in weight percent histograms.</p>
 </div>
@@ -871,13 +869,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "wpg2_usda.3a2_wpct", method = "h
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="WPG2 wpct", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-wpg-1.png" alt="Soil-depth histogram for coarse fragments in wpct." width="70%" />
 <p class="caption">(\#fig:plot-wpg)Soil-depth histogram for coarse fragments in wpct.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/wpg2_usda.3a2_wpct_hist.png" alt="Coarse fragments in weight percent histograms." width="70%" />
 <p class="caption">(\#fig:hist-wpg1)Coarse fragments in weight percent histograms.</p>
 </div>
@@ -898,13 +896,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "wr.1500kbar_usda.3c2_wpct", meth
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="PWP wprm", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-wp-1.png" alt="Soil-depth histogram for Water Retention at 15 Bar (Permanent Wilting Point) in wpct." width="70%" />
 <p class="caption">(\#fig:plot-wp)Soil-depth histogram for Water Retention at 15 Bar (Permanent Wilting Point) in wpct.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/wr.1500kbar_usda.3c2_wpct_hist.png" alt="Organic carbon in weight percent histograms." width="70%" />
 <p class="caption">(\#fig:hist-wp1)Organic carbon in weight percent histograms.</p>
 </div>
@@ -925,13 +923,13 @@ openair::scatterPlot(ossl.yw, x = "depth", y = "wr.33kbar_usda.3c1_wpct", method
                      col = "increment", log.x = TRUE, log.y=TRUE, ylab="FC wpct", xlab="depth in cm")
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="020-variables_list_files/figure-html/plot-fc-1.png" alt="Soil-depth histogram for Water Retention at 1/3 Bar (Field Capacity) in wpct." width="70%" />
 <p class="caption">(\#fig:plot-fc)Soil-depth histogram for Water Retention at 1/3 Bar (Field Capacity) in wpct.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="hist/wr.33kbar_usda.3c1_wpct_hist.png" alt="Water Retention at 1/3 Bar in weight percent histograms." width="70%" />
 <p class="caption">(\#fig:hist-fc1)Water Retention at 1/3 Bar in weight percent histograms.</p>
 </div>
@@ -1026,10 +1024,7 @@ To generate the band names use e.g.:
 ```r
 x = paste0("scan_mir.", seq(600, 4000, by=2), "_abs")
 str(x)
-```
-
-```
-##  chr [1:1701] "scan_mir.600_abs" "scan_mir.602_abs" "scan_mir.604_abs" ...
+#>  chr [1:1701] "scan_mir.600_abs" "scan_mir.602_abs" "scan_mir.604_abs" ...
 ```
 
 
@@ -1122,10 +1117,7 @@ To generate the band names use e.g.:
 ```r
 x = paste0("scan_visnir.", seq(350, 2500, by=2), "_pcnt")
 str(x)
-```
-
-```
-##  chr [1:1076] "scan_visnir.350_pcnt" "scan_visnir.352_pcnt" ...
+#>  chr [1:1076] "scan_visnir.350_pcnt" "scan_visnir.352_pcnt" ...
 ```
 
 To convert reflectance values to absorbances use:
@@ -1137,7 +1129,7 @@ r = 1/exp(a/1000) * 100
 plot(data.frame(a,r), type="l", xlab="Absorbance", ylab="Reflectance [%]")
 ```
 
-<img src="020-variables_list_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+<img src="020-variables_list_files/figure-html/unnamed-chunk-6-1.png" width="70%" style="display: block; margin: auto;" />
 
 
 ## Harmonization rules
@@ -1165,10 +1157,7 @@ From `ph.kcl_usda.4c1_index` to `ph.h2o_usda.4c1_index` based on @bohner2008saga
 ph.kcl = 6.5
 ph.h2o = ph.kcl / 0.87
 ph.h2o
-```
-
-```
-## [1] 7.471264
+#> [1] 7.471264
 ```
 
 From `ph.cacl2_usda.4c1_index` to `ph.h2o_usda.4c1_index` based on @miller2010comparison:
@@ -1178,10 +1167,7 @@ From `ph.cacl2_usda.4c1_index` to `ph.h2o_usda.4c1_index` based on @miller2010co
 ph.cacl2 = 6.5
 ph.h2o = (ph.cacl2 + 0.973 ) / 1.08
 ph.h2o
-```
-
-```
-## [1] 6.919444
+#> [1] 6.919444
 ```
 
 
@@ -1194,10 +1180,7 @@ From `humus_usda.4h2_wpct` to `oc_usda.4h2_wpct` based on @nelson1983total:
 humus = 4
 oc = humus / 1.724
 oc
-```
-
-```
-## [1] 2.320186
+#> [1] 2.320186
 ```
 
 From `humus_usda.4h2_wpct` to `oc_usda.4h2_wpct` based on @jensen2018converting:
@@ -1207,20 +1190,11 @@ From `humus_usda.4h2_wpct` to `oc_usda.4h2_wpct` based on @jensen2018converting:
 humus = 4; clay = 10
 oc1 = 0.513 * humus - (0.047 * clay - 0.00025 * clay^2)
 oc1
-```
-
-```
-## [1] 1.607
-```
-
-```r
+#> [1] 1.607
 humus = 4; clay = 20
 oc2 = 0.513 * humus - (0.047 * clay - 0.00025 * clay^2)
 oc2
-```
-
-```
-## [1] 1.212
+#> [1] 1.212
 ```
 
 ### Phosphorous
@@ -1242,10 +1216,7 @@ na.ext = 2
 mg.ext = 1
 ecec.ext = ifelse(ph.h2o < 7.5 & ph.h2o>4, (k.ext + ca.ext + na.ext + mg.ext), NA)
 ecec.ext
-```
-
-```
-## [1] 17
+#> [1] 17
 ```
 
 From `oc_usda.4h2_wpct` to `ecec.ext_usda.4b1_cmolkg` based on @helling1964contribution:
@@ -1257,10 +1228,7 @@ ph.h2o = 6.5
 oc = 2
 ecec.ext = ((clay.tot*10/100*(30+4.4*ph.h2o))+(oc/100*(-59+51*ph.h2o)))/10
 ecec.ext
-```
-
-```
-## [1] 16.953
+#> [1] 16.953
 ```
 
 ### Texture fractions

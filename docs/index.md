@@ -1,38 +1,37 @@
 ---
+knit: "bookdown::render_book"
 title: "Open Soil Spectral Library"
 author: "Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors"
-date: "10 May, 2022"
-knit: bookdown::render_book
-site: bookdown::bookdown_site
+description: "Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, callibrate own models and extend beyond."
+url: 'https\://soilspectroscopy.github.io/ossl-manual'
+bibliography: ./tex/refs.bib
+csl: ./tex/apa.csl  
 documentclass: svmono
 classoption: graybox,natbib,nospthms
 geometry: "paperwidth=18.90cm, paperheight=24.58cm, top=2.1cm, bottom=2.1cm, inner=2cm, outer=2cm"
 monofont: "Source Code Pro"
 monofontoptions: "Scale=0.7"
-bibliography: refs.bib
 biblio-style: spbasic
+fig_caption: yes
 link-citations: yes
+gihub-repo: soilspectroscopy/ossl-manual
 twitter-handle: soilspec
-cover-image: img/Spectroscopy-Schematic.jpeg
-description: "Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, callibrate own models and extend beyond."
-github-repo: soilspectroscopy/ossl-manual
-url: 'http\://soilspectroscopy.github.io/ossl-manual'
-colorlinks: yes
-graphics: yes
+cover-image: cover.png
+site: bookdown::bookdown_site
 ---
 
-# About
+# About {.unnumbered}
 
-<span style="background-color: #FFFF00">This document is **UNDER CONSTRUCTION**.</span>
+[![Access source code](cover.jpg){.cover width="350"}](https://soilspectroscopy.org/)
 
-<img src="img/soilspec4gg-logo_fc.png" width="60%" />
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.5759693.svg)](https://doi.org/10.5281/zenodo.5759693)
 
 > "Man’s most human characteristic is not his ability to learn, which he shares 
 > with many other species, but his ability to teach and store what others have 
 > developed and taught him."
 > Margaret Mead, Culture and Commitment: The New Relationships Between the Generations in the 1970s
 
-## Soil Spectroscopy for Global Good
+## Soil Spectroscopy for Global Good {.unnumbered}
 
 [**SoilSpec4GG**](https://soilspectroscopy.org/) is a USDA-funded [Food and Agriculture Cyberinformatics
 Tools Coordinated Innovation Network NIFA Award #2020-67021-32467](https://nifa.usda.gov/press-release/nifa-invests-over-7-million-big-data-artificial-intelligence-and-other) project. It brings together soil
@@ -48,24 +47,24 @@ R tutorials and software developed to implement OSSL is available via: <https://
 
 Soil spectroscopy for global good project works with other global initiatives including the **[FAO Global Soil Partnership](https://www.fao.org/global-soil-partnership/glosolan/en/)** and the **[IEEE P4005 Standards and Protocols for Soil Spectroscopy](https://sagroups.ieee.org/4005/)** Working Group.
 
-## What is soil spectroscopy? 
+## What is soil spectroscopy? {.unnumbered}
 
 Soil spectroscopy is the measurement of light absorption when light in the [visible, near infrared or mid 
 infrared (Vis–NIR–MIR) regions of the electromagnetic spectrum](https://en.wikipedia.org/wiki/Electromagnetic_spectrum) is applied to a soil surface. The proportion 
 of the incident radiation reflected by soil is sensed through Vis–NIR–MIR reflectance spectroscopy. 
 These characteristic spectra (see Fig. below) can then be used to estimate numerous soil attributes including: minerals, organic compounds and water. 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="img/Spectroscopy-Schematic.jpeg" alt="Schematic explanation of the soil spectroscopy. For more info see: https://soilspectroscopy.org/." width="100%" />
 <p class="caption">(\#fig:soil-pnts)Schematic explanation of the soil spectroscopy. For more info see: https://soilspectroscopy.org/.</p>
 </div>
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="img/VNIR_Raw_Spectra.png" alt="Example of spectral signatures for large number of VisNIR scans (KSSL)." width="80%" />
 <p class="caption">(\#fig:soil-visnir)Example of spectral signatures for large number of VisNIR scans (KSSL).</p>
 </div>
 
-## Open Soil Spectral Library
+## Open Soil Spectral Library {.unnumbered}
 
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.5759693.svg)](https://doi.org/10.5281/zenodo.5759693)
 
@@ -85,7 +84,7 @@ As a general rule of thumb we recommend all contributors to use the following
 general OSSL scheme to organize Soil Observations & Measurements with four main tables 
 and metadata + legends organized in other tables:
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="img/design_soil_om_sheme.png" alt="Recommended OSSL database schema." width="100%" />
 <p class="caption">(\#fig:soil-db)Recommended OSSL database schema.</p>
 </div>
@@ -93,18 +92,18 @@ and metadata + legends organized in other tables:
 To access global compilation of soil legacy point data sets refer to <https://github.com/OpenGeoHub/SoilSamples> repository.
 To access and use Soil Spectroscopy tools also refer to <https://soilspectroscopy.org/>.
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="img/visnir.pnts_sites.png" alt="Up-to-date distribution of points with VisNIR scans." width="100%" />
 <p class="caption">(\#fig:pnts-vnir)Up-to-date distribution of points with VisNIR scans.</p>
 </div>
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="img/mir.pnts_sites.png" alt="Up-to-date distribution of points with MIR scans." width="100%" />
 <p class="caption">(\#fig:pnts-mir)Up-to-date distribution of points with MIR scans.</p>
 </div>
 
-## OSSL mongoDB
+## OSSL mongoDB {.unnumbered}
 
 [MongoDB](https://www.mongodb.com/) is an Open Source noSQL DB hence fast and fully scalable and extendable 
 (affordable costs for cloud solutions such as [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and similar). 
@@ -122,7 +121,7 @@ The following parameters (database credentials) allow ready only access to DB:
 
 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="img/mongodb_gui.png" alt="Accessing the OSSL DB using [MongoDB GUI](https://robomongo.org/download)." width="90%" />
 <p class="caption">(\#fig:mongodb-gui)Accessing the OSSL DB using [MongoDB GUI](https://robomongo.org/download).</p>
 </div>
@@ -153,10 +152,7 @@ Next, we can initiate connection:
 
 ```r
 soilspec4gg.init()
-```
-
-```
-## [1] "Creating the access for mongodb collections."
+#> [1] "Creating the access for mongodb collections."
 ```
 
 and now we can query and load data directly into R, for example to get a sample from AfSIS1:
@@ -165,26 +161,17 @@ and now we can query and load data directly into R, for example to get a sample 
 ```r
 id = "icr006475" 
 soilspec.sample = soilspec4gg.samplesById(id)
-```
-
-```
-## [1] "Accessing mongodb collections."
-##  Found 4 records... Imported 4 records. Simplifying into dataframe...
-##  Found 4 records... Imported 4 records. Simplifying into dataframe...
-##  Found 1 records... Imported 1 records. Simplifying into dataframe...
-##  Imported 0 records. Simplifying into dataframe...
-```
-
-```r
+#> [1] "Accessing mongodb collections."
+#>  Imported 0 records. Simplifying into dataframe...
+#>  Imported 0 records. Simplifying into dataframe...
+#>  Imported 0 records. Simplifying into dataframe...
+#>  Imported 0 records. Simplifying into dataframe...
 dim(soilspec.sample)
-```
-
-```
-## [1]   16 1758
+#> [1] 0 0
 ```
 
 
-## OSSL API
+## OSSL API {.unnumbered}
 
 [OSSL API](https://api.soilspectroscopy.org/__docs__/#/) (Application Programming Interface) is also available and can be used 
 to construct requests to fetch data, models and generate predictions. The outputs 
@@ -193,12 +180,12 @@ interoperable. The OSSL API is at the moment based on using the [plumber package
 and is **provided for testing purposes only**. Users can calibrate maximum 20 rows 
 per request, but these limits will be gradually extended.
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="img/preview_ossl_api_swagger.png" alt="OSSL API is available for testing." width="100%" />
 <p class="caption">(\#fig:ossl-api)OSSL API is available for testing.</p>
 </div>
 
-## Target variables of interest
+## Target variables of interest {.unnumbered}
 
 Soil spectral scan, through the calibration procedure, are used to determine various soil variables. 
 [GLOSOLAN's Standard Operating Procedures (SOPs)](http://www.fao.org/global-soil-partnership/glosolan/soil-analysis/standard-operating-procedures/en/#c763834) list four groups of soil variables of interest to international soil spectroscopy projects:
@@ -246,7 +233,7 @@ there is enough global calibration measurements to fit reasonable models. Curren
 the largest component of the OSSL is the [USDA's KSSL](https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/) data that list about 60 variables for which 
 there is enough data to fit calibration models.
 
-## Contributing data
+## Contributing data {.unnumbered}
 
 We encourage public and private entities to help this project and share SSL data. 
 The following four modes of data sharing are especially encouraged:
@@ -269,7 +256,7 @@ across borders.
 We take especial care that your data is secured, encrypted where necessary, 
 and kept safely, closely following our [privacy policy and terms of use](https://www.woodwellclimate.org/privacy-policy/).
 
-## Contributing documentation
+## Contributing documentation {.unnumbered}
 
 Please feel free to contribute technical documentation. See [GitHub
 repository](https://github.com/soilspectroscopy/ossl-manual) for more detailed
@@ -279,7 +266,7 @@ Information outdated or missing? Please [open an issue](https://github.com/soils
 correction in the text and then make a [pull
 request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
-## Contributors
+## Contributors {.unnumbered}
 
 If you've contribute, add also your name and Twitter, ORCID or blog link
 below:
@@ -290,7 +277,7 @@ below:
 [Leandro L. Parente](https://www.linkedin.com/in/leal-parente/), 
 [Wanderson de Sousa Mendes](https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/)  
 
-## Disclaimer
+## Disclaimer {.unnumbered}
 
 Whilst utmost care has been taken by the Soil Spectroscopy project and data authors while
 collecting and compiling the data, the data is provided _"as is"_. [Woodwell Climate Research Center](https://www.woodwellclimate.org/), [University of Florida](https://faculty.eng.ufl.edu/ktoddbrown/), [OpenGeoHub foundation](https://opengeohub.org/about) and its 
@@ -316,13 +303,13 @@ This is a community project. No profits are being made from building and serving
 Open Spectral Library. If you would like to become a sponsor of the project, please 
 contact us via: <https://soilspectroscopy.org/contact/>.  
 
-## Licence
+## Licence {.unnumbered}
 
 This website/book and attached software is free to use, and is licensed under [the MIT License](https://en.wikipedia.org/wiki/MIT_License). The OSSL training data and models, 
 if not otherwise indicated, is available either under the [Creative Commons Attribution 4.0 International CC-BY](https://creativecommons.org/licenses/by/4.0/legalcode) 
 and/or [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license / [Open Data Commons Open Database License (ODbL) v1.0](https://opendatacommons.org/licenses/odbl/1-0/).
 
-## Suggested literature
+## Suggested literature {.unnumbered}
 
 Some other connected publications and initiatives describing collation, 
 import and use of soil spectroscopy data:
@@ -344,7 +331,7 @@ reflectance spectral library](https://doi.org/10.2136/sssaj2017.10.0361). Soil S
 82(3), 722–731. <https://doi.org/10.2136/sssaj2017.10.0361>  
 - Wadoux, A.M.J.-C., Malone, B., McBratney, A.B., Fajardo, M., Minasny, B., (2021). [Soil Spectral Inference with R: Analysing Digital Soil Spectra Using the R Programming Environment](https://books.google.nl/books?id=4kQgEAAAQBAJ). Progress in Soil Science, Springer Nature, ISBN: 9783030648961, 274 pp.  
 
-## Acknowledgments
+## Acknowledgments {.unnumbered}
 
 Open Soil Spectral Library was possible due to the kind contributions by public and private 
 organizations. Listed based on the date of import:

@@ -1,4 +1,8 @@
-# New to markdown. Start here
+# New to markdown
+
+```{r, results = "asis", echo = FALSE}
+status("drafting")
+```
 
 ## Clone, add reference, submit merge request...
 

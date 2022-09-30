@@ -1,4 +1,8 @@
-# New to markdown. Start here
+# New to markdown
+
+::: {.rmdnote}
+You are reading the work-in-progress Spatial and spatiotemporal interpolation using Ensemble Machine Learning. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at <https://soilspectroscopy.github.io/ossl-manual/>.
+:::
 
 ## Clone, add reference, submit merge request...
 
@@ -12,7 +16,7 @@ request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-re
 5.  Once received we will check it and if you have followed the instructions closely, 
     the reference will appear in the document as soon as the code is merged with the master,\
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="img/example_pull_request.jpg" alt="Example of a pull request on Github.com." width="50%" />
 <p class="caption">(\#fig:pull-request)Example of a pull request on Github.com.</p>
 </div>

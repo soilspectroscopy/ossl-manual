@@ -1,815 +1,497 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>2 Soil spectroscopy tools and users | Open Soil Spectral Library</title>
+<meta name="author" content="Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.14/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-06HBX7FM0K"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Soil spectroscopy tools and users | Open Soil Spectral Library</title>
-  <meta name="description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, callibrate own models and extend beyond." />
-  <meta name="generator" content="bookdown 0.22.2 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="3 Soil spectroscopy tools and users | Open Soil Spectral Library" />
-  <meta property="og:type" content="book" />
-  <meta property="og:url" content="http://soilspectroscopy.github.io/ossl-manual" />
-  <meta property="og:image" content="http://soilspectroscopy.github.io/ossl-manual/img/Spectroscopy-Schematic.jpeg" />
-  <meta property="og:description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, callibrate own models and extend beyond." />
-  <meta name="github-repo" content="soilspectroscopy/ossl-manual" />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Soil spectroscopy tools and users | Open Soil Spectral Library" />
-  <meta name="twitter:site" content="@soilspec" />
-  <meta name="twitter:description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, callibrate own models and extend beyond." />
-  <meta name="twitter:image" content="http://soilspectroscopy.github.io/ossl-manual/img/Spectroscopy-Schematic.jpeg" />
-
-<meta name="author" content="Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors" />
-
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="new-to-markdown-start-here.html"/>
-<link rel="next" href="database.html"/>
-<script src="libs/header-attrs-2.8.1/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-
-
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
-
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
-
+      gtag('config', 'G-06HBX7FM0K');
+    </script><script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS -->
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li><a href="./">Open Soil Spectral Library</a></li>
-
-<li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#soil-spectroscopy-for-global-good"><i class="fa fa-check"></i><b>1.1</b> Soil Spectroscopy for Global Good</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#what-is-soil-spectroscopy"><i class="fa fa-check"></i><b>1.2</b> What is soil spectroscopy?</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#open-soil-spectral-library"><i class="fa fa-check"></i><b>1.3</b> Open Soil Spectral Library</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#ossl-mongodb"><i class="fa fa-check"></i><b>1.4</b> OSSL mongoDB</a></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#ossl-api"><i class="fa fa-check"></i><b>1.5</b> OSSL API</a></li>
-<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#target-variables-of-interest"><i class="fa fa-check"></i><b>1.6</b> Target variables of interest</a></li>
-<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#contributing-data"><i class="fa fa-check"></i><b>1.7</b> Contributing data</a></li>
-<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#contributing-documentation"><i class="fa fa-check"></i><b>1.8</b> Contributing documentation</a></li>
-<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i><b>1.9</b> Contributors</a></li>
-<li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#disclaimer"><i class="fa fa-check"></i><b>1.10</b> Disclaimer</a></li>
-<li class="chapter" data-level="1.11" data-path="index.html"><a href="index.html#licence"><i class="fa fa-check"></i><b>1.11</b> Licence</a></li>
-<li class="chapter" data-level="1.12" data-path="index.html"><a href="index.html#suggested-literature"><i class="fa fa-check"></i><b>1.12</b> Suggested literature</a></li>
-<li class="chapter" data-level="1.13" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.13</b> Acknowledgments</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="new-to-markdown-start-here.html"><a href="new-to-markdown-start-here.html"><i class="fa fa-check"></i><b>2</b> New to markdown. Start here</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="new-to-markdown-start-here.html"><a href="new-to-markdown-start-here.html#clone-add-reference-submit-merge-request"><i class="fa fa-check"></i><b>2.1</b> Clone, add reference, submit merge request…</a></li>
-<li class="chapter" data-level="2.2" data-path="new-to-markdown-start-here.html"><a href="new-to-markdown-start-here.html#video-course-getting-started-with-r"><i class="fa fa-check"></i><b>2.2</b> Video Course: Getting started with R</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html"><i class="fa fa-check"></i><b>3</b> Soil spectroscopy tools and users</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#soil-spectroscopy-instruments"><i class="fa fa-check"></i><b>3.1</b> Soil Spectroscopy Instruments</a>
-<ul>
-<li class="chapter" data-level="3.1.1" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#bruker-alpha-1_ft-mir_zn-se"><i class="fa fa-check"></i><b>3.1.1</b> Bruker Alpha 1_FT-MIR_Zn Se</a></li>
-<li class="chapter" data-level="3.1.2" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#bruker-alpha-1_ft-mir_kbr"><i class="fa fa-check"></i><b>3.1.2</b> Bruker Alpha 1_FT-MIR_KBr</a></li>
-<li class="chapter" data-level="3.1.3" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#bruker-vertex-70-with-hts-xt-accessory"><i class="fa fa-check"></i><b>3.1.3</b> Bruker Vertex 70 with HTS-XT accessory</a></li>
-<li class="chapter" data-level="3.1.4" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#asd-labspec-2500-with-muglight-accessory"><i class="fa fa-check"></i><b>3.1.4</b> ASD Labspec 2500 with Muglight accessory</a></li>
-<li class="chapter" data-level="3.1.5" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#asd-fieldspec-fr"><i class="fa fa-check"></i><b>3.1.5</b> ASD FieldSpec FR</a></li>
-<li class="chapter" data-level="3.1.6" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#xds-rapid-content-analyzer"><i class="fa fa-check"></i><b>3.1.6</b> XDS Rapid Content Analyzer</a></li>
-</ul></li>
-<li class="chapter" data-level="3.2" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#registered-soil-spectral-libraries"><i class="fa fa-check"></i><b>3.2</b> Registered soil spectral libraries</a>
-<ul>
-<li class="chapter" data-level="3.2.1" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#kssl.ssl"><i class="fa fa-check"></i><b>3.2.1</b> KSSL.SSL</a></li>
-<li class="chapter" data-level="3.2.2" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#icraf.isric"><i class="fa fa-check"></i><b>3.2.2</b> ICRAF.ISRIC</a></li>
-<li class="chapter" data-level="3.2.3" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#lucas.ssl"><i class="fa fa-check"></i><b>3.2.3</b> LUCAS.SSL</a></li>
-<li class="chapter" data-level="3.2.4" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#afsis1.ssl"><i class="fa fa-check"></i><b>3.2.4</b> AFSIS1.SSL</a></li>
-<li class="chapter" data-level="3.2.5" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#afsis2.ssl"><i class="fa fa-check"></i><b>3.2.5</b> AFSIS2.SSL</a></li>
-<li class="chapter" data-level="3.2.6" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#caf.ssl"><i class="fa fa-check"></i><b>3.2.6</b> CAF.SSL</a></li>
-<li class="chapter" data-level="3.2.7" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#neon.ssl"><i class="fa fa-check"></i><b>3.2.7</b> NEON.SSL</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#soil-spetroscopy-organizations"><i class="fa fa-check"></i><b>3.3</b> Soil spetroscopy organizations</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#kssl"><i class="fa fa-check"></i><b>3.3.1</b> KSSL</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#soil-spectroscopy-software"><i class="fa fa-check"></i><b>3.4</b> Soil Spectroscopy software</a>
-<ul>
-<li class="chapter" data-level="3.4.1" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#asdreader"><i class="fa fa-check"></i><b>3.4.1</b> asdreader</a></li>
-<li class="chapter" data-level="3.4.2" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#prospectr"><i class="fa fa-check"></i><b>3.4.2</b> prospectr</a></li>
-<li class="chapter" data-level="3.4.3" data-path="soil-spectroscopy-tools-and-users.html"><a href="soil-spectroscopy-tools-and-users.html#simplerspec"><i class="fa fa-check"></i><b>3.4.3</b> simplerspec</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="database.html"><a href="database.html"><i class="fa fa-check"></i><b>4</b> Database</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="database.html"><a href="database.html#sites-table"><i class="fa fa-check"></i><b>4.1</b> Sites table</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="database.html"><a href="database.html#id.layer_uuid_c"><i class="fa fa-check"></i><b>4.1.1</b> id.layer_uuid_c</a></li>
-<li class="chapter" data-level="4.1.2" data-path="database.html"><a href="database.html#id.location_olc_c"><i class="fa fa-check"></i><b>4.1.2</b> id.location_olc_c</a></li>
-<li class="chapter" data-level="4.1.3" data-path="database.html"><a href="database.html#observation.ogc.schema.title_ogc_txt"><i class="fa fa-check"></i><b>4.1.3</b> observation.ogc.schema.title_ogc_txt</a></li>
-<li class="chapter" data-level="4.1.4" data-path="database.html"><a href="database.html#observation.ogc.schema_idn_url"><i class="fa fa-check"></i><b>4.1.4</b> observation.ogc.schema_idn_url</a></li>
-<li class="chapter" data-level="4.1.5" data-path="database.html"><a href="database.html#observation.date.begin_iso.8601_yyyy.mm.dd"><i class="fa fa-check"></i><b>4.1.5</b> observation.date.begin_iso.8601_yyyy.mm.dd</a></li>
-<li class="chapter" data-level="4.1.6" data-path="database.html"><a href="database.html#observation.date.end_iso.8601_yyyy.mm.dd"><i class="fa fa-check"></i><b>4.1.6</b> observation.date.end_iso.8601_yyyy.mm.dd</a></li>
-<li class="chapter" data-level="4.1.7" data-path="database.html"><a href="database.html#location.address_utf8_txt"><i class="fa fa-check"></i><b>4.1.7</b> location.address_utf8_txt</a></li>
-<li class="chapter" data-level="4.1.8" data-path="database.html"><a href="database.html#location.country_iso.3166_c"><i class="fa fa-check"></i><b>4.1.8</b> location.country_iso.3166_c</a></li>
-<li class="chapter" data-level="4.1.9" data-path="database.html"><a href="database.html#location.method_any_c"><i class="fa fa-check"></i><b>4.1.9</b> location.method_any_c</a></li>
-<li class="chapter" data-level="4.1.10" data-path="database.html"><a href="database.html#surveyor.title_utf8_txt"><i class="fa fa-check"></i><b>4.1.10</b> surveyor.title_utf8_txt</a></li>
-<li class="chapter" data-level="4.1.11" data-path="database.html"><a href="database.html#surveyor.contact_ietf_email"><i class="fa fa-check"></i><b>4.1.11</b> surveyor.contact_ietf_email</a></li>
-<li class="chapter" data-level="4.1.12" data-path="database.html"><a href="database.html#surveyor.address_utf8_txt"><i class="fa fa-check"></i><b>4.1.12</b> surveyor.address_utf8_txt</a></li>
-<li class="chapter" data-level="4.1.13" data-path="database.html"><a href="database.html#longitude_wgs84_dd"><i class="fa fa-check"></i><b>4.1.13</b> longitude_wgs84_dd</a></li>
-<li class="chapter" data-level="4.1.14" data-path="database.html"><a href="database.html#latitude_wgs84_dd"><i class="fa fa-check"></i><b>4.1.14</b> latitude_wgs84_dd</a></li>
-<li class="chapter" data-level="4.1.15" data-path="database.html"><a href="database.html#location.error_any_m"><i class="fa fa-check"></i><b>4.1.15</b> location.error_any_m</a></li>
-<li class="chapter" data-level="4.1.16" data-path="database.html"><a href="database.html#dataset.title_utf8_txt"><i class="fa fa-check"></i><b>4.1.16</b> dataset.title_utf8_txt</a></li>
-<li class="chapter" data-level="4.1.17" data-path="database.html"><a href="database.html#dataset.owner_utf8_txt"><i class="fa fa-check"></i><b>4.1.17</b> dataset.owner_utf8_txt</a></li>
-<li class="chapter" data-level="4.1.18" data-path="database.html"><a href="database.html#dataset.code_ascii_txt"><i class="fa fa-check"></i><b>4.1.18</b> dataset.code_ascii_txt</a></li>
-<li class="chapter" data-level="4.1.19" data-path="database.html"><a href="database.html#dataset.address_idn_url"><i class="fa fa-check"></i><b>4.1.19</b> dataset.address_idn_url</a></li>
-<li class="chapter" data-level="4.1.20" data-path="database.html"><a href="database.html#dataset.license.title_ascii_txt"><i class="fa fa-check"></i><b>4.1.20</b> dataset.license.title_ascii_txt</a></li>
-<li class="chapter" data-level="4.1.21" data-path="database.html"><a href="database.html#dataset.license.address_idn_url"><i class="fa fa-check"></i><b>4.1.21</b> dataset.license.address_idn_url</a></li>
-<li class="chapter" data-level="4.1.22" data-path="database.html"><a href="database.html#dataset.doi_idf_c"><i class="fa fa-check"></i><b>4.1.22</b> dataset.doi_idf_c</a></li>
-<li class="chapter" data-level="4.1.23" data-path="database.html"><a href="database.html#dataset.contact.name_utf8_txt"><i class="fa fa-check"></i><b>4.1.23</b> dataset.contact.name_utf8_txt</a></li>
-<li class="chapter" data-level="4.1.24" data-path="database.html"><a href="database.html#dataset.contact.email_ietf_email"><i class="fa fa-check"></i><b>4.1.24</b> dataset.contact.email_ietf_email</a></li>
-<li class="chapter" data-level="4.1.25" data-path="database.html"><a href="database.html#id.dataset.site_ascii_c"><i class="fa fa-check"></i><b>4.1.25</b> id.dataset.site_ascii_c</a></li>
-<li class="chapter" data-level="4.1.26" data-path="database.html"><a href="database.html#id.user.site_ascii_c"><i class="fa fa-check"></i><b>4.1.26</b> id.user.site_ascii_c</a></li>
-<li class="chapter" data-level="4.1.27" data-path="database.html"><a href="database.html#id.project_ascii_c"><i class="fa fa-check"></i><b>4.1.27</b> id.project_ascii_c</a></li>
-<li class="chapter" data-level="4.1.28" data-path="database.html"><a href="database.html#pedon.taxa_usda_c"><i class="fa fa-check"></i><b>4.1.28</b> pedon.taxa_usda_c</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="database.html"><a href="database.html#soillab-table"><i class="fa fa-check"></i><b>4.2</b> Soillab table</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="database.html"><a href="database.html#id.layer_uuid_c-1"><i class="fa fa-check"></i><b>4.2.1</b> id.layer_uuid_c</a></li>
-<li class="chapter" data-level="4.2.2" data-path="database.html"><a href="database.html#id.layer_local_c"><i class="fa fa-check"></i><b>4.2.2</b> id.layer_local_c</a></li>
-<li class="chapter" data-level="4.2.3" data-path="database.html"><a href="database.html#sample.doi_idf_c"><i class="fa fa-check"></i><b>4.2.3</b> sample.doi_idf_c</a></li>
-<li class="chapter" data-level="4.2.4" data-path="database.html"><a href="database.html#layer.sequence_usda_uint16"><i class="fa fa-check"></i><b>4.2.4</b> layer.sequence_usda_uint16</a></li>
-<li class="chapter" data-level="4.2.5" data-path="database.html"><a href="database.html#layer.type_usda_c"><i class="fa fa-check"></i><b>4.2.5</b> layer.type_usda_c</a></li>
-<li class="chapter" data-level="4.2.6" data-path="database.html"><a href="database.html#layer.field.label_any_c"><i class="fa fa-check"></i><b>4.2.6</b> layer.field.label_any_c</a></li>
-<li class="chapter" data-level="4.2.7" data-path="database.html"><a href="database.html#layer.upper.depth_usda_cm"><i class="fa fa-check"></i><b>4.2.7</b> layer.upper.depth_usda_cm</a></li>
-<li class="chapter" data-level="4.2.8" data-path="database.html"><a href="database.html#layer.lower.depth_usda_cm"><i class="fa fa-check"></i><b>4.2.8</b> layer.lower.depth_usda_cm</a></li>
-<li class="chapter" data-level="4.2.9" data-path="database.html"><a href="database.html#horizon.designation_usda_c"><i class="fa fa-check"></i><b>4.2.9</b> horizon.designation_usda_c</a></li>
-<li class="chapter" data-level="4.2.10" data-path="database.html"><a href="database.html#horizon.designation.discontinuity_usda_c"><i class="fa fa-check"></i><b>4.2.10</b> horizon.designation.discontinuity_usda_c</a></li>
-<li class="chapter" data-level="4.2.11" data-path="database.html"><a href="database.html#layer.structure.type_usda_c"><i class="fa fa-check"></i><b>4.2.11</b> layer.structure.type_usda_c</a></li>
-<li class="chapter" data-level="4.2.12" data-path="database.html"><a href="database.html#layer.structure.grade_usda_c"><i class="fa fa-check"></i><b>4.2.12</b> layer.structure.grade_usda_c</a></li>
-<li class="chapter" data-level="4.2.13" data-path="database.html"><a href="database.html#layer.texture_usda_c"><i class="fa fa-check"></i><b>4.2.13</b> layer.texture_usda_c</a></li>
-<li class="chapter" data-level="4.2.14" data-path="database.html"><a href="database.html#agg.stb_usda.1b1_wpct"><i class="fa fa-check"></i><b>4.2.14</b> agg.stb_usda.1b1_wpct</a></li>
-<li class="chapter" data-level="4.2.15" data-path="database.html"><a href="database.html#al.dith_usda.4g1_wpct"><i class="fa fa-check"></i><b>4.2.15</b> al.dith_usda.4g1_wpct</a></li>
-<li class="chapter" data-level="4.2.16" data-path="database.html"><a href="database.html#al.kcl_usda.4b3_cmolkg"><i class="fa fa-check"></i><b>4.2.16</b> al.kcl_usda.4b3_cmolkg</a></li>
-<li class="chapter" data-level="4.2.17" data-path="database.html"><a href="database.html#al.ox_usda.4g2_wpct"><i class="fa fa-check"></i><b>4.2.17</b> al.ox_usda.4g2_wpct</a></li>
-<li class="chapter" data-level="4.2.18" data-path="database.html"><a href="database.html#al.pyp_usda.4g3_wpct"><i class="fa fa-check"></i><b>4.2.18</b> al.pyp_usda.4g3_wpct</a></li>
-<li class="chapter" data-level="4.2.19" data-path="database.html"><a href="database.html#alsat_usda.4b4_wpct"><i class="fa fa-check"></i><b>4.2.19</b> alsat_usda.4b4_wpct</a></li>
-<li class="chapter" data-level="4.2.20" data-path="database.html"><a href="database.html#bd.clod_usda.3b1_gcm3"><i class="fa fa-check"></i><b>4.2.20</b> bd.clod_usda.3b1_gcm3</a></li>
-<li class="chapter" data-level="4.2.21" data-path="database.html"><a href="database.html#bd.core_iso.11272.2017_gcm3"><i class="fa fa-check"></i><b>4.2.21</b> bd.core_iso.11272.2017_gcm3</a></li>
-<li class="chapter" data-level="4.2.22" data-path="database.html"><a href="database.html#bd.od_usda.3b2_gcm3"><i class="fa fa-check"></i><b>4.2.22</b> bd.od_usda.3b2_gcm3</a></li>
-<li class="chapter" data-level="4.2.23" data-path="database.html"><a href="database.html#bsat_usda.4b4_wpct"><i class="fa fa-check"></i><b>4.2.23</b> bsat_usda.4b4_wpct</a></li>
-<li class="chapter" data-level="4.2.24" data-path="database.html"><a href="database.html#c.tot_iso.10694.1995_wpct"><i class="fa fa-check"></i><b>4.2.24</b> c.tot_iso.10694.1995_wpct</a></li>
-<li class="chapter" data-level="4.2.25" data-path="database.html"><a href="database.html#c.tot_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.25</b> c.tot_usda.4h2_wpct</a></li>
-<li class="chapter" data-level="4.2.26" data-path="database.html"><a href="database.html#ca.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.26</b> ca.ext_usda.4b1_cmolkg</a></li>
-<li class="chapter" data-level="4.2.27" data-path="database.html"><a href="database.html#caco3_iso.10693.1995_vpct"><i class="fa fa-check"></i><b>4.2.27</b> caco3_iso.10693.1995_vpct</a></li>
-<li class="chapter" data-level="4.2.28" data-path="database.html"><a href="database.html#caco3_usda.4e1_wpct"><i class="fa fa-check"></i><b>4.2.28</b> caco3_usda.4e1_wpct</a></li>
-<li class="chapter" data-level="4.2.29" data-path="database.html"><a href="database.html#caco3.pres_usda.1b1_c"><i class="fa fa-check"></i><b>4.2.29</b> caco3.pres_usda.1b1_c</a></li>
-<li class="chapter" data-level="4.2.30" data-path="database.html"><a href="database.html#cec.ext_iso.13536.1995_cmolkg"><i class="fa fa-check"></i><b>4.2.30</b> cec.ext_iso.13536.1995_cmolkg</a></li>
-<li class="chapter" data-level="4.2.31" data-path="database.html"><a href="database.html#cec.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.31</b> cec.ext_usda.4b1_cmolkg</a></li>
-<li class="chapter" data-level="4.2.32" data-path="database.html"><a href="database.html#clay.tot_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.32</b> clay.tot_iso.11277.2020_wpct</a></li>
-<li class="chapter" data-level="4.2.33" data-path="database.html"><a href="database.html#clay.tot_usda.3a1_wpct"><i class="fa fa-check"></i><b>4.2.33</b> clay.tot_usda.3a1_wpct</a></li>
-<li class="chapter" data-level="4.2.34" data-path="database.html"><a href="database.html#ec.ext.sat_usda.4f2_dsm"><i class="fa fa-check"></i><b>4.2.34</b> ec.ext.sat_usda.4f2_dsm</a></li>
-<li class="chapter" data-level="4.2.35" data-path="database.html"><a href="database.html#ec.w_usda.4f1_dsm"><i class="fa fa-check"></i><b>4.2.35</b> ec.w_usda.4f1_dsm</a></li>
-<li class="chapter" data-level="4.2.36" data-path="database.html"><a href="database.html#ecec_usda.4b4_cmolkg"><i class="fa fa-check"></i><b>4.2.36</b> ecec_usda.4b4_cmolkg</a></li>
-<li class="chapter" data-level="4.2.37" data-path="database.html"><a href="database.html#fe.dith_usda.4g1_wpct"><i class="fa fa-check"></i><b>4.2.37</b> fe.dith_usda.4g1_wpct</a></li>
-<li class="chapter" data-level="4.2.38" data-path="database.html"><a href="database.html#fe.ox_usda.4g2_wpct"><i class="fa fa-check"></i><b>4.2.38</b> fe.ox_usda.4g2_wpct</a></li>
-<li class="chapter" data-level="4.2.39" data-path="database.html"><a href="database.html#fe.pyp_usda.4g3_wpct"><i class="fa fa-check"></i><b>4.2.39</b> fe.pyp_usda.4g3_wpct</a></li>
-<li class="chapter" data-level="4.2.40" data-path="database.html"><a href="database.html#gyp_usda.4e2_wpct"><i class="fa fa-check"></i><b>4.2.40</b> gyp_usda.4e2_wpct</a></li>
-<li class="chapter" data-level="4.2.41" data-path="database.html"><a href="database.html#humus_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.41</b> humus_usda.4h2_wpct</a></li>
-<li class="chapter" data-level="4.2.42" data-path="database.html"><a href="database.html#k.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.42</b> k.ext_usda.4b1_cmolkg</a></li>
-<li class="chapter" data-level="4.2.43" data-path="database.html"><a href="database.html#mg.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.43</b> mg.ext_usda.4b1_cmolkg</a></li>
-<li class="chapter" data-level="4.2.44" data-path="database.html"><a href="database.html#n.tot_iso.13878.1998_wpct"><i class="fa fa-check"></i><b>4.2.44</b> n.tot_iso.13878.1998_wpct</a></li>
-<li class="chapter" data-level="4.2.45" data-path="database.html"><a href="database.html#n.tot_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.45</b> n.tot_usda.4h2_wpct</a></li>
-<li class="chapter" data-level="4.2.46" data-path="database.html"><a href="database.html#na.exch_usda.4f3_wpct"><i class="fa fa-check"></i><b>4.2.46</b> na.exch_usda.4f3_wpct</a></li>
-<li class="chapter" data-level="4.2.47" data-path="database.html"><a href="database.html#na.ext_usda.4b1_cmolkg"><i class="fa fa-check"></i><b>4.2.47</b> na.ext_usda.4b1_cmolkg</a></li>
-<li class="chapter" data-level="4.2.48" data-path="database.html"><a href="database.html#oc_iso.10694.1995_wpct"><i class="fa fa-check"></i><b>4.2.48</b> oc_iso.10694.1995_wpct</a></li>
-<li class="chapter" data-level="4.2.49" data-path="database.html"><a href="database.html#oc_iso.17184.2014_wpct"><i class="fa fa-check"></i><b>4.2.49</b> oc_iso.17184.2014_wpct</a></li>
-<li class="chapter" data-level="4.2.50" data-path="database.html"><a href="database.html#oc_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.50</b> oc_usda.4h2_wpct</a></li>
-<li class="chapter" data-level="4.2.51" data-path="database.html"><a href="database.html#oc_usda.calc_wpct"><i class="fa fa-check"></i><b>4.2.51</b> oc_usda.calc_wpct</a></li>
-<li class="chapter" data-level="4.2.52" data-path="database.html"><a href="database.html#p.ext_usda.4d6_mgkg"><i class="fa fa-check"></i><b>4.2.52</b> p.ext_usda.4d6_mgkg</a></li>
-<li class="chapter" data-level="4.2.53" data-path="database.html"><a href="database.html#p.olsn_usda.4d5_mgkg"><i class="fa fa-check"></i><b>4.2.53</b> p.olsn_usda.4d5_mgkg</a></li>
-<li class="chapter" data-level="4.2.54" data-path="database.html"><a href="database.html#ph.cacl2_iso.10390.1994_index"><i class="fa fa-check"></i><b>4.2.54</b> ph.cacl2_iso.10390.1994_index</a></li>
-<li class="chapter" data-level="4.2.55" data-path="database.html"><a href="database.html#ph.cacl2_usda.4c1_index"><i class="fa fa-check"></i><b>4.2.55</b> ph.cacl2_usda.4c1_index</a></li>
-<li class="chapter" data-level="4.2.56" data-path="database.html"><a href="database.html#ph.h2o_usda.4c1_index"><i class="fa fa-check"></i><b>4.2.56</b> ph.h2o_usda.4c1_index</a></li>
-<li class="chapter" data-level="4.2.57" data-path="database.html"><a href="database.html#s.tot_usda.4h2_wpct"><i class="fa fa-check"></i><b>4.2.57</b> s.tot_usda.4h2_wpct</a></li>
-<li class="chapter" data-level="4.2.58" data-path="database.html"><a href="database.html#sand.tot_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.58</b> sand.tot_iso.11277.2020_wpct</a></li>
-<li class="chapter" data-level="4.2.59" data-path="database.html"><a href="database.html#sand.tot_usda.3a1_wpct"><i class="fa fa-check"></i><b>4.2.59</b> sand.tot_usda.3a1_wpct</a></li>
-<li class="chapter" data-level="4.2.60" data-path="database.html"><a href="database.html#silt.tot_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.60</b> silt.tot_iso.11277.2020_wpct</a></li>
-<li class="chapter" data-level="4.2.61" data-path="database.html"><a href="database.html#silt.tot_usda.3a1_wpct"><i class="fa fa-check"></i><b>4.2.61</b> silt.tot_usda.3a1_wpct</a></li>
-<li class="chapter" data-level="4.2.62" data-path="database.html"><a href="database.html#sodium.ads.ratio_usda.4f3_index"><i class="fa fa-check"></i><b>4.2.62</b> sodium.ads.ratio_usda.4f3_index</a></li>
-<li class="chapter" data-level="4.2.63" data-path="database.html"><a href="database.html#wpg2_iso.11277.2020_wpct"><i class="fa fa-check"></i><b>4.2.63</b> wpg2_iso.11277.2020_wpct</a></li>
-<li class="chapter" data-level="4.2.64" data-path="database.html"><a href="database.html#wpg2_usda.3a2_wpct"><i class="fa fa-check"></i><b>4.2.64</b> wpg2_usda.3a2_wpct</a></li>
-<li class="chapter" data-level="4.2.65" data-path="database.html"><a href="database.html#wr.1500kbar_usda.3c2_wpct"><i class="fa fa-check"></i><b>4.2.65</b> wr.1500kbar_usda.3c2_wpct</a></li>
-<li class="chapter" data-level="4.2.66" data-path="database.html"><a href="database.html#wr.33kbar_usda.3c1_wpct"><i class="fa fa-check"></i><b>4.2.66</b> wr.33kbar_usda.3c1_wpct</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="database.html"><a href="database.html#mir-table"><i class="fa fa-check"></i><b>4.3</b> MIR scans table</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="database.html"><a href="database.html#id.scan_uuid_c"><i class="fa fa-check"></i><b>4.3.1</b> id.scan_uuid_c</a></li>
-<li class="chapter" data-level="4.3.2" data-path="database.html"><a href="database.html#id.scan_local_c"><i class="fa fa-check"></i><b>4.3.2</b> id.scan_local_c</a></li>
-<li class="chapter" data-level="4.3.3" data-path="database.html"><a href="database.html#id.layer_uuid_c-2"><i class="fa fa-check"></i><b>4.3.3</b> id.layer_uuid_c</a></li>
-<li class="chapter" data-level="4.3.4" data-path="database.html"><a href="database.html#id.layer_local_c-1"><i class="fa fa-check"></i><b>4.3.4</b> id.layer_local_c</a></li>
-<li class="chapter" data-level="4.3.5" data-path="database.html"><a href="database.html#model.name_utf8_txt"><i class="fa fa-check"></i><b>4.3.5</b> model.name_utf8_txt</a></li>
-<li class="chapter" data-level="4.3.6" data-path="database.html"><a href="database.html#model.code_any_c"><i class="fa fa-check"></i><b>4.3.6</b> model.code_any_c</a></li>
-<li class="chapter" data-level="4.3.7" data-path="database.html"><a href="database.html#method.light.source_any_c"><i class="fa fa-check"></i><b>4.3.7</b> method.light.source_any_c</a></li>
-<li class="chapter" data-level="4.3.8" data-path="database.html"><a href="database.html#method.preparation_any_c"><i class="fa fa-check"></i><b>4.3.8</b> method.preparation_any_c</a></li>
-<li class="chapter" data-level="4.3.9" data-path="database.html"><a href="database.html#scan.file_any_c"><i class="fa fa-check"></i><b>4.3.9</b> scan.file_any_c</a></li>
-<li class="chapter" data-level="4.3.10" data-path="database.html"><a href="database.html#scan.date.begin_iso.8601_yyyy.mm.dd"><i class="fa fa-check"></i><b>4.3.10</b> scan.date.begin_iso.8601_yyyy.mm.dd</a></li>
-<li class="chapter" data-level="4.3.11" data-path="database.html"><a href="database.html#scan.date.end_iso.8601_yyyy.mm.dd"><i class="fa fa-check"></i><b>4.3.11</b> scan.date.end_iso.8601_yyyy.mm.dd</a></li>
-<li class="chapter" data-level="4.3.12" data-path="database.html"><a href="database.html#scan.license.title_ascii_txt"><i class="fa fa-check"></i><b>4.3.12</b> scan.license.title_ascii_txt</a></li>
-<li class="chapter" data-level="4.3.13" data-path="database.html"><a href="database.html#scan.license.address_idn_url"><i class="fa fa-check"></i><b>4.3.13</b> scan.license.address_idn_url</a></li>
-<li class="chapter" data-level="4.3.14" data-path="database.html"><a href="database.html#scan.doi_idf_c"><i class="fa fa-check"></i><b>4.3.14</b> scan.doi_idf_c</a></li>
-<li class="chapter" data-level="4.3.15" data-path="database.html"><a href="database.html#scan.contact.name_utf8_txt"><i class="fa fa-check"></i><b>4.3.15</b> scan.contact.name_utf8_txt</a></li>
-<li class="chapter" data-level="4.3.16" data-path="database.html"><a href="database.html#scan.contact.email_ietf_email"><i class="fa fa-check"></i><b>4.3.16</b> scan.contact.email_ietf_email</a></li>
-<li class="chapter" data-level="4.3.17" data-path="database.html"><a href="database.html#scan.mir.nafreq_ossl_pct"><i class="fa fa-check"></i><b>4.3.17</b> scan.mir.nafreq_ossl_pct</a></li>
-<li class="chapter" data-level="4.3.18" data-path="database.html"><a href="database.html#scan.mir.negfreq_ossl_pct"><i class="fa fa-check"></i><b>4.3.18</b> scan.mir.negfreq_ossl_pct</a></li>
-<li class="chapter" data-level="4.3.19" data-path="database.html"><a href="database.html#scan.mir.extfreq_ossl_pct"><i class="fa fa-check"></i><b>4.3.19</b> scan.mir.extfreq_ossl_pct</a></li>
-<li class="chapter" data-level="4.3.20" data-path="database.html"><a href="database.html#scan_mir._abs"><i class="fa fa-check"></i><b>4.3.20</b> scan_mir.****_abs</a></li>
-</ul></li>
-<li class="chapter" data-level="4.4" data-path="database.html"><a href="database.html#visnir-table"><i class="fa fa-check"></i><b>4.4</b> VisNIR scans table</a>
-<ul>
-<li class="chapter" data-level="4.4.1" data-path="database.html"><a href="database.html#id.scan_uuid_c-1"><i class="fa fa-check"></i><b>4.4.1</b> id.scan_uuid_c</a></li>
-<li class="chapter" data-level="4.4.2" data-path="database.html"><a href="database.html#id.scan_local_c-1"><i class="fa fa-check"></i><b>4.4.2</b> id.scan_local_c</a></li>
-<li class="chapter" data-level="4.4.3" data-path="database.html"><a href="database.html#id.layer_uuid_c-3"><i class="fa fa-check"></i><b>4.4.3</b> id.layer_uuid_c</a></li>
-<li class="chapter" data-level="4.4.4" data-path="database.html"><a href="database.html#id.layer_local_c-2"><i class="fa fa-check"></i><b>4.4.4</b> id.layer_local_c</a></li>
-<li class="chapter" data-level="4.4.5" data-path="database.html"><a href="database.html#model.name_utf8_txt-1"><i class="fa fa-check"></i><b>4.4.5</b> model.name_utf8_txt</a></li>
-<li class="chapter" data-level="4.4.6" data-path="database.html"><a href="database.html#model.code_any_c-1"><i class="fa fa-check"></i><b>4.4.6</b> model.code_any_c</a></li>
-<li class="chapter" data-level="4.4.7" data-path="database.html"><a href="database.html#method.light.source_any_c-1"><i class="fa fa-check"></i><b>4.4.7</b> method.light.source_any_c</a></li>
-<li class="chapter" data-level="4.4.8" data-path="database.html"><a href="database.html#method.preparation_any_c-1"><i class="fa fa-check"></i><b>4.4.8</b> method.preparation_any_c</a></li>
-<li class="chapter" data-level="4.4.9" data-path="database.html"><a href="database.html#scan.file_any_c-1"><i class="fa fa-check"></i><b>4.4.9</b> scan.file_any_c</a></li>
-<li class="chapter" data-level="4.4.10" data-path="database.html"><a href="database.html#scan.date.begin_iso.8601_yyyy.mm.dd-1"><i class="fa fa-check"></i><b>4.4.10</b> scan.date.begin_iso.8601_yyyy.mm.dd</a></li>
-<li class="chapter" data-level="4.4.11" data-path="database.html"><a href="database.html#scan.date.end_iso.8601_yyyy.mm.dd-1"><i class="fa fa-check"></i><b>4.4.11</b> scan.date.end_iso.8601_yyyy.mm.dd</a></li>
-<li class="chapter" data-level="4.4.12" data-path="database.html"><a href="database.html#scan.license.title_ascii_txt-1"><i class="fa fa-check"></i><b>4.4.12</b> scan.license.title_ascii_txt</a></li>
-<li class="chapter" data-level="4.4.13" data-path="database.html"><a href="database.html#scan.license.address_idn_url-1"><i class="fa fa-check"></i><b>4.4.13</b> scan.license.address_idn_url</a></li>
-<li class="chapter" data-level="4.4.14" data-path="database.html"><a href="database.html#scan.doi_idf_c-1"><i class="fa fa-check"></i><b>4.4.14</b> scan.doi_idf_c</a></li>
-<li class="chapter" data-level="4.4.15" data-path="database.html"><a href="database.html#scan.contact.name_utf8_txt-1"><i class="fa fa-check"></i><b>4.4.15</b> scan.contact.name_utf8_txt</a></li>
-<li class="chapter" data-level="4.4.16" data-path="database.html"><a href="database.html#scan.contact.email_ietf_email-1"><i class="fa fa-check"></i><b>4.4.16</b> scan.contact.email_ietf_email</a></li>
-<li class="chapter" data-level="4.4.17" data-path="database.html"><a href="database.html#scan.visnir.nafreq_ossl_pct"><i class="fa fa-check"></i><b>4.4.17</b> scan.visnir.nafreq_ossl_pct</a></li>
-<li class="chapter" data-level="4.4.18" data-path="database.html"><a href="database.html#scan.visnir.negfreq_ossl_pct"><i class="fa fa-check"></i><b>4.4.18</b> scan.visnir.negfreq_ossl_pct</a></li>
-<li class="chapter" data-level="4.4.19" data-path="database.html"><a href="database.html#scan.visnir.extfreq_ossl_pct"><i class="fa fa-check"></i><b>4.4.19</b> scan.visnir.extfreq_ossl_pct</a></li>
-<li class="chapter" data-level="4.4.20" data-path="database.html"><a href="database.html#scan_visnir._pcnt"><i class="fa fa-check"></i><b>4.4.20</b> scan_visnir.****_pcnt</a></li>
-</ul></li>
-<li class="chapter" data-level="4.5" data-path="database.html"><a href="database.html#harmonization-rules"><i class="fa fa-check"></i><b>4.5</b> Harmonization rules</a>
-<ul>
-<li class="chapter" data-level="4.5.1" data-path="database.html"><a href="database.html#ph"><i class="fa fa-check"></i><b>4.5.1</b> pH</a></li>
-<li class="chapter" data-level="4.5.2" data-path="database.html"><a href="database.html#carbon"><i class="fa fa-check"></i><b>4.5.2</b> Carbon</a></li>
-<li class="chapter" data-level="4.5.3" data-path="database.html"><a href="database.html#phosphorous"><i class="fa fa-check"></i><b>4.5.3</b> Phosphorous</a></li>
-<li class="chapter" data-level="4.5.4" data-path="database.html"><a href="database.html#potassium"><i class="fa fa-check"></i><b>4.5.4</b> Potassium</a></li>
-<li class="chapter" data-level="4.5.5" data-path="database.html"><a href="database.html#nitrogen"><i class="fa fa-check"></i><b>4.5.5</b> Nitrogen</a></li>
-<li class="chapter" data-level="4.5.6" data-path="database.html"><a href="database.html#exchangeable-cations-and-cec"><i class="fa fa-check"></i><b>4.5.6</b> Exchangeable cations and CEC</a></li>
-<li class="chapter" data-level="4.5.7" data-path="database.html"><a href="database.html#texture-fractions"><i class="fa fa-check"></i><b>4.5.7</b> Texture fractions</a></li>
-<li class="chapter" data-level="4.5.8" data-path="database.html"><a href="database.html#bulk-density"><i class="fa fa-check"></i><b>4.5.8</b> Bulk density</a></li>
-<li class="chapter" data-level="4.5.9" data-path="database.html"><a href="database.html#soil-biological-variables"><i class="fa fa-check"></i><b>4.5.9</b> Soil biological variables</a></li>
-<li class="chapter" data-level="4.5.10" data-path="database.html"><a href="database.html#soil-contaminants"><i class="fa fa-check"></i><b>4.5.10</b> Soil contaminants</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html"><i class="fa fa-check"></i><b>5</b> Reference soil spectroscopy models</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#ossl-global-soil-spectroscopy-callibrarion-models"><i class="fa fa-check"></i><b>5.1</b> OSSL global soil spectroscopy callibrarion models</a></li>
-<li class="chapter" data-level="5.2" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#using-default-ossl-models-to-predict-soil-properties"><i class="fa fa-check"></i><b>5.2</b> Using default OSSL models to predict soil properties</a>
-<ul>
-<li class="chapter" data-level="5.2.1" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#predicting-soil-properties-using-mir-spectra"><i class="fa fa-check"></i><b>5.2.1</b> Predicting soil properties using MIR spectra</a></li>
-<li class="chapter" data-level="5.2.2" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#predicting-soil-properties-using-mir-spectra-and-geographical-covariates"><i class="fa fa-check"></i><b>5.2.2</b> Predicting soil properties using MIR spectra and geographical covariates</a></li>
-<li class="chapter" data-level="5.2.3" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#predicting-soil-properties-using-visnir-spectra"><i class="fa fa-check"></i><b>5.2.3</b> Predicting soil properties using VisNIR spectra</a></li>
-<li class="chapter" data-level="5.2.4" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#importing-soil-spectral-scans-using-raw-data-formats"><i class="fa fa-check"></i><b>5.2.4</b> Importing soil spectral scans using raw data formats</a></li>
-<li class="chapter" data-level="5.2.5" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#the-bundle-approach-to-soil-spectroscopy-calibration"><i class="fa fa-check"></i><b>5.2.5</b> The bundle approach to soil spectroscopy calibration</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#registering-your-own-model"><i class="fa fa-check"></i><b>5.3</b> Registering your own model</a>
-<ul>
-<li class="chapter" data-level="5.3.1" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#access-ossl-data-to-fit-your-own-models"><i class="fa fa-check"></i><b>5.3.1</b> Access OSSL data to fit your own models</a></li>
-<li class="chapter" data-level="5.3.2" data-path="reference-soil-spectroscopy-models.html"><a href="reference-soil-spectroscopy-models.html#registering-and-hosting-models"><i class="fa fa-check"></i><b>5.3.2</b> Registering and hosting models</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="divider"></li>
-<li><a href="https://soilspectroscopy.org">J. (Jon) Sanderman and contributors</a></li>
-
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Open Soil Spectral Library</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Open Soil Spectral Library</a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">About</a></li>
+<li><a class="" href="new-to-markdown.html"><span class="header-section-number">1</span> New to markdown</a></li>
+<li><a class="active" href="soil-spectroscopy-tools-and-users.html"><span class="header-section-number">2</span> Soil spectroscopy tools and users</a></li>
+<li><a class="" href="database.html"><span class="header-section-number">3</span> Database</a></li>
+<li><a class="" href="reference-soil-spectroscopy-models.html"><span class="header-section-number">4</span> Reference soil spectroscopy models</a></li>
+<li><a class="" href="references.html"><span class="header-section-number">5</span> References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/soilspectroscopy/ossl-manual">View book source <i class="fab fa-github"></i></a></p>
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="soil-spectroscopy-tools-and-users" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Soil spectroscopy tools and users</h1>
-<div id="soil-spectroscopy-instruments" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Soil Spectroscopy Instruments</h2>
-<div class="figure"><span id="fig:soil-db"></span>
-<img src="img/ssl_instruments_list.png" alt="Most frequently used MIR / VISNIR instruments based on @BenedettiEgmond2021." width="100%" />
-<p class="caption">
-Figure 1.3: Most frequently used MIR / VISNIR instruments based on <span class="citation"><a href="#ref-BenedettiEgmond2021" role="doc-biblioref">Benedetti and van Egmond</a> (<a href="#ref-BenedettiEgmond2021" role="doc-biblioref">2021</a>)</span>.
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="soil-spectroscopy-tools-and-users" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> Soil spectroscopy tools and users<a class="anchor" aria-label="anchor" href="#soil-spectroscopy-tools-and-users"><i class="fas fa-link"></i></a>
+</h1>
+<div class="rmdnote">
+<p>You are reading the work-in-progress Spatial and spatiotemporal interpolation using Ensemble Machine Learning. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at <a href="https://soilspectroscopy.github.io/ossl-manual/" class="uri">https://soilspectroscopy.github.io/ossl-manual/</a>.</p>
+</div>
+<div id="soil-spectroscopy-instruments" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Soil Spectroscopy Instruments<a class="anchor" aria-label="anchor" href="#soil-spectroscopy-instruments"><i class="fas fa-link"></i></a>
+</h2>
+<div class="figure" style="text-align: center">
+<span id="fig:soil-db"></span>
+<img src="img/ssl_instruments_list.png" alt="Most frequently used MIR / VISNIR instruments based on @BenedettiEgmond2021." width="100%"><p class="caption">
+Figure 0.3: Most frequently used MIR / VISNIR instruments based on <span class="citation">Benedetti &amp; van Egmond (<a href="references.html#ref-BenedettiEgmond2021" role="doc-biblioref">2021</a>)</span>.
 </p>
 </div>
-<div id="bruker-alpha-1_ft-mir_zn-se" class="section level3" number="3.1.1">
-<h3><span class="header-section-number">3.1.1</span> Bruker Alpha 1_FT-MIR_Zn Se</h3>
+<div id="bruker-alpha-1_ft-mir_zn-se" class="section level3" number="2.1.1">
+<h3>
+<span class="header-section-number">2.1.1</span> Bruker Alpha 1_FT-MIR_Zn Se<a class="anchor" aria-label="anchor" href="#bruker-alpha-1_ft-mir_zn-se"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
 <li>🆔 Bruker_Alpha1_FT.MIR.Zn.Se</li>
-<li>🏭 Producer: Bruker<br />
+<li>🏭 Producer: Bruker<br>
 </li>
-<li>🔗 Documentation: <a href="https://www.bruker.com/" class="uri">https://www.bruker.com/</a><br />
+<li>🔗 Documentation: <a href="https://www.bruker.com/" class="uri">https://www.bruker.com/</a><br>
 </li>
-<li>📂 Model type: MIR (4000-400 cm<sup>-1</sup>)<br />
+<li>📂 Model type: MIR (4000-400 cm<sup>-1</sup>)<br>
 </li>
 <li>📅 Production year: 2012</li>
 </ul>
 </div>
-<div id="bruker-alpha-1_ft-mir_kbr" class="section level3" number="3.1.2">
-<h3><span class="header-section-number">3.1.2</span> Bruker Alpha 1_FT-MIR_KBr</h3>
+<div id="bruker-alpha-1_ft-mir_kbr" class="section level3" number="2.1.2">
+<h3>
+<span class="header-section-number">2.1.2</span> Bruker Alpha 1_FT-MIR_KBr<a class="anchor" aria-label="anchor" href="#bruker-alpha-1_ft-mir_kbr"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
 <li>🆔 Bruker_Alpha1_FT.MIR.KBr</li>
-<li>🏭 Producer: Bruker<br />
+<li>🏭 Producer: Bruker<br>
 </li>
-<li>🔗 Documentation: <a href="https://www.bruker.com/" class="uri">https://www.bruker.com/</a><br />
+<li>🔗 Documentation: <a href="https://www.bruker.com/" class="uri">https://www.bruker.com/</a><br>
 </li>
-<li>📂 Model type: MIR (4000-400 cm<sup>-1</sup>)<br />
-</li>
-<li>📅 Production year: 2012</li>
-</ul>
-</div>
-<div id="bruker-vertex-70-with-hts-xt-accessory" class="section level3" number="3.1.3">
-<h3><span class="header-section-number">3.1.3</span> Bruker Vertex 70 with HTS-XT accessory</h3>
-<ul>
-<li>🆔 Bruker_Vertex_70.HTS.XT<br />
-</li>
-<li>🏭 Producer: Bruker<br />
-</li>
-<li>🔗 Documentation: <a href="https://www.bruker.com/en/products-and-solutions/infrared-and-raman/ft-ir-research-spectrometers/vertex-research-ft-ir-spectrometer.html" class="uri">https://www.bruker.com/en/products-and-solutions/infrared-and-raman/ft-ir-research-spectrometers/vertex-research-ft-ir-spectrometer.html</a><br />
-</li>
-<li>📂 Model type: MIR (4000-400 cm<sup>-1</sup>)<br />
+<li>📂 Model type: MIR (4000-400 cm<sup>-1</sup>)<br>
 </li>
 <li>📅 Production year: 2012</li>
 </ul>
 </div>
-<div id="asd-labspec-2500-with-muglight-accessory" class="section level3" number="3.1.4">
-<h3><span class="header-section-number">3.1.4</span> ASD Labspec 2500 with Muglight accessory</h3>
+<div id="bruker-vertex-70-with-hts-xt-accessory" class="section level3" number="2.1.3">
+<h3>
+<span class="header-section-number">2.1.3</span> Bruker Vertex 70 with HTS-XT accessory<a class="anchor" aria-label="anchor" href="#bruker-vertex-70-with-hts-xt-accessory"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
-<li>🆔 ASD_Labspec_2500_MA<br />
+<li>🆔 Bruker_Vertex_70.HTS.XT<br>
 </li>
-<li>🏭 Producer: Malvern Panalytical Ltd / Spectris<br />
+<li>🏭 Producer: Bruker<br>
 </li>
-<li>🔗 Documentation: <a href="https://www.malvernpanalytical.com/en/products/product-range/asd-range/labspec-range" class="uri">https://www.malvernpanalytical.com/en/products/product-range/asd-range/labspec-range</a><br />
+<li>🔗 Documentation: <a href="https://www.bruker.com/en/products-and-solutions/infrared-and-raman/ft-ir-research-spectrometers/vertex-research-ft-ir-spectrometer.html" class="uri">https://www.bruker.com/en/products-and-solutions/infrared-and-raman/ft-ir-research-spectrometers/vertex-research-ft-ir-spectrometer.html</a><br>
 </li>
-<li>📂 Model type: NIR (350nm - 2500nm)<br />
+<li>📂 Model type: MIR (4000-400 cm<sup>-1</sup>)<br>
+</li>
+<li>📅 Production year: 2012</li>
+</ul>
+</div>
+<div id="asd-labspec-2500-with-muglight-accessory" class="section level3" number="2.1.4">
+<h3>
+<span class="header-section-number">2.1.4</span> ASD Labspec 2500 with Muglight accessory<a class="anchor" aria-label="anchor" href="#asd-labspec-2500-with-muglight-accessory"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>🆔 ASD_Labspec_2500_MA<br>
+</li>
+<li>🏭 Producer: Malvern Panalytical Ltd / Spectris<br>
+</li>
+<li>🔗 Documentation: <a href="https://www.malvernpanalytical.com/en/products/product-range/asd-range/labspec-range" class="uri">https://www.malvernpanalytical.com/en/products/product-range/asd-range/labspec-range</a><br>
+</li>
+<li>📂 Model type: NIR (350nm - 2500nm)<br>
 </li>
 <li>📅 Production year: 2018</li>
 </ul>
 </div>
-<div id="asd-fieldspec-fr" class="section level3" number="3.1.5">
-<h3><span class="header-section-number">3.1.5</span> ASD FieldSpec FR</h3>
+<div id="asd-fieldspec-fr" class="section level3" number="2.1.5">
+<h3>
+<span class="header-section-number">2.1.5</span> ASD FieldSpec FR<a class="anchor" aria-label="anchor" href="#asd-fieldspec-fr"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
-<li>🆔 ASD_FieldSpec_FR<br />
+<li>🆔 ASD_FieldSpec_FR<br>
 </li>
-<li>🏭 Producer: Analytical Spectral Devices, Inc.<br />
+<li>🏭 Producer: Analytical Spectral Devices, Inc.<br>
 </li>
-<li>🔗 Documentation: <a href="https://www.laboratorynetwork.com/doc/fieldspec-pro-fr-portable-spectroradiometer-0001" class="uri">https://www.laboratorynetwork.com/doc/fieldspec-pro-fr-portable-spectroradiometer-0001</a><br />
+<li>🔗 Documentation: <a href="https://www.laboratorynetwork.com/doc/fieldspec-pro-fr-portable-spectroradiometer-0001" class="uri">https://www.laboratorynetwork.com/doc/fieldspec-pro-fr-portable-spectroradiometer-0001</a><br>
 </li>
-<li>📂 Model type: NIR (350nm - 2500nm)<br />
+<li>📂 Model type: NIR (350nm - 2500nm)<br>
 </li>
 <li>📅 Production year: 2016</li>
 </ul>
 </div>
-<div id="xds-rapid-content-analyzer" class="section level3" number="3.1.6">
-<h3><span class="header-section-number">3.1.6</span> XDS Rapid Content Analyzer</h3>
+<div id="xds-rapid-content-analyzer" class="section level3" number="2.1.6">
+<h3>
+<span class="header-section-number">2.1.6</span> XDS Rapid Content Analyzer<a class="anchor" aria-label="anchor" href="#xds-rapid-content-analyzer"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
-<li>🆔 XDS_Rapid_Content_Analyzer<br />
+<li>🆔 XDS_Rapid_Content_Analyzer<br>
 </li>
-<li>🏭 Producer: FOSS NIRSystems Inc.<br />
+<li>🏭 Producer: FOSS NIRSystems Inc.<br>
 </li>
-<li>🔗 Documentation: <a href="https://www.selectscience.net/products/xds-rapid-content-analyzer/?prodID=106696" class="uri">https://www.selectscience.net/products/xds-rapid-content-analyzer/?prodID=106696</a><br />
+<li>🔗 Documentation: <a href="https://www.selectscience.net/products/xds-rapid-content-analyzer/?prodID=106696" class="uri">https://www.selectscience.net/products/xds-rapid-content-analyzer/?prodID=106696</a><br>
 </li>
-<li>📂 Model type: NIR (Si 400–1100 nm and PbS 1100–2500 nm detectors)<br />
+<li>📂 Model type: NIR (Si 400–1100 nm and PbS 1100–2500 nm detectors)<br>
 </li>
 <li>📅 Production year: 2008</li>
 </ul>
 </div>
 </div>
-<div id="registered-soil-spectral-libraries" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Registered soil spectral libraries</h2>
-<div id="kssl.ssl" class="section level3" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> KSSL.SSL</h3>
+<div id="registered-soil-spectral-libraries" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> Registered soil spectral libraries<a class="anchor" aria-label="anchor" href="#registered-soil-spectral-libraries"><i class="fas fa-link"></i></a>
+</h2>
+<div id="kssl.ssl" class="section level3" number="2.2.1">
+<h3>
+<span class="header-section-number">2.2.1</span> KSSL.SSL<a class="anchor" aria-label="anchor" href="#kssl.ssl"><i class="fas fa-link"></i></a>
+</h3>
 <p><em>Description</em>: MIR and NIR spectral library and associated soil characterization database, which now
 includes &gt;50,000 MIR spectra collected on soils primarily from the United States. Freely available by request (see below).</p>
 <ul>
-<li>📕 Seybold, C. A., Ferguson, R., Wysocki, D., Bailey, S., Anderson, J., Nester, B., … &amp; Thomas, P. (2019). <a href="https://doi.org/10.2136/sssaj2019.06.0205">Application of Mid‐Infrared Spectroscopy in Soil Survey</a>. Soil Science Society of America Journal, 83(6), 1746-1759. <a href="https://doi.org/10.2136/sssaj2019.06.0205" class="uri">https://doi.org/10.2136/sssaj2019.06.0205</a> / Sanderman, J., Savage, K., &amp; Dangal, S. R. (2020). Mid‐infrared spectroscopy for prediction of soil health indicators in the United States. Soil Science Society of America Journal, 84(1), 251-261. <a href="https://doi.org/10.1002/saj2.20009" class="uri">https://doi.org/10.1002/saj2.20009</a><br />
+<li>📕 Seybold, C. A., Ferguson, R., Wysocki, D., Bailey, S., Anderson, J., Nester, B., … &amp; Thomas, P. (2019). <a href="https://doi.org/10.2136/sssaj2019.06.0205">Application of Mid‐Infrared Spectroscopy in Soil Survey</a>. Soil Science Society of America Journal, 83(6), 1746-1759. <a href="https://doi.org/10.2136/sssaj2019.06.0205" class="uri">https://doi.org/10.2136/sssaj2019.06.0205</a> / Sanderman, J., Savage, K., &amp; Dangal, S. R. (2020). Mid‐infrared spectroscopy for prediction of soil health indicators in the United States. Soil Science Society of America Journal, 84(1), 251-261. <a href="https://doi.org/10.1002/saj2.20009" class="uri">https://doi.org/10.1002/saj2.20009</a><br>
 </li>
-<li>🔗 Project website: <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/" class="uri">https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/</a><br />
+<li>🔗 Project website: <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/" class="uri">https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/</a><br>
 </li>
-<li>©️ Data license: <a href="https://ncsslabdatamart.sc.egov.usda.gov/datause.aspx">CC-BY</a><br />
+<li>©️ Data license: <a href="https://ncsslabdatamart.sc.egov.usda.gov/datause.aspx">CC-BY</a><br>
 </li>
-<li>📍 Unique sites: 61,103<br />
+<li>📍 Unique sites: 61,103<br>
 </li>
-<li>📋 Unique complete scans:<br />
+<li>📋 Unique complete scans:<br>
 </li>
-<li>📝 Import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/KSSL">KSSL</a></li>
+<li>📝 Import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/KSSL">KSSL</a>
+</li>
 </ul>
-<div class="figure"><span id="fig:kssl-curves"></span>
-<img src="img/KSSL_VNIR_Graphs_Particle_Size_Consistency.jpeg" alt="KSSL VisNIR spectral signatures for different soil texture fractions." width="90%" />
-<p class="caption">
-Figure 3.1: KSSL VisNIR spectral signatures for different soil texture fractions.
+<div class="figure" style="text-align: center">
+<span id="fig:kssl-curves"></span>
+<img src="img/KSSL_VNIR_Graphs_Particle_Size_Consistency.jpeg" alt="KSSL VisNIR spectral signatures for different soil texture fractions." width="90%"><p class="caption">
+Figure 2.1: KSSL VisNIR spectral signatures for different soil texture fractions.
 </p>
 </div>
 </div>
-<div id="icraf.isric" class="section level3" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> ICRAF.ISRIC</h3>
+<div id="icraf.isric" class="section level3" number="2.2.2">
+<h3>
+<span class="header-section-number">2.2.2</span> ICRAF.ISRIC<a class="anchor" aria-label="anchor" href="#icraf.isric"><i class="fas fa-link"></i></a>
+</h3>
 <p><em>Description</em>: <a href="https://data.isric.org/geonetwork/srv/eng/catalog.search#/metadata/1b65024a-cd9f-11e9-a8f9-a0481ca9e724">A Globally Distributed Soil Spectral Library Mid Infrared Diffuse
 Reflectance Spectra</a>. MIR scans for some 785 profiles from the ISRIC World Soil Reference Collection.
 The samples are from 58 countries spanning Africa, Asia, Europe, North America, and South America.
 Data available under the CC-BY 4.0 license.</p>
 <ul>
 <li>📕 World Agroforestry Centre, (2014). <a href="https://worldagroforestry.org/sites/default/files/Description_ICRAF-ISRIC%20Soil%20VNIR%20Spectral%20Library.pdf">The ICRAF/ISRIC spectral library</a>, Soil-Plant Spectral Diagnostics laboratory, United
-Nations Avenue, Nairobi, Kenya. <a href="https://doi.org/10.34725/DVN/MFHA9C" class="uri">https://doi.org/10.34725/DVN/MFHA9C</a><br />
+Nations Avenue, Nairobi, Kenya. <a href="https://doi.org/10.34725/DVN/MFHA9C" class="uri">https://doi.org/10.34725/DVN/MFHA9C</a><br>
 </li>
-<li>🔗 Project website: <a href="https://www.worldagroforestry.org/sd/landhealth/soil-plant-spectral-diagnostics-laboratory/soil-spectra-library" class="uri">https://www.worldagroforestry.org/sd/landhealth/soil-plant-spectral-diagnostics-laboratory/soil-spectra-library</a><br />
+<li>🔗 Project website: <a href="https://www.worldagroforestry.org/sd/landhealth/soil-plant-spectral-diagnostics-laboratory/soil-spectra-library" class="uri">https://www.worldagroforestry.org/sd/landhealth/soil-plant-spectral-diagnostics-laboratory/soil-spectra-library</a><br>
 </li>
-<li>©️ Data license: <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a><br />
+<li>©️ Data license: <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a><br>
 </li>
-<li>📍 Unique locations: 785<br />
+<li>📍 Unique locations: 785<br>
 </li>
-<li>📋 Unique complete scans: 4308<br />
+<li>📋 Unique complete scans: 4308<br>
 </li>
-<li>📝 Import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/ICRAF_ISRIC">ICRAF_ISRIC</a></li>
+<li>📝 Import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/ICRAF_ISRIC">ICRAF_ISRIC</a>
+</li>
 </ul>
-<div class="figure"><span id="fig:icraf-curves"></span>
-<img src="img/ICRAF_VNIR_Graphs_Particle_Size_Consistency.jpeg" alt="ICRAF-ISRIC VisNIR spectral signatures for different soil texture fractions." width="90%" />
-<p class="caption">
-Figure 3.2: ICRAF-ISRIC VisNIR spectral signatures for different soil texture fractions.
+<div class="figure" style="text-align: center">
+<span id="fig:icraf-curves"></span>
+<img src="img/ICRAF_VNIR_Graphs_Particle_Size_Consistency.jpeg" alt="ICRAF-ISRIC VisNIR spectral signatures for different soil texture fractions." width="90%"><p class="caption">
+Figure 2.2: ICRAF-ISRIC VisNIR spectral signatures for different soil texture fractions.
 </p>
 </div>
 </div>
-<div id="lucas.ssl" class="section level3" number="3.2.3">
-<h3><span class="header-section-number">3.2.3</span> LUCAS.SSL</h3>
+<div id="lucas.ssl" class="section level3" number="2.2.3">
+<h3>
+<span class="header-section-number">2.2.3</span> LUCAS.SSL<a class="anchor" aria-label="anchor" href="#lucas.ssl"><i class="fas fa-link"></i></a>
+</h3>
 <p><em>Description</em>: <a href="https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data">LUCAS 2009, 2015 top-soil data</a>. VisNIR scans of some 19,860 in 2009 (2012) and 21,859 points in 2015.
 Data available publicly under condition that <em>“Graphical representation of individual units on a map is permitted as far as the geographical location of the soil samples is not detectable”</em>.
 Additional 600 samples have been scanned by Woodwell Climate Research using an MIR instrument.</p>
 <ul>
-<li>📕 Jones, A, Fernandez-Ugalde, O., Scarpa, S., (2020). <a href="https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data">LUCAS 2015 Topsoil Survey. Presentation of dataset and results</a>, EUR 30332 EN, Publications Office of the European Union: Luxembourg, ISBN 978-92-76-21080-1, <a href="doi:10.2760/616084" class="uri">doi:10.2760/616084</a>, JRC121325.<br />
+<li>📕 Jones, A, Fernandez-Ugalde, O., Scarpa, S., (2020). <a href="https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data">LUCAS 2015 Topsoil Survey. Presentation of dataset and results</a>, EUR 30332 EN, Publications Office of the European Union: Luxembourg, ISBN 978-92-76-21080-1, <a href="doi:10.2760/616084" class="uri">doi:10.2760/616084</a>, JRC121325.<br>
 </li>
-<li>🔗 Project website: <a href="https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data" class="uri">https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data</a><br />
+<li>🔗 Project website: <a href="https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data" class="uri">https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data</a><br>
 </li>
-<li>©️ Data license: <a href="https://esdac.jrc.ec.europa.eu/content/lucas2015-topsoil-data">JRC License Agreement</a><br />
+<li>©️ Data license: <a href="https://esdac.jrc.ec.europa.eu/content/lucas2015-topsoil-data">JRC License Agreement</a><br>
 </li>
-<li>📍 Unique locations: 41,719<br />
+<li>📍 Unique locations: 41,719<br>
 </li>
-<li>📋 Unique complete scans: 41,719<br />
+<li>📋 Unique complete scans: 41,719<br>
 </li>
-<li>📝 Import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/LUCAS">LUCAS</a></li>
+<li>📝 Import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/LUCAS">LUCAS</a>
+</li>
 </ul>
 </div>
-<div id="afsis1.ssl" class="section level3" number="3.2.4">
-<h3><span class="header-section-number">3.2.4</span> AFSIS1.SSL</h3>
+<div id="afsis1.ssl" class="section level3" number="2.2.4">
+<h3>
+<span class="header-section-number">2.2.4</span> AFSIS1.SSL<a class="anchor" aria-label="anchor" href="#afsis1.ssl"><i class="fas fa-link"></i></a>
+</h3>
 <p><em>Description</em>: <a href="http://africasoils.net/services/data/soil-databases/">Africa Soil Information Service (AfSIS) Soil Chemistry Phase I</a>.
 MIR and VisNIR scans of 1903 georeferenced soil samples collected from 19 countries in
 Sub-Saharan Africa including a suite of wet chemistry data. Data available publicly
 under Open Data Commons Open Database License (“ODbL”) version 1.0, with attribution to AfSIS.
 Data retrieved from: <a href="https://registry.opendata.aws/afsis/" class="uri">https://registry.opendata.aws/afsis/</a> and <a href="https://doi.org/10.34725/DVN/QXCWP1" class="uri">https://doi.org/10.34725/DVN/QXCWP1</a>.</p>
 <ul>
-<li>📕 Vågen, T.-G., Winowiecki, L.A., Desta, L., Tondoh, E.J., Weullow, E., Shepherd, K., Sila, A., (2020). Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory: Africa Soil Information Service (AfSIS) Phase I 2009-2013. <a href="https://doi.org/10.34725/DVN/QXCWP1" class="uri">https://doi.org/10.34725/DVN/QXCWP1</a>, World Agroforestry - Research Data Repository, V1, UNF:6:bMN2MBGqFewDKHPgIeRjog== [fileUNF].<br />
+<li>📕 Vågen, T.-G., Winowiecki, L.A., Desta, L., Tondoh, E.J., Weullow, E., Shepherd, K., Sila, A., (2020). Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory: Africa Soil Information Service (AfSIS) Phase I 2009-2013. <a href="https://doi.org/10.34725/DVN/QXCWP1" class="uri">https://doi.org/10.34725/DVN/QXCWP1</a>, World Agroforestry - Research Data Repository, V1, UNF:6:bMN2MBGqFewDKHPgIeRjog== [fileUNF].<br>
 </li>
-<li>🔗 Project website: <a href="http://africasoils.net/services/data/soil-databases/" class="uri">http://africasoils.net/services/data/soil-databases/</a><br />
+<li>🔗 Project website: <a href="http://africasoils.net/services/data/soil-databases/" class="uri">http://africasoils.net/services/data/soil-databases/</a><br>
 </li>
-<li>©️ Data license: <a href="https://opendatacommons.org/licenses/odbl/">Open Database License (“ODbL”)</a><br />
+<li>©️ Data license: <a href="https://opendatacommons.org/licenses/odbl/">Open Database License (“ODbL”)</a><br>
 </li>
-<li>📍 Unique locations: 1903<br />
+<li>📍 Unique locations: 1903<br>
 </li>
-<li>📋 Unique complete scans: 3806<br />
+<li>📋 Unique complete scans: 3806<br>
 </li>
-<li>📝 Import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS">AFSIS</a></li>
+<li>📝 Import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS">AFSIS</a>
+</li>
 </ul>
 </div>
-<div id="afsis2.ssl" class="section level3" number="3.2.5">
-<h3><span class="header-section-number">3.2.5</span> AFSIS2.SSL</h3>
+<div id="afsis2.ssl" class="section level3" number="2.2.5">
+<h3>
+<span class="header-section-number">2.2.5</span> AFSIS2.SSL<a class="anchor" aria-label="anchor" href="#afsis2.ssl"><i class="fas fa-link"></i></a>
+</h3>
 <p><em>Description</em>: Africa Soil Information Service (AfSIS) Soil Chemistry Phase II.
 The three datasets for Tanzania (<a href="https://doi.org/10.34725/DVN/XUDGJY" class="uri">https://doi.org/10.34725/DVN/XUDGJY</a>), Ghana (<a href="https://doi.org/10.34725/DVN/SPRSFN" class="uri">https://doi.org/10.34725/DVN/SPRSFN</a>) and Nigeria (<a href="https://doi.org/10.34725/DVN/WLAKR2" class="uri">https://doi.org/10.34725/DVN/WLAKR2</a>).
-Documentation of the datasets is available in <span class="citation"><a href="#ref-hengl2021african" role="doc-biblioref">Hengl et al.</a> (<a href="#ref-hengl2021african" role="doc-biblioref">2021</a>)</span>.
+Documentation of the datasets is available in <span class="citation">Hengl et al. (<a href="references.html#ref-hengl2021african" role="doc-biblioref">2021</a>)</span>.
 Data has been analyzed at the ICRAF Soil-Plant Spectral Diagnostics Laboratory, Nairobi, and the Rothamsted Research. From the 31,269 soil scans, only 820 (2.6%) have reference data atteched to it.</p>
 <ul>
-<li>📕 Hengl, T., Miller, M.A.E., Križan, J., Shepherd, K.D., Sila, A., Kilibarda, M., Antonijevi, O., Glušica, L., Dobermann, A., Haefele, S.M., McGrath, S.P., Acquah, G.E., Collinson, J., Parente, L., Sheykhmousa, M., Saito, K., Johnson, J-M., Chamberlin, J., Silatsa, F.B.T., Yemefack, M., Wendt, J., MacMillan, R.A., Wheeler I. and Crouch, J. (2021) African soil properties and nutrients mapped at 30 m spatial resolution using two-scale ensemble machine learning. Scientific Reports, 11, 6130. <a href="https://www.nature.com/articles/s41598-021-85639-y" class="uri">https://www.nature.com/articles/s41598-021-85639-y</a>.<br />
+<li>📕 Hengl, T., Miller, M.A.E., Križan, J., Shepherd, K.D., Sila, A., Kilibarda, M., Antonijevi, O., Glušica, L., Dobermann, A., Haefele, S.M., McGrath, S.P., Acquah, G.E., Collinson, J., Parente, L., Sheykhmousa, M., Saito, K., Johnson, J-M., Chamberlin, J., Silatsa, F.B.T., Yemefack, M., Wendt, J., MacMillan, R.A., Wheeler I. and Crouch, J. (2021) African soil properties and nutrients mapped at 30 m spatial resolution using two-scale ensemble machine learning. Scientific Reports, 11, 6130. <a href="https://www.nature.com/articles/s41598-021-85639-y" class="uri">https://www.nature.com/articles/s41598-021-85639-y</a>.<br>
 </li>
-<li>🔗 Project website: <a href="https://data.worldagroforestry.org/dataverse/icraf_soils" class="uri">https://data.worldagroforestry.org/dataverse/icraf_soils</a><br />
+<li>🔗 Project website: <a href="https://data.worldagroforestry.org/dataverse/icraf_soils" class="uri">https://data.worldagroforestry.org/dataverse/icraf_soils</a><br>
 </li>
-<li>©️ Data license: <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons — CC0 1.0 Universal</a><br />
+<li>©️ Data license: <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons — CC0 1.0 Universal</a><br>
 </li>
-<li>📍 Unique locations: 367<br />
+<li>📍 Unique locations: 367<br>
 </li>
-<li>📋 Unique complete scans: 820<br />
+<li>📋 Unique complete scans: 820<br>
 </li>
-<li>📝 Import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS2">AFSIS2</a></li>
+<li>📝 Import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS2">AFSIS2</a>
+</li>
 </ul>
 </div>
-<div id="caf.ssl" class="section level3" number="3.2.6">
-<h3><span class="header-section-number">3.2.6</span> CAF.SSL</h3>
+<div id="caf.ssl" class="section level3" number="2.2.6">
+<h3>
+<span class="header-section-number">2.2.6</span> CAF.SSL<a class="anchor" aria-label="anchor" href="#caf.ssl"><i class="fas fa-link"></i></a>
+</h3>
 <p><em>Description</em>: <a href="https://doi.org/10.5194/soil-7-693-2021">The Central African Soil Spectral Library</a>. MIR scans of some collected based on 1800 samples in Central Africa.</p>
 <ul>
-<li>📕 Summerauer, L., Baumann, P., Ramirez-Lopez, L., Barthel, M., Bauters, M., Bukombe, B., Reichenbach, M., Boeckx, P., Kearsley, E., Van Oost, K., Vanlauwe, B., Chiragaga, D., Heri-Kazi, A. B., Moonen, P., Sila, A., Shepherd, K., Bazirake Mujinya, B., Van Ranst, E., Baert, G., Doetterl, S., and Six, J. (2021). <a href="https://doi.org/10.5194/soil-7-693-2021">The central African soil spectral library: a new soil infrared repository and a geographical prediction analysis</a>, SOIL, 7, 693–715, <a href="https://doi.org/10.5194/soil-7-693-2021" class="uri">https://doi.org/10.5194/soil-7-693-2021</a><br />
+<li>📕 Summerauer, L., Baumann, P., Ramirez-Lopez, L., Barthel, M., Bauters, M., Bukombe, B., Reichenbach, M., Boeckx, P., Kearsley, E., Van Oost, K., Vanlauwe, B., Chiragaga, D., Heri-Kazi, A. B., Moonen, P., Sila, A., Shepherd, K., Bazirake Mujinya, B., Van Ranst, E., Baert, G., Doetterl, S., and Six, J. (2021). <a href="https://doi.org/10.5194/soil-7-693-2021">The central African soil spectral library: a new soil infrared repository and a geographical prediction analysis</a>, SOIL, 7, 693–715, <a href="https://doi.org/10.5194/soil-7-693-2021" class="uri">https://doi.org/10.5194/soil-7-693-2021</a><br>
 </li>
-<li>🔗 Project website: <a href="https://github.com/laura-summerauer/ssl-central-africa" class="uri">https://github.com/laura-summerauer/ssl-central-africa</a><br />
+<li>🔗 Project website: <a href="https://github.com/laura-summerauer/ssl-central-africa" class="uri">https://github.com/laura-summerauer/ssl-central-africa</a><br>
 </li>
-<li>©️ Data license: CC-BY?<br />
+<li>©️ Data license: CC-BY?<br>
 </li>
-<li>📍 Unique locations:<br />
+<li>📍 Unique locations:<br>
 </li>
-<li>📋 Unique complete scans: 1852<br />
+<li>📋 Unique complete scans: 1852<br>
 </li>
-<li>📝 Import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL">CASSL</a></li>
+<li>📝 Import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL">CASSL</a>
+</li>
 </ul>
 </div>
-<div id="neon.ssl" class="section level3" number="3.2.7">
-<h3><span class="header-section-number">3.2.7</span> NEON.SSL</h3>
+<div id="neon.ssl" class="section level3" number="2.2.7">
+<h3>
+<span class="header-section-number">2.2.7</span> NEON.SSL<a class="anchor" aria-label="anchor" href="#neon.ssl"><i class="fas fa-link"></i></a>
+</h3>
 <p><em>Description</em>: <a href="https://www.neonscience.org/samples/soil-archive">The National Ecological Observatory Network (NEON) Soil Spectral Library</a>. Soil samples were sent to KSSL and scanned using standard procedures.</p>
 <ul>
-<li>📕 National Ecological Observatory Network, (2021). <a href="https://data.neonscience.org/data-products/DP1.00096.001">Data Product DP1.00096.001, Soil physical and chemical properties, Megapit</a>. Provisional data downloaded from <a href="https://data.neonscience.org" class="uri">https://data.neonscience.org</a>. Battelle, Boulder, CO, USA NEON. / Dangal &amp; Sanderman (2020). Is Standardization Necessary for Sharing of a Large Mid-Infrared Soil Spectral Library? Sensors 20, 6729. <a href="https://doi.org/10.3390/s20236729" class="uri">https://doi.org/10.3390/s20236729</a><br />
+<li>📕 National Ecological Observatory Network, (2021). <a href="https://data.neonscience.org/data-products/DP1.00096.001">Data Product DP1.00096.001, Soil physical and chemical properties, Megapit</a>. Provisional data downloaded from <a href="https://data.neonscience.org" class="uri">https://data.neonscience.org</a>. Battelle, Boulder, CO, USA NEON. / Dangal &amp; Sanderman (2020). Is Standardization Necessary for Sharing of a Large Mid-Infrared Soil Spectral Library? Sensors 20, 6729. <a href="https://doi.org/10.3390/s20236729" class="uri">https://doi.org/10.3390/s20236729</a><br>
 </li>
-<li>🔗 Project website: <a href="https://www.neonscience.org/samples/soil-archive" class="uri">https://www.neonscience.org/samples/soil-archive</a><br />
+<li>🔗 Project website: <a href="https://www.neonscience.org/samples/soil-archive" class="uri">https://www.neonscience.org/samples/soil-archive</a><br>
 </li>
-<li>©️ Data license: CC-BY<br />
+<li>©️ Data license: CC-BY<br>
 </li>
-<li>📍 Unique locations:<br />
+<li>📍 Unique locations:<br>
 </li>
-<li>📋 Unique complete scans: 305<br />
+<li>📋 Unique complete scans: 305<br>
 </li>
-<li>📝 Import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL">NEON</a></li>
+<li>📝 Import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL">NEON</a>
+</li>
 </ul>
 </div>
 </div>
-<div id="soil-spetroscopy-organizations" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Soil spetroscopy organizations</h2>
+<div id="soil-spetroscopy-organizations" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> Soil spetroscopy organizations<a class="anchor" aria-label="anchor" href="#soil-spetroscopy-organizations"><i class="fas fa-link"></i></a>
+</h2>
 <p>National and regional soil spectral laboratories actively processing soil samples
 and providing soil spectroscopy services, and other organizations and companies
 producing or using soil spectroscopy data.</p>
 <p>See also: <a href="http://www.fao.org/global-soil-partnership/glosolan/en/"><strong>The Global Soil Laboratory Network (GLOSOLAN)</strong></a></p>
-<div id="kssl" class="section level3" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> KSSL</h3>
+<div id="kssl" class="section level3" number="2.3.1">
+<h3>
+<span class="header-section-number">2.3.1</span> KSSL<a class="anchor" aria-label="anchor" href="#kssl"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
-<li>📛 Name: The Charles E. Kellogg Soil Survey Laboratory (KSSL)<br />
+<li>📛 Name: The Charles E. Kellogg Soil Survey Laboratory (KSSL)<br>
 </li>
 <li>📫 Address: USDA-NRCS-NSSC, Federal Building, Room 152, Mail Stop 41/51, 100 Centennial Mall North
-Lincoln, NE 68508-3866, USA<br />
+Lincoln, NE 68508-3866, USA<br>
 </li>
-<li>🔗 Organization website: <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/contactus/?cid=nrcs142p2_053895#laboratory" class="uri">https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/contactus/?cid=nrcs142p2_053895#laboratory</a><br />
+<li>🔗 Organization website: <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/contactus/?cid=nrcs142p2_053895#laboratory" class="uri">https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/contactus/?cid=nrcs142p2_053895#laboratory</a><br>
 </li>
 <li>🔬 Types of services: USDA soil laboratory, MIR, VisNIR,</li>
 </ul>
 </div>
 </div>
-<div id="soil-spectroscopy-software" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Soil Spectroscopy software</h2>
+<div id="soil-spectroscopy-software" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> Soil Spectroscopy software<a class="anchor" aria-label="anchor" href="#soil-spectroscopy-software"><i class="fas fa-link"></i></a>
+</h2>
 <p>Open source and commercial software used to process soil spectral scans.
 See also this <a href="https://soilspectroscopy.org/soil-spectroscopy-state-of-the-art-open-source-software/">detailed review of software used for soil spectroscopy</a>.
-Even more in-depth review of R packages used for soil spectroscopy can be found in <span class="citation"><a href="#ref-malone2021soil" role="doc-biblioref">Wadoux et al.</a> (<a href="#ref-malone2021soil" role="doc-biblioref">2021</a>)</span>.</p>
-<div id="asdreader" class="section level3" number="3.4.1">
-<h3><span class="header-section-number">3.4.1</span> asdreader</h3>
+Even more in-depth review of R packages used for soil spectroscopy can be found in <span class="citation">Wadoux, Malone, McBratney, Fajardo, &amp; Minasny (<a href="references.html#ref-malone2021soil" role="doc-biblioref">2021</a>)</span>.</p>
+<div id="asdreader" class="section level3" number="2.4.1">
+<h3>
+<span class="header-section-number">2.4.1</span> asdreader<a class="anchor" aria-label="anchor" href="#asdreader"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
-<li>📛 Name: asdreader<br />
+<li>📛 Name: asdreader<br>
 </li>
-<li>💼 Specialty: Reading ASD Binary Files in R<br />
+<li>💼 Specialty: Reading ASD Binary Files in R<br>
 </li>
-<li>💻 Programming language: R project<br />
+<li>💻 Programming language: R project<br>
 </li>
-<li>🔗 Homepage: <a href="https://github.com/pierreroudier/asdreader" class="uri">https://github.com/pierreroudier/asdreader</a><br />
+<li>🔗 Homepage: <a href="https://github.com/pierreroudier/asdreader" class="uri">https://github.com/pierreroudier/asdreader</a><br>
 </li>
-<li>📕 Roudier, P. (2020). asdreader: reading ASD binary files in R. R package version 0.1-3 CRAN.<br />
+<li>📕 Roudier, P. (2020). asdreader: reading ASD binary files in R. R package version 0.1-3 CRAN.<br>
 </li>
-<li>©️ License: GPL<br />
+<li>©️ License: GPL<br>
 </li>
-<li>📧 Maintainer: <a href="https://github.com/pierreroudier">Pierre Roudier</a></li>
+<li>📧 Maintainer: <a href="https://github.com/pierreroudier">Pierre Roudier</a>
+</li>
 </ul>
 </div>
-<div id="prospectr" class="section level3" number="3.4.2">
-<h3><span class="header-section-number">3.4.2</span> prospectr</h3>
+<div id="prospectr" class="section level3" number="2.4.2">
+<h3>
+<span class="header-section-number">2.4.2</span> prospectr<a class="anchor" aria-label="anchor" href="#prospectr"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
-<li>📛 Name: prospectr<br />
+<li>📛 Name: prospectr<br>
 </li>
-<li>💼 Specialty: Signal processing, Resampling<br />
+<li>💼 Specialty: Signal processing, Resampling<br>
 </li>
-<li>💻 Programming language: R project<br />
+<li>💻 Programming language: R project<br>
 </li>
-<li>🔗 Homepage: <a href="https://github.com/l-ramirez-lopez/prospectr" class="uri">https://github.com/l-ramirez-lopez/prospectr</a><br />
+<li>🔗 Homepage: <a href="https://github.com/l-ramirez-lopez/prospectr" class="uri">https://github.com/l-ramirez-lopez/prospectr</a><br>
 </li>
-<li>📕 Stevens, A., &amp; Ramirez-Lopez, L. (2014). An introduction to the prospectr package. R Package Vignette, Report No.: R Package Version 0.1, 3.<br />
+<li>📕 Stevens, A., &amp; Ramirez-Lopez, L. (2014). An introduction to the prospectr package. R Package Vignette, Report No.: R Package Version 0.1, 3.<br>
 </li>
-<li>©️ License: <a href="https://cran.r-project.org/web/licenses/MIT">MIT</a> + <a href="https://cran.r-project.org/web/packages/prospectr/LICENSE">file LICENSE</a><br />
+<li>©️ License: <a href="https://cran.r-project.org/web/licenses/MIT">MIT</a> + <a href="https://cran.r-project.org/web/packages/prospectr/LICENSE">file LICENSE</a><br>
 </li>
-<li>📧 Maintainer: <a href="https://orcid.org/0000-0002-5369-5120">Leornardo Ramirez-Lopez</a></li>
+<li>📧 Maintainer: <a href="https://orcid.org/0000-0002-5369-5120">Leornardo Ramirez-Lopez</a>
+</li>
 </ul>
 </div>
-<div id="simplerspec" class="section level3" number="3.4.3">
-<h3><span class="header-section-number">3.4.3</span> simplerspec</h3>
+<div id="simplerspec" class="section level3" number="2.4.3">
+<h3>
+<span class="header-section-number">2.4.3</span> simplerspec<a class="anchor" aria-label="anchor" href="#simplerspec"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
-<li>📛 Name: simplerspec<br />
+<li>📛 Name: simplerspec<br>
 </li>
-<li>💼 Specialty: Soil and plant spectroscopic model building and prediction<br />
+<li>💼 Specialty: Soil and plant spectroscopic model building and prediction<br>
 </li>
-<li>💻 Programming language: R project<br />
+<li>💻 Programming language: R project<br>
 </li>
-<li>🔗 Homepage: <a href="https://philipp-baumann.github.io/simplerspec" class="uri">https://philipp-baumann.github.io/simplerspec</a><br />
+<li>🔗 Homepage: <a href="https://philipp-baumann.github.io/simplerspec" class="uri">https://philipp-baumann.github.io/simplerspec</a><br>
 </li>
-<li>📕 Baumann, P. (2020). simplerspec: Soil and plant spectroscopic model building and prediction. Packages R CRAN.<br />
+<li>📕 Baumann, P. (2020). simplerspec: Soil and plant spectroscopic model building and prediction. Packages R CRAN.<br>
 </li>
-<li>©️ License: <a href="https://github.com/philipp-baumann/simplerspec/blob/master/LICENSE.md">GNU General Public License v3.0</a><br />
+<li>©️ License: <a href="https://github.com/philipp-baumann/simplerspec/blob/master/LICENSE.md">GNU General Public License v3.0</a><br>
 </li>
-<li>📧 Maintainer: <a href="https://github.com/philipp-baumann">Philipp Baumann</a></li>
+<li>📧 Maintainer: <a href="https://github.com/philipp-baumann">Philipp Baumann</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="new-to-markdown.html"><span class="header-section-number">1</span> New to markdown</a></div>
+<div class="next"><a href="database.html"><span class="header-section-number">3</span> Database</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#soil-spectroscopy-tools-and-users"><span class="header-section-number">2</span> Soil spectroscopy tools and users</a></li>
+<li>
+<a class="nav-link" href="#soil-spectroscopy-instruments"><span class="header-section-number">2.1</span> Soil Spectroscopy Instruments</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#bruker-alpha-1_ft-mir_zn-se"><span class="header-section-number">2.1.1</span> Bruker Alpha 1_FT-MIR_Zn Se</a></li>
+<li><a class="nav-link" href="#bruker-alpha-1_ft-mir_kbr"><span class="header-section-number">2.1.2</span> Bruker Alpha 1_FT-MIR_KBr</a></li>
+<li><a class="nav-link" href="#bruker-vertex-70-with-hts-xt-accessory"><span class="header-section-number">2.1.3</span> Bruker Vertex 70 with HTS-XT accessory</a></li>
+<li><a class="nav-link" href="#asd-labspec-2500-with-muglight-accessory"><span class="header-section-number">2.1.4</span> ASD Labspec 2500 with Muglight accessory</a></li>
+<li><a class="nav-link" href="#asd-fieldspec-fr"><span class="header-section-number">2.1.5</span> ASD FieldSpec FR</a></li>
+<li><a class="nav-link" href="#xds-rapid-content-analyzer"><span class="header-section-number">2.1.6</span> XDS Rapid Content Analyzer</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#registered-soil-spectral-libraries"><span class="header-section-number">2.2</span> Registered soil spectral libraries</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#kssl.ssl"><span class="header-section-number">2.2.1</span> KSSL.SSL</a></li>
+<li><a class="nav-link" href="#icraf.isric"><span class="header-section-number">2.2.2</span> ICRAF.ISRIC</a></li>
+<li><a class="nav-link" href="#lucas.ssl"><span class="header-section-number">2.2.3</span> LUCAS.SSL</a></li>
+<li><a class="nav-link" href="#afsis1.ssl"><span class="header-section-number">2.2.4</span> AFSIS1.SSL</a></li>
+<li><a class="nav-link" href="#afsis2.ssl"><span class="header-section-number">2.2.5</span> AFSIS2.SSL</a></li>
+<li><a class="nav-link" href="#caf.ssl"><span class="header-section-number">2.2.6</span> CAF.SSL</a></li>
+<li><a class="nav-link" href="#neon.ssl"><span class="header-section-number">2.2.7</span> NEON.SSL</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#soil-spetroscopy-organizations"><span class="header-section-number">2.3</span> Soil spetroscopy organizations</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#kssl"><span class="header-section-number">2.3.1</span> KSSL</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#soil-spectroscopy-software"><span class="header-section-number">2.4</span> Soil Spectroscopy software</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#asdreader"><span class="header-section-number">2.4.1</span> asdreader</a></li>
+<li><a class="nav-link" href="#prospectr"><span class="header-section-number">2.4.2</span> prospectr</a></li>
+<li><a class="nav-link" href="#simplerspec"><span class="header-section-number">2.4.3</span> simplerspec</a></li>
+</ul>
+</li>
 </ul>
 
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/soilspectroscopy/ossl-manual/blob/master/015-project.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/soilspectroscopy/ossl-manual/edit/master/015-project.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
 </div>
+    </nav>
 </div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-BenedettiEgmond2021" class="csl-entry">
-Benedetti, F., and F. van Egmond. 2021. <em><span class="nocase">Global Soil Spectroscopy Assessment. Spectral soil data — Needs and capacities</span></em>. Rome, Italy: FAO. <a href="https://doi.org/10.4060/cb6265en">https://doi.org/10.4060/cb6265en</a>.
-</div>
-<div id="ref-hengl2021african" class="csl-entry">
-Hengl, Tomislav, Matthew AE Miller, Josip Križan, Keith D Shepherd, Andrew Sila, Milan Kilibarda, Ognjen Antonijević, et al. 2021. <span>“African Soil Properties and Nutrients Mapped at 30 m Spatial Resolution Using Two-Scale Ensemble Machine Learning.”</span> <em>Scientific Reports</em> 11 (1): 1–18. <a href="https://doi.org/10.1038/s41598-021-85639-y">https://doi.org/10.1038/s41598-021-85639-y</a>.
-</div>
-<div id="ref-malone2021soil" class="csl-entry">
-Wadoux, A. M. J. C., B. Malone, A. B. McBratney, M. Fajardo, and B. Minasny. 2021. <em><span class="nocase">Soil Spectral Inference with R: Analysing Digital Soil Spectra Using the R Programming Environment</span></em>. Progress in Soil Science. Springer International Publishing.
-</div>
-</div>
-            </section>
 
-          </div>
-        </div>
-      </div>
-<a href="new-to-markdown-start-here.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="database.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Open Soil Spectral Library</strong>" was written by Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors. </p>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/soilspectroscopy/ossl-manual/edit/main/015-project.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["OSSL_book.pdf", "OSSL_book.epub"],
-"toc": {
-"collapse": "subsection",
-"scroll_highlight": true
-},
-"info": true,
-"toolbar": {
-"position": "fixed"
-},
-"includes": {
-"in_header": "social.html"
-}
-});
-});
-</script>
 
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
 </body>
-
 </html>

@@ -1,14 +1,12 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # Soil spectroscopy tools and users
+
+::: {.rmdnote}
+You are reading the work-in-progress Spatial and spatiotemporal interpolation using Ensemble Machine Learning. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at <https://soilspectroscopy.github.io/ossl-manual/>.
+:::
 
 ## Soil Spectroscopy Instruments
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="img/ssl_instruments_list.png" alt="Most frequently used MIR / VISNIR instruments based on @BenedettiEgmond2021." width="100%" />
 <p class="caption">(\#fig:soil-db)Most frequently used MIR / VISNIR instruments based on @BenedettiEgmond2021.</p>
 </div>
@@ -76,7 +74,7 @@ includes >50,000 MIR spectra collected on soils primarily from the United States
 - 📋 Unique complete scans:  
 - 📝 Import steps: [KSSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/KSSL)  
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="img/KSSL_VNIR_Graphs_Particle_Size_Consistency.jpeg" alt="KSSL VisNIR spectral signatures for different soil texture fractions." width="90%" />
 <p class="caption">(\#fig:kssl-curves)KSSL VisNIR spectral signatures for different soil texture fractions.</p>
 </div>
@@ -96,7 +94,7 @@ Nations Avenue, Nairobi, Kenya. <https://doi.org/10.34725/DVN/MFHA9C>
 - 📋 Unique complete scans: 4308  
 - 📝 Import steps: [ICRAF_ISRIC](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/ICRAF_ISRIC)  
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="img/ICRAF_VNIR_Graphs_Particle_Size_Consistency.jpeg" alt="ICRAF-ISRIC VisNIR spectral signatures for different soil texture fractions." width="90%" />
 <p class="caption">(\#fig:icraf-curves)ICRAF-ISRIC VisNIR spectral signatures for different soil texture fractions.</p>
 </div>

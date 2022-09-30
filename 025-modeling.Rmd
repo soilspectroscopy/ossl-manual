@@ -1,10 +1,8 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # Reference soil spectroscopy models
+
+```{r, results = "asis", echo = FALSE}
+status("drafting")
+```
 
 The following sections describe steps used to produce OSSL models, which 
 are used in the OSSL calibration service and API. For more in-depth insight of 

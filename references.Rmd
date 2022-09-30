@@ -1,4 +1,5 @@
-
-```{asis, echo=knitr::is_html_output()}
-# References {-}
+```{r, results = "asis", echo = FALSE}
+status("drafting")
 ```
+
+# References

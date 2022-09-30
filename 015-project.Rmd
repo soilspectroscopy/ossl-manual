@@ -1,10 +1,8 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # Soil spectroscopy tools and users
+
+```{r, results = "asis", echo = FALSE}
+status("drafting")
+```
 
 ## Soil Spectroscopy Instruments
 

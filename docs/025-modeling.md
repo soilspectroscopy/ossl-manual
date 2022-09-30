@@ -1,10 +1,8 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # Reference soil spectroscopy models
+
+::: {.rmdnote}
+You are reading the work-in-progress Spatial and spatiotemporal interpolation using Ensemble Machine Learning. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at <https://soilspectroscopy.github.io/ossl-manual/>.
+:::
 
 The following sections describe steps used to produce OSSL models, which 
 are used in the OSSL calibration service and API. For more in-depth insight of 
@@ -121,7 +119,7 @@ Model is based on 72,246 training points.
 
 We can take a look at the accuracy plot for this model:
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.mir_mlr..eml_kssl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/mir_mlr..eml_kssl_na_v1.rds`." width="70%" />
 <p class="caption">(\#fig:ac-soc1)Accuracy plot for `log..oc_usda.calc_wpct/mir_mlr..eml_kssl_na_v1.rds`.</p>
 </div>
@@ -225,7 +223,7 @@ pushHexport(p$plot.vp)
 grid.points(pred.oc$x$mir.PC1, pred.oc$x$mir.PC2, pch=17)
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="img/pca_similarity_plot.png" alt="Similary plot new spectra vs training spectra (PC biplot)." width="80%" />
 <p class="caption">(\#fig:pca-sim)Similary plot new spectra vs training spectra (PC biplot).</p>
 </div>
@@ -340,7 +338,7 @@ pred.oc3 = predict.ossl(t.var="log..oc_usda.calc_wpct", visnir.raw=visnir.raw, o
 This model is similar to the MIR model, but the accuracy plot indicates that the accuracy 
 might be significantly lower:
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.visnir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds`." width="70%" />
 <p class="caption">(\#fig:ac-soc2)Accuracy plot for `log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds`.</p>
 </div>
@@ -360,21 +358,12 @@ thanks to the [simplerspec package](https://philipp-baumann.github.io/simplerspe
 
 ```r
 mir.x = simplerspec::read_opus_bin_univ('sample-data/icr056141.0')
-```
-
-```
-## Extracted spectra data from file: <icr056141.0>
-```
-
-```r
+#> Extracted spectra data from file: <icr056141.0>
 names(mir.x)
-```
-
-```
-##  [1] "metadata"          "spc"               "spc_nocomp"       
-##  [4] "sc_sm"             "sc_rf"             "ig_sm"            
-##  [7] "ig_rf"             "wavenumbers"       "wavenumbers_sc_sm"
-## [10] "wavenumbers_sc_rf"
+#>  [1] "metadata"          "spc"               "spc_nocomp"       
+#>  [4] "sc_sm"             "sc_rf"             "ig_sm"            
+#>  [7] "ig_rf"             "wavenumbers"       "wavenumbers_sc_sm"
+#> [10] "wavenumbers_sc_rf"
 ```
 
 which gives a list of object including `spc` which are the spectral bands:
@@ -382,10 +371,7 @@ which gives a list of object including `spc` which are the spectral bands:
 
 ```r
 dim(mir.x[["spc"]])
-```
-
-```
-## [1]    1 1715
+#> [1]    1 1715
 ```
 
 we can plot the MIR absorbance curve for this scan by using:
@@ -401,7 +387,7 @@ matplot(y=as.vector(t(mir.x[["spc"]])), x=x,
         )
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="025-modeling_files/figure-html/plot-opus-1.png" alt="Spectral absorbances plot using MIR data." width="90%" />
 <p class="caption">(\#fig:plot-opus)Spectral absorbances plot using MIR data.</p>
 </div>
@@ -409,7 +395,7 @@ matplot(y=as.vector(t(mir.x[["spc"]])), x=x,
 This dataset is hence ready to generate predictions using global OSSL models. We can, 
 for example generate prediction of soil pH using the following model:
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.mir_mlr..eml_ossl_ll_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/mir_mlr..eml_ossl_ll_v1.rds`." width="70%" />
 <p class="caption">(\#fig:ac-ph1)Accuracy plot for `log..oc_usda.calc_wpct/mir_mlr..eml_ossl_ll_v1.rds`.</p>
 </div>
@@ -450,10 +436,7 @@ from the KSSL VisNIR repository:
 ```r
 asd.raw = as.data.frame(asdreader::get_spectra("sample-data/101453MD01.asd"))
 dim(asd.raw)
-```
-
-```
-## [1]    1 2151
+#> [1]    1 2151
 ```
 
 
@@ -467,7 +450,7 @@ matplot(y=as.vector(t(asd.raw)), x=x,
         )
 ```
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="025-modeling_files/figure-html/plot-ads-1.png" alt="Spectral reflectance plot using VisNIR data." width="90%" />
 <p class="caption">(\#fig:plot-ads)Spectral reflectance plot using VisNIR data.</p>
 </div>
@@ -524,13 +507,7 @@ using both VisNIR and MIR scans for the same sample:
 
 ```r
 mir.x = simplerspec::read_opus_bin_univ('sample-data/235157XS01.0')
-```
-
-```
-## Extracted spectra data from file: <235157XS01.0>
-```
-
-```r
+#> Extracted spectra data from file: <235157XS01.0>
 asd.raw = as.data.frame(asdreader::get_spectra("sample-data/235157MD01.asd"))
 ```
 
@@ -591,7 +568,7 @@ This shows that the model has an RMSE of 0.156 (in log-scale), which seems to be
 for predicting soil organic carbon content in % from spectral scans. Thus, in this specific case, also the 
 prediction error shows relatively narrow range of uncertainty.
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.visnir.mir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination. As compared with other calibration models this seems to be most accurate, although difference with the pure MIR model is not significant." width="70%" />
 <p class="caption">(\#fig:ac-phm)Accuracy plot for `log..oc_usda.calc_wpct/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination. As compared with other calibration models this seems to be most accurate, although difference with the pure MIR model is not significant.</p>
 </div>
@@ -608,7 +585,7 @@ The bundle approach could be further extended to using also e.g.:
 - bare-Earth Spectra [@dematte2020bare],  
 - soil moisture daily estimates (matching the date of soil sampling) [@brocca2019sm2rain], 
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="img/bareearth_spectra_250m.jpg" alt="Example of a satellite-based bare-earth spectral product based on @dematte2020bare. The global data is available at 250-m spatial resolution." width="90%" />
 <p class="caption">(\#fig:map-bareearth)Example of a satellite-based bare-earth spectral product based on @dematte2020bare. The global data is available at 250-m spatial resolution.</p>
 </div>
