@@ -1,7 +1,7 @@
 # Soil spectroscopy tools and users
 
 ::: {.rmdnote}
-You are reading the work-in-progress Spatial and spatiotemporal interpolation using Ensemble Machine Learning. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at <https://soilspectroscopy.github.io/ossl-manual/>.
+You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at <https://soilspectroscopy.github.io/ossl-manual/>.
 :::
 
 ## Soil Spectroscopy Instruments
@@ -141,7 +141,6 @@ Data has been analyzed at the ICRAF Soil-Plant Spectral Diagnostics Laboratory, 
 - 📋 Unique complete scans: 820  
 - 📝 Import steps: [AFSIS2](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS2)  
 
-
 ### CAF.SSL
 
 _Description_: [The Central African Soil Spectral Library](https://doi.org/10.5194/soil-7-693-2021). MIR scans of some collected based on 1800 samples in Central Africa. 
@@ -164,6 +163,16 @@ _Description_: [The National Ecological Observatory Network (NEON) Soil Spectral
 - 📋 Unique complete scans: 305  
 - 📝 Import steps: [NEON](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL)  
 
+### SCHIEDUNG.SSL
+
+_Description_: [Schiedung et al. (2022)](https://doi.org/10.5281/zenodo.6024831). Dataset to the manuscript Schiedung et al. (2022, Catena). MIR scans of 284 samples from high-latitude forest soils of Canada. DOI: <https://doi.org/10.5281/zenodo.6024831>.
+
+- 📕 Schiedung, M., Bellè, S.-L., Malhotra, A., & Abiven, S. (2022). [Organic carbon stocks, quality and prediction in permafrost-affected forest soils in north Canada](https://doi.org/10.1016/j.catena.2022.106194). CATENA, 213, 106194. doi:[10.1016/j.catena.2022.106194](https://doi.org/10.1016/j.catena.2022.106194).  
+- 🔗 Project website: <https://doi.org/10.5281/zenodo.6024831>  
+- ©️ Data license: CC-BY 4.0  
+- 📍 Unique locations: 289   
+- 📋 Unique complete scans: 259  
+- 📝 Import steps: [Schiedung](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Schiedung)  
 
 ## Soil spetroscopy organizations
 

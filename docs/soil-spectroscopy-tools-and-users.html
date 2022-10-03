@@ -6,16 +6,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>2 Soil spectroscopy tools and users | Open Soil Spectral Library</title>
 <meta name="author" content="Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.14/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at...">
+<meta name="generator" content="bookdown 0.29 with bs4_book()">
+<meta property="og:title" content="2 Soil spectroscopy tools and users | Open Soil Spectral Library">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://soilspectroscopy.github.io/ossl-manual/soil-spectroscopy-tools-and-users.html">
+<meta property="og:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
+<meta property="og:description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2 Soil spectroscopy tools and users | Open Soil Spectral Library">
+<meta name="twitter:site" content="@soilspec">
+<meta name="twitter:description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at...">
+<meta name="twitter:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-06HBX7FM0K"></script><script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'G-06HBX7FM0K');
-    </script><script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS -->
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -36,14 +73,7 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html">About</a></li>
-<li><a class="" href="new-to-markdown.html"><span class="header-section-number">1</span> New to markdown</a></li>
-<li><a class="active" href="soil-spectroscopy-tools-and-users.html"><span class="header-section-number">2</span> Soil spectroscopy tools and users</a></li>
-<li><a class="" href="database.html"><span class="header-section-number">3</span> Database</a></li>
-<li><a class="" href="reference-soil-spectroscopy-models.html"><span class="header-section-number">4</span> Reference soil spectroscopy models</a></li>
-<li><a class="" href="references.html"><span class="header-section-number">5</span> References</a></li>
-</ul>
+        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">2</span> Soil spectroscopy tools and users</a></li></ul>
 
         <div class="book-extra">
           <p><a id="book-repo" href="https://github.com/soilspectroscopy/ossl-manual">View book source <i class="fab fa-github"></i></a></p>
@@ -55,16 +85,16 @@
 <span class="header-section-number">2</span> Soil spectroscopy tools and users<a class="anchor" aria-label="anchor" href="#soil-spectroscopy-tools-and-users"><i class="fas fa-link"></i></a>
 </h1>
 <div class="rmdnote">
-<p>You are reading the work-in-progress Spatial and spatiotemporal interpolation using Ensemble Machine Learning. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at <a href="https://soilspectroscopy.github.io/ossl-manual/" class="uri">https://soilspectroscopy.github.io/ossl-manual/</a>.</p>
+<p>You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at <a href="https://soilspectroscopy.github.io/ossl-manual/" class="uri">https://soilspectroscopy.github.io/ossl-manual/</a>.</p>
 </div>
 <div id="soil-spectroscopy-instruments" class="section level2" number="2.1">
 <h2>
 <span class="header-section-number">2.1</span> Soil Spectroscopy Instruments<a class="anchor" aria-label="anchor" href="#soil-spectroscopy-instruments"><i class="fas fa-link"></i></a>
 </h2>
 <div class="figure" style="text-align: center">
-<span id="fig:soil-db"></span>
+<span style="display:block;" id="fig:soil-db"></span>
 <img src="img/ssl_instruments_list.png" alt="Most frequently used MIR / VISNIR instruments based on @BenedettiEgmond2021." width="100%"><p class="caption">
-Figure 0.3: Most frequently used MIR / VISNIR instruments based on <span class="citation">Benedetti &amp; van Egmond (<a href="references.html#ref-BenedettiEgmond2021" role="doc-biblioref">2021</a>)</span>.
+Figure 2.1: Most frequently used MIR / VISNIR instruments based on <span class="citation"><a href="references.html#ref-BenedettiEgmond2021" role="doc-biblioref">Benedetti &amp; van Egmond</a> (<a href="references.html#ref-BenedettiEgmond2021" role="doc-biblioref">2021</a>)</span>.
 </p>
 </div>
 <div id="bruker-alpha-1_ft-mir_zn-se" class="section level3" number="2.1.1">
@@ -187,9 +217,9 @@ includes &gt;50,000 MIR spectra collected on soils primarily from the United Sta
 </li>
 </ul>
 <div class="figure" style="text-align: center">
-<span id="fig:kssl-curves"></span>
+<span style="display:block;" id="fig:kssl-curves"></span>
 <img src="img/KSSL_VNIR_Graphs_Particle_Size_Consistency.jpeg" alt="KSSL VisNIR spectral signatures for different soil texture fractions." width="90%"><p class="caption">
-Figure 2.1: KSSL VisNIR spectral signatures for different soil texture fractions.
+Figure 2.2: KSSL VisNIR spectral signatures for different soil texture fractions.
 </p>
 </div>
 </div>
@@ -217,9 +247,9 @@ Nations Avenue, Nairobi, Kenya. <a href="https://doi.org/10.34725/DVN/MFHA9C" cl
 </li>
 </ul>
 <div class="figure" style="text-align: center">
-<span id="fig:icraf-curves"></span>
+<span style="display:block;" id="fig:icraf-curves"></span>
 <img src="img/ICRAF_VNIR_Graphs_Particle_Size_Consistency.jpeg" alt="ICRAF-ISRIC VisNIR spectral signatures for different soil texture fractions." width="90%"><p class="caption">
-Figure 2.2: ICRAF-ISRIC VisNIR spectral signatures for different soil texture fractions.
+Figure 2.3: ICRAF-ISRIC VisNIR spectral signatures for different soil texture fractions.
 </p>
 </div>
 </div>
@@ -275,7 +305,7 @@ Data retrieved from: <a href="https://registry.opendata.aws/afsis/" class="uri">
 </h3>
 <p><em>Description</em>: Africa Soil Information Service (AfSIS) Soil Chemistry Phase II.
 The three datasets for Tanzania (<a href="https://doi.org/10.34725/DVN/XUDGJY" class="uri">https://doi.org/10.34725/DVN/XUDGJY</a>), Ghana (<a href="https://doi.org/10.34725/DVN/SPRSFN" class="uri">https://doi.org/10.34725/DVN/SPRSFN</a>) and Nigeria (<a href="https://doi.org/10.34725/DVN/WLAKR2" class="uri">https://doi.org/10.34725/DVN/WLAKR2</a>).
-Documentation of the datasets is available in <span class="citation">Hengl et al. (<a href="references.html#ref-hengl2021african" role="doc-biblioref">2021</a>)</span>.
+Documentation of the datasets is available in <span class="citation"><a href="references.html#ref-hengl2021african" role="doc-biblioref">Hengl et al.</a> (<a href="references.html#ref-hengl2021african" role="doc-biblioref">2021</a>)</span>.
 Data has been analyzed at the ICRAF Soil-Plant Spectral Diagnostics Laboratory, Nairobi, and the Rothamsted Research. From the 31,269 soil scans, only 820 (2.6%) have reference data atteched to it.</p>
 <ul>
 <li>📕 Hengl, T., Miller, M.A.E., Križan, J., Shepherd, K.D., Sila, A., Kilibarda, M., Antonijevi, O., Glušica, L., Dobermann, A., Haefele, S.M., McGrath, S.P., Acquah, G.E., Collinson, J., Parente, L., Sheykhmousa, M., Saito, K., Johnson, J-M., Chamberlin, J., Silatsa, F.B.T., Yemefack, M., Wendt, J., MacMillan, R.A., Wheeler I. and Crouch, J. (2021) African soil properties and nutrients mapped at 30 m spatial resolution using two-scale ensemble machine learning. Scientific Reports, 11, 6130. <a href="https://www.nature.com/articles/s41598-021-85639-y" class="uri">https://www.nature.com/articles/s41598-021-85639-y</a>.<br>
@@ -332,6 +362,26 @@ Data has been analyzed at the ICRAF Soil-Plant Spectral Diagnostics Laboratory, 
 </li>
 </ul>
 </div>
+<div id="schiedung.ssl" class="section level3" number="2.2.8">
+<h3>
+<span class="header-section-number">2.2.8</span> SCHIEDUNG.SSL<a class="anchor" aria-label="anchor" href="#schiedung.ssl"><i class="fas fa-link"></i></a>
+</h3>
+<p><em>Description</em>: <a href="https://doi.org/10.5281/zenodo.6024831">Schiedung et al. (2022)</a>. Dataset to the manuscript Schiedung et al. (2022, Catena). MIR scans of 284 samples from high-latitude forest soils of Canada. DOI: <a href="https://doi.org/10.5281/zenodo.6024831" class="uri">https://doi.org/10.5281/zenodo.6024831</a>.</p>
+<ul>
+<li>📕 Schiedung, M., Bellè, S.-L., Malhotra, A., &amp; Abiven, S. (2022). <a href="https://doi.org/10.1016/j.catena.2022.106194">Organic carbon stocks, quality and prediction in permafrost-affected forest soils in north Canada</a>. CATENA, 213, 106194. <a href="doi:%5B10.1016/j.catena.2022.106194" class="uri">doi:[10.1016/j.catena.2022.106194</a>](<a href="https://doi.org/10.1016/j.catena.2022.106194" class="uri">https://doi.org/10.1016/j.catena.2022.106194</a>).<br>
+</li>
+<li>🔗 Project website: <a href="https://doi.org/10.5281/zenodo.6024831" class="uri">https://doi.org/10.5281/zenodo.6024831</a><br>
+</li>
+<li>©️ Data license: CC-BY 4.0<br>
+</li>
+<li>📍 Unique locations: 289<br>
+</li>
+<li>📋 Unique complete scans: 259<br>
+</li>
+<li>📝 Import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Schiedung">Schiedung</a>
+</li>
+</ul>
+</div>
 </div>
 <div id="soil-spetroscopy-organizations" class="section level2" number="2.3">
 <h2>
@@ -363,7 +413,7 @@ Lincoln, NE 68508-3866, USA<br>
 </h2>
 <p>Open source and commercial software used to process soil spectral scans.
 See also this <a href="https://soilspectroscopy.org/soil-spectroscopy-state-of-the-art-open-source-software/">detailed review of software used for soil spectroscopy</a>.
-Even more in-depth review of R packages used for soil spectroscopy can be found in <span class="citation">Wadoux, Malone, McBratney, Fajardo, &amp; Minasny (<a href="references.html#ref-malone2021soil" role="doc-biblioref">2021</a>)</span>.</p>
+Even more in-depth review of R packages used for soil spectroscopy can be found in <span class="citation"><a href="references.html#ref-malone2021soil" role="doc-biblioref">Wadoux, Malone, McBratney, Fajardo, &amp; Minasny</a> (<a href="references.html#ref-malone2021soil" role="doc-biblioref">2021</a>)</span>.</p>
 <div id="asdreader" class="section level3" number="2.4.1">
 <h3>
 <span class="header-section-number">2.4.1</span> asdreader<a class="anchor" aria-label="anchor" href="#asdreader"><i class="fas fa-link"></i></a>
@@ -430,49 +480,15 @@ Even more in-depth review of R packages used for soil spectroscopy can be found 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="new-to-markdown.html"><span class="header-section-number">1</span> New to markdown</a></div>
-<div class="next"><a href="database.html"><span class="header-section-number">3</span> Database</a></div>
+<div class="empty"></div>
+<div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#soil-spectroscopy-tools-and-users"><span class="header-section-number">2</span> Soil spectroscopy tools and users</a></li>
-<li>
-<a class="nav-link" href="#soil-spectroscopy-instruments"><span class="header-section-number">2.1</span> Soil Spectroscopy Instruments</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#bruker-alpha-1_ft-mir_zn-se"><span class="header-section-number">2.1.1</span> Bruker Alpha 1_FT-MIR_Zn Se</a></li>
-<li><a class="nav-link" href="#bruker-alpha-1_ft-mir_kbr"><span class="header-section-number">2.1.2</span> Bruker Alpha 1_FT-MIR_KBr</a></li>
-<li><a class="nav-link" href="#bruker-vertex-70-with-hts-xt-accessory"><span class="header-section-number">2.1.3</span> Bruker Vertex 70 with HTS-XT accessory</a></li>
-<li><a class="nav-link" href="#asd-labspec-2500-with-muglight-accessory"><span class="header-section-number">2.1.4</span> ASD Labspec 2500 with Muglight accessory</a></li>
-<li><a class="nav-link" href="#asd-fieldspec-fr"><span class="header-section-number">2.1.5</span> ASD FieldSpec FR</a></li>
-<li><a class="nav-link" href="#xds-rapid-content-analyzer"><span class="header-section-number">2.1.6</span> XDS Rapid Content Analyzer</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#registered-soil-spectral-libraries"><span class="header-section-number">2.2</span> Registered soil spectral libraries</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#kssl.ssl"><span class="header-section-number">2.2.1</span> KSSL.SSL</a></li>
-<li><a class="nav-link" href="#icraf.isric"><span class="header-section-number">2.2.2</span> ICRAF.ISRIC</a></li>
-<li><a class="nav-link" href="#lucas.ssl"><span class="header-section-number">2.2.3</span> LUCAS.SSL</a></li>
-<li><a class="nav-link" href="#afsis1.ssl"><span class="header-section-number">2.2.4</span> AFSIS1.SSL</a></li>
-<li><a class="nav-link" href="#afsis2.ssl"><span class="header-section-number">2.2.5</span> AFSIS2.SSL</a></li>
-<li><a class="nav-link" href="#caf.ssl"><span class="header-section-number">2.2.6</span> CAF.SSL</a></li>
-<li><a class="nav-link" href="#neon.ssl"><span class="header-section-number">2.2.7</span> NEON.SSL</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#soil-spetroscopy-organizations"><span class="header-section-number">2.3</span> Soil spetroscopy organizations</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#kssl"><span class="header-section-number">2.3.1</span> KSSL</a></li></ul>
-</li>
-<li>
-<a class="nav-link" href="#soil-spectroscopy-software"><span class="header-section-number">2.4</span> Soil Spectroscopy software</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#asdreader"><span class="header-section-number">2.4.1</span> asdreader</a></li>
-<li><a class="nav-link" href="#prospectr"><span class="header-section-number">2.4.2</span> prospectr</a></li>
-<li><a class="nav-link" href="#simplerspec"><span class="header-section-number">2.4.3</span> simplerspec</a></li>
-</ul>
-</li>
-</ul>
+      <div id="book-on-this-page"></div>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/soilspectroscopy/ossl-manual/blob/master/015-project.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/soilspectroscopy/ossl-manual/edit/master/015-project.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+          
         </ul>
 </div>
     </nav>
