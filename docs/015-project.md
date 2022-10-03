@@ -167,7 +167,7 @@ _Description_: [The National Ecological Observatory Network (NEON) Soil Spectral
 
 _Description_: [Schiedung et al. (2022)](https://doi.org/10.5281/zenodo.6024831). Dataset to the manuscript Schiedung et al. (2022, Catena). MIR scans of 284 samples from high-latitude forest soils of Canada. DOI: <https://doi.org/10.5281/zenodo.6024831>.
 
-- 📕 Schiedung, M., Bellè, S.-L., Malhotra, A., & Abiven, S. (2022). [Organic carbon stocks, quality and prediction in permafrost-affected forest soils in north Canada](https://doi.org/10.1016/j.catena.2022.106194). CATENA, 213, 106194. doi:[10.1016/j.catena.2022.106194](https://doi.org/10.1016/j.catena.2022.106194).  
+- 📕 Schiedung, M., Bellè, S.-L., Malhotra, A., & Abiven, S. (2022). [Organic carbon stocks, quality and prediction in permafrost-affected forest soils in north Canada](https://doi.org/10.1016/j.catena.2022.106194). CATENA, 213, 106194. <https://doi.org/10.1016/j.catena.2022.106194>.  
 - 🔗 Project website: <https://doi.org/10.5281/zenodo.6024831>  
 - ©️ Data license: CC-BY 4.0  
 - 📍 Unique locations: 289   
