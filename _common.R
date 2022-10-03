@@ -30,7 +30,7 @@ status <- function(type) {
 
   cat(paste0(
     "::: {.rmdnote}\n",
-    "You are reading the work-in-progress Spatial and spatiotemporal interpolation using Ensemble Machine Learning. ",
+    "You are reading the work-in-progress of the SoilSpec4GG manual. ",
     "This chapter is currently ", status, ". ",
     "You can find the polished first edition at <https://soilspectroscopy.github.io/ossl-manual/>.\n",
     ":::\n"

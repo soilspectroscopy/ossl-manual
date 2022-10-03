@@ -138,7 +138,6 @@ Data has been analyzed at the ICRAF Soil-Plant Spectral Diagnostics Laboratory, 
 - `r emo::ji("clipboard")` Unique complete scans: 820  
 - `r emo::ji("memo")` Import steps: [AFSIS2](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS2)  
 
-
 ### CAF.SSL
 
 _Description_: [The Central African Soil Spectral Library](https://doi.org/10.5194/soil-7-693-2021). MIR scans of some collected based on 1800 samples in Central Africa. 
@@ -161,6 +160,16 @@ _Description_: [The National Ecological Observatory Network (NEON) Soil Spectral
 - `r emo::ji("clipboard")` Unique complete scans: 305  
 - `r emo::ji("memo")` Import steps: [NEON](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL)  
 
+### SCHIEDUNG.SSL
+
+_Description_: [Schiedung et al. (2022)](https://doi.org/10.5281/zenodo.6024831). Dataset to the manuscript Schiedung et al. (2022, Catena). MIR scans of 284 samples from high-latitude forest soils of Canada. DOI: <https://doi.org/10.5281/zenodo.6024831>.
+
+- `r emo::ji("closed_book")` Schiedung, M., Bellè, S.-L., Malhotra, A., & Abiven, S. (2022). [Organic carbon stocks, quality and prediction in permafrost-affected forest soils in north Canada](https://doi.org/10.1016/j.catena.2022.106194). CATENA, 213, 106194. doi:[10.1016/j.catena.2022.106194](https://doi.org/10.1016/j.catena.2022.106194).  
+- `r emo::ji("link")` Project website: <https://doi.org/10.5281/zenodo.6024831>  
+- `r emo::ji("copyright")` Data license: CC-BY 4.0  
+- `r emo::ji("round_pushpin")` Unique locations: 289   
+- `r emo::ji("clipboard")` Unique complete scans: 259  
+- `r emo::ji("memo")` Import steps: [Schiedung](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Schiedung)  
 
 ## Soil spetroscopy organizations
 
