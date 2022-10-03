@@ -6,16 +6,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>About | Open Soil Spectral Library</title>
 <meta name="author" content="Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.14/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, callibrate own models and extend beyond.">
+<meta name="generator" content="bookdown 0.29 with bs4_book()">
+<meta property="og:title" content="About | Open Soil Spectral Library">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://soilspectroscopy.github.io/ossl-manual">
+<meta property="og:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
+<meta property="og:description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, callibrate own models and extend beyond.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="About | Open Soil Spectral Library">
+<meta name="twitter:site" content="@soilspec">
+<meta name="twitter:description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, callibrate own models and extend beyond.">
+<meta name="twitter:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-06HBX7FM0K"></script><script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'G-06HBX7FM0K');
-    </script><script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS -->
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -85,13 +122,13 @@ infrared (Vis–NIR–MIR) regions of the electromagnetic spectrum</a> is applie
 of the incident radiation reflected by soil is sensed through Vis–NIR–MIR reflectance spectroscopy.
 These characteristic spectra (see Fig. below) can then be used to estimate numerous soil attributes including: minerals, organic compounds and water.</p>
 <div class="figure" style="text-align: center">
-<span id="fig:soil-pnts"></span>
+<span style="display:block;" id="fig:soil-pnts"></span>
 <img src="img/Spectroscopy-Schematic.jpeg" alt="Schematic explanation of the soil spectroscopy. For more info see: https://soilspectroscopy.org/." width="100%"><p class="caption">
 Figure 0.1: Schematic explanation of the soil spectroscopy. For more info see: <a href="https://soilspectroscopy.org/" class="uri">https://soilspectroscopy.org/</a>.
 </p>
 </div>
 <div class="figure" style="text-align: center">
-<span id="fig:soil-visnir"></span>
+<span style="display:block;" id="fig:soil-visnir"></span>
 <img src="img/VNIR_Raw_Spectra.png" alt="Example of spectral signatures for large number of VisNIR scans (KSSL)." width="80%"><p class="caption">
 Figure 0.2: Example of spectral signatures for large number of VisNIR scans (KSSL).
 </p>
@@ -121,7 +158,7 @@ It includes (see also <a href="https://github.com/soilspectroscopy" class="uri">
 general OSSL scheme to organize Soil Observations &amp; Measurements with four main tables
 and metadata + legends organized in other tables:</p>
 <div class="figure" style="text-align: center">
-<span id="fig:soil-db"></span>
+<span style="display:block;" id="fig:soil-db"></span>
 <img src="img/design_soil_om_sheme.png" alt="Recommended OSSL database schema." width="100%"><p class="caption">
 Figure 0.3: Recommended OSSL database schema.
 </p>
@@ -129,13 +166,13 @@ Figure 0.3: Recommended OSSL database schema.
 <p>To access global compilation of soil legacy point data sets refer to <a href="https://github.com/OpenGeoHub/SoilSamples" class="uri">https://github.com/OpenGeoHub/SoilSamples</a> repository.
 To access and use Soil Spectroscopy tools also refer to <a href="https://soilspectroscopy.org/" class="uri">https://soilspectroscopy.org/</a>.</p>
 <div class="figure" style="text-align: center">
-<span id="fig:pnts-vnir"></span>
+<span style="display:block;" id="fig:pnts-vnir"></span>
 <img src="img/visnir.pnts_sites.png" alt="Up-to-date distribution of points with VisNIR scans." width="100%"><p class="caption">
 Figure 0.4: Up-to-date distribution of points with VisNIR scans.
 </p>
 </div>
 <div class="figure" style="text-align: center">
-<span id="fig:pnts-mir"></span>
+<span style="display:block;" id="fig:pnts-mir"></span>
 <img src="img/mir.pnts_sites.png" alt="Up-to-date distribution of points with MIR scans." width="100%"><p class="caption">
 Figure 0.5: Up-to-date distribution of points with MIR scans.
 </p>
@@ -162,32 +199,32 @@ The following parameters (database credentials) allow ready only access to DB:</
 <li>Password: soilspec4gg</li>
 </ul>
 <div class="figure" style="text-align: center">
-<span id="fig:mongodb-gui"></span>
+<span style="display:block;" id="fig:mongodb-gui"></span>
 <img src="img/mongodb_gui.png" alt="Accessing the OSSL DB using [MongoDB GUI](https://robomongo.org/download)." width="90%"><p class="caption">
 Figure 0.6: Accessing the OSSL DB using <a href="https://robomongo.org/download">MongoDB GUI</a>.
 </p>
 </div>
 <p>First, we need to specify the parameters:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeroen/mongolite/">mongolite</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">jsonify</span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span><span class="op">(</span><span class="st">"R/ossl_functions.R"</span><span class="op">)</span>
-<span class="va">soilspec4gg.db</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
-  host <span class="op">=</span> <span class="st">'api.soilspectroscopy.org'</span>,
-  name <span class="op">=</span> <span class="st">'soilspec4gg'</span>,
-  user <span class="op">=</span> <span class="st">'soilspec4gg'</span>,
-  pw <span class="op">=</span> <span class="st">'soilspec4gg'</span>
-<span class="op">)</span>
-<span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">url</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span>
-  <span class="st">'mongodb://'</span>, <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">user</span>, <span class="st">':'</span>, 
-  <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">pw</span>, <span class="st">'@'</span>, 
-  <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">host</span>, <span class="st">'/'</span>, 
-  <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">name</span>, <span class="st">'?ssl=true'</span>
-<span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeroen/mongolite/">mongolite</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">jsonify</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span><span class="op">(</span><span class="st">"R/ossl_functions.R"</span><span class="op">)</span></span>
+<span><span class="va">soilspec4gg.db</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>  host <span class="op">=</span> <span class="st">'api.soilspectroscopy.org'</span>,</span>
+<span>  name <span class="op">=</span> <span class="st">'soilspec4gg'</span>,</span>
+<span>  user <span class="op">=</span> <span class="st">'soilspec4gg'</span>,</span>
+<span>  pw <span class="op">=</span> <span class="st">'soilspec4gg'</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">url</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span></span>
+<span>  <span class="st">'mongodb://'</span>, <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">user</span>, <span class="st">':'</span>, </span>
+<span>  <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">pw</span>, <span class="st">'@'</span>, </span>
+<span>  <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">host</span>, <span class="st">'/'</span>, </span>
+<span>  <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">name</span>, <span class="st">'?ssl=true'</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <p>Next, we can initiate connection:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">soilspec4gg.init</span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; [1] "Creating the access for mongodb collections."</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">soilspec4gg.init</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "Creating the access for mongodb collections."</span></span></code></pre></div>
 <p>and now we can query and load data directly into R, for example to get a sample from AfSIS1:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" aria-hidden="true" tabindex="-1"></a>id <span class="ot">=</span> <span class="st">"icr006475"</span> </span>
 <span id="cb3-2"><a href="index.html#cb3-2" aria-hidden="true" tabindex="-1"></a>soilspec.sample <span class="ot">=</span> <span class="fu">soilspec4gg.samplesById</span>(id)</span>
@@ -213,7 +250,7 @@ interoperable. The OSSL API is at the moment based on using the <a href="https:/
 and is <strong>provided for testing purposes only</strong>. Users can calibrate maximum 20 rows
 per request, but these limits will be gradually extended.</p>
 <div class="figure" style="text-align: center">
-<span id="fig:ossl-api"></span>
+<span style="display:block;" id="fig:ossl-api"></span>
 <img src="img/preview_ossl_api_swagger.png" alt="OSSL API is available for testing." width="100%"><p class="caption">
 Figure 0.7: OSSL API is available for testing.
 </p>
@@ -421,7 +458,7 @@ importing and using the KSSL Soil Spectral Library;<br>
 <strong><a href="http://esdac.jrc.ec.europa.eu/">LUCAS topsoil (VisNIR) Soil Spectral Library</a></strong> <span class="citation">(<a href="references.html#ref-orgiazzi2018lucas" role="doc-biblioref">Orgiazzi, Ballabio, Panagos, Jones, &amp; Fernández-Ugalde, 2018</a>)</span> was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <a href="http://esdac.jrc.ec.europa.eu/" class="uri">http://esdac.jrc.ec.europa.eu/</a>; we have degraded location accuracy of points so that exact locations are about 1-km off;<br>
 </li>
 <li>
-<strong><a href="https://github.com/laura-summerauer/ssl-central-africa">The Central African Soil Spectral Library</a></strong> described in detail in <span class="citation">Summerauer et al. (<a href="references.html#ref-Summerauer2021" role="doc-biblioref">2021</a>)</span> contains limited number of samples representing Central Africa <a href="https://doi.org/10.5281/zenodo.4320395" class="uri">https://doi.org/10.5281/zenodo.4320395</a>;<br>
+<strong><a href="https://github.com/laura-summerauer/ssl-central-africa">The Central African Soil Spectral Library</a></strong> described in detail in <span class="citation"><a href="references.html#ref-Summerauer2021" role="doc-biblioref">Summerauer et al.</a> (<a href="references.html#ref-Summerauer2021" role="doc-biblioref">2021</a>)</span> contains limited number of samples representing Central Africa <a href="https://doi.org/10.5281/zenodo.4320395" class="uri">https://doi.org/10.5281/zenodo.4320395</a>;<br>
 </li>
 <li>
 <strong>The National Ecological Observatory Network (NEON) Soil Spectral</strong> is based on the NEON soil data <span class="citation">(<a href="references.html#ref-ayres2019quantitative" role="doc-biblioref">Ayres, 2019</a>)</span>, which were scanned by the Woodwell Climate Research and USDA-NRCS Kellogg Soil Survey Laboratory; the <a href="https://www.neonscience.org/samples/soil-archive">(NEON) Megapit Soil Archive</a> is a program sponsored by the National Science Foundation and operated under cooperative agreement by Battelle;</li>
