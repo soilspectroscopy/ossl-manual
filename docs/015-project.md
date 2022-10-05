@@ -165,7 +165,7 @@ _Description_: [The National Ecological Observatory Network (NEON) Soil Spectral
 
 ### SCHIEDUNG.SSL
 
-_Description_: [Schiedung et al. (2022)](https://doi.org/10.5281/zenodo.6024831). Dataset to the manuscript Schiedung et al. (2022, Catena). MIR scans of 284 samples from high-latitude forest soils of Canada. DOI: <https://doi.org/10.5281/zenodo.6024831>.
+_Description_: Dataset to the manuscript @Garrett2022. MIR scans of 284 samples from high-latitude forest soils of Canada. DOI: <https://doi.org/10.5281/zenodo.6024831>.
 
 - 📕 Schiedung, M., Bellè, S.-L., Malhotra, A., & Abiven, S. (2022). [Organic carbon stocks, quality and prediction in permafrost-affected forest soils in north Canada](https://doi.org/10.1016/j.catena.2022.106194). CATENA, 213, 106194. <https://doi.org/10.1016/j.catena.2022.106194>.  
 - 🔗 Project website: <https://doi.org/10.5281/zenodo.6024831>  
@@ -173,6 +173,17 @@ _Description_: [Schiedung et al. (2022)](https://doi.org/10.5281/zenodo.6024831)
 - 📍 Unique locations: 289   
 - 📋 Unique complete scans: 259  
 - 📝 Import steps: [Schiedung](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Schiedung)  
+
+### GARRETT.SSL
+
+_Description_: A soil dataset from the FR380 trial series spanning 35 Pinus radiata forest sites in New Zealand. The dataset underpins three existing publications by Watt et al. (2005; 2008) and Ross et al. (2009) which details sample sites and the time zero (i.e. time of tree planting) sample collection and testing method. The publication by @Garrett2022 details the soil mid-infrared spectroscopy method and extension on soil chemistry testing using the same time zero samples. A total of 184 samples have publicly available MIR scans.  
+
+- 📕 Garrett, L. G., Sanderman, J., Palmer, D. J., Dean, F., Patel, S., Bridson, J. H., & Carlin, T. (2022). Mid-infrared spectroscopy for planted forest soil and foliage nutrition predictions, New Zealand case study. In Trees, Forests and People (Vol. 8, p. 100280). <https://doi.org/10.1016/j.tfp.2022.100280>.   
+- 🔗 Project website: <https://doi.org/10.6084/m9.figshare.20506587.v2>  
+- ©️ Data license: CC-BY 4.0  
+- 📍 Unique locations: 35   
+- 📋 Unique complete scans: 184  
+- 📝 Import steps: [Garrett](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Garrett)  
 
 ## Soil spetroscopy organizations
 
