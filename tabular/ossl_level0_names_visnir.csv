@@ -1,0 +1,16 @@
+ossl_name,type,example,description
+id.layer_uuid_txt,string,bb01d3da0ea0d4d796b3391bb1d174f1,OSSL unique identifier
+id.scan_local_c,string,196784MD01,Original scan identifier
+scan.visnir.date.begin_iso.8601_yyyy.mm.dd,numeric,2015-03-05,Begin date of scanning following YYYY-MM-DD format (ISO 8601)
+scan.visnir.date.end_iso.8601_yyyy.mm.dd,numeric,2015-03-05,Begin date of scanning following YYYY-MM-DD format (ISO 8601)
+scan.visnir.model.name_utf8_txt,string,ASD Labspec 2500 with Muglight accessory,"VisNIR instrument manufacturer, model and accessory (if any)"
+scan.visnir.model.code_any_txt,string,ASD_Labspec_2500_MA,VisNIR instrument coding
+scan.visnir.method.optics_any_txt,string,4.5 W halogen lamp,Metadata information related to instrument optics and measurements
+scan.visnir.method.preparation_any_txt,string,Sieved <2 mm,Soil sample preparation before scanning
+scan.visnir.license.title_ascii_txt,string,CC-BY,Dataset scans license
+scan.visnir.license.address_idn_url,string,https://www.nrcs.usda.gov/resources/data-and-reports/rapid-carbon-assessment-raca,Dataset scans license url
+scan.visnir.doi_idf_url,string,https://doi.org/10.1007/978-3-319-04084-4_10,Digital object identifier (DOI) url of the dataset scans
+scan.visnir.contact.name_utf8_txt,string,Scarlett Murphy,Dataset scans contact name
+scan.visnir.contact.email_ietf_txt,string,Scarlett.Murphy@usda.gov,Dataset scans contact email
+scan_visnir.350_ref,numeric,0.10403320,"Reflectance in fraction unit, first wavelength in the 350-2500 nm range"
+scan_visnir.2500_ref,numeric,0.3622029,"Reflectance in fraction unit, last wavelength in the 350-2500 nm range"
