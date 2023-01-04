@@ -65,9 +65,39 @@
 <div class="rmdnote">
 <p>You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at <a href="https://soilspectroscopy.github.io/ossl-manual/" class="uri">https://soilspectroscopy.github.io/ossl-manual/</a>.</p>
 </div>
+<p>The github repository <a href="https://github.com/soilspectroscopy/ossl-imports">ossl-imports</a> has all the importing codes for preparing and integrating new datasets into the OSSL. The folder <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset">ossl-imports/dataset</a> contains all the datasets separated by its name/code, with an internal <code>README</code> file describing in detail the steps necessary for preparing and standardizing the files into the OSSL format.</p>
+<p>The original files are placed on an internal server to avoid the storage of big files in the github repository, but some of them can be found on persistent online repositories if they have a public license. Other original datasets that do not have a public license or are shared to this project with some restrictions will no be shared publicly. As we keep the original files in a local repository to run the importing notebooks (each <code>ossl-imports/dataset/../README.Rmd</code>), this operation can only be run at our internal server. New contributors are encouraged to host their files on a public repository and draft the importing step on github through pull requests. The final checks and consolidation, however, will be concluded on an internal server.</p>
+<p>The <code>README</code> files follow a basic structure. Each one has a description of the dataset at the top of the notebook which links to the dataset source and references. An extended description is provided in the <a href="https://soilspectroscopy.github.io/ossl-manual/soil-spectroscopy-tools-and-users.html#registered-soil-spectral-libraries">OSSL-manual</a> as well.</p>
+<p>For preparing the import, the following subsections are defined:</p>
+<ul>
+<li>Basic description.</li>
+<li>Soil site information.</li>
+<li>Soil laboratory (wet chemistry) information.</li>
+<li>Mid-infrared (MIR) spectroscopy data (optional).</li>
+<li>Visible-near-infrared (VisNIR) spectroscopy data (optional).</li>
+<li>Quality control.</li>
+<li>References.</li>
+</ul>
+<p>Each subsection has its own reading and processing functions, and the outputs can be joined using shared id columns. The output files share the same name and pattern but can be retrieved with different folder names, which are binded together in a final stage. The outputs are <code>ossl_soilsite_&lt;version&gt;.qs</code>, <code>ossl_soillab_&lt;version&gt;.qs</code>, <code>ossl_mir_&lt;version&gt;.qs</code>, <code>ossl_visnir_&lt;version&gt;.qs</code>. The version is adjusted in the recurring updates.</p>
+<p>The contrasting methods used for analytically determining (wet chemistry) a given soil property has also been a subject of internal discussion in this project. Some global initiatives have been facing this same issue in their soil databases but there still no clear or full consensus on how to harmonize those different methods. This has been a topic of great discussion and research development at the <a href="https://www.fao.org/global-soil-partnership/glosolan/en/">Global Soil Partnership’s Global Soil Laboratory Network (GLOSOLAN)</a>.</p>
+<p>In order to maximize transparency, for now, we have decided to produce two different levels for the OSSL database. <code>Level 0</code> takes into account the original methods employed in each dataset but tries to initially fit them to two reference lists: <a href="https://www.nrcs.usda.gov/resources/guides-and-instructions/kssl-guidance">KSSL Guidance – Laboratory Methods and Manuals</a> and ISO standards. A copy of the KSSL procedures and coding scheme is archived in <a href="https://github.com/soilspectroscopy/ossl-imports/blob/main/out/kssl_procedures.csv">ossl-imports</a>.</p>
+<p>If a reference method does not fall in any previous method, then we create a new variable sharing at least a common property and unit. A final harmonization takes place in the OSSL <code>Level 1</code>, where those common properties sharing different methods are converted to a target method using some publicly available transformation rule, or in the worst scenario, they are naively binded or kept separated to produce its specific model. All the implementations are documented in the <a href="https://github.com/soilspectroscopy/ossl-imports/blob/main/out/ossl_level0_to_level1_soillab_harmonization.csv">ossl-import</a> repository.</p>
+<p>The following subsections provide the OSSL variable names, types, description, and example. You can also find all this information in tabular format:</p>
+<ul>
+<li>
+<a href="./tabular/ossl_level0_names_soilsite.csv">OSSL soil site data</a>.</li>
+<li>
+<a href="./tabular/ossl_level0_names_soillab.csv">OSSL soil lab data (level 0)</a>.</li>
+<li>
+<a href="./tabular/ossl_level1_names_soillab.csv">OSSL soil lab data (level 1)</a>.</li>
+<li>
+<a href="./tabular/ossl_level0_names_mir.csv">OSSL soil MIR data</a>.</li>
+<li>
+<a href="./tabular/ossl_level0_names_visnir.csv">OSSL soil VisNIR data</a>.</li>
+</ul>
 <div id="sites-table" class="section level2" number="3.1">
 <h2>
-<span class="header-section-number">3.1</span> Soil site data<a class="anchor" aria-label="anchor" href="#sites-table"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1</span> Soilsite data<a class="anchor" aria-label="anchor" href="#sites-table"><i class="fas fa-link"></i></a>
 </h2>
 <p>Observations and measurements at the site level. For the <strong>site</strong> table please use (at least) the following columns.</p>
 <div id="dataset.code_ascii_txt" class="section level3" number="3.1.1">
@@ -337,7 +367,7 @@ Example: 203.</p>
 </div>
 <div id="soillab-table" class="section level2" number="3.2">
 <h2>
-<span class="header-section-number">3.2</span> Soillab data - Level 0<a class="anchor" aria-label="anchor" href="#soillab-table"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2</span> Soillab data<a class="anchor" aria-label="anchor" href="#soillab-table"><i class="fas fa-link"></i></a>
 </h2>
 <div id="dataset.code_ascii_txt-1" class="section level3" number="3.2.1">
 <h3>

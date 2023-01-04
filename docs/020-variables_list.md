@@ -4,13 +4,45 @@
 You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at <https://soilspectroscopy.github.io/ossl-manual/>.
 :::
 
+The github repository [ossl-imports](https://github.com/soilspectroscopy/ossl-imports) has all the importing codes for preparing and integrating new datasets into the OSSL. The folder [ossl-imports/dataset](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset) contains all the datasets separated by its name/code, with an internal `README` file describing in detail the steps necessary for preparing and standardizing the files into the OSSL format.
+
+The original files are placed on an internal server to avoid the storage of big files in the github repository, but some of them can be found on persistent online repositories if they have a public license. Other original datasets that do not have a public license or are shared to this project with some restrictions will no be shared publicly. As we keep the original files in a local repository to run the importing notebooks (each `ossl-imports/dataset/../README.Rmd`), this operation can only be run at our internal server. New contributors are encouraged to host their files on a public repository and draft the importing step on github through pull requests. The final checks and consolidation, however, will be concluded on an internal server.
+
+The `README` files follow a basic structure. Each one has a description of the dataset at the top of the notebook which links to the dataset source and references. An extended description is provided in the [OSSL-manual](https://soilspectroscopy.github.io/ossl-manual/soil-spectroscopy-tools-and-users.html#registered-soil-spectral-libraries) as well.
+
+For preparing the import, the following subsections are defined:
+
+- Basic description.
+- Soil site information.
+- Soil laboratory (wet chemistry) information.
+- Mid-infrared (MIR) spectroscopy data (optional).
+- Visible-near-infrared (VisNIR) spectroscopy data (optional).
+- Quality control.
+- References.
+
+Each subsection has its own reading and processing functions, and the outputs can be joined using shared id columns. The output files share the same name and pattern but can be retrieved with different folder names, which are binded together in a final stage. The outputs are `ossl_soilsite_<version>.qs`, `ossl_soillab_<version>.qs`, `ossl_mir_<version>.qs`, `ossl_visnir_<version>.qs`. The version is adjusted in the recurring updates.
+
+The contrasting methods used for analytically determining (wet chemistry) a given soil property has also been a subject of internal discussion in this project. Some global initiatives have been facing this same issue in their soil databases but there still no clear or full consensus on how to harmonize those different methods. This has been a topic of great discussion and research development at the [Global Soil Partnership’s Global Soil Laboratory Network (GLOSOLAN)](https://www.fao.org/global-soil-partnership/glosolan/en/).
+
+In order to maximize transparency, for now, we have decided to produce two different levels for the OSSL database. `Level 0` takes into account the original methods employed in each dataset but tries to initially fit them to two reference lists: [KSSL Guidance – Laboratory Methods and Manuals](https://www.nrcs.usda.gov/resources/guides-and-instructions/kssl-guidance) and ISO standards. A copy of the KSSL procedures and coding scheme is archived in [ossl-imports](https://github.com/soilspectroscopy/ossl-imports/blob/main/out/kssl_procedures.csv).
+
+If a reference method does not fall in any previous method, then we create a new variable sharing at least a common property and unit. A final harmonization takes place in the OSSL `Level 1`, where those common properties sharing different methods are converted to a target method using some publicly available transformation rule, or in the worst scenario, they are naively binded or kept separated to produce its specific model. All the implementations are documented in the [ossl-import](https://github.com/soilspectroscopy/ossl-imports/blob/main/out/ossl_level0_to_level1_soillab_harmonization.csv) repository.
+
+The following subsections provide the OSSL variable names, types, description, and example. You can also find all this information in tabular format:
+
+- [OSSL soil site data](./tabular/ossl_level0_names_soilsite.csv).
+- [OSSL soil lab data (level 0)](./tabular/ossl_level0_names_soillab.csv).
+- [OSSL soil lab data (level 1)](./tabular/ossl_level1_names_soillab.csv).
+- [OSSL soil MIR data](./tabular/ossl_level0_names_mir.csv).
+- [OSSL soil VisNIR data](./tabular/ossl_level0_names_visnir.csv).
 
 
 
 
 
 
-## Soil site data {#sites-table}
+
+## Soilsite data {#sites-table}
 
 Observations and measurements at the site level. For the **site** table please use (at least) the following columns.
 
@@ -180,7 +212,7 @@ Description: Site identification.
 Type: string.
 Example: 203.
 
-## Soillab data - Level 0 {#soillab-table}
+## Soillab data {#soillab-table}
 
 
 ### dataset.code_ascii_txt
