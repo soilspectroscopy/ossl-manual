@@ -456,25 +456,23 @@ for (i in 1:nrow(soillab.level0.desc)) {
   iexample <- soillab.level0.desc[[i,"example"]]
   
   cat(paste0('\n\n### ', iossl_name))
-  cat(paste0('\nDescription: ', idescription, '. The analyte can be simply described as `', ianalyte, '`.'))
+  cat(paste0('\nDescription: ', idescription, '. It can be alternatively described as `', ianalyte, '`.'))
   cat(paste0('\nUnit: Imported into the OSSL as `', iunit, '`, i.e., ', iunit_description, '.'))
   cat(paste0('\nType: ', itype, '.'))
   cat(paste0('\nExample: ', iexample, '.'))
   if(file.exists(paste0("heatmap_v1.2/heatmap_L1_", iossl_name, ".png"))) {
     cat(paste0('\nAvailability: level 0 and level 1 (harmonized).'))
-  } else {
+  } else if(!(iossl_name %in% c("dataset.code_ascii_txt", "id.layer_uuid_txt"))){
     cat(paste0('\nAvailability: only level 0.'))
   }
   
   # if(file.exists(paste0("hist_v1.2/hist_L0_", iossl_name, ".png"))) {
   #   cat(paste0('\n<img src="./hist_v1.2/hist_L0_',iossl_name, '.png" heigth=100% width=100%>'))
   # }
-  # if(file.exists(paste0("heatmap_v1.2/heatmap_L0_", iossl_name, ".png"))) {
-  #   cat(paste0('\n\n<img src="./heatmap_v1.2/heatmap_L0_',iossl_name, '.png" heigth=100% width=100%>'))
-  # }
+  
   if(file.exists(paste0("heatmap_v1.2/heatmap_L1_", iossl_name, ".png"))) {
     cat(paste0('\n\n<img src="./heatmap_v1.2/heatmap_L1_',iossl_name, '.png" heigth=100% width=100%>'))
-  } else {
+  } else if(file.exists(paste0("heatmap_v1.2/heatmap_L0_", iossl_name, ".png"))) {
     cat(paste0('\n\n<img src="./heatmap_v1.2/heatmap_L0_',iossl_name, '.png" heigth=100% width=100%>'))
   }
 }

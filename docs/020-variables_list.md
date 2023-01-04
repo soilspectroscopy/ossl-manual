@@ -225,25 +225,19 @@ Example: 203.
 
 
 ### dataset.code_ascii_txt
-Description: Dataset code used for internal reference. The analyte can be simply described as `OSSL dataset code`.
+Description: Dataset code used for internal reference. It can be alternatively described as `OSSL dataset code`.
 Unit: Imported into the OSSL as `txt`, i.e., text.
 Type: string.
 Example: AFSIS1.SSL.
-Availability: only level 0.
-
-<img src="./heatmap_v1.2/heatmap_L0_dataset.code_ascii_txt.png" heigth=100% width=100%>
 
 ### id.layer_uuid_txt
-Description: Unique identifier. The analyte can be simply described as `OSSL unique identifier`.
+Description: Unique identifier. It can be alternatively described as `OSSL unique identifier`.
 Unit: Imported into the OSSL as `txt`, i.e., text.
 Type: string.
 Example: ded584d70bf0474202d30e575ae24784.
-Availability: only level 0.
-
-<img src="./heatmap_v1.2/heatmap_L0_id.layer_uuid_txt.png" heigth=100% width=100%>
 
 ### acidity_usda.a795_cmolc.kg
-Description: Extractable acidity, BaCl2-TEA at pH 8.2, is a measure of the amount of acid neutralized at a set pH. The analyte can be simply described as `Acidity, BaCl2-TEA Extractable, pH 8.2`.
+Description: Extractable acidity, BaCl2-TEA at pH 8.2, is a measure of the amount of acid neutralized at a set pH. It can be alternatively described as `Acidity, BaCl2-TEA Extractable, pH 8.2`.
 Unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
 Type: numeric.
 Example: 0.40000.
@@ -252,7 +246,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_acidity_usda.a795_cmolc.kg.png" heigth=100% width=100%>
 
 ### aggstb_usda.a1_w.pct
-Description: Aggregate stability is the weight percent of 0.5 mm - 2 mm aggregates remaining after wet sieving.. The analyte can be simply described as `Aggregate Stability`.
+Description: Aggregate stability is the weight percent of 0.5 mm - 2 mm aggregates remaining after wet sieving.. It can be alternatively described as `Aggregate Stability`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 74.
@@ -261,7 +255,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_aggstb_usda.a1_w.pct.png" heigth=100% width=100%>
 
 ### al.dith_usda.a65_w.pct
-Description: Dithionite citrate extractable aluminum is an indicator of the amount of aluminum substituted for iron in iron oxides.. The analyte can be simply described as `Aluminum, Crystalline, Total Pedogenic Iron`.
+Description: Dithionite citrate extractable aluminum is an indicator of the amount of aluminum substituted for iron in iron oxides.. It can be alternatively described as `Aluminum, Crystalline, Total Pedogenic Iron`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 0.13652.
@@ -270,7 +264,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_al.dith_usda.a65_w.pct.png" heigth=100% width=100%>
 
 ### al.ext_aquaregia_g.kg
-Description: Exchangeable Al.. The analyte can be simply described as `Aluminum, Extractable, Aqua Regia`.
+Description: Exchangeable Al.. It can be alternatively described as `Aluminum, Extractable, Aqua Regia`.
 Unit: Imported into the OSSL as `g.kg`, i.e., grams per kilogram of soil.
 Type: numeric.
 Example: 42.9620831.
@@ -279,7 +273,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_al.ext_aquaregia_g.kg.png" heigth=100% width=100%>
 
 ### al.ext_usda.a1056_mg.kg
-Description: Exchangeable Al.. The analyte can be simply described as `Aluminum, Extractable, Mehlich3`.
+Description: Exchangeable Al.. It can be alternatively described as `Aluminum, Extractable, Mehlich3`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 1270.00000.
@@ -288,7 +282,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_al.ext_usda.a1056_mg.kg.png" heigth=100% width=100%>
 
 ### al.ext_usda.a69_cmolc.kg
-Description: Exchangeable Al.. The analyte can be simply described as `Aluminum, Extractable, KCl`.
+Description: Exchangeable Al.. It can be alternatively described as `Aluminum, Extractable, KCl`.
 Unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
 Type: numeric.
 Example: 0.20000.
@@ -297,7 +291,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_al.ext_usda.a69_cmolc.kg.png" heigth=100% width=100%>
 
 ### al.ox_usda.a59_w.pct
-Description: Ammonium oxalate extractable aluminum is an estimate of the total pedogenic Al, much of which may be in noncrystalline materials or complexed by organic matter.. The analyte can be simply described as `Aluminum, Amorphous, Total Non-Crystalline Iron`.
+Description: Ammonium oxalate extractable aluminum is an estimate of the total pedogenic Al, much of which may be in noncrystalline materials or complexed by organic matter.. It can be alternatively described as `Aluminum, Amorphous, Total Non-Crystalline Iron`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 0.12951.
@@ -306,7 +300,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_al.ox_usda.a59_w.pct.png" heigth=100% width=100%>
 
 ### awc.33.1500kPa_usda.c80_w.frac
-Description: The amount (fraction) of water released between 1/3 (33 kPa) and 15 (1500 kPa) bar tensions determined as gravimetric percent.. The analyte can be simply described as `Available Water Content, Difference 33-1500 kPa`.
+Description: The amount (fraction) of water released between 1/3 (33 kPa) and 15 (1500 kPa) bar tensions determined as gravimetric percent.. It can be alternatively described as `Available Water Content, Difference 33-1500 kPa`.
 Unit: Imported into the OSSL as `w.frac`, i.e., weight fraction.
 Type: numeric.
 Example: 0.08658.
@@ -315,7 +309,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_awc.33.1500kPa_usda.c80_w.frac.png" heigth=100% width=100%>
 
 ### b.ext_mel3_mg.kg
-Description: Plant available B.. The analyte can be simply described as `Boron, Extractable, Mehlich3`.
+Description: Plant available B.. It can be alternatively described as `Boron, Extractable, Mehlich3`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 0.00100000.
@@ -324,7 +318,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_b.ext_mel3_mg.kg.png" heigth=100% width=100%>
 
 ### bd_iso.11272_g.cm3
-Description: Bulk density is the weight per unit volume of the fine earth fraction (<2 mm).. The analyte can be simply described as `Bulk Density, iso 11272`.
+Description: Bulk density is the weight per unit volume of the fine earth fraction (<2 mm).. It can be alternatively described as `Bulk Density, iso 11272`.
 Unit: Imported into the OSSL as `g.cm3`, i.e., grams per cubic centimeter.
 Type: numeric.
 Example: 1.57100.
@@ -333,7 +327,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_bd_iso.11272_g.cm3.png" heigth=100% width=100%>
 
 ### bd_usda.a21_g.cm3
-Description: Bulk density is the weight per unit volume of the fine earth fraction (<2 mm).. The analyte can be simply described as `Bulk Density, <2 mm fraction, Core`.
+Description: Bulk density is the weight per unit volume of the fine earth fraction (<2 mm).. It can be alternatively described as `Bulk Density, <2 mm fraction, Core`.
 Unit: Imported into the OSSL as `g.cm3`, i.e., grams per cubic centimeter.
 Type: numeric.
 Example: 1.57100.
@@ -342,7 +336,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_bd_usda.a21_g.cm3.png" heigth=100% width=100%>
 
 ### bd_usda.a4_g.cm3
-Description: Bulk density is the weight per unit volume of the fine earth fraction (<2 mm).. The analyte can be simply described as `Bulk Density, <2mm fraction, Clod`.
+Description: Bulk density is the weight per unit volume of the fine earth fraction (<2 mm).. It can be alternatively described as `Bulk Density, <2mm fraction, Clod`.
 Unit: Imported into the OSSL as `g.cm3`, i.e., grams per cubic centimeter.
 Type: numeric.
 Example: 1.3477999.
@@ -351,7 +345,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_bd_usda.a4_g.cm3.png" heigth=100% width=100%>
 
 ### c.tot_iso.10694_w.pct
-Description: Total carbon is a measure of all organic and inorganic carbon, including that found in carbonate minerals.. The analyte can be simply described as `Carbon, Total NCS, iso 10694`.
+Description: Total carbon is a measure of all organic and inorganic carbon, including that found in carbonate minerals.. It can be alternatively described as `Carbon, Total NCS, iso 10694`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 3.668778009.
@@ -360,7 +354,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_c.tot_iso.10694_w.pct.png" heigth=100% width=100%>
 
 ### c.tot_usda.a622_w.pct
-Description: Total carbon is a measure of all organic and inorganic carbon, including that found in carbonate minerals.. The analyte can be simply described as `Carbon, Total NCS`.
+Description: Total carbon is a measure of all organic and inorganic carbon, including that found in carbonate minerals.. It can be alternatively described as `Carbon, Total NCS`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 1.55128592.
@@ -369,7 +363,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_c.tot_usda.a622_w.pct.png" heigth=100% width=100%>
 
 ### ca.ext_aquaregia_mg.kg
-Description: Exchangeable or plant available Ca.. The analyte can be simply described as `Calcium, Extractable, Aqua Regia`.
+Description: Exchangeable or plant available Ca.. It can be alternatively described as `Calcium, Extractable, Aqua Regia`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 368.535095.
@@ -378,7 +372,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_ca.ext_aquaregia_mg.kg.png" heigth=100% width=100%>
 
 ### ca.ext_usda.a1059_mg.kg
-Description: Exchangeable or plant available Ca.. The analyte can be simply described as `Calcium, Extractable, Mehlich3`.
+Description: Exchangeable or plant available Ca.. It can be alternatively described as `Calcium, Extractable, Mehlich3`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 78.20000.
@@ -387,7 +381,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_ca.ext_usda.a1059_mg.kg.png" heigth=100% width=100%>
 
 ### ca.ext_usda.a722_cmolc.kg
-Description: Exchangeable or plant available Ca.. The analyte can be simply described as `Calcium, Extractable, NH4OAc`.
+Description: Exchangeable or plant available Ca.. It can be alternatively described as `Calcium, Extractable, NH4OAc`.
 Unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
 Type: numeric.
 Example: 2.617060178.
@@ -396,7 +390,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_ca.ext_usda.a722_cmolc.kg.png" heigth=100% width=100%>
 
 ### caco3_iso.10693_w.pct
-Description: Carbonate in the <2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a <2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid.. The analyte can be simply described as `Carbonate, iso 10693`.
+Description: Carbonate in the <2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a <2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid.. It can be alternatively described as `Carbonate, iso 10693`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 27.0.
@@ -405,7 +399,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_caco3_iso.10693_w.pct.png" heigth=100% width=100%>
 
 ### caco3_usda.a54_w.pct
-Description: Carbonate in the <2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a <2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid.. The analyte can be simply described as `Carbonate, <2mm Fraction`.
+Description: Carbonate in the <2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a <2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid.. It can be alternatively described as `Carbonate, <2mm Fraction`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 0.50000.
@@ -414,7 +408,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_caco3_usda.a54_w.pct.png" heigth=100% width=100%>
 
 ### cec_iso.11260_cmolc.kg
-Description: Cation exchange capacity of a sample highly buffered at pH 7.0. It is reported as cmolc kg-1 (= meq per 100 grams) on a <2 mm base.. The analyte can be simply described as `CEC, pH 7.0, iso 11260`.
+Description: Cation exchange capacity of a sample highly buffered at pH 7.0. It is reported as cmolc kg-1 (= meq per 100 grams) on a <2 mm base.. It can be alternatively described as `CEC, pH 7.0, iso 11260`.
 Unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
 Type: numeric.
 Example: 37.8.
@@ -423,7 +417,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_cec_iso.11260_cmolc.kg.png" heigth=100% width=100%>
 
 ### cec_usda.a723_cmolc.kg
-Description: Cation exchange capacity of a sample highly buffered at pH 7.0. It is reported on a <2 mm base.. The analyte can be simply described as `CEC, pH 7.0, NH4OAc, 2M KCl displacement`.
+Description: Cation exchange capacity of a sample highly buffered at pH 7.0. It is reported on a <2 mm base.. It can be alternatively described as `CEC, pH 7.0, NH4OAc, 2M KCl displacement`.
 Unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
 Type: numeric.
 Example: 6.6332171.
@@ -432,7 +426,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_cec_usda.a723_cmolc.kg.png" heigth=100% width=100%>
 
 ### cf_iso.11464_w.pct
-Description: The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.. The analyte can be simply described as `Coarse Fragments, iso 11464`.
+Description: The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.. It can be alternatively described as `Coarse Fragments, iso 11464`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 10.
@@ -441,7 +435,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_cf_iso.11464_w.pct.png" heigth=100% width=100%>
 
 ### cf_usda.c236_w.pct
-Description: The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.. The analyte can be simply described as `Coarse Fragments, Greater 2mm`.
+Description: The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.. It can be alternatively described as `Coarse Fragments, Greater 2mm`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 4.00000.
@@ -450,7 +444,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_cf_usda.c236_w.pct.png" heigth=100% width=100%>
 
 ### clay.tot_iso.11277_w.pct
-Description: Total clay is the soil separate with <0.002 mm particle diameter. Clay size carbonate is included. It is reported on a <2 mm base.. The analyte can be simply described as `Clay, iso 11277`.
+Description: Total clay is the soil separate with <0.002 mm particle diameter. Clay size carbonate is included. It is reported on a <2 mm base.. It can be alternatively described as `Clay, iso 11277`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 51.
@@ -459,7 +453,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_clay.tot_iso.11277_w.pct.png" heigth=100% width=100%>
 
 ### clay.tot_usda.a334_w.pct
-Description: Total clay is the soil separate with <0.002 mm particle diameter. Clay size carbonate is included. It is reported on a <2 mm base.. The analyte can be simply described as `Clay`.
+Description: Total clay is the soil separate with <0.002 mm particle diameter. Clay size carbonate is included. It is reported on a <2 mm base.. It can be alternatively described as `Clay`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 30.99000.
@@ -468,7 +462,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_clay.tot_usda.a334_w.pct.png" heigth=100% width=100%>
 
 ### cu.ext_usda.a1063_mg.kg
-Description: Exchangeable or plant available Cu.. The analyte can be simply described as `Copper, Extractable, Mehlich3`.
+Description: Exchangeable or plant available Cu.. It can be alternatively described as `Copper, Extractable, Mehlich3`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 0.5600000.
@@ -477,7 +471,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_cu.ext_usda.a1063_mg.kg.png" heigth=100% width=100%>
 
 ### ec_iso.11265_ds.m
-Description: Electrical conductivity. It is reported of a 1:2 soil:water mixture. The analyte can be simply described as `Electrical Conductivity, iso 11265`.
+Description: Electrical conductivity. It is reported of a 1:2 soil:water mixture. It can be alternatively described as `Electrical Conductivity, iso 11265`.
 Unit: Imported into the OSSL as `ds.m`, i.e., decisiemens per metre.
 Type: numeric.
 Example: 2.3350.
@@ -486,7 +480,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_ec_iso.11265_ds.m.png" heigth=100% width=100%>
 
 ### ec_usda.a364_ds.m
-Description: Electrical conductivity. It is reported of a 1:2 soil:water mixture. The analyte can be simply described as `Electrical Conductivity, (w/w)`.
+Description: Electrical conductivity. It is reported of a 1:2 soil:water mixture. It can be alternatively described as `Electrical Conductivity, (w/w)`.
 Unit: Imported into the OSSL as `ds.m`, i.e., decisiemens per metre.
 Type: numeric.
 Example: 0.03100.
@@ -495,16 +489,14 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_ec_usda.a364_ds.m.png" heigth=100% width=100%>
 
 ### efferv_usda.a479_class
-Description: The visual effervescence of the prepared sample when treated with 1 N HCl.. The analyte can be simply described as `Effervescense, 1N HCl`.
+Description: The visual effervescence of the prepared sample when treated with 1 N HCl.. It can be alternatively described as `Effervescense, 1N HCl`.
 Unit: Imported into the OSSL as `class`, i.e., class of visual interpretation.
 Type: string.
 Example: none.
 Availability: only level 0.
 
-<img src="./heatmap_v1.2/heatmap_L0_efferv_usda.a479_class.png" heigth=100% width=100%>
-
 ### fe.dith_usda.a66_w.pct
-Description: Dithionite citrate extractable iron is considered a general measure of total pedogenic iron.. The analyte can be simply described as `Iron, Crystalline, Total Pedogenic Iron`.
+Description: Dithionite citrate extractable iron is considered a general measure of total pedogenic iron.. It can be alternatively described as `Iron, Crystalline, Total Pedogenic Iron`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 1.09028.
@@ -513,7 +505,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_fe.dith_usda.a66_w.pct.png" heigth=100% width=100%>
 
 ### fe.ext_aquaregia_g.kg
-Description: Exchangeable or plant available Fe.. The analyte can be simply described as `Iron, Extractable, Aqua Regia`.
+Description: Exchangeable or plant available Fe.. It can be alternatively described as `Iron, Extractable, Aqua Regia`.
 Unit: Imported into the OSSL as `g.kg`, i.e., grams per kilogram of soil.
 Type: numeric.
 Example: 71.9575342.
@@ -522,7 +514,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_fe.ext_aquaregia_g.kg.png" heigth=100% width=100%>
 
 ### fe.ext_usda.a1064_mg.kg
-Description: Exchangeable or plant available Fe.. The analyte can be simply described as `Iron, Extractable, Mehlich3`.
+Description: Exchangeable or plant available Fe.. It can be alternatively described as `Iron, Extractable, Mehlich3`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 182.00000.
@@ -531,7 +523,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_fe.ext_usda.a1064_mg.kg.png" heigth=100% width=100%>
 
 ### fe.ox_usda.a60_w.pct
-Description: Ammonium oxalate extractable iron is considered a measure of the noncrystalline Fe in soils.. The analyte can be simply described as `Iron, Amorphous, Total Non-Crystalline Iron`.
+Description: Ammonium oxalate extractable iron is considered a measure of the noncrystalline Fe in soils.. It can be alternatively described as `Iron, Amorphous, Total Non-Crystalline Iron`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 0.15422.
@@ -540,7 +532,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_fe.ox_usda.a60_w.pct.png" heigth=100% width=100%>
 
 ### k.ext_aquaregia_mg.kg
-Description: Exchangeable or plant available K.. The analyte can be simply described as `Sodium, Extractable, Aqua Regia`.
+Description: Exchangeable or plant available K.. It can be alternatively described as `Sodium, Extractable, Aqua Regia`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 1781.400966.
@@ -549,7 +541,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_k.ext_aquaregia_mg.kg.png" heigth=100% width=100%>
 
 ### k.ext_usda.a1065_mg.kg
-Description: Exchangeable or plant available K.. The analyte can be simply described as `Sodium, Extractable, Mehlich3`.
+Description: Exchangeable or plant available K.. It can be alternatively described as `Sodium, Extractable, Mehlich3`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 47.000000.
@@ -558,7 +550,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_k.ext_usda.a1065_mg.kg.png" heigth=100% width=100%>
 
 ### k.ext_usda.a725_cmolc.kg
-Description: Exchangeable or plant available K.. The analyte can be simply described as `Sodium, Extractable, NH4OAc, 2M KCl displacement`.
+Description: Exchangeable or plant available K.. It can be alternatively described as `Sodium, Extractable, NH4OAc, 2M KCl displacement`.
 Unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
 Type: numeric.
 Example: 0.200688352.
@@ -567,7 +559,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_k.ext_usda.a725_cmolc.kg.png" heigth=100% width=100%>
 
 ### mg.ext_aquaregia_mg.kg
-Description: Exchangeable or plant available Mg.. The analyte can be simply described as `Magnesium, Extractable, Aqua Regia`.
+Description: Exchangeable or plant available Mg.. It can be alternatively described as `Magnesium, Extractable, Aqua Regia`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 710.429099.
@@ -576,7 +568,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_mg.ext_aquaregia_mg.kg.png" heigth=100% width=100%>
 
 ### mg.ext_usda.a1066_mg.kg
-Description: Exchangeable or plant available Mg.. The analyte can be simply described as `Magnesium, Extractable, Mehlich3`.
+Description: Exchangeable or plant available Mg.. It can be alternatively described as `Magnesium, Extractable, Mehlich3`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 19.600000.
@@ -585,7 +577,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_mg.ext_usda.a1066_mg.kg.png" heigth=100% width=100%>
 
 ### mg.ext_usda.a724_cmolc.kg
-Description: Exchangeable or plant available Mg.. The analyte can be simply described as `Magnesium, Extractable, NH4OAc, 2M KCl displacement`.
+Description: Exchangeable or plant available Mg.. It can be alternatively described as `Magnesium, Extractable, NH4OAc, 2M KCl displacement`.
 Unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
 Type: numeric.
 Example: 1.81655342.
@@ -594,7 +586,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_mg.ext_usda.a724_cmolc.kg.png" heigth=100% width=100%>
 
 ### mn.ext_aquaregia_mg.kg
-Description: Exchangeable or plant available Mn.. The analyte can be simply described as `Manganese, Extractable, Aqua Regia`.
+Description: Exchangeable or plant available Mn.. It can be alternatively described as `Manganese, Extractable, Aqua Regia`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 497.300369.
@@ -603,7 +595,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_mn.ext_aquaregia_mg.kg.png" heigth=100% width=100%>
 
 ### mn.ext_usda.a1067_mg.kg
-Description: Exchangeable or plant available Mn.. The analyte can be simply described as `Manganese, Extractable, Mehlich3`.
+Description: Exchangeable or plant available Mn.. It can be alternatively described as `Manganese, Extractable, Mehlich3`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 23.10000000.
@@ -612,7 +604,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_mn.ext_usda.a1067_mg.kg.png" heigth=100% width=100%>
 
 ### mn.ext_usda.a70_mg.kg
-Description: Exchangeable or plant available Mn.. The analyte can be simply described as `Manganese, Extractable, KCl`.
+Description: Exchangeable or plant available Mn.. It can be alternatively described as `Manganese, Extractable, KCl`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 0.62569.
@@ -621,7 +613,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_mn.ext_usda.a70_mg.kg.png" heigth=100% width=100%>
 
 ### n.tot_iso.11261_w.pct
-Description: Total nitrogen is a measure of all organic and inorganic nitrogen.. The analyte can be simply described as `Nitrogen, Total NCS, iso 11261`.
+Description: Total nitrogen is a measure of all organic and inorganic nitrogen.. It can be alternatively described as `Nitrogen, Total NCS, iso 11261`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 0.25.
@@ -630,7 +622,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_n.tot_iso.11261_w.pct.png" heigth=100% width=100%>
 
 ### n.tot_iso.13878_w.pct
-Description: Total nitrogen is a measure of all organic and inorganic nitrogen.. The analyte can be simply described as `Nitrogen, Total NCS, iso 13878`.
+Description: Total nitrogen is a measure of all organic and inorganic nitrogen.. It can be alternatively described as `Nitrogen, Total NCS, iso 13878`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 0.089.
@@ -639,7 +631,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_n.tot_iso.13878_w.pct.png" heigth=100% width=100%>
 
 ### n.tot_usda.a623_w.pct
-Description: Total nitrogen is a measure of all organic and inorganic nitrogen.. The analyte can be simply described as `Nitrogen, Total NCS`.
+Description: Total nitrogen is a measure of all organic and inorganic nitrogen.. It can be alternatively described as `Nitrogen, Total NCS`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 0.079766974.
@@ -648,7 +640,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_n.tot_usda.a623_w.pct.png" heigth=100% width=100%>
 
 ### na.ext_aquaregia_mg.kg
-Description: Exchangeable or plant availableNa.. The analyte can be simply described as `Potassium, Extractable, Aqua Regia`.
+Description: Exchangeable or plant availableNa.. It can be alternatively described as `Potassium, Extractable, Aqua Regia`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 75.986312.
@@ -657,7 +649,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_na.ext_aquaregia_mg.kg.png" heigth=100% width=100%>
 
 ### na.ext_usda.a1068_mg.kg
-Description: Exchangeable or plant availableNa.. The analyte can be simply described as `Potassium, Extractable, Mehlich3`.
+Description: Exchangeable or plant availableNa.. It can be alternatively described as `Potassium, Extractable, Mehlich3`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 17.800000.
@@ -666,7 +658,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_na.ext_usda.a1068_mg.kg.png" heigth=100% width=100%>
 
 ### na.ext_usda.a726_cmolc.kg
-Description: Exchangeable or plant availableNa.. The analyte can be simply described as `Potassium, Extractable, NH4OAc, 2M KCl displacement`.
+Description: Exchangeable or plant availableNa.. It can be alternatively described as `Potassium, Extractable, NH4OAc, 2M KCl displacement`.
 Unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
 Type: numeric.
 Example: 0.124398521.
@@ -675,7 +667,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_na.ext_usda.a726_cmolc.kg.png" heigth=100% width=100%>
 
 ### oc_iso.10694_w.pct
-Description: Estimated Organic Carbon based on Total C. The analyte can be simply described as `Organic Carbon, iso 10694`.
+Description: Estimated Organic Carbon based on Total C. It can be alternatively described as `Organic Carbon, iso 10694`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 2.05000000.
@@ -684,7 +676,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_oc_iso.10694_w.pct.png" heigth=100% width=100%>
 
 ### oc_usda.c1059_w.pct
-Description: Estimated Organic Carbon based on Total C. The analyte can be simply described as `Organic Carbon, Total C without CaCO3, N prep`.
+Description: Estimated Organic Carbon based on Total C. It can be alternatively described as `Organic Carbon, Total C without CaCO3, N prep`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 1.50336492.
@@ -693,7 +685,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_oc_usda.c1059_w.pct.png" heigth=100% width=100%>
 
 ### oc_usda.c729_w.pct
-Description: Estimated Organic Carbon based on Total C. The analyte can be simply described as `Organic Carbon, Total C without CaCO3, S prep`.
+Description: Estimated Organic Carbon based on Total C. It can be alternatively described as `Organic Carbon, Total C without CaCO3, S prep`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 2.9100.
@@ -702,7 +694,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_oc_usda.c729_w.pct.png" heigth=100% width=100%>
 
 ### p.ext_aquaregia_mg.kg
-Description: Plant available P.. The analyte can be simply described as `Phosphorus, Extractable, Aqua Regia`.
+Description: Plant available P.. It can be alternatively described as `Phosphorus, Extractable, Aqua Regia`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 608.30492.
@@ -711,7 +703,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_p.ext_aquaregia_mg.kg.png" heigth=100% width=100%>
 
 ### p.ext_iso.11263_mg.kg
-Description: Plant available P.. The analyte can be simply described as `Phosphorus, Extractable, iso 11263`.
+Description: Plant available P.. It can be alternatively described as `Phosphorus, Extractable, iso 11263`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 72.4.
@@ -720,7 +712,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_p.ext_iso.11263_mg.kg.png" heigth=100% width=100%>
 
 ### p.ext_usda.a1070_mg.kg
-Description: Plant available P.. The analyte can be simply described as `Phosphorus, Extractable, Mehlich3`.
+Description: Plant available P.. It can be alternatively described as `Phosphorus, Extractable, Mehlich3`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 3.44739.
@@ -729,7 +721,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_p.ext_usda.a1070_mg.kg.png" heigth=100% width=100%>
 
 ### p.ext_usda.a270_mg.kg
-Description: Plant available P.. The analyte can be simply described as `Phosphorus, Extractable, Bray1`.
+Description: Plant available P.. It can be alternatively described as `Phosphorus, Extractable, Bray1`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 50.5348939.
@@ -738,7 +730,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_p.ext_usda.a270_mg.kg.png" heigth=100% width=100%>
 
 ### p.ext_usda.a274_mg.kg
-Description: Plant available P.. The analyte can be simply described as `Phosphorus, Extractable, Olsen`.
+Description: Plant available P.. It can be alternatively described as `Phosphorus, Extractable, Olsen`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 17.23518992.
@@ -747,7 +739,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_p.ext_usda.a274_mg.kg.png" heigth=100% width=100%>
 
 ### p.ext_usda.a652_mg.kg
-Description: Plant available P.. The analyte can be simply described as `Phosphorus, Extractable, Mehlich3`.
+Description: Plant available P.. It can be alternatively described as `Phosphorus, Extractable, Mehlich3`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 9.770000.
@@ -756,7 +748,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_p.ext_usda.a652_mg.kg.png" heigth=100% width=100%>
 
 ### ph.cacl2_iso.10390_index
-Description: pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.. The analyte can be simply described as `pH, 1:2 Soil-CaCl2 Suspension, iso 10390`.
+Description: pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.. It can be alternatively described as `pH, 1:2 Soil-CaCl2 Suspension, iso 10390`.
 Unit: Imported into the OSSL as `index`, i.e., negative logarithm of the hydrogen ion concentration.
 Type: numeric.
 Example: 7.24.
@@ -765,7 +757,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_ph.cacl2_iso.10390_index.png" heigth=100% width=100%>
 
 ### ph.cacl2_usda.a477_index
-Description: pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.. The analyte can be simply described as `pH, 1:2 Soil-CaCl2 Suspension, 0.01 M CaCl2`.
+Description: pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.. It can be alternatively described as `pH, 1:2 Soil-CaCl2 Suspension, 0.01 M CaCl2`.
 Unit: Imported into the OSSL as `index`, i.e., negative logarithm of the hydrogen ion concentration.
 Type: numeric.
 Example: 5.40.
@@ -774,7 +766,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_ph.cacl2_usda.a477_index.png" heigth=100% width=100%>
 
 ### ph.cacl2_usda.a481_index
-Description: pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.. The analyte can be simply described as `pH, 1:2 Soil-CaCl2 Suspension`.
+Description: pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.. It can be alternatively described as `pH, 1:2 Soil-CaCl2 Suspension`.
 Unit: Imported into the OSSL as `index`, i.e., negative logarithm of the hydrogen ion concentration.
 Type: numeric.
 Example: 6.40000.
@@ -783,7 +775,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_ph.cacl2_usda.a481_index.png" heigth=100% width=100%>
 
 ### ph.h2o_iso.10390_index
-Description: pH of the 1:1 soil:water suspension.. The analyte can be simply described as `pH, 1:1 Soil-Water Suspension, iso 10390`.
+Description: pH of the 1:1 soil:water suspension.. It can be alternatively described as `pH, 1:1 Soil-Water Suspension, iso 10390`.
 Unit: Imported into the OSSL as `index`, i.e., negative logarithm of the hydrogen ion concentration.
 Type: numeric.
 Example: 7.64.
@@ -792,7 +784,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_ph.h2o_iso.10390_index.png" heigth=100% width=100%>
 
 ### ph.h2o_usda.a268_index
-Description: pH of the 1:1 soil:water suspension.. The analyte can be simply described as `pH, 1:1 Soil-Water Suspension`.
+Description: pH of the 1:1 soil:water suspension.. It can be alternatively described as `pH, 1:1 Soil-Water Suspension`.
 Unit: Imported into the OSSL as `index`, i.e., negative logarithm of the hydrogen ion concentration.
 Type: numeric.
 Example: 5.10000.
@@ -801,7 +793,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_ph.h2o_usda.a268_index.png" heigth=100% width=100%>
 
 ### s.ext_mel3_mg.kg
-Description: Exchangeable or plant available S.. The analyte can be simply described as `Sulphur, Extractable, Mehlich3`.
+Description: Exchangeable or plant available S.. It can be alternatively described as `Sulphur, Extractable, Mehlich3`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 16.800.
@@ -810,7 +802,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_s.ext_mel3_mg.kg.png" heigth=100% width=100%>
 
 ### s.tot_usda.a624_w.pct
-Description: Total sulfur is a measure of all organic and inorganic sulfur, including that found in sulfide minerals.. The analyte can be simply described as `Sulfur, Total NCS`.
+Description: Total sulfur is a measure of all organic and inorganic sulfur, including that found in sulfide minerals.. It can be alternatively described as `Sulfur, Total NCS`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 0.03569.
@@ -819,7 +811,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_s.tot_usda.a624_w.pct.png" heigth=100% width=100%>
 
 ### sand.tot_iso.11277_w.pct
-Description: Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a <2 mm base.. The analyte can be simply described as `Sand, Total, iso 11277`.
+Description: Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a <2 mm base.. It can be alternatively described as `Sand, Total, iso 11277`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 9.
@@ -828,7 +820,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_sand.tot_iso.11277_w.pct.png" heigth=100% width=100%>
 
 ### sand.tot_usda.c405_w.pct
-Description: Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a <2 mm base.. The analyte can be simply described as `Sand, Total, N prep`.
+Description: Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a <2 mm base.. It can be alternatively described as `Sand, Total, N prep`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 79.4.
@@ -837,7 +829,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_sand.tot_usda.c405_w.pct.png" heigth=100% width=100%>
 
 ### sand.tot_usda.c60_w.pct
-Description: Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a <2 mm base.. The analyte can be simply described as `Sand, Total, S prep`.
+Description: Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a <2 mm base.. It can be alternatively described as `Sand, Total, S prep`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 50.37000.
@@ -846,7 +838,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_sand.tot_usda.c60_w.pct.png" heigth=100% width=100%>
 
 ### silt.tot_iso.11277_w.pct
-Description: Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a <2 mm base.. The analyte can be simply described as `Silt, Total, iso 11277`.
+Description: Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a <2 mm base.. It can be alternatively described as `Silt, Total, iso 11277`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 40.
@@ -855,7 +847,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_silt.tot_iso.11277_w.pct.png" heigth=100% width=100%>
 
 ### silt.tot_usda.c407_w.pct
-Description: Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a <2 mm base.. The analyte can be simply described as `Silt, Total, N prep`.
+Description: Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a <2 mm base.. It can be alternatively described as `Silt, Total, N prep`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 18.2.
@@ -864,7 +856,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_silt.tot_usda.c407_w.pct.png" heigth=100% width=100%>
 
 ### silt.tot_usda.c62_w.pct
-Description: Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a <2 mm base.. The analyte can be simply described as `Silt, Total, S prep`.
+Description: Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a <2 mm base.. It can be alternatively described as `Silt, Total, S prep`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 18.64000.
@@ -873,7 +865,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_silt.tot_usda.c62_w.pct.png" heigth=100% width=100%>
 
 ### wr.10kPa_usda.a414_w.pct
-Description: The gravimetric percent water after equilibration at 1/10 bar (10 kPa) water tension.. The analyte can be simply described as `Water Retention, 1/10 Bar (10 kPa)`.
+Description: The gravimetric percent water after equilibration at 1/10 bar (10 kPa) water tension.. It can be alternatively described as `Water Retention, 1/10 Bar (10 kPa)`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 10.852961.
@@ -882,7 +874,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_wr.10kPa_usda.a414_w.pct.png" heigth=100% width=100%>
 
 ### wr.10kPa_usda.a8_w.pct
-Description: The gravimetric percent water after equilibration at 1/10 bar (10 kPa) water tension.. The analyte can be simply described as `Water Retention, 1/10 Bar (10 kPa), Clod`.
+Description: The gravimetric percent water after equilibration at 1/10 bar (10 kPa) water tension.. It can be alternatively described as `Water Retention, 1/10 Bar (10 kPa), Clod`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 23.00000.
@@ -891,7 +883,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_wr.10kPa_usda.a8_w.pct.png" heigth=100% width=100%>
 
 ### wr.1500kPa_usda.a417_w.pct
-Description: The gravimetric percent water after equilibration at 15 bar (1500 kPa) water tension.. The analyte can be simply described as `Water Retention, 15 Bar (1500 kPa)`.
+Description: The gravimetric percent water after equilibration at 15 bar (1500 kPa) water tension.. It can be alternatively described as `Water Retention, 15 Bar (1500 kPa)`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 3.000000.
@@ -900,7 +892,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_wr.1500kPa_usda.a417_w.pct.png" heigth=100% width=100%>
 
 ### wr.33kPa_usda.a415_w.pct
-Description: The gravimetric percent water after equilibration at 1/3 bar (33 kPa) water tension.. The analyte can be simply described as `Water Retention, 1/3 Bar (33 kPa)`.
+Description: The gravimetric percent water after equilibration at 1/3 bar (33 kPa) water tension.. It can be alternatively described as `Water Retention, 1/3 Bar (33 kPa)`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 29.17023.
@@ -909,7 +901,7 @@ Availability: level 0 and level 1 (harmonized).
 <img src="./heatmap_v1.2/heatmap_L1_wr.33kPa_usda.a415_w.pct.png" heigth=100% width=100%>
 
 ### wr.33kPa_usda.a9_w.pct
-Description: The gravimetric percent water after equilibration at 1/3 bar (33 kPa) water tension.. The analyte can be simply described as `Water Retention, 1/3 Bar (33 kPa), Clod`.
+Description: The gravimetric percent water after equilibration at 1/3 bar (33 kPa) water tension.. It can be alternatively described as `Water Retention, 1/3 Bar (33 kPa), Clod`.
 Unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 Type: numeric.
 Example: 18.20000.
@@ -918,7 +910,7 @@ Availability: only level 0.
 <img src="./heatmap_v1.2/heatmap_L0_wr.33kPa_usda.a9_w.pct.png" heigth=100% width=100%>
 
 ### zn.ext_usda.a1073_mg.kg
-Description: Exchangeable or plant available Zn.. The analyte can be simply described as `Zinc, Extractable, Mehlich3`.
+Description: Exchangeable or plant available Zn.. It can be alternatively described as `Zinc, Extractable, Mehlich3`.
 Unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 1.0300000.
