@@ -28,6 +28,12 @@ In order to maximize transparency, for now, we have decided to produce two diffe
 
 If a reference method does not fall in any previous method, then we create a new variable sharing at least a common property and unit. A final harmonization takes place in the OSSL `Level 1`, where those common properties sharing different methods are converted to a target method using some publicly available transformation rule, or in the worst scenario, they are naively binded or kept separated to produce its specific model. All the implementations are documented in the [ossl-import](https://github.com/soilspectroscopy/ossl-imports/blob/main/out/ossl_level0_to_level1_soillab_harmonization.csv) repository.
 
+**Middle-infrared (MIR) spectra** is provided in absorbance units per wavenumber, with values usually ranging between 0 and 3. The spectral range imported into the OSSL falls between 600 and 4000 cm<sup>-1</sup>, with an interval of 2 cm<sup>-1</sup>. All datasets are harmonized to this specification.
+
+**Visible and Near-Infrared (VisNIR) spectra** is provided in reflectance units per wavelength, with values usually ranging between 0 and 1 as fraction percent. The spectral range imported into the OSSL falls between 350 and 2500 nm, with an interval of 2 nm. All datasets are harmonized to this specification.
+
+One can convert reflectance (R) values to absorbance units (A) as `A = log10(1/R)`, or backtransform with `R = 1/(10^A)`. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with `WN = 1/(WL*10000000)`, or backtransform with `WL = 1/(WL*10000000)`. The factor 10M is used to convert cm to nm.
+
 The following subsections provide the OSSL variable names, types, description, and example. You can also find all this information in tabular format:
 
 - [OSSL soil site data](./tabular/ossl_level0_names_soilsite.csv).
@@ -77,9 +83,6 @@ names.remove <- c("dataset.code_ascii_txt", "id.layer_uuid_txt", "efferv_usda.a4
 ossl.soillab.level0.names <- ossl.soillab.level0 %>%
   select(-all_of(names.remove)) %>%
   names()
-
-# Switch to:
-# https://r-charts.com/correlation/heat-map-ggplot2/
 
 for(i in 1:length(ossl.soillab.level0.names)) {
   
@@ -154,6 +157,265 @@ for(i in 1:length(ossl.soillab.level0.names)) {
 }
 ```
 
+```{r heatmap_plots, include=FALSE, eval=FALSE}
+library("ggplot2")
+library("viridis")
+library("rlang")
+library("moments")
+
+names.remove <- c("dataset.code_ascii_txt", "id.layer_uuid_txt", "efferv_usda.a479_class")
+
+ossl.soillab.level0.names <- ossl.soillab.level0 %>%
+  select(-all_of(names.remove)) %>%
+  names()
+
+dataset.codes <- ossl.soillab.level0 %>%
+  distinct(dataset.code_ascii_txt)
+
+table.reference <- dataset.codes %>%
+  crossing(label = 1:length(seq(0, 1, by = 0.05)))
+
+# test1 <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+# cut(test1, breaks = c(0,2,4,6,8,10), include.lowest = F, labels = F, right = F)
+
+for(i in 1:length(ossl.soillab.level0.names)) {
+  
+  isoil.property <- ossl.soillab.level0.names[i]
+  
+  out.png = paste0("./heatmap_v1.2/heatmap_L0_", isoil.property, ".png")
+  
+  plot.df = ossl.soillab.level0 %>%
+    select(dataset.code_ascii_txt, all_of(isoil.property))
+  
+  iskewness <- plot.df %>%
+    pull(all_of(isoil.property)) %>%
+    skewness(na.rm = T)
+  
+  i99th <- plot.df %>%
+    summarise(!!isoil.property := quantile(!!as.name(isoil.property), p = 0.99, na.rm = T)) %>%
+    pull(all_of(isoil.property))
+  
+  if(iskewness <= -3 | iskewness >= 3) {
+    
+    plot.df <- plot.df %>%
+      mutate(!!isoil.property := ifelse(!!as.name(isoil.property) <= 0.001, NA, !!as.name(isoil.property))) %>%
+      filter(!!as.symbol(isoil.property) <= i99th) %>%
+      mutate(!!isoil.property := log2(!!as.name(isoil.property)))
+    
+    percentiles <- plot.df %>%
+      summarise(quantile = scales::percent(seq(0, 1, by = 0.05)),
+                !!isoil.property := quantile(!!as.name(isoil.property), seq(0, 1, by = 0.05),
+                                             names = F, type = 7)) %>%
+      group_by(!!as.name(isoil.property)) %>%
+      summarise_all(last) %>%
+      relocate(quantile, 1)
+    
+    n.table <- plot.df %>%
+      filter(!is.na(!!as.symbol(isoil.property))) %>%
+      group_by(dataset.code_ascii_txt) %>%
+      summarise(label = cut(!!as.name(isoil.property),
+                            breaks = pull(percentiles, var = 2),
+                            include.lowest = F, labels = F, right = F),
+                .groups = 'drop') %>%
+      count(dataset.code_ascii_txt, label)
+      
+    table.reference.filled <- left_join(table.reference, n.table,
+                                        by = c("dataset.code_ascii_txt", "label")) %>%
+      mutate(dataset.code_ascii_txt = factor(dataset.code_ascii_txt,
+                                             levels = rev(pull(dataset.codes, 1))))
+    
+    plot <- ggplot(table.reference.filled, aes(x = label, y = dataset.code_ascii_txt, fill = n)) +
+      geom_tile(color = "gray20") +
+      scale_fill_viridis(discrete = FALSE, na.value = "grey90", trans = "log10") +
+      scale_x_continuous(breaks = 1:length(pull(percentiles, 2)),
+                         labels = round(pull(percentiles, 2), 2),
+                         expand = c(0.01, 0)) +
+      labs(title = paste0('OSSL level 0: log2(', isoil.property, ')'),
+           x = "Percentiles - seq(from=0%, to=100%, by=5%)", y = "", fill = "count") +
+      theme_minimal() +
+      theme(axis.text.x = element_text(hjust = 1, vjust = 1, angle = 45),
+            legend.position = "bottom",
+            plot.background = element_rect(fill = 'white', colour = "white"),
+            legend.text = element_text(hjust = 1, vjust = 1, angle = 45))
+    
+  } else {
+    
+    plot.df <- plot.df %>%
+      mutate(!!isoil.property := ifelse(!!as.name(isoil.property) <= 0.001, NA, !!as.name(isoil.property))) %>%
+      filter(!!as.symbol(isoil.property) <= i99th)
+    
+    percentiles <- plot.df %>%
+      summarise(quantile = scales::percent(seq(0, 1, by = 0.05)),
+                !!isoil.property := quantile(!!as.name(isoil.property), seq(0, 1, by = 0.05),
+                                             names = F, type = 7)) %>%
+      group_by(!!as.name(isoil.property)) %>%
+      summarise_all(last) %>%
+      relocate(quantile, 1)
+    
+    n.table <- plot.df %>%
+      filter(!is.na(!!as.symbol(isoil.property))) %>%
+      group_by(dataset.code_ascii_txt) %>%
+      summarise(label = cut(!!as.name(isoil.property),
+                            breaks = pull(percentiles, var = 2),
+                            include.lowest = F, labels = F, right = F),
+                .groups = 'drop') %>%
+      count(dataset.code_ascii_txt, label)
+      
+    table.reference.filled <- left_join(table.reference, n.table,
+                                        by = c("dataset.code_ascii_txt", "label")) %>%
+      mutate(dataset.code_ascii_txt = factor(dataset.code_ascii_txt,
+                                             levels = rev(pull(dataset.codes, 1))))
+    
+    plot <- ggplot(table.reference.filled, aes(x = label, y = dataset.code_ascii_txt, fill = n)) +
+      geom_tile(color = "gray20") +
+      scale_fill_viridis(discrete = FALSE, na.value = "grey90", trans = "log10") +
+      scale_x_continuous(breaks = 1:length(pull(percentiles, 2)),
+                         labels = round(pull(percentiles, 2), 2),
+                         expand = c(0.01, 0)) +
+      labs(title = paste0('OSSL level 0: ', isoil.property),
+           x = "Percentiles - seq(from=0%, to=100%, by=5%)", y = "", fill = "count") +
+      theme_minimal() +
+      theme(axis.text.x = element_text(hjust = 1, vjust = 1, angle = 45),
+            legend.position = "bottom",
+            plot.background = element_rect(fill = 'white', colour = "white"),
+            legend.text = element_text(hjust = 1, vjust = 1, angle = 45))
+    
+  }
+  
+  ggsave(out.png, plot, width = 7, height = 5, units = "in", scale = 1)
+  
+}
+```
+
+```{r heatmap_plots_level1, include=FALSE, eval=FALSE}
+library("ggplot2")
+library("viridis")
+library("rlang")
+library("moments")
+
+names.remove <- c("dataset.code_ascii_txt", "id.layer_uuid_txt", "efferv_usda.a479_class")
+
+ossl.soillab.level1.names <- ossl.soillab.level1 %>%
+  select(-all_of(names.remove)) %>%
+  names()
+
+dataset.codes <- ossl.soillab.level1 %>%
+  distinct(dataset.code_ascii_txt)
+
+table.reference <- dataset.codes %>%
+  crossing(label = 1:length(seq(0, 1, by = 0.05)))
+
+# test1 <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+# cut(test1, breaks = c(0,2,4,6,8,10), include.lowest = F, labels = F, right = F)
+
+for(i in 1:length(ossl.soillab.level1.names)) {
+  
+  isoil.property <- ossl.soillab.level1.names[i]
+  
+  out.png = paste0("./heatmap_v1.2/heatmap_L1_", isoil.property, ".png")
+  
+  plot.df = ossl.soillab.level1 %>%
+    select(dataset.code_ascii_txt, all_of(isoil.property))
+  
+  iskewness <- plot.df %>%
+    pull(all_of(isoil.property)) %>%
+    skewness(na.rm = T)
+  
+  i99th <- plot.df %>%
+    summarise(!!isoil.property := quantile(!!as.name(isoil.property), p = 0.99, na.rm = T)) %>%
+    pull(all_of(isoil.property))
+  
+  if(iskewness <= -3 | iskewness >= 3) {
+    
+    plot.df <- plot.df %>%
+      mutate(!!isoil.property := ifelse(!!as.name(isoil.property) <= 0.001, NA, !!as.name(isoil.property))) %>%
+      filter(!!as.symbol(isoil.property) <= i99th) %>%
+      mutate(!!isoil.property := log2(!!as.name(isoil.property)))
+    
+    percentiles <- plot.df %>%
+      summarise(quantile = scales::percent(seq(0, 1, by = 0.05)),
+                !!isoil.property := quantile(!!as.name(isoil.property), seq(0, 1, by = 0.05),
+                                             names = F, type = 7)) %>%
+      group_by(!!as.name(isoil.property)) %>%
+      summarise_all(last) %>%
+      relocate(quantile, 1)
+    
+    n.table <- plot.df %>%
+      filter(!is.na(!!as.symbol(isoil.property))) %>%
+      group_by(dataset.code_ascii_txt) %>%
+      summarise(label = cut(!!as.name(isoil.property),
+                            breaks = pull(percentiles, var = 2),
+                            include.lowest = F, labels = F, right = F),
+                .groups = 'drop') %>%
+      count(dataset.code_ascii_txt, label)
+      
+    table.reference.filled <- left_join(table.reference, n.table,
+                                        by = c("dataset.code_ascii_txt", "label")) %>%
+      mutate(dataset.code_ascii_txt = factor(dataset.code_ascii_txt,
+                                             levels = rev(pull(dataset.codes, 1))))
+    
+    plot <- ggplot(table.reference.filled, aes(x = label, y = dataset.code_ascii_txt, fill = n)) +
+      geom_tile(color = "gray20") +
+      scale_fill_viridis(discrete = FALSE, na.value = "grey90", trans = "log10") +
+      scale_x_continuous(breaks = 1:length(pull(percentiles, 2)),
+                         labels = round(pull(percentiles, 2), 2),
+                         expand = c(0.01, 0)) +
+      labs(title = paste0('OSSL level 1: log2(', isoil.property, ')'),
+           x = "Percentiles - seq(from=0%, to=100%, by=5%)", y = "", fill = "count") +
+      theme_minimal() +
+      theme(axis.text.x = element_text(hjust = 1, vjust = 1, angle = 45),
+            legend.position = "bottom",
+            plot.background = element_rect(fill = 'white', colour = "white"),
+            legend.text = element_text(hjust = 1, vjust = 1, angle = 45))
+    
+  } else {
+    
+    plot.df <- plot.df %>%
+      mutate(!!isoil.property := ifelse(!!as.name(isoil.property) <= 0.001, NA, !!as.name(isoil.property))) %>%
+      filter(!!as.symbol(isoil.property) <= i99th)
+    
+    percentiles <- plot.df %>%
+      summarise(quantile = scales::percent(seq(0, 1, by = 0.05)),
+                !!isoil.property := quantile(!!as.name(isoil.property), seq(0, 1, by = 0.05),
+                                             names = F, type = 7)) %>%
+      group_by(!!as.name(isoil.property)) %>%
+      summarise_all(last) %>%
+      relocate(quantile, 1)
+    
+    n.table <- plot.df %>%
+      filter(!is.na(!!as.symbol(isoil.property))) %>%
+      group_by(dataset.code_ascii_txt) %>%
+      summarise(label = cut(!!as.name(isoil.property),
+                            breaks = pull(percentiles, var = 2),
+                            include.lowest = F, labels = F, right = F),
+                .groups = 'drop') %>%
+      count(dataset.code_ascii_txt, label)
+      
+    table.reference.filled <- left_join(table.reference, n.table,
+                                        by = c("dataset.code_ascii_txt", "label")) %>%
+      mutate(dataset.code_ascii_txt = factor(dataset.code_ascii_txt,
+                                             levels = rev(pull(dataset.codes, 1))))
+    
+    plot <- ggplot(table.reference.filled, aes(x = label, y = dataset.code_ascii_txt, fill = n)) +
+      geom_tile(color = "gray20") +
+      scale_fill_viridis(discrete = FALSE, na.value = "grey90", trans = "log10") +
+      scale_x_continuous(breaks = 1:length(pull(percentiles, 2)),
+                         labels = round(pull(percentiles, 2), 2),
+                         expand = c(0.01, 0)) +
+      labs(title = paste0('OSSL level 1: ', isoil.property),
+           x = "Percentiles - seq(from=0%, to=100%, by=5%)", y = "", fill = "count") +
+      theme_minimal() +
+      theme(axis.text.x = element_text(hjust = 1, vjust = 1, angle = 45),
+            legend.position = "bottom",
+            plot.background = element_rect(fill = 'white', colour = "white"),
+            legend.text = element_text(hjust = 1, vjust = 1, angle = 45))
+    
+  }
+  
+  ggsave(out.png, plot, width = 7, height = 5, units = "in", scale = 1)
+  
+}
+```
 ## Soilsite data {#sites-table}
 
 Observations and measurements at the site level. For the **site** table please use (at least) the following columns.
@@ -198,18 +460,27 @@ for (i in 1:nrow(soillab.level0.desc)) {
   cat(paste0('\nUnit: Imported into the OSSL as `', iunit, '`, i.e., ', iunit_description, '.'))
   cat(paste0('\nType: ', itype, '.'))
   cat(paste0('\nExample: ', iexample, '.'))
-  if(file.exists(paste0("hist_v1.2/hist_L0_", iossl_name, ".png"))) {
-    cat(paste0('\n<img src="./hist_v1.2/hist_L0_',iossl_name, '.png" heigth=100% width=100%>'))
+  if(file.exists(paste0("heatmap_v1.2/heatmap_L1_", iossl_name, ".png"))) {
+    cat(paste0('\nAvailability: level 0 and level 1 (harmonized).'))
+  } else {
+    cat(paste0('\nAvailability: only level 0.'))
   }
   
+  # if(file.exists(paste0("hist_v1.2/hist_L0_", iossl_name, ".png"))) {
+  #   cat(paste0('\n<img src="./hist_v1.2/hist_L0_',iossl_name, '.png" heigth=100% width=100%>'))
+  # }
+  # if(file.exists(paste0("heatmap_v1.2/heatmap_L0_", iossl_name, ".png"))) {
+  #   cat(paste0('\n\n<img src="./heatmap_v1.2/heatmap_L0_',iossl_name, '.png" heigth=100% width=100%>'))
+  # }
+  if(file.exists(paste0("heatmap_v1.2/heatmap_L1_", iossl_name, ".png"))) {
+    cat(paste0('\n\n<img src="./heatmap_v1.2/heatmap_L1_',iossl_name, '.png" heigth=100% width=100%>'))
+  } else {
+    cat(paste0('\n\n<img src="./heatmap_v1.2/heatmap_L0_',iossl_name, '.png" heigth=100% width=100%>'))
+  }
 }
 ```
 
 ## MIR scans {#mir-table}
-
-Middle-infrared (MIR) spectra is provided in absorbance units per wavenumber, with values usually ranging between 0 and 3. The spectral range imported into the OSSL falls between 600 and 4000 cm<sup>-1</sup>, with an interval of 2 cm<sup>-1</sup>. All datasets are harmonized to this specification.
-
-One can convert reflectance (R) values to absorbance units (A) as `A = log10(1/R)`, or backtransform with `R = 1/(10^A)`. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with `WN = 1/(WL*10000000)`, or backtransform with `WL = 1/(WL*10000000)`. The factor 10M is used to convert cm to nm.
 
 ```{r reference_mir, results='asis', echo=FALSE}
 mir.level0.desc <- read_csv("./tabular/ossl_level0_names_mir.csv")
@@ -231,10 +502,6 @@ for (i in 1:nrow(mir.level0.desc)) {
 
 ## VisNIR scans {#visnir-table}
 
-Visible and Near-Infrared (VisNIR) spectra is provided in reflectance units per wavelength, with values usually ranging between 0 and 1 as fraction percent. The spectral range imported into the OSSL falls between 350 and 2500 nm, with an interval of 2 nm. All datasets are harmonized to this specification.
-
-One can convert reflectance (R) values to absorbance units (A) as `A = log10(1/R)`, or backtransform with `R = 1/(10^A)`. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with `WN = 1/(WL*10000000)`, or backtransform with `WL = 1/(WL*10000000)`. The factor 10M is used to convert cm to nm.
-
 ```{r reference_visnir, results='asis', echo=FALSE}
 visnir.level0.desc <- read_csv("./tabular/ossl_level0_names_visnir.csv")
 
@@ -252,97 +519,3 @@ for (i in 1:nrow(visnir.level0.desc)) {
   
 }
 ```
-<!-- ## Harmonization rules -->
-
-<!-- The following description includes harmonization/conversion rules recommended in this project. -->
-<!-- For each conversion rule, a reference and an example are provided to prevent from  -->
-<!-- misusing the rules. The following principle of harmonization are highly recommended: -->
-
-<!-- 1. Document (R code) any harmonization / conversion steps.\ -->
-<!-- 2. Where possible provide propagated measure of uncertainty. This can further used  -->
-<!-- as weights in the Machine Learning / model building.\ -->
-<!-- 3. Any conversion that leads to inducting significant bias (over-/under-estimation  -->
-<!-- of values) should we avoided.\ -->
-<!-- 4. Add to the produced dataset metadata that part of data has been harmonized and  -->
-<!-- specify exact method.\ -->
-
-<!-- Disclaimer: use at own risk. See also our general disclaimer. -->
-
-<!-- ### pH -->
-
-<!-- From `ph.kcl_usda.4c1_index` to `ph.h2o_usda.4c1_index` based on @bohner2008saga: -->
-
-<!-- ```{r} -->
-<!-- ph.kcl = 6.5 -->
-<!-- ph.h2o = ph.kcl / 0.87 -->
-<!-- ph.h2o -->
-<!-- ``` -->
-
-<!-- From `ph.cacl2_usda.4c1_index` to `ph.h2o_usda.4c1_index` based on @miller2010comparison: -->
-
-<!-- ```{r} -->
-<!-- ph.cacl2 = 6.5 -->
-<!-- ph.h2o = (ph.cacl2 + 0.973 ) / 1.08 -->
-<!-- ph.h2o -->
-<!-- ``` -->
-
-
-<!-- ### Carbon -->
-
-<!-- From `humus_usda.4h2_wpct` to `oc_usda.4h2_wpct` based on @nelson1983total: -->
-
-<!-- ```{r} -->
-<!-- humus = 4 -->
-<!-- oc = humus / 1.724 -->
-<!-- oc -->
-<!-- ``` -->
-
-<!-- From `humus_usda.4h2_wpct` to `oc_usda.4h2_wpct` based on @jensen2018converting: -->
-
-<!-- ```{r} -->
-<!-- humus = 4; clay = 10 -->
-<!-- oc1 = 0.513 * humus - (0.047 * clay - 0.00025 * clay^2) -->
-<!-- oc1 -->
-<!-- humus = 4; clay = 20 -->
-<!-- oc2 = 0.513 * humus - (0.047 * clay - 0.00025 * clay^2) -->
-<!-- oc2 -->
-<!-- ``` -->
-
-<!-- ### Phosphorous -->
-
-<!-- ### Potassium -->
-
-<!-- ### Nitrogen -->
-
-<!-- ### Exchangeable cations and CEC -->
-
-<!-- From `k.ext` extracted by Mehlich-3 (cmol/kg) to `ecec.ext_usda.4b1_cmolkg` based on @helling1964contribution: -->
-
-<!-- ```{r} -->
-<!-- ph.h2o = 6.5 -->
-<!-- k.ext = 2 -->
-<!-- ca.ext = 12 -->
-<!-- na.ext = 2 -->
-<!-- mg.ext = 1 -->
-<!-- ecec.ext = ifelse(ph.h2o < 7.5 & ph.h2o>4, (k.ext + ca.ext + na.ext + mg.ext), NA) -->
-<!-- ecec.ext -->
-<!-- ``` -->
-
-<!-- From `oc_usda.4h2_wpct` to `ecec.ext_usda.4b1_cmolkg` based on @helling1964contribution: -->
-
-<!-- ```{r} -->
-<!-- clay.tot = 28 -->
-<!-- ph.h2o = 6.5 -->
-<!-- oc = 2 -->
-<!-- ecec.ext = ((clay.tot*10/100*(30+4.4*ph.h2o))+(oc/100*(-59+51*ph.h2o)))/10 -->
-<!-- ecec.ext -->
-<!-- ``` -->
-
-<!-- ### Texture fractions -->
-
-<!-- ### Bulk density -->
-
-<!-- ### Soil biological variables -->
-
-<!-- ### Soil contaminants -->
-

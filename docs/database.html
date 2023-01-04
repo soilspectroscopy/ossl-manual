@@ -82,6 +82,9 @@
 <p>The contrasting methods used for analytically determining (wet chemistry) a given soil property has also been a subject of internal discussion in this project. Some global initiatives have been facing this same issue in their soil databases but there still no clear or full consensus on how to harmonize those different methods. This has been a topic of great discussion and research development at the <a href="https://www.fao.org/global-soil-partnership/glosolan/en/">Global Soil Partnership’s Global Soil Laboratory Network (GLOSOLAN)</a>.</p>
 <p>In order to maximize transparency, for now, we have decided to produce two different levels for the OSSL database. <code>Level 0</code> takes into account the original methods employed in each dataset but tries to initially fit them to two reference lists: <a href="https://www.nrcs.usda.gov/resources/guides-and-instructions/kssl-guidance">KSSL Guidance – Laboratory Methods and Manuals</a> and ISO standards. A copy of the KSSL procedures and coding scheme is archived in <a href="https://github.com/soilspectroscopy/ossl-imports/blob/main/out/kssl_procedures.csv">ossl-imports</a>.</p>
 <p>If a reference method does not fall in any previous method, then we create a new variable sharing at least a common property and unit. A final harmonization takes place in the OSSL <code>Level 1</code>, where those common properties sharing different methods are converted to a target method using some publicly available transformation rule, or in the worst scenario, they are naively binded or kept separated to produce its specific model. All the implementations are documented in the <a href="https://github.com/soilspectroscopy/ossl-imports/blob/main/out/ossl_level0_to_level1_soillab_harmonization.csv">ossl-import</a> repository.</p>
+<p><strong>Middle-infrared (MIR) spectra</strong> is provided in absorbance units per wavenumber, with values usually ranging between 0 and 3. The spectral range imported into the OSSL falls between 600 and 4000 cm<sup>-1</sup>, with an interval of 2 cm<sup>-1</sup>. All datasets are harmonized to this specification.</p>
+<p><strong>Visible and Near-Infrared (VisNIR) spectra</strong> is provided in reflectance units per wavelength, with values usually ranging between 0 and 1 as fraction percent. The spectral range imported into the OSSL falls between 350 and 2500 nm, with an interval of 2 nm. All datasets are harmonized to this specification.</p>
+<p>One can convert reflectance (R) values to absorbance units (A) as <code>A = log10(1/R)</code>, or backtransform with <code>R = 1/(10^A)</code>. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with <code>WN = 1/(WL*10000000)</code>, or backtransform with <code>WL = 1/(WL*10000000)</code>. The factor 10M is used to convert cm to nm.</p>
 <p>The following subsections provide the OSSL variable names, types, description, and example. You can also find all this information in tabular format:</p>
 <ul>
 <li>
@@ -376,7 +379,9 @@ Example: 203.</p>
 <p>Description: Dataset code used for internal reference. The analyte can be simply described as <code>OSSL dataset code</code>.
 Unit: Imported into the OSSL as <code>txt</code>, i.e., text.
 Type: string.
-Example: AFSIS1.SSL.</p>
+Example: AFSIS1.SSL.
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="./heatmap_v1.2/heatmap_L0_dataset.code_ascii_txt.png" heigth="100%" width="100%"></div>
 </div>
 <div id="id.layer_uuid_txt-1" class="section level3" number="3.2.2">
 <h3>
@@ -385,7 +390,9 @@ Example: AFSIS1.SSL.</p>
 <p>Description: Unique identifier. The analyte can be simply described as <code>OSSL unique identifier</code>.
 Unit: Imported into the OSSL as <code>txt</code>, i.e., text.
 Type: string.
-Example: ded584d70bf0474202d30e575ae24784.</p>
+Example: ded584d70bf0474202d30e575ae24784.
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="./heatmap_v1.2/heatmap_L0_id.layer_uuid_txt.png" heigth="100%" width="100%"></div>
 </div>
 <div id="acidity_usda.a795_cmolc.kg" class="section level3" number="3.2.3">
 <h3>
@@ -395,7 +402,8 @@ Example: ded584d70bf0474202d30e575ae24784.</p>
 Unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.
 Type: numeric.
 Example: 0.40000.
-<img src="hist_v1.2/hist_L0_acidity_usda.a795_cmolc.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_acidity_usda.a795_cmolc.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="aggstb_usda.a1_w.pct" class="section level3" number="3.2.4">
 <h3>
@@ -405,7 +413,8 @@ Example: 0.40000.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 74.
-<img src="hist_v1.2/hist_L0_aggstb_usda.a1_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_aggstb_usda.a1_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="al.dith_usda.a65_w.pct" class="section level3" number="3.2.5">
 <h3>
@@ -415,7 +424,8 @@ Example: 74.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 0.13652.
-<img src="hist_v1.2/hist_L0_al.dith_usda.a65_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_al.dith_usda.a65_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="al.ext_aquaregia_g.kg" class="section level3" number="3.2.6">
 <h3>
@@ -425,7 +435,8 @@ Example: 0.13652.
 Unit: Imported into the OSSL as <code>g.kg</code>, i.e., grams per kilogram of soil.
 Type: numeric.
 Example: 42.9620831.
-<img src="hist_v1.2/hist_L0_al.ext_aquaregia_g.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_al.ext_aquaregia_g.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="al.ext_usda.a1056_mg.kg" class="section level3" number="3.2.7">
 <h3>
@@ -435,7 +446,8 @@ Example: 42.9620831.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 1270.00000.
-<img src="hist_v1.2/hist_L0_al.ext_usda.a1056_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_al.ext_usda.a1056_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="al.ext_usda.a69_cmolc.kg" class="section level3" number="3.2.8">
 <h3>
@@ -445,7 +457,8 @@ Example: 1270.00000.
 Unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.
 Type: numeric.
 Example: 0.20000.
-<img src="hist_v1.2/hist_L0_al.ext_usda.a69_cmolc.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_al.ext_usda.a69_cmolc.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="al.ox_usda.a59_w.pct" class="section level3" number="3.2.9">
 <h3>
@@ -455,7 +468,8 @@ Example: 0.20000.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 0.12951.
-<img src="hist_v1.2/hist_L0_al.ox_usda.a59_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_al.ox_usda.a59_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="awc.33.1500kpa_usda.c80_w.frac" class="section level3" number="3.2.10">
 <h3>
@@ -465,7 +479,8 @@ Example: 0.12951.
 Unit: Imported into the OSSL as <code>w.frac</code>, i.e., weight fraction.
 Type: numeric.
 Example: 0.08658.
-<img src="hist_v1.2/hist_L0_awc.33.1500kPa_usda.c80_w.frac.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_awc.33.1500kPa_usda.c80_w.frac.png" heigth="100%" width="100%"></div>
 </div>
 <div id="b.ext_mel3_mg.kg" class="section level3" number="3.2.11">
 <h3>
@@ -475,7 +490,8 @@ Example: 0.08658.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 0.00100000.
-<img src="hist_v1.2/hist_L0_b.ext_mel3_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_b.ext_mel3_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="bd_iso.11272_g.cm3" class="section level3" number="3.2.12">
 <h3>
@@ -485,7 +501,8 @@ Example: 0.00100000.
 Unit: Imported into the OSSL as <code>g.cm3</code>, i.e., grams per cubic centimeter.
 Type: numeric.
 Example: 1.57100.
-<img src="hist_v1.2/hist_L0_bd_iso.11272_g.cm3.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_bd_iso.11272_g.cm3.png" heigth="100%" width="100%"></div>
 </div>
 <div id="bd_usda.a21_g.cm3" class="section level3" number="3.2.13">
 <h3>
@@ -495,7 +512,8 @@ Example: 1.57100.
 Unit: Imported into the OSSL as <code>g.cm3</code>, i.e., grams per cubic centimeter.
 Type: numeric.
 Example: 1.57100.
-<img src="hist_v1.2/hist_L0_bd_usda.a21_g.cm3.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_bd_usda.a21_g.cm3.png" heigth="100%" width="100%"></div>
 </div>
 <div id="bd_usda.a4_g.cm3" class="section level3" number="3.2.14">
 <h3>
@@ -505,7 +523,8 @@ Example: 1.57100.
 Unit: Imported into the OSSL as <code>g.cm3</code>, i.e., grams per cubic centimeter.
 Type: numeric.
 Example: 1.3477999.
-<img src="hist_v1.2/hist_L0_bd_usda.a4_g.cm3.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_bd_usda.a4_g.cm3.png" heigth="100%" width="100%"></div>
 </div>
 <div id="c.tot_iso.10694_w.pct" class="section level3" number="3.2.15">
 <h3>
@@ -515,7 +534,8 @@ Example: 1.3477999.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 3.668778009.
-<img src="hist_v1.2/hist_L0_c.tot_iso.10694_w.pct.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_c.tot_iso.10694_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="c.tot_usda.a622_w.pct" class="section level3" number="3.2.16">
 <h3>
@@ -525,7 +545,8 @@ Example: 3.668778009.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 1.55128592.
-<img src="hist_v1.2/hist_L0_c.tot_usda.a622_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_c.tot_usda.a622_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="ca.ext_aquaregia_mg.kg" class="section level3" number="3.2.17">
 <h3>
@@ -535,7 +556,8 @@ Example: 1.55128592.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 368.535095.
-<img src="hist_v1.2/hist_L0_ca.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ca.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="ca.ext_usda.a1059_mg.kg" class="section level3" number="3.2.18">
 <h3>
@@ -545,7 +567,8 @@ Example: 368.535095.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 78.20000.
-<img src="hist_v1.2/hist_L0_ca.ext_usda.a1059_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ca.ext_usda.a1059_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="ca.ext_usda.a722_cmolc.kg" class="section level3" number="3.2.19">
 <h3>
@@ -555,7 +578,8 @@ Example: 78.20000.
 Unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.
 Type: numeric.
 Example: 2.617060178.
-<img src="hist_v1.2/hist_L0_ca.ext_usda.a722_cmolc.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ca.ext_usda.a722_cmolc.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="caco3_iso.10693_w.pct" class="section level3" number="3.2.20">
 <h3>
@@ -565,7 +589,8 @@ Example: 2.617060178.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 27.0.
-<img src="hist_v1.2/hist_L0_caco3_iso.10693_w.pct.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_caco3_iso.10693_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="caco3_usda.a54_w.pct" class="section level3" number="3.2.21">
 <h3>
@@ -575,7 +600,8 @@ Example: 27.0.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 0.50000.
-<img src="hist_v1.2/hist_L0_caco3_usda.a54_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_caco3_usda.a54_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="cec_iso.11260_cmolc.kg" class="section level3" number="3.2.22">
 <h3>
@@ -585,7 +611,8 @@ Example: 0.50000.
 Unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.
 Type: numeric.
 Example: 37.8.
-<img src="hist_v1.2/hist_L0_cec_iso.11260_cmolc.kg.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_cec_iso.11260_cmolc.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="cec_usda.a723_cmolc.kg" class="section level3" number="3.2.23">
 <h3>
@@ -595,7 +622,8 @@ Example: 37.8.
 Unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.
 Type: numeric.
 Example: 6.6332171.
-<img src="hist_v1.2/hist_L0_cec_usda.a723_cmolc.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_cec_usda.a723_cmolc.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="cf_iso.11464_w.pct" class="section level3" number="3.2.24">
 <h3>
@@ -605,7 +633,8 @@ Example: 6.6332171.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 10.
-<img src="hist_v1.2/hist_L0_cf_iso.11464_w.pct.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_cf_iso.11464_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="cf_usda.c236_w.pct" class="section level3" number="3.2.25">
 <h3>
@@ -615,7 +644,8 @@ Example: 10.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 4.00000.
-<img src="hist_v1.2/hist_L0_cf_usda.c236_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_cf_usda.c236_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="clay.tot_iso.11277_w.pct" class="section level3" number="3.2.26">
 <h3>
@@ -625,7 +655,8 @@ Example: 4.00000.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 51.
-<img src="hist_v1.2/hist_L0_clay.tot_iso.11277_w.pct.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_clay.tot_iso.11277_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="clay.tot_usda.a334_w.pct" class="section level3" number="3.2.27">
 <h3>
@@ -635,7 +666,8 @@ Example: 51.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 30.99000.
-<img src="hist_v1.2/hist_L0_clay.tot_usda.a334_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_clay.tot_usda.a334_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="cu.ext_usda.a1063_mg.kg" class="section level3" number="3.2.28">
 <h3>
@@ -645,7 +677,8 @@ Example: 30.99000.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 0.5600000.
-<img src="hist_v1.2/hist_L0_cu.ext_usda.a1063_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_cu.ext_usda.a1063_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="ec_iso.11265_ds.m" class="section level3" number="3.2.29">
 <h3>
@@ -655,7 +688,8 @@ Example: 0.5600000.
 Unit: Imported into the OSSL as <code>ds.m</code>, i.e., decisiemens per metre.
 Type: numeric.
 Example: 2.3350.
-<img src="hist_v1.2/hist_L0_ec_iso.11265_ds.m.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_ec_iso.11265_ds.m.png" heigth="100%" width="100%"></div>
 </div>
 <div id="ec_usda.a364_ds.m" class="section level3" number="3.2.30">
 <h3>
@@ -665,7 +699,8 @@ Example: 2.3350.
 Unit: Imported into the OSSL as <code>ds.m</code>, i.e., decisiemens per metre.
 Type: numeric.
 Example: 0.03100.
-<img src="hist_v1.2/hist_L0_ec_usda.a364_ds.m.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ec_usda.a364_ds.m.png" heigth="100%" width="100%"></div>
 </div>
 <div id="efferv_usda.a479_class" class="section level3" number="3.2.31">
 <h3>
@@ -674,7 +709,9 @@ Example: 0.03100.
 <p>Description: The visual effervescence of the prepared sample when treated with 1 N HCl.. The analyte can be simply described as <code>Effervescense, 1N HCl</code>.
 Unit: Imported into the OSSL as <code>class</code>, i.e., class of visual interpretation.
 Type: string.
-Example: none.</p>
+Example: none.
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="./heatmap_v1.2/heatmap_L0_efferv_usda.a479_class.png" heigth="100%" width="100%"></div>
 </div>
 <div id="fe.dith_usda.a66_w.pct" class="section level3" number="3.2.32">
 <h3>
@@ -684,7 +721,8 @@ Example: none.</p>
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 1.09028.
-<img src="hist_v1.2/hist_L0_fe.dith_usda.a66_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_fe.dith_usda.a66_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="fe.ext_aquaregia_g.kg" class="section level3" number="3.2.33">
 <h3>
@@ -694,7 +732,8 @@ Example: 1.09028.
 Unit: Imported into the OSSL as <code>g.kg</code>, i.e., grams per kilogram of soil.
 Type: numeric.
 Example: 71.9575342.
-<img src="hist_v1.2/hist_L0_fe.ext_aquaregia_g.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_fe.ext_aquaregia_g.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="fe.ext_usda.a1064_mg.kg" class="section level3" number="3.2.34">
 <h3>
@@ -704,7 +743,8 @@ Example: 71.9575342.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 182.00000.
-<img src="hist_v1.2/hist_L0_fe.ext_usda.a1064_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_fe.ext_usda.a1064_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="fe.ox_usda.a60_w.pct" class="section level3" number="3.2.35">
 <h3>
@@ -714,7 +754,8 @@ Example: 182.00000.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 0.15422.
-<img src="hist_v1.2/hist_L0_fe.ox_usda.a60_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_fe.ox_usda.a60_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="k.ext_aquaregia_mg.kg" class="section level3" number="3.2.36">
 <h3>
@@ -724,7 +765,8 @@ Example: 0.15422.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 1781.400966.
-<img src="hist_v1.2/hist_L0_k.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_k.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="k.ext_usda.a1065_mg.kg" class="section level3" number="3.2.37">
 <h3>
@@ -734,7 +776,8 @@ Example: 1781.400966.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 47.000000.
-<img src="hist_v1.2/hist_L0_k.ext_usda.a1065_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_k.ext_usda.a1065_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="k.ext_usda.a725_cmolc.kg" class="section level3" number="3.2.38">
 <h3>
@@ -744,7 +787,8 @@ Example: 47.000000.
 Unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.
 Type: numeric.
 Example: 0.200688352.
-<img src="hist_v1.2/hist_L0_k.ext_usda.a725_cmolc.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_k.ext_usda.a725_cmolc.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="mg.ext_aquaregia_mg.kg" class="section level3" number="3.2.39">
 <h3>
@@ -754,7 +798,8 @@ Example: 0.200688352.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 710.429099.
-<img src="hist_v1.2/hist_L0_mg.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_mg.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="mg.ext_usda.a1066_mg.kg" class="section level3" number="3.2.40">
 <h3>
@@ -764,7 +809,8 @@ Example: 710.429099.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 19.600000.
-<img src="hist_v1.2/hist_L0_mg.ext_usda.a1066_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_mg.ext_usda.a1066_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="mg.ext_usda.a724_cmolc.kg" class="section level3" number="3.2.41">
 <h3>
@@ -774,7 +820,8 @@ Example: 19.600000.
 Unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.
 Type: numeric.
 Example: 1.81655342.
-<img src="hist_v1.2/hist_L0_mg.ext_usda.a724_cmolc.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_mg.ext_usda.a724_cmolc.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="mn.ext_aquaregia_mg.kg" class="section level3" number="3.2.42">
 <h3>
@@ -784,7 +831,8 @@ Example: 1.81655342.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 497.300369.
-<img src="hist_v1.2/hist_L0_mn.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_mn.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="mn.ext_usda.a1067_mg.kg" class="section level3" number="3.2.43">
 <h3>
@@ -794,7 +842,8 @@ Example: 497.300369.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 23.10000000.
-<img src="hist_v1.2/hist_L0_mn.ext_usda.a1067_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_mn.ext_usda.a1067_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="mn.ext_usda.a70_mg.kg" class="section level3" number="3.2.44">
 <h3>
@@ -804,7 +853,8 @@ Example: 23.10000000.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 0.62569.
-<img src="hist_v1.2/hist_L0_mn.ext_usda.a70_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_mn.ext_usda.a70_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="n.tot_iso.11261_w.pct" class="section level3" number="3.2.45">
 <h3>
@@ -814,7 +864,8 @@ Example: 0.62569.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 0.25.
-<img src="hist_v1.2/hist_L0_n.tot_iso.11261_w.pct.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_n.tot_iso.11261_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="n.tot_iso.13878_w.pct" class="section level3" number="3.2.46">
 <h3>
@@ -824,7 +875,8 @@ Example: 0.25.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 0.089.
-<img src="hist_v1.2/hist_L0_n.tot_iso.13878_w.pct.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_n.tot_iso.13878_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="n.tot_usda.a623_w.pct" class="section level3" number="3.2.47">
 <h3>
@@ -834,7 +886,8 @@ Example: 0.089.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 0.079766974.
-<img src="hist_v1.2/hist_L0_n.tot_usda.a623_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_n.tot_usda.a623_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="na.ext_aquaregia_mg.kg" class="section level3" number="3.2.48">
 <h3>
@@ -844,7 +897,8 @@ Example: 0.079766974.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 75.986312.
-<img src="hist_v1.2/hist_L0_na.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_na.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="na.ext_usda.a1068_mg.kg" class="section level3" number="3.2.49">
 <h3>
@@ -854,7 +908,8 @@ Example: 75.986312.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 17.800000.
-<img src="hist_v1.2/hist_L0_na.ext_usda.a1068_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_na.ext_usda.a1068_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="na.ext_usda.a726_cmolc.kg" class="section level3" number="3.2.50">
 <h3>
@@ -864,7 +919,8 @@ Example: 17.800000.
 Unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.
 Type: numeric.
 Example: 0.124398521.
-<img src="hist_v1.2/hist_L0_na.ext_usda.a726_cmolc.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_na.ext_usda.a726_cmolc.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="oc_iso.10694_w.pct" class="section level3" number="3.2.51">
 <h3>
@@ -874,7 +930,8 @@ Example: 0.124398521.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 2.05000000.
-<img src="hist_v1.2/hist_L0_oc_iso.10694_w.pct.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_oc_iso.10694_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="oc_usda.c1059_w.pct" class="section level3" number="3.2.52">
 <h3>
@@ -884,7 +941,8 @@ Example: 2.05000000.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 1.50336492.
-<img src="hist_v1.2/hist_L0_oc_usda.c1059_w.pct.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_oc_usda.c1059_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="oc_usda.c729_w.pct" class="section level3" number="3.2.53">
 <h3>
@@ -894,7 +952,8 @@ Example: 1.50336492.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 2.9100.
-<img src="hist_v1.2/hist_L0_oc_usda.c729_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_oc_usda.c729_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="p.ext_aquaregia_mg.kg" class="section level3" number="3.2.54">
 <h3>
@@ -904,7 +963,8 @@ Example: 2.9100.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 608.30492.
-<img src="hist_v1.2/hist_L0_p.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_p.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="p.ext_iso.11263_mg.kg" class="section level3" number="3.2.55">
 <h3>
@@ -914,7 +974,8 @@ Example: 608.30492.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 72.4.
-<img src="hist_v1.2/hist_L0_p.ext_iso.11263_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_p.ext_iso.11263_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="p.ext_usda.a1070_mg.kg" class="section level3" number="3.2.56">
 <h3>
@@ -924,7 +985,8 @@ Example: 72.4.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 3.44739.
-<img src="hist_v1.2/hist_L0_p.ext_usda.a1070_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_p.ext_usda.a1070_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="p.ext_usda.a270_mg.kg" class="section level3" number="3.2.57">
 <h3>
@@ -934,7 +996,8 @@ Example: 3.44739.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 50.5348939.
-<img src="hist_v1.2/hist_L0_p.ext_usda.a270_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_p.ext_usda.a270_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="p.ext_usda.a274_mg.kg" class="section level3" number="3.2.58">
 <h3>
@@ -944,7 +1007,8 @@ Example: 50.5348939.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 17.23518992.
-<img src="hist_v1.2/hist_L0_p.ext_usda.a274_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_p.ext_usda.a274_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="p.ext_usda.a652_mg.kg" class="section level3" number="3.2.59">
 <h3>
@@ -954,7 +1018,8 @@ Example: 17.23518992.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 9.770000.
-<img src="hist_v1.2/hist_L0_p.ext_usda.a652_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_p.ext_usda.a652_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="ph.cacl2_iso.10390_index" class="section level3" number="3.2.60">
 <h3>
@@ -964,7 +1029,8 @@ Example: 9.770000.
 Unit: Imported into the OSSL as <code>index</code>, i.e., negative logarithm of the hydrogen ion concentration.
 Type: numeric.
 Example: 7.24.
-<img src="hist_v1.2/hist_L0_ph.cacl2_iso.10390_index.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_ph.cacl2_iso.10390_index.png" heigth="100%" width="100%"></div>
 </div>
 <div id="ph.cacl2_usda.a477_index" class="section level3" number="3.2.61">
 <h3>
@@ -974,7 +1040,8 @@ Example: 7.24.
 Unit: Imported into the OSSL as <code>index</code>, i.e., negative logarithm of the hydrogen ion concentration.
 Type: numeric.
 Example: 5.40.
-<img src="hist_v1.2/hist_L0_ph.cacl2_usda.a477_index.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_ph.cacl2_usda.a477_index.png" heigth="100%" width="100%"></div>
 </div>
 <div id="ph.cacl2_usda.a481_index" class="section level3" number="3.2.62">
 <h3>
@@ -984,7 +1051,8 @@ Example: 5.40.
 Unit: Imported into the OSSL as <code>index</code>, i.e., negative logarithm of the hydrogen ion concentration.
 Type: numeric.
 Example: 6.40000.
-<img src="hist_v1.2/hist_L0_ph.cacl2_usda.a481_index.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ph.cacl2_usda.a481_index.png" heigth="100%" width="100%"></div>
 </div>
 <div id="ph.h2o_iso.10390_index" class="section level3" number="3.2.63">
 <h3>
@@ -994,7 +1062,8 @@ Example: 6.40000.
 Unit: Imported into the OSSL as <code>index</code>, i.e., negative logarithm of the hydrogen ion concentration.
 Type: numeric.
 Example: 7.64.
-<img src="hist_v1.2/hist_L0_ph.h2o_iso.10390_index.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_ph.h2o_iso.10390_index.png" heigth="100%" width="100%"></div>
 </div>
 <div id="ph.h2o_usda.a268_index" class="section level3" number="3.2.64">
 <h3>
@@ -1004,7 +1073,8 @@ Example: 7.64.
 Unit: Imported into the OSSL as <code>index</code>, i.e., negative logarithm of the hydrogen ion concentration.
 Type: numeric.
 Example: 5.10000.
-<img src="hist_v1.2/hist_L0_ph.h2o_usda.a268_index.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ph.h2o_usda.a268_index.png" heigth="100%" width="100%"></div>
 </div>
 <div id="s.ext_mel3_mg.kg" class="section level3" number="3.2.65">
 <h3>
@@ -1014,7 +1084,8 @@ Example: 5.10000.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 16.800.
-<img src="hist_v1.2/hist_L0_s.ext_mel3_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_s.ext_mel3_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 <div id="s.tot_usda.a624_w.pct" class="section level3" number="3.2.66">
 <h3>
@@ -1024,7 +1095,8 @@ Example: 16.800.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 0.03569.
-<img src="hist_v1.2/hist_L0_s.tot_usda.a624_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_s.tot_usda.a624_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="sand.tot_iso.11277_w.pct" class="section level3" number="3.2.67">
 <h3>
@@ -1034,7 +1106,8 @@ Example: 0.03569.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 9.
-<img src="hist_v1.2/hist_L0_sand.tot_iso.11277_w.pct.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_sand.tot_iso.11277_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="sand.tot_usda.c405_w.pct" class="section level3" number="3.2.68">
 <h3>
@@ -1044,7 +1117,8 @@ Example: 9.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 79.4.
-<img src="hist_v1.2/hist_L0_sand.tot_usda.c405_w.pct.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_sand.tot_usda.c405_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="sand.tot_usda.c60_w.pct" class="section level3" number="3.2.69">
 <h3>
@@ -1054,7 +1128,8 @@ Example: 79.4.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 50.37000.
-<img src="hist_v1.2/hist_L0_sand.tot_usda.c60_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_sand.tot_usda.c60_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="silt.tot_iso.11277_w.pct" class="section level3" number="3.2.70">
 <h3>
@@ -1064,7 +1139,8 @@ Example: 50.37000.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 40.
-<img src="hist_v1.2/hist_L0_silt.tot_iso.11277_w.pct.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_silt.tot_iso.11277_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="silt.tot_usda.c407_w.pct" class="section level3" number="3.2.71">
 <h3>
@@ -1074,7 +1150,8 @@ Example: 40.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 18.2.
-<img src="hist_v1.2/hist_L0_silt.tot_usda.c407_w.pct.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_silt.tot_usda.c407_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="silt.tot_usda.c62_w.pct" class="section level3" number="3.2.72">
 <h3>
@@ -1084,7 +1161,8 @@ Example: 18.2.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 18.64000.
-<img src="hist_v1.2/hist_L0_silt.tot_usda.c62_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_silt.tot_usda.c62_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="wr.10kpa_usda.a414_w.pct" class="section level3" number="3.2.73">
 <h3>
@@ -1094,7 +1172,8 @@ Example: 18.64000.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 10.852961.
-<img src="hist_v1.2/hist_L0_wr.10kPa_usda.a414_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_wr.10kPa_usda.a414_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="wr.10kpa_usda.a8_w.pct" class="section level3" number="3.2.74">
 <h3>
@@ -1104,7 +1183,8 @@ Example: 10.852961.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 23.00000.
-<img src="hist_v1.2/hist_L0_wr.10kPa_usda.a8_w.pct.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_wr.10kPa_usda.a8_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="wr.1500kpa_usda.a417_w.pct" class="section level3" number="3.2.75">
 <h3>
@@ -1114,7 +1194,8 @@ Example: 23.00000.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 3.000000.
-<img src="hist_v1.2/hist_L0_wr.1500kPa_usda.a417_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_wr.1500kPa_usda.a417_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="wr.33kpa_usda.a415_w.pct" class="section level3" number="3.2.76">
 <h3>
@@ -1124,7 +1205,8 @@ Example: 3.000000.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 29.17023.
-<img src="hist_v1.2/hist_L0_wr.33kPa_usda.a415_w.pct.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_wr.33kPa_usda.a415_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="wr.33kpa_usda.a9_w.pct" class="section level3" number="3.2.77">
 <h3>
@@ -1134,7 +1216,8 @@ Example: 29.17023.
 Unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.
 Type: numeric.
 Example: 18.20000.
-<img src="hist_v1.2/hist_L0_wr.33kPa_usda.a9_w.pct.png" heigth="100%" width="100%"></p>
+Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_wr.33kPa_usda.a9_w.pct.png" heigth="100%" width="100%"></div>
 </div>
 <div id="zn.ext_usda.a1073_mg.kg" class="section level3" number="3.2.78">
 <h3>
@@ -1144,15 +1227,14 @@ Example: 18.20000.
 Unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.
 Type: numeric.
 Example: 1.0300000.
-<img src="hist_v1.2/hist_L0_zn.ext_usda.a1073_mg.kg.png" heigth="100%" width="100%"></p>
+Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_zn.ext_usda.a1073_mg.kg.png" heigth="100%" width="100%"></div>
 </div>
 </div>
 <div id="mir-table" class="section level2" number="3.3">
 <h2>
 <span class="header-section-number">3.3</span> MIR scans<a class="anchor" aria-label="anchor" href="#mir-table"><i class="fas fa-link"></i></a>
 </h2>
-<p>Middle-infrared (MIR) spectra is provided in absorbance units per wavenumber, with values usually ranging between 0 and 3. The spectral range imported into the OSSL falls between 600 and 4000 cm<sup>-1</sup>, with an interval of 2 cm<sup>-1</sup>. All datasets are harmonized to this specification.</p>
-<p>One can convert reflectance (R) values to absorbance units (A) as <code>A = log10(1/R)</code>, or backtransform with <code>R = 1/(10^A)</code>. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with <code>WN = 1/(WL*10000000)</code>, or backtransform with <code>WL = 1/(WL*10000000)</code>. The factor 10M is used to convert cm to nm.</p>
 <div id="id.layer_uuid_txt-2" class="section level3" number="3.3.1">
 <h3>
 <span class="header-section-number">3.3.1</span> id.layer_uuid_txt<a class="anchor" aria-label="anchor" href="#id.layer_uuid_txt-2"><i class="fas fa-link"></i></a>
@@ -1278,8 +1360,6 @@ Example: 0.2452604.</p>
 <h2>
 <span class="header-section-number">3.4</span> VisNIR scans<a class="anchor" aria-label="anchor" href="#visnir-table"><i class="fas fa-link"></i></a>
 </h2>
-<p>Visible and Near-Infrared (VisNIR) spectra is provided in reflectance units per wavelength, with values usually ranging between 0 and 1 as fraction percent. The spectral range imported into the OSSL falls between 350 and 2500 nm, with an interval of 2 nm. All datasets are harmonized to this specification.</p>
-<p>One can convert reflectance (R) values to absorbance units (A) as <code>A = log10(1/R)</code>, or backtransform with <code>R = 1/(10^A)</code>. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with <code>WN = 1/(WL*10000000)</code>, or backtransform with <code>WL = 1/(WL*10000000)</code>. The factor 10M is used to convert cm to nm.</p>
 <div id="id.layer_uuid_txt-3" class="section level3" number="3.4.1">
 <h3>
 <span class="header-section-number">3.4.1</span> id.layer_uuid_txt<a class="anchor" aria-label="anchor" href="#id.layer_uuid_txt-3"><i class="fas fa-link"></i></a>
@@ -1398,74 +1478,7 @@ Example: 0.10403320.</p>
 </h3>
 <p>Description: Reflectance in fraction unit, last wavelength in the 350-2500 nm range.
 Type: numeric.
-Example: 0.3622029.
-<!-- ## Harmonization rules --></p>
-<!-- The following description includes harmonization/conversion rules recommended in this project. -->
-<!-- For each conversion rule, a reference and an example are provided to prevent from  -->
-<!-- misusing the rules. The following principle of harmonization are highly recommended: -->
-<!-- 1. Document (R code) any harmonization / conversion steps.\ -->
-<!-- 2. Where possible provide propagated measure of uncertainty. This can further used  -->
-<!-- as weights in the Machine Learning / model building.\ -->
-<!-- 3. Any conversion that leads to inducting significant bias (over-/under-estimation  -->
-<!-- of values) should we avoided.\ -->
-<!-- 4. Add to the produced dataset metadata that part of data has been harmonized and  -->
-<!-- specify exact method.\ -->
-<!-- Disclaimer: use at own risk. See also our general disclaimer. -->
-<!-- ### pH -->
-<!-- From `ph.kcl_usda.4c1_index` to `ph.h2o_usda.4c1_index` based on @bohner2008saga: -->
-<!-- ```{r} -->
-<!-- ph.kcl = 6.5 -->
-<!-- ph.h2o = ph.kcl / 0.87 -->
-<!-- ph.h2o -->
-<!-- ``` -->
-<!-- From `ph.cacl2_usda.4c1_index` to `ph.h2o_usda.4c1_index` based on @miller2010comparison: -->
-<!-- ```{r} -->
-<!-- ph.cacl2 = 6.5 -->
-<!-- ph.h2o = (ph.cacl2 + 0.973 ) / 1.08 -->
-<!-- ph.h2o -->
-<!-- ``` -->
-<!-- ### Carbon -->
-<!-- From `humus_usda.4h2_wpct` to `oc_usda.4h2_wpct` based on @nelson1983total: -->
-<!-- ```{r} -->
-<!-- humus = 4 -->
-<!-- oc = humus / 1.724 -->
-<!-- oc -->
-<!-- ``` -->
-<!-- From `humus_usda.4h2_wpct` to `oc_usda.4h2_wpct` based on @jensen2018converting: -->
-<!-- ```{r} -->
-<!-- humus = 4; clay = 10 -->
-<!-- oc1 = 0.513 * humus - (0.047 * clay - 0.00025 * clay^2) -->
-<!-- oc1 -->
-<!-- humus = 4; clay = 20 -->
-<!-- oc2 = 0.513 * humus - (0.047 * clay - 0.00025 * clay^2) -->
-<!-- oc2 -->
-<!-- ``` -->
-<!-- ### Phosphorous -->
-<!-- ### Potassium -->
-<!-- ### Nitrogen -->
-<!-- ### Exchangeable cations and CEC -->
-<!-- From `k.ext` extracted by Mehlich-3 (cmol/kg) to `ecec.ext_usda.4b1_cmolkg` based on @helling1964contribution: -->
-<!-- ```{r} -->
-<!-- ph.h2o = 6.5 -->
-<!-- k.ext = 2 -->
-<!-- ca.ext = 12 -->
-<!-- na.ext = 2 -->
-<!-- mg.ext = 1 -->
-<!-- ecec.ext = ifelse(ph.h2o < 7.5 & ph.h2o>4, (k.ext + ca.ext + na.ext + mg.ext), NA) -->
-<!-- ecec.ext -->
-<!-- ``` -->
-<!-- From `oc_usda.4h2_wpct` to `ecec.ext_usda.4b1_cmolkg` based on @helling1964contribution: -->
-<!-- ```{r} -->
-<!-- clay.tot = 28 -->
-<!-- ph.h2o = 6.5 -->
-<!-- oc = 2 -->
-<!-- ecec.ext = ((clay.tot*10/100*(30+4.4*ph.h2o))+(oc/100*(-59+51*ph.h2o)))/10 -->
-<!-- ecec.ext -->
-<!-- ``` -->
-<!-- ### Texture fractions -->
-<!-- ### Bulk density -->
-<!-- ### Soil biological variables -->
-<!-- ### Soil contaminants -->
+Example: 0.3622029.</p>
 
 </div>
 </div>
