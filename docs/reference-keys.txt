@@ -80,9 +80,9 @@ lucas.ssl
 afsis1.ssl
 afsis2.ssl
 caf.ssl
-neon.ssl
 schiedung.ssl
 garrett.ssl
+serbia.ssl
 soil-spetroscopy-organizations
 kssl
 soil-spectroscopy-software
