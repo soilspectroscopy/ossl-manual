@@ -1,8 +1,9 @@
-# Reference soil spectroscopy models
-
 ::: {.rmdnote}
 You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at <https://soilspectroscopy.github.io/ossl-manual/>.
 :::
+# Reference soil spectroscopy models
+
+The current reference models were fitted using OSSL database v1.0. We have received important feedback from people that said the current models are doing a great job, but for others not that much. This can be due to the specific soil types not being well represented or due to the spectra not being well aligned with the OSSL. A review is planned to conduct a systematic analysis of learning algorithms, global vs local fitting, compression methods and preprocessing using the new version of the OSSL database.
 
 The following sections describe steps used to produce OSSL models, which 
 are used in the OSSL calibration service and API. For more in-depth insight of 

@@ -161,7 +161,6 @@ soilspec.sample = soilspec4gg.samplesById(id)
 dim(soilspec.sample)
 ```
 
-
 ## OSSL API {.unnumbered}
 
 [OSSL API](https://api.soilspectroscopy.org/__docs__/#/) (Application Programming Interface) is also available and can be used 
@@ -173,6 +172,58 @@ per request, but these limits will be gradually extended.
 
 ```{r ossl-api, echo=FALSE, fig.cap="OSSL API is available for testing.", out.width="100%"}
 knitr::include_graphics("img/preview_ossl_api_swagger.png")
+```
+
+## OSSL Google Cloud bucket {.unnumbered}
+
+Two file formats are available: compressed csv (`.csv.gz`) and qs (`qs R package`). The datasets in the public bucket can be updated without notice.
+
+Use the following URLs to load the whole OSSL levels:
+```
+## Compressed csv
+https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.csv.gz
+
+## qs format (preferred on R)
+https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.qs
+```
+
+Use these alternative URLs to load the OSSL as separate files:
+```
+## Compressed csv
+https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.csv.gz
+
+## qs format (preferred on R)
+https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.qs
+```
+
+Example with R:
+```r
+## Packages
+library("tidyverse")
+library("curl")
+library("qs")
+
+## Separate files
+soil <-  "https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs"
+soil <- curl_fetch_memory(soil)
+soil <- qdeserialize(soil$content)
+
+mir <- "https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.qs"
+mir <- curl_fetch_memory(mir)
+mir <- qdeserialize(mir$content)
+
+## Join
+ossl <- left_join(mir, soil, by = c("dataset.code_ascii_txt", "id.layer_uuid_txt"))
 ```
 
 ## Target variables of interest {.unnumbered}
@@ -333,7 +384,7 @@ importing and using the KSSL Soil Spectral Library;
   **[AfSIS-II Soil Spectral Library](https://doi.org/10.34725/DVN/QXCWP1)** with Mid-Infrared Spectra (MIRS) covering the national Soil Information Systems: TanSIS (Tanzania), NiSIS (Nigeria) and GhanSIS (Ghana) available from <https://doi.org/10.34725/DVN/XUDGJY>, <https://doi.org/10.34725/DVN/WLAKR2> and <https://doi.org/10.34725/DVN/SPRSFN> and hosted by the ICRAF Soil and Plant Spectroscopy Laboratory;
 - **[LUCAS topsoil (VisNIR) Soil Spectral Library](http://esdac.jrc.ec.europa.eu/)** [@orgiazzi2018lucas] was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>; we have degraded location accuracy of points so that exact locations are about 1-km off;  
 - **[The Central African Soil Spectral Library](https://github.com/laura-summerauer/ssl-central-africa)** described in detail in @Summerauer2021 contains limited number of samples representing Central Africa <https://doi.org/10.5281/zenodo.4320395>;  
-- **The National Ecological Observatory Network (NEON) Soil Spectral** is based on the NEON soil data [@ayres2019quantitative], which were scanned by the Woodwell Climate Research and USDA-NRCS Kellogg Soil Survey Laboratory; the [(NEON) Megapit Soil Archive](https://www.neonscience.org/samples/soil-archive) is a program sponsored by the National Science Foundation and operated under cooperative agreement by Battelle;  
+<!-- - **The National Ecological Observatory Network (NEON) Soil Spectral** is based on the NEON soil data [@ayres2019quantitative], which were scanned by the Woodwell Climate Research and USDA-NRCS Kellogg Soil Survey Laboratory; the [(NEON) Megapit Soil Archive](https://www.neonscience.org/samples/soil-archive) is a program sponsored by the National Science Foundation and operated under cooperative agreement by Battelle;   -->
 
 We are grateful to **[Wanderson de Sousa Mendes (Leibniz Centre for Agricultural Landscape Research (ZALF))](https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/)** for 
 help with initial screening of the data for the development of the R code for processing soil spectroscopy data.
