@@ -1,0 +1,79 @@
+ossl_name,ossl_abbrev,ossl_method,ossl_unit,type,example,analyte,unit_description,description
+dataset.code_ascii_txt,dataset.code,ascii,txt,string,AFSIS1.SSL,OSSL dataset code,text,Dataset code used for internal reference
+id.layer_uuid_txt,id.layer,uuid,txt,string,ded584d70bf0474202d30e575ae24784,OSSL unique identifier,text,Unique identifier
+acidity_usda.a795_cmolc.kg,acidity,usda.a795,cmolc.kg,numeric,0.40000,"Acidity, BaCl2-TEA Extractable, pH 8.2",centimoles of charge per kilogram of soil,"Extractable acidity, BaCl2-TEA at pH 8.2, is a measure of the amount of acid neutralized at a set pH"
+aggstb_usda.a1_w.pct,aggstb,usda.a1,w.pct,numeric,74,Aggregate Stability,weight percent,Aggregate stability is the weight percent of 0.5 mm - 2 mm aggregates remaining after wet sieving.
+al.dith_usda.a65_w.pct,al.dith,usda.a65,w.pct,numeric,0.13652,"Aluminum, Crystalline, Total Pedogenic Iron",weight percent,Dithionite citrate extractable aluminum is an indicator of the amount of aluminum substituted for iron in iron oxides.
+al.ext_aquaregia_g.kg,al.ext,aquaregia,g.kg,numeric,42.9620831,"Aluminum, Extractable, Aqua Regia",grams per kilogram of soil,Exchangeable Al.
+al.ext_usda.a1056_mg.kg,al.ext,usda.a1056,mg.kg,numeric,1270.00000,"Aluminum, Extractable, Mehlich3",miligrams per kilogram of soil,Exchangeable Al.
+al.ext_usda.a69_cmolc.kg,al.ext,usda.a69,cmolc.kg,numeric,0.20000,"Aluminum, Extractable, KCl",centimoles of charge per kilogram of soil,Exchangeable Al.
+al.ox_usda.a59_w.pct,al.ox,usda.a59,w.pct,numeric,0.12951,"Aluminum, Amorphous, Total Non-Crystalline Iron",weight percent,"Ammonium oxalate extractable aluminum is an estimate of the total pedogenic Al, much of which may be in noncrystalline materials or complexed by organic matter."
+awc.33.1500kPa_usda.c80_w.frac,awc.33.1500kPa,usda.c80,w.frac,numeric,0.08658,"Available Water Content, Difference 33-1500 kPa",weight fraction,The amount (fraction) of water released between 1/3 (33 kPa) and 15 (1500 kPa) bar tensions determined as gravimetric percent.
+b.ext_mel3_mg.kg,b.ext,mel3,mg.kg,numeric,0.00100000,"Boron, Extractable, Mehlich3",miligrams per kilogram of soil,Plant available B.
+bd_iso.11272_g.cm3,bd,iso.11272,g.cm3,numeric,1.57100,"Bulk Density, iso 11272",grams per cubic centimeter,Bulk density is the weight per unit volume of the fine earth fraction (<2 mm).
+bd_usda.a21_g.cm3,bd,usda.a21,g.cm3,numeric,1.57100,"Bulk Density, <2 mm fraction, Core",grams per cubic centimeter,Bulk density is the weight per unit volume of the fine earth fraction (<2 mm).
+bd_usda.a4_g.cm3,bd,usda.a4,g.cm3,numeric,1.3477999,"Bulk Density, <2mm fraction, Clod",grams per cubic centimeter,Bulk density is the weight per unit volume of the fine earth fraction (<2 mm).
+c.tot_iso.10694_w.pct,c.tot,iso.10694,w.pct,numeric,3.668778009,"Carbon, Total NCS, iso 10694",weight percent,"Total carbon is a measure of all organic and inorganic carbon, including that found in carbonate minerals."
+c.tot_usda.a622_w.pct,c.tot,usda.a622,w.pct,numeric,1.55128592,"Carbon, Total NCS",weight percent,"Total carbon is a measure of all organic and inorganic carbon, including that found in carbonate minerals."
+ca.ext_aquaregia_mg.kg,ca.ext,aquaregia,mg.kg,numeric,368.535095,"Calcium, Extractable, Aqua Regia",miligrams per kilogram of soil,Exchangeable or plant available Ca.
+ca.ext_usda.a1059_mg.kg,ca.ext,usda.a1059,mg.kg,numeric,78.20000,"Calcium, Extractable, Mehlich3",miligrams per kilogram of soil,Exchangeable or plant available Ca.
+ca.ext_usda.a722_cmolc.kg,ca.ext,usda.a722,cmolc.kg,numeric,2.617060178,"Calcium, Extractable, NH4OAc",centimoles of charge per kilogram of soil,Exchangeable or plant available Ca.
+caco3_iso.10693_w.pct,caco3,iso.10693,w.pct,numeric,27.0,"Carbonate, iso 10693",weight percent,"Carbonate in the <2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a <2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid."
+caco3_usda.a54_w.pct,caco3,usda.a54,w.pct,numeric,0.50000,"Carbonate, <2mm Fraction",weight percent,"Carbonate in the <2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a <2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid."
+cec_iso.11260_cmolc.kg,cec,iso.11260,cmolc.kg,numeric,37.8,"CEC, pH 7.0, iso 11260",centimoles of charge per kilogram of soil,Cation exchange capacity of a sample highly buffered at pH 7.0. It is reported as cmolc kg-1 (= meq per 100 grams) on a <2 mm base.
+cec_usda.a723_cmolc.kg,cec,usda.a723,cmolc.kg,numeric,6.6332171,"CEC, pH 7.0, NH4OAc, 2M KCl displacement",centimoles of charge per kilogram of soil,Cation exchange capacity of a sample highly buffered at pH 7.0. It is reported on a <2 mm base.
+cf_iso.11464_w.pct,cf,iso.11464,w.pct,numeric,10,"Coarse Fragments, iso 11464",weight percent,The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.
+cf_usda.c236_w.pct,cf,usda.c236,w.pct,numeric,4.00000,"Coarse Fragments, Greater 2mm",weight percent,The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.
+clay.tot_iso.11277_w.pct,clay.tot,iso.11277,w.pct,numeric,51,"Clay, iso 11277",weight percent,Total clay is the soil separate with <0.002 mm particle diameter. Clay size carbonate is included. It is reported on a <2 mm base.
+clay.tot_usda.a334_w.pct,clay.tot,usda.a334,w.pct,numeric,30.99000,Clay,weight percent,Total clay is the soil separate with <0.002 mm particle diameter. Clay size carbonate is included. It is reported on a <2 mm base.
+cu.ext_usda.a1063_mg.kg,cu.ext,usda.a1063,mg.kg,numeric,0.5600000,"Copper, Extractable, Mehlich3",miligrams per kilogram of soil,Exchangeable or plant available Cu.
+ec_iso.11265_ds.m,ec,iso.11265,ds.m,numeric,2.3350,"Electrical Conductivity, iso 11265",decisiemens per metre,Electrical conductivity. It is reported of a 1:2 soil:water mixture
+ec_usda.a364_ds.m,ec,usda.a364,ds.m,numeric,0.03100,"Electrical Conductivity, (w/w)",decisiemens per metre,Electrical conductivity. It is reported of a 1:2 soil:water mixture
+efferv_usda.a479_class,efferv,usda.a479,class,string,none,"Effervescense, 1N HCl",class of visual interpretation,The visual effervescence of the prepared sample when treated with 1 N HCl.
+fe.dith_usda.a66_w.pct,fe.dith,usda.a66,w.pct,numeric,1.09028,"Iron, Crystalline, Total Pedogenic Iron",weight percent,Dithionite citrate extractable iron is considered a general measure of total pedogenic iron.
+fe.ext_aquaregia_g.kg,fe.ext,aquaregia,g.kg,numeric,71.9575342,"Iron, Extractable, Aqua Regia",grams per kilogram of soil,Exchangeable or plant available Fe.
+fe.ext_usda.a1064_mg.kg,fe.ext,usda.a1064,mg.kg,numeric,182.00000,"Iron, Extractable, Mehlich3",miligrams per kilogram of soil,Exchangeable or plant available Fe.
+fe.ox_usda.a60_w.pct,fe.ox,usda.a60,w.pct,numeric,0.15422,"Iron, Amorphous, Total Non-Crystalline Iron",weight percent,Ammonium oxalate extractable iron is considered a measure of the noncrystalline Fe in soils.
+k.ext_aquaregia_mg.kg,k.ext,aquaregia,mg.kg,numeric,1781.400966,"Sodium, Extractable, Aqua Regia",miligrams per kilogram of soil,Exchangeable or plant available K.
+k.ext_usda.a1065_mg.kg,k.ext,usda.a1065,mg.kg,numeric,47.000000,"Sodium, Extractable, Mehlich3",miligrams per kilogram of soil,Exchangeable or plant available K.
+k.ext_usda.a725_cmolc.kg,k.ext,usda.a725,cmolc.kg,numeric,0.200688352,"Sodium, Extractable, NH4OAc, 2M KCl displacement",centimoles of charge per kilogram of soil,Exchangeable or plant available K.
+mg.ext_aquaregia_mg.kg,mg.ext,aquaregia,mg.kg,numeric,710.429099,"Magnesium, Extractable, Aqua Regia",miligrams per kilogram of soil,Exchangeable or plant available Mg.
+mg.ext_usda.a1066_mg.kg,mg.ext,usda.a1066,mg.kg,numeric,19.600000,"Magnesium, Extractable, Mehlich3",miligrams per kilogram of soil,Exchangeable or plant available Mg.
+mg.ext_usda.a724_cmolc.kg,mg.ext,usda.a724,cmolc.kg,numeric,1.81655342,"Magnesium, Extractable, NH4OAc, 2M KCl displacement",centimoles of charge per kilogram of soil,Exchangeable or plant available Mg.
+mn.ext_aquaregia_mg.kg,mn.ext,aquaregia,mg.kg,numeric,497.300369,"Manganese, Extractable, Aqua Regia",miligrams per kilogram of soil,Exchangeable or plant available Mn.
+mn.ext_usda.a1067_mg.kg,mn.ext,usda.a1067,mg.kg,numeric,23.10000000,"Manganese, Extractable, Mehlich3",miligrams per kilogram of soil,Exchangeable or plant available Mn.
+mn.ext_usda.a70_mg.kg,mn.ext,usda.a70,mg.kg,numeric,0.62569,"Manganese, Extractable, KCl",miligrams per kilogram of soil,Exchangeable or plant available Mn.
+n.tot_iso.11261_w.pct,n.tot,iso.11261,w.pct,numeric,0.25,"Nitrogen, Total NCS, iso 11261",weight percent,Total nitrogen is a measure of all organic and inorganic nitrogen.
+n.tot_iso.13878_w.pct,n.tot,iso.13878,w.pct,numeric,0.089,"Nitrogen, Total NCS, iso 13878",weight percent,Total nitrogen is a measure of all organic and inorganic nitrogen.
+n.tot_usda.a623_w.pct,n.tot,usda.a623,w.pct,numeric,0.079766974,"Nitrogen, Total NCS",weight percent,Total nitrogen is a measure of all organic and inorganic nitrogen.
+na.ext_aquaregia_mg.kg,na.ext,aquaregia,mg.kg,numeric,75.986312,"Potassium, Extractable, Aqua Regia",miligrams per kilogram of soil,Exchangeable or plant availableNa.
+na.ext_usda.a1068_mg.kg,na.ext,usda.a1068,mg.kg,numeric,17.800000,"Potassium, Extractable, Mehlich3",miligrams per kilogram of soil,Exchangeable or plant availableNa.
+na.ext_usda.a726_cmolc.kg,na.ext,usda.a726,cmolc.kg,numeric,0.124398521,"Potassium, Extractable, NH4OAc, 2M KCl displacement",centimoles of charge per kilogram of soil,Exchangeable or plant availableNa.
+oc_iso.10694_w.pct,oc,iso.10694,w.pct,numeric,2.05000000,"Organic Carbon, iso 10694",weight percent,Estimated Organic Carbon based on Total C
+oc_usda.c1059_w.pct,oc,usda.c1059,w.pct,numeric,1.50336492,"Organic Carbon, Total C without CaCO3, N prep",weight percent,Estimated Organic Carbon based on Total C
+oc_usda.c729_w.pct,oc,usda.c729,w.pct,numeric,2.9100,"Organic Carbon, Total C without CaCO3, S prep",weight percent,Estimated Organic Carbon based on Total C
+p.ext_aquaregia_mg.kg,p.ext,aquaregia,mg.kg,numeric,608.30492,"Phosphorus, Extractable, Aqua Regia",miligrams per kilogram of soil,Plant available P.
+p.ext_iso.11263_mg.kg,p.ext,iso.11263,mg.kg,numeric,72.4,"Phosphorus, Extractable, iso 11263",miligrams per kilogram of soil,Plant available P.
+p.ext_usda.a1070_mg.kg,p.ext,usda.a1070,mg.kg,numeric,3.44739,"Phosphorus, Extractable, Mehlich3",miligrams per kilogram of soil,Plant available P.
+p.ext_usda.a270_mg.kg,p.ext,usda.a270,mg.kg,numeric,50.5348939,"Phosphorus, Extractable, Bray1",miligrams per kilogram of soil,Plant available P.
+p.ext_usda.a274_mg.kg,p.ext,usda.a274,mg.kg,numeric,17.23518992,"Phosphorus, Extractable, Olsen",miligrams per kilogram of soil,Plant available P.
+p.ext_usda.a652_mg.kg,p.ext,usda.a652,mg.kg,numeric,9.770000,"Phosphorus, Extractable, Mehlich3",miligrams per kilogram of soil,Plant available P.
+ph.cacl2_iso.10390_index,ph.cacl2,iso.10390,index,numeric,7.24,"pH, 1:2 Soil-CaCl2 Suspension, iso 10390",negative logarithm of the hydrogen ion concentration,pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.
+ph.cacl2_usda.a477_index,ph.cacl2,usda.a477,index,numeric,5.40,"pH, 1:2 Soil-CaCl2 Suspension, 0.01 M CaCl2",negative logarithm of the hydrogen ion concentration,pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.
+ph.cacl2_usda.a481_index,ph.cacl2,usda.a481,index,numeric,6.40000,"pH, 1:2 Soil-CaCl2 Suspension",negative logarithm of the hydrogen ion concentration,pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.
+ph.h2o_iso.10390_index,ph.h2o,iso.10390,index,numeric,7.64,"pH, 1:1 Soil-Water Suspension, iso 10390",negative logarithm of the hydrogen ion concentration,pH of the 1:1 soil:water suspension.
+ph.h2o_usda.a268_index,ph.h2o,usda.a268,index,numeric,5.10000,"pH, 1:1 Soil-Water Suspension",negative logarithm of the hydrogen ion concentration,pH of the 1:1 soil:water suspension.
+s.ext_mel3_mg.kg,s.ext,mel3,mg.kg,numeric,16.800,"Sulphur, Extractable, Mehlich3",miligrams per kilogram of soil,Exchangeable or plant available S.
+s.tot_usda.a624_w.pct,s.tot,usda.a624,w.pct,numeric,0.03569,"Sulfur, Total NCS",weight percent,"Total sulfur is a measure of all organic and inorganic sulfur, including that found in sulfide minerals."
+sand.tot_iso.11277_w.pct,sand.tot,iso.11277,w.pct,numeric,9,"Sand, Total, iso 11277",weight percent,Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a <2 mm base.
+sand.tot_usda.c405_w.pct,sand.tot,usda.c405,w.pct,numeric,79.4,"Sand, Total, N prep",weight percent,Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a <2 mm base.
+sand.tot_usda.c60_w.pct,sand.tot,usda.c60,w.pct,numeric,50.37000,"Sand, Total, S prep",weight percent,Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a <2 mm base.
+silt.tot_iso.11277_w.pct,silt.tot,iso.11277,w.pct,numeric,40,"Silt, Total, iso 11277",weight percent,Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a <2 mm base.
+silt.tot_usda.c407_w.pct,silt.tot,usda.c407,w.pct,numeric,18.2,"Silt, Total, N prep",weight percent,Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a <2 mm base.
+silt.tot_usda.c62_w.pct,silt.tot,usda.c62,w.pct,numeric,18.64000,"Silt, Total, S prep",weight percent,Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a <2 mm base.
+wr.10kPa_usda.a414_w.pct,wr.10kPa,usda.a414,w.pct,numeric,10.852961,"Water Retention, 1/10 Bar (10 kPa)",weight percent,The gravimetric percent water after equilibration at 1/10 bar (10 kPa) water tension.
+wr.10kPa_usda.a8_w.pct,wr.10kPa,usda.a8,w.pct,numeric,23.00000,"Water Retention, 1/10 Bar (10 kPa), Clod",weight percent,The gravimetric percent water after equilibration at 1/10 bar (10 kPa) water tension.
+wr.1500kPa_usda.a417_w.pct,wr.1500kPa,usda.a417,w.pct,numeric,3.000000,"Water Retention, 15 Bar (1500 kPa)",weight percent,The gravimetric percent water after equilibration at 15 bar (1500 kPa) water tension.
+wr.33kPa_usda.a415_w.pct,wr.33kPa,usda.a415,w.pct,numeric,29.17023,"Water Retention, 1/3 Bar (33 kPa)",weight percent,The gravimetric percent water after equilibration at 1/3 bar (33 kPa) water tension.
+wr.33kPa_usda.a9_w.pct,wr.33kPa,usda.a9,w.pct,numeric,18.20000,"Water Retention, 1/3 Bar (33 kPa), Clod",weight percent,The gravimetric percent water after equilibration at 1/3 bar (33 kPa) water tension.
+zn.ext_usda.a1073_mg.kg,zn.ext,usda.a1073,mg.kg,numeric,1.0300000,"Zinc, Extractable, Mehlich3",miligrams per kilogram of soil,Exchangeable or plant available Zn.

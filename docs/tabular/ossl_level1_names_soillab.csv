@@ -1,0 +1,79 @@
+analyte,ossl_name_level0,ossl_abbrev_level0,ossl_method_level0,ossl_unit_level0,target_name,target_method,target_unit,ossl_level1_transform,ossl_name_level1,include
+OSSL dataset code,dataset.code_ascii_txt,dataset.code,ascii,txt,dataset.code,ascii,txt,x,dataset.code_ascii_txt,TRUE
+OSSL unique identifier,id.layer_uuid_txt,id.layer,uuid,txt,id.layer,uuid,txt,x,id.layer_uuid_txt,TRUE
+"Acidity, BaCl2-TEA Extractable, pH 8.2",acidity_usda.a795_cmolc.kg,acidity,usda.a795,cmolc.kg,acidity,usda.a795,cmolc.kg,x,acidity_usda.a795_cmolc.kg,TRUE
+Aggregate Stability,aggstb_usda.a1_w.pct,aggstb,usda.a1,w.pct,aggstb,usda.a1,w.pct,x,aggstb_usda.a1_w.pct,TRUE
+"Aluminum, Crystalline, Total Pedogenic Iron",al.dith_usda.a65_w.pct,al.dith,usda.a65,w.pct,al.dith,usda.a65,w.pct,x,al.dith_usda.a65_w.pct,TRUE
+"Aluminum, Extractable, Aqua Regia",al.ext_aquaregia_g.kg,al.ext,aquaregia,g.kg,al.ext,aquaregia,g.kg,x,al.ext_aquaregia_g.kg,TRUE
+"Aluminum, Extractable, Mehlich3",al.ext_usda.a1056_mg.kg,al.ext,usda.a1056,mg.kg,al.ext,usda.a1056,mg.kg,x,al.ext_usda.a1056_mg.kg,TRUE
+"Aluminum, Extractable, KCl",al.ext_usda.a69_cmolc.kg,al.ext,usda.a69,cmolc.kg,al.ext,usda.a69,cmolc.kg,x,al.ext_usda.a69_cmolc.kg,TRUE
+"Aluminum, Amorphous, Total Non-Crystalline Iron",al.ox_usda.a59_w.pct,al.ox,usda.a59,w.pct,al.ox,usda.a59,w.pct,x,al.ox_usda.a59_w.pct,TRUE
+"Available Water Content, Difference 33-1500 kPa",awc.33.1500kPa_usda.c80_w.frac,awc.33.1500kPa,usda.c80,w.frac,awc.33.1500kPa,usda.c80,w.frac,x,awc.33.1500kPa_usda.c80_w.frac,TRUE
+"Boron, Extractable, Mehlich3",b.ext_mel3_mg.kg,b.ext,mel3,mg.kg,b.ext,mel3,mg.kg,x,b.ext_mel3_mg.kg,TRUE
+"Bulk Density, iso 11272",bd_iso.11272_g.cm3,bd,iso.11272,g.cm3,bd,usda.a4,g.cm3,x,bd_usda.a4_g.cm3,TRUE
+"Bulk Density, <2 mm fraction, Core",bd_usda.a21_g.cm3,bd,usda.a21,g.cm3,bd,usda.a4,g.cm3,x,bd_usda.a4_g.cm3,TRUE
+"Bulk Density, <2mm fraction, Clod",bd_usda.a4_g.cm3,bd,usda.a4,g.cm3,bd,usda.a4,g.cm3,x,bd_usda.a4_g.cm3,TRUE
+"Carbon, Total NCS, iso 10694",c.tot_iso.10694_w.pct,c.tot,iso.10694,w.pct,c.tot,usda.a622,w.pct,x,c.tot_usda.a622_w.pct,TRUE
+"Carbon, Total NCS",c.tot_usda.a622_w.pct,c.tot,usda.a622,w.pct,c.tot,usda.a622,w.pct,x,c.tot_usda.a622_w.pct,TRUE
+"Calcium, Extractable, Aqua Regia",ca.ext_aquaregia_mg.kg,ca.ext,aquaregia,mg.kg,ca.ext,aquaregia,mg.kg,x,ca.ext_aquaregia_mg.kg,TRUE
+"Calcium, Extractable, Mehlich3",ca.ext_usda.a1059_mg.kg,ca.ext,usda.a1059,mg.kg,ca.ext,usda.a1059,mg.kg,x,ca.ext_usda.a1059_mg.kg,TRUE
+"Calcium, Extractable, NH4OAc",ca.ext_usda.a722_cmolc.kg,ca.ext,usda.a722,cmolc.kg,ca.ext,usda.a722,cmolc.kg,x,ca.ext_usda.a722_cmolc.kg,TRUE
+"Carbonate, iso 10693",caco3_iso.10693_w.pct,caco3,iso.10693,w.pct,caco3,usda.a54,w.pct,x,caco3_usda.a54_w.pct,TRUE
+"Carbonate, <2mm Fraction",caco3_usda.a54_w.pct,caco3,usda.a54,w.pct,caco3,usda.a54,w.pct,x,caco3_usda.a54_w.pct,TRUE
+"CEC, pH 7.0, iso 11260",cec_iso.11260_cmolc.kg,cec,iso.11260,cmolc.kg,cec,usda.a723,cmolc.kg,x,cec_usda.a723_cmolc.kg,TRUE
+"CEC, pH 7.0, NH4OAc, 2M KCl displacement",cec_usda.a723_cmolc.kg,cec,usda.a723,cmolc.kg,cec,usda.a723,cmolc.kg,x,cec_usda.a723_cmolc.kg,TRUE
+"Coarse Fragments, iso 11464",cf_iso.11464_w.pct,cf,iso.11464,w.pct,cf,usda.c236,w.pct,x,cf_usda.c236_w.pct,TRUE
+"Coarse Fragments, Greater 2mm",cf_usda.c236_w.pct,cf,usda.c236,w.pct,cf,usda.c236,w.pct,x,cf_usda.c236_w.pct,TRUE
+"Clay, iso 11277",clay.tot_iso.11277_w.pct,clay.tot,iso.11277,w.pct,clay.tot,usda.a334,w.pct,x,clay.tot_usda.a334_w.pct,TRUE
+Clay,clay.tot_usda.a334_w.pct,clay.tot,usda.a334,w.pct,clay.tot,usda.a334,w.pct,x,clay.tot_usda.a334_w.pct,TRUE
+"Copper, Extractable, Mehlich3",cu.ext_usda.a1063_mg.kg,cu.ext,usda.a1063,mg.kg,cu.ext,usda.a1063,mg.kg,x,cu.ext_usda.a1063_mg.kg,TRUE
+"Electrical Conductivity, iso 11265",ec_iso.11265_ds.m,ec,iso.11265,ds.m,ec,usda.a364,ds.m,x,ec_usda.a364_ds.m,TRUE
+"Electrical Conductivity, (w/w)",ec_usda.a364_ds.m,ec,usda.a364,ds.m,ec,usda.a364,ds.m,x,ec_usda.a364_ds.m,TRUE
+"Effervescense, 1N HCl",efferv_usda.a479_class,efferv,usda.a479,class,efferv,usda.a479,class,x,efferv_usda.a479_class,TRUE
+"Iron, Crystalline, Total Pedogenic Iron",fe.dith_usda.a66_w.pct,fe.dith,usda.a66,w.pct,fe.dith,usda.a66,w.pct,x,fe.dith_usda.a66_w.pct,TRUE
+"Iron, Extractable, Aqua Regia",fe.ext_aquaregia_g.kg,fe.ext,aquaregia,g.kg,fe.ext,aquaregia,g.kg,x,fe.ext_aquaregia_g.kg,TRUE
+"Iron, Extractable, Mehlich3",fe.ext_usda.a1064_mg.kg,fe.ext,usda.a1064,mg.kg,fe.ext,usda.a1064,mg.kg,x,fe.ext_usda.a1064_mg.kg,TRUE
+"Iron, Amorphous, Total Non-Crystalline Iron",fe.ox_usda.a60_w.pct,fe.ox,usda.a60,w.pct,fe.ox,usda.a60,w.pct,x,fe.ox_usda.a60_w.pct,TRUE
+"Sodium, Extractable, Aqua Regia",k.ext_aquaregia_mg.kg,k.ext,aquaregia,mg.kg,k.ext,aquaregia,mg.kg,x,k.ext_aquaregia_mg.kg,TRUE
+"Sodium, Extractable, Mehlich3",k.ext_usda.a1065_mg.kg,k.ext,usda.a1065,mg.kg,k.ext,usda.a1065,mg.kg,x,k.ext_usda.a1065_mg.kg,TRUE
+"Sodium, Extractable, NH4OAc, 2M KCl displacement",k.ext_usda.a725_cmolc.kg,k.ext,usda.a725,cmolc.kg,k.ext,usda.a725,cmolc.kg,x,k.ext_usda.a725_cmolc.kg,TRUE
+"Magnesium, Extractable, Aqua Regia",mg.ext_aquaregia_mg.kg,mg.ext,aquaregia,mg.kg,mg.ext,aquaregia,mg.kg,x,mg.ext_aquaregia_mg.kg,TRUE
+"Magnesium, Extractable, Mehlich3",mg.ext_usda.a1066_mg.kg,mg.ext,usda.a1066,mg.kg,mg.ext,usda.a1066,mg.kg,x,mg.ext_usda.a1066_mg.kg,TRUE
+"Magnesium, Extractable, NH4OAc, 2M KCl displacement",mg.ext_usda.a724_cmolc.kg,mg.ext,usda.a724,cmolc.kg,mg.ext,usda.a724,cmolc.kg,x,mg.ext_usda.a724_cmolc.kg,TRUE
+"Manganese, Extractable, Aqua Regia",mn.ext_aquaregia_mg.kg,mn.ext,aquaregia,mg.kg,mn.ext,aquaregia,mg.kg,x,mn.ext_aquaregia_mg.kg,TRUE
+"Manganese, Extractable, Mehlich3",mn.ext_usda.a1067_mg.kg,mn.ext,usda.a1067,mg.kg,mn.ext,usda.a1066,mg.kg,x,mn.ext_usda.a1066_mg.kg,TRUE
+"Manganese, Extractable, KCl",mn.ext_usda.a70_mg.kg,mn.ext,usda.a70,mg.kg,mn.ext,usda.a70,mg.kg,x,mn.ext_usda.a70_mg.kg,TRUE
+"Nitrogen, Total NCS, iso 11261",n.tot_iso.11261_w.pct,n.tot,iso.11261,w.pct,n.tot,usda.a623,w.pct,x,n.tot_usda.a623_w.pct,TRUE
+"Nitrogen, Total NCS, iso 13878",n.tot_iso.13878_w.pct,n.tot,iso.13878,w.pct,n.tot,usda.a623,w.pct,x,n.tot_usda.a623_w.pct,TRUE
+"Nitrogen, Total NCS",n.tot_usda.a623_w.pct,n.tot,usda.a623,w.pct,n.tot,usda.a623,w.pct,x,n.tot_usda.a623_w.pct,TRUE
+"Potassium, Extractable, Aqua Regia",na.ext_aquaregia_mg.kg,na.ext,aquaregia,mg.kg,na.ext,aquaregia,mg.kg,x,na.ext_aquaregia_mg.kg,TRUE
+"Potassium, Extractable, Mehlich3",na.ext_usda.a1068_mg.kg,na.ext,usda.a1068,mg.kg,na.ext,usda.a1068,mg.kg,x,na.ext_usda.a1068_mg.kg,TRUE
+"Potassium, Extractable, NH4OAc, 2M KCl displacement",na.ext_usda.a726_cmolc.kg,na.ext,usda.a726,cmolc.kg,na.ext,usda.a726,cmolc.kg,x,na.ext_usda.a726_cmolc.kg,TRUE
+"Organic Carbon, iso 10694",oc_iso.10694_w.pct,oc,iso.10694,w.pct,oc,usda.c729,w.pct,x,oc_usda.c729_w.pct,TRUE
+"Organic Carbon, Total C without CaCO3, N prep",oc_usda.c1059_w.pct,oc,usda.c1059,w.pct,oc,usda.c729,w.pct,x,oc_usda.c729_w.pct,TRUE
+"Organic Carbon, Total C without CaCO3, S prep",oc_usda.c729_w.pct,oc,usda.c729,w.pct,oc,usda.c729,w.pct,x,oc_usda.c729_w.pct,TRUE
+"Phosphorus, Extractable, Aqua Regia",p.ext_aquaregia_mg.kg,p.ext,aquaregia,mg.kg,p.ext,aquaregia,mg.kg,x,p.ext_aquaregia_mg.kg,TRUE
+"Phosphorus, Extractable, iso 11263",p.ext_iso.11263_mg.kg,p.ext,iso.11263,mg.kg,p.ext,usda.a274,mg.kg,x,p.ext_usda.a274_mg.kg,TRUE
+"Phosphorus, Extractable, Mehlich3",p.ext_usda.a1070_mg.kg,p.ext,usda.a1070,mg.kg,p.ext,usda.a1070,mg.kg,x,p.ext_usda.a1070_mg.kg,TRUE
+"Phosphorus, Extractable, Bray1",p.ext_usda.a270_mg.kg,p.ext,usda.a270,mg.kg,p.ext,usda.a270,mg.kg,x,p.ext_usda.a270_mg.kg,TRUE
+"Phosphorus, Extractable, Olsen",p.ext_usda.a274_mg.kg,p.ext,usda.a274,mg.kg,p.ext,usda.a274,mg.kg,x,p.ext_usda.a274_mg.kg,TRUE
+"Phosphorus, Extractable, Mehlich3",p.ext_usda.a652_mg.kg,p.ext,usda.a652,mg.kg,p.ext,usda.a1070,mg.kg,x,p.ext_usda.a1070_mg.kg,TRUE
+"pH, 1:2 Soil-CaCl2 Suspension, iso 10390",ph.cacl2_iso.10390_index,ph.cacl2,iso.10390,index,ph.cacl2,usda.a481,index,x,ph.cacl2_usda.a481_index,TRUE
+"pH, 1:2 Soil-CaCl2 Suspension, 0.01 M CaCl2",ph.cacl2_usda.a477_index,ph.cacl2,usda.a477,index,ph.cacl2,usda.a481,index,x,ph.cacl2_usda.a481_index,TRUE
+"pH, 1:2 Soil-CaCl2 Suspension",ph.cacl2_usda.a481_index,ph.cacl2,usda.a481,index,ph.cacl2,usda.a481,index,x,ph.cacl2_usda.a481_index,TRUE
+"pH, 1:1 Soil-Water Suspension, iso 10390",ph.h2o_iso.10390_index,ph.h2o,iso.10390,index,ph.h2o,usda.a268,index,x,ph.h2o_usda.a268_index,TRUE
+"pH, 1:1 Soil-Water Suspension",ph.h2o_usda.a268_index,ph.h2o,usda.a268,index,ph.h2o,usda.a268,index,x,ph.h2o_usda.a268_index,TRUE
+"Sulphur, Extractable, Mehlich3",s.ext_mel3_mg.kg,s.ext,mel3,mg.kg,s.ext,mel3,mg.kg,x,s.ext_mel3_mg.kg,TRUE
+"Sulfur, Total NCS",s.tot_usda.a624_w.pct,s.tot,usda.a624,w.pct,s.tot,usda.a624,w.pct,x,s.tot_usda.a624_w.pct,TRUE
+"Sand, Total, iso 11277",sand.tot_iso.11277_w.pct,sand.tot,iso.11277,w.pct,sand.tot,usda.c60,w.pct,x,sand.tot_usda.c60_w.pct,TRUE
+"Sand, Total, N prep",sand.tot_usda.c405_w.pct,sand.tot,usda.c405,w.pct,sand.tot,usda.c60,w.pct,x,sand.tot_usda.c60_w.pct,TRUE
+"Sand, Total, S prep",sand.tot_usda.c60_w.pct,sand.tot,usda.c60,w.pct,sand.tot,usda.c60,w.pct,x,sand.tot_usda.c60_w.pct,TRUE
+"Silt, Total, iso 11277",silt.tot_iso.11277_w.pct,silt.tot,iso.11277,w.pct,silt.tot,usda.c62,w.pct,x,silt.tot_usda.c62_w.pct,TRUE
+"Silt, Total, N prep",silt.tot_usda.c407_w.pct,silt.tot,usda.c407,w.pct,silt.tot,usda.c62,w.pct,x,silt.tot_usda.c62_w.pct,TRUE
+"Silt, Total, S prep",silt.tot_usda.c62_w.pct,silt.tot,usda.c62,w.pct,silt.tot,usda.c62,w.pct,x,silt.tot_usda.c62_w.pct,TRUE
+"Water Retention, 1/10 Bar (10 kPa)",wr.10kPa_usda.a414_w.pct,wr.10kPa,usda.a414,w.pct,wr.10kPa,usda.a414,w.pct,x,wr.10kPa_usda.a414_w.pct,TRUE
+"Water Retention, 1/10 Bar (10 kPa), Clod",wr.10kPa_usda.a8_w.pct,wr.10kPa,usda.a8,w.pct,wr.10kPa,usda.a414,w.pct,x,wr.10kPa_usda.a414_w.pct,TRUE
+"Water Retention, 15 Bar (1500 kPa)",wr.1500kPa_usda.a417_w.pct,wr.1500kPa,usda.a417,w.pct,wr.1500kPa,usda.a417,w.pct,x,wr.1500kPa_usda.a417_w.pct,TRUE
+"Water Retention, 1/3 Bar (33 kPa)",wr.33kPa_usda.a415_w.pct,wr.33kPa,usda.a415,w.pct,wr.33kPa,usda.a415,w.pct,x,wr.33kPa_usda.a415_w.pct,TRUE
+"Water Retention, 1/3 Bar (33 kPa), Clod",wr.33kPa_usda.a9_w.pct,wr.33kPa,usda.a9,w.pct,wr.33kPa,usda.a415,w.pct,x,wr.33kPa_usda.a415_w.pct,TRUE
+"Zinc, Extractable, Mehlich3",zn.ext_usda.a1073_mg.kg,zn.ext,usda.a1073,mg.kg,zn.ext,usda.a1073,mg.kg,x,zn.ext_usda.a1073_mg.kg,TRUE

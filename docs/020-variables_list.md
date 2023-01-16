@@ -4,1238 +4,1875 @@
 You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at <https://soilspectroscopy.github.io/ossl-manual/>.
 :::
 
+**Importing new datasets into OSSL**
+
+The github repository [ossl-imports](https://github.com/soilspectroscopy/ossl-imports) has all the importing codes for preparing and integrating new datasets into the OSSL. The folder [ossl-imports/dataset](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset) contains all the datasets separated by its name/code, with an internal `README` file describing in detail the steps necessary for preparing and standardizing the files into the OSSL format.
+
+The original files are placed on an internal server to avoid the storage of big files in the github repository, but some of them can be found on persistent online repositories if they have a public license. Other original datasets that do not have a public license or are shared to this project with some restrictions will no be shared publicly. As we keep the original files in a local repository to run the importing notebooks (each `ossl-imports/dataset/../README.Rmd`), this operation can only be run at our internal server. New contributors are encouraged to host their files on a public repository and draft the importing step on github through pull requests. The final checks and consolidation, however, will be concluded on an internal server.
+
+The `README` files follow a basic structure. Each one has a description of the dataset at the top of the notebook which links to the dataset source and references. An extended description is provided in the [OSSL-manual](https://soilspectroscopy.github.io/ossl-manual/soil-spectroscopy-tools-and-users.html#registered-soil-spectral-libraries) as well.
+
+For preparing the import, the following subsections are defined:
+
+- Basic description.
+- Soil site information.
+- Soil laboratory (wet chemistry) information.
+- Mid-infrared (MIR) spectroscopy data (optional).
+- Visible-near-infrared (VisNIR) spectroscopy data (optional).
+- Quality control.
+- References.
+
+Each subsection has its own reading and processing functions, and the outputs can be joined using shared id columns. The output files share the same name and pattern but can be retrieved with different folder names, which are binded together in a final stage. The outputs are `ossl_soilsite_<version>.qs`, `ossl_soillab_<version>.qs`, `ossl_mir_<version>.qs`, `ossl_visnir_<version>.qs`. The version is adjusted in the recurring updates.
+
+**Soil analytical methods**
+
+The contrasting methods used for analytically determining (wet chemistry) a given soil property has also been a subject of internal discussion in this project. Some global initiatives have been facing this same issue in their soil databases but there still no clear or full consensus on how to harmonize those different methods. This has been a topic of great discussion and research development at the [Global Soil Partnership’s Global Soil Laboratory Network (GLOSOLAN)](https://www.fao.org/global-soil-partnership/glosolan/en/).
+
+In order to maximize transparency, for now, we have decided to produce two different levels for the OSSL database. `Level 0` takes into account the original methods employed in each dataset but tries to initially fit them to two reference lists: [KSSL Guidance – Laboratory Methods and Manuals](https://www.nrcs.usda.gov/resources/guides-and-instructions/kssl-guidance) and ISO standards. A copy of the KSSL procedures and coding scheme is archived in [ossl-imports](https://github.com/soilspectroscopy/ossl-imports/blob/main/out/kssl_procedures.csv).
+
+If a reference method does not fall in any previous method, then we create a new variable sharing at least a common property and unit. A final harmonization takes place in the OSSL `Level 1`, where those common properties sharing different methods are converted to a target method using some publicly available transformation rule, or in the worst scenario, they are naively binded or kept separated to produce its specific model. All the implementations are documented in the [ossl-import](https://github.com/soilspectroscopy/ossl-imports/blob/main/out/ossl_level0_to_level1_soillab_harmonization.csv) repository.
+
+**Middle-infrared (MIR) spectra** is provided in absorbance units per wavenumber, with values usually ranging between 0 and 3. The spectral range imported into the OSSL falls between 600 and 4000 cm<sup>-1</sup>, with an interval of 2 cm<sup>-1</sup>. All datasets are harmonized to this specification.
+
+**Visible and Near-Infrared (VisNIR) spectra** is provided in reflectance units per wavelength, with values usually ranging between 0 and 1 as fraction percent. The spectral range imported into the OSSL falls between 350 and 2500 nm, with an interval of 2 nm. All datasets are harmonized to this specification.
+
+**Spectral conversion**
+
+One can convert reflectance (R) values to absorbance units (A) as `A = log10(1/R)`, or backtransform with `R = 1/(10^A)`. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with `WN = 1/(WL*10000000)`, or backtransform with `WL = 1/(WL*10000000)`. The factor 10M is used to convert cm to nm.
+
+The following subsections provide the OSSL variable names, types, description, and example. You can also find all this information in tabular format:
+
+- [OSSL soil site data](./tabular/ossl_level0_names_soilsite.csv).
+- [OSSL soil lab data (level 0)](./tabular/ossl_level0_names_soillab.csv).
+- [OSSL soil lab data (level 1)](./tabular/ossl_level1_names_soillab.csv).
+- [OSSL soil MIR data](./tabular/ossl_level0_names_mir.csv).
+- [OSSL soil VisNIR data](./tabular/ossl_level0_names_visnir.csv).
 
 
 
 
-## Sites table {#sites-table}
 
-Observations and measurements at site. For the **site** table please use (at least) the following columns.
+<!-- ```{r density_plots, include=FALSE, eval=FALSE} -->
+<!-- library("ggplot2") -->
+<!-- library("viridis") -->
+<!-- library("ggridges") -->
+<!-- library("rlang") -->
+<!-- library("moments") -->
 
-### id.layer_uuid_c
+<!-- names.remove <- c("dataset.code_ascii_txt", "id.layer_uuid_txt", "efferv_usda.a479_class") -->
 
-**Unique layer ID**: Should be best generated using some [UUID generator tool](https://cran.r-project.org/package=uuid); example: `id.layer_uuid_c = '672d1fd6-b186-11eb-8a61-7446a0925130'`\
+<!-- ossl.soillab.level0.names <- ossl.soillab.level0 %>% -->
+<!--   select(-all_of(names.remove)) %>% -->
+<!--   names() -->
 
-### id.location_olc_c
+<!-- for(i in 1:length(ossl.soillab.level0.names)) { -->
 
-Unique [Open Location Codes](https://opensource.google/projects/open-location-code): ID which identifies the site location; example: `id.location_olc_c = '84MVX5FH+PJ'`\
-We recommend rounding the latitude and longitude coordinates to 6 decimal places.
+<!--   isoil.property <- ossl.soillab.level0.names[i] -->
 
-### observation.ogc.schema.title_ogc_txt
+<!--   out.png = paste0("./hist_v1.2/hist_L0_", isoil.property, ".png") -->
 
-[Observation OGC](https://www.ogc.org/standards/om) schema title; example: `observation.ogc.schema.title_ogc_txt = 'Open Soil Spectral Library Schema'`\
+<!--   plot.df = ossl.soillab.level0 %>% -->
+<!--     select(dataset.code_ascii_txt, all_of(isoil.property)) -->
 
-### observation.ogc.schema_idn_url
+<!--   iskewness <- plot.df %>% -->
+<!--     pull(all_of(isoil.property)) %>% -->
+<!--     skewness(na.rm = T) -->
 
-[Observation OGC](https://www.ogc.org/standards/om) schema URL; example: `observation.ogc.schema_idn_url = 'https://github.com/soilspectroscopy/'`\
+<!--   i99th <- plot.df %>% -->
+<!--     summarise(!!isoil.property := quantile(!!as.name(isoil.property), p = 0.99, na.rm = T)) %>% -->
+<!--     pull(all_of(isoil.property)) -->
 
-### observation.date.begin_iso.8601_yyyy.mm.dd
+<!--   if(iskewness <= -3 | iskewness >= 3) { -->
 
-Observation date begin ([ISO8601](https://en.wikipedia.org/wiki/ISO_8601)); example: `observation.date.begin_iso.8601_yyyy.mm.dd = '2000.02.10'`\
+<!--     plot.df <- plot.df %>% -->
+<!--       mutate(!!isoil.property := ifelse(!!as.name(isoil.property) < 0.001, 4096, !!as.name(isoil.property))) %>% -->
+<!--       filter(!!as.symbol(isoil.property) < i99th) %>% -->
+<!--       mutate(!!isoil.property := log2(!!as.name(isoil.property))) %>% -->
+<!--       mutate(!!isoil.property := ifelse(!!as.name(isoil.property) == 12, 0, !!as.name(isoil.property))) -->
 
-### observation.date.end_iso.8601_yyyy.mm.dd
+<!--     n.table <- plot.df %>% -->
+<!--       filter(!is.na(!!as.symbol(isoil.property))) %>% -->
+<!--       count(dataset.code_ascii_txt) %>% -->
+<!--       mutate(!!isoil.property := {plot.df %>% -->
+<!--           summarise(!!isoil.property := max(!!as.name(isoil.property), na.rm = T)) %>% -->
+<!--           pull(all_of(isoil.property))*1.1}) -->
 
-Observation date end ([ISO8601](https://en.wikipedia.org/wiki/ISO_8601)); example: `observation.date.end_iso.8601_yyyy.mm.dd = '2000.02.10'`\
+<!--     plot <- ggplot(plot.df, aes(x = !!sym(isoil.property), y = dataset.code_ascii_txt, fill = ..x..)) + -->
+<!--       geom_density_ridges_gradient(scale = 1, rel_min_height = 0.01, gradient_lwd = 1.) + -->
+<!--       scale_x_continuous(expand = c(0.01, 0)) + -->
+<!--       scale_y_discrete(expand = c(0.01, 0)) + -->
+<!--       scale_fill_viridis(option = "C") + -->
+<!--       geom_text(data = n.table, aes(label = paste0("n=", n)), vjust = -0.5, hjust = "inward") + -->
+<!--       labs(title = paste0("log2(", isoil.property, ")"), fill = "", x = "", y = "") + -->
+<!--       theme_ridges(grid = TRUE, font_size = 13) + -->
+<!--       theme(panel.background = element_rect(fill = 'white'), -->
+<!--             plot.background = element_rect(fill = 'white')) -->
 
-### location.address_utf8_txt
+<!--   } else { -->
 
-Location address as Street and number, Local postcode, Town, County, State; example: `location.address_utf8_txt = ''`\
+<!--     plot.df <- plot.df %>% -->
+<!--       filter(!!as.symbol(isoil.property) < i99th) -->
 
-### location.country_iso.3166_c
+<!--     n.table <- plot.df %>% -->
+<!--       filter(!is.na(!!as.symbol(isoil.property))) %>% -->
+<!--       count(dataset.code_ascii_txt) %>% -->
+<!--       mutate(!!isoil.property := {plot.df %>% -->
+<!--           summarise(!!isoil.property := max(!!as.name(isoil.property), na.rm = T)) %>% -->
+<!--           pull(all_of(isoil.property))*1.2}) -->
 
-Country(ies) the data was/were collected ([ISO3166](https://en.wikipedia.org/wiki/ISO_3166-1)); example: `location.country_iso.3166_c = 'USA'`\
+<!--     plot <- ggplot(plot.df, aes(x = !!sym(isoil.property), y = dataset.code_ascii_txt, fill = ..x..)) + -->
+<!--       geom_density_ridges_gradient(scale = 1, rel_min_height = 0.01, gradient_lwd = 1.) + -->
+<!--       scale_x_continuous(expand = c(0.01, 0)) + -->
+<!--       scale_y_discrete(expand = c(0.01, 0)) + -->
+<!--       scale_fill_viridis(option = "C") + -->
+<!--       geom_text(data = n.table, aes(label = paste0("n=", n)), vjust = -0.5, hjust = "inward") + -->
+<!--       labs(title = isoil.property, fill = "", x = "", y = "") + -->
+<!--       theme_ridges(grid = TRUE, font_size = 13) + -->
+<!--       theme(panel.background = element_rect(fill = 'white'), -->
+<!--             plot.background = element_rect(fill = 'white')) -->
 
-### location.method_any_c
+<!--   } -->
 
-Location method e.g. [GPS](https://www.gps.gov/); example: `location.method_any_c = 'GPS'`\
+<!--   ggsave(out.png, plot, width = 7, height = 7, units = "in", scale = 1) -->
 
-### surveyor.title_utf8_txt
+<!-- } -->
+<!-- ``` -->
 
-Field surveyor title or organization; example: `surveyor.title_utf8_txt = 'USDA Natural Resource Conservation Service (NRCS) staff'`\
 
-### surveyor.contact_ietf_email
 
-Field surveyor contact email; example: `surveyor.contact_ietf_email = 'support@usda.gov'`\
 
-### surveyor.address_utf8_txt
 
-Field surveyor address as Street and number, Local postcode, Town, County, State; example: `surveyor.address_utf8_txt = 'USDA-NRCS-NSSC, Federal Building, Room 152, Mail Stop, 100 Centennial Mall North, Lincoln, NE'`\
+## Soil site data {#sites-table}
 
-### longitude_wgs84_dd
-
-Site [WGS84 longitude](https://spatialreference.org/ref/epsg/wgs-84/) coordinate; example: `longitude_wgs84_dd = '-122.8208847'`\
-
-### latitude_wgs84_dd
-
-Site [WGS84 latitude](https://spatialreference.org/ref/epsg/wgs-84/) coordinate; example: `latitude_wgs84_dd = '43.9742584'`\
-
-### location.error_any_m
-
-Approximate location error (for [GPS coordinates](https://www.gps.gov/systems/gps/performance/accuracy/) use 30 m); example: `location.error_any_m = '30'`\
-
-### dataset.title_utf8_txt
-
-Title of the dataset; example: `dataset.title_utf8_txt = 'Kellog's lab SSL'`\
-
-### dataset.owner_utf8_txt
-
-Name of organization that is the dataset owner;\
 
 ### dataset.code_ascii_txt
 
-Code identification of the dataset; example: `dataset.code_ascii_txt = 'KSSL'`\
+📚 Description: OSSL dataset code.
 
-### dataset.address_idn_url
+🔢 Type: string.
 
-The URL address of the dataset web page; example: `dataset.address_idn_url = 'https://ncsslabdatamart.sc.egov.usda.gov/'`\
+📖 Example: AFSIS1.SSL.
 
-### dataset.license.title_ascii_txt
 
-Data license title for the dataset; example: `dataset.license.title_ascii_txt = 'CC-0'`\
+### id.layer_uuid_txt
 
-### dataset.license.address_idn_url
+📚 Description: OSSL unique identifier.
 
-Data license URL for the dataset; example: `dataset.license.address_idn_url = 'https://creativecommons.org/share-your-work/public-domain/cc0/'`\
+🔢 Type: string.
 
-### dataset.doi_idf_c
+📖 Example: ded584d70bf0474202d30e575ae24784.
 
-[International DOI foundation](https://en.wikipedia.org/wiki/Digital_object_identifier) code for the corresponding dataset version; example: `dataset.doi_idf_c = '10.2136/sssaj2019.06.0205'`\
-
-### dataset.contact.name_utf8_txt
-
-Person responsible for the dataset; example: `dataset.contact.name_utf8_txt = 'Firstname Lastname'`
-
-### dataset.contact.email_ietf_email
-
-Email contact of the person responsible for the dataset; example: `dataset.contact.email_ietf_email = 'support@usda.gov'`\
-
-### id.dataset.site_ascii_c
-
-Local dataset ID of the site; example: `id.dataset.site_ascii_c = '603'`\
-
-### id.user.site_ascii_c
-
-Local user assigned ID of the site; example: `id.user.site_ascii_c = '01-DRJ-01'`\
-
-### id.project_ascii_c
-
-Unique project code; example: `id.project_ascii_c = 'TEX18'`\
-
-### pedon.taxa_usda_c
-
-Soil classification based on the [USDA Keys to Soil Taxonomy](https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/class/taxonomy/?cid=nrcs142p2_053580); example: `pedon.taxa_usda_c = 'Mollisols_Ustolls_Haplustolls'`.\
-Complete list of possible great groups is available [here](https://github.com/OpenGeoHub/SoilSamples/tree/main/tabular).
-
-## Soillab table {#soillab-table}
-
-### id.layer_uuid_c
-
-Unique site ID generated using some [UUID generator tool](https://cran.r-project.org/package=uuid); example: `id.site_uuid_c = '672d1fd6-b186-11eb-8a61-7446a0925130'`\
-This ID links with the [Sites table](#sites-table).
 
 ### id.layer_local_c
 
-Local original layer ID; example: `id.site_uuid_c = '456002'`\
-This ID links with the [Sites table](#sites-table).
+📚 Description: Original observation identifier.
 
-### sample.doi_idf_c
+🔢 Type: string.
 
-Unique DOI that can be used when citing the dataset; example: `sample.doi_idf_c = '10.3390/s20236729'`\
+📖 Example: icr072246.
+
+
+### longitude.point_wgs84_dd
+
+📚 Description: Longitude in decimal degrees (WGS84, EPSG 4326).
+
+🔢 Type: numeric.
+
+📖 Example: 15.6874916700.
+
+
+### latitude.point_wgs84_dd
+
+📚 Description: Latitude in decimal degrees (WGS84, EPSG 4326).
+
+🔢 Type: numeric.
+
+📖 Example: -7.37775000.
+
 
 ### layer.sequence_usda_uint16
 
-Layer sequence number [based on the USDA system](https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/research/guide/?cid=nrcs142p2_054184); example: `layer.sequence_usda_uint16 = '1'`\
+📚 Description: Layer sequence (incremented in depth).
 
-### layer.type_usda_c
+🔢 Type: numeric.
 
-Layer type [based on the USDA system](https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/research/guide/?cid=nrcs142p2_054184); example: `layer.type_usda_c = 'horizon'`\
+📖 Example: 1.
 
-### layer.field.label_any_c
-
-Layer field label used e.g. for soil samples; example: `layer.field.label_any_c = 'S00OR-039-001-2'`\
 
 ### layer.upper.depth_usda_cm
 
-Layer upper depth in cm; example: `layer.upper.depth_usda_cm = '13'`\
+📚 Description: Layer top depth in cm.
+
+🔢 Type: numeric.
+
+📖 Example: 0.0.
+
 
 ### layer.lower.depth_usda_cm
 
-Layer lower depth in cm; example: `layer.lower.depth_usda_cm = '36'`\
+📚 Description: Layer bottom depth in cm.
 
-### horizon.designation_usda_c
+🔢 Type: numeric.
 
-Layer horizon designation [based on the USDA system](https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/research/guide/?cid=nrcs142p2_054184); example: `horizon.designation_usda_c = 'A2'`\
+📖 Example: 20.0.
 
-### horizon.designation.discontinuity_usda_c
 
-Layer horizon designation discontinuity [based on the USDA system](https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/research/guide/?cid=nrcs142p2_054184); example: `horizon.designation.discontinuity_usda_c = ''`\
+### observation.date.begin_iso.8601_yyyy.mm.dd
 
-### layer.structure.type_usda_c
+📚 Description: Begin date of observation following YYYY-MM-DD format (ISO 8601).
 
-Layer horizon structure type [based on the USDA system](https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/research/guide/?cid=nrcs142p2_054184); example: `layer.structure.type_usda_c = ''`\
+🔢 Type: numeric.
 
-### layer.structure.grade_usda_c
+📖 Example: 2011-01-01.
 
-Layer horizon structure grade [based on the USDA system](https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/research/guide/?cid=nrcs142p2_054184); example: `layer.structure.grade_usda_c = ''`\
 
-### layer.texture_usda_c
+### observation.date.end_iso.8601_yyyy.mm.dd
 
-Layer field-estimated texture-by-hand class [based on the USDA system](https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/?cid=nrcs142p2_054167); example: `layer.texture_usda_c = 'Gravelly Clay'`\
-To estimate the field texture-by-hand please follow [these guidelines](https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054311).\
+📚 Description: End date of observation following YYYY-MM-DD format (ISO 8601).
 
-### agg.stb_usda.1b1_wpct
+🔢 Type: numeric.
 
-Aggregate stability; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=119): `aggstb_usda.1b1_wpct` = Aggregate stability is the weight percent of 0.5mm - 2mm aggregates remaining after wet sieving.
+📖 Example: 2013-12-31.
 
-### al.dith_usda.4g1_wpct
 
-Aluminum, dithionite-citrate extractable; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=460): `al.dith_usda.4g1_wpct` = Dithionite citrate extractable aluminum is an indicator of the amount of aluminum substituted for iron in iron oxides. It does not necessarily represent total pedogenic Al.\
+### surveyor.title_utf8_txt
 
-### al.kcl_usda.4b3_cmolkg
+📚 Description: Field surveyor name or organization.
 
-Aluminum, KCl extractable; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=282): `al.kcl_usda.4b3_cmolkg` = KCl extractable aluminum approximates the exchangeable Al, and is a measure of the active acidity present in soils with a 1:1 water pH less than 5.5. It relates to the immediate lime requirement and the CEC of the soil.\
+🔢 Type: string.
 
-- 🆔 `al.kcl_usda.4b3_cmolkg`  
-- 📚 Measurement unit: cmol/kg  
-- 🔬 Laboratory method: KCl extractable  
-- 📖 Scientific reference: @thomas1982exchangeable   
+📖 Example: L.T.Desta.
 
 
+### id.project_ascii_txt
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "al.kcl_usda.4b3_cmolkg", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="ExAl in cmol/kg", xlab="depth in cm")
-```
+📚 Description: Project name.
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-alkcl-1.png" alt="Soil-depth histogram for Aluminum, KCl extractable in cmol/kg." width="70%" />
-<p class="caption">(\#fig:plot-alkcl)Soil-depth histogram for Aluminum, KCl extractable in cmol/kg.</p>
-</div>
+🔢 Type: string.
 
+📖 Example: Africa Soil Information Service (AfSIS-1).
 
-<div class="figure" style="text-align: center">
-<img src="hist/al.kcl_usda.4b3_cmolkg_hist.png" alt="Aluminum, KCl extractable in cmol/kg histograms." width="70%" />
-<p class="caption">(\#fig:hist-alkcl1)Aluminum, KCl extractable in cmol/kg histograms.</p>
-</div>
 
-### al.ox_usda.4g2_wpct
+### id.location_olc_txt
 
-Aluminum, ammonium oxalate extractable; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=460): `al.ox_usda.4g2_wpct` = Ammonium oxalate extractable aluminum is an estimate of the total pedogenic Al, much of which may be in noncrystalline materials or complexed by organic matter. It is reported as gravimetric percent on a <2 mm base.\
+📚 Description: Unique Open Location Code with a precision of 6 decimal places in point coordinates.
 
+🔢 Type: string.
 
-### al.pyp_usda.4g3_wpct
+📖 Example: 6F4QJMCP+VX.
 
-Aluminum, sodium pyrophosphate extractable; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=468): `al.pyp_usda.4g3_wpct` = Sodium pyrophosphate extractable aluminum is the fraction extracted by 0.1M sodium pyrophosphate. It was originally considered the portion associated with organic compounds, although subsequent evidence indicates other forms are also removed.\
 
-### alsat_usda.4b4_wpct
+### layer.texture_usda_txt
 
-Aluminum saturation; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=292): `alsat_usda.4b4_wpct` = Aluminum saturation is calculated by (AL_KCL/(Sum of bases))*100. It provides some inference of potential Al toxicity problems, although many other factors influence Al toxicity.\
+📚 Description: Texture description based on USDA classification.
 
-### bd.clod_usda.3b1_gcm3
+🔢 Type: string.
 
-Bulk density clod, <2 mm fraction, 1/3 bar; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=130): `bd.clod_usda.3b1_gcm3` = Bulk density, <2 mm fraction, 1/3 bar is the weight per unit volume of the <2 mm fraction, with volume being measured after equilibration at 1/3 bar water tension. It is reported as grams per cubic centimeter on a <2 mm base.\
+📖 Example: sand.
 
-### bd.core_iso.11272.2017_gcm3
 
-Dry bulk density based on [ISO 11272:2017(en)](https://www.iso.org/obp/ui/#iso:std:iso:11272:ed-2:v1:en)
-Soil quality — Determination of dry bulk density.\
+### pedon.taxa_usda_txt
 
-### bd.od_usda.3b2_gcm3
+📚 Description: Soil classification based on the USDA Keys to Soil Taxonomy.
 
-Bulk density fine earth, Oven-Dry, <2 mm fraction; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=161): `bd.od_usda.3b4_gcm3` = Bulk density, <2mm fraction, field moist is the weight per unit volume of the <2 mm fraction, with volume measured at field (sampling) moisture. Measurements are made on known volume cores. It is reported as grams per cubic centimeter, <2 mm base.\
+🔢 Type: string.
 
-- 🆔 `bd.od_usda.3b2_gcm3`  
-- 📚 Measurement unit: g/cm3  
-- 🔬 Laboratory method: Oven-Dry  
-- 📖 Scientific reference: @grossman20022   
+📖 Example: Typic Kanhaplustalf.
 
 
+### horizon.designation_usda_txt
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "bd.od_usda.3b2_gcm3", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="BD g/cm3", xlab="depth in cm")
-```
+📚 Description: Soil horizon based on the USDA Keys to Soil Taxonomy.
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-bd-1.png" alt="Soil-depth histogram for Bulk density in g/cm3." width="70%" />
-<p class="caption">(\#fig:plot-bd)Soil-depth histogram for Bulk density in g/cm3.</p>
-</div>
+🔢 Type: string.
 
+📖 Example: Ap.
 
-<div class="figure" style="text-align: center">
-<img src="hist/bd.od_usda.3b2_gcm3_hist.png" alt="Bulk density in g/cm3 percent histograms." width="70%" />
-<p class="caption">(\#fig:hist-bd1)Bulk density in g/cm3 percent histograms.</p>
-</div>
 
-### bsat_usda.4b4_wpct
+### longitude.county_wgs84_dd
 
-Base saturation, NH4OAc, pH7; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=290): `bsat_usda.4b4_wpct` = NH4OAC base saturation (pH 7.0) is calculated by (BASE_SUM/CEC_NH4)*100.\
+📚 Description: County centroid, longitude in decimal degrees (WGS84, EPSG 4326).
 
-- 🆔 `bsat_usda.4b4_wpct`  
-- 📚 Measurement unit: weight percent  
-- 🔬 Laboratory method: Displacement after Washing, NH4OAC, pH 7 / Atomic Absorption Spectrophotometer  
-- 📖 Scientific reference: @thomas1982exchangeable   
+🔢 Type: numeric.
 
+📖 Example: -96.688800.
 
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "bsat_usda.4b4_wpct", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="BS in wpct", xlab="depth in cm")
-```
+### latitude.county_wgs84_dd
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-bs-1.png" alt="Soil-depth histogram for Base saturation in wpct." width="70%" />
-<p class="caption">(\#fig:plot-bs)Soil-depth histogram for Base saturation in wpct.</p>
-</div>
+📚 Description: County centroid, latitude in decimal degrees (WGS84, EPSG 4326).
 
+🔢 Type: numeric.
 
-<div class="figure" style="text-align: center">
-<img src="hist/bsat_usda.4b4_wpct_hist.png" alt="Base saturation in weight percent histograms." width="70%" />
-<p class="caption">(\#fig:hist-bs1)Base saturation in weight percent histograms.</p>
-</div>
+📖 Example: 40.78446.
 
-### c.tot_iso.10694.1995_wpct
 
-Total soil carbon based on [ISO 10694:1995(en)](https://www.iso.org/obp/ui/#iso:std:iso:10694:ed-1:v1:en)
-Soil quality — Determination of organic and total carbon after dry combustion (elementary analysis).
+### location.point.error_any_m
 
-### c.tot_usda.4h2_wpct
+📚 Description: Approximate point location error in m.
 
-Total carbon; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492): `c.tot_usda.4h2_wpct` = Total carbon is a measure of all organic and inorganic carbon, including that found in carbonate minerals.\
+🔢 Type: numeric.
 
-- 🆔 `c.tot_usda.4h2_wpct`  
-- 📚 Measurement unit: weight percent  
-- 🔬 Laboratory method: Walkley-Black  
-- 📖 Scientific reference: @nelson1983total   
+📖 Example: 30.
 
 
+### location.country_iso.3166_txt
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "c.tot_usda.4h2_wpct", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="SOC wprm", xlab="depth in cm")
-```
+📚 Description: Country code following ISO 3166.
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-toc-1.png" alt="Soil-depth histogram for total carbon in wpct." width="70%" />
-<p class="caption">(\#fig:plot-toc)Soil-depth histogram for total carbon in wpct.</p>
-</div>
+🔢 Type: string.
 
+📖 Example: NZL.
 
-<div class="figure" style="text-align: center">
-<img src="hist/c.tot_usda.4h2_wpct_hist.png" alt="Total carbon in weight percent histograms." width="70%" />
-<p class="caption">(\#fig:hist-toc1)Total carbon in weight percent histograms.</p>
-</div>
 
-### ca.ext_usda.4b1_cmolkg
+### observation.ogc.schema.title_ogc_txt
 
-Calcium, NH4OAc Extractable, 2M KCl displacement; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=269): `ca.ext_usda.4b1_cmolkg` = NH4OAC extractable calcium is the fraction removed by pH 7.0 NH4OAC. It is assumed to represent the exchangeable Ca. It is reported as meq per 100 grams on a <2 mm base. It is not reported for samples containing carbonates or soluble salts.\
+📚 Description: Observation OGC schema title.
 
-- 🆔 `ca.ext_usda.4b1_cmolkg`  
-- 📚 Measurement unit: cmol/kg  
-- 🔬 Laboratory method: Displacement after Washing, NH4OAC, pH 7 / Atomic Absorption Spectrophotometer  
-- 📖 Scientific reference: @thomas1982exchangeable   
+🔢 Type: string.
 
+📖 Example: Open Soil Spectroscopy Library.
 
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "ca.ext_usda.4b1_cmolkg", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="ExCa cmol/kg", xlab="depth in cm")
-```
+### observation.ogc.schema_idn_url
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-exca-1.png" alt="Soil-depth histogram for Calcium, NH4OAc Extractable in cmol/kg." width="70%" />
-<p class="caption">(\#fig:plot-exca)Soil-depth histogram for Calcium, NH4OAc Extractable in cmol/kg.</p>
-</div>
+📚 Description: Observation OGC schema url.
 
+🔢 Type: string.
 
-<div class="figure" style="text-align: center">
-<img src="hist/ca.ext_usda.4b1_cmolkg_hist.png" alt="Calcium, NH4OAc Extractable in cmol/kg histograms." width="70%" />
-<p class="caption">(\#fig:hist-exca1)Calcium, NH4OAc Extractable in cmol/kg histograms.</p>
-</div>
+📖 Example: https://soilspectroscopy.github.io.
 
-### caco3_iso.10693.1995_vpct
 
-Total carbonate in the <2 mm fraction (measured by CO2 evolution after acid treatment) based on [ISO 10693:1995](https://www.iso.org/obp/ui/#iso:std:iso:10693:ed-1:v1:en)
-Soil quality — Determination of carbonate content — Volumetric method.\
+### surveyor.contact_ietf_email
 
-### caco3_usda.4e1_wpct
+📚 Description: Surveyor contact email.
 
-Calcium carbonate content; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=398): `caco3_usda.4e1_wpct` = Carbonate in the <2 mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a <2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid.\
+🔢 Type: string.
 
-- 🆔 `caco3_usda.4e1_wpct`  
-- 📚 Measurement unit: weight percentage  
-- 🔬 Laboratory method: 3 N HCl Treatment  
-- 📖 Scientific reference: @loeppert1996carbonate   
+📖 Example: afsis.info@africasoils.net.
 
 
+### surveyor.address_utf8_txt
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "caco3_usda.4e1_wpct", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="CaCO3 wpct", xlab="depth in cm")
-```
+📚 Description: Surveyor or institution address.
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-caco-1.png" alt="Soil-depth histogram for CaCO3 in wpct." width="70%" />
-<p class="caption">(\#fig:plot-caco)Soil-depth histogram for CaCO3 in wpct.</p>
-</div>
+🔢 Type: string.
 
+📖 Example: ICRAF, PO Box 30677, Nairobi, 00100, Kenya.
 
-<div class="figure" style="text-align: center">
-<img src="hist/caco3_usda.4e1_wpct_hist.png" alt="Organic carbon in weight percent histograms." width="70%" />
-<p class="caption">(\#fig:hist-caco1)Organic carbon in weight percent histograms.</p>
-</div>
 
-### caco3.pres_usda.1b1_c
+### dataset.title_utf8_txt
 
-Effervescence, 1N HCl; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=63): `caco3.pres_usda.1b1_c` = The visual effervescence of the prepared sample when treated with 1N HCl.\
+📚 Description: Dataset name.
 
-### cec.ext_iso.13536.1995_cmolkg
+🔢 Type: string.
 
-Cation Exchange Capacity based on [ISO 13536:1995(en)](https://www.iso.org/obp/ui/#iso:std:iso:13536:ed-1:v1:en)
-Soil quality — Determination of the potential cation exchange capacity and exchangeable cations using barium chloride solution buffered at pH = 8.1.\
+📖 Example: Africa Soil Information Service (AfSIS-1).
 
-### cec.ext_usda.4b1_cmolkg
 
-Cation Exchange Capacity (CEC), NH4OAc, pH 7.0, 2M KCl displacement; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=258): `cec.ext_usda.4b1_cmolkg` = CEC by NH4OAC is the Cation Exchange Capacity of the sample, determined by 1N NH4OAC in a system highly buffered at pH 7.0 The NH4 is displaced by 2M KCl to obtain a solution without solids. It is reported as meq per 100 grams sample, on a <2 mm base.\
+### dataset.owner_utf8_txt
 
-- 🆔 `cec.ext_usda.4b1_cmolkg`  
-- 📚 Measurement unit: cmol/kg  
-- 🔬 Laboratory method: Displacement after Washing, NH4OAC, pH 7 / Atomic Absorption Spectrophotometer  
-- 📖 Scientific reference: @thomas1982exchangeable   
+📚 Description: Name of of organization or person that is the responsible for the dataset.
 
+🔢 Type: string.
 
+📖 Example: ICRAF, CROPNUTS, RRES.
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "cec.ext_usda.4b1_cmolkg", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="CEC in cmol/kg", xlab="depth in cm")
-```
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-cec-1.png" alt="Soil-depth histogram for CEC in cmol/kg." width="70%" />
-<p class="caption">(\#fig:plot-cec)Soil-depth histogram for CEC in cmol/kg.</p>
-</div>
+### dataset.address_idn_url
 
+📚 Description: URL address of the dataset web page.
 
-<div class="figure" style="text-align: center">
-<img src="hist/cec.ext_usda.4b1_cmolkg_hist.png" alt="CEC in cmol/kg histograms." width="70%" />
-<p class="caption">(\#fig:hist-cec1)CEC in cmol/kg histograms.</p>
-</div>
+🔢 Type: string.
 
-### clay.tot_iso.11277.2020_wpct
+📖 Example: https://www.isric.org/explore/ISRIC-collections.
 
-Total clay (<0.002 mm particle diameter) based on [ISO 11277:2020(en)](https://www.iso.org/obp/ui/#iso:std:iso:11277:ed-3:v1:en)
-Soil quality — Determination of particle size distribution in mineral soil material — Method by sieving and sedimentation.\
 
-### clay.tot_usda.3a1_wpct
+### dataset.doi_idf_url
 
-Total clay content; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=76): `clay.tot_usda.3a1_wpct` = Total clay is the soil separate with <0.002 mm particle diameter. Clay size carbonate is included. Total clay is reported as a weight percent of the <2 mm fraction.\
+📚 Description: Digital object identifier (DOI) url of the dataset.
 
-- 🆔 `code` clay.tot_usda.3a1_wpct  
-- 📚 Measurement unit: weight percent  
-- 🔬 Laboratory method: Particle-Size Distribution Analysis using Pipette  
-- 📖 Scientific reference: @agriculture2019soil   
+🔢 Type: string.
 
+📖 Example: https://doi.org/10.1016/j.geodrs.2015.06.002.
 
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "clay.tot_usda.3a1_wpct", method = "hexbin", 
-                     col = "increment", log.x = TRUE, ylab="Clay in wpct", xlab="depth in cm")
-```
+### dataset.license.title_ascii_txt
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-clay-1.png" alt="Soil-depth histogram for total clay in wpct." width="70%" />
-<p class="caption">(\#fig:plot-clay)Soil-depth histogram for total clay in wpct.</p>
-</div>
+📚 Description: Dataset license.
 
+🔢 Type: string.
 
-<div class="figure" style="text-align: center">
-<img src="hist/clay.tot_usda.3a1_wpct_hist.png" alt="Total clay content in weight percent histograms." width="70%" />
-<p class="caption">(\#fig:hist-clay1)Total clay content in weight percent histograms.</p>
-</div>
+📖 Example: ODC Open Database License.
 
-### ec.ext.sat_usda.4f2_dsm
 
-Electrical Conductivity, Saturation Extract; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=425): `ec.ext.sat_usda.4f2_dsm` = Electrical Conductivity, Saturation Extract 
+### dataset.license.address_idn_url
 
-### ec.w_usda.4f1_dsm
+📚 Description: Dataset license url.
 
-Electrical Conductivity, Predict, 1:2 (w/w); [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=425): `ec.w_usda.4f1_dsm` = The salt predict electrical conductivity is used to determine whether additional salt analyses are needed, and to estimate appropriate dilution ratios for additional tests. It is reported as mmhos per centimeter of a 1:2 soil:water mixture by weight.\
+🔢 Type: string.
 
-- 🆔 `ec.w_usda.4f1_dsm`  
-- 📚 Measurement unit: dS/m  
-- 🔬 Laboratory method: ??  
-- 📖 Scientific reference: @nelson1983total   
+📖 Example: https://opendatacommons.org/licenses/odbl/.
 
 
+### dataset.contact.name_utf8_txt
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "ec.w_usda.4f1_dsm", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="EC in dS/m", xlab="depth in cm")
-```
+📚 Description: Dataset contact name.
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-ec-1.png" alt="Soil-depth histogram for Electrical Conductivity in dS/m." width="70%" />
-<p class="caption">(\#fig:plot-ec)Soil-depth histogram for Electrical Conductivity in dS/m.</p>
-</div>
+🔢 Type: string.
 
+📖 Example: Keith Shepherd.
 
-<div class="figure" style="text-align: center">
-<img src="hist/ec.w_usda.4f1_dsm_hist.png" alt="Electrical Conductivity in dS/m histograms." width="70%" />
-<p class="caption">(\#fig:hist-ec1)Electrical Conductivity in dS/m histograms.</p>
-</div>
 
-### ecec_usda.4b4_cmolkg
+### dataset.contact_ietf_email
 
-Effective Cation Exchange Capacity; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=258): `ecec_usda.4b4_cmolkg` = Sum of bases + AL_KCL 	 the effective cation exchange capacity is calculated by BASE_SUM+AL_KCL. It is not calculated if soluble salts are present. It is reported as meq per 100 grams on a <2 mm base.\
+📚 Description: Dataset contact email.
 
-- 🆔 `ecec_usda.4b4_cmolkg`  
-- 📚 Measurement unit: cmol/kg  
-- 🔬 Laboratory method: Displacement after Washing, NH4OAC, pH 7 / Atomic Absorption Spectrophotometer  
-- 📖 Scientific reference: @sumner1996cation   
+🔢 Type: string.
 
+📖 Example: afsis.info@africasoils.net.
 
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "ecec_usda.4b4_cmolkg", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="ECEC in cmol/kg", xlab="depth in cm")
-```
+### id.dataset.site_ascii_txt
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-ecec-1.png" alt="Soil-depth histogram for ECEC in cmol/kg." width="70%" />
-<p class="caption">(\#fig:plot-ecec)Soil-depth histogram for ECEC in cmol/kg.</p>
-</div>
+📚 Description: Site identification.
 
+🔢 Type: string.
 
-<div class="figure" style="text-align: center">
-<img src="hist/ecec_usda.4b4_cmolkg_hist.png" alt="ECEC in cmol/kg histograms." width="70%" />
-<p class="caption">(\#fig:hist-ecec1)ECEC in cmol/kg histograms.</p>
-</div>
+📖 Example: 203.
 
-### fe.dith_usda.4g1_wpct
+## Soil laboratory (wet chemistry) data {#soillab-table}
 
-Iron, dithionite-citrate extractable; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=454): `fe.dith_usda.4g1_wpct` = Dithionite citrate extractable iron is considered a general measure of total pedogenic iron. It provides inferences on the amount of iron in various forms, P fixing potential, aggregate stability, and degree of weathering. Reported as grav % on <2 mm.\
 
-### fe.ox_usda.4g2_wpct
+### dataset.code_ascii_txt
 
-Iron, ammonium oxalate extractable; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=460): `fe.ox_usda.4g2_wpct` = Ammonium oxalate extractable iron is considered a measure of the noncrystalline Fe in soils. It provides some inferences of the amount of Fe in various forms. It is reported as gravimetric % on a <2 mm base.\
+📚 Description: Dataset code used for internal reference. It can be alternatively described as `OSSL dataset code`.
 
-### fe.pyp_usda.4g3_wpct
+📐 Measurement unit: Imported into the OSSL as `txt`, i.e., text.
 
-Iron, sodium pyrophosphate extractable; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=468): `fe.pyp_usda.4g3_wpct` = Sodium pyrophosphate extractable iron is assumed to be the fraction associated with organic complexes. It is reported as gravimetric percent on a <2 mm base.\
+🔢 Type: string.
 
-### gyp_usda.4e2_wpct
+📖 Example: AFSIS1.SSL.
 
-Corrected Gypsum, < 2mm; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=408): `gyp_usda.4e2_wpct` = Corrected Gypsum (Uncorrected Gypsum * Factor)\
 
-- 🆔 `gyp_usda.4e2_wpct`  
-- 📚 Measurement unit: weight percent  
-- 🔬 Laboratory method: Aqueous Extraction, Electrical Conductivity  
-- 📖 Scientific reference: @elrashidi2007application   
+### id.layer_uuid_txt
 
+📚 Description: Unique identifier. It can be alternatively described as `OSSL unique identifier`.
 
+📐 Measurement unit: Imported into the OSSL as `txt`, i.e., text.
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "gyp_usda.4e2_wpct", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="Gypsum in wpct", xlab="depth in cm")
-```
+🔢 Type: string.
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-gyp-1.png" alt="Soil-depth histogram for Exchangeable sodium percentage." width="70%" />
-<p class="caption">(\#fig:plot-gyp)Soil-depth histogram for Exchangeable sodium percentage.</p>
-</div>
+📖 Example: ded584d70bf0474202d30e575ae24784.
 
 
-<div class="figure" style="text-align: center">
-<img src="hist/gyp_usda.4e2_wpct_hist.png" alt="Exchangeable sodium percentage histograms." width="70%" />
-<p class="caption">(\#fig:hist-gyp1)Exchangeable sodium percentage histograms.</p>
-</div>
+### acidity_usda.a795_cmolc.kg
 
-### humus_usda.4h2_wpct
+📚 Description: Extractable acidity, BaCl2-TEA at pH 8.2, is a measure of the amount of acid neutralized at a set pH. It can be alternatively described as `Acidity, BaCl2-TEA Extractable, pH 8.2`.
 
-Organic matter or humus content; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492): `humus_usda.4h2_wpct` = Total organic matter in weight percent (dag/kg) lost on ignition (400°C) (LOI). Values for organic C can be determined by using the “Van Bemmelen factor” (1/1.724 = 0.58) to calculate organic carbon.\
+📐 Measurement unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
 
-### k.ext_usda.4b1_cmolkg
+🔢 Type: numeric.
 
-Potassium, NH4OAc Extractable, 2M KCl displacement; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=269): `k.ext_usda.4b1_cmolkg` = NH4OAC extractable potassium is the fraction removed by pH 7.0 NH4OAC. It is assumed to represent the exchangeable K. It is reported as meq per 100 grams on a <2 mm base.\
+📖 Example: 0.40000.
 
-- 🆔 `k.ext_usda.4b1_cmolkg`  
-- 📚 Measurement unit: cmol/kg  
-- 🔬 Laboratory method: Displacement after Washing, NH4OAC, pH 7 / Atomic Absorption Spectrophotometer  
-- 📖 Scientific reference: @thomas1982exchangeable   
+🟢 Availability: level 0 and level 1 (harmonized).
 
+<img src="./heatmap_v1.2/heatmap_L1_acidity_usda.a795_cmolc.kg.png" heigth=100% width=100%>
 
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "k.ext_usda.4b1_cmolkg", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="ExK in cmol/kg", xlab="depth in cm")
-```
+### aggstb_usda.a1_w.pct
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-exk-1.png" alt="Soil-depth histogram for Potassium, NH4OAc Extractable in cmol/kg." width="70%" />
-<p class="caption">(\#fig:plot-exk)Soil-depth histogram for Potassium, NH4OAc Extractable in cmol/kg.</p>
-</div>
+📚 Description: Aggregate stability is the weight percent of 0.5 mm - 2 mm aggregates remaining after wet sieving.. It can be alternatively described as `Aggregate Stability`.
 
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 
-<div class="figure" style="text-align: center">
-<img src="hist/k.ext_usda.4b1_cmolkg_hist.png" alt="Potassium, NH4OAc Extractable in cmol/kg histograms." width="70%" />
-<p class="caption">(\#fig:hist-exk1)Potassium, NH4OAc Extractable in cmol/kg histograms.</p>
-</div>
+🔢 Type: numeric.
 
-### mg.ext_usda.4b1_cmolkg
+📖 Example: 74.
 
-Magnesium, NH4OAc Extractable, 2M KCl displacement; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=269): `mg.ext_usda.4b1_cmolkg` = NH4OAC extractable magnesium is the fraction removed by pH 7.0 NH4OAC. It is assumed to represent the exchangeable Mg if MgCO3 is not present. It is reported as meq per 100 grams on a <2 mm base.\
+🟢 Availability: level 0 and level 1 (harmonized).
 
-- 🆔 `mg.ext_usda.4b1_cmolkg`  
-- 📚 Measurement unit: cmol/kg  
-- 🔬 Laboratory method: Displacement after Washing, NH4OAC, pH 7 / Atomic Absorption Spectrophotometer  
-- 📖 Scientific reference: @thomas1982exchangeable   
+<img src="./heatmap_v1.2/heatmap_L1_aggstb_usda.a1_w.pct.png" heigth=100% width=100%>
 
 
+### al.dith_usda.a65_w.pct
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "mg.ext_usda.4b1_cmolkg", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="ExMg in cmol/kg", xlab="depth in cm")
-```
+📚 Description: Dithionite citrate extractable aluminum is an indicator of the amount of aluminum substituted for iron in iron oxides.. It can be alternatively described as `Aluminum, Crystalline, Total Pedogenic Iron`.
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-exmg-1.png" alt="Soil-depth histogram for Magnesium, NH4OAc Extractable in cmol/kg." width="70%" />
-<p class="caption">(\#fig:plot-exmg)Soil-depth histogram for Magnesium, NH4OAc Extractable in cmol/kg.</p>
-</div>
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 
+🔢 Type: numeric.
 
-<div class="figure" style="text-align: center">
-<img src="hist/mg.ext_usda.4b1_cmolkg_hist.png" alt="Magnesium, NH4OAc Extractable in cmol/kg histograms." width="70%" />
-<p class="caption">(\#fig:hist-exmg1)Magnesium, NH4OAc Extractable in cmol/kg histograms.</p>
-</div>
+📖 Example: 0.13652.
 
-### n.tot_iso.13878.1998_wpct
+🟢 Availability: level 0 and level 1 (harmonized).
 
-Total nitrogen based on [ISO 13878:1998(en)](https://www.iso.org/obp/ui/#iso:std:iso:13878:ed-1:v1:en)
-Soil quality — Determination of total nitrogen content by dry combustion ("elemental analysis").\
+<img src="./heatmap_v1.2/heatmap_L1_al.dith_usda.a65_w.pct.png" heigth=100% width=100%>
 
-### n.tot_usda.4h2_wpct
 
-Total nitrogen; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492): `n.tot_usda.4h2_wpct` = Total nitrogen is a measure of all organic and inorganic nitrogen, including that found in nitrogen minerals.\
+### al.ext_aquaregia_g.kg
 
-- 🆔 `n.tot_usda.4h2_wpct`  
-- 📚 Measurement unit: weight percent  
-- 🔬 Laboratory method: Dry oxidation (combustion) procedure   
-- 📖 Scientific reference: @bremner1996nitrogen   
+📚 Description: Exchangeable Al.. It can be alternatively described as `Aluminum, Extractable, Aqua Regia`.
 
+📐 Measurement unit: Imported into the OSSL as `g.kg`, i.e., grams per kilogram of soil.
 
+🔢 Type: numeric.
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "n.tot_usda.4h2_wpct", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="N wpct", xlab="depth in cm")
-```
+📖 Example: 42.9620831.
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-ntot-1.png" alt="Soil-depth histogram for total N in wpct." width="70%" />
-<p class="caption">(\#fig:plot-ntot)Soil-depth histogram for total N in wpct.</p>
-</div>
+🟢 Availability: level 0 and level 1 (harmonized).
 
+<img src="./heatmap_v1.2/heatmap_L1_al.ext_aquaregia_g.kg.png" heigth=100% width=100%>
 
-<div class="figure" style="text-align: center">
-<img src="hist/n.tot_usda.4h2_wpct_hist.png" alt="Total N in weight percent histograms." width="70%" />
-<p class="caption">(\#fig:hist-ntot1)Total N in weight percent histograms.</p>
-</div>
 
-### na.exch_usda.4f3_wpct
+### al.ext_usda.a1056_mg.kg
 
-Exchangeable sodium percentage saturated; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=446): `na.exch_usda.4f3_wpct` = This is the exchangeable sodium percentage (ESP), reported on a <2 mm base. If salts are present, ESP has been corrected for the water soluble Na.\
+📚 Description: Exchangeable Al.. It can be alternatively described as `Aluminum, Extractable, Mehlich3`.
 
-### na.ext_usda.4b1_cmolkg
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 
-Sodium, NH4OAc Extractable, 2M KCl displacement; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=269): `na.ext_usda.4b1_cmolkg` = NH4OAC extractable sodium is the fraction removed by pH 7.0 NH4OAC. It is assumed to represent the exchangeable Na. It is reported as meq per 100 grams on a <2 mm base.\
+🔢 Type: numeric.
 
-- 🆔 `na.ext_usda.4b1_cmolkg`  
-- 📚 Measurement unit: cmol/kg  
-- 🔬 Laboratory method: Displacement after Washing, NH4OAC, pH 7 / Atomic Absorption Spectrophotometer  
-- 📖 Scientific reference: @thomas1982exchangeable   
+📖 Example: 1270.00000.
 
+🟢 Availability: level 0 and level 1 (harmonized).
 
+<img src="./heatmap_v1.2/heatmap_L1_al.ext_usda.a1056_mg.kg.png" heigth=100% width=100%>
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "na.ext_usda.4b1_cmolkg", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="ExNa in cmol/kg", xlab="depth in cm")
-```
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-exna-1.png" alt="Soil-depth histogram for Sodium, NH4OAc Extractable in cmol/kg." width="70%" />
-<p class="caption">(\#fig:plot-exna)Soil-depth histogram for Sodium, NH4OAc Extractable in cmol/kg.</p>
-</div>
+### al.ext_usda.a69_cmolc.kg
 
+📚 Description: Exchangeable Al.. It can be alternatively described as `Aluminum, Extractable, KCl`.
 
-<div class="figure" style="text-align: center">
-<img src="hist/na.ext_usda.4b1_cmolkg_hist.png" alt="Sodium, NH4OAc Extractable histograms." width="70%" />
-<p class="caption">(\#fig:hist-exna1)Sodium, NH4OAc Extractable histograms.</p>
-</div>
+📐 Measurement unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
 
-### oc_iso.10694.1995_wpct
+🔢 Type: numeric.
 
-Organic carbon based on [ISO 10694:1995(en)](https://www.iso.org/obp/ui/#iso:std:iso:10694:ed-1:v1:en) Soil quality — Determination of organic and total carbon after dry combustion (elementary analysis).\
+📖 Example: 0.20000.
 
-### oc_iso.17184.2014_wpct
+🟢 Availability: level 0 and level 1 (harmonized).
 
-Organic carbon based on [ISO 17184:2014(en)](https://www.iso.org/obp/ui/#iso:std:iso:17184:ed-1:v1:en)
-Soil quality — Determination of carbon and nitrogen by near-infrared spectrometry (NIRS).\
+<img src="./heatmap_v1.2/heatmap_L1_al.ext_usda.a69_cmolc.kg.png" heigth=100% width=100%>
 
-### oc_usda.4h2_wpct
 
-Organic carbon based on dry combustion in weight percent (dag/kg); [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492): `oc_usda.4h2_wpct` = CMS analyte equivalent to the Walkley-Black organic C method. Organic carbon is a measure of all organic forms of carbon in the soil, including organic carbon within minerals.\
+### al.ox_usda.a59_w.pct
 
-### oc_usda.calc_wpct
+📚 Description: Ammonium oxalate extractable aluminum is an estimate of the total pedogenic Al, much of which may be in noncrystalline materials or complexed by organic matter.. It can be alternatively described as `Aluminum, Amorphous, Total Non-Crystalline Iron`.
 
-Organic carbon in weight percent (dag/kg); [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492): `oc_usda.calc_wpct` = Estimated (calculated) Organic Carbon based on Total C minus the inorganic carbon, GP prep.\
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 
-- 🆔 `oc_usda.calc_wpct`  
-- 📚 Measurement unit: weight percent  
-- 🔬 Laboratory method: Walkley-Black organic C method  
-- 📖 Scientific reference: @nelson1983total   
+🔢 Type: numeric.
 
+📖 Example: 0.12951.
 
+🟢 Availability: level 0 and level 1 (harmonized).
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "oc_usda.calc_wpct", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="SOC wprm", xlab="depth in cm")
-```
+<img src="./heatmap_v1.2/heatmap_L1_al.ox_usda.a59_w.pct.png" heigth=100% width=100%>
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-oc-1.png" alt="Soil-depth histogram for soil organic carbon in wpct." width="70%" />
-<p class="caption">(\#fig:plot-oc)Soil-depth histogram for soil organic carbon in wpct.</p>
-</div>
 
+### awc.33.1500kPa_usda.c80_w.frac
 
-<div class="figure" style="text-align: center">
-<img src="hist/oc_usda.calc_wpct_hist.png" alt="Organic carbon in weight percent histograms." width="70%" />
-<p class="caption">(\#fig:hist-oc1)Organic carbon in weight percent histograms.</p>
-</div>
+📚 Description: The amount (fraction) of water released between 1/3 (33 kPa) and 15 (1500 kPa) bar tensions determined as gravimetric percent.. It can be alternatively described as `Available Water Content, Difference 33-1500 kPa`.
 
-### p.ext_usda.4d6_mgkg
+📐 Measurement unit: Imported into the OSSL as `w.frac`, i.e., weight fraction.
 
-Phosphorus, Mehlich3 extractable; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=364): `p.ext_usda.4d6_mgkg` = The phosphorus extracted by the Mehlich III solution.\
+🔢 Type: numeric.
 
-### p.olsn_usda.4d5_mgkg
+📖 Example: 0.08658.
 
-Phosphorus, Olsen extractable; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=364): `p.olsn_usda.4d5_mgkg` = The Olsen extractable phosphorus is used as an indicator of available phosphorus in calcareous soil materials (pH >6).\
+🟢 Availability: level 0 and level 1 (harmonized).
 
-### ph.cacl2_iso.10390.1994_index
+<img src="./heatmap_v1.2/heatmap_L1_awc.33.1500kPa_usda.c80_w.frac.png" heigth=100% width=100%>
 
-Soil pH 1:2 0.01-M calcium choride based on [ISO 10390:1994](https://www.iso.org/obp/ui/#iso:std:iso:10390:ed-1:en) Soil quality — Determination of pH.\
 
-### ph.cacl2_usda.4c1_index
+### b.ext_mel3_mg.kg
 
-Soil pH 1:2 0.01-M calcium chloride; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=304): `ph.cacl2_usda.4c1_index` = The pH, 1:2 soil-CaCl2 is the pH of a sample measured in 0.01M CaCl2 at a 1:2 soil:solution ratio.\
+📚 Description: Plant available B.. It can be alternatively described as `Boron, Extractable, Mehlich3`.
 
-- 🆔 `ph.cacl2_usda.4c1_index`  
-- 📚 Measurement unit: index  
-- 🔬 Laboratory method: Soil suspension combination pH-Reference Electrode  
-- 📖 Scientific reference: @mclean1983soil   
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 
+🔢 Type: numeric.
 
+📖 Example: 0.00100000.
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "ph.cacl2_usda.4c1_index", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="pH CaCl", xlab="depth in cm")
-```
+🟢 Availability: level 0 and level 1 (harmonized).
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-phcl-1.png" alt="Soil-depth histogram for Soil pH 1:2 0.01-M calcium chloride." width="70%" />
-<p class="caption">(\#fig:plot-phcl)Soil-depth histogram for Soil pH 1:2 0.01-M calcium chloride.</p>
-</div>
+<img src="./heatmap_v1.2/heatmap_L1_b.ext_mel3_mg.kg.png" heigth=100% width=100%>
 
 
-<div class="figure" style="text-align: center">
-<img src="hist/ph.cacl2_usda.4c1_index_hist.png" alt="Soil pH 1:2 0.01-M calcium chloride histograms." width="70%" />
-<p class="caption">(\#fig:hist-phcl1)Soil pH 1:2 0.01-M calcium chloride histograms.</p>
-</div>
+### bd_iso.11272_g.cm3
 
-### ph.h2o_usda.4c1_index
+📚 Description: Bulk density is the weight per unit volume of the fine earth fraction (<2 mm).. It can be alternatively described as `Bulk Density, iso 11272`.
 
-Soil pH 1:1 water; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=304): `ph.h2o_usda.4c1_index` = The pH, 1:1 soil-water suspension is the pH of a sample measured in distilled water at a 1:1 soil:solution ratio. If wider ratios increase the pH, salts are indicated.\
+📐 Measurement unit: Imported into the OSSL as `g.cm3`, i.e., grams per cubic centimeter.
 
-- 🆔 `ph.h2o_usda.4c1_index`  
-- 📚 Measurement unit: index  
-- 🔬 Laboratory method: Soil suspension combination pH-Reference Electrode  
-- 📖 Scientific reference: @mclean1983soil   
+🔢 Type: numeric.
 
+📖 Example: 1.57100.
 
+🟡 Availability: only level 0.
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "ph.h2o_usda.4c1_index", method = "hexbin", 
-                     col = "increment", log.x = TRUE, ylab="Soil pH", xlab="depth in cm")
-```
+<img src="./heatmap_v1.2/heatmap_L0_bd_iso.11272_g.cm3.png" heigth=100% width=100%>
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-phh2o-1.png" alt="Soil-depth histogram for soil pH." width="70%" />
-<p class="caption">(\#fig:plot-phh2o)Soil-depth histogram for soil pH.</p>
-</div>
 
-<div class="figure" style="text-align: center">
-<img src="hist/ph.h2o_usda.4c1_index_hist.png" alt="Soil pH 1:1 water histograms." width="70%" />
-<p class="caption">(\#fig:hist-phh2o)Soil pH 1:1 water histograms.</p>
-</div>
+### bd_usda.a21_g.cm3
 
-### s.tot_usda.4h2_wpct
+📚 Description: Bulk density is the weight per unit volume of the fine earth fraction (<2 mm).. It can be alternatively described as `Bulk Density, <2 mm fraction, Core`.
 
-Total sulfur; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=492): `s.tot_usda.4h2_wpct` = Total sulfur is a measure of all organic and inorganic sulfur, including that found in sulfide minerals.\
+📐 Measurement unit: Imported into the OSSL as `g.cm3`, i.e., grams per cubic centimeter.
 
-### sand.tot_iso.11277.2020_wpct
+🔢 Type: numeric.
 
-Total laboratory-estimated sand (0.05 to 2.0 mm particle diameter) based on [ISO 11277:2020(en)](https://www.iso.org/obp/ui/#iso:std:iso:11277:ed-3:v1:en)
-Soil quality — Determination of particle size distribution in mineral soil material — Method by sieving and sedimentation.\
+📖 Example: 1.57100.
 
-### sand.tot_usda.3a1_wpct
+🟡 Availability: only level 0.
 
-Total sand content; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=76): `sand.tot_usda.3a1_wpct` = Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported as a gravimetric percent on a <2 mm base. H prep.\
+<img src="./heatmap_v1.2/heatmap_L0_bd_usda.a21_g.cm3.png" heigth=100% width=100%>
 
-- 🆔 `code` sand.tot_usda.3a1_wpct  
-- 📚 Measurement unit: weight percent  
-- 🔬 Laboratory method: Particle-Size Distribution Analysis using Pipette  
-- 📖 Scientific reference: @agriculture2019soil   
 
+### bd_usda.a4_g.cm3
 
+📚 Description: Bulk density is the weight per unit volume of the fine earth fraction (<2 mm).. It can be alternatively described as `Bulk Density, <2mm fraction, Clod`.
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "sand.tot_usda.3a1_wpct", method = "hexbin", 
-                     col = "increment", log.x = TRUE, ylab="Sand in wpct", xlab="depth in cm")
-```
+📐 Measurement unit: Imported into the OSSL as `g.cm3`, i.e., grams per cubic centimeter.
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-sand-1.png" alt="Soil-depth histogram for total sand content in wpct." width="70%" />
-<p class="caption">(\#fig:plot-sand)Soil-depth histogram for total sand content in wpct.</p>
-</div>
+🔢 Type: numeric.
 
+📖 Example: 1.3477999.
 
-<div class="figure" style="text-align: center">
-<img src="hist/sand.tot_usda.3a1_wpct_hist.png" alt="Total sand content in weight percent histograms." width="70%" />
-<p class="caption">(\#fig:hist-sand1)Total sand content in weight percent histograms.</p>
-</div>
+🟢 Availability: level 0 and level 1 (harmonized).
 
-### silt.tot_iso.11277.2020_wpct
+<img src="./heatmap_v1.2/heatmap_L1_bd_usda.a4_g.cm3.png" heigth=100% width=100%>
 
-Total laboratory-estimated silt (0.002 to 0.05 mm particle size) based on [ISO 11277:2020(en)](https://www.iso.org/obp/ui/#iso:std:iso:11277:ed-3:v1:en)
-Soil quality — Determination of particle size distribution in mineral soil material — Method by sieving and sedimentation.\
 
-### silt.tot_usda.3a1_wpct
+### c.tot_iso.10694_w.pct
 
-Total silt content; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=76): `silt.tot_usda.3a1_wpct` = Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported as a gravimetric percent on a <2 mm base.\
+📚 Description: Total carbon is a measure of all organic and inorganic carbon, including that found in carbonate minerals.. It can be alternatively described as `Carbon, Total NCS, iso 10694`.
 
-- 🆔 `code` silt.tot_usda.3a1_wpct  
-- 📚 Measurement unit: weight percent  
-- 🔬 Laboratory method: Particle-Size Distribution Analysis using Pipette  
-- 📖 Scientific reference: @agriculture2019soil   
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 
+🔢 Type: numeric.
 
+📖 Example: 3.668778009.
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "silt.tot_usda.3a1_wpct", method = "hexbin", 
-                     col = "increment", log.x = TRUE, ylab="Silt in wpct", xlab="depth in cm")
-```
+🟡 Availability: only level 0.
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-silt-1.png" alt="Soil-depth histogram for total silt content in wpct." width="70%" />
-<p class="caption">(\#fig:plot-silt)Soil-depth histogram for total silt content in wpct.</p>
-</div>
+<img src="./heatmap_v1.2/heatmap_L0_c.tot_iso.10694_w.pct.png" heigth=100% width=100%>
 
 
-<div class="figure" style="text-align: center">
-<img src="hist/silt.tot_usda.3a1_wpct_hist.png" alt="Total silt content in weight percent histograms." width="70%" />
-<p class="caption">(\#fig:hist-silt1)Total silt content in weight percent histograms.</p>
-</div>
+### c.tot_usda.a622_w.pct
 
-### sodium.ads.ratio_usda.4f3_index
+📚 Description: Total carbon is a measure of all organic and inorganic carbon, including that found in carbonate minerals.. It can be alternatively described as `Carbon, Total NCS`.
 
-Sodium adsorption ratio; description: `sodium.ads.ratio_usda.4f3_index` = The sodium absorption ratio is calculated by NA_SATX/sqrt((CA_SATX+MG_SATX)/2). It is approximately equal to the exchangeable sodium percentage.\
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 
-### wpg2_iso.11277.2020_wpct
+🔢 Type: numeric.
 
-The gravimetric percentage of coarse fragments greater than 2 mm diameter particles reported on a whole soil base based on [ISO 11277:2020(en)](https://www.iso.org/obp/ui/#iso:std:iso:11277:ed-3:v1:en)
-Soil quality — Determination of particle size distribution in mineral soil material — Method by sieving and sedimentation.\
+📖 Example: 1.55128592.
 
-### wpg2_usda.3a2_wpct
+🟢 Availability: level 0 and level 1 (harmonized).
 
-Coarse Fragments, Greater than 2mm; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=119): `wpg2_usda.3a2_wpct` = The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.\
+<img src="./heatmap_v1.2/heatmap_L1_c.tot_usda.a622_w.pct.png" heigth=100% width=100%>
 
-- 🆔 `wpg2_usda.3a2_wpct`  
-- 📚 Measurement unit: weigth percent  
-- 🔬 Laboratory method: Particle-Size Distribution Analysis by weight estimates  
-- 📖 Scientific reference: @grossman20022, @american2006standard   
 
+### ca.ext_aquaregia_mg.kg
 
+📚 Description: Exchangeable or plant available Ca.. It can be alternatively described as `Calcium, Extractable, Aqua Regia`.
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "wpg2_usda.3a2_wpct", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="WPG2 wpct", xlab="depth in cm")
-```
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-wpg-1.png" alt="Soil-depth histogram for coarse fragments in wpct." width="70%" />
-<p class="caption">(\#fig:plot-wpg)Soil-depth histogram for coarse fragments in wpct.</p>
-</div>
+🔢 Type: numeric.
 
+📖 Example: 368.535095.
 
-<div class="figure" style="text-align: center">
-<img src="hist/wpg2_usda.3a2_wpct_hist.png" alt="Coarse fragments in weight percent histograms." width="70%" />
-<p class="caption">(\#fig:hist-wpg1)Coarse fragments in weight percent histograms.</p>
-</div>
+🟢 Availability: level 0 and level 1 (harmonized).
 
-### wr.1500kbar_usda.3c2_wpct
+<img src="./heatmap_v1.2/heatmap_L1_ca.ext_aquaregia_mg.kg.png" heigth=100% width=100%>
 
-Water Retention, 15 Bar, <2mm,  Air-dry (Permanent Wilting Point); [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=205): `wr.1500kbar_usda.3c2_wpct` = 15 bar water on air dry soil is the gravimetric water content of <2 mm air dry samples after equilibration at 15 bars water tension. It is reported on a <2 mm base. The value is influenced by clay %, mineralogy, and organic carbon %.\
 
-- 🆔 `wr.1500kbar_usda.3c2_wpct`  
-- 📚 Measurement unit: weight percent  
-- 🔬 Laboratory method: Pressure-Membrane Extraction  
-- 📖 Scientific reference: @agriculture2019soil   
+### ca.ext_usda.a1059_mg.kg
 
+📚 Description: Exchangeable or plant available Ca.. It can be alternatively described as `Calcium, Extractable, Mehlich3`.
 
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "wr.1500kbar_usda.3c2_wpct", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="PWP wprm", xlab="depth in cm")
-```
+🔢 Type: numeric.
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-wp-1.png" alt="Soil-depth histogram for Water Retention at 15 Bar (Permanent Wilting Point) in wpct." width="70%" />
-<p class="caption">(\#fig:plot-wp)Soil-depth histogram for Water Retention at 15 Bar (Permanent Wilting Point) in wpct.</p>
-</div>
+📖 Example: 78.20000.
 
+🟢 Availability: level 0 and level 1 (harmonized).
 
-<div class="figure" style="text-align: center">
-<img src="hist/wr.1500kbar_usda.3c2_wpct_hist.png" alt="Organic carbon in weight percent histograms." width="70%" />
-<p class="caption">(\#fig:hist-wp1)Organic carbon in weight percent histograms.</p>
-</div>
+<img src="./heatmap_v1.2/heatmap_L1_ca.ext_usda.a1059_mg.kg.png" heigth=100% width=100%>
 
-### wr.33kbar_usda.3c1_wpct
 
-Water Retention, 1/3 Bar, <2mm Clod; [description](https://www.nrcs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb1253872.pdf#page=205): `wr.33kbar_usda.3c1_wpct` = 1/3 bar water, clods is the gravimetric percent water in natural fabric (clods) after equilibration at 1/3 bar water tension. It is reported on a <2 mm base.\
+### ca.ext_usda.a722_cmolc.kg
 
-- 🆔 `wr.33kbar_usda.3c1_wpct`  
-- 📚 Measurement unit: weight percent  
-- 🔬 Laboratory method: Pressure-Membrane Extraction  
-- 📖 Scientific reference: @agriculture2019soil   
+📚 Description: Exchangeable or plant available Ca.. It can be alternatively described as `Calcium, Extractable, NH4OAc`.
 
+📐 Measurement unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
 
+🔢 Type: numeric.
 
-```r
-openair::scatterPlot(ossl.yw, x = "depth", y = "wr.33kbar_usda.3c1_wpct", method = "hexbin", 
-                     col = "increment", log.x = TRUE, log.y=TRUE, ylab="FC wpct", xlab="depth in cm")
-```
+📖 Example: 2.617060178.
 
-<div class="figure" style="text-align: center">
-<img src="020-variables_list_files/figure-html/plot-fc-1.png" alt="Soil-depth histogram for Water Retention at 1/3 Bar (Field Capacity) in wpct." width="70%" />
-<p class="caption">(\#fig:plot-fc)Soil-depth histogram for Water Retention at 1/3 Bar (Field Capacity) in wpct.</p>
-</div>
+🟢 Availability: level 0 and level 1 (harmonized).
 
+<img src="./heatmap_v1.2/heatmap_L1_ca.ext_usda.a722_cmolc.kg.png" heigth=100% width=100%>
 
-<div class="figure" style="text-align: center">
-<img src="hist/wr.33kbar_usda.3c1_wpct_hist.png" alt="Water Retention at 1/3 Bar in weight percent histograms." width="70%" />
-<p class="caption">(\#fig:hist-fc1)Water Retention at 1/3 Bar in weight percent histograms.</p>
-</div>
 
+### caco3_iso.10693_w.pct
 
-## MIR scans table {#mir-table}
+📚 Description: Carbonate in the <2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a <2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid.. It can be alternatively described as `Carbonate, iso 10693`.
 
-### id.scan_uuid_c
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
 
-**Unique scan ID**: Should be best generated using some [UUID generator tool](https://cran.r-project.org/package=uuid); example: `id.scan_uuid_c = 'a10c95104a1549ad1484426cd1595cdb'`\
+🔢 Type: numeric.
+
+📖 Example: 27.0.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_caco3_iso.10693_w.pct.png" heigth=100% width=100%>
+
+
+### caco3_usda.a54_w.pct
+
+📚 Description: Carbonate in the <2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a <2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid.. It can be alternatively described as `Carbonate, <2mm Fraction`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 0.50000.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_caco3_usda.a54_w.pct.png" heigth=100% width=100%>
+
+
+### cec_iso.11260_cmolc.kg
+
+📚 Description: Cation exchange capacity of a sample highly buffered at pH 7.0. It is reported as cmolc kg-1 (= meq per 100 grams) on a <2 mm base.. It can be alternatively described as `CEC, pH 7.0, iso 11260`.
+
+📐 Measurement unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 37.8.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_cec_iso.11260_cmolc.kg.png" heigth=100% width=100%>
+
+
+### cec_usda.a723_cmolc.kg
+
+📚 Description: Cation exchange capacity of a sample highly buffered at pH 7.0. It is reported on a <2 mm base.. It can be alternatively described as `CEC, pH 7.0, NH4OAc, 2M KCl displacement`.
+
+📐 Measurement unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 6.6332171.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_cec_usda.a723_cmolc.kg.png" heigth=100% width=100%>
+
+
+### cf_iso.11464_w.pct
+
+📚 Description: The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.. It can be alternatively described as `Coarse Fragments, iso 11464`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 10.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_cf_iso.11464_w.pct.png" heigth=100% width=100%>
+
+
+### cf_usda.c236_w.pct
+
+📚 Description: The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.. It can be alternatively described as `Coarse Fragments, Greater 2mm`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 4.00000.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_cf_usda.c236_w.pct.png" heigth=100% width=100%>
+
+
+### clay.tot_iso.11277_w.pct
+
+📚 Description: Total clay is the soil separate with <0.002 mm particle diameter. Clay size carbonate is included. It is reported on a <2 mm base.. It can be alternatively described as `Clay, iso 11277`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 51.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_clay.tot_iso.11277_w.pct.png" heigth=100% width=100%>
+
+
+### clay.tot_usda.a334_w.pct
+
+📚 Description: Total clay is the soil separate with <0.002 mm particle diameter. Clay size carbonate is included. It is reported on a <2 mm base.. It can be alternatively described as `Clay`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 30.99000.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_clay.tot_usda.a334_w.pct.png" heigth=100% width=100%>
+
+
+### cu.ext_usda.a1063_mg.kg
+
+📚 Description: Exchangeable or plant available Cu.. It can be alternatively described as `Copper, Extractable, Mehlich3`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 0.5600000.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_cu.ext_usda.a1063_mg.kg.png" heigth=100% width=100%>
+
+
+### ec_iso.11265_ds.m
+
+📚 Description: Electrical conductivity. It is reported of a 1:2 soil:water mixture. It can be alternatively described as `Electrical Conductivity, iso 11265`.
+
+📐 Measurement unit: Imported into the OSSL as `ds.m`, i.e., decisiemens per metre.
+
+🔢 Type: numeric.
+
+📖 Example: 2.3350.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_ec_iso.11265_ds.m.png" heigth=100% width=100%>
+
+
+### ec_usda.a364_ds.m
+
+📚 Description: Electrical conductivity. It is reported of a 1:2 soil:water mixture. It can be alternatively described as `Electrical Conductivity, (w/w)`.
+
+📐 Measurement unit: Imported into the OSSL as `ds.m`, i.e., decisiemens per metre.
+
+🔢 Type: numeric.
+
+📖 Example: 0.03100.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_ec_usda.a364_ds.m.png" heigth=100% width=100%>
+
+
+### efferv_usda.a479_class
+
+📚 Description: The visual effervescence of the prepared sample when treated with 1 N HCl.. It can be alternatively described as `Effervescense, 1N HCl`.
+
+📐 Measurement unit: Imported into the OSSL as `class`, i.e., class of visual interpretation.
+
+🔢 Type: string.
+
+📖 Example: none.
+
+🟡 Availability: only level 0.
+
+
+### fe.dith_usda.a66_w.pct
+
+📚 Description: Dithionite citrate extractable iron is considered a general measure of total pedogenic iron.. It can be alternatively described as `Iron, Crystalline, Total Pedogenic Iron`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 1.09028.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_fe.dith_usda.a66_w.pct.png" heigth=100% width=100%>
+
+
+### fe.ext_aquaregia_g.kg
+
+📚 Description: Exchangeable or plant available Fe.. It can be alternatively described as `Iron, Extractable, Aqua Regia`.
+
+📐 Measurement unit: Imported into the OSSL as `g.kg`, i.e., grams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 71.9575342.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_fe.ext_aquaregia_g.kg.png" heigth=100% width=100%>
+
+
+### fe.ext_usda.a1064_mg.kg
+
+📚 Description: Exchangeable or plant available Fe.. It can be alternatively described as `Iron, Extractable, Mehlich3`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 182.00000.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_fe.ext_usda.a1064_mg.kg.png" heigth=100% width=100%>
+
+
+### fe.ox_usda.a60_w.pct
+
+📚 Description: Ammonium oxalate extractable iron is considered a measure of the noncrystalline Fe in soils.. It can be alternatively described as `Iron, Amorphous, Total Non-Crystalline Iron`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 0.15422.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_fe.ox_usda.a60_w.pct.png" heigth=100% width=100%>
+
+
+### k.ext_aquaregia_mg.kg
+
+📚 Description: Exchangeable or plant available K.. It can be alternatively described as `Sodium, Extractable, Aqua Regia`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 1781.400966.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_k.ext_aquaregia_mg.kg.png" heigth=100% width=100%>
+
+
+### k.ext_usda.a1065_mg.kg
+
+📚 Description: Exchangeable or plant available K.. It can be alternatively described as `Sodium, Extractable, Mehlich3`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 47.000000.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_k.ext_usda.a1065_mg.kg.png" heigth=100% width=100%>
+
+
+### k.ext_usda.a725_cmolc.kg
+
+📚 Description: Exchangeable or plant available K.. It can be alternatively described as `Sodium, Extractable, NH4OAc, 2M KCl displacement`.
+
+📐 Measurement unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 0.200688352.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_k.ext_usda.a725_cmolc.kg.png" heigth=100% width=100%>
+
+
+### mg.ext_aquaregia_mg.kg
+
+📚 Description: Exchangeable or plant available Mg.. It can be alternatively described as `Magnesium, Extractable, Aqua Regia`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 710.429099.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_mg.ext_aquaregia_mg.kg.png" heigth=100% width=100%>
+
+
+### mg.ext_usda.a1066_mg.kg
+
+📚 Description: Exchangeable or plant available Mg.. It can be alternatively described as `Magnesium, Extractable, Mehlich3`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 19.600000.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_mg.ext_usda.a1066_mg.kg.png" heigth=100% width=100%>
+
+
+### mg.ext_usda.a724_cmolc.kg
+
+📚 Description: Exchangeable or plant available Mg.. It can be alternatively described as `Magnesium, Extractable, NH4OAc, 2M KCl displacement`.
+
+📐 Measurement unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 1.81655342.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_mg.ext_usda.a724_cmolc.kg.png" heigth=100% width=100%>
+
+
+### mn.ext_aquaregia_mg.kg
+
+📚 Description: Exchangeable or plant available Mn.. It can be alternatively described as `Manganese, Extractable, Aqua Regia`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 497.300369.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_mn.ext_aquaregia_mg.kg.png" heigth=100% width=100%>
+
+
+### mn.ext_usda.a1067_mg.kg
+
+📚 Description: Exchangeable or plant available Mn.. It can be alternatively described as `Manganese, Extractable, Mehlich3`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 23.10000000.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_mn.ext_usda.a1067_mg.kg.png" heigth=100% width=100%>
+
+
+### mn.ext_usda.a70_mg.kg
+
+📚 Description: Exchangeable or plant available Mn.. It can be alternatively described as `Manganese, Extractable, KCl`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 0.62569.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_mn.ext_usda.a70_mg.kg.png" heigth=100% width=100%>
+
+
+### n.tot_iso.11261_w.pct
+
+📚 Description: Total nitrogen is a measure of all organic and inorganic nitrogen.. It can be alternatively described as `Nitrogen, Total NCS, iso 11261`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 0.25.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_n.tot_iso.11261_w.pct.png" heigth=100% width=100%>
+
+
+### n.tot_iso.13878_w.pct
+
+📚 Description: Total nitrogen is a measure of all organic and inorganic nitrogen.. It can be alternatively described as `Nitrogen, Total NCS, iso 13878`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 0.089.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_n.tot_iso.13878_w.pct.png" heigth=100% width=100%>
+
+
+### n.tot_usda.a623_w.pct
+
+📚 Description: Total nitrogen is a measure of all organic and inorganic nitrogen.. It can be alternatively described as `Nitrogen, Total NCS`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 0.079766974.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_n.tot_usda.a623_w.pct.png" heigth=100% width=100%>
+
+
+### na.ext_aquaregia_mg.kg
+
+📚 Description: Exchangeable or plant availableNa.. It can be alternatively described as `Potassium, Extractable, Aqua Regia`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 75.986312.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_na.ext_aquaregia_mg.kg.png" heigth=100% width=100%>
+
+
+### na.ext_usda.a1068_mg.kg
+
+📚 Description: Exchangeable or plant availableNa.. It can be alternatively described as `Potassium, Extractable, Mehlich3`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 17.800000.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_na.ext_usda.a1068_mg.kg.png" heigth=100% width=100%>
+
+
+### na.ext_usda.a726_cmolc.kg
+
+📚 Description: Exchangeable or plant availableNa.. It can be alternatively described as `Potassium, Extractable, NH4OAc, 2M KCl displacement`.
+
+📐 Measurement unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 0.124398521.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_na.ext_usda.a726_cmolc.kg.png" heigth=100% width=100%>
+
+
+### oc_iso.10694_w.pct
+
+📚 Description: Estimated Organic Carbon based on Total C. It can be alternatively described as `Organic Carbon, iso 10694`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 2.05000000.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_oc_iso.10694_w.pct.png" heigth=100% width=100%>
+
+
+### oc_usda.c1059_w.pct
+
+📚 Description: Estimated Organic Carbon based on Total C. It can be alternatively described as `Organic Carbon, Total C without CaCO3, N prep`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 1.50336492.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_oc_usda.c1059_w.pct.png" heigth=100% width=100%>
+
+
+### oc_usda.c729_w.pct
+
+📚 Description: Estimated Organic Carbon based on Total C. It can be alternatively described as `Organic Carbon, Total C without CaCO3, S prep`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 2.9100.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_oc_usda.c729_w.pct.png" heigth=100% width=100%>
+
+
+### p.ext_aquaregia_mg.kg
+
+📚 Description: Plant available P.. It can be alternatively described as `Phosphorus, Extractable, Aqua Regia`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 608.30492.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_p.ext_aquaregia_mg.kg.png" heigth=100% width=100%>
+
+
+### p.ext_iso.11263_mg.kg
+
+📚 Description: Plant available P.. It can be alternatively described as `Phosphorus, Extractable, iso 11263`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 72.4.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_p.ext_iso.11263_mg.kg.png" heigth=100% width=100%>
+
+
+### p.ext_usda.a1070_mg.kg
+
+📚 Description: Plant available P.. It can be alternatively described as `Phosphorus, Extractable, Mehlich3`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 3.44739.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_p.ext_usda.a1070_mg.kg.png" heigth=100% width=100%>
+
+
+### p.ext_usda.a270_mg.kg
+
+📚 Description: Plant available P.. It can be alternatively described as `Phosphorus, Extractable, Bray1`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 50.5348939.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_p.ext_usda.a270_mg.kg.png" heigth=100% width=100%>
+
+
+### p.ext_usda.a274_mg.kg
+
+📚 Description: Plant available P.. It can be alternatively described as `Phosphorus, Extractable, Olsen`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 17.23518992.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_p.ext_usda.a274_mg.kg.png" heigth=100% width=100%>
+
+
+### p.ext_usda.a652_mg.kg
+
+📚 Description: Plant available P.. It can be alternatively described as `Phosphorus, Extractable, Mehlich3`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 9.770000.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_p.ext_usda.a652_mg.kg.png" heigth=100% width=100%>
+
+
+### ph.cacl2_iso.10390_index
+
+📚 Description: pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.. It can be alternatively described as `pH, 1:2 Soil-CaCl2 Suspension, iso 10390`.
+
+📐 Measurement unit: Imported into the OSSL as `index`, i.e., negative logarithm of the hydrogen ion concentration.
+
+🔢 Type: numeric.
+
+📖 Example: 7.24.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_ph.cacl2_iso.10390_index.png" heigth=100% width=100%>
+
+
+### ph.cacl2_usda.a477_index
+
+📚 Description: pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.. It can be alternatively described as `pH, 1:2 Soil-CaCl2 Suspension, 0.01 M CaCl2`.
+
+📐 Measurement unit: Imported into the OSSL as `index`, i.e., negative logarithm of the hydrogen ion concentration.
+
+🔢 Type: numeric.
+
+📖 Example: 5.40.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_ph.cacl2_usda.a477_index.png" heigth=100% width=100%>
+
+
+### ph.cacl2_usda.a481_index
+
+📚 Description: pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.. It can be alternatively described as `pH, 1:2 Soil-CaCl2 Suspension`.
+
+📐 Measurement unit: Imported into the OSSL as `index`, i.e., negative logarithm of the hydrogen ion concentration.
+
+🔢 Type: numeric.
+
+📖 Example: 6.40000.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_ph.cacl2_usda.a481_index.png" heigth=100% width=100%>
+
+
+### ph.h2o_iso.10390_index
+
+📚 Description: pH of the 1:1 soil:water suspension.. It can be alternatively described as `pH, 1:1 Soil-Water Suspension, iso 10390`.
+
+📐 Measurement unit: Imported into the OSSL as `index`, i.e., negative logarithm of the hydrogen ion concentration.
+
+🔢 Type: numeric.
+
+📖 Example: 7.64.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_ph.h2o_iso.10390_index.png" heigth=100% width=100%>
+
+
+### ph.h2o_usda.a268_index
+
+📚 Description: pH of the 1:1 soil:water suspension.. It can be alternatively described as `pH, 1:1 Soil-Water Suspension`.
+
+📐 Measurement unit: Imported into the OSSL as `index`, i.e., negative logarithm of the hydrogen ion concentration.
+
+🔢 Type: numeric.
+
+📖 Example: 5.10000.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_ph.h2o_usda.a268_index.png" heigth=100% width=100%>
+
+
+### s.ext_mel3_mg.kg
+
+📚 Description: Exchangeable or plant available S.. It can be alternatively described as `Sulphur, Extractable, Mehlich3`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 16.800.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_s.ext_mel3_mg.kg.png" heigth=100% width=100%>
+
+
+### s.tot_usda.a624_w.pct
+
+📚 Description: Total sulfur is a measure of all organic and inorganic sulfur, including that found in sulfide minerals.. It can be alternatively described as `Sulfur, Total NCS`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 0.03569.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_s.tot_usda.a624_w.pct.png" heigth=100% width=100%>
+
+
+### sand.tot_iso.11277_w.pct
+
+📚 Description: Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a <2 mm base.. It can be alternatively described as `Sand, Total, iso 11277`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 9.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_sand.tot_iso.11277_w.pct.png" heigth=100% width=100%>
+
+
+### sand.tot_usda.c405_w.pct
+
+📚 Description: Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a <2 mm base.. It can be alternatively described as `Sand, Total, N prep`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 79.4.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_sand.tot_usda.c405_w.pct.png" heigth=100% width=100%>
+
+
+### sand.tot_usda.c60_w.pct
+
+📚 Description: Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a <2 mm base.. It can be alternatively described as `Sand, Total, S prep`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 50.37000.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_sand.tot_usda.c60_w.pct.png" heigth=100% width=100%>
+
+
+### silt.tot_iso.11277_w.pct
+
+📚 Description: Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a <2 mm base.. It can be alternatively described as `Silt, Total, iso 11277`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 40.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_silt.tot_iso.11277_w.pct.png" heigth=100% width=100%>
+
+
+### silt.tot_usda.c407_w.pct
+
+📚 Description: Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a <2 mm base.. It can be alternatively described as `Silt, Total, N prep`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 18.2.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_silt.tot_usda.c407_w.pct.png" heigth=100% width=100%>
+
+
+### silt.tot_usda.c62_w.pct
+
+📚 Description: Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a <2 mm base.. It can be alternatively described as `Silt, Total, S prep`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 18.64000.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_silt.tot_usda.c62_w.pct.png" heigth=100% width=100%>
+
+
+### wr.10kPa_usda.a414_w.pct
+
+📚 Description: The gravimetric percent water after equilibration at 1/10 bar (10 kPa) water tension.. It can be alternatively described as `Water Retention, 1/10 Bar (10 kPa)`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 10.852961.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_wr.10kPa_usda.a414_w.pct.png" heigth=100% width=100%>
+
+
+### wr.10kPa_usda.a8_w.pct
+
+📚 Description: The gravimetric percent water after equilibration at 1/10 bar (10 kPa) water tension.. It can be alternatively described as `Water Retention, 1/10 Bar (10 kPa), Clod`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 23.00000.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_wr.10kPa_usda.a8_w.pct.png" heigth=100% width=100%>
+
+
+### wr.1500kPa_usda.a417_w.pct
+
+📚 Description: The gravimetric percent water after equilibration at 15 bar (1500 kPa) water tension.. It can be alternatively described as `Water Retention, 15 Bar (1500 kPa)`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 3.000000.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_wr.1500kPa_usda.a417_w.pct.png" heigth=100% width=100%>
+
+
+### wr.33kPa_usda.a415_w.pct
+
+📚 Description: The gravimetric percent water after equilibration at 1/3 bar (33 kPa) water tension.. It can be alternatively described as `Water Retention, 1/3 Bar (33 kPa)`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 29.17023.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_wr.33kPa_usda.a415_w.pct.png" heigth=100% width=100%>
+
+
+### wr.33kPa_usda.a9_w.pct
+
+📚 Description: The gravimetric percent water after equilibration at 1/3 bar (33 kPa) water tension.. It can be alternatively described as `Water Retention, 1/3 Bar (33 kPa), Clod`.
+
+📐 Measurement unit: Imported into the OSSL as `w.pct`, i.e., weight percent.
+
+🔢 Type: numeric.
+
+📖 Example: 18.20000.
+
+🟡 Availability: only level 0.
+
+<img src="./heatmap_v1.2/heatmap_L0_wr.33kPa_usda.a9_w.pct.png" heigth=100% width=100%>
+
+
+### zn.ext_usda.a1073_mg.kg
+
+📚 Description: Exchangeable or plant available Zn.. It can be alternatively described as `Zinc, Extractable, Mehlich3`.
+
+📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
+
+🔢 Type: numeric.
+
+📖 Example: 1.0300000.
+
+🟢 Availability: level 0 and level 1 (harmonized).
+
+<img src="./heatmap_v1.2/heatmap_L1_zn.ext_usda.a1073_mg.kg.png" heigth=100% width=100%>
+
+## MIR scans {#mir-table}
+
+
+### id.layer_uuid_txt
+
+📚 Description: OSSL unique identifier.
+
+🔢 Type: string.
+
+📖 Example: 8585028b0344511c951fc0298b5ab3a8.
+
 
 ### id.scan_local_c
 
-Local scan ID of the sample; example: `id.scan_local_c = '32987'`\
+📚 Description: Original scan identifier.
 
-### id.layer_uuid_c 
+🔢 Type: string.
 
-Unique site ID generated using some [UUID generator tool](https://cran.r-project.org/package=uuid); example: `id.layer_uuid_c = '147540e129e096fa91700e9db6588354'`\
-This ID links with the [Sites table](#sites-table).
-
-### id.layer_local_c
-
-Local original layer ID; example: `id.layer_local_c = '456002'`\
-This ID links with the [Sites table](#sites-table).
-
-### model.name_utf8_txt
-
-Instrument model name; example: `model.name_utf8_txt = 'Bruker Vertex 70 with HTS-XT accessory'`\
-
-### model.code_any_c
-
-Instrument model code; example: `model.code_any_c = 'Bruker_Vertex_70.HTS.XT'`\
-
-### method.light.source_any_c
-
-Laboratory light source type.
-
-### method.preparation_any_c
-
-Laboratory method preparation for samples in the lab or in the field.
-
-### scan.file_any_c
-
-File name of the original scan.
-
-### scan.date.begin_iso.8601_yyyy.mm.dd
-
-Scan date begin ([ISO8601](https://en.wikipedia.org/wiki/ISO_8601)); example: `scan.date.begin_iso.8601_yyyy.mm.dd = '2020-11-20'`\
-
-### scan.date.end_iso.8601_yyyy.mm.dd
-
-Scan date end ([ISO8601](https://en.wikipedia.org/wiki/ISO_8601)); example: `scan.date.end_iso.8601_yyyy.mm.dd = '2020-11-20'`\
-
-### scan.license.title_ascii_txt
-
-Scan license title; example: `scan.license.title_ascii_txt = 'CC-BY'`\
-
-### scan.license.address_idn_url
-
-Scan license address; example: `scan.license.address_idn_url = 'https://ncsslabdatamart.sc.egov.usda.gov/datause.aspx'`\
-
-### scan.doi_idf_c
-
-Unique DOI that can be used when citing the scan; example: `scan.doi_idf_c = ''`\
-
-### scan.contact.name_utf8_txt
-
-Scan contact name; example: `scan.contact.name_utf8_txt = 'Scarlett Murphy'`\
-
-### scan.contact.email_ietf_email
-
-Scan contact email; example: `scan.contact.email_ietf_email = 'Scarlett.Murphy@usda.gov'`\
-
-### scan.mir.nafreq_ossl_pct
-
-Percent of absorbances with missing values per scan.
-
-### scan.mir.negfreq_ossl_pct
-
-Percent of absorbances with 0 / negative values per scan.
-
-### scan.mir.extfreq_ossl_pct
-
-Percent of absorbances with extreme values (>= 3) per scan.
-
-### scan_mir.****_abs
-
-Absorbance values per band usually ranging between 0–3000 (multiplied by 1000).
-To generate the band names use e.g.:
+📖 Example: icr021044.
 
 
-```r
-x = paste0("scan_mir.", seq(600, 4000, by=2), "_abs")
-str(x)
-#>  chr [1:1701] "scan_mir.600_abs" "scan_mir.602_abs" "scan_mir.604_abs" ...
-```
+### scan.mir.date.begin_iso.8601_yyyy.mm.dd
+
+📚 Description: Begin date of scanning following YYYY-MM-DD format (ISO 8601).
+
+🔢 Type: numeric.
+
+📖 Example: 2009-01-01.
 
 
-## VisNIR scans table {#visnir-table}
+### scan.mir.date.end_iso.8601_yyyy.mm.dd
 
-### id.scan_uuid_c
+📚 Description: Begin date of scanning following YYYY-MM-DD format (ISO 8601).
 
-**Unique scan ID**: Should be best generated using some [UUID generator tool](https://cran.r-project.org/package=uuid); example: `id.scan_uuid_c = 'a10c95104a1549ad1484426cd1595cdb'`\
+🔢 Type: numeric.
+
+📖 Example: 2013-12-31.
+
+
+### scan.mir.model.name_utf8_txt
+
+📚 Description: MIR instrument manufacturer, model and accessory (if any).
+
+🔢 Type: string.
+
+📖 Example: Bruker Tensor 27 with HTS-XT accessory.
+
+
+### scan.mir.model.code_any_txt
+
+📚 Description: MIR instrument coding.
+
+🔢 Type: string.
+
+📖 Example: Bruker_Tensor_27.HTS.XT.
+
+
+### scan.mir.method.optics_any_txt
+
+📚 Description: Metadata information related to instrument optics and measurements.
+
+🔢 Type: string.
+
+📖 Example: KBr beamsplitter; DTGS detector.
+
+
+### scan.mir.method.preparation_any_txt
+
+📚 Description: Soil sample preparation before scanning.
+
+🔢 Type: string.
+
+📖 Example: Finely ground <80 mesh.
+
+
+### scan.mir.license.title_ascii_txt
+
+📚 Description: Dataset scans license.
+
+🔢 Type: string.
+
+📖 Example: CC-BY.
+
+
+### scan.mir.license.address_idn_url
+
+📚 Description: Dataset scans license url.
+
+🔢 Type: string.
+
+📖 Example: https://creativecommons.org/licenses/by/4.0/.
+
+
+### scan.mir.doi_idf_url
+
+📚 Description: Digital object identifier (DOI) url of the dataset scans.
+
+🔢 Type: string.
+
+📖 Example: https://doi.org/10.34725/DVN/QXCWP1.
+
+
+### scan.mir.contact.name_utf8_txt
+
+📚 Description: Dataset scans contact name.
+
+🔢 Type: string.
+
+📖 Example: Vagen, Tor-Gunnar (World Agroforestry).
+
+
+### scan.mir.contact.email_ietf_txt
+
+📚 Description: Dataset scans contact email.
+
+🔢 Type: string.
+
+📖 Example: afsis.info@africasoils.net.
+
+
+### scan_mir.600_abs
+
+📚 Description: Absorbance in log10 unit, first wavenumber in the 600-4000 cm-1 range.
+
+🔢 Type: numeric.
+
+📖 Example: 1.38812.
+
+
+### scan_mir.4000_abs
+
+📚 Description: Absorbance in log10 unit, last wavenumber in the 600-4000 cm-1 range.
+
+🔢 Type: numeric.
+
+📖 Example: 0.2452604.
+
+## VisNIR scans {#visnir-table}
+
+
+### id.layer_uuid_txt
+
+📚 Description: OSSL unique identifier.
+
+🔢 Type: string.
+
+📖 Example: bb01d3da0ea0d4d796b3391bb1d174f1.
+
 
 ### id.scan_local_c
 
-Local scan ID of the sample; example: `id.scan_local_c = '32987'`\
+📚 Description: Original scan identifier.
 
-### id.layer_uuid_c 
+🔢 Type: string.
 
-Unique site ID generated using some [UUID generator tool](https://cran.r-project.org/package=uuid); example: `id.layer_uuid_c = '147540e129e096fa91700e9db6588354'`\
-This ID links with the [Sites table](#sites-table).
+📖 Example: 196784MD01.
 
-### id.layer_local_c
 
-Local original layer ID; example: `id.layer_local_c = '456002'`\
-This ID links with the [Sites table](#sites-table).
+### scan.visnir.date.begin_iso.8601_yyyy.mm.dd
 
-### model.name_utf8_txt
+📚 Description: Begin date of scanning following YYYY-MM-DD format (ISO 8601).
 
-Instrument model name; example: `model.name_utf8_txt = 'Bruker Vertex 70 with HTS-XT accessory'`\
+🔢 Type: numeric.
 
-### model.code_any_c
+📖 Example: 2015-03-05.
 
-Instrument model code; example: `model.code_any_c = 'Bruker_Vertex_70.HTS.XT'`\
 
-### method.light.source_any_c
+### scan.visnir.date.end_iso.8601_yyyy.mm.dd
 
-Laboratory light source type.
+📚 Description: Begin date of scanning following YYYY-MM-DD format (ISO 8601).
 
-### method.preparation_any_c
+🔢 Type: numeric.
 
-Laboratory method preparation for samples in the lab or in the field.
+📖 Example: 2015-03-05.
 
-### scan.file_any_c
 
-File name of the original scan.
+### scan.visnir.model.name_utf8_txt
 
-### scan.date.begin_iso.8601_yyyy.mm.dd
+📚 Description: VisNIR instrument manufacturer, model and accessory (if any).
 
-Scan date begin ([ISO8601](https://en.wikipedia.org/wiki/ISO_8601)); example: `scan.date.begin_iso.8601_yyyy.mm.dd = '2020-11-20'`\
+🔢 Type: string.
 
-### scan.date.end_iso.8601_yyyy.mm.dd
+📖 Example: ASD Labspec 2500 with Muglight accessory.
 
-Scan date end ([ISO8601](https://en.wikipedia.org/wiki/ISO_8601)); example: `scan.date.end_iso.8601_yyyy.mm.dd = '2020-11-20'`\
 
-### scan.license.title_ascii_txt
+### scan.visnir.model.code_any_txt
 
-Scan license title; example: `scan.license.title_ascii_txt = 'CC-BY'`\
+📚 Description: VisNIR instrument coding.
 
-### scan.license.address_idn_url
+🔢 Type: string.
 
-Scan license address; example: `scan.license.address_idn_url = 'https://ncsslabdatamart.sc.egov.usda.gov/datause.aspx'`\
+📖 Example: ASD_Labspec_2500_MA.
 
-### scan.doi_idf_c
 
-Unique DOI that can be used when citing the scan; example: `scan.doi_idf_c = ''`\
+### scan.visnir.method.optics_any_txt
 
-### scan.contact.name_utf8_txt
+📚 Description: Metadata information related to instrument optics and measurements.
 
-Scan contact name; example: `scan.contact.name_utf8_txt = 'Scarlett Murphy'`\
+🔢 Type: string.
 
-### scan.contact.email_ietf_email
+📖 Example: 4.5 W halogen lamp.
 
-Scan contact email; example: `scan.contact.email_ietf_email = 'Scarlett.Murphy@usda.gov'`\
 
-### scan.visnir.nafreq_ossl_pct
+### scan.visnir.method.preparation_any_txt
 
-Percent of reflectances with missing values per scan.
+📚 Description: Soil sample preparation before scanning.
 
-### scan.visnir.negfreq_ossl_pct
+🔢 Type: string.
 
-Percent of reflectances with 0 / negative values per scan.
+📖 Example: Sieved <2 mm.
 
-### scan.visnir.extfreq_ossl_pct
 
-Percent of reflectances with extreme values (>= 100) per scan.
+### scan.visnir.license.title_ascii_txt
 
-### scan_visnir.****_pcnt
+📚 Description: Dataset scans license.
 
-Reflectance values per band usually ranging between 0–100 (multiplied by 100).
-To generate the band names use e.g.:
+🔢 Type: string.
 
+📖 Example: CC-BY.
 
-```r
-x = paste0("scan_visnir.", seq(350, 2500, by=2), "_pcnt")
-str(x)
-#>  chr [1:1076] "scan_visnir.350_pcnt" "scan_visnir.352_pcnt" ...
-```
 
-To convert reflectance values to absorbances use:
+### scan.visnir.license.address_idn_url
 
+📚 Description: Dataset scans license url.
 
-```r
-a = seq(0, 3000, by=10)
-r = 1/exp(a/1000) * 100
-plot(data.frame(a,r), type="l", xlab="Absorbance", ylab="Reflectance [%]")
-```
+🔢 Type: string.
 
-<img src="020-variables_list_files/figure-html/unnamed-chunk-6-1.png" width="70%" style="display: block; margin: auto;" />
+📖 Example: https://www.nrcs.usda.gov/resources/data-and-reports/rapid-carbon-assessment-raca.
 
 
-## Harmonization rules
+### scan.visnir.doi_idf_url
 
-The following text includes harmonization / conversion rules recommended in this project.
-For each conversion rule, a reference and an example are provided to prevent from 
-misusing the rules. The following principle of harmonization are highly recommended:
+📚 Description: Digital object identifier (DOI) url of the dataset scans.
 
-1. Document (R code) any harmonization / conversion steps.\
-2. Where possible provide propagated measure of uncertainty. This can further used 
-as weights in the Machine Learning / model building.\
-3. Any conversion that leads to inducting significant bias (over-/under-estimation 
-of values) should we avoided.\
-4. Add to the produced dataset metadata that part of data has been harmonized and 
-specify exact method.\
+🔢 Type: string.
 
-Disclaimer: use at own risk. See also our general disclaimer.
+📖 Example: https://doi.org/10.1007/978-3-319-04084-4_10.
 
-### pH
 
-From `ph.kcl_usda.4c1_index` to `ph.h2o_usda.4c1_index` based on @bohner2008saga:
+### scan.visnir.contact.name_utf8_txt
 
+📚 Description: Dataset scans contact name.
 
-```r
-ph.kcl = 6.5
-ph.h2o = ph.kcl / 0.87
-ph.h2o
-#> [1] 7.471264
-```
+🔢 Type: string.
 
-From `ph.cacl2_usda.4c1_index` to `ph.h2o_usda.4c1_index` based on @miller2010comparison:
+📖 Example: Scarlett Murphy.
 
 
-```r
-ph.cacl2 = 6.5
-ph.h2o = (ph.cacl2 + 0.973 ) / 1.08
-ph.h2o
-#> [1] 6.919444
-```
+### scan.visnir.contact.email_ietf_txt
 
+📚 Description: Dataset scans contact email.
 
-### Carbon
+🔢 Type: string.
 
-From `humus_usda.4h2_wpct` to `oc_usda.4h2_wpct` based on @nelson1983total:
+📖 Example: Scarlett.Murphy@usda.gov.
 
 
-```r
-humus = 4
-oc = humus / 1.724
-oc
-#> [1] 2.320186
-```
+### scan_visnir.350_ref
 
-From `humus_usda.4h2_wpct` to `oc_usda.4h2_wpct` based on @jensen2018converting:
+📚 Description: Reflectance in fraction unit, first wavelength in the 350-2500 nm range.
 
+🔢 Type: numeric.
 
-```r
-humus = 4; clay = 10
-oc1 = 0.513 * humus - (0.047 * clay - 0.00025 * clay^2)
-oc1
-#> [1] 1.607
-humus = 4; clay = 20
-oc2 = 0.513 * humus - (0.047 * clay - 0.00025 * clay^2)
-oc2
-#> [1] 1.212
-```
+📖 Example: 0.10403320.
 
-### Phosphorous
 
-### Potassium
+### scan_visnir.2500_ref
 
-### Nitrogen
+📚 Description: Reflectance in fraction unit, last wavelength in the 350-2500 nm range.
 
-### Exchangeable cations and CEC
+🔢 Type: numeric.
 
-From `k.ext` extracted by Mehlich-3 (cmol/kg) to `ecec.ext_usda.4b1_cmolkg` based on @helling1964contribution:
-
-
-```r
-ph.h2o = 6.5
-k.ext = 2
-ca.ext = 12
-na.ext = 2
-mg.ext = 1
-ecec.ext = ifelse(ph.h2o < 7.5 & ph.h2o>4, (k.ext + ca.ext + na.ext + mg.ext), NA)
-ecec.ext
-#> [1] 17
-```
-
-From `oc_usda.4h2_wpct` to `ecec.ext_usda.4b1_cmolkg` based on @helling1964contribution:
-
-
-```r
-clay.tot = 28
-ph.h2o = 6.5
-oc = 2
-ecec.ext = ((clay.tot*10/100*(30+4.4*ph.h2o))+(oc/100*(-59+51*ph.h2o)))/10
-ecec.ext
-#> [1] 16.953
-```
-
-### Texture fractions
-
-### Bulk density
-
-### Soil biological variables
-
-### Soil contaminants
-
+📖 Example: 0.3622029.

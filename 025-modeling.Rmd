@@ -60,9 +60,10 @@ OSSL model registry (RDS) S3 file services currently includes large number of
 prediction models fitted for a list of soil properties. The complete list is available in the file **[OSSL_models_meta.csv](https://github.com/soilspectroscopy/ossl-models)**.
 
 ```{r, echo=FALSE, message=FALSE, results='hide'}
-#remotes::install_github("philipp-baumann/simplerspec")
+remotes::install_github("philipp-baumann/simplerspec")
 #devtools::install_github("pierreroudier/asdreader")
-ls <- c("plyr", "rgdal", "terra", "mlr", "ranger", "xgboost", "Cubist", "fastDummies", "prospectr", "simplerspec", "asdreader")
+ls <- c("plyr", "rgdal", "terra", "mlr", "ranger", "xgboost",
+        "Cubist", "fastDummies", "prospectr", "simplerspec", "asdreader")
 new.packages <- ls[!(ls %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 x = lapply(ls, require, character.only = TRUE)
