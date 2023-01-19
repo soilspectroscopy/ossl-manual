@@ -6,11 +6,11 @@ You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is 
 
 The following subsections provide the OSSL variable names, types, description, and example. You can also find all this information in tabular format:
 
-- [OSSL soil site data](./tabular/ossl_level0_names_soilsite.csv).
-- [OSSL soil lab data (level 0)](./tabular/ossl_level0_names_soillab.csv).
-- [OSSL soil lab data (level 1)](./tabular/ossl_level1_names_soillab.csv).
-- [OSSL soil MIR data](./tabular/ossl_level0_names_mir.csv).
-- [OSSL soil VisNIR data](./tabular/ossl_level0_names_visnir.csv).
+- [OSSL soil site data](https://github.com/soilspectroscopy/ossl-manual/tree/main/tabular/ossl_level0_names_soilsite.csv).
+- [OSSL soil lab data (level 0)](https://github.com/soilspectroscopy/ossl-manual/tree/main/tabular/ossl_level0_names_soillab.csv).
+- [OSSL soil lab data (level 1)](https://github.com/soilspectroscopy/ossl-manual/tree/main/tabular/ossl_level1_names_soillab.csv).
+- [OSSL soil MIR data](https://github.com/soilspectroscopy/ossl-manual/tree/main/tabular/ossl_level0_names_mir.csv).
+- [OSSL soil VisNIR data](https://github.com/soilspectroscopy/ossl-manual/tree/main/tabular/ossl_level0_names_visnir.csv).
 
 
 

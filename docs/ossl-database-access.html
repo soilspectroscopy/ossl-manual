@@ -97,7 +97,7 @@
 </div>
 <p>The OSSL is distributed through Google Could storage bucket, MongoDB, and API. Google Cloud storage bucket hosts static files in two formats: compressed csv (<code>.csv.gz</code>) and <code>qs</code> (from qs R package). The <code>csv.gz</code> is intended to work across different platforms, while <code>qs</code> is the preferred format for being used within R. MongoDB and the API can be used to construct requests to fetch data with specific filters (e.g. region, dataset source, etc.), differently from the static files where you need to download the whole database.</p>
 <p>In the OSSL, some original dataset share common ids across the VisNIR and MIR range. Some ids, however, have only one range represented (either VisNIR or MIR). OSSL is a tabular database keeping at least one spectral range. A filter must be run before using the database to remove observations with missing spectra for a desired range.</p>
-<p>To access an extend global compilation of soil legacy point data sets refer to <a href="https://github.com/OpenGeoHub/SoilSamples" class="uri">https://github.com/OpenGeoHub/SoilSamples</a> repository.</p>
+<p>To access an extend global compilation of soil legacy point data sets, refer to <a href="https://github.com/OpenGeoHub/SoilSamples" class="uri">https://github.com/OpenGeoHub/SoilSamples</a> repository.</p>
 <div id="google-cloud-storage" class="section level2 unnumbered">
 <h2>Google Cloud Storage<a class="anchor" aria-label="anchor" href="#google-cloud-storage"><i class="fas fa-link"></i></a>
 </h2>
@@ -236,7 +236,7 @@ https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.qs</code><
 <div id="api" class="section level2 unnumbered">
 <h2>API<a class="anchor" aria-label="anchor" href="#api"><i class="fas fa-link"></i></a>
 </h2>
-<p><a href="https://api.soilspectroscopy.org/__docs__/#/">OSSL API</a> (Application Programming Interface) is also available and can be used to construct requests to fetch data, models and generate predictions. The outputs of predictions can be obtained as <a href="https://www.json.org/json-en.html">JSON</a> or CSV files, making the system fully interoperable. The OSSL API is at the moment based on using the <a href="https://www.rplumber.io/">plumber package</a> and is <strong>provided for testing purposes only</strong>. Users can calibrate maximum 20 rows per request, but these limits will be gradually extended.</p>
+<p><a href="https://api.soilspectroscopy.org/__docs__/#/">OSSL API</a> (Application Programming Interface) is also available and can be used to construct requests to fetch data, models and generate predictions. The outputs of predictions can be obtained as <a href="https://www.json.org/json-en.html">JSON</a> or CSV files, making the system fully interoperable. The OSSL API is at the moment based on using the <a href="https://www.rplumber.io/">plumber package</a> and is <strong>provided for testing purposes only</strong>. Users can make predictions with pretrained models for 20 spectra per request, but these limits will be gradually extended.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:ossl-api"></span>
 <img src="img/preview_ossl_api_swagger.png" alt="OSSL API is available for testing." width="100%"><p class="caption">

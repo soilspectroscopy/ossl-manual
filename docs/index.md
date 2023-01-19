@@ -51,7 +51,7 @@ Soil spectroscopy for global good project works with other global initiatives in
 
 ## What is soil spectroscopy? {.unnumbered}
 
-Soil spectroscopy is the measurement of light absorption when light in the [visible, near infrared or mid infrared (Vis–NIR–MIR) regions of the electromagnetic spectrum](https://en.wikipedia.org/wiki/Electromagnetic_spectrum) is applied to a soil surface. The proportion of the incident radiation reflected by soil is sensed through Vis–NIR–MIR reflectance spectroscopy. These characteristic spectra (see Fig. below) can then be used to estimate numerous soil attributes including: particle size, mineral and organic compounds, and water. 
+Soil spectroscopy is the measurement of light absorption when light in the [visible, near infrared or mid infrared (Vis–NIR–MIR) regions of the electromagnetic spectrum](https://en.wikipedia.org/wiki/Electromagnetic_spectrum) is applied to a soil surface. The proportion of the incident radiation reflected by soil is sensed through Vis–NIR–MIR reflectance spectroscopy. These characteristic spectra (see Fig. below) can then be used to estimate numerous soil attributes including: particle size distribution, mineral and organic compounds, and water. 
 
 <div class="figure" style="text-align: center">
 <img src="img/Spectroscopy-Schematic.jpeg" alt="Schematic explanation of the soil spectroscopy. For more info see: https://soilspectroscopy.org/." width="100%" />
@@ -74,6 +74,16 @@ The **Open Soil Spectral Library** (OSSL) is a suite of datasets, web-services, 
 - Front-end solutions: **[OSSL Engine](https://engine.soilspectroscopy.org/)** and **[OSSL Explorer](https://explorer.soilspectroscopy.org/)**;   
 - Registry of global and local prediction models (<https://github.com/soilspectroscopy/>);  
 - Tutorials included in this book.  
+
+
+**MIR spectral diversity**  
+<img src="https://github.com/soilspectroscopy/ossl-imports/blob/main/img/plot_pca_scores_mir_ossl.png?raw=true" heigth=100% width=100%>
+
+**MIR locations**  
+<img src="https://github.com/soilspectroscopy/ossl-imports/blob/main/img/mir.pnts_sites.png?raw=true" heigth=100% width=100%>
+
+**VisNIR locations**  
+<img src="https://github.com/soilspectroscopy/ossl-imports/blob/main/img/visnir.pnts_sites.png?raw=true" heigth=100% width=100%>
 
 ## Importing new datasets to OSSL {.unnumbered}
 
@@ -151,18 +161,18 @@ Soil contaminants:
 
 We encourage public and private entities to help this project and share SSL data. The following four modes of data sharing are especially encouraged:
 
-1. Open your data by releasing it under Creative Commons ([CC-BY](https://creativecommons.org/licenses/by/4.0/), [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/))  
-or Open Data Commons Open Database License ([ODbL](https://opendatacommons.org/licenses/odbl/)). 
+1. Publish your data open acces by releasing it under a Creative Commons license ([CC-BY](https://creativecommons.org/licenses/by/4.0/), [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/))  
+or the Open Data Commons Open Database License ([ODbL](https://opendatacommons.org/licenses/odbl/)). 
 This data can then directly imported into the OSSL.  
 2. Donate a small part (e.g. 5%) of your data (release under [CC-BY](https://creativecommons.org/licenses/by/4.0/), [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) and/or [ODbL](https://opendatacommons.org/licenses/odbl/)). 
-This data can then directly imported into the OSSL.  
-2. Allow SoilSpectroscopy.org project direct access to your data so that we can run data mining 
-and then release ONLY results of data mining under some Open Data license.  
-3. Use OSSL data to produce new derivative products, then share them through own 
+This data can then be directly imported into the OSSL.  
+3. Allow SoilSpectroscopy.org project direct access to your data so that we can perform data mining 
+and then release ONLY results under some Open Data license.  
+4. Use OSSL data to produce new derivative products, then share them through own 
 infrastructures OR contact us for providing hosting support.  
 
 We can sign professional **Data Sharing Agreements** with data producers 
-that specify in detail how will the data be used. Our primary interest is in enabling research, 
+that specify in detail how will the data will be used. Our primary interest is in enabling research, 
 sharing and use of models (calibration and prediction) and collaboration of groups 
 across borders.
 
@@ -178,7 +188,7 @@ correction in the text and then make a [pull request](https://docs.github.com/en
 
 ## Contributors {.unnumbered}
 
-If you've contribute, add also your name and Twitter, ORCID or blog link below:
+If you've contributed, add also your name and Twitter, ORCID or blog link below:
 
 [Jonathan Sanderman](https://twitter.com/sandersoil),
 [Tomislav Hengl](https://twitter.com/tom_hengl),
@@ -186,7 +196,8 @@ If you've contribute, add also your name and Twitter, ORCID or blog link below:
 [Leandro L. Parente](https://www.linkedin.com/in/leal-parente/),
 [Wanderson de Sousa Mendes](https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/),
 [Dellena Bloom](https://www.linkedin.com/in/dellena-bloom-541817149/),
-[José Lucas Safanelli](https://www.linkedin.com/in/joselucassafanelli/).   
+[José Lucas Safanelli](https://www.linkedin.com/in/joselucassafanelli/),
+[Henning Teickner](https://github.com/henningte). 
 
 ## Disclaimer {.unnumbered}
 
@@ -214,10 +225,10 @@ This is a community project. No profits are being made from building and serving
 Open Spectral Library. If you would like to become a sponsor of the project, please 
 contact us via: <https://soilspectroscopy.org/contact/>.  
 
-## Licence {.unnumbered}
+## License {.unnumbered}
 
 This website/book and attached software is free to use, and is licensed under [the MIT License](https://en.wikipedia.org/wiki/MIT_License). The OSSL training data and models, 
-if not otherwise indicated, is available either under the [Creative Commons Attribution 4.0 International CC-BY](https://creativecommons.org/licenses/by/4.0/legalcode) 
+if not otherwise indicated, are available either under the [Creative Commons Attribution 4.0 International CC-BY](https://creativecommons.org/licenses/by/4.0/legalcode) 
 and/or [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/legalcode) license / [Open Data Commons Open Database License (ODbL) v1.0](https://opendatacommons.org/licenses/odbl/1-0/).
 
 ## Suggested literature {.unnumbered}
