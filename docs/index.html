@@ -6,17 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>About | Open Soil Spectral Library</title>
 <meta name="author" content="Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors">
-<meta name="description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, callibrate own models and extend beyond.">
+<meta name="description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, and use the reference models.">
 <meta name="generator" content="bookdown 0.29 with bs4_book()">
 <meta property="og:title" content="About | Open Soil Spectral Library">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://soilspectroscopy.github.io/ossl-manual">
 <meta property="og:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
-<meta property="og:description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, callibrate own models and extend beyond.">
+<meta property="og:description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, and use the reference models.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About | Open Soil Spectral Library">
 <meta name="twitter:site" content="@soilspec">
-<meta name="twitter:description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, callibrate own models and extend beyond.">
+<meta name="twitter:description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, and use the reference models.">
 <meta name="twitter:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -77,9 +77,10 @@
 <li><a class="active" href="index.html">About</a></li>
 <li><a class="" href="new-to-markdown.html"><span class="header-section-number">1</span> New to markdown</a></li>
 <li><a class="" href="soil-spectroscopy-tools-and-users.html"><span class="header-section-number">2</span> Soil spectroscopy tools and users</a></li>
-<li><a class="" href="database.html"><span class="header-section-number">3</span> Database</a></li>
-<li><a class="" href="reference-soil-spectroscopy-models.html"><span class="header-section-number">4</span> Reference soil spectroscopy models</a></li>
-<li><a class="" href="references.html"><span class="header-section-number">5</span> References</a></li>
+<li><a class="" href="ossl-database-description.html"><span class="header-section-number">3</span> OSSL database description</a></li>
+<li><a class="" href="ossl-database-access.html"><span class="header-section-number">4</span> OSSL database access</a></li>
+<li><a class="" href="ossl-reference-models.html"><span class="header-section-number">5</span> OSSL reference models</a></li>
+<li><a class="" href="references.html"><span class="header-section-number">6</span> References</a></li>
 </ul>
 
         <div class="book-extra">
@@ -117,10 +118,7 @@ to: <a href="https://soilspectroscopy.org/" class="uri">https://soilspectroscopy
 <div id="what-is-soil-spectroscopy" class="section level2 unnumbered">
 <h2>What is soil spectroscopy?<a class="anchor" aria-label="anchor" href="#what-is-soil-spectroscopy"><i class="fas fa-link"></i></a>
 </h2>
-<p>Soil spectroscopy is the measurement of light absorption when light in the <a href="https://en.wikipedia.org/wiki/Electromagnetic_spectrum">visible, near infrared or mid
-infrared (Vis–NIR–MIR) regions of the electromagnetic spectrum</a> is applied to a soil surface. The proportion
-of the incident radiation reflected by soil is sensed through Vis–NIR–MIR reflectance spectroscopy.
-These characteristic spectra (see Fig. below) can then be used to estimate numerous soil attributes including: minerals, organic compounds and water.</p>
+<p>Soil spectroscopy is the measurement of light absorption when light in the <a href="https://en.wikipedia.org/wiki/Electromagnetic_spectrum">visible, near infrared or mid infrared (Vis–NIR–MIR) regions of the electromagnetic spectrum</a> is applied to a soil surface. The proportion of the incident radiation reflected by soil is sensed through Vis–NIR–MIR reflectance spectroscopy. These characteristic spectra (see Fig. below) can then be used to estimate numerous soil attributes including: particle size, mineral and organic compounds, and water.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:soil-pnts"></span>
 <img src="img/Spectroscopy-Schematic.jpeg" alt="Schematic explanation of the soil spectroscopy. For more info see: https://soilspectroscopy.org/." width="100%"><p class="caption">
@@ -138,129 +136,46 @@ Figure 0.2: Example of spectral signatures for large number of VisNIR scans (KSS
 <h2>Open Soil Spectral Library<a class="anchor" aria-label="anchor" href="#open-soil-spectral-library"><i class="fas fa-link"></i></a>
 </h2>
 <p><a href="https://doi.org/10.5281/zenodo.5759693"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.5759693.svg" alt="DOI"></a></p>
-<p><strong>Open Soil Spectral Library</strong> (OSSL) is a suite of datasets, web-services, software and tutorials.
-It includes (see also <a href="https://github.com/soilspectroscopy" class="uri">https://github.com/soilspectroscopy</a>):</p>
+<p>The <strong>Open Soil Spectral Library</strong> (OSSL) is a suite of datasets, web-services, software, and tutorials. It includes (see also <a href="https://github.com/soilspectroscopy" class="uri">https://github.com/soilspectroscopy</a>):</p>
 <ul>
-<li>A soil spectral DB (mongoDB),<br>
+<li>A soil spectral database shared through several formats (mongoDB, cloud bucket, and API);<br>
 </li>
-<li>API calibration service available from <a href="https://api.soilspectroscopy.org" class="uri">https://api.soilspectroscopy.org</a>,<br>
+<li>API with database access and a prediction service available from <a href="https://api.soilspectroscopy.org/__docs__/#/">https://api.soilspectroscopy.org</a>;<br>
 </li>
-<li>Front-end solutions: <strong>OSSL <a href="https://engine.soilspectroscopy.org/">Engine</a></strong> and <strong><a href="https://explorer.soilspectroscopy.org/">Explorer</a></strong>,<br>
+<li>Front-end solutions: <strong><a href="https://engine.soilspectroscopy.org/">OSSL Engine</a></strong> and <strong><a href="https://explorer.soilspectroscopy.org/">OSSL Explorer</a></strong>;<br><!-- - An R package `ossl` with all functionality used by the API;  -->
 </li>
-<li>An R package <code>ossl</code> with all functionality used by the API,<br>
+<li>Registry of global and local prediction models (<a href="https://github.com/soilspectroscopy/" class="uri">https://github.com/soilspectroscopy/</a>);<br>
 </li>
-<li>Registry of global and local calibration models (<a href="https://github.com/soilspectroscopy/" class="uri">https://github.com/soilspectroscopy/</a>),<br>
-</li>
-<li>Tutorials included in this book,</li>
+<li>Tutorials included in this book.</li>
 </ul>
-<p>The OSSL-DB has been prepared following the OSSL schema which is available at:</p>
-<p>As a general rule of thumb we recommend all contributors to use the following
-general OSSL scheme to organize Soil Observations &amp; Measurements with four main tables
-and metadata + legends organized in other tables:</p>
-<div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:soil-db"></span>
-<img src="img/design_soil_om_sheme.png" alt="Recommended OSSL database schema." width="100%"><p class="caption">
-Figure 0.3: Recommended OSSL database schema.
-</p>
 </div>
-<p>To access global compilation of soil legacy point data sets refer to <a href="https://github.com/OpenGeoHub/SoilSamples" class="uri">https://github.com/OpenGeoHub/SoilSamples</a> repository.
-To access and use Soil Spectroscopy tools also refer to <a href="https://soilspectroscopy.org/" class="uri">https://soilspectroscopy.org/</a>.</p>
-<div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:pnts-vnir"></span>
-<img src="img/visnir.pnts_sites.png" alt="Up-to-date distribution of points with VisNIR scans." width="100%"><p class="caption">
-Figure 0.4: Up-to-date distribution of points with VisNIR scans.
-</p>
-</div>
-<div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:pnts-mir"></span>
-<img src="img/mir.pnts_sites.png" alt="Up-to-date distribution of points with MIR scans." width="100%"><p class="caption">
-Figure 0.5: Up-to-date distribution of points with MIR scans.
-</p>
-</div>
-</div>
-<div id="ossl-mongodb" class="section level2 unnumbered">
-<h2>OSSL mongoDB<a class="anchor" aria-label="anchor" href="#ossl-mongodb"><i class="fas fa-link"></i></a>
+<div id="importing-new-datasets-to-ossl" class="section level2 unnumbered">
+<h2>Importing new datasets to OSSL<a class="anchor" aria-label="anchor" href="#importing-new-datasets-to-ossl"><i class="fas fa-link"></i></a>
 </h2>
-<p><a href="https://www.mongodb.com/">MongoDB</a> is an Open Source noSQL DB hence fast and fully scalable and extendable
-(affordable costs for cloud solutions such as <a href="https://www.mongodb.com/cloud/atlas">MongoDB Atlas</a> and similar).
-TensorFlow and other cutting-edge ML algorithms can be easily integrated and served through a GUI.</p>
-<p>To access OSSL DB best use the mongoDB either through a graphical user
-interface using <a href="https://robomongo.org/download">Robo 3T</a>, or by using the <a href="https://www.mongodb.com/languages/mongodb-and-r-example">mongodb via R</a>.
-The following parameters (database credentials) allow ready only access to DB:</p>
+<p>The OSSL database has been prepared following the OSSL schema which is available at <a href="https://github.com/soilspectroscopy/ossl-imports">ossl-imports</a>.</p>
+<p>The github repository <a href="https://github.com/soilspectroscopy/ossl-imports">ossl-imports</a> has all the importing codes for preparing and integrating new datasets into the OSSL. The folder <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset">ossl-imports/dataset</a> contains all the datasets separated by its name/code, with an internal <code>README.Rmd</code> file describing in detail the steps necessary for preparing and standardizing the files into the OSSL format.</p>
+<p>The original files are placed on an internal server to avoid the storage of big files in the github repository, but some of them can be found on persistent online repositories if they have a public license. Other original datasets that do not have a public license or are shared to this project with some restrictions will no be shared publicly. As we keep the original files in a local repository to run the importing notebooks (each <code>ossl-imports/dataset/../README.Rmd</code>), this operation can only be run at our internal server.</p>
+<p>New contributors are encouraged to host their files on a public repository and draft the importing step on github through pull requests. The final checks and consolidation, however, will be concluded on the internal server.</p>
+<p>The <code>README.Rmd</code> files follow a basic structure. Each one has a description of the dataset at the top of the notebook which links to the dataset source and references. An extended description is provided in <a href="https://soilspectroscopy.github.io/ossl-manual/soil-spectroscopy-tools-and-users.html#registered-soil-spectral-libraries">this book</a>.</p>
+<p>For preparing the import, the following subsections are defined:</p>
 <ul>
-<li>Name: soilspec4gg<br>
-</li>
-<li>Address: api.soilspectroscopy.org<br>
-</li>
-<li>Database: soilspec4gg<br>
-</li>
-<li>Username: soilspec4gg<br>
-</li>
-<li>Password: soilspec4gg</li>
+<li>Basic description.</li>
+<li>Soil site information.</li>
+<li>Soil laboratory (wet chemistry) data</li>
+<li>Mid-infrared (MIR) spectroscopy data (optional).</li>
+<li>Visible-near-infrared (VisNIR) spectroscopy data (optional).</li>
+<li>Quality control.</li>
+<li>References.</li>
 </ul>
-<div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:mongodb-gui"></span>
-<img src="img/mongodb_gui.png" alt="Accessing the OSSL DB using [MongoDB GUI](https://robomongo.org/download)." width="90%"><p class="caption">
-Figure 0.6: Accessing the OSSL DB using <a href="https://robomongo.org/download">MongoDB GUI</a>.
-</p>
+<p>Each subsection has its own reading and processing functions, and the outputs can be joined using shared id columns. The output files share the same name and pattern but can be retrieved with different folder names, which are binded together in a final stage. The outputs are named as <code>ossl_soilsite_&lt;version&gt;.qs</code>, <code>ossl_soillab_&lt;version&gt;.qs</code>, <code>ossl_mir_&lt;version&gt;.qs</code>, <code>ossl_visnir_&lt;version&gt;.qs</code>. The version number is adjusted for recurring updates.</p>
 </div>
-<p>First, we need to specify the parameters:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeroen/mongolite/">mongolite</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">jsonify</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span><span class="op">(</span><span class="st">"R/ossl_functions.R"</span><span class="op">)</span></span>
-<span><span class="va">soilspec4gg.db</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>  host <span class="op">=</span> <span class="st">'api.soilspectroscopy.org'</span>,</span>
-<span>  name <span class="op">=</span> <span class="st">'soilspec4gg'</span>,</span>
-<span>  user <span class="op">=</span> <span class="st">'soilspec4gg'</span>,</span>
-<span>  pw <span class="op">=</span> <span class="st">'soilspec4gg'</span></span>
-<span><span class="op">)</span></span>
-<span><span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">url</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span></span>
-<span>  <span class="st">'mongodb://'</span>, <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">user</span>, <span class="st">':'</span>, </span>
-<span>  <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">pw</span>, <span class="st">'@'</span>, </span>
-<span>  <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">host</span>, <span class="st">'/'</span>, </span>
-<span>  <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">name</span>, <span class="st">'?ssl=true'</span></span>
-<span><span class="op">)</span></span></code></pre></div>
-<p>Next, we can initiate connection:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">soilspec4gg.init</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Creating the access for mongodb collections."</span></span></code></pre></div>
-<p>and now we can query and load data directly into R, for example to get a sample from AfSIS1:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" aria-hidden="true" tabindex="-1"></a>id <span class="ot">=</span> <span class="st">"icr006475"</span> </span>
-<span id="cb3-2"><a href="index.html#cb3-2" aria-hidden="true" tabindex="-1"></a>soilspec.sample <span class="ot">=</span> <span class="fu">soilspec4gg.samplesById</span>(id)</span>
-<span id="cb3-3"><a href="index.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "Accessing mongodb collections."</span></span>
-<span id="cb3-4"><a href="index.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb3-5"><a href="index.html#cb3-5" aria-hidden="true" tabindex="-1"></a> Imported <span class="dv">0</span> records. Simplifying into dataframe...</span>
-<span id="cb3-6"><a href="index.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb3-7"><a href="index.html#cb3-7" aria-hidden="true" tabindex="-1"></a> Imported <span class="dv">0</span> records. Simplifying into dataframe...</span>
-<span id="cb3-8"><a href="index.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb3-9"><a href="index.html#cb3-9" aria-hidden="true" tabindex="-1"></a> Imported <span class="dv">0</span> records. Simplifying into dataframe...</span>
-<span id="cb3-10"><a href="index.html#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb3-11"><a href="index.html#cb3-11" aria-hidden="true" tabindex="-1"></a> Imported <span class="dv">0</span> records. Simplifying into dataframe...</span>
-<span id="cb3-12"><a href="index.html#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(soilspec.sample)</span>
-<span id="cb3-13"><a href="index.html#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0 0</span></span></code></pre></div>
-</div>
-<div id="ossl-api" class="section level2 unnumbered">
-<h2>OSSL API<a class="anchor" aria-label="anchor" href="#ossl-api"><i class="fas fa-link"></i></a>
+<div id="soil-properties-of-interest" class="section level2 unnumbered">
+<h2>Soil properties of interest<a class="anchor" aria-label="anchor" href="#soil-properties-of-interest"><i class="fas fa-link"></i></a>
 </h2>
-<p><a href="https://api.soilspectroscopy.org/__docs__/#/">OSSL API</a> (Application Programming Interface) is also available and can be used
-to construct requests to fetch data, models and generate predictions. The outputs
-of predictions can be obtained as <a href="https://www.json.org/json-en.html">JSON</a> or CSV files, making the system fully
-interoperable. The OSSL API is at the moment based on using the <a href="https://www.rplumber.io/">plumber package</a>
-and is <strong>provided for testing purposes only</strong>. Users can calibrate maximum 20 rows
-per request, but these limits will be gradually extended.</p>
-<div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:ossl-api"></span>
-<img src="img/preview_ossl_api_swagger.png" alt="OSSL API is available for testing." width="100%"><p class="caption">
-Figure 0.7: OSSL API is available for testing.
-</p>
-</div>
-</div>
-<div id="target-variables-of-interest" class="section level2 unnumbered">
-<h2>Target variables of interest<a class="anchor" aria-label="anchor" href="#target-variables-of-interest"><i class="fas fa-link"></i></a>
-</h2>
-<p>Soil spectral scan, through the calibration procedure, are used to determine various soil variables.
-<a href="http://www.fao.org/global-soil-partnership/glosolan/soil-analysis/standard-operating-procedures/en/#c763834">GLOSOLAN’s Standard Operating Procedures (SOPs)</a> list four groups of soil variables of interest to international soil spectroscopy projects:</p>
+<p>The contrasting methods used for analytically determining (wet chemistry) a given soil property has been a subject of internal discussion in this project. Some global initiatives have been facing this same issue in their soil databases but there still no clear or full consensus on how to harmonize those different methods. This has been a topic of great discussion and research development at the <a href="https://www.fao.org/global-soil-partnership/glosolan/en/">Global Soil Partnership’s Global Soil Laboratory Network (GLOSOLAN)</a>.</p>
+<p>In order to maximize transparency, for now, we have decided to produce two different levels for the OSSL database. <code>Level 0</code> takes into account the original methods employed in each dataset but tries to initially fit them to two reference lists: <a href="https://www.nrcs.usda.gov/resources/guides-and-instructions/kssl-guidance">KSSL Guidance – Laboratory Methods and Manuals</a> and ISO standards. A copy of the KSSL procedures and coding scheme is archived in <a href="https://github.com/soilspectroscopy/ossl-imports/blob/main/out/kssl_procedures.csv">ossl-imports</a>.</p>
+<p>If a reference method does not fall in any previous method, then we create a new variable sharing at least a common property and unit. A final harmonization takes place in the OSSL <code>Level 1</code>, where those common properties sharing different methods are converted to a target method using some publicly available transformation rule, or in the worst scenario, they are naively binded or kept separated to produce its specific model. All the implementations are documented in the <a href="https://github.com/soilspectroscopy/ossl-imports/blob/main/out/ossl_level0_to_level1_soillab_harmonization.csv">ossl-import/ossl_level0_to_level1_soillab_harmonization.csv</a> repository.</p>
+<p>In addition, <a href="http://www.fao.org/global-soil-partnership/glosolan/soil-analysis">GLOSOLAN’s Standard Operating Procedures (SOPs)</a> list four groups of soil variables of interest to international soil spectroscopy projects:</p>
 <p>Soil chemical variables:</p>
 <ul>
 <li>pH,<br>
@@ -321,16 +236,11 @@ Figure 0.7: OSSL API is available for testing.
 </li>
 <li>Other soil pollutants,</li>
 </ul>
-<p>This list is constantly updated. In the OSSL we focus on soil variables for which
-there is enough global calibration measurements to fit reasonable models. Currently,
-the largest component of the OSSL is the <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/">USDA’s KSSL</a> data that list about 60 variables for which
-there is enough data to fit calibration models.</p>
 </div>
 <div id="contributing-data" class="section level2 unnumbered">
 <h2>Contributing data<a class="anchor" aria-label="anchor" href="#contributing-data"><i class="fas fa-link"></i></a>
 </h2>
-<p>We encourage public and private entities to help this project and share SSL data.
-The following four modes of data sharing are especially encouraged:</p>
+<p>We encourage public and private entities to help this project and share SSL data. The following four modes of data sharing are especially encouraged:</p>
 <ol style="list-style-type: decimal">
 <li>Open your data by releasing it under Creative Commons (<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA</a>)<br>
 or Open Data Commons Open Database License (<a href="https://opendatacommons.org/licenses/odbl/">ODbL</a>).
@@ -355,23 +265,21 @@ and kept safely, closely following our <a href="https://www.woodwellclimate.org/
 <div id="contributing-documentation" class="section level2 unnumbered">
 <h2>Contributing documentation<a class="anchor" aria-label="anchor" href="#contributing-documentation"><i class="fas fa-link"></i></a>
 </h2>
-<p>Please feel free to contribute technical documentation. See <a href="https://github.com/soilspectroscopy/ossl-manual">GitHub
-repository</a> for more detailed
-instructions.</p>
+<p>Please feel free to contribute to this technical documentation. Check the <a href="https://github.com/soilspectroscopy/ossl-manual">GitHub repository</a> for more detailed instructions.</p>
 <p>Information outdated or missing? Please <a href="https://github.com/soilspectroscopy/ossl-manual/issues">open an issue</a> or best do a
-correction in the text and then make a <a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request">pull
-request</a>.</p>
+correction in the text and then make a <a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request">pull request</a>.</p>
 </div>
 <div id="contributors" class="section level2 unnumbered">
 <h2>Contributors<a class="anchor" aria-label="anchor" href="#contributors"><i class="fas fa-link"></i></a>
 </h2>
-<p>If you’ve contribute, add also your name and Twitter, ORCID or blog link
-below:</p>
+<p>If you’ve contribute, add also your name and Twitter, ORCID or blog link below:</p>
 <p><a href="https://twitter.com/sandersoil">Jonathan Sanderman</a>,
 <a href="https://twitter.com/tom_hengl">Tomislav Hengl</a>,
 <a href="https://www.essie.ufl.edu/people/name/kathe-todd-brown/">Katherine Todd-Brown</a>,
 <a href="https://www.linkedin.com/in/leal-parente/">Leandro L. Parente</a>,
-<a href="https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/">Wanderson de Sousa Mendes</a></p>
+<a href="https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/">Wanderson de Sousa Mendes</a>,
+<a href="https://www.linkedin.com/in/dellena-bloom-541817149/">Dellena Bloom</a>,
+<a href="https://www.linkedin.com/in/joselucassafanelli/">José Lucas Safanelli</a>.</p>
 </div>
 <div id="disclaimer" class="section level2 unnumbered">
 <h2>Disclaimer<a class="anchor" aria-label="anchor" href="#disclaimer"><i class="fas fa-link"></i></a>
@@ -392,7 +300,7 @@ the user’s needs or expectations or that all nonconformities, defects, or erro
 corrected. The user should always verify actual data; therefore the user bears all responsibility in
 determining whether the data is fit for the user’s intended use.</p>
 <p>This document is <strong>under construction</strong>. If you notice an error or outdated information,
-please submit a correction / pull request or <strong><a href="https://github.com/soilspectroscopy/ossl-manual/issues">open an issue</a></strong>.</p>
+please submit a correction/pull request or <strong><a href="https://github.com/soilspectroscopy/ossl-manual/issues">open an issue</a></strong>.</p>
 <p>This is a community project. No profits are being made from building and serving
 Open Spectral Library. If you would like to become a sponsor of the project, please
 contact us via: <a href="https://soilspectroscopy.org/contact/" class="uri">https://soilspectroscopy.org/contact/</a>.</p>
@@ -445,8 +353,7 @@ reflectance spectral library</a>. Soil Science Society of America Journal,
 organizations. Listed based on the date of import:</p>
 <ul>
 <li>
-<strong><a href="https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/">USDA-NRCS Kellogg Soil Survey Laboratory</a></strong> mid-infrared (MIR) spectral library <span class="citation">(<a href="references.html#ref-sanderman2020mid" role="doc-biblioref">Sanderman, Savage, &amp; Dangal, 2020</a>; <a href="references.html#ref-wijewardane2018predicting" role="doc-biblioref">Wijewardane, Ge, Wills, &amp; Libohova, 2018</a>)</span> was used as the basis for this data set and corresponding services; we are especially grateful to <strong>Rich Ferguson &amp; Scarlett Murphy (NRCS USDA)</strong> for their help with
-importing and using the KSSL Soil Spectral Library;<br>
+<strong><a href="https://ncsslabdatamart.sc.egov.usda.gov/datause.aspx">USDA-NRCS Kellogg Soil Survey Laboratory</a></strong> mid-infrared (MIR) spectral library <span class="citation">(<a href="references.html#ref-sanderman2020mid" role="doc-biblioref">Sanderman, Savage, &amp; Dangal, 2020</a>; <a href="references.html#ref-wijewardane2018predicting" role="doc-biblioref">Wijewardane, Ge, Wills, &amp; Libohova, 2018</a>)</span> was used as the basis for this data set and corresponding services; we are especially grateful to <strong>Rich Ferguson &amp; Scarlett Murphy (NRCS USDA)</strong> for their help with importing and using the KSSL Soil Spectral Library;<br>
 </li>
 <li>
 <strong><a href="https://doi.org/10.34725/DVN/MFHA9C">ICRAF-ISRIC Soil VNIR Spectral Library</a></strong> <span class="citation">(<a href="references.html#ref-aitkenhead2018exploring" role="doc-biblioref">Aitkenhead &amp; Black, 2018</a>; <a href="references.html#ref-garrity2004globally" role="doc-biblioref">Garrity &amp; Bindraban, 2004</a>)</span> 785 soil profiles (4,438 samples) selected from the Soil Information System (ISIS) of the International Soil Reference and Information Centre (ISRIC) <a href="https://doi.org/10.34725/DVN/MFHA9C" class="uri">https://doi.org/10.34725/DVN/MFHA9C</a>;<br>
@@ -458,10 +365,8 @@ importing and using the KSSL Soil Spectral Library;<br>
 <strong><a href="http://esdac.jrc.ec.europa.eu/">LUCAS topsoil (VisNIR) Soil Spectral Library</a></strong> <span class="citation">(<a href="references.html#ref-orgiazzi2018lucas" role="doc-biblioref">Orgiazzi, Ballabio, Panagos, Jones, &amp; Fernández-Ugalde, 2018</a>)</span> was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <a href="http://esdac.jrc.ec.europa.eu/" class="uri">http://esdac.jrc.ec.europa.eu/</a>; we have degraded location accuracy of points so that exact locations are about 1-km off;<br>
 </li>
 <li>
-<strong><a href="https://github.com/laura-summerauer/ssl-central-africa">The Central African Soil Spectral Library</a></strong> described in detail in <span class="citation"><a href="references.html#ref-Summerauer2021" role="doc-biblioref">Summerauer et al.</a> (<a href="references.html#ref-Summerauer2021" role="doc-biblioref">2021</a>)</span> contains limited number of samples representing Central Africa <a href="https://doi.org/10.5281/zenodo.4320395" class="uri">https://doi.org/10.5281/zenodo.4320395</a>;<br>
+<strong><a href="https://github.com/laura-summerauer/ssl-central-africa">The Central African Soil Spectral Library</a></strong> described in detail in <span class="citation"><a href="references.html#ref-Summerauer2021" role="doc-biblioref">Summerauer et al.</a> (<a href="references.html#ref-Summerauer2021" role="doc-biblioref">2021</a>)</span> contains limited number of samples representing Central Africa <a href="https://doi.org/10.5281/zenodo.4320395" class="uri">https://doi.org/10.5281/zenodo.4320395</a>;<br><!-- - **The National Ecological Observatory Network (NEON) Soil Spectral** is based on the NEON soil data [@ayres2019quantitative], which were scanned by the Woodwell Climate Research and USDA-NRCS Kellogg Soil Survey Laboratory; the [(NEON) Megapit Soil Archive](https://www.neonscience.org/samples/soil-archive) is a program sponsored by the National Science Foundation and operated under cooperative agreement by Battelle;   -->
 </li>
-<li>
-<strong>The National Ecological Observatory Network (NEON) Soil Spectral</strong> is based on the NEON soil data <span class="citation">(<a href="references.html#ref-ayres2019quantitative" role="doc-biblioref">Ayres, 2019</a>)</span>, which were scanned by the Woodwell Climate Research and USDA-NRCS Kellogg Soil Survey Laboratory; the <a href="https://www.neonscience.org/samples/soil-archive">(NEON) Megapit Soil Archive</a> is a program sponsored by the National Science Foundation and operated under cooperative agreement by Battelle;</li>
 </ul>
 <p>We are grateful to <strong><a href="https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/">Wanderson de Sousa Mendes (Leibniz Centre for Agricultural Landscape Research (ZALF))</a></strong> for
 help with initial screening of the data for the development of the R code for processing soil spectroscopy data.</p>
@@ -481,9 +386,8 @@ especially to get help with using, extending and improving the original SSL data
 <li><a class="nav-link" href="#soil-spectroscopy-for-global-good">Soil Spectroscopy for Global Good</a></li>
 <li><a class="nav-link" href="#what-is-soil-spectroscopy">What is soil spectroscopy?</a></li>
 <li><a class="nav-link" href="#open-soil-spectral-library">Open Soil Spectral Library</a></li>
-<li><a class="nav-link" href="#ossl-mongodb">OSSL mongoDB</a></li>
-<li><a class="nav-link" href="#ossl-api">OSSL API</a></li>
-<li><a class="nav-link" href="#target-variables-of-interest">Target variables of interest</a></li>
+<li><a class="nav-link" href="#importing-new-datasets-to-ossl">Importing new datasets to OSSL</a></li>
+<li><a class="nav-link" href="#soil-properties-of-interest">Soil properties of interest</a></li>
 <li><a class="nav-link" href="#contributing-data">Contributing data</a></li>
 <li><a class="nav-link" href="#contributing-documentation">Contributing documentation</a></li>
 <li><a class="nav-link" href="#contributors">Contributors</a></li>

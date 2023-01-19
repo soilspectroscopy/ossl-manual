@@ -1,5 +1,1 @@
-```{r, results = "asis", echo = FALSE}
-status("drafting")
-```
-
 # References

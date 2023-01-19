@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>5 OSSL reference models | Open Soil Spectral Library</title>
+<meta name="author" content="Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors">
+<meta name="description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. We have received important feedback from people that...">
+<meta name="generator" content="bookdown 0.29 with bs4_book()">
+<meta property="og:title" content="5 OSSL reference models | Open Soil Spectral Library">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://soilspectroscopy.github.io/ossl-manual/ossl-reference-models.html">
+<meta property="og:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
+<meta property="og:description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. We have received important feedback from people that...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="5 OSSL reference models | Open Soil Spectral Library">
+<meta name="twitter:site" content="@soilspec">
+<meta name="twitter:description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. We have received important feedback from people that...">
+<meta name="twitter:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-06HBX7FM0K"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-06HBX7FM0K');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Open Soil Spectral Library</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">About</a></li>
+<li><a class="" href="new-to-markdown.html"><span class="header-section-number">1</span> New to markdown</a></li>
+<li><a class="" href="soil-spectroscopy-tools-and-users.html"><span class="header-section-number">2</span> Soil spectroscopy tools and users</a></li>
+<li><a class="" href="ossl-database-description.html"><span class="header-section-number">3</span> OSSL database description</a></li>
+<li><a class="" href="ossl-database-access.html"><span class="header-section-number">4</span> OSSL database access</a></li>
+<li><a class="active" href="ossl-reference-models.html"><span class="header-section-number">5</span> OSSL reference models</a></li>
+<li><a class="" href="references.html"><span class="header-section-number">6</span> References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/soilspectroscopy/ossl-manual">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="ossl-reference-models" class="section level1" number="5">
+<h1>
+<span class="header-section-number">5</span> OSSL reference models<a class="anchor" aria-label="anchor" href="#ossl-reference-models"><i class="fas fa-link"></i></a>
+</h1>
+<div class="rmdnote">
+<p>You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending.</p>
+</div>
+<p>We have received important feedback from people that said the current models are doing a great job, but for others not that much. This can be due to the specific soil types not being well represented or due to the spectra not being well aligned with the OSSL. We plan to conduct a systematic analysis of learning algorithms, global vs local fitting, compression methods and preprocessing using the OSSL database. Another great interest is to test if including spatial covariates or fusing different spectral regions really help to deliver more reliable predictions.</p>
+<p>The following sections describe steps used to produce OSSL models, which
+are used in the OSSL prediction service and API. The current available models
+were fitted using the previous OSSL database version. For more in-depth insight of
+the modeling steps please refer to the <a href="https://github.com/soilspectroscopy/ossl-models">ossl-models</a> repository.</p>
+<div id="ossl-global-soil-spectroscopy-callibrarion-models" class="section level2" number="5.1">
+<h2>
+<span class="header-section-number">5.1</span> OSSL global soil spectroscopy callibrarion models<a class="anchor" aria-label="anchor" href="#ossl-global-soil-spectroscopy-callibrarion-models"><i class="fas fa-link"></i></a>
+</h2>
+<p>We have fitted a number of calibration models using OSSL MIR and VisNIR spectra
+and combination of additional covariates, and which are now publicly available
+for use under the CC-BY license. For modeling we use the Ensemble Machine Learning
+framework as implemented in the R <a href="https://mlr.mlr-org.com/">mlr</a> programming environment
+with the following parameters:</p>
+<ol style="list-style-type: decimal">
+<li>Regression on first 60 Principal Component Analysis PC’s of the raw spectra;<br>
+</li>
+<li>Four base learners: Random Forest, Gradient Boosting, Cubist and Lasso and Elastic-Net Regularized GLM;<br>
+</li>
+<li>Ensemble Machine Learning by <a href="https://mlr.mlr-org.com/reference/makeStackedLearner.html">stacking / meta-learner</a> through 5-fold Cross-Validation;<br>
+</li>
+<li>Blocking using 100×100-km spatial grid to avoid possible overfitting;<br>
+</li>
+<li>
+<a href="https://mlr.mlr-org.com/articles/tutorial/feature_selection.html">Feature selection</a> and model-parameter fine-tuning using random and sequential backward search;</li>
+</ol>
+<p>For more details on how were the models fitted refer to: <a href="https://github.com/soilspectroscopy/ossl-models" class="uri">https://github.com/soilspectroscopy/ossl-models</a>.</p>
+<p>For standard global soil spectral calibration models we use various calibration frameworks including:</p>
+<ol style="list-style-type: decimal">
+<li>Using only MIR spectra for calibration.<br>
+</li>
+<li>Using only VisNIR spectra for calibration.<br>
+</li>
+<li>Using combination of MIR and VisNIR spectra.<br>
+</li>
+<li>Using combination of MIR and VisNIR spectra + geographic covariates.</li>
+</ol>
+<p>The methods 1 &amp; 2 are standard methods described in literature <span class="citation">(<a href="references.html#ref-malone2021soil" role="doc-biblioref">Wadoux, Malone, McBratney, Fajardo, &amp; Minasny, 2021</a>)</span>. The methods
+3 &amp; 4 are referred to as the <em>“MIR-VisNIR fusion”</em> approach <span class="citation">(<a href="references.html#ref-vohland2022quantification" role="doc-biblioref">Vohland, Ludwig, Seidel, &amp; Hutengs, 2022</a>)</span>.
+The method 4 is the <em>“field-specific calibration approach”</em>; we refer to it here
+as the <em>“bundle approach”</em> as we basically use all information available
+to help produce best predictions of targeted soil properties.</p>
+<p>Users can choose to opt for one of the multiple calibration models, which also
+depends on the type of data (VisNIR, MIR, coordinates and depths known yes/no) used of course.
+The online callibration service (<a href="https://engine.soilspectroscopy.org" class="uri">https://engine.soilspectroscopy.org</a>) and the API
+can be used for predicting values of soil properties for smaller datasets (&lt;1000 rows).</p>
+<p>Soil spectral scans obtained by different spectroscopic instruments often cannot be
+modeled or analyzed together i.e. they require some kind of calibration <span class="citation">(<a href="references.html#ref-lei2022achieving" role="doc-biblioref">Lei &amp; Sun, 2022</a>)</span>
+before one can fit cross-instrument / cross-dataset calibration models.
+In the OSSL library we thus use also instrument / dataset code as the indicator variable.
+The most complex models currently in the OSSL are, thus, one with which users need to define both:</p>
+<ol style="list-style-type: decimal">
+<li>Input MIR spectra,</li>
+<li>Input VisNIR spectra (same samples),</li>
+<li>Geographical location and soil depth,</li>
+<li>Instrument code / dataset code;</li>
+</ol>
+</div>
+<div id="using-default-ossl-models-to-predict-soil-properties" class="section level2" number="5.2">
+<h2>
+<span class="header-section-number">5.2</span> Using default OSSL models to predict soil properties<a class="anchor" aria-label="anchor" href="#using-default-ossl-models-to-predict-soil-properties"><i class="fas fa-link"></i></a>
+</h2>
+<p>OSSL model registry (RDS) S3 file services currently includes large number of
+prediction models fitted for a list of soil properties. The complete list is available in the file <strong><a href="https://github.com/soilspectroscopy/ossl-models">OSSL_models_meta.csv</a></strong>.</p>
+<div id="predicting-soil-properties-using-mir-spectra" class="section level3" number="5.2.1">
+<h3>
+<span class="header-section-number">5.2.1</span> Predicting soil properties using MIR spectra<a class="anchor" aria-label="anchor" href="#predicting-soil-properties-using-mir-spectra"><i class="fas fa-link"></i></a>
+</h3>
+<p>For example, to predict <a href="https://soilspectroscopy.github.io/ossl-manual/database.html#oc_usda.calc_wpct">soil organic carbon weight percent</a> (<code>oc_usda.calc_wpct</code>) using MIR spectra, we need to load
+two models (1) principal component model <code>mpca_mir_kssl_v1.rds</code>,
+(2) mlr model for predicting <code>oc_usda.calc_wpct</code>:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span><span class="op">(</span><span class="st">'./R/ossl_functions.R'</span><span class="op">)</span></span>
+<span><span class="va">rep</span> <span class="op">=</span> <span class="st">"http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/"</span></span>
+<span><span class="va">pcm1</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html">url</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">rep</span>, <span class="st">"pca.ossl/mpca_mir_kssl_v1.rds"</span><span class="op">)</span>, <span class="st">"rb"</span><span class="op">)</span></span>
+<span><span class="va">eml1</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html">url</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">rep</span>, <span class="st">"log..oc_usda.calc_wpct/mir_mlr..eml_kssl_na_v1.rds"</span><span class="op">)</span>, <span class="st">"rb"</span><span class="op">)</span></span>
+<span><span class="va">ossl.pca.mir</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="va">pcm1</span><span class="op">)</span></span>
+<span><span class="va">ossl.model</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="va">eml1</span><span class="op">)</span></span></code></pre></div>
+<p>Note that the models (RDS files) can be between 10 to 200 MB in size, depending on complexity of models
+and the size of the training data used.</p>
+<p>The Principal Component Analysis is described in the <a href="https://github.com/soilspectroscopy/ossl-models/">OSSL models repository</a>.
+It is a standard way of compressing 1000+ spectral bands before predictive modeling <span class="citation">(<a href="references.html#ref-chang2001near" role="doc-biblioref">Chang, Laird, Mausbach, &amp; Hurburgh Jr, 2001</a>)</span>.
+We use the first 60 PCA components for further modeling, which is an arbitrary decisions.</p>
+<p>We can look at the summary of model by typing:</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">ossl.model</span><span class="op">$</span><span class="va">learner.model</span><span class="op">$</span><span class="va">super.model</span><span class="op">$</span><span class="va">learner.model</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.4601 -0.0535 -0.0038  0.0442  3.2730 
+
+Coefficients:
+                Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   -0.0099587  0.0008464 -11.766  &lt; 2e-16 ***
+regr.ranger    0.1507935  0.0048442  31.129  &lt; 2e-16 ***
+regr.xgboost  -0.0231490  0.0034214  -6.766 1.34e-11 ***
+regr.cvglmnet  0.4153936  0.0049604  83.742  &lt; 2e-16 ***
+regr.cubist    0.4674533  0.0044788 104.371  &lt; 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1501 on 72246 degrees of freedom
+Multiple R-squared:  0.9776,    Adjusted R-squared:  0.9776 
+F-statistic: 7.891e+05 on 4 and 72246 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>This shows that the model is an ensemble Machine Learning model based on stacking of
+four individual models: <code>regr.ranger</code> (Random Forest) <span class="citation">(<a href="references.html#ref-wright2017ranger" role="doc-biblioref">Wright &amp; Ziegler, 2017</a>)</span>, <code>regr.xgboost</code> (Gradient Boosting) <span class="citation">(<a href="references.html#ref-chen2015xgboost" role="doc-biblioref">Chen et al., 2015</a>)</span>,
+<code>regr.cvglmnet</code> (Lasso and Elastic-Net Regularized GLM) <span class="citation">(<a href="references.html#ref-friedman2010" role="doc-biblioref">Friedman, Hastie, &amp; Tibshirani, 2010</a>)</span> and <code>regr.cubist</code> (Cubist) <span class="citation">(<a href="references.html#ref-kuhn2012cubist" role="doc-biblioref">Kuhn, Weston, Keefer, &amp; Coulter, 2012</a>)</span>. The RMSE
+of the model is 0.150 (R-square = 0.978), based on 5-fold Cross Validation with spatial blocking (global grid with 100 km blocks).
+Model is based on 72,246 training points.</p>
+<p>We can take a look at the accuracy plot for this model:</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:ac-soc1"></span>
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.mir_mlr..eml_kssl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/mir_mlr..eml_kssl_na_v1.rds`." width="70%"><p class="caption">
+Figure 5.1: Accuracy plot for <code>log..oc_usda.calc_wpct/mir_mlr..eml_kssl_na_v1.rds</code>.
+</p>
+</div>
+<p>Next, we load the sample MIR data that we can use to predict soil organic carbon:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mir.raw</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"./sample-data/sample_mir_data.csv"</span><span class="op">)</span><span class="op">[</span>,<span class="op">-</span><span class="fl">1</span><span class="op">]</span></span></code></pre></div>
+<p>This is a simple table with raw MIR spectral data (absorbances) prepared as a table.
+The column names contain the wavelengths / MIR channels:</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">mir.raw</span><span class="op">)</span></span>
+<span><span class="co">## 20  1765</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">mir.raw</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>'data.frame':   20 obs. of  10 variables:
+ $ X4001.656: num  0.411 0.357 0.296 0.152 0.238 ...
+ $ X3999.728: num  0.411 0.357 0.297 0.152 0.239 ...
+ $ X3997.799: num  0.411 0.357 0.297 0.153 0.239 ...
+ $ X3995.871: num  0.411 0.357 0.298 0.153 0.24 ...
+ $ X3993.942: num  0.411 0.357 0.298 0.153 0.24 ...
+ $ X3992.014: num  0.411 0.357 0.299 0.154 0.241 ...
+ $ X3990.085: num  0.411 0.358 0.299 0.154 0.242 ...
+ $ X3988.156: num  0.412 0.358 0.299 0.154 0.242 ...
+ $ X3986.228: num  0.412 0.358 0.3 0.154 0.243 ...
+ $ X3984.3  : num  0.411 0.358 0.3 0.155 0.243 ...</code></pre>
+<p>We can generate predictions by using:</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pred.oc</span> <span class="op">=</span> <span class="fu">predict.ossl</span><span class="op">(</span>t.var<span class="op">=</span><span class="st">"log..oc_usda.calc_wpct"</span>, mir.raw<span class="op">=</span><span class="va">mir.raw</span>, </span>
+<span>                       ossl.model<span class="op">=</span><span class="va">ossl.model</span>, ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">100</span><span class="op">)</span>,</span>
+<span>                       ossl.pca.mir<span class="op">=</span><span class="va">ossl.pca.mir</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">pred.oc</span><span class="op">$</span><span class="va">pred</span><span class="op">)</span></span></code></pre></div>
+<p>where <code>ylim=c(0,100)</code> specifies that the prediction values need to be in the range 0 to 100 (values out of these range will be replaced with either 0 or 100).
+The output of this model consists of four parts:</p>
+<pre><code>List of 4
+ $ pred :'data.frame':  20 obs. of  5 variables:
+ $ x    :'data.frame':  20 obs. of  68 variables:
+ $ model:'data.frame':  72251 obs. of  5 variables:
+ $ cf   : num 1.38</code></pre>
+<ol style="list-style-type: decimal">
+<li>Predictions with back-transformed value and lower and upper prediction intervals (1 std.);</li>
+<li>Data frame with all covariate layers needed to generate predictions;</li>
+<li>Summary meta-learner with predicted and observed values;</li>
+<li>Ratio between variance in predictions produced using base learners and MSE;</li>
+</ol>
+<p>The predictions are in the format:</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">pred.oc</span><span class="op">$</span><span class="va">pred</span><span class="op">)</span></span></code></pre></div>
+<pre><code>'data.frame':   20 obs. of  5 variables:
+ $ pred.mean : num  0.0496 0.1128 0.3848 0.776 -0.0608 ...
+ $ pred.error: num  0.115 0.248 0.085 0.151 0.168 ...
+ $ tpred.mean: num  0.0509 0.1194 0.4693 1.1728 0 ...
+ $ lower.1std: num  0 0 0.35 0.868 0 ...
+ $ upper.1std: num  0.179 0.435 0.6 1.527 0.113 ...</code></pre>
+<p>which means that the predicted <code>oc_usda.calc_wpct</code> for first row is 0 etc. The
+<code>lower.1std</code> and <code>upper.1std</code> indicate standard prediction interval based on the
+prediction error derived in the log-space. For higher values of <code>oc_usda.calc_wpct</code>
+prediction interval gets thus proportionally higher for larger absolute values e.g. for row 14 it is between 24% and 39%:</p>
+<pre><code>#pred.oc$pred[14,]
+   pred.mean pred.error tpred.mean lower.1std upper.1std
+14  3.464914  0.2329579    30.9737   24.32914    39.3613</code></pre>
+<p>Finally, we can check how well does the new data (MIR scans) reflect the training
+data used to build the calibration models:</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/edzer/hexbin">hexbin</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">grid</span><span class="op">)</span></span>
+<span><span class="va">ossl.pcax.mir</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/connections.html">url</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">rep</span>, <span class="st">"pca.ossl/pca_mir_kssl_v1.rds"</span><span class="op">)</span>, <span class="st">"rb"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">reds</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/colorRamp.html">colorRampPalette</a></span><span class="op">(</span><span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span><span class="fl">9</span>, <span class="st">"YlOrRd"</span><span class="op">)</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">hb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/hexbin/man/hexbin.html">hexbin</a></span><span class="op">(</span><span class="va">ossl.pcax.mir</span><span class="op">$</span><span class="va">x</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span>, xbins<span class="op">=</span><span class="fl">60</span><span class="op">)</span></span>
+<span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">hb</span>, colramp <span class="op">=</span> <span class="va">reds</span>, main<span class="op">=</span><span class="st">'PCA MIR KSSL'</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/hexbin/man/pushHexport.html">pushHexport</a></span><span class="op">(</span><span class="va">p</span><span class="op">$</span><span class="va">plot.vp</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/grid/grid.points.html">grid.points</a></span><span class="op">(</span><span class="va">pred.oc</span><span class="op">$</span><span class="va">x</span><span class="op">$</span><span class="va">mir.PC1</span>, <span class="va">pred.oc</span><span class="op">$</span><span class="va">x</span><span class="op">$</span><span class="va">mir.PC2</span>, pch<span class="op">=</span><span class="fl">17</span><span class="op">)</span></span></code></pre></div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:pca-sim"></span>
+<img src="img/pca_similarity_plot.png" alt="Similary plot new spectra vs training spectra (PC biplot)." width="80%"><p class="caption">
+Figure 5.2: Similary plot new spectra vs training spectra (PC biplot).
+</p>
+</div>
+<p>Based on the plot shown above, it appears that some of scans used are less typical
+and hence prediction results should be taken with caution.</p>
+</div>
+<div id="predicting-soil-properties-using-mir-spectra-and-geographical-covariates" class="section level3" number="5.2.2">
+<h3>
+<span class="header-section-number">5.2.2</span> Predicting soil properties using MIR spectra and geographical covariates<a class="anchor" aria-label="anchor" href="#predicting-soil-properties-using-mir-spectra-and-geographical-covariates"><i class="fas fa-link"></i></a>
+</h3>
+<p>Next, we can also predict values at new location using calibration model that is
+field-specific i.e. we use MIR spectra in combination with geographic covariates.
+To predict with such data we also need to load geographical locations for the same
+MIR scans:</p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">new.soil</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"./sample-data/sample_soilsite_data.csv"</span><span class="op">)</span></span>
+<span><span class="va">lon</span> <span class="op">=</span> <span class="va">new.soil</span><span class="op">$</span><span class="va">longitude.std.decimal.degrees</span></span>
+<span><span class="va">lat</span> <span class="op">=</span> <span class="va">new.soil</span><span class="op">$</span><span class="va">latitude.std.decimal.degrees</span></span>
+<span><span class="va">hzn_depth</span> <span class="op">=</span> <span class="va">new.soil</span><span class="op">$</span><span class="va">lay_depth_to_top</span> <span class="op">+</span> <span class="op">(</span><span class="va">new.soil</span><span class="op">$</span><span class="va">lay_depth_to_bottom</span> <span class="op">-</span> <span class="va">new.soil</span><span class="op">$</span><span class="va">lay_depth_to_top</span><span class="op">)</span><span class="op">/</span><span class="fl">2</span></span></code></pre></div>
+<p>This now comes with three additional columns <code>lon</code> and <code>lat</code> and soil depth <code>hzn_depth</code>, which is
+the middle of the top and bottom depth of the soil horizon. To predict with then specify also the additional
+arguments in the function:</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">eml2</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html">url</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">rep</span>, <span class="st">"log..oc_usda.calc_wpct/mir_mlr..eml_kssl_ll_v1.rds"</span><span class="op">)</span>, <span class="st">"rb"</span><span class="op">)</span></span>
+<span><span class="va">ossl.model</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="va">eml2</span><span class="op">)</span> </span>
+<span><span class="va">pred.oc2</span> <span class="op">=</span> <span class="fu">predict.ossl</span><span class="op">(</span>t.var<span class="op">=</span><span class="st">"log..oc_usda.calc_wpct"</span>, mir.raw<span class="op">=</span><span class="va">mir.raw</span>, ossl.model<span class="op">=</span><span class="va">ossl.model</span>, ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">100</span><span class="op">)</span>,</span>
+<span>             ossl.pca.mir<span class="op">=</span><span class="va">ossl.pca.mir</span>, geo.type<span class="op">=</span><span class="st">"ll"</span>, lon<span class="op">=</span><span class="va">lon</span>, lat<span class="op">=</span><span class="va">lat</span>, hzn_depth<span class="op">=</span><span class="va">hzn_depth</span>, cog.dir<span class="op">=</span><span class="st">"/data/WORLDCLIM/"</span><span class="op">)</span></span></code></pre></div>
+<p>This type of prediction is somewhat more complex as the function <code>predict.ossl</code> needs also to overlay
+points (<code>lon</code> and <code>lat</code>) vs some <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/out/global_layers1km.csv">60+ GeoTIFFs</a> (containing <a href="https://www.worldclim.org/data/worldclim21.html">WorldClim2.1</a> layers and <a href="https://doi.org/10.5281/zenodo.1420114">MODIS LST</a> layers). In this case the layers are located on a local machine, which significantly speeds up predictions function.</p>
+<p>We can look at the variable importance table to try to understand how much the
+additional geographical covariate layers help with producing predictions:</p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">xl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>importance <span class="op">=</span> <span class="va">ossl.model</span><span class="op">$</span><span class="va">learner.model</span><span class="op">$</span><span class="va">base.models</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">learner.model</span><span class="op">$</span><span class="va">variable.importance</span><span class="op">)</span></span>
+<span><span class="va">xl</span><span class="op">$</span><span class="va">relative_importance</span> <span class="op">=</span> <span class="fl">100</span><span class="op">*</span><span class="va">xl</span><span class="op">$</span><span class="va">importance</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">xl</span><span class="op">$</span><span class="va">importance</span><span class="op">)</span></span>
+<span><span class="va">xl</span> <span class="op">=</span> <span class="va">xl</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html">order</a></span><span class="op">(</span><span class="va">xl</span><span class="op">$</span><span class="va">importance</span>, decreasing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,<span class="op">]</span></span>
+<span><span class="va">xl</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">20</span>,<span class="op">]</span></span></code></pre></div>
+<pre><code>                                                      importance relative_importance
+mir.PC3                                               6511.36634          27.9140468
+mir.PC2                                               3603.29854          15.4472409
+hzn_depth                                             2936.76269          12.5898202
+mir.PC5                                               2570.81057          11.0209936
+mir.PC10                                              1767.58676           7.5775954
+mir.PC1                                               1276.53105           5.4724532
+mir.PC4                                                925.96202           3.9695735
+mir.PC11                                               416.65775           1.7862002
+mir.PC24                                               226.11697           0.9693572
+mir.PC26                                               158.90309           0.6812131
+mir.PC8                                                116.63143           0.4999957
+mir.PC16                                               102.35918           0.4388110
+mir.PC7                                                 98.52643           0.4223801
+clm_lst_mod11a2.jul.day_m_1km_s0..0cm_2000..2017_v1.0   65.31996           0.2800248
+mir.PC12                                                62.31378           0.2671374
+mir.PC28                                                60.13722           0.2578066
+mir.PC15                                                59.47144           0.2549524
+clm_lst_mod11a2.jun.day_m_1km_s0..0cm_2000..2017_v1.0   59.17326           0.2536741
+mir.PC6                                                 49.88579           0.2138590
+mir.PC17                                                49.37638           0.2116752</code></pre>
+<p>here <code>hzn_depth</code> comes as an important covariate and so is <code>lst_mod11a2.jul.day</code>
+(MOD11A long-term meand daily temperature for July). The original MIR PCA components, however,
+dominate the prediction model.</p>
+<p>The global layers (global land mask at 1-km spatial resolution) are listed at <a href="https://github.com/soilspectroscopy/ossl-models" class="uri">https://github.com/soilspectroscopy/ossl-models</a> and are available as a Cloud-service / Cloud-Optimized GeoTIFFs. The process of spatial overlay for new prediction locations, however, can significantly increase
+prediction time, so something to be aware of.</p>
+</div>
+<div id="predicting-soil-properties-using-visnir-spectra" class="section level3" number="5.2.3">
+<h3>
+<span class="header-section-number">5.2.3</span> Predicting soil properties using VisNIR spectra<a class="anchor" aria-label="anchor" href="#predicting-soil-properties-using-visnir-spectra"><i class="fas fa-link"></i></a>
+</h3>
+<p>We can also load VisNIR spectra (reflectances) and predict values using the same function:</p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">visnir.raw</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"./sample-data/sample_visnir_data.csv"</span><span class="op">)</span><span class="op">[</span>,<span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">visnir.raw</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>'data.frame':   20 obs. of  5 variables:
+ $ X350: num  0.0855 0.0677 0.2319 0.3179 0.25 ...
+ $ X351: num  0.0839 0.0666 0.2305 0.3195 0.2504 ...
+ $ X352: num  0.0816 0.0647 0.2277 0.3184 0.2508 ...
+ $ X353: num  0.0811 0.0658 0.2261 0.3134 0.2489 ...
+ $ X354: num  0.082 0.0674 0.2258 0.3124 0.2464 ...</code></pre>
+<p>We load another PCA model that we prepared using global VisNIR data and the
+mlr-model that was fitted using VisNIR data:</p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pmc3</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html">url</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">rep</span>, <span class="st">"pca.ossl/mpca_visnir_kssl_v1.rds"</span><span class="op">)</span>, <span class="st">"rb"</span><span class="op">)</span></span>
+<span><span class="va">eml3</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html">url</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">rep</span>, <span class="st">"log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds"</span><span class="op">)</span>, <span class="st">"rb"</span><span class="op">)</span></span>
+<span><span class="va">ossl.pca.visnir</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="va">pmc3</span><span class="op">)</span></span>
+<span><span class="va">ossl.model</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="va">eml3</span><span class="op">)</span></span>
+<span><span class="va">pred.oc3</span> <span class="op">=</span> <span class="fu">predict.ossl</span><span class="op">(</span>t.var<span class="op">=</span><span class="st">"log..oc_usda.calc_wpct"</span>, visnir.raw<span class="op">=</span><span class="va">visnir.raw</span>, ossl.model<span class="op">=</span><span class="va">ossl.model</span>,</span>
+<span>                        ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">100</span><span class="op">)</span>, spc.type <span class="op">=</span> <span class="st">"visnir"</span>, ossl.pca.visnir <span class="op">=</span> <span class="va">ossl.pca.visnir</span><span class="op">)</span></span></code></pre></div>
+<p>This model is similar to the MIR model, but the accuracy plot indicates that the accuracy
+might be significantly lower:</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:ac-soc2"></span>
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.visnir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds`." width="70%"><p class="caption">
+Figure 5.3: Accuracy plot for <code>log..oc_usda.calc_wpct/visnir_mlr..eml_ossl_na_v1.rds</code>.
+</p>
+</div>
+</div>
+<div id="importing-soil-spectral-scans-using-raw-data-formats" class="section level3" number="5.2.4">
+<h3>
+<span class="header-section-number">5.2.4</span> Importing soil spectral scans using raw data formats<a class="anchor" aria-label="anchor" href="#importing-soil-spectral-scans-using-raw-data-formats"><i class="fas fa-link"></i></a>
+</h3>
+<p>The examples shown above demonstrate prediction results based on using sample
+MIR and VisNIR data (csv files). If you only have raw spectral scan data such as
+<a href="http://support.asdi.com/Document/Viewer.aspx?id=95">ASD</a> (PAN Analytics Inc.) and/or
+<a href="https://www.bruker.com/en/products-and-solutions/infrared-and-raman/opus-spectroscopy-software.html">OPUS files</a> (Bruker Inc.),
+you can use various R packages to read files and prepare them for prediction required by OSSL.</p>
+<p>Consider for example a sample OPUS file from the <a href="https://registry.opendata.aws/afsis/">AfSIS-1 project</a>,
+which is an original file from the Bruker_Alpha_ZnSe instrument. We can read this file
+thanks to the <a href="https://philipp-baumann.github.io/simplerspec">simplerspec package</a> by using:</p>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mir.x</span> <span class="op">=</span> <span class="fu">simplerspec</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/simplerspec/man/read_opus_bin_univ.html">read_opus_bin_univ</a></span><span class="op">(</span><span class="st">'sample-data/icr056141.0'</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Extracted spectra data from file: &lt;icr056141.0&gt;</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">mir.x</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "metadata"          "spc"               "spc_nocomp"       </span></span>
+<span><span class="co">#&gt;  [4] "sc_sm"             "sc_rf"             "ig_sm"            </span></span>
+<span><span class="co">#&gt;  [7] "ig_rf"             "wavenumbers"       "wavenumbers_sc_sm"</span></span>
+<span><span class="co">#&gt; [10] "wavenumbers_sc_rf"</span></span></code></pre></div>
+<p>which gives a list of object including <code>spc</code> which are the spectral bands:</p>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">mir.x</span><span class="op">[[</span><span class="st">"spc"</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1]    1 1715</span></span></code></pre></div>
+<p>we can plot the MIR absorbance curve for this scan by using:</p>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">mir.x</span><span class="op">[[</span><span class="st">"spc"</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/matplot.html">matplot</a></span><span class="op">(</span>y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/vector.html">as.vector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span><span class="op">(</span><span class="va">mir.x</span><span class="op">[[</span><span class="st">"spc"</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span>, x<span class="op">=</span><span class="va">x</span>,</span>
+<span>        ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">3</span><span class="op">)</span>,</span>
+<span>        type <span class="op">=</span> <span class="st">'l'</span>, </span>
+<span>        xlab <span class="op">=</span> <span class="st">"Wavelength"</span>, </span>
+<span>        ylab <span class="op">=</span> <span class="st">"Absorbance"</span></span>
+<span>        <span class="op">)</span></span></code></pre></div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:plot-opus"></span>
+<img src="050-reference_models_files/figure-html/plot-opus-1.png" alt="Spectral absorbances plot using MIR data." width="90%"><p class="caption">
+Figure 5.4: Spectral absorbances plot using MIR data.
+</p>
+</div>
+<p>This dataset is hence ready to generate predictions using global OSSL models. We can,
+for example generate prediction of soil pH using the following model:</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:ac-ph1"></span>
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.mir_mlr..eml_ossl_ll_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/mir_mlr..eml_ossl_ll_v1.rds`." width="70%"><p class="caption">
+Figure 5.5: Accuracy plot for <code>log..oc_usda.calc_wpct/mir_mlr..eml_ossl_ll_v1.rds</code>.
+</p>
+</div>
+<p>in this case we need to add also lon-lat coordinates and specify the soil depth:</p>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pcm3</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html">url</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">rep</span>, <span class="st">"pca.ossl/mpca_mir_ossl_v1.rds"</span><span class="op">)</span>, <span class="st">"rb"</span><span class="op">)</span></span>
+<span><span class="va">eml3</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html">url</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">rep</span>, <span class="st">"log..oc_usda.calc_wpct/mir_mlr..eml_ossl_ll_v1.rds"</span><span class="op">)</span>, <span class="st">"rb"</span><span class="op">)</span></span>
+<span><span class="va">ossl.pca.mir</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="va">pcm3</span><span class="op">)</span></span>
+<span><span class="va">ossl.model</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="va">eml3</span><span class="op">)</span></span>
+<span><span class="va">pred.oc1</span> <span class="op">=</span> <span class="fu">predict.ossl</span><span class="op">(</span>t.var<span class="op">=</span><span class="st">"log..oc_usda.calc_wpct"</span>, mir.raw<span class="op">=</span><span class="va">mir.x</span><span class="op">[[</span><span class="st">"spc"</span><span class="op">]</span><span class="op">]</span>, ossl.model<span class="op">=</span><span class="va">ossl.model</span>, </span>
+<span>             ossl.pca.mir<span class="op">=</span><span class="va">ossl.pca.mir</span>, geo.type<span class="op">=</span><span class="st">"ll"</span>, lon<span class="op">=</span><span class="fl">28.50299833</span>, lat<span class="op">=</span><span class="op">-</span><span class="fl">13.10194667</span>, hzn_depth<span class="op">=</span><span class="fl">10</span>, </span>
+<span>             cog.dir<span class="op">=</span><span class="st">"/data/WORLDCLIM/"</span>, dataset.code_ascii_c<span class="op">=</span><span class="st">"AFSIS1.SSL"</span>, ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">100</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>which gives us predictions of <code>log..oc_usda.calc_wpct</code>:</p>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pred.oc1</span><span class="op">$</span><span class="va">pred</span></span></code></pre></div>
+<pre><code>    pred.mean pred.error tpred.mean lower.1std upper.1std
+1 -0.02636144  0.2813155          0          0  0.2904023</code></pre>
+<p>Note that we had to now specify that this MIR data is from AfSIS project via the
+<code>AFSIS1.SSL</code> argument.</p>
+<p>Likewise, we can also read the ASD files using the <a href="https://github.com/pierreroudier/asdreader">asdreader package</a>, so we can
+generate predictions using VisNIR spectra. Consider for example the sample data
+from the KSSL VisNIR repository:</p>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">asd.raw</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu">asdreader</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/asdreader/man/get_spectra.html">get_spectra</a></span><span class="op">(</span><span class="st">"sample-data/101453MD01.asd"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">asd.raw</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1]    1 2151</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">asd.raw</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/matplot.html">matplot</a></span><span class="op">(</span>y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/vector.html">as.vector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span><span class="op">(</span><span class="va">asd.raw</span><span class="op">)</span><span class="op">)</span>, x<span class="op">=</span><span class="va">x</span>,</span>
+<span>        ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0.7</span><span class="op">)</span>,</span>
+<span>        type <span class="op">=</span> <span class="st">'l'</span>, </span>
+<span>        xlab <span class="op">=</span> <span class="st">"Wavelength"</span>, </span>
+<span>        ylab <span class="op">=</span> <span class="st">"Reflectance"</span></span>
+<span>        <span class="op">)</span></span></code></pre></div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:plot-ads"></span>
+<img src="050-reference_models_files/figure-html/plot-ads-1.png" alt="Spectral reflectance plot using VisNIR data." width="90%"><p class="caption">
+Figure 5.6: Spectral reflectance plot using VisNIR data.
+</p>
+</div>
+<p>we can also directly predict <code>ph.h2o_usda.4c1_index</code> by using:</p>
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pmc3</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html">url</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">rep</span>, <span class="st">"pca.ossl/mpca_visnir_kssl_v1.rds"</span><span class="op">)</span>, <span class="st">"rb"</span><span class="op">)</span></span>
+<span><span class="va">eml4</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html">url</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">rep</span>, <span class="st">"ph.h2o_usda.4c1_index/visnir_mlr..eml_ossl_na_v1.rds"</span><span class="op">)</span>, <span class="st">"rb"</span><span class="op">)</span></span>
+<span><span class="va">ossl.pca.visnir</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="va">pmc3</span><span class="op">)</span></span>
+<span><span class="va">ossl.model</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="va">eml4</span><span class="op">)</span></span>
+<span><span class="va">pred.ph2</span> <span class="op">=</span> <span class="fu">predict.ossl</span><span class="op">(</span>t.var<span class="op">=</span><span class="st">"ph.h2o_usda.4c1_index"</span>, visnir.raw<span class="op">=</span><span class="va">asd.raw</span>, </span>
+<span>        ossl.model<span class="op">=</span><span class="va">ossl.model</span>, spc.type<span class="op">=</span><span class="st">"visnir"</span>, ossl.pca.visnir<span class="op">=</span><span class="va">ossl.pca.visnir</span><span class="op">)</span></span>
+<span><span class="va">pred.ph2</span><span class="op">$</span><span class="va">pred</span></span></code></pre></div>
+<pre><code>  pred.mean pred.error lower.1std upper.1std
+1  6.292328  0.9341607   5.358167   7.226489</code></pre>
+<p>We are currently building an API that will work directly with standard raw files
+coming directly from the instruments. This should help make the OSSL more robust
+and applicable to thousands of requests on a daily basis.</p>
+<p>Wrongly formatted spectral scans can lead to artifacts and should be used with care.
+Note that complexity of soil spectral scans remains high, including the file sizes that are
+difficult to open and read (few thousands of columns)
+and are often not supported in standard tabular software e.g. LibreOffice or similar.
+We recommend thus to report any issues you might have via our <a href="https://github.com/soilspectroscopy">project GitHub</a> so we
+can all help each other produce more accurate primary soil data.</p>
+</div>
+<div id="the-bundle-approach-to-soil-spectroscopy-calibration" class="section level3" number="5.2.5">
+<h3>
+<span class="header-section-number">5.2.5</span> The bundle approach to soil spectroscopy calibration<a class="anchor" aria-label="anchor" href="#the-bundle-approach-to-soil-spectroscopy-calibration"><i class="fas fa-link"></i></a>
+</h3>
+<p>One of the approaches used to calibrate soil spectroscopy data in the Soil Spectroscopy
+for Global Good project is to use a combination of VisNIR, MIR, spatial location
+and Earth Observation data, basically any additional information that could potentially
+help with calibration. We refer to this as the <em>“bundle approach”</em>. The key
+assumption of the bundle approach is that accuracy of predictions could be somewhat
+improved, which is especially important for soil organic carbon monitoring and similar.
+Some previous research e.g. by <span class="citation"><a href="references.html#ref-hong2022fusion" role="doc-biblioref">Hong et al.</a> (<a href="references.html#ref-hong2022fusion" role="doc-biblioref">2022</a>)</span> and <span class="citation"><a href="references.html#ref-vohland2022quantification" role="doc-biblioref">Vohland, Ludwig, Seidel, &amp; Hutengs</a> (<a href="references.html#ref-vohland2022quantification" role="doc-biblioref">2022</a>)</span> indicate
+that such fusion techniques could help improve accuracy of, especially, <em>in-situ</em> methods.</p>
+<p>Because several of the training data sets, especially the KSSL and ICRAF-ISRIC,
+come with both VisNIR and MIR scans, and are documented in detail, we were able
+to fit global calibration models that can now be used to predict soil properties from a combination of data.
+Consider for example a sample from North Dakota with a profile code <code>S2014ND095001</code>, and
+sample code <code>235157</code> (classified as <em>“Fine-loamy, mixed, superactive, frigid Calcic Hapludoll”</em>).
+This sample was taken at location lon=-99.2064444; lat=48.8000056; and covers
+the depth interval 101–125 cm (B2 horizon). We can predict value of soil pH by
+using both VisNIR and MIR scans for the same sample:</p>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mir.x</span> <span class="op">=</span> <span class="fu">simplerspec</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/simplerspec/man/read_opus_bin_univ.html">read_opus_bin_univ</a></span><span class="op">(</span><span class="st">'sample-data/235157XS01.0'</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Extracted spectra data from file: &lt;235157XS01.0&gt;</span></span>
+<span><span class="va">asd.raw</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu">asdreader</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/asdreader/man/get_spectra.html">get_spectra</a></span><span class="op">(</span><span class="st">"sample-data/235157MD01.asd"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>This time we need to load 2 PCA models (1) for VisNIR and (2) MIR spectra, and one
+model for the bundle calibration <code>visnir.mir_mlr..eml_ossl_na_v1.rds</code>:</p>
+<p>To make the prediction, we need to specify multiple inputs:</p>
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pcm.m</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html">url</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">rep</span>, <span class="st">"pca.ossl/mpca_mir_ossl_v1.rds"</span><span class="op">)</span>, <span class="st">"rb"</span><span class="op">)</span></span>
+<span><span class="va">pcm.v</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html">url</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">rep</span>, <span class="st">"pca.ossl/mpca_visnir_ossl_v1.rds"</span><span class="op">)</span>, <span class="st">"rb"</span><span class="op">)</span></span>
+<span><span class="va">eml.b</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html">url</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">rep</span>, <span class="st">"log..oc_usda.calc_wpct/visnir.mir_mlr..eml_ossl_na_v1.rds"</span><span class="op">)</span>, <span class="st">"rb"</span><span class="op">)</span></span>
+<span><span class="va">ossl.pca.mir</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="va">pcm.m</span><span class="op">)</span></span>
+<span><span class="va">ossl.pca.visnir</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="va">pcm.v</span><span class="op">)</span></span>
+<span><span class="va">ossl.model</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="va">eml.b</span><span class="op">)</span></span>
+<span><span class="va">pred.ph.b</span> <span class="op">=</span> <span class="fu">predict.ossl</span><span class="op">(</span>t.var<span class="op">=</span><span class="st">"log..oc_usda.calc_wpct"</span>, spc.type<span class="op">=</span><span class="st">"visnir.mir"</span>, </span>
+<span>             mir.raw<span class="op">=</span><span class="va">mir.x</span><span class="op">[[</span><span class="st">"spc"</span><span class="op">]</span><span class="op">]</span>, visnir.raw<span class="op">=</span><span class="va">asd.raw</span>, </span>
+<span>             ossl.model<span class="op">=</span><span class="va">ossl.model</span>, ossl.pca.mir<span class="op">=</span><span class="va">ossl.pca.mir</span>,  </span>
+<span>             ossl.pca.visnir<span class="op">=</span><span class="va">ossl.pca.visnir</span>, hzn_depth<span class="op">=</span><span class="fl">113</span><span class="op">)</span></span></code></pre></div>
+<p>which gives:</p>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pred.ph.b</span><span class="op">$</span><span class="va">pred</span></span></code></pre></div>
+<pre><code>  pred.mean pred.error tpred.mean lower.1std upper.1std
+1 0.2532955 0.02471756  0.2882639  0.2568115  0.3205034</code></pre>
+<p>We can look at the model prediction accuracy based on 5-fold cross-validation:</p>
+<pre><code>Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.1514 -0.0625 -0.0015  0.0571  3.1702 
+
+Coefficients:
+               Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   -0.019667   0.001207 -16.297   &lt;2e-16 ***
+regr.ranger    0.213650   0.006611  32.319   &lt;2e-16 ***
+regr.xgboost  -0.012230   0.005358  -2.283   0.0225 *  
+regr.cvglmnet  0.479673   0.006236  76.923   &lt;2e-16 ***
+regr.cubist    0.337446   0.005674  59.470   &lt;2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1577 on 37312 degrees of freedom
+Multiple R-squared:  0.9767,    Adjusted R-squared:  0.9767 
+F-statistic: 3.91e+05 on 4 and 37312 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>This shows that the model has an RMSE of 0.156 (in log-scale), which seems to be the <a href="https://github.com/soilspectroscopy/ossl-models">among the best performing models</a>
+for predicting soil organic carbon content in % from spectral scans. Thus, in this specific case, also the
+prediction error shows relatively narrow range of uncertainty.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:ac-phm"></span>
+<img src="http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_models/log..oc_usda.calc_wpct/ap.visnir.mir_mlr..eml_ossl_na_v1.rds.png" alt="Accuracy plot for `log..oc_usda.calc_wpct/visnir.mir_mlr..eml_ossl_na_v1.rds` the VisNIR-MIR combination. As compared with other calibration models this seems to be most accurate, although difference with the pure MIR model is not significant." width="70%"><p class="caption">
+Figure 5.7: Accuracy plot for <code>log..oc_usda.calc_wpct/visnir.mir_mlr..eml_ossl_na_v1.rds</code> the VisNIR-MIR combination. As compared with other calibration models this seems to be most accurate, although difference with the pure MIR model is not significant.
+</p>
+</div>
+<p>The bundle approach in the OSSL is used at the moment by default for all soil
+variables, although one should keep in mind that the training points are more
+patchy i.e. are less representative of the global conditions. As more and more
+training data is added to the OSSL, we should be able to serve more representative
+calibration models.</p>
+<p>The bundle approach could be further extended to using also e.g.:</p>
+<ul>
+<li>spatial covariates (e.g. WorldClim layers),<br>
+</li>
+<li>bare-Earth Spectra <span class="citation">(<a href="references.html#ref-dematte2020bare" role="doc-biblioref">Demattê et al., 2020</a>)</span>,<br>
+</li>
+<li>soil moisture daily estimates (matching the date of soil sampling) <span class="citation">(<a href="references.html#ref-brocca2019sm2rain" role="doc-biblioref">Brocca et al., 2019</a>)</span>,</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:map-bareearth"></span>
+<img src="img/bareearth_spectra_250m.jpg" alt="Example of a satellite-based bare-earth spectral product based on @dematte2020bare. The global data is available at 250-m spatial resolution." width="90%"><p class="caption">
+Figure 5.8: Example of a satellite-based bare-earth spectral product based on <span class="citation"><a href="references.html#ref-dematte2020bare" role="doc-biblioref">Demattê et al.</a> (<a href="references.html#ref-dematte2020bare" role="doc-biblioref">2020</a>)</span>. The global data is available at 250-m spatial resolution.
+</p>
+</div>
+<p>More and more layers will be gradually added to the OSSL registry to enable users to
+increase accuracy of their predictions. For updates in the OSSL model library
+please subscribe to <a href="https://soilspectroscopy.org">our channels</a> to stay up-to-date.</p>
+</div>
+</div>
+<div id="registering-your-own-model" class="section level2" number="5.3">
+<h2>
+<span class="header-section-number">5.3</span> Registering your own model<a class="anchor" aria-label="anchor" href="#registering-your-own-model"><i class="fas fa-link"></i></a>
+</h2>
+<div id="access-ossl-data-to-fit-your-own-models" class="section level3" number="5.3.1">
+<h3>
+<span class="header-section-number">5.3.1</span> Access OSSL data to fit your own models<a class="anchor" aria-label="anchor" href="#access-ossl-data-to-fit-your-own-models"><i class="fas fa-link"></i></a>
+</h3>
+<p>To load the complete analysis-ready OSSL regression-matrix dataset (486MB) as a
+single table in R and run predictive modeling please use:</p>
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">rep2</span> <span class="op">=</span> <span class="st">"http://s3.us-east-1.wasabisys.com/soilspectroscopy/ossl_import/"</span></span>
+<span><span class="va">rm.ossl</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/connections.html">url</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">rep2</span>, <span class="st">"rm.ossl_v1.rds"</span><span class="op">)</span>, <span class="st">"rb"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>dim(rm.ossl)
+## 152,146 obs. of 2962 variables</code></pre>
+<p>The compilation currently contains training MIR (70k) and VisNIR (70k) spectral
+scans + soil calibration data (51,732 unique locations).</p>
+<p>We are now fitting <a href="https://github.com/soilspectroscopy/ossl-models">globally-applicable prediction models</a>
+to enable free and open production of primary soil data. <a href="https://doi.org/10.5281/zenodo.5759693">The output models</a> are available via the S3 cloud-service
+and/or API under CC-BY license. If you fit your own models and/or if you are interested in contributing
+to this project please contact us and help us make better open soil data for global good!</p>
+</div>
+<div id="registering-and-hosting-models" class="section level3" number="5.3.2">
+<h3>
+<span class="header-section-number">5.3.2</span> Registering and hosting models<a class="anchor" aria-label="anchor" href="#registering-and-hosting-models"><i class="fas fa-link"></i></a>
+</h3>
+<p>If you plan to contribute your own models to the Soil Spectroscopy for Global Good project
+please follow these steps:</p>
+<ol style="list-style-type: decimal">
+<li>We recommend registering and sharing new models via S3 file
+service system (e.g. via OpenGeoHub’s Wasabi.com cloud-service) with RDS files produced using
+<a href="https://github.com/nuest/docker-reproducible-research">Dockerized solution for full scientific reproducibility</a>.<br>
+</li>
+<li>For each model the following metadata need to be supplied:
+<ul>
+<li>Registered <a href="https://hub.docker.com/r/opengeohub/r-geo">docker image</a>; which should specify in detail: software in
+use, R package versions etc;</li>
+<li>DOI of the zenodo repository with a back-up for the data (i.e. how to cite your models);</li>
+<li>URL for accessing the RDS file via S3;</li>
+</ul>
+</li>
+</ol>
+<p>We can host your models on our infrastructure at no additional costs. Please
+<a href="https://soilspectroscopy.org/contact/">contact us</a> and apply for registering your models via soilspectroscopy.org.</p>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="ossl-database-access.html"><span class="header-section-number">4</span> OSSL database access</a></div>
+<div class="next"><a href="references.html"><span class="header-section-number">6</span> References</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ossl-reference-models"><span class="header-section-number">5</span> OSSL reference models</a></li>
+<li><a class="nav-link" href="#ossl-global-soil-spectroscopy-callibrarion-models"><span class="header-section-number">5.1</span> OSSL global soil spectroscopy callibrarion models</a></li>
+<li>
+<a class="nav-link" href="#using-default-ossl-models-to-predict-soil-properties"><span class="header-section-number">5.2</span> Using default OSSL models to predict soil properties</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#predicting-soil-properties-using-mir-spectra"><span class="header-section-number">5.2.1</span> Predicting soil properties using MIR spectra</a></li>
+<li><a class="nav-link" href="#predicting-soil-properties-using-mir-spectra-and-geographical-covariates"><span class="header-section-number">5.2.2</span> Predicting soil properties using MIR spectra and geographical covariates</a></li>
+<li><a class="nav-link" href="#predicting-soil-properties-using-visnir-spectra"><span class="header-section-number">5.2.3</span> Predicting soil properties using VisNIR spectra</a></li>
+<li><a class="nav-link" href="#importing-soil-spectral-scans-using-raw-data-formats"><span class="header-section-number">5.2.4</span> Importing soil spectral scans using raw data formats</a></li>
+<li><a class="nav-link" href="#the-bundle-approach-to-soil-spectroscopy-calibration"><span class="header-section-number">5.2.5</span> The bundle approach to soil spectroscopy calibration</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#registering-your-own-model"><span class="header-section-number">5.3</span> Registering your own model</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#access-ossl-data-to-fit-your-own-models"><span class="header-section-number">5.3.1</span> Access OSSL data to fit your own models</a></li>
+<li><a class="nav-link" href="#registering-and-hosting-models"><span class="header-section-number">5.3.2</span> Registering and hosting models</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/soilspectroscopy/ossl-manual/blob/master/050-reference_models.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/soilspectroscopy/ossl-manual/edit/master/050-reference_models.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Open Soil Spectral Library</strong>" was written by Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

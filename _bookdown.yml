@@ -4,13 +4,12 @@ output_dir: "docs"
 
 rmd_files: [
   "index.Rmd",
-
-  "010-start_here.Rmd",
-  "015-project.Rmd",
-  "020-variables_list.Rmd",
-  "025-modeling.Rmd",
-  "references.Rmd",
-
+  "010-new_to_markdown.Rmd",
+  "020-soilspec_tools_users.Rmd",
+  "030-database_description.Rmd",
+  "040-database_access.Rmd",
+  "050-reference_models.Rmd",
+  "references.Rmd"
 ]
 
 before_chapter_script: "_common.R"
