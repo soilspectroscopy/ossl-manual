@@ -6,8 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>About | Open Soil Spectral Library</title>
 <meta name="author" content="Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors">
+<<<<<<< HEAD
 <meta name="description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, and use the reference models.">
 <meta name="generator" content="bookdown 0.29 with bs4_book()">
+=======
+<meta name="description" content="Open Soil Spectroscopy Library technical documentation. Use these documentation to access OSSL data, fit models, callibrate own models and extend beyond.">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 <meta property="og:title" content="About | Open Soil Spectral Library">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://soilspectroscopy.github.io/ossl-manual">
@@ -172,10 +177,76 @@ Figure 0.2: Example of spectral signatures for large number of VisNIR scans (KSS
 <div id="soil-properties-of-interest" class="section level2 unnumbered">
 <h2>Soil properties of interest<a class="anchor" aria-label="anchor" href="#soil-properties-of-interest"><i class="fas fa-link"></i></a>
 </h2>
+<<<<<<< HEAD
 <p>The contrasting methods used for analytically determining (wet chemistry) a given soil property has been a subject of internal discussion in this project. Some global initiatives have been facing this same issue in their soil databases but there still no clear or full consensus on how to harmonize those different methods. This has been a topic of great discussion and research development at the <a href="https://www.fao.org/global-soil-partnership/glosolan/en/">Global Soil Partnership’s Global Soil Laboratory Network (GLOSOLAN)</a>.</p>
 <p>In order to maximize transparency, for now, we have decided to produce two different levels for the OSSL database. <code>Level 0</code> takes into account the original methods employed in each dataset but tries to initially fit them to two reference lists: <a href="https://www.nrcs.usda.gov/resources/guides-and-instructions/kssl-guidance">KSSL Guidance – Laboratory Methods and Manuals</a> and ISO standards. A copy of the KSSL procedures and coding scheme is archived in <a href="https://github.com/soilspectroscopy/ossl-imports/blob/main/out/kssl_procedures.csv">ossl-imports</a>.</p>
 <p>If a reference method does not fall in any previous method, then we create a new variable sharing at least a common property and unit. A final harmonization takes place in the OSSL <code>Level 1</code>, where those common properties sharing different methods are converted to a target method using some publicly available transformation rule, or in the worst scenario, they are naively binded or kept separated to produce its specific model. All the implementations are documented in the <a href="https://github.com/soilspectroscopy/ossl-imports/blob/main/out/ossl_level0_to_level1_soillab_harmonization.csv">ossl-import/ossl_level0_to_level1_soillab_harmonization.csv</a> repository.</p>
 <p>In addition, <a href="http://www.fao.org/global-soil-partnership/glosolan/soil-analysis">GLOSOLAN’s Standard Operating Procedures (SOPs)</a> list four groups of soil variables of interest to international soil spectroscopy projects:</p>
+=======
+<p><a href="https://api.soilspectroscopy.org/__docs__/#/">OSSL API</a> (Application Programming Interface) is also available and can be used
+to construct requests to fetch data, models and generate predictions. The outputs
+of predictions can be obtained as <a href="https://www.json.org/json-en.html">JSON</a> or CSV files, making the system fully
+interoperable. The OSSL API is at the moment based on using the <a href="https://www.rplumber.io/">plumber package</a>
+and is <strong>provided for testing purposes only</strong>. Users can calibrate maximum 20 rows
+per request, but these limits will be gradually extended.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:ossl-api"></span>
+<img src="img/preview_ossl_api_swagger.png" alt="OSSL API is available for testing." width="100%"><p class="caption">
+Figure 0.7: OSSL API is available for testing.
+</p>
+</div>
+</div>
+<div id="ossl-google-cloud-bucket" class="section level2 unnumbered">
+<h2>OSSL Google Cloud bucket<a class="anchor" aria-label="anchor" href="#ossl-google-cloud-bucket"><i class="fas fa-link"></i></a>
+</h2>
+<p>Two file formats are available: compressed csv (<code>.csv.gz</code>) and qs (<code>qs R package</code>). The datasets in the public bucket can be updated without notice.</p>
+<p>Use the following URLs to load the whole OSSL levels:</p>
+<pre><code>## Compressed csv
+https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.csv.gz
+
+## qs format (preferred on R)
+https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.qs</code></pre>
+<p>Use these alternative URLs to load the OSSL as separate files:</p>
+<pre><code>## Compressed csv
+https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.csv.gz
+
+## qs format (preferred on R)
+https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.qs</code></pre>
+<p>Example with R:</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">## Packages</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://tidyverse.tidyverse.org">"tidyverse"</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/jeroen/curl">"curl"</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/traversc/qs">"qs"</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## Separate files</span></span>
+<span><span class="va">soil</span> <span class="op">&lt;-</span>  <span class="st">"https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs"</span></span>
+<span><span class="va">soil</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/curl/man/curl_fetch.html">curl_fetch_memory</a></span><span class="op">(</span><span class="va">soil</span><span class="op">)</span></span>
+<span><span class="va">soil</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/qs/man/qdeserialize.html">qdeserialize</a></span><span class="op">(</span><span class="va">soil</span><span class="op">$</span><span class="va">content</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mir</span> <span class="op">&lt;-</span> <span class="st">"https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.qs"</span></span>
+<span><span class="va">mir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/curl/man/curl_fetch.html">curl_fetch_memory</a></span><span class="op">(</span><span class="va">mir</span><span class="op">)</span></span>
+<span><span class="va">mir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/qs/man/qdeserialize.html">qdeserialize</a></span><span class="op">(</span><span class="va">mir</span><span class="op">$</span><span class="va">content</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## Join</span></span>
+<span><span class="va">ossl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">mir</span>, <span class="va">soil</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"dataset.code_ascii_txt"</span>, <span class="st">"id.layer_uuid_txt"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="target-variables-of-interest" class="section level2 unnumbered">
+<h2>Target variables of interest<a class="anchor" aria-label="anchor" href="#target-variables-of-interest"><i class="fas fa-link"></i></a>
+</h2>
+<p>Soil spectral scan, through the calibration procedure, are used to determine various soil variables.
+<a href="http://www.fao.org/global-soil-partnership/glosolan/soil-analysis/standard-operating-procedures/en/#c763834">GLOSOLAN’s Standard Operating Procedures (SOPs)</a> list four groups of soil variables of interest to international soil spectroscopy projects:</p>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 <p>Soil chemical variables:</p>
 <ul>
 <li>pH,<br>
@@ -365,7 +436,11 @@ organizations. Listed based on the date of import:</p>
 <strong><a href="http://esdac.jrc.ec.europa.eu/">LUCAS topsoil (VisNIR) Soil Spectral Library</a></strong> <span class="citation">(<a href="references.html#ref-orgiazzi2018lucas" role="doc-biblioref">Orgiazzi, Ballabio, Panagos, Jones, &amp; Fernández-Ugalde, 2018</a>)</span> was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <a href="http://esdac.jrc.ec.europa.eu/" class="uri">http://esdac.jrc.ec.europa.eu/</a>; we have degraded location accuracy of points so that exact locations are about 1-km off;<br>
 </li>
 <li>
+<<<<<<< HEAD
 <strong><a href="https://github.com/laura-summerauer/ssl-central-africa">The Central African Soil Spectral Library</a></strong> described in detail in <span class="citation"><a href="references.html#ref-Summerauer2021" role="doc-biblioref">Summerauer et al.</a> (<a href="references.html#ref-Summerauer2021" role="doc-biblioref">2021</a>)</span> contains limited number of samples representing Central Africa <a href="https://doi.org/10.5281/zenodo.4320395" class="uri">https://doi.org/10.5281/zenodo.4320395</a>;<br><!-- - **The National Ecological Observatory Network (NEON) Soil Spectral** is based on the NEON soil data [@ayres2019quantitative], which were scanned by the Woodwell Climate Research and USDA-NRCS Kellogg Soil Survey Laboratory; the [(NEON) Megapit Soil Archive](https://www.neonscience.org/samples/soil-archive) is a program sponsored by the National Science Foundation and operated under cooperative agreement by Battelle;   -->
+=======
+<strong><a href="https://github.com/laura-summerauer/ssl-central-africa">The Central African Soil Spectral Library</a></strong> described in detail in <span class="citation">Summerauer et al. (<a href="references.html#ref-Summerauer2021" role="doc-biblioref">2021</a>)</span> contains limited number of samples representing Central Africa <a href="https://doi.org/10.5281/zenodo.4320395" class="uri">https://doi.org/10.5281/zenodo.4320395</a>;<br><!-- - **The National Ecological Observatory Network (NEON) Soil Spectral** is based on the NEON soil data [@ayres2019quantitative], which were scanned by the Woodwell Climate Research and USDA-NRCS Kellogg Soil Survey Laboratory; the [(NEON) Megapit Soil Archive](https://www.neonscience.org/samples/soil-archive) is a program sponsored by the National Science Foundation and operated under cooperative agreement by Battelle;   -->
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </li>
 </ul>
 <p>We are grateful to <strong><a href="https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/">Wanderson de Sousa Mendes (Leibniz Centre for Agricultural Landscape Research (ZALF))</a></strong> for
@@ -386,8 +461,15 @@ especially to get help with using, extending and improving the original SSL data
 <li><a class="nav-link" href="#soil-spectroscopy-for-global-good">Soil Spectroscopy for Global Good</a></li>
 <li><a class="nav-link" href="#what-is-soil-spectroscopy">What is soil spectroscopy?</a></li>
 <li><a class="nav-link" href="#open-soil-spectral-library">Open Soil Spectral Library</a></li>
+<<<<<<< HEAD
 <li><a class="nav-link" href="#importing-new-datasets-to-ossl">Importing new datasets to OSSL</a></li>
 <li><a class="nav-link" href="#soil-properties-of-interest">Soil properties of interest</a></li>
+=======
+<li><a class="nav-link" href="#ossl-mongodb">OSSL mongoDB</a></li>
+<li><a class="nav-link" href="#ossl-api">OSSL API</a></li>
+<li><a class="nav-link" href="#ossl-google-cloud-bucket">OSSL Google Cloud bucket</a></li>
+<li><a class="nav-link" href="#target-variables-of-interest">Target variables of interest</a></li>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 <li><a class="nav-link" href="#contributing-data">Contributing data</a></li>
 <li><a class="nav-link" href="#contributing-documentation">Contributing documentation</a></li>
 <li><a class="nav-link" href="#contributors">Contributors</a></li>

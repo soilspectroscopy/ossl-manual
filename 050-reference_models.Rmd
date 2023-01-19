@@ -1,8 +1,14 @@
+<<<<<<< HEAD:050-reference_models.Rmd
 # OSSL reference models
 
+=======
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db:025-modeling.Rmd
 ```{r, results = "asis", echo = FALSE}
 status("drafting")
 ```
+# Reference soil spectroscopy models
+
+The current reference models were fitted using OSSL database v1.0. We have received important feedback from people that said the current models are doing a great job, but for others not that much. This can be due to the specific soil types not being well represented or due to the spectra not being well aligned with the OSSL. A review is planned to conduct a systematic analysis of learning algorithms, global vs local fitting, compression methods and preprocessing using the new version of the OSSL database.
 
 We have received important feedback from people that said the current models are doing a great job, but for others not that much. This can be due to the specific soil types not being well represented or due to the spectra not being well aligned with the OSSL. We plan to conduct a systematic analysis of learning algorithms, global vs local fitting, compression methods and preprocessing using the OSSL database. Another great interest is to test if including spatial covariates or fusing different spectral regions really help to deliver more reliable predictions.
 
@@ -63,9 +69,10 @@ OSSL model registry (RDS) S3 file services currently includes large number of
 prediction models fitted for a list of soil properties. The complete list is available in the file **[OSSL_models_meta.csv](https://github.com/soilspectroscopy/ossl-models)**.
 
 ```{r, echo=FALSE, message=FALSE, results='hide'}
-#remotes::install_github("philipp-baumann/simplerspec")
+remotes::install_github("philipp-baumann/simplerspec")
 #devtools::install_github("pierreroudier/asdreader")
-ls <- c("plyr", "rgdal", "terra", "mlr", "ranger", "xgboost", "Cubist", "fastDummies", "prospectr", "simplerspec", "asdreader")
+ls <- c("plyr", "rgdal", "terra", "mlr", "ranger", "xgboost",
+        "Cubist", "fastDummies", "prospectr", "simplerspec", "asdreader")
 new.packages <- ls[!(ls %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 x = lapply(ls, require, character.only = TRUE)

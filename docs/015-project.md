@@ -1,7 +1,7 @@
 # Soil spectroscopy tools and users
 
 ::: {.rmdnote}
-You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at <https://soilspectroscopy.github.io/ossl-manual/>.
+You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending.
 :::
 
 ## Soil Spectroscopy Instruments
@@ -152,16 +152,16 @@ _Description_: [The Central African Soil Spectral Library](https://doi.org/10.51
 - 📋 Unique complete scans: 1852  
 - 📝 Import steps: [CASSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL)  
 
-### NEON.SSL
+<!-- ### NEON.SSL -->
 
-_Description_: [The National Ecological Observatory Network (NEON) Soil Spectral Library](https://www.neonscience.org/samples/soil-archive). Soil samples were sent to KSSL and scanned using standard procedures. 
+<!-- _Description_: [The National Ecological Observatory Network (NEON) Soil Spectral Library](https://www.neonscience.org/samples/soil-archive). Soil samples were sent to KSSL and scanned using standard procedures.  -->
 
-- 📕 National Ecological Observatory Network, (2021). [Data Product DP1.00096.001, Soil physical and chemical properties, Megapit](https://data.neonscience.org/data-products/DP1.00096.001). Provisional data downloaded from <https://data.neonscience.org>. Battelle, Boulder, CO, USA NEON. / Dangal & Sanderman (2020). Is Standardization Necessary for Sharing of a Large Mid-Infrared Soil Spectral Library? Sensors 20, 6729. <https://doi.org/10.3390/s20236729>  
-- 🔗 Project website: <https://www.neonscience.org/samples/soil-archive>  
-- ©️ Data license: CC-BY  
-- 📍 Unique locations:   
-- 📋 Unique complete scans: 305  
-- 📝 Import steps: [NEON](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL)  
+<!-- - 📕 National Ecological Observatory Network, (2021). [Data Product DP1.00096.001, Soil physical and chemical properties, Megapit](https://data.neonscience.org/data-products/DP1.00096.001). Provisional data downloaded from <https://data.neonscience.org>. Battelle, Boulder, CO, USA NEON. / Dangal & Sanderman (2020). Is Standardization Necessary for Sharing of a Large Mid-Infrared Soil Spectral Library? Sensors 20, 6729. <https://doi.org/10.3390/s20236729>   -->
+<!-- - 🔗 Project website: <https://www.neonscience.org/samples/soil-archive>   -->
+<!-- - ©️ Data license: CC-BY   -->
+<!-- - 📍 Unique locations:    -->
+<!-- - 📋 Unique complete scans: 305   -->
+<!-- - 📝 Import steps: [NEON](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL)   -->
 
 ### SCHIEDUNG.SSL
 
@@ -184,6 +184,17 @@ _Description_: A soil dataset from the FR380 trial series spanning 35 Pinus radi
 - 📍 Unique locations: 35   
 - 📋 Unique complete scans: 184  
 - 📝 Import steps: [Garrett](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Garrett)  
+
+### SERBIA.SSL
+
+_Description_: The Serbian SSL is a dataset with 135 samples shared by University of Novi Sad and published in @Jovi2019. The soil samples were sampled in 2009. Samples were taken from three different types of soil: arable, meadow, and forest, with 3 different depths: 0-30 cm, 30-60 cm and 60-90 cm for each location (n=45). Classical wet chemistry analyses includes texture, carbon total, carbon organic, carbon inorganic, pH, C/N ratio, and CaCO3. Only texture has complete data for all depths, the other soil properties were determined only for the 0-30 cm layer. The spectra in the MIR range were taken for all depths using a ThermoFisher Nicolet Nexus 670 with a DTGS detector, diffuse reflectance module, and gold as background reference. MIR spectra were obtained in the spectral range of 400-4000 cm-1 in duplicates. The coordinates of the sampling sites are given with lower precision.
+
+- 📕 Jovića, B., Ćirićb, V., Kovačevića, M., Šeremešićb, S., Kordića, B. (2019). Empirical equation for preliminary assessment of soil texture. In Spectrochimica Acta Part A: Molecular and Biomolecular Spectroscopy (Vol. 206, p. 506-511). <https://doi.org/10.1016/j.saa.2018.08.039>.   
+- 🔗 Project website: <https://doi.org/10.1016/j.saa.2018.08.039>  
+- ©️ Data license: CC-BY 4.0  
+- 📍 Unique locations: 45   
+- 📋 Unique complete scans: 135  
+- 📝 Import steps: [Serbia](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Serbia)  
 
 ## Soil spetroscopy organizations
 

@@ -6,17 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>3 Database | Open Soil Spectral Library</title>
 <meta name="author" content="Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors">
-<meta name="description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at...">
-<meta name="generator" content="bookdown 0.29 with bs4_book()">
+<meta name="description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. Importing new datasets into OSSL The github...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
 <meta property="og:title" content="3 Database | Open Soil Spectral Library">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://soilspectroscopy.github.io/ossl-manual/database.html">
 <meta property="og:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
-<meta property="og:description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at...">
+<meta property="og:description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. Importing new datasets into OSSL The github...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3 Database | Open Soil Spectral Library">
 <meta name="twitter:site" content="@soilspec">
-<meta name="twitter:description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at...">
+<meta name="twitter:description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. Importing new datasets into OSSL The github...">
 <meta name="twitter:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -93,7 +93,7 @@
 <span class="header-section-number">3</span> Database<a class="anchor" aria-label="anchor" href="#database"><i class="fas fa-link"></i></a>
 </h1>
 <div class="rmdnote">
-<p>You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. You can find the polished first edition at <a href="https://soilspectroscopy.github.io/ossl-manual/" class="uri">https://soilspectroscopy.github.io/ossl-manual/</a>.</p>
+<p>You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending.</p>
 </div>
 <p><strong>Importing new datasets into OSSL</strong></p>
 <p>The github repository <a href="https://github.com/soilspectroscopy/ossl-imports">ossl-imports</a> has all the importing codes for preparing and integrating new datasets into the OSSL. The folder <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset">ossl-imports/dataset</a> contains all the datasets separated by its name/code, with an internal <code>README</code> file describing in detail the steps necessary for preparing and standardizing the files into the OSSL format.</p>
@@ -113,7 +113,11 @@
 <p><strong>Soil analytical methods</strong></p>
 <p>The contrasting methods used for analytically determining (wet chemistry) a given soil property has also been a subject of internal discussion in this project. Some global initiatives have been facing this same issue in their soil databases but there still no clear or full consensus on how to harmonize those different methods. This has been a topic of great discussion and research development at the <a href="https://www.fao.org/global-soil-partnership/glosolan/en/">Global Soil Partnership’s Global Soil Laboratory Network (GLOSOLAN)</a>.</p>
 <p>In order to maximize transparency, for now, we have decided to produce two different levels for the OSSL database. <code>Level 0</code> takes into account the original methods employed in each dataset but tries to initially fit them to two reference lists: <a href="https://www.nrcs.usda.gov/resources/guides-and-instructions/kssl-guidance">KSSL Guidance – Laboratory Methods and Manuals</a> and ISO standards. A copy of the KSSL procedures and coding scheme is archived in <a href="https://github.com/soilspectroscopy/ossl-imports/blob/main/out/kssl_procedures.csv">ossl-imports</a>.</p>
+<<<<<<< HEAD
 <p>If a reference method does not fall in any previous method, then we create a new variable sharing at least a common property and unit. A final harmonization takes place in the OSSL <code>Level 1</code>, where those common properties sharing different methods are converted to a target method using some publicly available transformation rule, or in the worst scenario, they are naively binded or kept separated to produce its specific model. All the implementations are documented in the <a href="https://github.com/soilspectroscopy/ossl-imports/blob/main/out/ossl_level0_to_level1_soillab_harmonization.csv">ossl-import/ossl_level0_to_level1_soillab_harmonization.csv</a> repository.</p>
+=======
+<p>If a reference method does not fall in any previous method, then we create a new variable sharing at least a common property and unit. A final harmonization takes place in the OSSL <code>Level 1</code>, where those common properties sharing different methods are converted to a target method using some publicly available transformation rule, or in the worst scenario, they are naively binded or kept separated to produce its specific model. All the implementations are documented in the <a href="https://github.com/soilspectroscopy/ossl-imports/blob/main/out/ossl_level0_to_level1_soillab_harmonization.csv">ossl-import</a> repository.</p>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 <p><strong>Middle-infrared (MIR) spectra</strong> is provided in absorbance units per wavenumber, with values usually ranging between 0 and 3. The spectral range imported into the OSSL falls between 600 and 4000 cm<sup>-1</sup>, with an interval of 2 cm<sup>-1</sup>. All datasets are harmonized to this specification.</p>
 <p><strong>Visible and Near-Infrared (VisNIR) spectra</strong> is provided in reflectance units per wavelength, with values usually ranging between 0 and 1 as fraction percent. The spectral range imported into the OSSL falls between 350 and 2500 nm, with an interval of 2 nm. All datasets are harmonized to this specification.</p>
 <p><strong>Spectral conversion</strong></p>
@@ -430,7 +434,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 0.40000.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_acidity_usda.a795_cmolc.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="aggstb_usda.a1_w.pct" class="section level3" number="3.2.4">
 <h3>
@@ -440,7 +449,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 74.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_aggstb_usda.a1_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="al.dith_usda.a65_w.pct" class="section level3" number="3.2.5">
 <h3>
@@ -450,7 +464,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 0.13652.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_al.dith_usda.a65_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="al.ext_aquaregia_g.kg" class="section level3" number="3.2.6">
 <h3>
@@ -460,7 +479,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>g.kg</code>, i.e., grams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 42.9620831.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_al.ext_aquaregia_g.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="al.ext_usda.a1056_mg.kg" class="section level3" number="3.2.7">
 <h3>
@@ -470,7 +494,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 1270.00000.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_al.ext_usda.a1056_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="al.ext_usda.a69_cmolc.kg" class="section level3" number="3.2.8">
 <h3>
@@ -480,7 +509,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 0.20000.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_al.ext_usda.a69_cmolc.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="al.ox_usda.a59_w.pct" class="section level3" number="3.2.9">
 <h3>
@@ -490,7 +524,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 0.12951.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_al.ox_usda.a59_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="awc.33.1500kpa_usda.c80_w.frac" class="section level3" number="3.2.10">
 <h3>
@@ -500,7 +539,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>w.frac</code>, i.e., weight fraction.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 0.08658.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_awc.33.1500kPa_usda.c80_w.frac.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="b.ext_mel3_mg.kg" class="section level3" number="3.2.11">
 <h3>
@@ -510,7 +554,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 0.00100000.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_b.ext_mel3_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="bd_iso.11272_g.cm3" class="section level3" number="3.2.12">
 <h3>
@@ -521,6 +570,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 1.57100.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_bd_iso.11272_g.cm3.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="bd_usda.a21_g.cm3" class="section level3" number="3.2.13">
 <h3>
@@ -531,6 +584,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 1.57100.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_bd_usda.a21_g.cm3.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="bd_usda.a4_g.cm3" class="section level3" number="3.2.14">
 <h3>
@@ -540,7 +597,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>g.cm3</code>, i.e., grams per cubic centimeter.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 1.3477999.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_bd_usda.a4_g.cm3.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="c.tot_iso.10694_w.pct" class="section level3" number="3.2.15">
 <h3>
@@ -551,6 +613,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 3.668778009.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_c.tot_iso.10694_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="c.tot_usda.a622_w.pct" class="section level3" number="3.2.16">
 <h3>
@@ -560,6 +626,7 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 1.55128592.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
 </div>
 <div id="ca.ext_aquaregia_mg.kg" class="section level3" number="3.2.17">
@@ -736,11 +803,211 @@
 <h3>
 <span class="header-section-number">3.2.34</span> fe.ext_usda.a1064_mg.kg<a class="anchor" aria-label="anchor" href="#fe.ext_usda.a1064_mg.kg"><i class="fas fa-link"></i></a>
 </h3>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_c.tot_usda.a622_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="ca.ext_aquaregia_mg.kg" class="section level3" number="3.2.17">
+<h3>
+<span class="header-section-number">3.2.17</span> ca.ext_aquaregia_mg.kg<a class="anchor" aria-label="anchor" href="#ca.ext_aquaregia_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: Exchangeable or plant available Ca.. It can be alternatively described as <code>Calcium, Extractable, Aqua Regia</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
+<p>🔢 Type: numeric.</p>
+<p>📖 Example: 368.535095.</p>
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ca.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="ca.ext_usda.a1059_mg.kg" class="section level3" number="3.2.18">
+<h3>
+<span class="header-section-number">3.2.18</span> ca.ext_usda.a1059_mg.kg<a class="anchor" aria-label="anchor" href="#ca.ext_usda.a1059_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: Exchangeable or plant available Ca.. It can be alternatively described as <code>Calcium, Extractable, Mehlich3</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
+<p>🔢 Type: numeric.</p>
+<p>📖 Example: 78.20000.</p>
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ca.ext_usda.a1059_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="ca.ext_usda.a722_cmolc.kg" class="section level3" number="3.2.19">
+<h3>
+<span class="header-section-number">3.2.19</span> ca.ext_usda.a722_cmolc.kg<a class="anchor" aria-label="anchor" href="#ca.ext_usda.a722_cmolc.kg"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: Exchangeable or plant available Ca.. It can be alternatively described as <code>Calcium, Extractable, NH4OAc</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.</p>
+<p>🔢 Type: numeric.</p>
+<p>📖 Example: 2.617060178.</p>
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ca.ext_usda.a722_cmolc.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="caco3_iso.10693_w.pct" class="section level3" number="3.2.20">
+<h3>
+<span class="header-section-number">3.2.20</span> caco3_iso.10693_w.pct<a class="anchor" aria-label="anchor" href="#caco3_iso.10693_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: Carbonate in the &lt;2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a &lt;2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid.. It can be alternatively described as <code>Carbonate, iso 10693</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
+<p>🔢 Type: numeric.</p>
+<p>📖 Example: 27.0.</p>
+<p>🟡 Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_caco3_iso.10693_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="caco3_usda.a54_w.pct" class="section level3" number="3.2.21">
+<h3>
+<span class="header-section-number">3.2.21</span> caco3_usda.a54_w.pct<a class="anchor" aria-label="anchor" href="#caco3_usda.a54_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: Carbonate in the &lt;2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a &lt;2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid.. It can be alternatively described as <code>Carbonate, &lt;2mm Fraction</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
+<p>🔢 Type: numeric.</p>
+<p>📖 Example: 0.50000.</p>
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_caco3_usda.a54_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="cec_iso.11260_cmolc.kg" class="section level3" number="3.2.22">
+<h3>
+<span class="header-section-number">3.2.22</span> cec_iso.11260_cmolc.kg<a class="anchor" aria-label="anchor" href="#cec_iso.11260_cmolc.kg"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: Cation exchange capacity of a sample highly buffered at pH 7.0. It is reported as cmolc kg-1 (= meq per 100 grams) on a &lt;2 mm base.. It can be alternatively described as <code>CEC, pH 7.0, iso 11260</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.</p>
+<p>🔢 Type: numeric.</p>
+<p>📖 Example: 37.8.</p>
+<p>🟡 Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_cec_iso.11260_cmolc.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="cec_usda.a723_cmolc.kg" class="section level3" number="3.2.23">
+<h3>
+<span class="header-section-number">3.2.23</span> cec_usda.a723_cmolc.kg<a class="anchor" aria-label="anchor" href="#cec_usda.a723_cmolc.kg"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: Cation exchange capacity of a sample highly buffered at pH 7.0. It is reported on a &lt;2 mm base.. It can be alternatively described as <code>CEC, pH 7.0, NH4OAc, 2M KCl displacement</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.</p>
+<p>🔢 Type: numeric.</p>
+<p>📖 Example: 6.6332171.</p>
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_cec_usda.a723_cmolc.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="cf_iso.11464_w.pct" class="section level3" number="3.2.24">
+<h3>
+<span class="header-section-number">3.2.24</span> cf_iso.11464_w.pct<a class="anchor" aria-label="anchor" href="#cf_iso.11464_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.. It can be alternatively described as <code>Coarse Fragments, iso 11464</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
+<p>🔢 Type: numeric.</p>
+<p>📖 Example: 10.</p>
+<p>🟡 Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_cf_iso.11464_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="cf_usda.c236_w.pct" class="section level3" number="3.2.25">
+<h3>
+<span class="header-section-number">3.2.25</span> cf_usda.c236_w.pct<a class="anchor" aria-label="anchor" href="#cf_usda.c236_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.. It can be alternatively described as <code>Coarse Fragments, Greater 2mm</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
+<p>🔢 Type: numeric.</p>
+<p>📖 Example: 4.00000.</p>
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_cf_usda.c236_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="clay.tot_iso.11277_w.pct" class="section level3" number="3.2.26">
+<h3>
+<span class="header-section-number">3.2.26</span> clay.tot_iso.11277_w.pct<a class="anchor" aria-label="anchor" href="#clay.tot_iso.11277_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: Total clay is the soil separate with &lt;0.002 mm particle diameter. Clay size carbonate is included. It is reported on a &lt;2 mm base.. It can be alternatively described as <code>Clay, iso 11277</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
+<p>🔢 Type: numeric.</p>
+<p>📖 Example: 51.</p>
+<p>🟡 Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_clay.tot_iso.11277_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="clay.tot_usda.a334_w.pct" class="section level3" number="3.2.27">
+<h3>
+<span class="header-section-number">3.2.27</span> clay.tot_usda.a334_w.pct<a class="anchor" aria-label="anchor" href="#clay.tot_usda.a334_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: Total clay is the soil separate with &lt;0.002 mm particle diameter. Clay size carbonate is included. It is reported on a &lt;2 mm base.. It can be alternatively described as <code>Clay</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
+<p>🔢 Type: numeric.</p>
+<p>📖 Example: 30.99000.</p>
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_clay.tot_usda.a334_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="cu.ext_usda.a1063_mg.kg" class="section level3" number="3.2.28">
+<h3>
+<span class="header-section-number">3.2.28</span> cu.ext_usda.a1063_mg.kg<a class="anchor" aria-label="anchor" href="#cu.ext_usda.a1063_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: Exchangeable or plant available Cu.. It can be alternatively described as <code>Copper, Extractable, Mehlich3</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
+<p>🔢 Type: numeric.</p>
+<p>📖 Example: 0.5600000.</p>
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_cu.ext_usda.a1063_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="ec_iso.11265_ds.m" class="section level3" number="3.2.29">
+<h3>
+<span class="header-section-number">3.2.29</span> ec_iso.11265_ds.m<a class="anchor" aria-label="anchor" href="#ec_iso.11265_ds.m"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: Electrical conductivity. It is reported of a 1:2 soil:water mixture. It can be alternatively described as <code>Electrical Conductivity, iso 11265</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>ds.m</code>, i.e., decisiemens per metre.</p>
+<p>🔢 Type: numeric.</p>
+<p>📖 Example: 2.3350.</p>
+<p>🟡 Availability: only level 0.</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_ec_iso.11265_ds.m.png" heigth="100%" width="100%"></div>
+</div>
+<div id="ec_usda.a364_ds.m" class="section level3" number="3.2.30">
+<h3>
+<span class="header-section-number">3.2.30</span> ec_usda.a364_ds.m<a class="anchor" aria-label="anchor" href="#ec_usda.a364_ds.m"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: Electrical conductivity. It is reported of a 1:2 soil:water mixture. It can be alternatively described as <code>Electrical Conductivity, (w/w)</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>ds.m</code>, i.e., decisiemens per metre.</p>
+<p>🔢 Type: numeric.</p>
+<p>📖 Example: 0.03100.</p>
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ec_usda.a364_ds.m.png" heigth="100%" width="100%"></div>
+</div>
+<div id="efferv_usda.a479_class" class="section level3" number="3.2.31">
+<h3>
+<span class="header-section-number">3.2.31</span> efferv_usda.a479_class<a class="anchor" aria-label="anchor" href="#efferv_usda.a479_class"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: The visual effervescence of the prepared sample when treated with 1 N HCl.. It can be alternatively described as <code>Effervescense, 1N HCl</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>class</code>, i.e., class of visual interpretation.</p>
+<p>🔢 Type: string.</p>
+<p>📖 Example: none.</p>
+<p>🟡 Availability: only level 0.</p>
+</div>
+<div id="fe.dith_usda.a66_w.pct" class="section level3" number="3.2.32">
+<h3>
+<span class="header-section-number">3.2.32</span> fe.dith_usda.a66_w.pct<a class="anchor" aria-label="anchor" href="#fe.dith_usda.a66_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: Dithionite citrate extractable iron is considered a general measure of total pedogenic iron.. It can be alternatively described as <code>Iron, Crystalline, Total Pedogenic Iron</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
+<p>🔢 Type: numeric.</p>
+<p>📖 Example: 1.09028.</p>
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_fe.dith_usda.a66_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="fe.ext_aquaregia_g.kg" class="section level3" number="3.2.33">
+<h3>
+<span class="header-section-number">3.2.33</span> fe.ext_aquaregia_g.kg<a class="anchor" aria-label="anchor" href="#fe.ext_aquaregia_g.kg"><i class="fas fa-link"></i></a>
+</h3>
+<p>📚 Description: Exchangeable or plant available Fe.. It can be alternatively described as <code>Iron, Extractable, Aqua Regia</code>.</p>
+<p>📐 Measurement unit: Imported into the OSSL as <code>g.kg</code>, i.e., grams per kilogram of soil.</p>
+<p>🔢 Type: numeric.</p>
+<p>📖 Example: 71.9575342.</p>
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_fe.ext_aquaregia_g.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="fe.ext_usda.a1064_mg.kg" class="section level3" number="3.2.34">
+<h3>
+<span class="header-section-number">3.2.34</span> fe.ext_usda.a1064_mg.kg<a class="anchor" aria-label="anchor" href="#fe.ext_usda.a1064_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 <p>📚 Description: Exchangeable or plant available Fe.. It can be alternatively described as <code>Iron, Extractable, Mehlich3</code>.</p>
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 182.00000.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_fe.ext_usda.a1064_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="fe.ox_usda.a60_w.pct" class="section level3" number="3.2.35">
 <h3>
@@ -750,7 +1017,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 0.15422.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_fe.ox_usda.a60_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="k.ext_aquaregia_mg.kg" class="section level3" number="3.2.36">
 <h3>
@@ -760,7 +1032,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 1781.400966.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_k.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="k.ext_usda.a1065_mg.kg" class="section level3" number="3.2.37">
 <h3>
@@ -770,7 +1047,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 47.000000.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_k.ext_usda.a1065_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="k.ext_usda.a725_cmolc.kg" class="section level3" number="3.2.38">
 <h3>
@@ -780,7 +1062,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 0.200688352.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_k.ext_usda.a725_cmolc.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="mg.ext_aquaregia_mg.kg" class="section level3" number="3.2.39">
 <h3>
@@ -790,7 +1077,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 710.429099.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_mg.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="mg.ext_usda.a1066_mg.kg" class="section level3" number="3.2.40">
 <h3>
@@ -800,7 +1092,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 19.600000.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_mg.ext_usda.a1066_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="mg.ext_usda.a724_cmolc.kg" class="section level3" number="3.2.41">
 <h3>
@@ -810,7 +1107,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 1.81655342.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_mg.ext_usda.a724_cmolc.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="mn.ext_aquaregia_mg.kg" class="section level3" number="3.2.42">
 <h3>
@@ -820,7 +1122,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 497.300369.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_mn.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="mn.ext_usda.a1067_mg.kg" class="section level3" number="3.2.43">
 <h3>
@@ -831,6 +1138,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 23.10000000.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_mn.ext_usda.a1067_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="mn.ext_usda.a70_mg.kg" class="section level3" number="3.2.44">
 <h3>
@@ -840,7 +1151,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 0.62569.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_mn.ext_usda.a70_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="n.tot_iso.11261_w.pct" class="section level3" number="3.2.45">
 <h3>
@@ -851,6 +1167,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 0.25.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_n.tot_iso.11261_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="n.tot_iso.13878_w.pct" class="section level3" number="3.2.46">
 <h3>
@@ -861,6 +1181,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 0.089.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_n.tot_iso.13878_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="n.tot_usda.a623_w.pct" class="section level3" number="3.2.47">
 <h3>
@@ -870,7 +1194,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 0.079766974.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_n.tot_usda.a623_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="na.ext_aquaregia_mg.kg" class="section level3" number="3.2.48">
 <h3>
@@ -880,7 +1209,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 75.986312.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_na.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="na.ext_usda.a1068_mg.kg" class="section level3" number="3.2.49">
 <h3>
@@ -890,7 +1224,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 17.800000.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_na.ext_usda.a1068_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="na.ext_usda.a726_cmolc.kg" class="section level3" number="3.2.50">
 <h3>
@@ -900,7 +1239,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 0.124398521.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_na.ext_usda.a726_cmolc.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="oc_iso.10694_w.pct" class="section level3" number="3.2.51">
 <h3>
@@ -911,6 +1255,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 2.05000000.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_oc_iso.10694_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="oc_usda.c1059_w.pct" class="section level3" number="3.2.52">
 <h3>
@@ -921,6 +1269,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 1.50336492.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_oc_usda.c1059_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="oc_usda.c729_w.pct" class="section level3" number="3.2.53">
 <h3>
@@ -930,7 +1282,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 2.9100.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_oc_usda.c729_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="p.ext_aquaregia_mg.kg" class="section level3" number="3.2.54">
 <h3>
@@ -940,7 +1297,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 608.30492.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_p.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="p.ext_iso.11263_mg.kg" class="section level3" number="3.2.55">
 <h3>
@@ -951,6 +1313,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 72.4.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_p.ext_iso.11263_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="p.ext_usda.a1070_mg.kg" class="section level3" number="3.2.56">
 <h3>
@@ -960,7 +1326,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 3.44739.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_p.ext_usda.a1070_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="p.ext_usda.a270_mg.kg" class="section level3" number="3.2.57">
 <h3>
@@ -970,7 +1341,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 50.5348939.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_p.ext_usda.a270_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="p.ext_usda.a274_mg.kg" class="section level3" number="3.2.58">
 <h3>
@@ -980,7 +1356,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 17.23518992.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_p.ext_usda.a274_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="p.ext_usda.a652_mg.kg" class="section level3" number="3.2.59">
 <h3>
@@ -991,6 +1372,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 9.770000.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_p.ext_usda.a652_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="ph.cacl2_iso.10390_index" class="section level3" number="3.2.60">
 <h3>
@@ -1001,6 +1386,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 7.24.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_ph.cacl2_iso.10390_index.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="ph.cacl2_usda.a477_index" class="section level3" number="3.2.61">
 <h3>
@@ -1011,6 +1400,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 5.40.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_ph.cacl2_usda.a477_index.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="ph.cacl2_usda.a481_index" class="section level3" number="3.2.62">
 <h3>
@@ -1020,7 +1413,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>index</code>, i.e., negative logarithm of the hydrogen ion concentration.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 6.40000.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ph.cacl2_usda.a481_index.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="ph.h2o_iso.10390_index" class="section level3" number="3.2.63">
 <h3>
@@ -1031,6 +1429,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 7.64.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_ph.h2o_iso.10390_index.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="ph.h2o_usda.a268_index" class="section level3" number="3.2.64">
 <h3>
@@ -1040,7 +1442,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>index</code>, i.e., negative logarithm of the hydrogen ion concentration.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 5.10000.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ph.h2o_usda.a268_index.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="s.ext_mel3_mg.kg" class="section level3" number="3.2.65">
 <h3>
@@ -1050,7 +1457,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 16.800.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_s.ext_mel3_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="s.tot_usda.a624_w.pct" class="section level3" number="3.2.66">
 <h3>
@@ -1060,7 +1472,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 0.03569.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_s.tot_usda.a624_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="sand.tot_iso.11277_w.pct" class="section level3" number="3.2.67">
 <h3>
@@ -1071,6 +1488,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 9.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_sand.tot_iso.11277_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="sand.tot_usda.c405_w.pct" class="section level3" number="3.2.68">
 <h3>
@@ -1081,6 +1502,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 79.4.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_sand.tot_usda.c405_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="sand.tot_usda.c60_w.pct" class="section level3" number="3.2.69">
 <h3>
@@ -1090,7 +1515,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 50.37000.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_sand.tot_usda.c60_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="silt.tot_iso.11277_w.pct" class="section level3" number="3.2.70">
 <h3>
@@ -1101,6 +1531,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 40.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_silt.tot_iso.11277_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="silt.tot_usda.c407_w.pct" class="section level3" number="3.2.71">
 <h3>
@@ -1111,6 +1545,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 18.2.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_silt.tot_usda.c407_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="silt.tot_usda.c62_w.pct" class="section level3" number="3.2.72">
 <h3>
@@ -1120,7 +1558,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 18.64000.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_silt.tot_usda.c62_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="wr.10kpa_usda.a414_w.pct" class="section level3" number="3.2.73">
 <h3>
@@ -1130,7 +1573,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 10.852961.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_wr.10kPa_usda.a414_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="wr.10kpa_usda.a8_w.pct" class="section level3" number="3.2.74">
 <h3>
@@ -1141,6 +1589,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 23.00000.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_wr.10kPa_usda.a8_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="wr.1500kpa_usda.a417_w.pct" class="section level3" number="3.2.75">
 <h3>
@@ -1150,7 +1602,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 3.000000.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_wr.1500kPa_usda.a417_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="wr.33kpa_usda.a415_w.pct" class="section level3" number="3.2.76">
 <h3>
@@ -1160,7 +1617,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 29.17023.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_wr.33kPa_usda.a415_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="wr.33kpa_usda.a9_w.pct" class="section level3" number="3.2.77">
 <h3>
@@ -1171,6 +1633,10 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 18.20000.</p>
 <p>🟡 Availability: only level 0.</p>
+<<<<<<< HEAD
+=======
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_wr.33kPa_usda.a9_w.pct.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 <div id="zn.ext_usda.a1073_mg.kg" class="section level3" number="3.2.78">
 <h3>
@@ -1180,7 +1646,12 @@
 <p>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</p>
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 1.0300000.</p>
+<<<<<<< HEAD
 <p>🟡 Availability: only level 0.</p>
+=======
+<p>🟢 Availability: level 0 and level 1 (harmonized).</p>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_zn.ext_usda.a1073_mg.kg.png" heigth="100%" width="100%"></div>
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 </div>
 </div>
 <div id="mir-table" class="section level2" number="3.3">
@@ -1432,6 +1903,9 @@
 <p>🔢 Type: numeric.</p>
 <p>📖 Example: 0.3622029.</p>
 
+<div class="rmdnote">
+<p>You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending.</p>
+</div>
 </div>
 </div>
 </div>

@@ -86,6 +86,20 @@ _Description_: [The Central African Soil Spectral Library](https://doi.org/10.51
 - `r emo::ji("clipboard")` Unique complete scans: 1852  
 - `r emo::ji("memo")` Import steps: [CASSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL)  
 
+<<<<<<< HEAD:020-soilspec_tools_users.Rmd
+=======
+<!-- ### NEON.SSL -->
+
+<!-- _Description_: [The National Ecological Observatory Network (NEON) Soil Spectral Library](https://www.neonscience.org/samples/soil-archive). Soil samples were sent to KSSL and scanned using standard procedures.  -->
+
+<!-- - `r emo::ji("closed_book")` National Ecological Observatory Network, (2021). [Data Product DP1.00096.001, Soil physical and chemical properties, Megapit](https://data.neonscience.org/data-products/DP1.00096.001). Provisional data downloaded from <https://data.neonscience.org>. Battelle, Boulder, CO, USA NEON. / Dangal & Sanderman (2020). Is Standardization Necessary for Sharing of a Large Mid-Infrared Soil Spectral Library? Sensors 20, 6729. <https://doi.org/10.3390/s20236729>   -->
+<!-- - `r emo::ji("link")` Project website: <https://www.neonscience.org/samples/soil-archive>   -->
+<!-- - `r emo::ji("copyright")` Data license: CC-BY   -->
+<!-- - `r emo::ji("round_pushpin")` Unique locations:    -->
+<!-- - `r emo::ji("clipboard")` Unique complete scans: 305   -->
+<!-- - `r emo::ji("memo")` Import steps: [NEON](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL)   -->
+
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db:015-project.Rmd
 ### SCHIEDUNG.SSL
 
 _Description_: Dataset to the manuscript @Schiedung2022. MIR scans of 284 samples from high-latitude forest soils of Canada. DOI: <https://doi.org/10.5281/zenodo.6024831>.
@@ -119,6 +133,7 @@ _Description_: The Serbian SSL is a dataset with 135 samples shared by Universit
 - `r emo::ji("clipboard")` Unique complete scans: 135  
 - `r emo::ji("memo")` Import steps: [Serbia](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Serbia)  
 
+<<<<<<< HEAD:020-soilspec_tools_users.Rmd
 ## Soil Spectroscopy Instruments
 
 ```{r soil-db, echo=FALSE, fig.cap="Most frequently used MIR / VISNIR instruments based on @BenedettiEgmond2021.", out.width="100%"}
@@ -173,6 +188,8 @@ knitr::include_graphics("img/ssl_instruments_list.png")
 - `r emo::ji("open_file_folder")` Model type: NIR (Si 400–1100 nm and PbS 1100–2500 nm detectors)  
 - `r emo::ji("date")` Production year: 2008  
 
+=======
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db:015-project.Rmd
 ## Soil spetroscopy organizations
 
 National and regional soil spectral laboratories actively processing soil samples and providing soil spectroscopy services, and other organizations and companies producing or using soil spectroscopy data.  

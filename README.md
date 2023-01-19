@@ -10,9 +10,6 @@ Tools Coordinated Innovation Network NIFA Award #2020-67021-32467](https://nifa.
 
 Please feel free to contribute datasets by using [pull requests](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
-All datasets are welcome, however, not well documented, incomplete and duplicate 
-datasets might be removed.
-
 The format for adding bibliography entries is:
 
 **\#\# [Name of the dataset]**

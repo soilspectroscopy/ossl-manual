@@ -104,11 +104,84 @@ Each subsection has its own reading and processing functions, and the outputs ca
 
 The contrasting methods used for analytically determining (wet chemistry) a given soil property has been a subject of internal discussion in this project. Some global initiatives have been facing this same issue in their soil databases but there still no clear or full consensus on how to harmonize those different methods. This has been a topic of great discussion and research development at the [Global Soil Partnership’s Global Soil Laboratory Network (GLOSOLAN)](https://www.fao.org/global-soil-partnership/glosolan/en/).
 
+<<<<<<< HEAD
 In order to maximize transparency, for now, we have decided to produce two different levels for the OSSL database. `Level 0` takes into account the original methods employed in each dataset but tries to initially fit them to two reference lists: [KSSL Guidance – Laboratory Methods and Manuals](https://www.nrcs.usda.gov/resources/guides-and-instructions/kssl-guidance) and ISO standards. A copy of the KSSL procedures and coding scheme is archived in [ossl-imports](https://github.com/soilspectroscopy/ossl-imports/blob/main/out/kssl_procedures.csv).
 
 If a reference method does not fall in any previous method, then we create a new variable sharing at least a common property and unit. A final harmonization takes place in the OSSL `Level 1`, where those common properties sharing different methods are converted to a target method using some publicly available transformation rule, or in the worst scenario, they are naively binded or kept separated to produce its specific model. All the implementations are documented in the [ossl-import/ossl_level0_to_level1_soillab_harmonization.csv](https://github.com/soilspectroscopy/ossl-imports/blob/main/out/ossl_level0_to_level1_soillab_harmonization.csv) repository.
 
 In addition, [GLOSOLAN's Standard Operating Procedures (SOPs)](http://www.fao.org/global-soil-partnership/glosolan/soil-analysis) list four groups of soil variables of interest to international soil spectroscopy projects:
+=======
+## OSSL API {.unnumbered}
+
+[OSSL API](https://api.soilspectroscopy.org/__docs__/#/) (Application Programming Interface) is also available and can be used 
+to construct requests to fetch data, models and generate predictions. The outputs 
+of predictions can be obtained as [JSON](https://www.json.org/json-en.html) or CSV files, making the system fully 
+interoperable. The OSSL API is at the moment based on using the [plumber package](https://www.rplumber.io/) 
+and is **provided for testing purposes only**. Users can calibrate maximum 20 rows 
+per request, but these limits will be gradually extended.
+
+<div class="figure" style="text-align: center">
+<img src="img/preview_ossl_api_swagger.png" alt="OSSL API is available for testing." width="100%" />
+<p class="caption">(\#fig:ossl-api)OSSL API is available for testing.</p>
+</div>
+
+## OSSL Google Cloud bucket {.unnumbered}
+
+Two file formats are available: compressed csv (`.csv.gz`) and qs (`qs R package`). The datasets in the public bucket can be updated without notice.
+
+Use the following URLs to load the whole OSSL levels:
+```
+## Compressed csv
+https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.csv.gz
+
+## qs format (preferred on R)
+https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.qs
+```
+
+Use these alternative URLs to load the OSSL as separate files:
+```
+## Compressed csv
+https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.csv.gz
+
+## qs format (preferred on R)
+https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.qs
+```
+
+Example with R:
+```r
+## Packages
+library("tidyverse")
+library("curl")
+library("qs")
+
+## Separate files
+soil <-  "https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs"
+soil <- curl_fetch_memory(soil)
+soil <- qdeserialize(soil$content)
+
+mir <- "https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.qs"
+mir <- curl_fetch_memory(mir)
+mir <- qdeserialize(mir$content)
+
+## Join
+ossl <- left_join(mir, soil, by = c("dataset.code_ascii_txt", "id.layer_uuid_txt"))
+```
+
+## Target variables of interest {.unnumbered}
+
+Soil spectral scan, through the calibration procedure, are used to determine various soil variables. 
+[GLOSOLAN's Standard Operating Procedures (SOPs)](http://www.fao.org/global-soil-partnership/glosolan/soil-analysis/standard-operating-procedures/en/#c763834) list four groups of soil variables of interest to international soil spectroscopy projects:
+>>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 
 Soil chemical variables:
 
