@@ -3,12 +3,6 @@ fig:soil-visnir
 fig:pull-request
 fig:soil-db
 fig:ossl-api
-<<<<<<< HEAD
-=======
-fig:pull-request
-fig:kssl-curves
-fig:icraf-curves
->>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 fig:ac-soc1
 fig:pca-sim
 fig:ac-soc2
@@ -31,7 +25,6 @@ caf.ssl
 schiedung.ssl
 garrett.ssl
 serbia.ssl
-<<<<<<< HEAD
 soil-spectroscopy-instruments
 bruker-alpha-1-ft-mir-znse
 bruker-alpha-1-ft-mir-kbr
@@ -39,8 +32,6 @@ bruker-vertex-70-with-hts-xt-accessory
 asd-labspec-2500-with-muglight-accessory
 asd-fieldspec-fr
 xds-rapid-content-analyzer
-=======
->>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 soil-spetroscopy-organizations
 kssl
 soil-spectroscopy-software
@@ -195,12 +186,8 @@ scan.visnir.contact.name_utf8_txt
 scan.visnir.contact.email_ietf_txt
 scan_visnir.350_ref
 scan_visnir.2500_ref
-<<<<<<< HEAD
 ossl-database-access
 ossl-reference-models
-=======
-reference-soil-spectroscopy-models
->>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
 ossl-global-soil-spectroscopy-callibrarion-models
 using-default-ossl-models-to-predict-soil-properties
 predicting-soil-properties-using-mir-spectra

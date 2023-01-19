@@ -32,10 +32,6 @@ status <- function(type) {
     "::: {.rmdnote}\n",
     "You are reading the work-in-progress of the SoilSpec4GG manual. ",
     "This chapter is currently ", status, ".\n",
-<<<<<<< HEAD
-=======
-    # "You can find the polished first edition at <https://soilspectroscopy.github.io/ossl-manual/>.\n",
->>>>>>> 2cba1bc1c33ccb1e8e96071bacbb7ce6ce3078db
     ":::\n"
   ))
 }

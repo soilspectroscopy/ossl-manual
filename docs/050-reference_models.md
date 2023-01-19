@@ -8,7 +8,7 @@ We have received important feedback from people that said the current models are
 
 The following sections describe steps used to produce OSSL models, which 
 are used in the OSSL prediction service and API. The current available models
-were fitted using the previous OSSL database version. For more in-depth insight of 
+were fitted using the previous OSSL database version 1.0. For more in-depth insight of 
 the modeling steps please refer to the [ossl-models](https://github.com/soilspectroscopy/ossl-models) repository.
 
 ## OSSL global soil spectroscopy callibrarion models
