@@ -33,6 +33,7 @@ https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.csv.gz
 https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.csv.gz
 https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.csv.gz
 https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.csv.gz
+
 ## qs format (preferred on R)
 https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.qs
 https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.qs
@@ -60,9 +61,9 @@ mir <- qdeserialize(mir$content)
 ossl <- left_join(mir, soil, by = c("dataset.code_ascii_txt", "id.layer_uuid_txt"))
 ```
 
-## MongoDB {.unnumbered}
+## MongoDB {.unnumbered}  
 
-**Available collections:**
+Available collections:  
 
 - **soilsite**: site information, e.g., coordinates, pedons, layers, etc.  
 - **soillab_L0**: original soil laboratory data (wet chemistry), e.g., soil texture, carbon, etc.  
@@ -72,8 +73,7 @@ ossl <- left_join(mir, soil, by = c("dataset.code_ascii_txt", "id.layer_uuid_txt
 - **ossl_L0**:  Whole OSSL with all separate tables joined at level 0.  
 - **ossl_L1**:  Whole OSSL with all separate tables joined at level 1.  
 
-**Code example:**  
-
+Accessing in R:
 ```{r, eval=F}
 ## Packages and helping functions
 
