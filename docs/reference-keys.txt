@@ -200,5 +200,8 @@ access-ossl-data-to-fit-your-own-models
 registering-and-hosting-models
 neospectra-database
 overview
-spectral-diversity
+database-access
+google-cloud-bucket
+mongodb-1
+database-description
 references

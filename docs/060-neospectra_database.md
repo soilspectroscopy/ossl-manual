@@ -20,5 +20,117 @@ The remaining 1,604 US samples were queried from the USDA NRCS NSSC-KSSL Soil Ar
 
 All samples were scanned dry 2mm sieved. ~20g of sample was added to a plastic weighing boat where the NeoSpectra scanner would be placed down to make direct contact with the soil surface. The scanner was gently moved across the surface of the sample as 6 replicate scans were taken. These replicates were then averaged so that there is one spectra per sample per scanner in the resulting database.
 
-## Spectral diversity
+Add two figures.
 
+## Database access
+
+### Google Cloud Bucket
+
+Use the following URLs to access the whole database levels:
+
+```
+## Compressed csv
+https://storage.googleapis.com/soilspec4gg-public/neospectra_soillab_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/neospectra_soilsite_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/neospectra_nir_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/neospectra_mir_v1.2.csv.gz
+
+## qs format (preferred on R)
+https://storage.googleapis.com/soilspec4gg-public/neospectra_soillab_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/neospectra_soilsite_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/neospectra_nir_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/neospectra_mir_v1.2.qs
+```
+
+Example with R.
+
+```r
+## Packages
+library("tidyverse")
+library("curl")
+library("qs")
+
+## Separate files
+soil <-  "https://storage.googleapis.com/soilspec4gg-public/neospectra_soillab_v1.2.qs"
+soil <- curl_fetch_memory(soil)
+soil <- qdeserialize(soil$content)
+
+nir <- "https://storage.googleapis.com/soilspec4gg-public/neospectra_nir_v1.2.qs"
+nir <- curl_fetch_memory(nir)
+nir <- qdeserialize(nir$content)
+
+## Join
+neospectra <- right_join(soil, nir, by = c("id.sample_local_c"))
+```
+
+### MongoDB
+
+Available collections:  
+
+- **neospectra_soilsite**: site information, e.g., coordinates, pedons, layers, etc.  
+- **neospectra_soillab**: soil laboratory data (wet chemistry), e.g., soil texture, carbon, etc.  
+- **neospectra_nir**: Near-infrared (NIR) spectral data in the 1350-2250 nm range with metadata.  
+- **neospectra_mir**: Middle-infrared (MIR) spectral data in the 600-4000 cm<sup>-1</sup> range with metadata.  
+
+Accessing in R:
+
+```r
+## Packages and helping functions
+library(mongolite)
+library(jsonify)
+
+soilspec4gg.db = list(
+  host = 'api.soilspectroscopy.org',
+  name = 'soilspec4gg',
+  user = 'soilspec4gg',
+  pw = 'soilspec4gg'
+)
+
+soilspec4gg.db$url <- paste0(
+  'mongodb://', soilspec4gg.db$user, ':', 
+  soilspec4gg.db$pw, '@', 
+  soilspec4gg.db$host, '/', 
+  soilspec4gg.db$name, '?ssl=true'
+)
+
+soilspec4gg.init <- function() {
+  print('Creating the access for mongodb collections.')
+  soilspec4gg.db$collections <<- list(
+    neospectra_soilsite = mongo(collection = 'neospectra_soilsite', url = soilspec4gg.db$url, verbose = TRUE),
+    neospectra_soillab = mongo(collection = 'neospectra_soillab', url = soilspec4gg.db$url, verbose = TRUE),
+    neospectra_nir = mongo(collection = 'neospectra_nir', url = soilspec4gg.db$url, verbose = TRUE),
+    neospectra_mir = mongo(collection = 'neospectra_mir', url = soilspec4gg.db$url, verbose = TRUE)
+  ) 
+}
+
+## Accessing the database
+
+# Initialization
+soilspec4gg.init()
+
+# Checking available collections
+names(soilspec4gg.db$collections)
+
+# Get all records for neospectra_soilsite table
+soilspec4gg.db$collections$neospectra_soilsite$count("{}")
+
+# Read all data from a collection back to the R environment
+neospectra_soilsite <- soilspec4gg.db$collections$neospectra_soilsite$find('{}')
+
+# Getting unique values for a field
+soilspec4gg.db$collections$neospectra_soilsite$distinct(key = "scan.nir.model.name_utf8_txt")
+
+# Getting column names
+names(soilspec4gg.db$collections$neospectra_soilsite$find('{}', limit = 1))
+names(soilspec4gg.db$collections$neospectra_soillab$find('{}', limit = 1))
+names(soilspec4gg.db$collections$neospectra_nir$find('{}', limit = 1))
+names(soilspec4gg.db$collections$neospectra_mir$find('{}', limit = 1))
+
+# Query a specific device
+nir.neo1 <- soilspec4gg.db$collections$neospectra_nir$find('{"scan.nir.model.name_utf8_txt" : "NEO1"}')
+
+# Filtering by ID
+soilspec4gg.db$collections$neospectra_soillab$find('{"id.sample_local_c": "30747"}')
+```
+
+## Database description

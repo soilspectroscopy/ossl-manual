@@ -107,10 +107,128 @@
 <p>519 of the US samples were selected and scanned by <a href="https://www.woodwellclimate.org/">Woodwell Climate Research Center</a>. These samples were queried from the <a href="https://ncsslabdatamart.sc.egov.usda.gov/">USDA NRCS NSSC-KSSL Soil Archives</a> as having a complete set of eight measured properties (TC, OC, TN, CEC, pH, clay, sand, and silt). They were stratified based on the major horizon and taxonomic order, omitting the categories with less than 500 samples. Three percent of each stratum (i.e., a combination of major horizon and taxonomic order) was then randomly selected as the final subset retrieved from KSSL’s physical soil archive as 2-mm sieved samples.</p>
 <p>The remaining 1,604 US samples were queried from the USDA NRCS NSSC-KSSL Soil Archives by the <a href="University%20of%20Nebraska%20-%20Lincoln">University of Nebraska - Lincoln</a> to meet the following criteria: Lower depth &lt;= 30 cm, pH range 4.0 to 9.5, Organic carbon &lt;10%, Greater than lower detection limits, Actual physical samples available in the archive, Samples collected and analyzed from 2001 onwards, Samples having complete analyses for high-priority properties (Sand, Silt, Clay, CEC, Exchangeable Ca, Exchangeable Mg, Exchangeable K, Exchangeable Na, CaCO3, OC, TN), &amp; MIR scanned.</p>
 <p>All samples were scanned dry 2mm sieved. ~20g of sample was added to a plastic weighing boat where the NeoSpectra scanner would be placed down to make direct contact with the soil surface. The scanner was gently moved across the surface of the sample as 6 replicate scans were taken. These replicates were then averaged so that there is one spectra per sample per scanner in the resulting database.</p>
+<p>Add two figures.</p>
 </div>
-<div id="spectral-diversity" class="section level2" number="6.2">
+<div id="database-access" class="section level2" number="6.2">
 <h2>
-<span class="header-section-number">6.2</span> Spectral diversity<a class="anchor" aria-label="anchor" href="#spectral-diversity"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2</span> Database access<a class="anchor" aria-label="anchor" href="#database-access"><i class="fas fa-link"></i></a>
+</h2>
+<div id="google-cloud-bucket" class="section level3" number="6.2.1">
+<h3>
+<span class="header-section-number">6.2.1</span> Google Cloud Bucket<a class="anchor" aria-label="anchor" href="#google-cloud-bucket"><i class="fas fa-link"></i></a>
+</h3>
+<p>Use the following URLs to access the whole database levels:</p>
+<pre><code>## Compressed csv
+https://storage.googleapis.com/soilspec4gg-public/neospectra_soillab_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/neospectra_soilsite_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/neospectra_nir_v1.2.csv.gz
+https://storage.googleapis.com/soilspec4gg-public/neospectra_mir_v1.2.csv.gz
+
+## qs format (preferred on R)
+https://storage.googleapis.com/soilspec4gg-public/neospectra_soillab_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/neospectra_soilsite_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/neospectra_nir_v1.2.qs
+https://storage.googleapis.com/soilspec4gg-public/neospectra_mir_v1.2.qs</code></pre>
+<p>Example with R.</p>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">## Packages</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://tidyverse.tidyverse.org">"tidyverse"</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/jeroen/curl">"curl"</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/traversc/qs">"qs"</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## Separate files</span></span>
+<span><span class="va">soil</span> <span class="op">&lt;-</span>  <span class="st">"https://storage.googleapis.com/soilspec4gg-public/neospectra_soillab_v1.2.qs"</span></span>
+<span><span class="va">soil</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/curl/man/curl_fetch.html">curl_fetch_memory</a></span><span class="op">(</span><span class="va">soil</span><span class="op">)</span></span>
+<span><span class="va">soil</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/qs/man/qdeserialize.html">qdeserialize</a></span><span class="op">(</span><span class="va">soil</span><span class="op">$</span><span class="va">content</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">nir</span> <span class="op">&lt;-</span> <span class="st">"https://storage.googleapis.com/soilspec4gg-public/neospectra_nir_v1.2.qs"</span></span>
+<span><span class="va">nir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/curl/man/curl_fetch.html">curl_fetch_memory</a></span><span class="op">(</span><span class="va">nir</span><span class="op">)</span></span>
+<span><span class="va">nir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/qs/man/qdeserialize.html">qdeserialize</a></span><span class="op">(</span><span class="va">nir</span><span class="op">$</span><span class="va">content</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## Join</span></span>
+<span><span class="va">neospectra</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">right_join</a></span><span class="op">(</span><span class="va">soil</span>, <span class="va">nir</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"id.sample_local_c"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="mongodb-1" class="section level3" number="6.2.2">
+<h3>
+<span class="header-section-number">6.2.2</span> MongoDB<a class="anchor" aria-label="anchor" href="#mongodb-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Available collections:</p>
+<ul>
+<li>
+<strong>neospectra_soilsite</strong>: site information, e.g., coordinates, pedons, layers, etc.<br>
+</li>
+<li>
+<strong>neospectra_soillab</strong>: soil laboratory data (wet chemistry), e.g., soil texture, carbon, etc.<br>
+</li>
+<li>
+<strong>neospectra_nir</strong>: Near-infrared (NIR) spectral data in the 1350-2250 nm range with metadata.<br>
+</li>
+<li>
+<strong>neospectra_mir</strong>: Middle-infrared (MIR) spectral data in the 600-4000 cm<sup>-1</sup> range with metadata.</li>
+</ul>
+<p>Accessing in R:</p>
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">## Packages and helping functions</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeroen/mongolite/">mongolite</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">jsonify</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">soilspec4gg.db</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>  host <span class="op">=</span> <span class="st">'api.soilspectroscopy.org'</span>,</span>
+<span>  name <span class="op">=</span> <span class="st">'soilspec4gg'</span>,</span>
+<span>  user <span class="op">=</span> <span class="st">'soilspec4gg'</span>,</span>
+<span>  pw <span class="op">=</span> <span class="st">'soilspec4gg'</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">url</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span></span>
+<span>  <span class="st">'mongodb://'</span>, <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">user</span>, <span class="st">':'</span>, </span>
+<span>  <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">pw</span>, <span class="st">'@'</span>, </span>
+<span>  <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">host</span>, <span class="st">'/'</span>, </span>
+<span>  <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">name</span>, <span class="st">'?ssl=true'</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">soilspec4gg.init</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">'Creating the access for mongodb collections.'</span><span class="op">)</span></span>
+<span>  <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">collections</span> <span class="op">&lt;&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>    neospectra_soilsite <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/mongolite/man/mongo.html">mongo</a></span><span class="op">(</span>collection <span class="op">=</span> <span class="st">'neospectra_soilsite'</span>, url <span class="op">=</span> <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">url</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    neospectra_soillab <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/mongolite/man/mongo.html">mongo</a></span><span class="op">(</span>collection <span class="op">=</span> <span class="st">'neospectra_soillab'</span>, url <span class="op">=</span> <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">url</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    neospectra_nir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/mongolite/man/mongo.html">mongo</a></span><span class="op">(</span>collection <span class="op">=</span> <span class="st">'neospectra_nir'</span>, url <span class="op">=</span> <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">url</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    neospectra_mir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/mongolite/man/mongo.html">mongo</a></span><span class="op">(</span>collection <span class="op">=</span> <span class="st">'neospectra_mir'</span>, url <span class="op">=</span> <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">url</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> </span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co">## Accessing the database</span></span>
+<span></span>
+<span><span class="co"># Initialization</span></span>
+<span><span class="fu">soilspec4gg.init</span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Checking available collections</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">collections</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Get all records for neospectra_soilsite table</span></span>
+<span><span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">collections</span><span class="op">$</span><span class="va">neospectra_soilsite</span><span class="op">$</span><span class="fu">count</span><span class="op">(</span><span class="st">"{}"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Read all data from a collection back to the R environment</span></span>
+<span><span class="va">neospectra_soilsite</span> <span class="op">&lt;-</span> <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">collections</span><span class="op">$</span><span class="va">neospectra_soilsite</span><span class="op">$</span><span class="fu">find</span><span class="op">(</span><span class="st">'{}'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Getting unique values for a field</span></span>
+<span><span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">collections</span><span class="op">$</span><span class="va">neospectra_soilsite</span><span class="op">$</span><span class="fu">distinct</span><span class="op">(</span>key <span class="op">=</span> <span class="st">"scan.nir.model.name_utf8_txt"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Getting column names</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">collections</span><span class="op">$</span><span class="va">neospectra_soilsite</span><span class="op">$</span><span class="fu">find</span><span class="op">(</span><span class="st">'{}'</span>, limit <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">collections</span><span class="op">$</span><span class="va">neospectra_soillab</span><span class="op">$</span><span class="fu">find</span><span class="op">(</span><span class="st">'{}'</span>, limit <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">collections</span><span class="op">$</span><span class="va">neospectra_nir</span><span class="op">$</span><span class="fu">find</span><span class="op">(</span><span class="st">'{}'</span>, limit <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">collections</span><span class="op">$</span><span class="va">neospectra_mir</span><span class="op">$</span><span class="fu">find</span><span class="op">(</span><span class="st">'{}'</span>, limit <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Query a specific device</span></span>
+<span><span class="va">nir.neo1</span> <span class="op">&lt;-</span> <span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">collections</span><span class="op">$</span><span class="va">neospectra_nir</span><span class="op">$</span><span class="fu">find</span><span class="op">(</span><span class="st">'{"scan.nir.model.name_utf8_txt" : "NEO1"}'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Filtering by ID</span></span>
+<span><span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">collections</span><span class="op">$</span><span class="va">neospectra_soillab</span><span class="op">$</span><span class="fu">find</span><span class="op">(</span><span class="st">'{"id.sample_local_c": "30747"}'</span><span class="op">)</span></span></code></pre></div>
+</div>
+</div>
+<div id="database-description" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> Database description<a class="anchor" aria-label="anchor" href="#database-description"><i class="fas fa-link"></i></a>
 </h2>
 
 </div>
@@ -123,7 +241,13 @@
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#neospectra-database"><span class="header-section-number">6</span> Neospectra database</a></li>
 <li><a class="nav-link" href="#overview"><span class="header-section-number">6.1</span> Overview</a></li>
-<li><a class="nav-link" href="#spectral-diversity"><span class="header-section-number">6.2</span> Spectral diversity</a></li>
+<li>
+<a class="nav-link" href="#database-access"><span class="header-section-number">6.2</span> Database access</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#google-cloud-bucket"><span class="header-section-number">6.2.1</span> Google Cloud Bucket</a></li>
+<li><a class="nav-link" href="#mongodb-1"><span class="header-section-number">6.2.2</span> MongoDB</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#database-description"><span class="header-section-number">6.3</span> Database description</a></li>
 </ul>
 
       <div class="book-extra">
