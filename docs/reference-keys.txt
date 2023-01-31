@@ -198,4 +198,7 @@ the-bundle-approach-to-soil-spectroscopy-calibration
 registering-your-own-model
 access-ossl-data-to-fit-your-own-models
 registering-and-hosting-models
+neospectra-database
+overview
+spectral-diversity
 references

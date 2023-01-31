@@ -9,6 +9,7 @@ rmd_files: [
   "030-database_description.Rmd",
   "040-database_access.Rmd",
   "050-reference_models.Rmd",
+  "060-neospectra_database.Rmd",
   "references.Rmd"
 ]
 
