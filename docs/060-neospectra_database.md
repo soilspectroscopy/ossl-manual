@@ -10,7 +10,7 @@ A persistent copy of the database is hosted on [Zenodo](https://doi.org/10.5281/
 
 Recent advances in hardware technology have enabled the development of handheld sensors with similar performance specifications as laboratory-grade near-infrared (NIR) spectrometers.
 
-We have compiled a hand-held NIR spectral library using the NeoSpectra Handheld NIR Analyzer developed by [Si-Ware](https://www.si-ware.com/). Each scanner is fitted with Fourier-Transform technology based on the semiconductor Micro Electromechanical Systems (MEMS) manufacturing technique, promising accuracy, and consistency between devices.
+We have compiled a hand-held NIR spectral library (1350-2550 nm) using the NeoSpectra Handheld NIR Analyzer developed by [Si-Ware](https://www.si-ware.com/). Each scanner is fitted with Fourier-Transform technology based on the semiconductor Micro Electromechanical Systems (MEMS) manufacturing technique, promising accuracy, and consistency between devices.
 
 This library includes 2,106 distinct mineral soil samples scanned across 9 of these portable low-cost NIR spectrometers (indicated by serial no). 2,016 of these soil samples were selected to represent the diversity of mineral soils found in the United States, and 90 samples were selected across Ghana, Kenya, and Nigeria.
 
@@ -67,7 +67,7 @@ Available collections:
 
 - **neospectra_soilsite**: site information, e.g., coordinates, pedons, layers, etc.  
 - **neospectra_soillab**: soil laboratory data (wet chemistry), e.g., soil texture, carbon, etc.  
-- **neospectra_nir**: Near-infrared (NIR) spectral data in the 1350-2250 nm range with metadata.  
+- **neospectra_nir**: Near-infrared (NIR) spectral data in the 1350-2550 nm range with metadata.  
 - **neospectra_mir**: Middle-infrared (MIR) spectral data in the 600-4000 cm<sup>-1</sup> range with metadata.  
 
 >**<span style="color:orange;">NOTE: Within the MongoDB, all the dots in column names are replaced by underscore.</span>**
