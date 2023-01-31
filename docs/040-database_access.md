@@ -15,32 +15,30 @@ To access an extend global compilation of soil legacy point data sets, refer to 
 The datasets in the public bucket can be updated without notice. One can both run the link on a browser to download the files, or provide the URLs in a programming language to automatically fecth them.
 
 Use the following URLs to access the whole database levels:
-```
-## Compressed csv
-https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.csv.gz
-https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.csv.gz
 
-## qs format (preferred on R)
-https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.qs
-https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.qs
-```
+**Compressed csv**  
+<https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.csv.gz>  
+<https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.csv.gz>  
+
+**qs format (preferred on R)**  
+<https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.qs>  
+<https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.qs>  
 
 Use these alternative URLs to access the OSSL as separate files:
-```
-## Compressed csv
-https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.csv.gz
-https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.csv.gz
-https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.csv.gz
-https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.csv.gz
-https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.csv.gz
 
-## qs format (preferred on R)
-https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.qs
-https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.qs
-https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs
-https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.qs
-https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.qs
-```
+**Compressed csv**  
+<https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.csv.gz>  
+<https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.csv.gz>  
+<https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.csv.gz>  
+<https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.csv.gz>  
+<https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.csv.gz>  
+
+**qs format (preferred on R)**  
+<https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.qs>  
+<https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.qs>  
+<https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs>  
+<https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.qs>  
+<https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.qs>  
 
 Example with R. Use `dataset.code_ascii_txt` and `id.layer_uuid_txt.` as joining columns:
 
@@ -73,6 +71,8 @@ Available collections:
 - **visnir**:  VisNIR spectral data in the 350-2500 nm range with metadata.  
 - **ossl_L0**:  Whole OSSL with all separate tables joined at level 0.  
 - **ossl_L1**:  Whole OSSL with all separate tables joined at level 1.  
+
+>**<span style="color:orange;">NOTE: Within the MongoDB, all the dots in column names are replaced by underscore.</span>**
 
 Accessing in R:
 

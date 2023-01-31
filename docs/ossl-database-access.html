@@ -104,29 +104,13 @@
 </h2>
 <p>The datasets in the public bucket can be updated without notice. One can both run the link on a browser to download the files, or provide the URLs in a programming language to automatically fecth them.</p>
 <p>Use the following URLs to access the whole database levels:</p>
-<pre><code>## Compressed csv
-https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.csv.gz
-https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.csv.gz
-
-## qs format (preferred on R)
-https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.qs
-https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.qs</code></pre>
+<p><strong>Compressed csv</strong><br><a href="https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.csv.gz" class="uri">https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.csv.gz</a><br><a href="https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.csv.gz" class="uri">https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.csv.gz</a></p>
+<p><strong>qs format (preferred on R)</strong><br><a href="https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.qs" class="uri">https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.qs</a><br><a href="https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.qs" class="uri">https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.qs</a></p>
 <p>Use these alternative URLs to access the OSSL as separate files:</p>
-<pre><code>## Compressed csv
-https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.csv.gz
-https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.csv.gz
-https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.csv.gz
-https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.csv.gz
-https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.csv.gz
-
-## qs format (preferred on R)
-https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.qs
-https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.qs
-https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs
-https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.qs
-https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.qs</code></pre>
+<p><strong>Compressed csv</strong><br><a href="https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.csv.gz" class="uri">https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.csv.gz</a><br><a href="https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.csv.gz" class="uri">https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.csv.gz</a><br><a href="https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.csv.gz" class="uri">https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.csv.gz</a><br><a href="https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.csv.gz" class="uri">https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.csv.gz</a><br><a href="https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.csv.gz" class="uri">https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.csv.gz</a></p>
+<p><strong>qs format (preferred on R)</strong><br><a href="https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.qs" class="uri">https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.qs</a><br><a href="https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.qs" class="uri">https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.qs</a><br><a href="https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs" class="uri">https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs</a><br><a href="https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.qs" class="uri">https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.qs</a><br><a href="https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.qs" class="uri">https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.qs</a></p>
 <p>Example with R. Use <code>dataset.code_ascii_txt</code> and <code>id.layer_uuid_txt.</code> as joining columns:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Packages</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://tidyverse.tidyverse.org">"tidyverse"</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/jeroen/curl">"curl"</a></span><span class="op">)</span></span>
@@ -169,8 +153,11 @@ https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.qs</code><
 <li>
 <strong>ossl_L1</strong>: Whole OSSL with all separate tables joined at level 1.</li>
 </ul>
+<blockquote>
+<p><strong><span style="color:orange;">NOTE: Within the MongoDB, all the dots in column names are replaced by underscore.</span></strong></p>
+</blockquote>
 <p>Accessing in R:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Packages and helping functions</span></span>
 <span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeroen/mongolite/">mongolite</a></span><span class="op">)</span></span>
