@@ -4,7 +4,9 @@
 status("drafting")
 ```
 
-A persistent copy of the database is hosted on [Zenodo](https://doi.org/10.5281/zenodo.7586622).
+A persistent copy of the database is hosted on [Zenodo](https://doi.org/10.5281/zenodo.7586622). Please use the following reference when using the Neospectra database:
+
+>Sanderman, J., Smith, C., Safanelli, J. L., Mitu, S. M., Ge, Y., Murad, O., & Shepherd, K. (2023). Near-infrared (NIR) soil spectral library using the NeoSpectra Handheld NIR Analyzer by Si-Ware. doi:10.5281/ZENODO.7586622.
 
 ## Overview
 
@@ -20,7 +22,64 @@ The remaining 1,604 US samples were queried from the USDA NRCS NSSC-KSSL Soil Ar
 
 All samples were scanned dry 2mm sieved. ~20g of sample was added to a plastic weighing boat where the NeoSpectra scanner would be placed down to make direct contact with the soil surface. The scanner was gently moved across the surface of the sample as 6 replicate scans were taken. These replicates were then averaged so that there is one spectra per sample per scanner in the resulting database.
 
-Add two figures.
+```{r nir_plot, echo=F, eval=T, include=F, warning=F, message=F}
+## Packages
+library("tidyverse")
+library("curl")
+library("qs")
+
+nir <- "https://storage.googleapis.com/soilspec4gg-public/neospectra_nir_v1.2.qs"
+nir <- curl_fetch_memory(nir)
+nir <- qdeserialize(nir$content)
+
+old.names <- names(nir)
+new.names <- gsub("scan_nir.|_ref", "", old.names)
+spectra.columns <- as.character(seq(1350, 2550, by = 2))
+
+p.nir <- nir %>%
+  rename_with(~new.names, old.names) %>%
+  select(id.sample_local_c, all_of(spectra.columns)) %>%
+  group_by(id.sample_local_c) %>%
+  summarise_all(mean) %>%
+  pivot_longer(-id.sample_local_c,
+               names_to = "wavelength", values_to = "reflectance") %>%
+  mutate(wavelength = as.numeric(wavelength)) %>%
+  ggplot(aes(x = wavelength, y = reflectance, group = id.sample_local_c)) +
+  geom_line(alpha = 0.15, size = 0.25) +
+  scale_x_continuous(breaks = c(1350, 1500, 1750, 2000, 2250, 2550)) +
+  labs(x = "Wavelength (nm)", y = "Reflectance factor", color = "") +
+  theme_light()
+
+ggsave("./img/nir_neospectra.png", p.nir, dpi = 300, width = 8, height = 6,
+       units = "in", scale = 0.75)
+```
+
+```{r nir_pca, echo=F, eval=T, include=F, warning=F, message=F}
+nir <- nir %>%
+  rename_with(~new.names, old.names) %>%
+  select(id.sample_local_c, all_of(spectra.columns)) %>%
+  group_by(id.sample_local_c) %>%
+  summarise_all(mean)
+
+nir.svd <- svd(scale(nir[,-1], center = T, scale = T))
+exp.var <- round(nir.svd$d^2/sum(nir.svd$d^2)*100, 2)
+ncomps <- 2
+
+p.pca <- as_tibble(nir.svd$u[,1:ncomps]) %>%
+  rename(PC1 = V1, PC2 = V2) %>%
+  ggplot() +
+  geom_point(aes(x = PC1, y = PC2), color = "black", size = 1, alpha = 0.50) +
+  labs(x = paste0("PC1 (", exp.var[1], "%)"),
+       y = paste0("PC2 (", exp.var[2], "%)")) +
+  theme_light()
+
+ggsave("./img/pca_neospectra.png", p.pca, dpi = 300, width = 8, height = 6,
+       units = "in", scale = 0.75)
+```
+
+<img src="./img/nir_neospectra.png" heigth=100% width=100%>
+
+<img src="./img/pca_neospectra.png" heigth=100% width=100%>
 
 ## Database access
 

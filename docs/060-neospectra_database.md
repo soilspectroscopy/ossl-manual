@@ -4,7 +4,9 @@
 You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending.
 :::
 
-A persistent copy of the database is hosted on [Zenodo](https://doi.org/10.5281/zenodo.7586622).
+A persistent copy of the database is hosted on [Zenodo](https://doi.org/10.5281/zenodo.7586622). Please use the following reference when using the Neospectra database:
+
+>Sanderman, J., Smith, C., Safanelli, J. L., Mitu, S. M., Ge, Y., Murad, O., & Shepherd, K. (2023). Near-infrared (NIR) soil spectral library using the NeoSpectra Handheld NIR Analyzer by Si-Ware. doi:10.5281/ZENODO.7586622.
 
 ## Overview
 
@@ -20,7 +22,13 @@ The remaining 1,604 US samples were queried from the USDA NRCS NSSC-KSSL Soil Ar
 
 All samples were scanned dry 2mm sieved. ~20g of sample was added to a plastic weighing boat where the NeoSpectra scanner would be placed down to make direct contact with the soil surface. The scanner was gently moved across the surface of the sample as 6 replicate scans were taken. These replicates were then averaged so that there is one spectra per sample per scanner in the resulting database.
 
-Add two figures.
+
+
+
+
+<img src="./img/nir_neospectra.png" heigth=100% width=100%>
+
+<img src="./img/pca_neospectra.png" heigth=100% width=100%>
 
 ## Database access
 
