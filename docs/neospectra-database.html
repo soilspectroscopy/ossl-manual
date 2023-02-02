@@ -228,7 +228,169 @@
 <h2>
 <span class="header-section-number">6.3</span> Database description<a class="anchor" aria-label="anchor" href="#database-description"><i class="fas fa-link"></i></a>
 </h2>
-
+<p>The Neospectra database follows the same specification of the OSSL for soil and site information. For the near-infrared (NIR) spectra, however, additional information is provided for scanning laboratory, scanner code, and scanning accessory.</p>
+<p>NIR is provided in reflectance units per wavelength, with values usually ranging between 0 and 1 as fraction percent. The spectral range imported into the OSSL falls between 1350 and 2550 nm, with an interval of 2 nm.</p>
+<p>One can convert reflectance (R) values to absorbance units (A) as <code>A = log10(1/R)</code>, or backtransform with <code>R = 1/(10^A)</code>. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with <code>WN = 1/(WL*10000000)</code>, or backtransform with <code>WL = 1/(WL*10000000)</code>. The factor 10M is used to convert cm to nm.</p>
+<div id="id.sample_local_c" class="section level3" number="6.3.1">
+<h3>
+<span class="header-section-number">6.3.1</span> id.sample_local_c<a class="anchor" aria-label="anchor" href="#id.sample_local_c"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Soil sample identifier.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: 30747.</li>
+</ul>
+</div>
+<div id="id.scan_local_c-2" class="section level3" number="6.3.2">
+<h3>
+<span class="header-section-number">6.3.2</span> id.scan_local_c<a class="anchor" aria-label="anchor" href="#id.scan_local_c-2"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Scan identifier (one average spectra per scanner).</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: NEO1_030747.</li>
+</ul>
+</div>
+<div id="scan.lab_utf8_txt" class="section level3" number="6.3.3">
+<h3>
+<span class="header-section-number">6.3.3</span> scan.lab_utf8_txt<a class="anchor" aria-label="anchor" href="#scan.lab_utf8_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Scanning laboratory.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: Woodwell.</li>
+</ul>
+</div>
+<div id="scan.visnir.date.begin_iso.8601_yyyy.mm.dd-1" class="section level3" number="6.3.4">
+<h3>
+<span class="header-section-number">6.3.4</span> scan.visnir.date.begin_iso.8601_yyyy.mm.dd<a class="anchor" aria-label="anchor" href="#scan.visnir.date.begin_iso.8601_yyyy.mm.dd-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Begin date of scanning following YYYY-MM-DD format (ISO 8601).</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: 2021-01-01.</li>
+</ul>
+</div>
+<div id="scan.visnir.date.end_iso.8601_yyyy.mm.dd-1" class="section level3" number="6.3.5">
+<h3>
+<span class="header-section-number">6.3.5</span> scan.visnir.date.end_iso.8601_yyyy.mm.dd<a class="anchor" aria-label="anchor" href="#scan.visnir.date.end_iso.8601_yyyy.mm.dd-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Begin date of scanning following YYYY-MM-DD format (ISO 8601).</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: 2022-12-31.</li>
+</ul>
+</div>
+<div id="scan.nir.model.name_utf8_txt" class="section level3" number="6.3.6">
+<h3>
+<span class="header-section-number">6.3.6</span> scan.nir.model.name_utf8_txt<a class="anchor" aria-label="anchor" href="#scan.nir.model.name_utf8_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: NIR scanner code.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: NEO1.</li>
+</ul>
+</div>
+<div id="scan.nir.model.serialnumber_utf8_in" class="section level3" number="6.3.7">
+<h3>
+<span class="header-section-number">6.3.7</span> scan.nir.model.serialnumber_utf8_in<a class="anchor" aria-label="anchor" href="#scan.nir.model.serialnumber_utf8_in"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: NIR scanner serial number.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 21020033.</li>
+</ul>
+</div>
+<div id="scan.nir.accessory.used_utf8_txt" class="section level3" number="6.3.8">
+<h3>
+<span class="header-section-number">6.3.8</span> scan.nir.accessory.used_utf8_txt<a class="anchor" aria-label="anchor" href="#scan.nir.accessory.used_utf8_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Yes or No for scanning accesory.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: y.</li>
+</ul>
+</div>
+<div id="scan.visnir.method.preparation_any_txt-1" class="section level3" number="6.3.9">
+<h3>
+<span class="header-section-number">6.3.9</span> scan.visnir.method.preparation_any_txt<a class="anchor" aria-label="anchor" href="#scan.visnir.method.preparation_any_txt-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Soil sample preparation before scanning.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: &lt;2 mm.</li>
+</ul>
+</div>
+<div id="scan.visnir.license.title_ascii_txt-1" class="section level3" number="6.3.10">
+<h3>
+<span class="header-section-number">6.3.10</span> scan.visnir.license.title_ascii_txt<a class="anchor" aria-label="anchor" href="#scan.visnir.license.title_ascii_txt-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset scans license.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: CC-BY.</li>
+</ul>
+</div>
+<div id="scan.visnir.license.address_idn_url-1" class="section level3" number="6.3.11">
+<h3>
+<span class="header-section-number">6.3.11</span> scan.visnir.license.address_idn_url<a class="anchor" aria-label="anchor" href="#scan.visnir.license.address_idn_url-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset scans license url.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: <a href="https://creativecommons.org/licenses/by/4.0/" class="uri">https://creativecommons.org/licenses/by/4.0/</a>.</li>
+</ul>
+</div>
+<div id="scan.visnir.doi_idf_url-1" class="section level3" number="6.3.12">
+<h3>
+<span class="header-section-number">6.3.12</span> scan.visnir.doi_idf_url<a class="anchor" aria-label="anchor" href="#scan.visnir.doi_idf_url-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Digital object identifier (DOI) url of the dataset scans.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: <a href="https://doi.org/10.5281/zenodo.7586622" class="uri">https://doi.org/10.5281/zenodo.7586622</a>.</li>
+</ul>
+</div>
+<div id="scan.visnir.contact.name_utf8_txt-1" class="section level3" number="6.3.13">
+<h3>
+<span class="header-section-number">6.3.13</span> scan.visnir.contact.name_utf8_txt<a class="anchor" aria-label="anchor" href="#scan.visnir.contact.name_utf8_txt-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset scans contact name.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: Jonathan Sanderman.</li>
+</ul>
+</div>
+<div id="scan.visnir.contact.email_ietf_txt-1" class="section level3" number="6.3.14">
+<h3>
+<span class="header-section-number">6.3.14</span> scan.visnir.contact.email_ietf_txt<a class="anchor" aria-label="anchor" href="#scan.visnir.contact.email_ietf_txt-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset scans contact email.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: <a href="mailto:jsanderman@woodwellclimate.org" class="email">jsanderman@woodwellclimate.org</a>.</li>
+</ul>
+</div>
+<div id="scan_visnir.1350_ref" class="section level3" number="6.3.15">
+<h3>
+<span class="header-section-number">6.3.15</span> scan_visnir.1350_ref<a class="anchor" aria-label="anchor" href="#scan_visnir.1350_ref"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Reflectance in fraction unit, first wavelength in the 1350-2550 nm range.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.10403320.</li>
+</ul>
+</div>
+<div id="scan_visnir.2550_ref" class="section level3" number="6.3.16">
+<h3>
+<span class="header-section-number">6.3.16</span> scan_visnir.2550_ref<a class="anchor" aria-label="anchor" href="#scan_visnir.2550_ref"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Reflectance in fraction unit, last wavelength in the 1350-2550 nm range.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.3622029.</li>
+</ul>
+</div>
 </div>
 </div>
   <div class="chapter-nav">
@@ -245,7 +407,26 @@
 <li><a class="nav-link" href="#mongodb-1"><span class="header-section-number">6.2.2</span> MongoDB</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#database-description"><span class="header-section-number">6.3</span> Database description</a></li>
+<li>
+<a class="nav-link" href="#database-description"><span class="header-section-number">6.3</span> Database description</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#id.sample_local_c"><span class="header-section-number">6.3.1</span> id.sample_local_c</a></li>
+<li><a class="nav-link" href="#id.scan_local_c-2"><span class="header-section-number">6.3.2</span> id.scan_local_c</a></li>
+<li><a class="nav-link" href="#scan.lab_utf8_txt"><span class="header-section-number">6.3.3</span> scan.lab_utf8_txt</a></li>
+<li><a class="nav-link" href="#scan.visnir.date.begin_iso.8601_yyyy.mm.dd-1"><span class="header-section-number">6.3.4</span> scan.visnir.date.begin_iso.8601_yyyy.mm.dd</a></li>
+<li><a class="nav-link" href="#scan.visnir.date.end_iso.8601_yyyy.mm.dd-1"><span class="header-section-number">6.3.5</span> scan.visnir.date.end_iso.8601_yyyy.mm.dd</a></li>
+<li><a class="nav-link" href="#scan.nir.model.name_utf8_txt"><span class="header-section-number">6.3.6</span> scan.nir.model.name_utf8_txt</a></li>
+<li><a class="nav-link" href="#scan.nir.model.serialnumber_utf8_in"><span class="header-section-number">6.3.7</span> scan.nir.model.serialnumber_utf8_in</a></li>
+<li><a class="nav-link" href="#scan.nir.accessory.used_utf8_txt"><span class="header-section-number">6.3.8</span> scan.nir.accessory.used_utf8_txt</a></li>
+<li><a class="nav-link" href="#scan.visnir.method.preparation_any_txt-1"><span class="header-section-number">6.3.9</span> scan.visnir.method.preparation_any_txt</a></li>
+<li><a class="nav-link" href="#scan.visnir.license.title_ascii_txt-1"><span class="header-section-number">6.3.10</span> scan.visnir.license.title_ascii_txt</a></li>
+<li><a class="nav-link" href="#scan.visnir.license.address_idn_url-1"><span class="header-section-number">6.3.11</span> scan.visnir.license.address_idn_url</a></li>
+<li><a class="nav-link" href="#scan.visnir.doi_idf_url-1"><span class="header-section-number">6.3.12</span> scan.visnir.doi_idf_url</a></li>
+<li><a class="nav-link" href="#scan.visnir.contact.name_utf8_txt-1"><span class="header-section-number">6.3.13</span> scan.visnir.contact.name_utf8_txt</a></li>
+<li><a class="nav-link" href="#scan.visnir.contact.email_ietf_txt-1"><span class="header-section-number">6.3.14</span> scan.visnir.contact.email_ietf_txt</a></li>
+<li><a class="nav-link" href="#scan_visnir.1350_ref"><span class="header-section-number">6.3.15</span> scan_visnir.1350_ref</a></li>
+<li><a class="nav-link" href="#scan_visnir.2550_ref"><span class="header-section-number">6.3.16</span> scan_visnir.2550_ref</a></li>
+</ul>
+</li>
 </ul>
 
       <div class="book-extra">

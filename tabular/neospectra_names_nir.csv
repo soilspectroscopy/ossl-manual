@@ -1,0 +1,17 @@
+ossl_name,type,example,description
+id.sample_local_c,string,30747,Soil sample identifier
+id.scan_local_c,string,NEO1_030747,Scan identifier (one average spectra per scanner)
+scan.lab_utf8_txt,string,Woodwell,Scanning laboratory
+scan.visnir.date.begin_iso.8601_yyyy.mm.dd,string,2021-01-01,Begin date of scanning following YYYY-MM-DD format (ISO 8601)
+scan.visnir.date.end_iso.8601_yyyy.mm.dd,string,2022-12-31,Begin date of scanning following YYYY-MM-DD format (ISO 8601)
+scan.nir.model.name_utf8_txt,string,NEO1,NIR scanner code
+scan.nir.model.serialnumber_utf8_in,numeric,21020033,NIR scanner serial number
+scan.nir.accessory.used_utf8_txt,string,y,Yes or No for scanning accesory
+scan.visnir.method.preparation_any_txt,string,<2 mm,Soil sample preparation before scanning
+scan.visnir.license.title_ascii_txt,string,CC-BY,Dataset scans license
+scan.visnir.license.address_idn_url,string,https://creativecommons.org/licenses/by/4.0/,Dataset scans license url
+scan.visnir.doi_idf_url,string,https://doi.org/10.5281/zenodo.7586622,Digital object identifier (DOI) url of the dataset scans
+scan.visnir.contact.name_utf8_txt,string,Jonathan Sanderman,Dataset scans contact name
+scan.visnir.contact.email_ietf_txt,string,jsanderman@woodwellclimate.org,Dataset scans contact email
+scan_visnir.1350_ref,numeric,0.10403320,"Reflectance in fraction unit, first wavelength in the 1350-2550 nm range"
+scan_visnir.2550_ref,numeric,0.3622029,"Reflectance in fraction unit, last wavelength in the 1350-2550 nm range"

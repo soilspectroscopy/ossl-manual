@@ -142,3 +142,90 @@ soilspec4gg.db$collections$neospectra_soillab$find('{"id_sample_local_c": "30747
 ```
 
 ## Database description
+
+The Neospectra database follows the same specification of the OSSL for soil and site information. For the near-infrared (NIR) spectra, however, additional information is provided for scanning laboratory, scanner code, and scanning accessory.
+
+NIR is provided in reflectance units per wavelength, with values usually ranging between 0 and 1 as fraction percent. The spectral range imported into the OSSL falls between 1350 and 2550 nm, with an interval of 2 nm.
+
+One can convert reflectance (R) values to absorbance units (A) as `A = log10(1/R)`, or backtransform with `R = 1/(10^A)`. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with `WN = 1/(WL*10000000)`, or backtransform with `WL = 1/(WL*10000000)`. The factor 10M is used to convert cm to nm.
+
+
+### id.sample_local_c
+- 📚 Description: Soil sample identifier.
+- 🔢 Type: string.
+- 📖 Example: 30747.
+
+### id.scan_local_c
+- 📚 Description: Scan identifier (one average spectra per scanner).
+- 🔢 Type: string.
+- 📖 Example: NEO1_030747.
+
+### scan.lab_utf8_txt
+- 📚 Description: Scanning laboratory.
+- 🔢 Type: string.
+- 📖 Example: Woodwell.
+
+### scan.visnir.date.begin_iso.8601_yyyy.mm.dd
+- 📚 Description: Begin date of scanning following YYYY-MM-DD format (ISO 8601).
+- 🔢 Type: string.
+- 📖 Example: 2021-01-01.
+
+### scan.visnir.date.end_iso.8601_yyyy.mm.dd
+- 📚 Description: Begin date of scanning following YYYY-MM-DD format (ISO 8601).
+- 🔢 Type: string.
+- 📖 Example: 2022-12-31.
+
+### scan.nir.model.name_utf8_txt
+- 📚 Description: NIR scanner code.
+- 🔢 Type: string.
+- 📖 Example: NEO1.
+
+### scan.nir.model.serialnumber_utf8_in
+- 📚 Description: NIR scanner serial number.
+- 🔢 Type: numeric.
+- 📖 Example: 21020033.
+
+### scan.nir.accessory.used_utf8_txt
+- 📚 Description: Yes or No for scanning accesory.
+- 🔢 Type: string.
+- 📖 Example: y.
+
+### scan.visnir.method.preparation_any_txt
+- 📚 Description: Soil sample preparation before scanning.
+- 🔢 Type: string.
+- 📖 Example: <2 mm.
+
+### scan.visnir.license.title_ascii_txt
+- 📚 Description: Dataset scans license.
+- 🔢 Type: string.
+- 📖 Example: CC-BY.
+
+### scan.visnir.license.address_idn_url
+- 📚 Description: Dataset scans license url.
+- 🔢 Type: string.
+- 📖 Example: https://creativecommons.org/licenses/by/4.0/.
+
+### scan.visnir.doi_idf_url
+- 📚 Description: Digital object identifier (DOI) url of the dataset scans.
+- 🔢 Type: string.
+- 📖 Example: https://doi.org/10.5281/zenodo.7586622.
+
+### scan.visnir.contact.name_utf8_txt
+- 📚 Description: Dataset scans contact name.
+- 🔢 Type: string.
+- 📖 Example: Jonathan Sanderman.
+
+### scan.visnir.contact.email_ietf_txt
+- 📚 Description: Dataset scans contact email.
+- 🔢 Type: string.
+- 📖 Example: jsanderman@woodwellclimate.org.
+
+### scan_visnir.1350_ref
+- 📚 Description: Reflectance in fraction unit, first wavelength in the 1350-2550 nm range.
+- 🔢 Type: numeric.
+- 📖 Example: 0.10403320.
+
+### scan_visnir.2550_ref
+- 📚 Description: Reflectance in fraction unit, last wavelength in the 1350-2550 nm range.
+- 🔢 Type: numeric.
+- 📖 Example: 0.3622029.

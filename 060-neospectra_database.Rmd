@@ -191,3 +191,26 @@ soilspec4gg.db$collections$neospectra_soillab$find('{"id_sample_local_c": "30747
 ```
 
 ## Database description
+
+The Neospectra database follows the same specification of the OSSL for soil and site information. For the near-infrared (NIR) spectra, however, additional information is provided for scanning laboratory, scanner code, and scanning accessory.
+
+NIR is provided in reflectance units per wavelength, with values usually ranging between 0 and 1 as fraction percent. The spectral range imported into the OSSL falls between 1350 and 2550 nm, with an interval of 2 nm.
+
+One can convert reflectance (R) values to absorbance units (A) as `A = log10(1/R)`, or backtransform with `R = 1/(10^A)`. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with `WN = 1/(WL*10000000)`, or backtransform with `WL = 1/(WL*10000000)`. The factor 10M is used to convert cm to nm.
+
+```{r reference_nir, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
+visnir.level0.desc <- read_csv("./tabular/neospectra_names_nir.csv")
+for (i in 1:nrow(visnir.level0.desc)) {
+  
+  iossl_name <- visnir.level0.desc[[i,"ossl_name"]]
+  itype <- visnir.level0.desc[[i,"type"]]
+  iexample <- visnir.level0.desc[[i,"example"]]
+  idescription <- visnir.level0.desc[[i,"description"]]
+  
+  cat(paste0('\n### ', iossl_name, '\n'))
+  cat(paste0('- ', emoji::emoji("books"), ' Description: ', idescription, '.\n'))
+  cat(paste0('- ', emoji::emoji("1234"), ' Type: ', itype, '.\n'))
+  cat(paste0('- ', emoji::emoji("book"), ' Example: ', iexample, '.\n'))
+  
+}
+```
