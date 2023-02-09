@@ -34,9 +34,9 @@ Clay,clay.tot_usda.a334_w.pct,clay.tot,usda.a334,w.pct,clay.tot,usda.a334,w.pct,
 "Iron, Extractable, Aqua Regia",fe.ext_aquaregia_g.kg,fe.ext,aquaregia,g.kg,fe.ext,aquaregia,g.kg,x,fe.ext_aquaregia_g.kg,TRUE
 "Iron, Extractable, Mehlich3",fe.ext_usda.a1064_mg.kg,fe.ext,usda.a1064,mg.kg,fe.ext,usda.a1064,mg.kg,x,fe.ext_usda.a1064_mg.kg,TRUE
 "Iron, Amorphous, Total Non-Crystalline Iron",fe.ox_usda.a60_w.pct,fe.ox,usda.a60,w.pct,fe.ox,usda.a60,w.pct,x,fe.ox_usda.a60_w.pct,TRUE
-"Sodium, Extractable, Aqua Regia",k.ext_aquaregia_mg.kg,k.ext,aquaregia,mg.kg,k.ext,aquaregia,mg.kg,x,k.ext_aquaregia_mg.kg,TRUE
-"Sodium, Extractable, Mehlich3",k.ext_usda.a1065_mg.kg,k.ext,usda.a1065,mg.kg,k.ext,usda.a1065,mg.kg,x,k.ext_usda.a1065_mg.kg,TRUE
-"Sodium, Extractable, NH4OAc, 2M KCl displacement",k.ext_usda.a725_cmolc.kg,k.ext,usda.a725,cmolc.kg,k.ext,usda.a725,cmolc.kg,x,k.ext_usda.a725_cmolc.kg,TRUE
+"Potassium, Extractable, Aqua Regia",k.ext_aquaregia_mg.kg,k.ext,aquaregia,mg.kg,k.ext,aquaregia,mg.kg,x,k.ext_aquaregia_mg.kg,TRUE
+"Potassium, Extractable, Mehlich3",k.ext_usda.a1065_mg.kg,k.ext,usda.a1065,mg.kg,k.ext,usda.a1065,mg.kg,x,k.ext_usda.a1065_mg.kg,TRUE
+"Potassium, Extractable, NH4OAc, 2M KCl displacement",k.ext_usda.a725_cmolc.kg,k.ext,usda.a725,cmolc.kg,k.ext,usda.a725,cmolc.kg,x,k.ext_usda.a725_cmolc.kg,TRUE
 "Magnesium, Extractable, Aqua Regia",mg.ext_aquaregia_mg.kg,mg.ext,aquaregia,mg.kg,mg.ext,aquaregia,mg.kg,x,mg.ext_aquaregia_mg.kg,TRUE
 "Magnesium, Extractable, Mehlich3",mg.ext_usda.a1066_mg.kg,mg.ext,usda.a1066,mg.kg,mg.ext,usda.a1066,mg.kg,x,mg.ext_usda.a1066_mg.kg,TRUE
 "Magnesium, Extractable, NH4OAc, 2M KCl displacement",mg.ext_usda.a724_cmolc.kg,mg.ext,usda.a724,cmolc.kg,mg.ext,usda.a724,cmolc.kg,x,mg.ext_usda.a724_cmolc.kg,TRUE
@@ -46,9 +46,9 @@ Clay,clay.tot_usda.a334_w.pct,clay.tot,usda.a334,w.pct,clay.tot,usda.a334,w.pct,
 "Nitrogen, Total NCS, iso 11261",n.tot_iso.11261_w.pct,n.tot,iso.11261,w.pct,n.tot,usda.a623,w.pct,x,n.tot_usda.a623_w.pct,TRUE
 "Nitrogen, Total NCS, iso 13878",n.tot_iso.13878_w.pct,n.tot,iso.13878,w.pct,n.tot,usda.a623,w.pct,x,n.tot_usda.a623_w.pct,TRUE
 "Nitrogen, Total NCS",n.tot_usda.a623_w.pct,n.tot,usda.a623,w.pct,n.tot,usda.a623,w.pct,x,n.tot_usda.a623_w.pct,TRUE
-"Potassium, Extractable, Aqua Regia",na.ext_aquaregia_mg.kg,na.ext,aquaregia,mg.kg,na.ext,aquaregia,mg.kg,x,na.ext_aquaregia_mg.kg,TRUE
-"Potassium, Extractable, Mehlich3",na.ext_usda.a1068_mg.kg,na.ext,usda.a1068,mg.kg,na.ext,usda.a1068,mg.kg,x,na.ext_usda.a1068_mg.kg,TRUE
-"Potassium, Extractable, NH4OAc, 2M KCl displacement",na.ext_usda.a726_cmolc.kg,na.ext,usda.a726,cmolc.kg,na.ext,usda.a726,cmolc.kg,x,na.ext_usda.a726_cmolc.kg,TRUE
+"Sodium, Extractable, Aqua Regia",na.ext_aquaregia_mg.kg,na.ext,aquaregia,mg.kg,na.ext,aquaregia,mg.kg,x,na.ext_aquaregia_mg.kg,TRUE
+"Sodium, Extractable, Mehlich3",na.ext_usda.a1068_mg.kg,na.ext,usda.a1068,mg.kg,na.ext,usda.a1068,mg.kg,x,na.ext_usda.a1068_mg.kg,TRUE
+"Sodium, Extractable, NH4OAc, 2M KCl displacement",na.ext_usda.a726_cmolc.kg,na.ext,usda.a726,cmolc.kg,na.ext,usda.a726,cmolc.kg,x,na.ext_usda.a726_cmolc.kg,TRUE
 "Organic Carbon, iso 10694",oc_iso.10694_w.pct,oc,iso.10694,w.pct,oc,usda.c729,w.pct,x,oc_usda.c729_w.pct,TRUE
 "Organic Carbon, Total C without CaCO3, N prep",oc_usda.c1059_w.pct,oc,usda.c1059,w.pct,oc,usda.c729,w.pct,x,oc_usda.c729_w.pct,TRUE
 "Organic Carbon, Total C without CaCO3, S prep",oc_usda.c729_w.pct,oc,usda.c729,w.pct,oc,usda.c729,w.pct,x,oc_usda.c729_w.pct,TRUE

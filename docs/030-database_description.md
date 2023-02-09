@@ -532,7 +532,7 @@ The following subsections provide the OSSL variable names, types, description, a
 
 
 ### k.ext_aquaregia_mg.kg
-- 📚 Description: Exchangeable or plant available K.. It can be alternatively described as `Sodium, Extractable, Aqua Regia`.
+- 📚 Description: Exchangeable or plant available K.. It can be alternatively described as `Potassium, Extractable, Aqua Regia`.
 - 📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 - 🔢 Type: numeric.
 - 📖 Example: 1781.400966.
@@ -542,7 +542,7 @@ The following subsections provide the OSSL variable names, types, description, a
 
 
 ### k.ext_usda.a1065_mg.kg
-- 📚 Description: Exchangeable or plant available K.. It can be alternatively described as `Sodium, Extractable, Mehlich3`.
+- 📚 Description: Exchangeable or plant available K.. It can be alternatively described as `Potassium, Extractable, Mehlich3`.
 - 📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 - 🔢 Type: numeric.
 - 📖 Example: 47.000000.
@@ -552,7 +552,7 @@ The following subsections provide the OSSL variable names, types, description, a
 
 
 ### k.ext_usda.a725_cmolc.kg
-- 📚 Description: Exchangeable or plant available K.. It can be alternatively described as `Sodium, Extractable, NH4OAc, 2M KCl displacement`.
+- 📚 Description: Exchangeable or plant available K.. It can be alternatively described as `Potassium, Extractable, NH4OAc, 2M KCl displacement`.
 - 📐 Measurement unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
 - 🔢 Type: numeric.
 - 📖 Example: 0.200688352.
@@ -652,7 +652,7 @@ The following subsections provide the OSSL variable names, types, description, a
 
 
 ### na.ext_aquaregia_mg.kg
-- 📚 Description: Exchangeable or plant availableNa.. It can be alternatively described as `Potassium, Extractable, Aqua Regia`.
+- 📚 Description: Exchangeable or plant availableNa.. It can be alternatively described as `Sodium, Extractable, Aqua Regia`.
 - 📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 - 🔢 Type: numeric.
 - 📖 Example: 75.986312.
@@ -662,7 +662,7 @@ The following subsections provide the OSSL variable names, types, description, a
 
 
 ### na.ext_usda.a1068_mg.kg
-- 📚 Description: Exchangeable or plant availableNa.. It can be alternatively described as `Potassium, Extractable, Mehlich3`.
+- 📚 Description: Exchangeable or plant availableNa.. It can be alternatively described as `Sodium, Extractable, Mehlich3`.
 - 📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 - 🔢 Type: numeric.
 - 📖 Example: 17.800000.
@@ -672,7 +672,7 @@ The following subsections provide the OSSL variable names, types, description, a
 
 
 ### na.ext_usda.a726_cmolc.kg
-- 📚 Description: Exchangeable or plant availableNa.. It can be alternatively described as `Potassium, Extractable, NH4OAc, 2M KCl displacement`.
+- 📚 Description: Exchangeable or plant availableNa.. It can be alternatively described as `Sodium, Extractable, NH4OAc, 2M KCl displacement`.
 - 📐 Measurement unit: Imported into the OSSL as `cmolc.kg`, i.e., centimoles of charge per kilogram of soil.
 - 🔢 Type: numeric.
 - 📖 Example: 0.124398521.

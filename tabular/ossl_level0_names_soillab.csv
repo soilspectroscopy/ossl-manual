@@ -34,9 +34,9 @@ fe.dith_usda.a66_w.pct,fe.dith,usda.a66,w.pct,numeric,1.09028,"Iron, Crystalline
 fe.ext_aquaregia_g.kg,fe.ext,aquaregia,g.kg,numeric,71.9575342,"Iron, Extractable, Aqua Regia",grams per kilogram of soil,Exchangeable or plant available Fe.
 fe.ext_usda.a1064_mg.kg,fe.ext,usda.a1064,mg.kg,numeric,182.00000,"Iron, Extractable, Mehlich3",miligrams per kilogram of soil,Exchangeable or plant available Fe.
 fe.ox_usda.a60_w.pct,fe.ox,usda.a60,w.pct,numeric,0.15422,"Iron, Amorphous, Total Non-Crystalline Iron",weight percent,Ammonium oxalate extractable iron is considered a measure of the noncrystalline Fe in soils.
-k.ext_aquaregia_mg.kg,k.ext,aquaregia,mg.kg,numeric,1781.400966,"Sodium, Extractable, Aqua Regia",miligrams per kilogram of soil,Exchangeable or plant available K.
-k.ext_usda.a1065_mg.kg,k.ext,usda.a1065,mg.kg,numeric,47.000000,"Sodium, Extractable, Mehlich3",miligrams per kilogram of soil,Exchangeable or plant available K.
-k.ext_usda.a725_cmolc.kg,k.ext,usda.a725,cmolc.kg,numeric,0.200688352,"Sodium, Extractable, NH4OAc, 2M KCl displacement",centimoles of charge per kilogram of soil,Exchangeable or plant available K.
+k.ext_aquaregia_mg.kg,k.ext,aquaregia,mg.kg,numeric,1781.400966,"Potassium, Extractable, Aqua Regia",miligrams per kilogram of soil,Exchangeable or plant available K.
+k.ext_usda.a1065_mg.kg,k.ext,usda.a1065,mg.kg,numeric,47.000000,"Potassium, Extractable, Mehlich3",miligrams per kilogram of soil,Exchangeable or plant available K.
+k.ext_usda.a725_cmolc.kg,k.ext,usda.a725,cmolc.kg,numeric,0.200688352,"Potassium, Extractable, NH4OAc, 2M KCl displacement",centimoles of charge per kilogram of soil,Exchangeable or plant available K.
 mg.ext_aquaregia_mg.kg,mg.ext,aquaregia,mg.kg,numeric,710.429099,"Magnesium, Extractable, Aqua Regia",miligrams per kilogram of soil,Exchangeable or plant available Mg.
 mg.ext_usda.a1066_mg.kg,mg.ext,usda.a1066,mg.kg,numeric,19.600000,"Magnesium, Extractable, Mehlich3",miligrams per kilogram of soil,Exchangeable or plant available Mg.
 mg.ext_usda.a724_cmolc.kg,mg.ext,usda.a724,cmolc.kg,numeric,1.81655342,"Magnesium, Extractable, NH4OAc, 2M KCl displacement",centimoles of charge per kilogram of soil,Exchangeable or plant available Mg.
@@ -46,9 +46,9 @@ mn.ext_usda.a70_mg.kg,mn.ext,usda.a70,mg.kg,numeric,0.62569,"Manganese, Extracta
 n.tot_iso.11261_w.pct,n.tot,iso.11261,w.pct,numeric,0.25,"Nitrogen, Total NCS, iso 11261",weight percent,Total nitrogen is a measure of all organic and inorganic nitrogen.
 n.tot_iso.13878_w.pct,n.tot,iso.13878,w.pct,numeric,0.089,"Nitrogen, Total NCS, iso 13878",weight percent,Total nitrogen is a measure of all organic and inorganic nitrogen.
 n.tot_usda.a623_w.pct,n.tot,usda.a623,w.pct,numeric,0.079766974,"Nitrogen, Total NCS",weight percent,Total nitrogen is a measure of all organic and inorganic nitrogen.
-na.ext_aquaregia_mg.kg,na.ext,aquaregia,mg.kg,numeric,75.986312,"Potassium, Extractable, Aqua Regia",miligrams per kilogram of soil,Exchangeable or plant availableNa.
-na.ext_usda.a1068_mg.kg,na.ext,usda.a1068,mg.kg,numeric,17.800000,"Potassium, Extractable, Mehlich3",miligrams per kilogram of soil,Exchangeable or plant availableNa.
-na.ext_usda.a726_cmolc.kg,na.ext,usda.a726,cmolc.kg,numeric,0.124398521,"Potassium, Extractable, NH4OAc, 2M KCl displacement",centimoles of charge per kilogram of soil,Exchangeable or plant availableNa.
+na.ext_aquaregia_mg.kg,na.ext,aquaregia,mg.kg,numeric,75.986312,"Sodium, Extractable, Aqua Regia",miligrams per kilogram of soil,Exchangeable or plant availableNa.
+na.ext_usda.a1068_mg.kg,na.ext,usda.a1068,mg.kg,numeric,17.800000,"Sodium, Extractable, Mehlich3",miligrams per kilogram of soil,Exchangeable or plant availableNa.
+na.ext_usda.a726_cmolc.kg,na.ext,usda.a726,cmolc.kg,numeric,0.124398521,"Sodium, Extractable, NH4OAc, 2M KCl displacement",centimoles of charge per kilogram of soil,Exchangeable or plant availableNa.
 oc_iso.10694_w.pct,oc,iso.10694,w.pct,numeric,2.05000000,"Organic Carbon, iso 10694",weight percent,Estimated Organic Carbon based on Total C
 oc_usda.c1059_w.pct,oc,usda.c1059,w.pct,numeric,1.50336492,"Organic Carbon, Total C without CaCO3, N prep",weight percent,Estimated Organic Carbon based on Total C
 oc_usda.c729_w.pct,oc,usda.c729,w.pct,numeric,2.9100,"Organic Carbon, Total C without CaCO3, S prep",weight percent,Estimated Organic Carbon based on Total C
