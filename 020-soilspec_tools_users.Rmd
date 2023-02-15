@@ -197,15 +197,15 @@ Open source and commercial software used to process soil spectral scans. See als
 - `r emo::ji("briefcase")` Specialty: Read OPUS binary files from Fourier-Transform Infrared (FT-IR) spectrometers of the company Bruker Optics GmbH & Co. in R
 - `r emo::ji("computer")` Programming language: R project  
 - `r emo::ji("link")` Homepage: <https://github.com/spectral-cockpit/opusreader2>  
-- `r emo::ji("closed_book")` Baumann P, Knecht T, Roudier P (2023). opusreader2: Read Spectroscopic Data
-  from Bruker OPUS Binary Files_. R package version 0.0.0.9002,  <https://github.com/spectral-cockpit/opusreader2>.  
+- `r emo::ji("closed_book")` Baumann P, Knecht T, Roudier P (2023). opusreader2: Read spectroscopic data
+  from Bruker OPUS binary Files. R package version 0.2.0,  <https://github.com/spectral-cockpit/opusreader2>.  
 - `r emo::ji("copyright")` License: [MIT](https://github.com/spectral-cockpit/opusreader2/blob/main/LICENSE)
 - `r emo::ji("e-mail")` Maintainer: [spectral-cockpit](https://github.com/spectral-cockpit)
 
 ### asdreader
 
 - `r emo::ji("name_badge")` Name:   asdreader
-- `r emo::ji("briefcase")` Specialty: Reading ASD Binary Files in R  
+- `r emo::ji("briefcase")` Specialty: Reading ASD binary files in R  
 - `r emo::ji("computer")` Programming language: R project  
 - `r emo::ji("link")` Homepage: <https://github.com/pierreroudier/asdreader>  
 - `r emo::ji("closed_book")` Roudier, P. (2020). asdreader: reading ASD binary files in R. R package version 0.1-3 CRAN.  
@@ -215,12 +215,12 @@ Open source and commercial software used to process soil spectral scans. See als
 ### prospectr
 
 - `r emo::ji("name_badge")` Name: prospectr  
-- `r emo::ji("briefcase")` Specialty: Signal processing, Resampling  
+- `r emo::ji("briefcase")` Specialty: Signal processing, resampling  
 - `r emo::ji("computer")` Programming language: R project  
 - `r emo::ji("link")` Homepage: <https://github.com/l-ramirez-lopez/prospectr>  
-- `r emo::ji("closed_book")` Stevens, A., & Ramirez-Lopez, L. (2014). An introduction to the prospectr package. R Package Vignette, Report No.: R Package Version 0.1, 3.  
+- `r emo::ji("closed_book")` Stevens, A., & Ramirez-Lopez, L. (2022). An introduction to the prospectr package. R Package Vignette. R Package Version 0.2.6.  
 - `r emo::ji("copyright")` License: [MIT](https://cran.r-project.org/web/licenses/MIT) + [file LICENSE](https://cran.r-project.org/web/packages/prospectr/LICENSE)  
-- `r emo::ji("e-mail")` Maintainer: [Leornardo Ramirez-Lopez](https://orcid.org/0000-0002-5369-5120)
+- `r emo::ji("e-mail")` Maintainer: [Leornardo Ramirez-Lopez](https://github.com/l-ramirez-lopez)
 
 ### simplerspec
 
@@ -238,7 +238,7 @@ Open source and commercial software used to process soil spectral scans. See als
 - `r emo::ji("briefcase")` Specialty: Memory-based learning in spectral chemometrics
 - `r emo::ji("computer")` Programming language: R project  
 - `r emo::ji("link")` Homepage: <https://github.com/l-ramirez-lopez/resemble>  
-- `r emo::ji("closed_book")` Ramirez-Lopez, L., and Stevens, A., and Viscarra Rossel, R., and Lobsey, C., and Wadoux, A., and Breure, T. (2022). resemble: Regression and similarity evaluation for memory-based learning in spectral chemometrics. R package. Vignette R package version 2.2.1.
+- `r emo::ji("closed_book")` Ramirez-Lopez, L., and Stevens, A., and Viscarra Rossel, R., and Lobsey, C., and Wadoux, A., and Breure, T. (2022). resemble: Regression and similarity evaluation for memory-based learning in spectral chemometrics. R package Vignette. R package version 2.2.1.
 - `r emo::ji("copyright")` License: [MIT](https://cran.r-project.org/web/licenses/MIT) + [file LICENSE](https://github.com/l-ramirez-lopez/resemble/blob/main/LICENSE)
 - `r emo::ji("e-mail")` Maintainer: [Leonardo Ramirez Lopez](https://github.com/l-ramirez-lopez)
 

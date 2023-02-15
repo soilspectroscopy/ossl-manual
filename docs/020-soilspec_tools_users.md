@@ -198,15 +198,15 @@ Open source and commercial software used to process soil spectral scans. See als
 - 💼 Specialty: Read OPUS binary files from Fourier-Transform Infrared (FT-IR) spectrometers of the company Bruker Optics GmbH & Co. in R
 - 💻 Programming language: R project  
 - 🔗 Homepage: <https://github.com/spectral-cockpit/opusreader2>  
-- 📕 Baumann P, Knecht T, Roudier P (2023). opusreader2: Read Spectroscopic Data
-  from Bruker OPUS Binary Files_. R package version 0.0.0.9002,  <https://github.com/spectral-cockpit/opusreader2>.  
+- 📕 Baumann P, Knecht T, Roudier P (2023). opusreader2: Read spectroscopic data
+  from Bruker OPUS binary Files. R package version 0.2.0,  <https://github.com/spectral-cockpit/opusreader2>.  
 - ©️ License: [MIT](https://github.com/spectral-cockpit/opusreader2/blob/main/LICENSE)
 - 📧 Maintainer: [spectral-cockpit](https://github.com/spectral-cockpit)
 
 ### asdreader
 
 - 📛 Name:   asdreader
-- 💼 Specialty: Reading ASD Binary Files in R  
+- 💼 Specialty: Reading ASD binary files in R  
 - 💻 Programming language: R project  
 - 🔗 Homepage: <https://github.com/pierreroudier/asdreader>  
 - 📕 Roudier, P. (2020). asdreader: reading ASD binary files in R. R package version 0.1-3 CRAN.  
@@ -216,12 +216,12 @@ Open source and commercial software used to process soil spectral scans. See als
 ### prospectr
 
 - 📛 Name: prospectr  
-- 💼 Specialty: Signal processing, Resampling  
+- 💼 Specialty: Signal processing, resampling  
 - 💻 Programming language: R project  
 - 🔗 Homepage: <https://github.com/l-ramirez-lopez/prospectr>  
-- 📕 Stevens, A., & Ramirez-Lopez, L. (2014). An introduction to the prospectr package. R Package Vignette, Report No.: R Package Version 0.1, 3.  
+- 📕 Stevens, A., & Ramirez-Lopez, L. (2022). An introduction to the prospectr package. R Package Vignette. R Package Version 0.2.6.  
 - ©️ License: [MIT](https://cran.r-project.org/web/licenses/MIT) + [file LICENSE](https://cran.r-project.org/web/packages/prospectr/LICENSE)  
-- 📧 Maintainer: [Leornardo Ramirez-Lopez](https://orcid.org/0000-0002-5369-5120)
+- 📧 Maintainer: [Leornardo Ramirez-Lopez](https://github.com/l-ramirez-lopez)
 
 ### simplerspec
 
@@ -239,7 +239,7 @@ Open source and commercial software used to process soil spectral scans. See als
 - 💼 Specialty: Memory-based learning in spectral chemometrics
 - 💻 Programming language: R project  
 - 🔗 Homepage: <https://github.com/l-ramirez-lopez/resemble>  
-- 📕 Ramirez-Lopez, L., and Stevens, A., and Viscarra Rossel, R., and Lobsey, C., and Wadoux, A., and Breure, T. (2022). resemble: Regression and similarity evaluation for memory-based learning in spectral chemometrics. R package. Vignette R package version 2.2.1.
+- 📕 Ramirez-Lopez, L., and Stevens, A., and Viscarra Rossel, R., and Lobsey, C., and Wadoux, A., and Breure, T. (2022). resemble: Regression and similarity evaluation for memory-based learning in spectral chemometrics. R package Vignette. R package version 2.2.1.
 - ©️ License: [MIT](https://cran.r-project.org/web/licenses/MIT) + [file LICENSE](https://github.com/l-ramirez-lopez/resemble/blob/main/LICENSE)
 - 📧 Maintainer: [Leonardo Ramirez Lopez](https://github.com/l-ramirez-lopez)
 
