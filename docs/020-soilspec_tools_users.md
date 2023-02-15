@@ -192,20 +192,20 @@ Lincoln, NE 68508-3866, USA
 
 Open source and commercial software used to process soil spectral scans. See also this [detailed review of software used for soil spectroscopy](https://soilspectroscopy.org/soil-spectroscopy-state-of-the-art-open-source-software/). Even more in-depth review of R packages used for soil spectroscopy can be found in @malone2021soil. A list of available R packages for processing and analyzing spectral data:
 
-### asdreader
+### opusreader2
 
-- 📛 Name: asdreader  
+- 📛 Name: opusreader2  
 - 💼 Specialty: Read OPUS binary files from Fourier-Transform Infrared (FT-IR) spectrometers of the company Bruker Optics GmbH & Co. in R
 - 💻 Programming language: R project  
 - 🔗 Homepage: <https://github.com/spectral-cockpit/opusreader2>  
-- 📕 Baumann P, Knecht T, Roudier P (2023). _opusreader2: Read Spectroscopic Data
+- 📕 Baumann P, Knecht T, Roudier P (2023). opusreader2: Read Spectroscopic Data
   from Bruker OPUS Binary Files_. R package version 0.0.0.9002,  <https://github.com/spectral-cockpit/opusreader2>.  
 - ©️ License: [MIT](https://github.com/spectral-cockpit/opusreader2/blob/main/LICENSE)
 - 📧 Maintainer: [spectral-cockpit](https://github.com/spectral-cockpit)
 
-### opusreader2
+### asdreader
 
-- 📛 Name: opusreader2  
+- 📛 Name:   asdreader
 - 💼 Specialty: Reading ASD Binary Files in R  
 - 💻 Programming language: R project  
 - 🔗 Homepage: <https://github.com/pierreroudier/asdreader>  

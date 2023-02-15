@@ -35,8 +35,8 @@ xds-rapid-content-analyzer
 soil-spetroscopy-organizations
 kssl
 soil-spectroscopy-software
-asdreader
 opusreader2
+asdreader
 prospectr
 simplerspec
 resemble
