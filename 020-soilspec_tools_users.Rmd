@@ -198,7 +198,7 @@ Open source and commercial software used to process soil spectral scans. See als
 - `r emo::ji("computer")` Programming language: R project  
 - `r emo::ji("link")` Homepage: <https://github.com/spectral-cockpit/opusreader2>  
 - `r emo::ji("closed_book")` Baumann P, Knecht T, Roudier P (2023). opusreader2: Read spectroscopic data
-  from Bruker OPUS binary Files. R package version 0.2.0,  <https://github.com/spectral-cockpit/opusreader2>.  
+  from Bruker OPUS binary Files. R package version 0.4.0,  <https://github.com/spectral-cockpit/opusreader2>.  
 - `r emo::ji("copyright")` License: [MIT](https://github.com/spectral-cockpit/opusreader2/blob/main/LICENSE)
 - `r emo::ji("e-mail")` Maintainer: [spectral-cockpit](https://github.com/spectral-cockpit)
 
