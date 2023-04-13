@@ -117,8 +117,8 @@ predict.ossl <- function(t.var, mir.raw, visnir.raw, lon, lat, hzn_depth=10, oss
     spc = lapply(spc, function(j){ round(ifelse(j<0, NA, ifelse(j>1, 1, j))*100, 1) })
     spc = as.data.frame(do.call(cbind, spc))
     names(spc) = paste0("scan_visnir.", seq(350, 2500, by=2), "_pcnt")
-    ## convert to 1st der:
-    spc = prospectr::gapDer(spc, m=1, w=5, s=1, delta.wav=2)
+    ## convert to SNV
+    spc = prospectr::standardNormalVariate(spc)
     class(ossl.pca.visnir) = "prcomp"
     X2.pc = as.data.frame(predict(ossl.pca.visnir, newdata=as.data.frame(spc)))[,1:n.spc]
     colnames(X2.pc) = paste0("visnir.PC", 1:n.spc)
