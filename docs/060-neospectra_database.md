@@ -4,9 +4,9 @@
 You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending.
 :::
 
-A persistent copy of the database is hosted on [Zenodo](https://doi.org/10.5281/zenodo.7586622). Please use the following reference when using the Neospectra database:
+A persistent copy of the database is hosted on [Zenodo](https://zenodo.org/record/7600137). Please use the following reference when using the Neospectra database:
 
->Sanderman, J., Smith, C., Safanelli, J. L., Mitu, S. M., Ge, Y., Murad, O., & Shepherd, K. (2023). Near-infrared (NIR) soil spectral library using the NeoSpectra Handheld NIR Analyzer by Si-Ware. doi:10.5281/ZENODO.7586622.
+>Sanderman, J., Smith, C., Safanelli, J. L., Mitu, S. M., Ge, Y., Murad, O., & Shepherd, K. (2023). Near-infrared (NIR) soil spectral library using the NeoSpectra Handheld NIR Analyzer by Si-Ware. <https://doi.org/10.5281/zenodo.7600137>.
 
 ## Overview
 
@@ -220,12 +220,12 @@ One can convert reflectance (R) values to absorbance units (A) as `A = log10(1/R
 - 🔢 Type: string.
 - 📖 Example: jsanderman@woodwellclimate.org.
 
-### scan_visnir.1350_ref
+### scan_nir.1350_ref
 - 📚 Description: Reflectance in fraction unit, first wavelength in the 1350-2550 nm range.
 - 🔢 Type: numeric.
 - 📖 Example: 0.10403320.
 
-### scan_visnir.2550_ref
+### scan_nir.2550_ref
 - 📚 Description: Reflectance in fraction unit, last wavelength in the 1350-2550 nm range.
 - 🔢 Type: numeric.
 - 📖 Example: 0.3622029.

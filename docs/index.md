@@ -188,7 +188,7 @@ correction in the text and then make a [pull request](https://docs.github.com/en
 
 ## Contributors {.unnumbered}
 
-If you've contributed, add also your name and Twitter, ORCID or blog link below:
+If you've contributed to this manual, add your name, Twitter handle, ORCID or blog link below:
 
 [Jonathan Sanderman](https://twitter.com/sandersoil),
 [Tomislav Hengl](https://twitter.com/tom_hengl),
@@ -198,6 +198,34 @@ If you've contributed, add also your name and Twitter, ORCID or blog link below:
 [Dellena Bloom](https://www.linkedin.com/in/dellena-bloom-541817149/),
 [José Lucas Safanelli](https://www.linkedin.com/in/joselucassafanelli/),
 [Henning Teickner](https://github.com/henningte). 
+
+## Acknowledgments {.unnumbered}
+
+Open Soil Spectral Library was possible due to the contributions by public and private 
+organizations. Listed based on the date of import:
+
+- **[USDA-NRCS Kellogg Soil Survey Laboratory (KSSL)](https://ncsslabdatamart.sc.egov.usda.gov/)** MIR spectral library [@wijewardane2018predicting;@sanderman2020mid] and the VisNIR library from RaCA project [@Wills2014;@Wijewardane2016]. We are especially grateful to **Rich Ferguson & Scarlett Murphy (NRCS USDA)** for their help with importing and using the KSSL Soil Spectral Library;  
+
+- **[ICRAF - World Agroforestry](https://www.worldagroforestry.org/sd/landhealth/soil-plant-spectral-diagnostics-laboratory/soil-spectra-library) & [ISRIC - World Soil Information](https://www.isric.org/explore/isric-soil-data-hub)** for their VisNIR soil spectral library [@garrity2004globally; @aitkenhead2018exploring] based on the Soil Information System (ISIS) of ISRIC;  
+
+- **[Africa Soil Information Service (AfSIS)](https://data.worldagroforestry.org/dataverse/icraf_soils) phases I and II** MIR spectral libraries [@Vagen_2020], a collaborative project funded by the Bill and Melinda Gates Foundation (BMGF). Partners included: CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF);  
+  
+- **[European Soil Data Centre](https://esdac.jrc.ec.europa.eu/)** for providing the LUCAS topsoil (VisNIR) Soil Spectral Library [@orgiazzi2018lucas]. We have degraded location accuracy of points so that exact locations are about 1-km off;  
+
+- Laura Summerauer from **ETH Zurich**, for providing the [Central African Soil Spectral Library](https://github.com/laura-summerauer/ssl-central-africa) described in detail in @Summerauer2021;  
+
+- Marcus Schiedung from **University of Zurich** for providing a [MIR soil spectral library]() from forest soils of North Canada [@Schiedung2022]; 
+
+- Loretta Garrett from **Scion Research** for providing a [MIR soil spectral library](https://figshare.com/articles/dataset/Soil_data_from_Pinus_radiata_forests_in_New_Zealand_FR380_trial_series/20506587/2) from forest soil in New Zealand [@Garrett2022]; 
+
+- Branislav Jović from **University of Novi Sad** for providing a MIR soil spectral library from Serbian soils [@Jovi2019];  
+
+We are also grateful to [Wanderson de Sousa Mendes (Leibniz Centre for Agricultural Landscape Research (ZALF))](https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/) for 
+the help with initial screening of the data and the development of the initial R code for processing soil spectroscopy data.
+
+For more advanced uses of the soil spectral libraries **we advise to contact the original data producers** especially to get help with using, extending and improving the original SSL data.
+
+We are also grateful to **[USDA National Institute of Food and Agriculture #2020-67021-32467](https://nifa.usda.gov/press-release/nifa-invests-over-7-million-big-data-artificial-intelligence-and-other)** for providing funding for this project.
 
 ## Disclaimer {.unnumbered}
 
@@ -252,23 +280,3 @@ physical and chemical properties of US soils with a mid-infrared
 reflectance spectral library](https://doi.org/10.2136/sssaj2017.10.0361). Soil Science Society of America Journal,
 82(3), 722–731. <https://doi.org/10.2136/sssaj2017.10.0361>  
 - Wadoux, A.M.J.-C., Malone, B., McBratney, A.B., Fajardo, M., Minasny, B., (2021). [Soil Spectral Inference with R: Analysing Digital Soil Spectra Using the R Programming Environment](https://books.google.nl/books?id=4kQgEAAAQBAJ). Progress in Soil Science, Springer Nature, ISBN: 9783030648961, 274 pp.  
-
-## Acknowledgments {.unnumbered}
-
-Open Soil Spectral Library was possible due to the kind contributions by public and private 
-organizations. Listed based on the date of import:
-
-- **[USDA-NRCS Kellogg Soil Survey Laboratory](https://ncsslabdatamart.sc.egov.usda.gov/datause.aspx)** mid-infrared (MIR) spectral library [@wijewardane2018predicting;@sanderman2020mid] was used as the basis for this data set and corresponding services; we are especially grateful to **Rich Ferguson & Scarlett Murphy (NRCS USDA)** for their help with importing and using the KSSL Soil Spectral Library;  
-- **[ICRAF-ISRIC Soil VNIR Spectral Library](https://doi.org/10.34725/DVN/MFHA9C)** [@garrity2004globally; @aitkenhead2018exploring] 785 soil profiles (4,438 samples) selected from the Soil Information System (ISIS) of the International Soil Reference and Information Centre (ISRIC) <https://doi.org/10.34725/DVN/MFHA9C>;  
-- **[AfSIS-I Soil Spectral Library](https://doi.org/10.34725/DVN/QXCWP1)** Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory Africa Soil Information Service (AfSIS) Phase I 2009-2013 [@Vagen_2020], a collaborative project funded by the Bill and Melinda Gates Foundation (BMGF). Partners included: CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF) <https://doi.org/10.34725/DVN/QXCWP1>;
-  **[AfSIS-II Soil Spectral Library](https://doi.org/10.34725/DVN/QXCWP1)** with Mid-Infrared Spectra (MIRS) covering the national Soil Information Systems: TanSIS (Tanzania), NiSIS (Nigeria) and GhanSIS (Ghana) available from <https://doi.org/10.34725/DVN/XUDGJY>, <https://doi.org/10.34725/DVN/WLAKR2> and <https://doi.org/10.34725/DVN/SPRSFN> and hosted by the ICRAF Soil and Plant Spectroscopy Laboratory;
-- **[LUCAS topsoil (VisNIR) Soil Spectral Library](http://esdac.jrc.ec.europa.eu/)** [@orgiazzi2018lucas] was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>; we have degraded location accuracy of points so that exact locations are about 1-km off;  
-- **[The Central African Soil Spectral Library](https://github.com/laura-summerauer/ssl-central-africa)** described in detail in @Summerauer2021 contains limited number of samples representing Central Africa <https://doi.org/10.5281/zenodo.4320395>;  
-
-We are grateful to **[Wanderson de Sousa Mendes (Leibniz Centre for Agricultural Landscape Research (ZALF))](https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/)** for 
-help with initial screening of the data for the development of the R code for processing soil spectroscopy data.
-
-For more advanced uses of the soil spectral libraries **we advise to contact the original data producers** 
-especially to get help with using, extending and improving the original SSL data.
-
-We are also grateful to **[USDA National Institute of Food and Agriculture #2020-67021-32467](https://nifa.usda.gov/press-release/nifa-invests-over-7-million-big-data-artificial-intelligence-and-other)** for providing funding for this project.

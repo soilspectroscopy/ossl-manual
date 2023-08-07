@@ -13,5 +13,5 @@ scan.visnir.license.address_idn_url,string,https://creativecommons.org/licenses/
 scan.visnir.doi_idf_url,string,https://doi.org/10.5281/zenodo.7586622,Digital object identifier (DOI) url of the dataset scans
 scan.visnir.contact.name_utf8_txt,string,Jonathan Sanderman,Dataset scans contact name
 scan.visnir.contact.email_ietf_txt,string,jsanderman@woodwellclimate.org,Dataset scans contact email
-scan_visnir.1350_ref,numeric,0.10403320,"Reflectance in fraction unit, first wavelength in the 1350-2550 nm range"
-scan_visnir.2550_ref,numeric,0.3622029,"Reflectance in fraction unit, last wavelength in the 1350-2550 nm range"
+scan_nir.1350_ref,numeric,0.10403320,"Reflectance in fraction unit, first wavelength in the 1350-2550 nm range"
+scan_nir.2550_ref,numeric,0.3622029,"Reflectance in fraction unit, last wavelength in the 1350-2550 nm range"
