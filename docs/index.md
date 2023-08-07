@@ -216,7 +216,7 @@ organizations. Listed based on the date of import:
 
 - Marcus Schiedung from **University of Zurich** for providing a [MIR soil spectral library]() from forest soils of North Canada [@Schiedung2022]; 
 
-- Loretta Garrett from **Scion Research** for providing a [MIR soil spectral library](https://figshare.com/articles/dataset/Soil_data_from_Pinus_radiata_forests_in_New_Zealand_FR380_trial_series/20506587/2) from forest soil in New Zealand [@Garrett2022]; 
+- Loretta Garrett from **Scion Research** for providing a [MIR soil spectral library](https://figshare.com/articles/dataset/Soil_data_from_Pinus_radiata_forests_in_New_Zealand_FR380_trial_series/20506587/2) from forest soils in New Zealand [@Garrett2022]; 
 
 - Branislav Jović from **University of Novi Sad** for providing a MIR soil spectral library from Serbian soils [@Jovi2019];  
 

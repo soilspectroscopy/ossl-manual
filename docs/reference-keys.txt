@@ -3,6 +3,7 @@ fig:soil-visnir
 fig:pull-request
 fig:soil-db
 fig:ossl-api
+fig:ac-toc
 new-to-markdown
 clone-add-reference-submit-merge-request
 video-course-getting-started-with-r
@@ -179,6 +180,12 @@ scan.visnir.contact.email_ietf_txt
 scan_visnir.350_ref
 scan_visnir.2500_ref
 ossl-database-access
+ossl-prediction-models
+modeling-framework
+model-performance
+uncertainty-and-trustworthiness
+using-the-ossl-models
+registering-and-hosting-models
 neospectra-database
 overview
 database-access

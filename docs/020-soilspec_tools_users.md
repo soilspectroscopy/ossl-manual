@@ -14,8 +14,8 @@ includes >50,000 MIR spectra collected on soils primarily from the United States
 - 📕 Seybold, C. A., Ferguson, R., Wysocki, D., Bailey, S., Anderson, J., Nester, B., ... & Thomas, P. (2019). [Application of Mid‐Infrared Spectroscopy in Soil Survey](https://doi.org/10.2136/sssaj2019.06.0205). Soil Science Society of America Journal, 83(6), 1746-1759. <https://doi.org/10.2136/sssaj2019.06.0205> / Sanderman, J., Savage, K., & Dangal, S. R. (2020). Mid‐infrared spectroscopy for prediction of soil health indicators in the United States. Soil Science Society of America Journal, 84(1), 251-261. <https://doi.org/10.1002/saj2.20009>  
 - 🔗 Project website: <https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/>  
 - ©️ Data license: [CC-BY](https://ncsslabdatamart.sc.egov.usda.gov/datause.aspx)  
-- 📍 Unique sites: 61,103  
-- 📋 Unique complete measurements:  
+- 📍 Unique sites: 9,061  
+- 📋 Unique complete measurements: 76,813 (MIR) and 19,807 (VisNIR)  
 - 📝 Import steps: [KSSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/KSSL)  
 
 ### ICRAF.ISRIC
