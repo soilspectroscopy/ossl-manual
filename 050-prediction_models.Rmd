@@ -59,12 +59,12 @@ All validation scatterplots are available on [GitHub](https://github.com/soilspe
 knitr::include_graphics("https://storage.googleapis.com/soilspec4gg-public/models/log..c.tot_usda.a622_w.pct/valplot_mir_cubist_ossl_na_v1.2.png")
 ```
 
-The final fitted models along with their performance metrics are listed below.
+The final fitted models along with their performance metrics are listed on [GitHub](https://github.com/soilspectroscopy/ossl-models/raw/main/out/fitted_models_performance_v1.2.csv).
 
-```{r perf_metrics, echo=FALSE}
-readr::read_csv("https://github.com/soilspectroscopy/ossl-models/raw/main/out/fitted_models_performance_v1.2.csv", show_col_types = FALSE) |>
-  knitr::kable()
-```
+<!-- ```{r perf_metrics, echo=FALSE} -->
+<!-- readr::read_csv("https://github.com/soilspectroscopy/ossl-models/raw/main/out/fitted_models_performance_v1.2.csv", show_col_types = FALSE) |> -->
+<!--   knitr::kable() -->
+<!-- ``` -->
 
 ## Uncertainty and trustworthiness
 
