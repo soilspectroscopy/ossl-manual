@@ -8,16 +8,16 @@ We have received important feedback since the release of the first models and we
 
 Variable model performance may have happened due to the specific soil types not being well represented or due to the spectra not being well aligned with the OSSL instruments. This led us to improve the current outputs to include a flag that indicates if the new samples to be predicted are represented by the calibration set. In addition to that, we revised our uncertainty estimation method by switching to conformal predictions, a simple and robust method for delivering uncertainty bands.
 
-In addition to that, we conducted a systematic analysis of learning algorithms, compression strategies, and preprocessing using the OSSL database and external test sents, and the insights from ring trial experiment - a separate project that was developed to understand the dissimilarity across multiple soil spectroscopy laboratories.
+In addition to that, we conducted a systematic analysis of learning algorithms, compression strategies, and preprocessing using the OSSL database and external test sets, and the insights from ring trial experiment - a separate project that was developed to understand the dissimilarity across multiple soil spectroscopy laboratories.
 
-We also removed spatial covarites and even not fused spectral regions compared to the first models, in order to make them simpler and generally applicable. These further combinations require more time to verify the potential performance improvements, although recent literature have been supporting it.
+We also removed spatial covariates and even not fused spectral regions compared to the first models, in order to make them simpler and generally applicable. These further combinations require more time to verify the potential performance improvements, although recent literature have been supporting it.
 
 The following sections describe the steps used to produce the OSSL models, which 
 are used in the OSSL Engine and API, and also public available from Google Cloud Storage.
 
 It is important to note that the current models are not free of error and may still provide variable results. Please, let us know about any inconsistency you might find to help us improve even more the current models.
 
-For an in-depth inspection of the modeling steps please visit the [ossl-models](https://github.com/soilspectroscopy/ossl-models) GitHub repository.
+For an in-depth inspection of the modeling steps, please visit the [ossl-models](https://github.com/soilspectroscopy/ossl-models) GitHub repository.
 
 ## Modeling framework
 
@@ -25,7 +25,7 @@ We have used the [MLR3 framework](https://mlr3book.mlr-org.com/) [@mlr3] for fit
 
 The [`R-mlr` folder](https://github.com/soilspectroscopy/ossl-models/tree/main/R-mlr) on `ossl-models` GitHub presents the code used to calibrate the models.
 
-In summary, we have provided 5 different model types depending on the availability of samples in for each soil property, which were fitted without the use of ancillary information (`na` code), i.e., site information or environmental layers are not used as predictors, only the spectral variation.
+In summary, we have provided 5 different model types depending on the availability of samples in for each soil property, which was fitted without the use of ancillary information (`na` code), i.e., site information or environmental layers are not used as predictors, only the spectral variation.
 
 The model types are composed of two different subsets, i.e. using the KSSL soil spectral library alone (`kssl` code) or the full OSSL database (`ossl` code), in combination with three spectral types: VisNIR (`visnir` code), NIR from the Neospectra instrument (`nir.neospectra` code), and MIR (`mir` code).
 
@@ -38,7 +38,7 @@ The model types are composed of two different subsets, i.e. using the KSSL soil 
 |visnir         |ossl   |na  |visnir_cubist_ossl_na_v1.2         |
 |visnir         |kssl   |na  |visnir_cubist_kssl_na_v1.2         |
 
->> **We highly recommend using the OSSL models**. The models fitted exclusively with the KSSL can be used when the spectra to be predicted has the same instrument manufacturer/model as the spectrometers used to build the KSSL VisNIR and MIR libraries, and the KSSL library is representative for the new spectra based both on spectral similarity and range of soil properties of interest.  
+>> **We highly recommend using the OSSL model types**. The models fitted exclusively with the KSSL can be used when the spectra to be predicted has the same instrument manufacturer/model as the spectrometers used to build the KSSL VisNIR and MIR libraries, and the KSSL library is representative for the new spectra based both on spectral similarity and range of soil properties of interest.  
 
 The machine learning algorithm Cubist (coding name `cubist`) takes advantage of a decision-tree splitting method but fits linear regression models at each terminal leaf. It also uses a boosting mechanism (sequential trees adjusted by weights) that allows the growth of a forest by tuning the number of committees. We haven't used the correction of final predictions by the nearest neighbors' influence due to the lack of this feature in the MLR3 framework.
 
@@ -48,7 +48,7 @@ Before PCA compression, spectra was preprocessed with Standard Normal Variate (S
 
 Hyperparameter optimization was done with internal resampling (`inner`) using 5-fold cross-validation and a smaller subset for speeding up this operation [@Yang2020]. This task was performed with a grid search of the hyperparameter space testing up to 5 configurations of Comitees to find the lowest Root Mean Squared Error (RMSE). The final model with the best optimal hyperparameter was fitted at the end with the full train data.
 
-Some highly-skewed soil properties were natural-log transformed (with offset = 1, that is why we use `log1p` function) to improve the prediction performance [@Dangal2019]. They were back-transformed only at the end after running all modeling steps, including performance estimation and the definition of the uncertainty intervals.
+Some highly-skewed soil properties were natural-log transformed (with offset = 1, that is why we use the `log1p` function) to improve the prediction performance [@Dangal2019]. They were back-transformed only at the end after running all modeling steps, including performance estimation and the definition of the uncertainty intervals.
 
 Final fitted models are listed on [GitHub](https://github.com/soilspectroscopy/ossl-models/blob/main/out/fitted_modeling_combinations_v1.2.csv).
 

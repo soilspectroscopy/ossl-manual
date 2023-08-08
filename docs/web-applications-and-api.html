@@ -99,9 +99,9 @@
 </div>
 <div id="ossl-explorer" class="section level2" number="7.1">
 <h2>
-<span class="header-section-number">7.1</span> OSSL Explorer<a class="anchor" aria-label="anchor" href="#ossl-explorer"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.1</span> <a href="https://explorer.soilspectroscopy.org/">OSSL Explorer</a><a class="anchor" aria-label="anchor" href="#ossl-explorer"><i class="fas fa-link"></i></a>
 </h2>
-<p>The OSSL Explorer is a web platform where the user can explore the OSSL database. Use it to subset and explore data based on geographical filters (Geography tab) or based on the range of soil properties (Soil properties tab). Once applied the selection, you can download the data by clicking on the bottom right option ‘Download now’. If you want to restart the filters, click ‘Clear selection’. For accessing the full database by other means (programmatically) or just download it as <code>csv</code> or <code>qs</code> format, please check the instructions on <strong><a href="https://soilspectroscopy.github.io/ossl-manual/ossl-database-access.html">OSSL database access</a></strong>.</p>
+<p>The <a href="https://explorer.soilspectroscopy.org/">OSSL Explorer</a> is a web platform where the user can explore the OSSL database. Use it to subset and explore data based on geographical filters (Geography tab) or based on the range of soil properties (Soil properties tab). Once applied the selection, you can download the data by clicking on the bottom right option ‘Download now’. If you want to restart the filters, click ‘Clear selection’. For accessing the full database by other means (programmatically) or just download it as <code>csv</code> or <code>qs</code> format, please check the instructions on <strong><a href="https://soilspectroscopy.github.io/ossl-manual/ossl-database-access.html">OSSL database access</a></strong>.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:explorer1"></span>
 <img src="img/explorer1.png" alt="OSSL Explorer initial page that allows filtering OSSL samples based on geographical distribution." width="100%"><p class="caption">
@@ -117,9 +117,9 @@ Figure 7.2: OSSL Explorer page that allows filtering OSSL samples based on range
 </div>
 <div id="ossl-engine" class="section level2" number="7.2">
 <h2>
-<span class="header-section-number">7.2</span> OSSL Engine<a class="anchor" aria-label="anchor" href="#ossl-engine"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.2</span> <a href="https://engine.soilspectroscopy.org/">OSSL Engine</a><a class="anchor" aria-label="anchor" href="#ossl-engine"><i class="fas fa-link"></i></a>
 </h2>
-<p>The OSSL Engine is a web platform where the user can upload spectra from the <strong>VisNIR (400-2500 nm), NIR (1350-2550 nm), or MIR (600-4000 cm<sup>-1</sup>) ranges</strong> and get predictions back with uncertainty estimation and representativeness flag. The modeling framework, cross-validation performance metrics, and furhter information can be checked over <strong><a href="https://soilspectroscopy.github.io/ossl-manual/ossl-prediction-models.html">OSSL prediction models</a></strong>.</p>
+<p>The <a href="https://engine.soilspectroscopy.org/">OSSL Engine</a> is a web platform where the user can upload spectra from the <strong>VisNIR (400-2500 nm), NIR (1350-2550 nm), or MIR (600-4000 cm<sup>-1</sup>) ranges</strong> and get predictions back with uncertainty estimation and representativeness flag. The modeling framework, cross-validation performance metrics, and further information can be checked over <strong><a href="https://soilspectroscopy.github.io/ossl-manual/ossl-prediction-models.html">OSSL prediction models</a></strong>.</p>
 <p>Please, check the <strong><a href="https://github.com/soilspectroscopy/ossl-manual/tree/main/sample-data">example datasets</a></strong> for formatting your spectra to the minimum required level. You can provide either <code>csv</code> files or directly <code>asd</code> or opus (<code>.0</code>) for VisNIR and MIR scans, respectively.</p>
 <blockquote>
 <blockquote>
@@ -141,9 +141,9 @@ Figure 7.4: OSSL Engine page with the outputs from model predictions, including 
 </div>
 <div id="ossl-api" class="section level2" number="7.3">
 <h2>
-<span class="header-section-number">7.3</span> OSSL API<a class="anchor" aria-label="anchor" href="#ossl-api"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3</span> <a href="https://api.soilspectroscopy.org/__docs__/#/">OSSL API</a><a class="anchor" aria-label="anchor" href="#ossl-api"><i class="fas fa-link"></i></a>
 </h2>
-<p><a href="https://api.soilspectroscopy.org/__docs__/#/">OSSL API</a> (Application Programming Interface) is also available and can be used to construct requests to fetch data, models, and generate predictions. The outputs of predictions can be obtained as <a href="https://www.json.org/json-en.html">JSON</a> or CSV files, making the system fully interoperable. The OSSL API is at the moment based on using the <a href="https://www.rplumber.io/">plumber package</a> and is <strong>provided for testing purposes only</strong>. Users can make predictions with pre-trained models for 20 spectra per request, but these limits will be gradually extended.</p>
+<p>The <a href="https://api.soilspectroscopy.org/__docs__/#/">OSSL API</a> (Application Programming Interface) is also available and can be used to construct requests to fetch data, and models, and generate predictions. The outputs of predictions can be obtained as <a href="https://www.json.org/json-en.html">JSON</a> or CSV files, making the system fully interoperable. The OSSL API is at the moment based on using the <a href="https://www.rplumber.io/">plumber package</a> and is <strong>provided for testing purposes only</strong>. Users can make predictions with pre-trained models for 20 spectra per request, but these limits will be gradually extended.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:ossl-api"></span>
 <img src="img/preview_ossl_api_swagger.png" alt="OSSL API is available for testing." width="100%"><p class="caption">
