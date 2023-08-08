@@ -81,7 +81,8 @@
 <li><a class="active" href="ossl-database-access.html"><span class="header-section-number">4</span> OSSL database access</a></li>
 <li><a class="" href="ossl-prediction-models.html"><span class="header-section-number">5</span> OSSL prediction models</a></li>
 <li><a class="" href="neospectra-database.html"><span class="header-section-number">6</span> Neospectra database</a></li>
-<li><a class="" href="references.html"><span class="header-section-number">7</span> References</a></li>
+<li><a class="" href="web-applications-and-api.html"><span class="header-section-number">7</span> Web applications and API</a></li>
+<li><a class="" href="references.html"><span class="header-section-number">8</span> References</a></li>
 </ul>
 
         <div class="book-extra">
@@ -221,17 +222,6 @@
 <span></span>
 <span><span class="co"># Filtering by ID</span></span>
 <span><span class="va">soilspec4gg.db</span><span class="op">$</span><span class="va">collections</span><span class="op">$</span><span class="va">soilsite</span><span class="op">$</span><span class="fu">find</span><span class="op">(</span><span class="st">'{"id_layer_uuid_txt": "50d0bfaaf50feb0ba2c8a3aa2cd788bb"}'</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div id="api" class="section level2 unnumbered">
-<h2>API<a class="anchor" aria-label="anchor" href="#api"><i class="fas fa-link"></i></a>
-</h2>
-<p><a href="https://api.soilspectroscopy.org/__docs__/#/">OSSL API</a> (Application Programming Interface) is also available and can be used to construct requests to fetch data, models and generate predictions. The outputs of predictions can be obtained as <a href="https://www.json.org/json-en.html">JSON</a> or CSV files, making the system fully interoperable. The OSSL API is at the moment based on using the <a href="https://www.rplumber.io/">plumber package</a> and is <strong>provided for testing purposes only</strong>. Users can make predictions with pretrained models for 20 spectra per request, but these limits will be gradually extended.</p>
-<div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:ossl-api"></span>
-<img src="img/preview_ossl_api_swagger.png" alt="OSSL API is available for testing." width="100%"><p class="caption">
-Figure 4.1: OSSL API is available for testing.
-</p>
-</div>
 
 </div>
 </div>
@@ -244,7 +234,6 @@ Figure 4.1: OSSL API is available for testing.
 <li><a class="nav-link" href="#ossl-database-access"><span class="header-section-number">4</span> OSSL database access</a></li>
 <li><a class="nav-link" href="#google-cloud-storage">Google Cloud Storage</a></li>
 <li><a class="nav-link" href="#mongodb">MongoDB</a></li>
-<li><a class="nav-link" href="#api">API</a></li>
 </ul>
 
       <div class="book-extra">

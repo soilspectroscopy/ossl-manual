@@ -1,4 +1,4 @@
-# OSSL prediction models
+# Prediction models
 
 ```{r, results = "asis", echo = FALSE}
 status("drafting")
@@ -53,13 +53,13 @@ Final fitted models are listed on [GitHub](https://github.com/soilspectroscopy/o
 
 Model evaluation was performed with external (`outer`) 10-fold cross validation of the tuned models using RMSE (`rmse`), mean error (`bias`), R squared (`rsq`), Lin's concordance correlation coefficient (`ccc`), and the ratio of performance to the interquartile range (`rpiq`) [@malone2021soil].
 
+The final fitted models along with their performance metrics are listed on [GitHub](https://github.com/soilspectroscopy/ossl-models/raw/main/out/fitted_models_performance_v1.2.csv).
+
 All validation scatterplots are available on [GitHub](https://github.com/soilspectroscopy/ossl-models/tree/main/out/plots). Example of a validation plot.
 
 ```{r ac-toc, echo=FALSE, fig.cap="Validation scatterplot for `log..c.tot_usda.a622_w.pct` using `mir_cubist_ossl_na_v1.2`.", out.width="70%"}
 knitr::include_graphics("https://storage.googleapis.com/soilspec4gg-public/models/log..c.tot_usda.a622_w.pct/valplot_mir_cubist_ossl_na_v1.2.png")
 ```
-
-The final fitted models along with their performance metrics are listed on [GitHub](https://github.com/soilspectroscopy/ossl-models/raw/main/out/fitted_models_performance_v1.2.csv).
 
 <!-- ```{r perf_metrics, echo=FALSE} -->
 <!-- readr::read_csv("https://github.com/soilspectroscopy/ossl-models/raw/main/out/fitted_models_performance_v1.2.csv", show_col_types = FALSE) |> -->
@@ -68,10 +68,9 @@ The final fitted models along with their performance metrics are listed on [GitH
 
 ## Uncertainty and trustworthiness
 
-The cross-validated predictions were used to estimate the unbiased absolute error, which were  employed to calibrate uncertainty models via [conformal prediction intervals](https://en.wikipedia.org/wiki/Conformal_prediction).The conformal prediction is built upon past experience, i.e. the error model is calibrated using the same fine-tuned structure of the respective response model. Non-conformity of the calibration set were estimated from the predicted error with a defined confidence level of 68% to approximate one standard deviation. The confidence interval (CI) can be derived with the prediction of the response and error values corrected by the non-conformity score of the calibration set [@Norinder2014; @CortsCiriano2015]. The main advantage of conformal prediction is that the intervals are always valid, i.e. a confidence of 80% means that the predicted confidence regions may contain the observed value in at least 80% of the cases. Another big advantage of conformal prediction methods is that we take rid of resampling mechanisms such as bootstrapping or Monte Carlo simulation which significantly requires a huge computing
-time for large sample sizes.  
+The cross-validated predictions were used to estimate the unbiased absolute error, which were  employed to calibrate uncertainty models via [conformal prediction intervals](https://en.wikipedia.org/wiki/Conformal_prediction).The conformal prediction is built upon past experience, i.e. the error model is calibrated using the same fine-tuned structure of the respective response model. Non-conformity of the calibration set were estimated from the predicted error with a defined confidence level of 68% to approximate one standard deviation. The confidence interval (CI) can be derived with the prediction of the response and error values corrected by the non-conformity score of the calibration set [@Norinder2014; @CortsCiriano2015]. The main advantage of conformal prediction is that the intervals are always valid, i.e. a confidence of 80% means that the predicted confidence regions may contain the observed value in at least 80% of the cases. Another big advantage of conformal prediction methods is that we take rid of resampling mechanisms such as bootstrapping or Monte Carlo simulation which significantly requires a huge computing time for large sample sizes.  
 
-The trustworthiness test was built using the PCA model employed for compression [@Jackson1979; @deSantana2023]. Considering Considering that only the first 120 PCs are used to decompose spectra, the remaining farther components are denominated error, which is calculated by the difference between the original spectra and that back-transformed with the first 120 PCs. The Q statistic of new samples are compared against the critical value estimated across the calibration set with a 99% confidence level (Eq. 3).
+The trustworthiness test was built using the PCA model employed for compression [@Jackson1979; @deSantana2023]. Considering that only the first 120 PCs are used to decompose spectra for modeling fitting, the remaining variation from farther components are denominated residual, which is calculated by the difference between the original spectra and back-transformed with the first 120 PCs, which makes possible to calculate the Q-statistics (sum of squared residual across the spectrum). The Q statistic of new samples are compared against a Q critical value estimated across the calibration set with a 99% confidence level.
 
 ## Using the OSSL models
 
@@ -86,13 +85,13 @@ To load the complete analysis-ready models, train data, cross-validated predicti
 
 **Shorter intervals will raise an error! Users can impute the edges and fill the missing columns with the last available value of the border wavelengths.**
 
-We provided on GitHub both [examples of datasets](https://github.com/soilspectroscopy/ossl-models/tree/main/sample-data) and a [prediction package](https://github.com/soilspectroscopy/ossl-models/blob/main/R-mlr/OSSL_functions.R) that incorporates all processing operations to get the outputs.
+We provided on GitHub both [examples of datasets](https://github.com/soilspectroscopy/ossl-models/tree/main/sample-data) and a [prediction bundle](https://github.com/soilspectroscopy/ossl-models/blob/main/R-mlr/OSSL_functions.R) that incorporates all processing operations to get the outputs.
 
-Please, check the example datasets for formatting your spectra to the minimum required level of the prediction function. You can provide either `csv` files or directly `asd` or opus (`.0`) for VisNIR and MIR scans, respectively.
+Please, check the example datasets for formatting your spectra to the minimum required level of the prediction bundle You can provide either `csv` files or directly `asd` or opus (`.0`) for VisNIR and MIR scans, respectively.
 
-The results table has the prediction value (already back-transformed if log transformation was used) for the soil property of interest, standard deviation uncertainty band, and a flag column for **potential underrepresented** samples given the calibration data, which is calculated based on principal components and Q statistics.
+The results table has the prediction value (already back-transformed if log transformation was used) for the soil property of interest, 1-standard-deviation uncertainty band, and a flag column for **potential underrepresented** samples given the calibration data.
 
-The prediction function requires the [tidyverse](https://www.tidyverse.org/), [mlr3 and mlr3extralearners](https://mlr3book.mlr-org.com/intro.html), [Cubist](https://topepo.github.io/Cubist//). [qs](https://github.com/traversc/qs), [asdreader](https://github.com/pierreroudier/asdreader), [opusreader2](https://github.com/spectral-cockpit/opusreader2), and [matrixStats](https://cran.rstudio.com/web/packages/matrixStats/index.html) packages.
+The prediction function requires the [tidyverse](https://www.tidyverse.org/), [mlr3 and mlr3extralearners](https://mlr3book.mlr-org.com), [Cubist](https://topepo.github.io/Cubist//). [qs](https://github.com/traversc/qs), [asdreader](https://github.com/pierreroudier/asdreader), [opusreader2](https://github.com/spectral-cockpit/opusreader2), and [matrixStats](https://cran.rstudio.com/web/packages/matrixStats/index.html) packages.
 
 Parameters:  
 

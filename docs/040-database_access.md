@@ -1,4 +1,4 @@
-# OSSL database access
+# Database access
 
 ::: {.rmdnote}
 You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending.
@@ -141,12 +141,3 @@ soilsite.serbia <- soilspec4gg.db$collections$soilsite$find('{"dataset_code_asci
 # Filtering by ID
 soilspec4gg.db$collections$soilsite$find('{"id_layer_uuid_txt": "50d0bfaaf50feb0ba2c8a3aa2cd788bb"}')
 ```
-
-## API {.unnumbered}
-
-[OSSL API](https://api.soilspectroscopy.org/__docs__/#/) (Application Programming Interface) is also available and can be used to construct requests to fetch data, models and generate predictions. The outputs of predictions can be obtained as [JSON](https://www.json.org/json-en.html) or CSV files, making the system fully interoperable. The OSSL API is at the moment based on using the [plumber package](https://www.rplumber.io/) and is **provided for testing purposes only**. Users can make predictions with pretrained models for 20 spectra per request, but these limits will be gradually extended.
-
-<div class="figure" style="text-align: center">
-<img src="img/preview_ossl_api_swagger.png" alt="OSSL API is available for testing." width="100%" />
-<p class="caption">(\#fig:ossl-api)OSSL API is available for testing.</p>
-</div>
