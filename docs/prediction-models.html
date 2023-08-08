@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>6 Prediction models | Open Soil Spectral Library</title>
+<meta name="author" content="Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors">
+<meta name="description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. We have received important feedback since the release...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta property="og:title" content="6 Prediction models | Open Soil Spectral Library">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://soilspectroscopy.github.io/ossl-manual/prediction-models.html">
+<meta property="og:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
+<meta property="og:description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. We have received important feedback since the release...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="6 Prediction models | Open Soil Spectral Library">
+<meta name="twitter:site" content="@soilspec">
+<meta name="twitter:description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. We have received important feedback since the release...">
+<meta name="twitter:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-06HBX7FM0K"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-06HBX7FM0K');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Open Soil Spectral Library</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">About</a></li>
+<li><a class="" href="new-to-markdown.html"><span class="header-section-number">1</span> New to markdown</a></li>
+<li><a class="" href="soil-spectroscopy-tools-and-users.html"><span class="header-section-number">2</span> Soil spectroscopy tools and users</a></li>
+<li><a class="" href="database-description.html"><span class="header-section-number">3</span> Database description</a></li>
+<li><a class="" href="database-access.html"><span class="header-section-number">4</span> Database access</a></li>
+<li><a class="" href="neospectra-database.html"><span class="header-section-number">5</span> Neospectra database</a></li>
+<li><a class="active" href="prediction-models.html"><span class="header-section-number">6</span> Prediction models</a></li>
+<li><a class="" href="web-applications-and-api.html"><span class="header-section-number">7</span> Web applications and API</a></li>
+<li><a class="" href="references.html"><span class="header-section-number">8</span> References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/soilspectroscopy/ossl-manual">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="prediction-models" class="section level1" number="6">
+<h1>
+<span class="header-section-number">6</span> Prediction models<a class="anchor" aria-label="anchor" href="#prediction-models"><i class="fas fa-link"></i></a>
+</h1>
+<div class="rmdnote">
+<p>You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending.</p>
+</div>
+<p>We have received important feedback since the release of the first models and web services (Dec. 2021). The feedback was that the previous model versions were doing a great job, but for others not that much.</p>
+<p>Variable model performance may have happened due to the specific soil types not being well represented or due to the spectra not being well aligned with the OSSL instruments. This led us to improve the current outputs to include a flag that indicates if the new samples to be predicted are represented by the calibration set. In addition to that, we revised our uncertainty estimation method by switching to conformal predictions, a simple and robust method for delivering uncertainty bands.</p>
+<p>In addition to that, we conducted a systematic analysis of learning algorithms, compression strategies, and preprocessing using the OSSL database and external test sents, and the insights from ring trial experiment - a separate project that was developed to understand the dissimilarity across multiple soil spectroscopy laboratories.</p>
+<p>We also removed spatial covarites and even not fused spectral regions compared to the first models, in order to make them simpler and generally applicable. These further combinations require more time to verify the potential performance improvements, although recent literature have been supporting it.</p>
+<p>The following sections describe the steps used to produce the OSSL models, which
+are used in the OSSL Engine and API, and also public available from Google Cloud Storage.</p>
+<p>It is important to note that the current models are not free of error and may still provide variable results. Please, let us know about any inconsistency you might find to help us improve even more the current models.</p>
+<p>For an in-depth inspection of the modeling steps please visit the <a href="https://github.com/soilspectroscopy/ossl-models">ossl-models</a> GitHub repository.</p>
+<div id="modeling-framework" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> Modeling framework<a class="anchor" aria-label="anchor" href="#modeling-framework"><i class="fas fa-link"></i></a>
+</h2>
+<p>We have used the <a href="https://mlr3book.mlr-org.com/">MLR3 framework</a> <span class="citation">(<a href="references.html#ref-mlr3" role="doc-biblioref">Lang et al., 2019</a>)</span> for fitting machine learning models, specifically with the <a href="https://cran.r-project.org/web/packages/Cubist/vignettes/cubist.html">Cubist algorithm</a> <span class="citation">(<a href="references.html#ref-quinlan1992learning" role="doc-biblioref">Quinlan, 1992</a>, <a href="references.html#ref-quinlan1993combining" role="doc-biblioref">1993</a>)</span>.</p>
+<p>The <a href="https://github.com/soilspectroscopy/ossl-models/tree/main/R-mlr"><code>R-mlr</code> folder</a> on <code>ossl-models</code> GitHub presents the code used to calibrate the models.</p>
+<p>In summary, we have provided 5 different model types depending on the availability of samples in for each soil property, which were fitted without the use of ancillary information (<code>na</code> code), i.e., site information or environmental layers are not used as predictors, only the spectral variation.</p>
+<p>The model types are composed of two different subsets, i.e. using the KSSL soil spectral library alone (<code>kssl</code> code) or the full OSSL database (<code>ossl</code> code), in combination with three spectral types: VisNIR (<code>visnir</code> code), NIR from the Neospectra instrument (<code>nir.neospectra</code> code), and MIR (<code>mir</code> code).</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">spectra_type</th>
+<th align="left">subset</th>
+<th align="left">geo</th>
+<th align="left">model_name</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">mir</td>
+<td align="left">kssl</td>
+<td align="left">na</td>
+<td align="left">mir_cubist_kssl_na_v1.2</td>
+</tr>
+<tr class="even">
+<td align="left">mir</td>
+<td align="left">ossl</td>
+<td align="left">na</td>
+<td align="left">mir_cubist_ossl_na_v1.2</td>
+</tr>
+<tr class="odd">
+<td align="left">nir.neospectra</td>
+<td align="left">ossl</td>
+<td align="left">na</td>
+<td align="left">nir.neospectra_cubist_ossl_na_v1.2</td>
+</tr>
+<tr class="even">
+<td align="left">visnir</td>
+<td align="left">ossl</td>
+<td align="left">na</td>
+<td align="left">visnir_cubist_ossl_na_v1.2</td>
+</tr>
+<tr class="odd">
+<td align="left">visnir</td>
+<td align="left">kssl</td>
+<td align="left">na</td>
+<td align="left">visnir_cubist_kssl_na_v1.2</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<blockquote>
+<p><strong>We highly recommend using the OSSL models</strong>. The models fitted exclusively with the KSSL can be used when the spectra to be predicted has the same instrument manufacturer/model as the spectrometers used to build the KSSL VisNIR and MIR libraries, and the KSSL library is representative for the new spectra based both on spectral similarity and range of soil properties of interest.</p>
+</blockquote>
+</blockquote>
+<p>The machine learning algorithm Cubist (coding name <code>cubist</code>) takes advantage of a decision-tree splitting method but fits linear regression models at each terminal leaf. It also uses a boosting mechanism (sequential trees adjusted by weights) that allows the growth of a forest by tuning the number of committees. We haven’t used the correction of final predictions by the nearest neighbors’ influence due to the lack of this feature in the MLR3 framework.</p>
+<p>As predictors, we have used the first 120 PCs of the compressed spectra, a threshold that considers the trade-off between spectral representation and compression magnitude <span class="citation">(<a href="references.html#ref-chang2001near" role="doc-biblioref">Chang, Laird, Mausbach, &amp; Hurburgh Jr, 2001</a>)</span>. The remaining farther components were used for the trustworthiness test, i.e., checking if a sample is underrepresented in respect of the feature space from the calibration set because of some unique features presented in those farther components <span class="citation">(<a href="references.html#ref-Jackson1979" role="doc-biblioref">Jackson &amp; Mudholkar, 1979</a>; <a href="references.html#ref-deSantana2023" role="doc-biblioref">Santana et al., 2023</a>)</span>.</p>
+<p>Before PCA compression, spectra was preprocessed with Standard Normal Variate (SNV) to reduce some of the variability caused by contrasting instruments and SOPs, besides the minimization of particle size, light scattering, and multicollinearity known issues of diffuse reflectance <span class="citation">(<a href="references.html#ref-Barnes1989" role="doc-biblioref">Barnes, Dhanoa, &amp; Lister, 1989</a>)</span>.</p>
+<p>Hyperparameter optimization was done with internal resampling (<code>inner</code>) using 5-fold cross-validation and a smaller subset for speeding up this operation <span class="citation">(<a href="references.html#ref-Yang2020" role="doc-biblioref">Yang &amp; Shami, 2020</a>)</span>. This task was performed with a grid search of the hyperparameter space testing up to 5 configurations of Comitees to find the lowest Root Mean Squared Error (RMSE). The final model with the best optimal hyperparameter was fitted at the end with the full train data.</p>
+<p>Some highly-skewed soil properties were natural-log transformed (with offset = 1, that is why we use <code>log1p</code> function) to improve the prediction performance <span class="citation">(<a href="references.html#ref-Dangal2019" role="doc-biblioref">Dangal, Sanderman, Wills, &amp; Ramirez-Lopez, 2019</a>)</span>. They were back-transformed only at the end after running all modeling steps, including performance estimation and the definition of the uncertainty intervals.</p>
+<p>Final fitted models are listed on <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/out/fitted_modeling_combinations_v1.2.csv">GitHub</a>.</p>
+</div>
+<div id="model-performance" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> Model performance<a class="anchor" aria-label="anchor" href="#model-performance"><i class="fas fa-link"></i></a>
+</h2>
+<p>Model evaluation was performed with external (<code>outer</code>) 10-fold cross validation of the tuned models using RMSE (<code>rmse</code>), mean error (<code>bias</code>), R squared (<code>rsq</code>), Lin’s concordance correlation coefficient (<code>ccc</code>), and the ratio of performance to the interquartile range (<code>rpiq</code>) <span class="citation">(<a href="references.html#ref-malone2021soil" role="doc-biblioref">Wadoux et al., 2021</a>)</span>.</p>
+<p>The final fitted models along with their performance metrics are listed on <a href="https://github.com/soilspectroscopy/ossl-models/raw/main/out/fitted_models_performance_v1.2.csv">GitHub</a>.</p>
+<p>All validation scatterplots are available on <a href="https://github.com/soilspectroscopy/ossl-models/tree/main/out/plots">GitHub</a>. Example of a validation plot.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:ac-toc"></span>
+<img src="https://storage.googleapis.com/soilspec4gg-public/models/log..c.tot_usda.a622_w.pct/valplot_mir_cubist_ossl_na_v1.2.png" alt="Validation scatterplot for `log..c.tot_usda.a622_w.pct` using `mir_cubist_ossl_na_v1.2`." width="70%"><p class="caption">
+Figure 6.1: Validation scatterplot for <code>log..c.tot_usda.a622_w.pct</code> using <code>mir_cubist_ossl_na_v1.2</code>.
+</p>
+</div>
+<!-- ```{r perf_metrics, echo=FALSE} -->
+<!-- readr::read_csv("https://github.com/soilspectroscopy/ossl-models/raw/main/out/fitted_models_performance_v1.2.csv", show_col_types = FALSE) |> -->
+<!--   knitr::kable() -->
+<!-- ``` -->
+</div>
+<div id="uncertainty-and-trustworthiness" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> Uncertainty and trustworthiness<a class="anchor" aria-label="anchor" href="#uncertainty-and-trustworthiness"><i class="fas fa-link"></i></a>
+</h2>
+<p>The cross-validated predictions were used to estimate the unbiased absolute error, which were employed to calibrate uncertainty models via <a href="https://en.wikipedia.org/wiki/Conformal_prediction">conformal prediction intervals</a>.The conformal prediction is built upon past experience, i.e. the error model is calibrated using the same fine-tuned structure of the respective response model. Non-conformity of the calibration set were estimated from the predicted error with a defined confidence level of 68% to approximate one standard deviation. The confidence interval (CI) can be derived with the prediction of the response and error values corrected by the non-conformity score of the calibration set <span class="citation">(<a href="references.html#ref-CortsCiriano2015" role="doc-biblioref">Cortés-Ciriano et al., 2015</a>; <a href="references.html#ref-Norinder2014" role="doc-biblioref">Norinder, Carlsson, Boyer, &amp; Eklund, 2014</a>)</span>. The main advantage of conformal prediction is that the intervals are always valid, i.e. a confidence of 80% means that the predicted confidence regions may contain the observed value in at least 80% of the cases. Another big advantage of conformal prediction methods is that we take rid of resampling mechanisms such as bootstrapping or Monte Carlo simulation which significantly requires a huge computing time for large sample sizes.</p>
+<p>The trustworthiness test was built using the PCA model employed for compression <span class="citation">(<a href="references.html#ref-Jackson1979" role="doc-biblioref">Jackson &amp; Mudholkar, 1979</a>; <a href="references.html#ref-deSantana2023" role="doc-biblioref">Santana et al., 2023</a>)</span>. Considering that only the first 120 PCs are used to decompose spectra for modeling fitting, the remaining variation from farther components are denominated residual, which is calculated by the difference between the original spectra and back-transformed with the first 120 PCs, which makes possible to calculate the Q-statistics (sum of squared residual across the spectrum). The Q statistic of new samples are compared against a Q critical value estimated across the calibration set with a 99% confidence level.</p>
+</div>
+<div id="using-the-ossl-models" class="section level2" number="6.4">
+<h2>
+<span class="header-section-number">6.4</span> Using the OSSL models<a class="anchor" aria-label="anchor" href="#using-the-ossl-models"><i class="fas fa-link"></i></a>
+</h2>
+<p>To load the complete analysis-ready models, train data, cross-validated predictions, validation performance metrics, and validation plot in R, please use the public URLs described <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/out/fitted_models_access.csv">GitHub</a>.</p>
+<p><code>qs</code> is a serialized and compressed file format that is faster than native R <code>rds</code>. You need to have <a href="https://github.com/traversc/qs">qs package</a> version &gt;= 0.25.5 to load files direct from the URLs.</p>
+<p><strong>NOTE: For using the trained models with new spectra, the supplemented data must be formatted following the defined spectral ranges:</strong><br><strong>- VisNIR: 400 - 2500 nm</strong><br><strong>- NIR Neospectra: 1350 - 2550 nm</strong><br><strong>- MIR: 600 - 4000 cm<sup>-1</sup></strong></p>
+<p><strong>Shorter intervals will raise an error! Users can impute the edges and fill the missing columns with the last available value of the border wavelengths.</strong></p>
+<p>We provided on GitHub both <a href="https://github.com/soilspectroscopy/ossl-models/tree/main/sample-data">examples of datasets</a> and a <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/R-mlr/OSSL_functions.R">prediction bundle</a> that incorporates all processing operations to get the outputs.</p>
+<p>Please, check the example datasets for formatting your spectra to the minimum required level of the prediction bundle You can provide either <code>csv</code> files or directly <code>asd</code> or opus (<code>.0</code>) for VisNIR and MIR scans, respectively.</p>
+<p>The results table has the prediction value (already back-transformed if log transformation was used) for the soil property of interest, 1-standard-deviation uncertainty band, and a flag column for <strong>potential underrepresented</strong> samples given the calibration data.</p>
+<p>The prediction function requires the <a href="https://www.tidyverse.org/">tidyverse</a>, <a href="https://mlr3book.mlr-org.com">mlr3 and mlr3extralearners</a>, <a href="https://topepo.github.io/Cubist//">Cubist</a>. <a href="https://github.com/traversc/qs">qs</a>, <a href="https://github.com/pierreroudier/asdreader">asdreader</a>, <a href="https://github.com/spectral-cockpit/opusreader2">opusreader2</a>, and <a href="https://cran.rstudio.com/web/packages/matrixStats/index.html">matrixStats</a> packages.</p>
+<p>Parameters:</p>
+<ul>
+<li>
+<code>target</code>: the soil property of interest. Log-transformed properties must have <code>log..</code> appended at the beginning of the name as indicated in the <code>export_name</code> column.<br>
+</li>
+<li>
+<code>spectra.file</code>: the path for the spectral measurements, either a <code>csv</code> table (following the sample-data specifications), <code>asd</code>, or opus (<code>.0</code>) file.<br>
+</li>
+<li>
+<code>spectra.type</code>: the spectral range of interest. Either <code>visnir</code>, <code>nir.neospectra</code>, or <code>mir</code>.<br>
+</li>
+<li>
+<code>subset.type</code>: the subset of interest, either the whole <code>ossl</code> or the <code>kssl</code> alone.<br>
+</li>
+<li>
+<code>geo.type</code>: only available for <code>na</code>.<br>
+</li>
+<li>
+<code>models.dir</code>: the path for the <code>ossl_models</code> folder. Should follow the same structure and naming code as represented in <a href="out/fitted_models_access.csv">fitted_models_access.csv</a>.</li>
+</ul>
+<p>All files that represent the <strong>ossl_models</strong> directory tree for local run or online access are described in <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/out/ossl_models_directory_tree.csv">ossl_models_directory_tree.csv</a>.</p>
+<blockquote>
+<p>Please note that the soil properties indication follows the export name. In addition, check <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/out/fitted_models_performance_v1.2.csv">fitted_models_performance_v1.2.csv</a> for the complete list of models as some spectra types are not completely available. More importantly, for natural-log soil properties, the upper and lower bands were estimated before the back-transformation.</p>
+</blockquote>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span><span class="op">(</span><span class="st">"R-mlr/OSSL_functions.R"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html">list.files</a></span><span class="op">(</span><span class="st">"sample-data"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">clay.visnir.ossl</span> <span class="op">&lt;-</span> <span class="fu">predict.ossl</span><span class="op">(</span>target <span class="op">=</span> <span class="st">"clay.tot_usda.a334_w.pct"</span>,</span>
+<span>                                 spectra.file <span class="op">=</span> <span class="st">"sample-data/101453MD01.asd"</span>,</span>
+<span>                                 spectra.type <span class="op">=</span> <span class="st">"visnir"</span>,</span>
+<span>                                 subset.type <span class="op">=</span> <span class="st">"ossl"</span>,</span>
+<span>                                 geo.type <span class="op">=</span> <span class="st">"na"</span>,</span>
+<span>                                 models.dir <span class="op">=</span> <span class="st">"~/mnt-ossl/ossl_models/"</span><span class="op">)</span></span></code></pre></div>
+<div id="registering-and-hosting-models" class="section level3" number="6.4.1">
+<h3>
+<span class="header-section-number">6.4.1</span> Registering and hosting models<a class="anchor" aria-label="anchor" href="#registering-and-hosting-models"><i class="fas fa-link"></i></a>
+</h3>
+<p>If you plan to contribute with your own models to the Soil Spectroscopy for Global Good project,
+please follow these steps:</p>
+<ol style="list-style-type: decimal">
+<li>We recommend registering and sharing new models via S3 file
+service system (Amazon or Google Cloud) with RDS files produced using
+<a href="https://github.com/nuest/docker-reproducible-research">Dockerized solution for full scientific reproducibility</a>.<br>
+</li>
+<li>For each model the following metadata need to be supplied:
+<ul>
+<li>Registered <a href="https://hub.docker.com/r/opengeohub/r-geo">docker image</a>; which should specify in detail: software in
+use, R package versions etc;</li>
+<li>DOI of the zenodo repository with a back-up for the data (i.e. how to cite your models);</li>
+<li>URL for accessing the RDS file via S3;</li>
+</ul>
+</li>
+</ol>
+<p>We can host your models on our infrastructure at no additional costs. Please
+<a href="https://soilspectroscopy.org/contact/">contact us</a> and apply for registering your models via soilspectroscopy.org.</p>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="neospectra-database.html"><span class="header-section-number">5</span> Neospectra database</a></div>
+<div class="next"><a href="web-applications-and-api.html"><span class="header-section-number">7</span> Web applications and API</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#prediction-models"><span class="header-section-number">6</span> Prediction models</a></li>
+<li><a class="nav-link" href="#modeling-framework"><span class="header-section-number">6.1</span> Modeling framework</a></li>
+<li><a class="nav-link" href="#model-performance"><span class="header-section-number">6.2</span> Model performance</a></li>
+<li><a class="nav-link" href="#uncertainty-and-trustworthiness"><span class="header-section-number">6.3</span> Uncertainty and trustworthiness</a></li>
+<li>
+<a class="nav-link" href="#using-the-ossl-models"><span class="header-section-number">6.4</span> Using the OSSL models</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#registering-and-hosting-models"><span class="header-section-number">6.4.1</span> Registering and hosting models</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/soilspectroscopy/ossl-manual/blob/master/060-prediction_models.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/soilspectroscopy/ossl-manual/edit/master/060-prediction_models.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Open Soil Spectral Library</strong>" was written by Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

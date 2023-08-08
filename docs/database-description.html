@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>3 Database description | Open Soil Spectral Library</title>
+<meta name="author" content="Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors">
+<meta name="description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. The following subsections provide the OSSL variable...">
+<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta property="og:title" content="3 Database description | Open Soil Spectral Library">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://soilspectroscopy.github.io/ossl-manual/database-description.html">
+<meta property="og:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
+<meta property="og:description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. The following subsections provide the OSSL variable...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="3 Database description | Open Soil Spectral Library">
+<meta name="twitter:site" content="@soilspec">
+<meta name="twitter:description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. The following subsections provide the OSSL variable...">
+<meta name="twitter:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-06HBX7FM0K"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-06HBX7FM0K');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Open Soil Spectral Library</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">About</a></li>
+<li><a class="" href="new-to-markdown.html"><span class="header-section-number">1</span> New to markdown</a></li>
+<li><a class="" href="soil-spectroscopy-tools-and-users.html"><span class="header-section-number">2</span> Soil spectroscopy tools and users</a></li>
+<li><a class="active" href="database-description.html"><span class="header-section-number">3</span> Database description</a></li>
+<li><a class="" href="database-access.html"><span class="header-section-number">4</span> Database access</a></li>
+<li><a class="" href="neospectra-database.html"><span class="header-section-number">5</span> Neospectra database</a></li>
+<li><a class="" href="prediction-models.html"><span class="header-section-number">6</span> Prediction models</a></li>
+<li><a class="" href="web-applications-and-api.html"><span class="header-section-number">7</span> Web applications and API</a></li>
+<li><a class="" href="references.html"><span class="header-section-number">8</span> References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/soilspectroscopy/ossl-manual">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="database-description" class="section level1" number="3">
+<h1>
+<span class="header-section-number">3</span> Database description<a class="anchor" aria-label="anchor" href="#database-description"><i class="fas fa-link"></i></a>
+</h1>
+<div class="rmdnote">
+<p>You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending.</p>
+</div>
+<p>The following subsections provide the OSSL variable names, types, description, and example. You can also find all this information in tabular format:</p>
+<ul>
+<li>
+<a href="https://github.com/soilspectroscopy/ossl-manual/tree/main/tabular/ossl_level0_names_soilsite.csv">OSSL soil site data</a>.</li>
+<li>
+<a href="https://github.com/soilspectroscopy/ossl-manual/tree/main/tabular/ossl_level0_names_soillab.csv">OSSL soil lab data (level 0)</a>.</li>
+<li>
+<a href="https://github.com/soilspectroscopy/ossl-manual/tree/main/tabular/ossl_level1_names_soillab.csv">OSSL soil lab data (level 1)</a>.</li>
+<li>
+<a href="https://github.com/soilspectroscopy/ossl-manual/tree/main/tabular/ossl_level0_names_mir.csv">OSSL soil MIR data</a>.</li>
+<li>
+<a href="https://github.com/soilspectroscopy/ossl-manual/tree/main/tabular/ossl_level0_names_visnir.csv">OSSL soil VisNIR data</a>.</li>
+</ul>
+<div id="sites-table" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> Soil site data<a class="anchor" aria-label="anchor" href="#sites-table"><i class="fas fa-link"></i></a>
+</h2>
+<div id="dataset.code_ascii_txt" class="section level3" number="3.1.1">
+<h3>
+<span class="header-section-number">3.1.1</span> dataset.code_ascii_txt<a class="anchor" aria-label="anchor" href="#dataset.code_ascii_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: OSSL dataset code.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: AFSIS1.SSL.</li>
+</ul>
+</div>
+<div id="id.layer_uuid_txt" class="section level3" number="3.1.2">
+<h3>
+<span class="header-section-number">3.1.2</span> id.layer_uuid_txt<a class="anchor" aria-label="anchor" href="#id.layer_uuid_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: OSSL unique identifier.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: ded584d70bf0474202d30e575ae24784.</li>
+</ul>
+</div>
+<div id="id.layer_local_c" class="section level3" number="3.1.3">
+<h3>
+<span class="header-section-number">3.1.3</span> id.layer_local_c<a class="anchor" aria-label="anchor" href="#id.layer_local_c"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Original observation identifier.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: icr072246.</li>
+</ul>
+</div>
+<div id="longitude.point_wgs84_dd" class="section level3" number="3.1.4">
+<h3>
+<span class="header-section-number">3.1.4</span> longitude.point_wgs84_dd<a class="anchor" aria-label="anchor" href="#longitude.point_wgs84_dd"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Longitude in decimal degrees (WGS84, EPSG 4326).</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 15.6874916700.</li>
+</ul>
+</div>
+<div id="latitude.point_wgs84_dd" class="section level3" number="3.1.5">
+<h3>
+<span class="header-section-number">3.1.5</span> latitude.point_wgs84_dd<a class="anchor" aria-label="anchor" href="#latitude.point_wgs84_dd"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Latitude in decimal degrees (WGS84, EPSG 4326).</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: -7.37775000.</li>
+</ul>
+</div>
+<div id="layer.sequence_usda_uint16" class="section level3" number="3.1.6">
+<h3>
+<span class="header-section-number">3.1.6</span> layer.sequence_usda_uint16<a class="anchor" aria-label="anchor" href="#layer.sequence_usda_uint16"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Layer sequence (incremented in depth).</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 1.</li>
+</ul>
+</div>
+<div id="layer.upper.depth_usda_cm" class="section level3" number="3.1.7">
+<h3>
+<span class="header-section-number">3.1.7</span> layer.upper.depth_usda_cm<a class="anchor" aria-label="anchor" href="#layer.upper.depth_usda_cm"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Layer top depth in cm.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.0.</li>
+</ul>
+</div>
+<div id="layer.lower.depth_usda_cm" class="section level3" number="3.1.8">
+<h3>
+<span class="header-section-number">3.1.8</span> layer.lower.depth_usda_cm<a class="anchor" aria-label="anchor" href="#layer.lower.depth_usda_cm"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Layer bottom depth in cm.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 20.0.</li>
+</ul>
+</div>
+<div id="observation.date.begin_iso.8601_yyyy.mm.dd" class="section level3" number="3.1.9">
+<h3>
+<span class="header-section-number">3.1.9</span> observation.date.begin_iso.8601_yyyy.mm.dd<a class="anchor" aria-label="anchor" href="#observation.date.begin_iso.8601_yyyy.mm.dd"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Begin date of observation following YYYY-MM-DD format (ISO 8601).</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 2011-01-01.</li>
+</ul>
+</div>
+<div id="observation.date.end_iso.8601_yyyy.mm.dd" class="section level3" number="3.1.10">
+<h3>
+<span class="header-section-number">3.1.10</span> observation.date.end_iso.8601_yyyy.mm.dd<a class="anchor" aria-label="anchor" href="#observation.date.end_iso.8601_yyyy.mm.dd"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: End date of observation following YYYY-MM-DD format (ISO 8601).</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 2013-12-31.</li>
+</ul>
+</div>
+<div id="surveyor.title_utf8_txt" class="section level3" number="3.1.11">
+<h3>
+<span class="header-section-number">3.1.11</span> surveyor.title_utf8_txt<a class="anchor" aria-label="anchor" href="#surveyor.title_utf8_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Field surveyor name or organization.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: L.T.Desta.</li>
+</ul>
+</div>
+<div id="id.project_ascii_txt" class="section level3" number="3.1.12">
+<h3>
+<span class="header-section-number">3.1.12</span> id.project_ascii_txt<a class="anchor" aria-label="anchor" href="#id.project_ascii_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Project name.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: Africa Soil Information Service (AfSIS-1).</li>
+</ul>
+</div>
+<div id="id.location_olc_txt" class="section level3" number="3.1.13">
+<h3>
+<span class="header-section-number">3.1.13</span> id.location_olc_txt<a class="anchor" aria-label="anchor" href="#id.location_olc_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Unique Open Location Code with a precision of 6 decimal places in point coordinates.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: 6F4QJMCP+VX.</li>
+</ul>
+</div>
+<div id="layer.texture_usda_txt" class="section level3" number="3.1.14">
+<h3>
+<span class="header-section-number">3.1.14</span> layer.texture_usda_txt<a class="anchor" aria-label="anchor" href="#layer.texture_usda_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Texture description based on USDA classification.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: sand.</li>
+</ul>
+</div>
+<div id="pedon.taxa_usda_txt" class="section level3" number="3.1.15">
+<h3>
+<span class="header-section-number">3.1.15</span> pedon.taxa_usda_txt<a class="anchor" aria-label="anchor" href="#pedon.taxa_usda_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Soil classification based on the USDA Keys to Soil Taxonomy.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: Typic Kanhaplustalf.</li>
+</ul>
+</div>
+<div id="horizon.designation_usda_txt" class="section level3" number="3.1.16">
+<h3>
+<span class="header-section-number">3.1.16</span> horizon.designation_usda_txt<a class="anchor" aria-label="anchor" href="#horizon.designation_usda_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Soil horizon based on the USDA Keys to Soil Taxonomy.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: Ap.</li>
+</ul>
+</div>
+<div id="longitude.county_wgs84_dd" class="section level3" number="3.1.17">
+<h3>
+<span class="header-section-number">3.1.17</span> longitude.county_wgs84_dd<a class="anchor" aria-label="anchor" href="#longitude.county_wgs84_dd"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: County centroid, longitude in decimal degrees (WGS84, EPSG 4326).</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: -96.688800.</li>
+</ul>
+</div>
+<div id="latitude.county_wgs84_dd" class="section level3" number="3.1.18">
+<h3>
+<span class="header-section-number">3.1.18</span> latitude.county_wgs84_dd<a class="anchor" aria-label="anchor" href="#latitude.county_wgs84_dd"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: County centroid, latitude in decimal degrees (WGS84, EPSG 4326).</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 40.78446.</li>
+</ul>
+</div>
+<div id="location.point.error_any_m" class="section level3" number="3.1.19">
+<h3>
+<span class="header-section-number">3.1.19</span> location.point.error_any_m<a class="anchor" aria-label="anchor" href="#location.point.error_any_m"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Approximate point location error in m.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 30.</li>
+</ul>
+</div>
+<div id="location.country_iso.3166_txt" class="section level3" number="3.1.20">
+<h3>
+<span class="header-section-number">3.1.20</span> location.country_iso.3166_txt<a class="anchor" aria-label="anchor" href="#location.country_iso.3166_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Country code following ISO 3166.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: NZL.</li>
+</ul>
+</div>
+<div id="observation.ogc.schema.title_ogc_txt" class="section level3" number="3.1.21">
+<h3>
+<span class="header-section-number">3.1.21</span> observation.ogc.schema.title_ogc_txt<a class="anchor" aria-label="anchor" href="#observation.ogc.schema.title_ogc_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Observation OGC schema title.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: Open Soil Spectroscopy Library.</li>
+</ul>
+</div>
+<div id="observation.ogc.schema_idn_url" class="section level3" number="3.1.22">
+<h3>
+<span class="header-section-number">3.1.22</span> observation.ogc.schema_idn_url<a class="anchor" aria-label="anchor" href="#observation.ogc.schema_idn_url"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Observation OGC schema url.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: <a href="https://soilspectroscopy.github.io" class="uri">https://soilspectroscopy.github.io</a>.</li>
+</ul>
+</div>
+<div id="surveyor.contact_ietf_email" class="section level3" number="3.1.23">
+<h3>
+<span class="header-section-number">3.1.23</span> surveyor.contact_ietf_email<a class="anchor" aria-label="anchor" href="#surveyor.contact_ietf_email"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Surveyor contact email.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: <a href="mailto:afsis.info@africasoils.net" class="email">afsis.info@africasoils.net</a>.</li>
+</ul>
+</div>
+<div id="surveyor.address_utf8_txt" class="section level3" number="3.1.24">
+<h3>
+<span class="header-section-number">3.1.24</span> surveyor.address_utf8_txt<a class="anchor" aria-label="anchor" href="#surveyor.address_utf8_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Surveyor or institution address.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: ICRAF, PO Box 30677, Nairobi, 00100, Kenya.</li>
+</ul>
+</div>
+<div id="dataset.title_utf8_txt" class="section level3" number="3.1.25">
+<h3>
+<span class="header-section-number">3.1.25</span> dataset.title_utf8_txt<a class="anchor" aria-label="anchor" href="#dataset.title_utf8_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset name.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: Africa Soil Information Service (AfSIS-1).</li>
+</ul>
+</div>
+<div id="dataset.owner_utf8_txt" class="section level3" number="3.1.26">
+<h3>
+<span class="header-section-number">3.1.26</span> dataset.owner_utf8_txt<a class="anchor" aria-label="anchor" href="#dataset.owner_utf8_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Name of of organization or person that is the responsible for the dataset.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: ICRAF, CROPNUTS, RRES.</li>
+</ul>
+</div>
+<div id="dataset.address_idn_url" class="section level3" number="3.1.27">
+<h3>
+<span class="header-section-number">3.1.27</span> dataset.address_idn_url<a class="anchor" aria-label="anchor" href="#dataset.address_idn_url"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: URL address of the dataset web page.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: <a href="https://www.isric.org/explore/ISRIC-collections" class="uri">https://www.isric.org/explore/ISRIC-collections</a>.</li>
+</ul>
+</div>
+<div id="dataset.doi_idf_url" class="section level3" number="3.1.28">
+<h3>
+<span class="header-section-number">3.1.28</span> dataset.doi_idf_url<a class="anchor" aria-label="anchor" href="#dataset.doi_idf_url"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Digital object identifier (DOI) url of the dataset.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: <a href="https://doi.org/10.1016/j.geodrs.2015.06.002" class="uri">https://doi.org/10.1016/j.geodrs.2015.06.002</a>.</li>
+</ul>
+</div>
+<div id="dataset.license.title_ascii_txt" class="section level3" number="3.1.29">
+<h3>
+<span class="header-section-number">3.1.29</span> dataset.license.title_ascii_txt<a class="anchor" aria-label="anchor" href="#dataset.license.title_ascii_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset license.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: ODC Open Database License.</li>
+</ul>
+</div>
+<div id="dataset.license.address_idn_url" class="section level3" number="3.1.30">
+<h3>
+<span class="header-section-number">3.1.30</span> dataset.license.address_idn_url<a class="anchor" aria-label="anchor" href="#dataset.license.address_idn_url"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset license url.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: <a href="https://opendatacommons.org/licenses/odbl/" class="uri">https://opendatacommons.org/licenses/odbl/</a>.</li>
+</ul>
+</div>
+<div id="dataset.contact.name_utf8_txt" class="section level3" number="3.1.31">
+<h3>
+<span class="header-section-number">3.1.31</span> dataset.contact.name_utf8_txt<a class="anchor" aria-label="anchor" href="#dataset.contact.name_utf8_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset contact name.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: Keith Shepherd.</li>
+</ul>
+</div>
+<div id="dataset.contact_ietf_email" class="section level3" number="3.1.32">
+<h3>
+<span class="header-section-number">3.1.32</span> dataset.contact_ietf_email<a class="anchor" aria-label="anchor" href="#dataset.contact_ietf_email"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset contact email.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: <a href="mailto:afsis.info@africasoils.net" class="email">afsis.info@africasoils.net</a>.</li>
+</ul>
+</div>
+<div id="id.dataset.site_ascii_txt" class="section level3" number="3.1.33">
+<h3>
+<span class="header-section-number">3.1.33</span> id.dataset.site_ascii_txt<a class="anchor" aria-label="anchor" href="#id.dataset.site_ascii_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Site identification.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: 203.</li>
+</ul>
+</div>
+</div>
+<div id="soillab-table" class="section level2" number="3.2">
+<h2>
+<span class="header-section-number">3.2</span> Soil laboratory (wet chemistry) data<a class="anchor" aria-label="anchor" href="#soillab-table"><i class="fas fa-link"></i></a>
+</h2>
+<div id="dataset.code_ascii_txt-1" class="section level3" number="3.2.1">
+<h3>
+<span class="header-section-number">3.2.1</span> dataset.code_ascii_txt<a class="anchor" aria-label="anchor" href="#dataset.code_ascii_txt-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset code used for internal reference. It can be alternatively described as <code>OSSL dataset code</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>txt</code>, i.e., text.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: AFSIS1.SSL.</li>
+</ul>
+</div>
+<div id="id.layer_uuid_txt-1" class="section level3" number="3.2.2">
+<h3>
+<span class="header-section-number">3.2.2</span> id.layer_uuid_txt<a class="anchor" aria-label="anchor" href="#id.layer_uuid_txt-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Unique identifier. It can be alternatively described as <code>OSSL unique identifier</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>txt</code>, i.e., text.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: ded584d70bf0474202d30e575ae24784.</li>
+</ul>
+</div>
+<div id="acidity_usda.a795_cmolc.kg" class="section level3" number="3.2.3">
+<h3>
+<span class="header-section-number">3.2.3</span> acidity_usda.a795_cmolc.kg<a class="anchor" aria-label="anchor" href="#acidity_usda.a795_cmolc.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Extractable acidity, BaCl2-TEA at pH 8.2, is a measure of the amount of acid neutralized at a set pH. It can be alternatively described as <code>Acidity, BaCl2-TEA Extractable, pH 8.2</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.40000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_acidity_usda.a795_cmolc.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="aggstb_usda.a1_w.pct" class="section level3" number="3.2.4">
+<h3>
+<span class="header-section-number">3.2.4</span> aggstb_usda.a1_w.pct<a class="anchor" aria-label="anchor" href="#aggstb_usda.a1_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Aggregate stability is the weight percent of 0.5 mm - 2 mm aggregates remaining after wet sieving.. It can be alternatively described as <code>Aggregate Stability</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 74.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_aggstb_usda.a1_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="al.dith_usda.a65_w.pct" class="section level3" number="3.2.5">
+<h3>
+<span class="header-section-number">3.2.5</span> al.dith_usda.a65_w.pct<a class="anchor" aria-label="anchor" href="#al.dith_usda.a65_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dithionite citrate extractable aluminum is an indicator of the amount of aluminum substituted for iron in iron oxides.. It can be alternatively described as <code>Aluminum, Crystalline, Total Pedogenic Iron</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.13652.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_al.dith_usda.a65_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="al.ext_aquaregia_g.kg" class="section level3" number="3.2.6">
+<h3>
+<span class="header-section-number">3.2.6</span> al.ext_aquaregia_g.kg<a class="anchor" aria-label="anchor" href="#al.ext_aquaregia_g.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable Al.. It can be alternatively described as <code>Aluminum, Extractable, Aqua Regia</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>g.kg</code>, i.e., grams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 42.9620831.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_al.ext_aquaregia_g.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="al.ext_usda.a1056_mg.kg" class="section level3" number="3.2.7">
+<h3>
+<span class="header-section-number">3.2.7</span> al.ext_usda.a1056_mg.kg<a class="anchor" aria-label="anchor" href="#al.ext_usda.a1056_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable Al.. It can be alternatively described as <code>Aluminum, Extractable, Mehlich3</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 1270.00000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_al.ext_usda.a1056_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="al.ext_usda.a69_cmolc.kg" class="section level3" number="3.2.8">
+<h3>
+<span class="header-section-number">3.2.8</span> al.ext_usda.a69_cmolc.kg<a class="anchor" aria-label="anchor" href="#al.ext_usda.a69_cmolc.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable Al.. It can be alternatively described as <code>Aluminum, Extractable, KCl</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.20000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_al.ext_usda.a69_cmolc.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="al.ox_usda.a59_w.pct" class="section level3" number="3.2.9">
+<h3>
+<span class="header-section-number">3.2.9</span> al.ox_usda.a59_w.pct<a class="anchor" aria-label="anchor" href="#al.ox_usda.a59_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Ammonium oxalate extractable aluminum is an estimate of the total pedogenic Al, much of which may be in noncrystalline materials or complexed by organic matter.. It can be alternatively described as <code>Aluminum, Amorphous, Total Non-Crystalline Iron</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.12951.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_al.ox_usda.a59_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="awc.33.1500kpa_usda.c80_w.frac" class="section level3" number="3.2.10">
+<h3>
+<span class="header-section-number">3.2.10</span> awc.33.1500kPa_usda.c80_w.frac<a class="anchor" aria-label="anchor" href="#awc.33.1500kpa_usda.c80_w.frac"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: The amount (fraction) of water released between 1/3 (33 kPa) and 15 (1500 kPa) bar tensions determined as gravimetric percent.. It can be alternatively described as <code>Available Water Content, Difference 33-1500 kPa</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.frac</code>, i.e., weight fraction.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.08658.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_awc.33.1500kPa_usda.c80_w.frac.png" heigth="100%" width="100%"></div>
+</div>
+<div id="b.ext_mel3_mg.kg" class="section level3" number="3.2.11">
+<h3>
+<span class="header-section-number">3.2.11</span> b.ext_mel3_mg.kg<a class="anchor" aria-label="anchor" href="#b.ext_mel3_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Plant available B.. It can be alternatively described as <code>Boron, Extractable, Mehlich3</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.00100000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_b.ext_mel3_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="bd_iso.11272_g.cm3" class="section level3" number="3.2.12">
+<h3>
+<span class="header-section-number">3.2.12</span> bd_iso.11272_g.cm3<a class="anchor" aria-label="anchor" href="#bd_iso.11272_g.cm3"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Bulk density is the weight per unit volume of the fine earth fraction (&lt;2 mm).. It can be alternatively described as <code>Bulk Density, iso 11272</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>g.cm3</code>, i.e., grams per cubic centimeter.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 1.57100.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_bd_iso.11272_g.cm3.png" heigth="100%" width="100%"></div>
+</div>
+<div id="bd_usda.a21_g.cm3" class="section level3" number="3.2.13">
+<h3>
+<span class="header-section-number">3.2.13</span> bd_usda.a21_g.cm3<a class="anchor" aria-label="anchor" href="#bd_usda.a21_g.cm3"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Bulk density is the weight per unit volume of the fine earth fraction (&lt;2 mm).. It can be alternatively described as <code>Bulk Density, &lt;2 mm fraction, Core</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>g.cm3</code>, i.e., grams per cubic centimeter.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 1.57100.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_bd_usda.a21_g.cm3.png" heigth="100%" width="100%"></div>
+</div>
+<div id="bd_usda.a4_g.cm3" class="section level3" number="3.2.14">
+<h3>
+<span class="header-section-number">3.2.14</span> bd_usda.a4_g.cm3<a class="anchor" aria-label="anchor" href="#bd_usda.a4_g.cm3"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Bulk density is the weight per unit volume of the fine earth fraction (&lt;2 mm).. It can be alternatively described as <code>Bulk Density, &lt;2mm fraction, Clod</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>g.cm3</code>, i.e., grams per cubic centimeter.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 1.3477999.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_bd_usda.a4_g.cm3.png" heigth="100%" width="100%"></div>
+</div>
+<div id="c.tot_iso.10694_w.pct" class="section level3" number="3.2.15">
+<h3>
+<span class="header-section-number">3.2.15</span> c.tot_iso.10694_w.pct<a class="anchor" aria-label="anchor" href="#c.tot_iso.10694_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Total carbon is a measure of all organic and inorganic carbon, including that found in carbonate minerals.. It can be alternatively described as <code>Carbon, Total NCS, iso 10694</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 3.668778009.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_c.tot_iso.10694_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="c.tot_usda.a622_w.pct" class="section level3" number="3.2.16">
+<h3>
+<span class="header-section-number">3.2.16</span> c.tot_usda.a622_w.pct<a class="anchor" aria-label="anchor" href="#c.tot_usda.a622_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Total carbon is a measure of all organic and inorganic carbon, including that found in carbonate minerals.. It can be alternatively described as <code>Carbon, Total NCS</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 1.55128592.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_c.tot_usda.a622_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="ca.ext_aquaregia_mg.kg" class="section level3" number="3.2.17">
+<h3>
+<span class="header-section-number">3.2.17</span> ca.ext_aquaregia_mg.kg<a class="anchor" aria-label="anchor" href="#ca.ext_aquaregia_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available Ca.. It can be alternatively described as <code>Calcium, Extractable, Aqua Regia</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 368.535095.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ca.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="ca.ext_usda.a1059_mg.kg" class="section level3" number="3.2.18">
+<h3>
+<span class="header-section-number">3.2.18</span> ca.ext_usda.a1059_mg.kg<a class="anchor" aria-label="anchor" href="#ca.ext_usda.a1059_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available Ca.. It can be alternatively described as <code>Calcium, Extractable, Mehlich3</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 78.20000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ca.ext_usda.a1059_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="ca.ext_usda.a722_cmolc.kg" class="section level3" number="3.2.19">
+<h3>
+<span class="header-section-number">3.2.19</span> ca.ext_usda.a722_cmolc.kg<a class="anchor" aria-label="anchor" href="#ca.ext_usda.a722_cmolc.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available Ca.. It can be alternatively described as <code>Calcium, Extractable, NH4OAc</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 2.617060178.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ca.ext_usda.a722_cmolc.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="caco3_iso.10693_w.pct" class="section level3" number="3.2.20">
+<h3>
+<span class="header-section-number">3.2.20</span> caco3_iso.10693_w.pct<a class="anchor" aria-label="anchor" href="#caco3_iso.10693_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Carbonate in the &lt;2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a &lt;2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid.. It can be alternatively described as <code>Carbonate, iso 10693</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 27.0.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_caco3_iso.10693_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="caco3_usda.a54_w.pct" class="section level3" number="3.2.21">
+<h3>
+<span class="header-section-number">3.2.21</span> caco3_usda.a54_w.pct<a class="anchor" aria-label="anchor" href="#caco3_usda.a54_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Carbonate in the &lt;2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a &lt;2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid.. It can be alternatively described as <code>Carbonate, &lt;2mm Fraction</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.50000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_caco3_usda.a54_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="cec_iso.11260_cmolc.kg" class="section level3" number="3.2.22">
+<h3>
+<span class="header-section-number">3.2.22</span> cec_iso.11260_cmolc.kg<a class="anchor" aria-label="anchor" href="#cec_iso.11260_cmolc.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Cation exchange capacity of a sample highly buffered at pH 7.0. It is reported as cmolc kg-1 (= meq per 100 grams) on a &lt;2 mm base.. It can be alternatively described as <code>CEC, pH 7.0, iso 11260</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 37.8.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_cec_iso.11260_cmolc.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="cec_usda.a723_cmolc.kg" class="section level3" number="3.2.23">
+<h3>
+<span class="header-section-number">3.2.23</span> cec_usda.a723_cmolc.kg<a class="anchor" aria-label="anchor" href="#cec_usda.a723_cmolc.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Cation exchange capacity of a sample highly buffered at pH 7.0. It is reported on a &lt;2 mm base.. It can be alternatively described as <code>CEC, pH 7.0, NH4OAc, 2M KCl displacement</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 6.6332171.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_cec_usda.a723_cmolc.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="cf_iso.11464_w.pct" class="section level3" number="3.2.24">
+<h3>
+<span class="header-section-number">3.2.24</span> cf_iso.11464_w.pct<a class="anchor" aria-label="anchor" href="#cf_iso.11464_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.. It can be alternatively described as <code>Coarse Fragments, iso 11464</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 10.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_cf_iso.11464_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="cf_usda.c236_w.pct" class="section level3" number="3.2.25">
+<h3>
+<span class="header-section-number">3.2.25</span> cf_usda.c236_w.pct<a class="anchor" aria-label="anchor" href="#cf_usda.c236_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.. It can be alternatively described as <code>Coarse Fragments, Greater 2mm</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 4.00000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_cf_usda.c236_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="clay.tot_iso.11277_w.pct" class="section level3" number="3.2.26">
+<h3>
+<span class="header-section-number">3.2.26</span> clay.tot_iso.11277_w.pct<a class="anchor" aria-label="anchor" href="#clay.tot_iso.11277_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Total clay is the soil separate with &lt;0.002 mm particle diameter. Clay size carbonate is included. It is reported on a &lt;2 mm base.. It can be alternatively described as <code>Clay, iso 11277</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 51.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_clay.tot_iso.11277_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="clay.tot_usda.a334_w.pct" class="section level3" number="3.2.27">
+<h3>
+<span class="header-section-number">3.2.27</span> clay.tot_usda.a334_w.pct<a class="anchor" aria-label="anchor" href="#clay.tot_usda.a334_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Total clay is the soil separate with &lt;0.002 mm particle diameter. Clay size carbonate is included. It is reported on a &lt;2 mm base.. It can be alternatively described as <code>Clay</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 30.99000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_clay.tot_usda.a334_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="cu.ext_usda.a1063_mg.kg" class="section level3" number="3.2.28">
+<h3>
+<span class="header-section-number">3.2.28</span> cu.ext_usda.a1063_mg.kg<a class="anchor" aria-label="anchor" href="#cu.ext_usda.a1063_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available Cu.. It can be alternatively described as <code>Copper, Extractable, Mehlich3</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.5600000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_cu.ext_usda.a1063_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="ec_iso.11265_ds.m" class="section level3" number="3.2.29">
+<h3>
+<span class="header-section-number">3.2.29</span> ec_iso.11265_ds.m<a class="anchor" aria-label="anchor" href="#ec_iso.11265_ds.m"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Electrical conductivity. It is reported of a 1:2 soil:water mixture. It can be alternatively described as <code>Electrical Conductivity, iso 11265</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>ds.m</code>, i.e., decisiemens per metre.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 2.3350.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_ec_iso.11265_ds.m.png" heigth="100%" width="100%"></div>
+</div>
+<div id="ec_usda.a364_ds.m" class="section level3" number="3.2.30">
+<h3>
+<span class="header-section-number">3.2.30</span> ec_usda.a364_ds.m<a class="anchor" aria-label="anchor" href="#ec_usda.a364_ds.m"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Electrical conductivity. It is reported of a 1:2 soil:water mixture. It can be alternatively described as <code>Electrical Conductivity, (w/w)</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>ds.m</code>, i.e., decisiemens per metre.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.03100.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ec_usda.a364_ds.m.png" heigth="100%" width="100%"></div>
+</div>
+<div id="efferv_usda.a479_class" class="section level3" number="3.2.31">
+<h3>
+<span class="header-section-number">3.2.31</span> efferv_usda.a479_class<a class="anchor" aria-label="anchor" href="#efferv_usda.a479_class"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: The visual effervescence of the prepared sample when treated with 1 N HCl.. It can be alternatively described as <code>Effervescense, 1N HCl</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>class</code>, i.e., class of visual interpretation.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: none.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+</div>
+<div id="fe.dith_usda.a66_w.pct" class="section level3" number="3.2.32">
+<h3>
+<span class="header-section-number">3.2.32</span> fe.dith_usda.a66_w.pct<a class="anchor" aria-label="anchor" href="#fe.dith_usda.a66_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dithionite citrate extractable iron is considered a general measure of total pedogenic iron.. It can be alternatively described as <code>Iron, Crystalline, Total Pedogenic Iron</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 1.09028.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_fe.dith_usda.a66_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="fe.ext_aquaregia_g.kg" class="section level3" number="3.2.33">
+<h3>
+<span class="header-section-number">3.2.33</span> fe.ext_aquaregia_g.kg<a class="anchor" aria-label="anchor" href="#fe.ext_aquaregia_g.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available Fe.. It can be alternatively described as <code>Iron, Extractable, Aqua Regia</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>g.kg</code>, i.e., grams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 71.9575342.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_fe.ext_aquaregia_g.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="fe.ext_usda.a1064_mg.kg" class="section level3" number="3.2.34">
+<h3>
+<span class="header-section-number">3.2.34</span> fe.ext_usda.a1064_mg.kg<a class="anchor" aria-label="anchor" href="#fe.ext_usda.a1064_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available Fe.. It can be alternatively described as <code>Iron, Extractable, Mehlich3</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 182.00000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_fe.ext_usda.a1064_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="fe.ox_usda.a60_w.pct" class="section level3" number="3.2.35">
+<h3>
+<span class="header-section-number">3.2.35</span> fe.ox_usda.a60_w.pct<a class="anchor" aria-label="anchor" href="#fe.ox_usda.a60_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Ammonium oxalate extractable iron is considered a measure of the noncrystalline Fe in soils.. It can be alternatively described as <code>Iron, Amorphous, Total Non-Crystalline Iron</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.15422.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_fe.ox_usda.a60_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="k.ext_aquaregia_mg.kg" class="section level3" number="3.2.36">
+<h3>
+<span class="header-section-number">3.2.36</span> k.ext_aquaregia_mg.kg<a class="anchor" aria-label="anchor" href="#k.ext_aquaregia_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available K.. It can be alternatively described as <code>Potassium, Extractable, Aqua Regia</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 1781.400966.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_k.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="k.ext_usda.a1065_mg.kg" class="section level3" number="3.2.37">
+<h3>
+<span class="header-section-number">3.2.37</span> k.ext_usda.a1065_mg.kg<a class="anchor" aria-label="anchor" href="#k.ext_usda.a1065_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available K.. It can be alternatively described as <code>Potassium, Extractable, Mehlich3</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 47.000000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_k.ext_usda.a1065_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="k.ext_usda.a725_cmolc.kg" class="section level3" number="3.2.38">
+<h3>
+<span class="header-section-number">3.2.38</span> k.ext_usda.a725_cmolc.kg<a class="anchor" aria-label="anchor" href="#k.ext_usda.a725_cmolc.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available K.. It can be alternatively described as <code>Potassium, Extractable, NH4OAc, 2M KCl displacement</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.200688352.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_k.ext_usda.a725_cmolc.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="mg.ext_aquaregia_mg.kg" class="section level3" number="3.2.39">
+<h3>
+<span class="header-section-number">3.2.39</span> mg.ext_aquaregia_mg.kg<a class="anchor" aria-label="anchor" href="#mg.ext_aquaregia_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available Mg.. It can be alternatively described as <code>Magnesium, Extractable, Aqua Regia</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 710.429099.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_mg.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="mg.ext_usda.a1066_mg.kg" class="section level3" number="3.2.40">
+<h3>
+<span class="header-section-number">3.2.40</span> mg.ext_usda.a1066_mg.kg<a class="anchor" aria-label="anchor" href="#mg.ext_usda.a1066_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available Mg.. It can be alternatively described as <code>Magnesium, Extractable, Mehlich3</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 19.600000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_mg.ext_usda.a1066_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="mg.ext_usda.a724_cmolc.kg" class="section level3" number="3.2.41">
+<h3>
+<span class="header-section-number">3.2.41</span> mg.ext_usda.a724_cmolc.kg<a class="anchor" aria-label="anchor" href="#mg.ext_usda.a724_cmolc.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available Mg.. It can be alternatively described as <code>Magnesium, Extractable, NH4OAc, 2M KCl displacement</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 1.81655342.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_mg.ext_usda.a724_cmolc.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="mn.ext_aquaregia_mg.kg" class="section level3" number="3.2.42">
+<h3>
+<span class="header-section-number">3.2.42</span> mn.ext_aquaregia_mg.kg<a class="anchor" aria-label="anchor" href="#mn.ext_aquaregia_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available Mn.. It can be alternatively described as <code>Manganese, Extractable, Aqua Regia</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 497.300369.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_mn.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="mn.ext_usda.a1067_mg.kg" class="section level3" number="3.2.43">
+<h3>
+<span class="header-section-number">3.2.43</span> mn.ext_usda.a1067_mg.kg<a class="anchor" aria-label="anchor" href="#mn.ext_usda.a1067_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available Mn.. It can be alternatively described as <code>Manganese, Extractable, Mehlich3</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 23.10000000.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_mn.ext_usda.a1067_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="mn.ext_usda.a70_mg.kg" class="section level3" number="3.2.44">
+<h3>
+<span class="header-section-number">3.2.44</span> mn.ext_usda.a70_mg.kg<a class="anchor" aria-label="anchor" href="#mn.ext_usda.a70_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available Mn.. It can be alternatively described as <code>Manganese, Extractable, KCl</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.62569.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_mn.ext_usda.a70_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="n.tot_iso.11261_w.pct" class="section level3" number="3.2.45">
+<h3>
+<span class="header-section-number">3.2.45</span> n.tot_iso.11261_w.pct<a class="anchor" aria-label="anchor" href="#n.tot_iso.11261_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Total nitrogen is a measure of all organic and inorganic nitrogen.. It can be alternatively described as <code>Nitrogen, Total NCS, iso 11261</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.25.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_n.tot_iso.11261_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="n.tot_iso.13878_w.pct" class="section level3" number="3.2.46">
+<h3>
+<span class="header-section-number">3.2.46</span> n.tot_iso.13878_w.pct<a class="anchor" aria-label="anchor" href="#n.tot_iso.13878_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Total nitrogen is a measure of all organic and inorganic nitrogen.. It can be alternatively described as <code>Nitrogen, Total NCS, iso 13878</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.089.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_n.tot_iso.13878_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="n.tot_usda.a623_w.pct" class="section level3" number="3.2.47">
+<h3>
+<span class="header-section-number">3.2.47</span> n.tot_usda.a623_w.pct<a class="anchor" aria-label="anchor" href="#n.tot_usda.a623_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Total nitrogen is a measure of all organic and inorganic nitrogen.. It can be alternatively described as <code>Nitrogen, Total NCS</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.079766974.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_n.tot_usda.a623_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="na.ext_aquaregia_mg.kg" class="section level3" number="3.2.48">
+<h3>
+<span class="header-section-number">3.2.48</span> na.ext_aquaregia_mg.kg<a class="anchor" aria-label="anchor" href="#na.ext_aquaregia_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant availableNa.. It can be alternatively described as <code>Sodium, Extractable, Aqua Regia</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 75.986312.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_na.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="na.ext_usda.a1068_mg.kg" class="section level3" number="3.2.49">
+<h3>
+<span class="header-section-number">3.2.49</span> na.ext_usda.a1068_mg.kg<a class="anchor" aria-label="anchor" href="#na.ext_usda.a1068_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant availableNa.. It can be alternatively described as <code>Sodium, Extractable, Mehlich3</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 17.800000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_na.ext_usda.a1068_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="na.ext_usda.a726_cmolc.kg" class="section level3" number="3.2.50">
+<h3>
+<span class="header-section-number">3.2.50</span> na.ext_usda.a726_cmolc.kg<a class="anchor" aria-label="anchor" href="#na.ext_usda.a726_cmolc.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant availableNa.. It can be alternatively described as <code>Sodium, Extractable, NH4OAc, 2M KCl displacement</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>cmolc.kg</code>, i.e., centimoles of charge per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.124398521.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_na.ext_usda.a726_cmolc.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="oc_iso.10694_w.pct" class="section level3" number="3.2.51">
+<h3>
+<span class="header-section-number">3.2.51</span> oc_iso.10694_w.pct<a class="anchor" aria-label="anchor" href="#oc_iso.10694_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Estimated Organic Carbon based on Total C. It can be alternatively described as <code>Organic Carbon, iso 10694</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 2.05000000.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_oc_iso.10694_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="oc_usda.c1059_w.pct" class="section level3" number="3.2.52">
+<h3>
+<span class="header-section-number">3.2.52</span> oc_usda.c1059_w.pct<a class="anchor" aria-label="anchor" href="#oc_usda.c1059_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Estimated Organic Carbon based on Total C. It can be alternatively described as <code>Organic Carbon, Total C without CaCO3, N prep</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 1.50336492.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_oc_usda.c1059_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="oc_usda.c729_w.pct" class="section level3" number="3.2.53">
+<h3>
+<span class="header-section-number">3.2.53</span> oc_usda.c729_w.pct<a class="anchor" aria-label="anchor" href="#oc_usda.c729_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Estimated Organic Carbon based on Total C. It can be alternatively described as <code>Organic Carbon, Total C without CaCO3, S prep</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 2.9100.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_oc_usda.c729_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="p.ext_aquaregia_mg.kg" class="section level3" number="3.2.54">
+<h3>
+<span class="header-section-number">3.2.54</span> p.ext_aquaregia_mg.kg<a class="anchor" aria-label="anchor" href="#p.ext_aquaregia_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Plant available P.. It can be alternatively described as <code>Phosphorus, Extractable, Aqua Regia</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 608.30492.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_p.ext_aquaregia_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="p.ext_iso.11263_mg.kg" class="section level3" number="3.2.55">
+<h3>
+<span class="header-section-number">3.2.55</span> p.ext_iso.11263_mg.kg<a class="anchor" aria-label="anchor" href="#p.ext_iso.11263_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Plant available P.. It can be alternatively described as <code>Phosphorus, Extractable, iso 11263</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 72.4.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_p.ext_iso.11263_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="p.ext_usda.a1070_mg.kg" class="section level3" number="3.2.56">
+<h3>
+<span class="header-section-number">3.2.56</span> p.ext_usda.a1070_mg.kg<a class="anchor" aria-label="anchor" href="#p.ext_usda.a1070_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Plant available P.. It can be alternatively described as <code>Phosphorus, Extractable, Mehlich3</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 3.44739.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_p.ext_usda.a1070_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="p.ext_usda.a270_mg.kg" class="section level3" number="3.2.57">
+<h3>
+<span class="header-section-number">3.2.57</span> p.ext_usda.a270_mg.kg<a class="anchor" aria-label="anchor" href="#p.ext_usda.a270_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Plant available P.. It can be alternatively described as <code>Phosphorus, Extractable, Bray1</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 50.5348939.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_p.ext_usda.a270_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="p.ext_usda.a274_mg.kg" class="section level3" number="3.2.58">
+<h3>
+<span class="header-section-number">3.2.58</span> p.ext_usda.a274_mg.kg<a class="anchor" aria-label="anchor" href="#p.ext_usda.a274_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Plant available P.. It can be alternatively described as <code>Phosphorus, Extractable, Olsen</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 17.23518992.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_p.ext_usda.a274_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="p.ext_usda.a652_mg.kg" class="section level3" number="3.2.59">
+<h3>
+<span class="header-section-number">3.2.59</span> p.ext_usda.a652_mg.kg<a class="anchor" aria-label="anchor" href="#p.ext_usda.a652_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Plant available P.. It can be alternatively described as <code>Phosphorus, Extractable, Mehlich3</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 9.770000.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_p.ext_usda.a652_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="ph.cacl2_iso.10390_index" class="section level3" number="3.2.60">
+<h3>
+<span class="header-section-number">3.2.60</span> ph.cacl2_iso.10390_index<a class="anchor" aria-label="anchor" href="#ph.cacl2_iso.10390_index"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.. It can be alternatively described as <code>pH, 1:2 Soil-CaCl2 Suspension, iso 10390</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>index</code>, i.e., negative logarithm of the hydrogen ion concentration.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 7.24.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_ph.cacl2_iso.10390_index.png" heigth="100%" width="100%"></div>
+</div>
+<div id="ph.cacl2_usda.a477_index" class="section level3" number="3.2.61">
+<h3>
+<span class="header-section-number">3.2.61</span> ph.cacl2_usda.a477_index<a class="anchor" aria-label="anchor" href="#ph.cacl2_usda.a477_index"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.. It can be alternatively described as <code>pH, 1:2 Soil-CaCl2 Suspension, 0.01 M CaCl2</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>index</code>, i.e., negative logarithm of the hydrogen ion concentration.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 5.40.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_ph.cacl2_usda.a477_index.png" heigth="100%" width="100%"></div>
+</div>
+<div id="ph.cacl2_usda.a481_index" class="section level3" number="3.2.62">
+<h3>
+<span class="header-section-number">3.2.62</span> ph.cacl2_usda.a481_index<a class="anchor" aria-label="anchor" href="#ph.cacl2_usda.a481_index"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.. It can be alternatively described as <code>pH, 1:2 Soil-CaCl2 Suspension</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>index</code>, i.e., negative logarithm of the hydrogen ion concentration.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 6.40000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ph.cacl2_usda.a481_index.png" heigth="100%" width="100%"></div>
+</div>
+<div id="ph.h2o_iso.10390_index" class="section level3" number="3.2.63">
+<h3>
+<span class="header-section-number">3.2.63</span> ph.h2o_iso.10390_index<a class="anchor" aria-label="anchor" href="#ph.h2o_iso.10390_index"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: pH of the 1:1 soil:water suspension.. It can be alternatively described as <code>pH, 1:1 Soil-Water Suspension, iso 10390</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>index</code>, i.e., negative logarithm of the hydrogen ion concentration.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 7.64.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_ph.h2o_iso.10390_index.png" heigth="100%" width="100%"></div>
+</div>
+<div id="ph.h2o_usda.a268_index" class="section level3" number="3.2.64">
+<h3>
+<span class="header-section-number">3.2.64</span> ph.h2o_usda.a268_index<a class="anchor" aria-label="anchor" href="#ph.h2o_usda.a268_index"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: pH of the 1:1 soil:water suspension.. It can be alternatively described as <code>pH, 1:1 Soil-Water Suspension</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>index</code>, i.e., negative logarithm of the hydrogen ion concentration.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 5.10000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_ph.h2o_usda.a268_index.png" heigth="100%" width="100%"></div>
+</div>
+<div id="s.ext_mel3_mg.kg" class="section level3" number="3.2.65">
+<h3>
+<span class="header-section-number">3.2.65</span> s.ext_mel3_mg.kg<a class="anchor" aria-label="anchor" href="#s.ext_mel3_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available S.. It can be alternatively described as <code>Sulphur, Extractable, Mehlich3</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 16.800.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_s.ext_mel3_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+<div id="s.tot_usda.a624_w.pct" class="section level3" number="3.2.66">
+<h3>
+<span class="header-section-number">3.2.66</span> s.tot_usda.a624_w.pct<a class="anchor" aria-label="anchor" href="#s.tot_usda.a624_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Total sulfur is a measure of all organic and inorganic sulfur, including that found in sulfide minerals.. It can be alternatively described as <code>Sulfur, Total NCS</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.03569.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_s.tot_usda.a624_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="sand.tot_iso.11277_w.pct" class="section level3" number="3.2.67">
+<h3>
+<span class="header-section-number">3.2.67</span> sand.tot_iso.11277_w.pct<a class="anchor" aria-label="anchor" href="#sand.tot_iso.11277_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a &lt;2 mm base.. It can be alternatively described as <code>Sand, Total, iso 11277</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 9.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_sand.tot_iso.11277_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="sand.tot_usda.c405_w.pct" class="section level3" number="3.2.68">
+<h3>
+<span class="header-section-number">3.2.68</span> sand.tot_usda.c405_w.pct<a class="anchor" aria-label="anchor" href="#sand.tot_usda.c405_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a &lt;2 mm base.. It can be alternatively described as <code>Sand, Total, N prep</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 79.4.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_sand.tot_usda.c405_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="sand.tot_usda.c60_w.pct" class="section level3" number="3.2.69">
+<h3>
+<span class="header-section-number">3.2.69</span> sand.tot_usda.c60_w.pct<a class="anchor" aria-label="anchor" href="#sand.tot_usda.c60_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a &lt;2 mm base.. It can be alternatively described as <code>Sand, Total, S prep</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 50.37000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_sand.tot_usda.c60_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="silt.tot_iso.11277_w.pct" class="section level3" number="3.2.70">
+<h3>
+<span class="header-section-number">3.2.70</span> silt.tot_iso.11277_w.pct<a class="anchor" aria-label="anchor" href="#silt.tot_iso.11277_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a &lt;2 mm base.. It can be alternatively described as <code>Silt, Total, iso 11277</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 40.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_silt.tot_iso.11277_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="silt.tot_usda.c407_w.pct" class="section level3" number="3.2.71">
+<h3>
+<span class="header-section-number">3.2.71</span> silt.tot_usda.c407_w.pct<a class="anchor" aria-label="anchor" href="#silt.tot_usda.c407_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a &lt;2 mm base.. It can be alternatively described as <code>Silt, Total, N prep</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 18.2.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_silt.tot_usda.c407_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="silt.tot_usda.c62_w.pct" class="section level3" number="3.2.72">
+<h3>
+<span class="header-section-number">3.2.72</span> silt.tot_usda.c62_w.pct<a class="anchor" aria-label="anchor" href="#silt.tot_usda.c62_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a &lt;2 mm base.. It can be alternatively described as <code>Silt, Total, S prep</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 18.64000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_silt.tot_usda.c62_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="wr.10kpa_usda.a414_w.pct" class="section level3" number="3.2.73">
+<h3>
+<span class="header-section-number">3.2.73</span> wr.10kPa_usda.a414_w.pct<a class="anchor" aria-label="anchor" href="#wr.10kpa_usda.a414_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: The gravimetric percent water after equilibration at 1/10 bar (10 kPa) water tension.. It can be alternatively described as <code>Water Retention, 1/10 Bar (10 kPa)</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 10.852961.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_wr.10kPa_usda.a414_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="wr.10kpa_usda.a8_w.pct" class="section level3" number="3.2.74">
+<h3>
+<span class="header-section-number">3.2.74</span> wr.10kPa_usda.a8_w.pct<a class="anchor" aria-label="anchor" href="#wr.10kpa_usda.a8_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: The gravimetric percent water after equilibration at 1/10 bar (10 kPa) water tension.. It can be alternatively described as <code>Water Retention, 1/10 Bar (10 kPa), Clod</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 23.00000.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_wr.10kPa_usda.a8_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="wr.1500kpa_usda.a417_w.pct" class="section level3" number="3.2.75">
+<h3>
+<span class="header-section-number">3.2.75</span> wr.1500kPa_usda.a417_w.pct<a class="anchor" aria-label="anchor" href="#wr.1500kpa_usda.a417_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: The gravimetric percent water after equilibration at 15 bar (1500 kPa) water tension.. It can be alternatively described as <code>Water Retention, 15 Bar (1500 kPa)</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 3.000000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_wr.1500kPa_usda.a417_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="wr.33kpa_usda.a415_w.pct" class="section level3" number="3.2.76">
+<h3>
+<span class="header-section-number">3.2.76</span> wr.33kPa_usda.a415_w.pct<a class="anchor" aria-label="anchor" href="#wr.33kpa_usda.a415_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: The gravimetric percent water after equilibration at 1/3 bar (33 kPa) water tension.. It can be alternatively described as <code>Water Retention, 1/3 Bar (33 kPa)</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 29.17023.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_wr.33kPa_usda.a415_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="wr.33kpa_usda.a9_w.pct" class="section level3" number="3.2.77">
+<h3>
+<span class="header-section-number">3.2.77</span> wr.33kPa_usda.a9_w.pct<a class="anchor" aria-label="anchor" href="#wr.33kpa_usda.a9_w.pct"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: The gravimetric percent water after equilibration at 1/3 bar (33 kPa) water tension.. It can be alternatively described as <code>Water Retention, 1/3 Bar (33 kPa), Clod</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>w.pct</code>, i.e., weight percent.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 18.20000.</li>
+<li>🟡 Availability: only level 0.</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L0_wr.33kPa_usda.a9_w.pct.png" heigth="100%" width="100%"></div>
+</div>
+<div id="zn.ext_usda.a1073_mg.kg" class="section level3" number="3.2.78">
+<h3>
+<span class="header-section-number">3.2.78</span> zn.ext_usda.a1073_mg.kg<a class="anchor" aria-label="anchor" href="#zn.ext_usda.a1073_mg.kg"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Exchangeable or plant available Zn.. It can be alternatively described as <code>Zinc, Extractable, Mehlich3</code>.</li>
+<li>📐 Measurement unit: Imported into the OSSL as <code>mg.kg</code>, i.e., miligrams per kilogram of soil.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 1.0300000.</li>
+<li>🟢 Availability: level 0 and level 1 (harmonized).</li>
+</ul>
+<div class="inline-figure"><img src="heatmap_v1.2/heatmap_L1_zn.ext_usda.a1073_mg.kg.png" heigth="100%" width="100%"></div>
+</div>
+</div>
+<div id="mir-table" class="section level2" number="3.3">
+<h2>
+<span class="header-section-number">3.3</span> MIR scans<a class="anchor" aria-label="anchor" href="#mir-table"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>Middle-infrared (MIR) spectra</strong> is provided in absorbance units per wavenumber, with values usually ranging between 0 and 3. The spectral range imported into the OSSL falls between 600 and 4000 cm<sup>-1</sup>, with an interval of 2 cm<sup>-1</sup>. All datasets are harmonized to this specification.</p>
+<p>One can convert reflectance (R) values to absorbance units (A) as <code>A = log10(1/R)</code>, or backtransform with <code>R = 1/(10^A)</code>. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with <code>WN = 1/(WL*10000000)</code>, or backtransform with <code>WL = 1/(WL*10000000)</code>. The factor 10M is used to convert cm to nm.</p>
+<div id="id.layer_uuid_txt-2" class="section level3" number="3.3.1">
+<h3>
+<span class="header-section-number">3.3.1</span> id.layer_uuid_txt<a class="anchor" aria-label="anchor" href="#id.layer_uuid_txt-2"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: OSSL unique identifier.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: 8585028b0344511c951fc0298b5ab3a8.</li>
+</ul>
+</div>
+<div id="id.scan_local_c" class="section level3" number="3.3.2">
+<h3>
+<span class="header-section-number">3.3.2</span> id.scan_local_c<a class="anchor" aria-label="anchor" href="#id.scan_local_c"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Original scan identifier.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: icr021044.</li>
+</ul>
+</div>
+<div id="scan.mir.date.begin_iso.8601_yyyy.mm.dd" class="section level3" number="3.3.3">
+<h3>
+<span class="header-section-number">3.3.3</span> scan.mir.date.begin_iso.8601_yyyy.mm.dd<a class="anchor" aria-label="anchor" href="#scan.mir.date.begin_iso.8601_yyyy.mm.dd"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Begin date of scanning following YYYY-MM-DD format (ISO 8601).</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 2009-01-01.</li>
+</ul>
+</div>
+<div id="scan.mir.date.end_iso.8601_yyyy.mm.dd" class="section level3" number="3.3.4">
+<h3>
+<span class="header-section-number">3.3.4</span> scan.mir.date.end_iso.8601_yyyy.mm.dd<a class="anchor" aria-label="anchor" href="#scan.mir.date.end_iso.8601_yyyy.mm.dd"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Begin date of scanning following YYYY-MM-DD format (ISO 8601).</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 2013-12-31.</li>
+</ul>
+</div>
+<div id="scan.mir.model.name_utf8_txt" class="section level3" number="3.3.5">
+<h3>
+<span class="header-section-number">3.3.5</span> scan.mir.model.name_utf8_txt<a class="anchor" aria-label="anchor" href="#scan.mir.model.name_utf8_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: MIR instrument manufacturer, model and accessory (if any).</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: Bruker Tensor 27 with HTS-XT accessory.</li>
+</ul>
+</div>
+<div id="scan.mir.model.code_any_txt" class="section level3" number="3.3.6">
+<h3>
+<span class="header-section-number">3.3.6</span> scan.mir.model.code_any_txt<a class="anchor" aria-label="anchor" href="#scan.mir.model.code_any_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: MIR instrument coding.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: Bruker_Tensor_27.HTS.XT.</li>
+</ul>
+</div>
+<div id="scan.mir.method.optics_any_txt" class="section level3" number="3.3.7">
+<h3>
+<span class="header-section-number">3.3.7</span> scan.mir.method.optics_any_txt<a class="anchor" aria-label="anchor" href="#scan.mir.method.optics_any_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Metadata information related to instrument optics and measurements.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: KBr beamsplitter; DTGS detector.</li>
+</ul>
+</div>
+<div id="scan.mir.method.preparation_any_txt" class="section level3" number="3.3.8">
+<h3>
+<span class="header-section-number">3.3.8</span> scan.mir.method.preparation_any_txt<a class="anchor" aria-label="anchor" href="#scan.mir.method.preparation_any_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Soil sample preparation before scanning.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: Finely ground &lt;80 mesh.</li>
+</ul>
+</div>
+<div id="scan.mir.license.title_ascii_txt" class="section level3" number="3.3.9">
+<h3>
+<span class="header-section-number">3.3.9</span> scan.mir.license.title_ascii_txt<a class="anchor" aria-label="anchor" href="#scan.mir.license.title_ascii_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset scans license.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: CC-BY.</li>
+</ul>
+</div>
+<div id="scan.mir.license.address_idn_url" class="section level3" number="3.3.10">
+<h3>
+<span class="header-section-number">3.3.10</span> scan.mir.license.address_idn_url<a class="anchor" aria-label="anchor" href="#scan.mir.license.address_idn_url"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset scans license url.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: <a href="https://creativecommons.org/licenses/by/4.0/" class="uri">https://creativecommons.org/licenses/by/4.0/</a>.</li>
+</ul>
+</div>
+<div id="scan.mir.doi_idf_url" class="section level3" number="3.3.11">
+<h3>
+<span class="header-section-number">3.3.11</span> scan.mir.doi_idf_url<a class="anchor" aria-label="anchor" href="#scan.mir.doi_idf_url"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Digital object identifier (DOI) url of the dataset scans.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: <a href="https://doi.org/10.34725/DVN/QXCWP1" class="uri">https://doi.org/10.34725/DVN/QXCWP1</a>.</li>
+</ul>
+</div>
+<div id="scan.mir.contact.name_utf8_txt" class="section level3" number="3.3.12">
+<h3>
+<span class="header-section-number">3.3.12</span> scan.mir.contact.name_utf8_txt<a class="anchor" aria-label="anchor" href="#scan.mir.contact.name_utf8_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset scans contact name.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: Vagen, Tor-Gunnar (World Agroforestry).</li>
+</ul>
+</div>
+<div id="scan.mir.contact.email_ietf_txt" class="section level3" number="3.3.13">
+<h3>
+<span class="header-section-number">3.3.13</span> scan.mir.contact.email_ietf_txt<a class="anchor" aria-label="anchor" href="#scan.mir.contact.email_ietf_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset scans contact email.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: <a href="mailto:afsis.info@africasoils.net" class="email">afsis.info@africasoils.net</a>.</li>
+</ul>
+</div>
+<div id="scan_mir.600_abs" class="section level3" number="3.3.14">
+<h3>
+<span class="header-section-number">3.3.14</span> scan_mir.600_abs<a class="anchor" aria-label="anchor" href="#scan_mir.600_abs"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Absorbance in log10 unit, first wavenumber in the 600-4000 cm-1 range.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 1.38812.</li>
+</ul>
+</div>
+<div id="scan_mir.4000_abs" class="section level3" number="3.3.15">
+<h3>
+<span class="header-section-number">3.3.15</span> scan_mir.4000_abs<a class="anchor" aria-label="anchor" href="#scan_mir.4000_abs"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Absorbance in log10 unit, last wavenumber in the 600-4000 cm-1 range.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.2452604.</li>
+</ul>
+</div>
+</div>
+<div id="visnir-table" class="section level2" number="3.4">
+<h2>
+<span class="header-section-number">3.4</span> VisNIR scans<a class="anchor" aria-label="anchor" href="#visnir-table"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>Visible and Near-Infrared (VisNIR) spectra</strong> is provided in reflectance units per wavelength, with values usually ranging between 0 and 1 as fraction percent. The spectral range imported into the OSSL falls between 350 and 2500 nm, with an interval of 2 nm. All datasets are harmonized to this specification.</p>
+<p>One can convert reflectance (R) values to absorbance units (A) as <code>A = log10(1/R)</code>, or backtransform with <code>R = 1/(10^A)</code>. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with <code>WN = 1/(WL*10000000)</code>, or backtransform with <code>WL = 1/(WL*10000000)</code>. The factor 10M is used to convert cm to nm.</p>
+<div id="id.layer_uuid_txt-3" class="section level3" number="3.4.1">
+<h3>
+<span class="header-section-number">3.4.1</span> id.layer_uuid_txt<a class="anchor" aria-label="anchor" href="#id.layer_uuid_txt-3"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: OSSL unique identifier.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: bb01d3da0ea0d4d796b3391bb1d174f1.</li>
+</ul>
+</div>
+<div id="id.scan_local_c-1" class="section level3" number="3.4.2">
+<h3>
+<span class="header-section-number">3.4.2</span> id.scan_local_c<a class="anchor" aria-label="anchor" href="#id.scan_local_c-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Original scan identifier.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: 196784MD01.</li>
+</ul>
+</div>
+<div id="scan.visnir.date.begin_iso.8601_yyyy.mm.dd" class="section level3" number="3.4.3">
+<h3>
+<span class="header-section-number">3.4.3</span> scan.visnir.date.begin_iso.8601_yyyy.mm.dd<a class="anchor" aria-label="anchor" href="#scan.visnir.date.begin_iso.8601_yyyy.mm.dd"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Begin date of scanning following YYYY-MM-DD format (ISO 8601).</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 2015-03-05.</li>
+</ul>
+</div>
+<div id="scan.visnir.date.end_iso.8601_yyyy.mm.dd" class="section level3" number="3.4.4">
+<h3>
+<span class="header-section-number">3.4.4</span> scan.visnir.date.end_iso.8601_yyyy.mm.dd<a class="anchor" aria-label="anchor" href="#scan.visnir.date.end_iso.8601_yyyy.mm.dd"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Begin date of scanning following YYYY-MM-DD format (ISO 8601).</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 2015-03-05.</li>
+</ul>
+</div>
+<div id="scan.visnir.model.name_utf8_txt" class="section level3" number="3.4.5">
+<h3>
+<span class="header-section-number">3.4.5</span> scan.visnir.model.name_utf8_txt<a class="anchor" aria-label="anchor" href="#scan.visnir.model.name_utf8_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: VisNIR instrument manufacturer, model and accessory (if any).</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: ASD Labspec 2500 with Muglight accessory.</li>
+</ul>
+</div>
+<div id="scan.visnir.model.code_any_txt" class="section level3" number="3.4.6">
+<h3>
+<span class="header-section-number">3.4.6</span> scan.visnir.model.code_any_txt<a class="anchor" aria-label="anchor" href="#scan.visnir.model.code_any_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: VisNIR instrument coding.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: ASD_Labspec_2500_MA.</li>
+</ul>
+</div>
+<div id="scan.visnir.method.optics_any_txt" class="section level3" number="3.4.7">
+<h3>
+<span class="header-section-number">3.4.7</span> scan.visnir.method.optics_any_txt<a class="anchor" aria-label="anchor" href="#scan.visnir.method.optics_any_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Metadata information related to instrument optics and measurements.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: 4.5 W halogen lamp.</li>
+</ul>
+</div>
+<div id="scan.visnir.method.preparation_any_txt" class="section level3" number="3.4.8">
+<h3>
+<span class="header-section-number">3.4.8</span> scan.visnir.method.preparation_any_txt<a class="anchor" aria-label="anchor" href="#scan.visnir.method.preparation_any_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Soil sample preparation before scanning.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: Sieved &lt;2 mm.</li>
+</ul>
+</div>
+<div id="scan.visnir.license.title_ascii_txt" class="section level3" number="3.4.9">
+<h3>
+<span class="header-section-number">3.4.9</span> scan.visnir.license.title_ascii_txt<a class="anchor" aria-label="anchor" href="#scan.visnir.license.title_ascii_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset scans license.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: CC-BY.</li>
+</ul>
+</div>
+<div id="scan.visnir.license.address_idn_url" class="section level3" number="3.4.10">
+<h3>
+<span class="header-section-number">3.4.10</span> scan.visnir.license.address_idn_url<a class="anchor" aria-label="anchor" href="#scan.visnir.license.address_idn_url"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset scans license url.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: <a href="https://www.nrcs.usda.gov/resources/data-and-reports/rapid-carbon-assessment-raca" class="uri">https://www.nrcs.usda.gov/resources/data-and-reports/rapid-carbon-assessment-raca</a>.</li>
+</ul>
+</div>
+<div id="scan.visnir.doi_idf_url" class="section level3" number="3.4.11">
+<h3>
+<span class="header-section-number">3.4.11</span> scan.visnir.doi_idf_url<a class="anchor" aria-label="anchor" href="#scan.visnir.doi_idf_url"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Digital object identifier (DOI) url of the dataset scans.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: <a href="https://doi.org/10.1007/978-3-319-04084-4_10" class="uri">https://doi.org/10.1007/978-3-319-04084-4_10</a>.</li>
+</ul>
+</div>
+<div id="scan.visnir.contact.name_utf8_txt" class="section level3" number="3.4.12">
+<h3>
+<span class="header-section-number">3.4.12</span> scan.visnir.contact.name_utf8_txt<a class="anchor" aria-label="anchor" href="#scan.visnir.contact.name_utf8_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset scans contact name.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: Scarlett Murphy.</li>
+</ul>
+</div>
+<div id="scan.visnir.contact.email_ietf_txt" class="section level3" number="3.4.13">
+<h3>
+<span class="header-section-number">3.4.13</span> scan.visnir.contact.email_ietf_txt<a class="anchor" aria-label="anchor" href="#scan.visnir.contact.email_ietf_txt"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Dataset scans contact email.</li>
+<li>🔢 Type: string.</li>
+<li>📖 Example: <a href="mailto:Scarlett.Murphy@usda.gov" class="email">Scarlett.Murphy@usda.gov</a>.</li>
+</ul>
+</div>
+<div id="scan_visnir.350_ref" class="section level3" number="3.4.14">
+<h3>
+<span class="header-section-number">3.4.14</span> scan_visnir.350_ref<a class="anchor" aria-label="anchor" href="#scan_visnir.350_ref"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Reflectance in fraction unit, first wavelength in the 350-2500 nm range.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.10403320.</li>
+</ul>
+</div>
+<div id="scan_visnir.2500_ref" class="section level3" number="3.4.15">
+<h3>
+<span class="header-section-number">3.4.15</span> scan_visnir.2500_ref<a class="anchor" aria-label="anchor" href="#scan_visnir.2500_ref"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>📚 Description: Reflectance in fraction unit, last wavelength in the 350-2500 nm range.</li>
+<li>🔢 Type: numeric.</li>
+<li>📖 Example: 0.3622029.</li>
+</ul>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="soil-spectroscopy-tools-and-users.html"><span class="header-section-number">2</span> Soil spectroscopy tools and users</a></div>
+<div class="next"><a href="database-access.html"><span class="header-section-number">4</span> Database access</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#database-description"><span class="header-section-number">3</span> Database description</a></li>
+<li>
+<a class="nav-link" href="#sites-table"><span class="header-section-number">3.1</span> Soil site data</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#dataset.code_ascii_txt"><span class="header-section-number">3.1.1</span> dataset.code_ascii_txt</a></li>
+<li><a class="nav-link" href="#id.layer_uuid_txt"><span class="header-section-number">3.1.2</span> id.layer_uuid_txt</a></li>
+<li><a class="nav-link" href="#id.layer_local_c"><span class="header-section-number">3.1.3</span> id.layer_local_c</a></li>
+<li><a class="nav-link" href="#longitude.point_wgs84_dd"><span class="header-section-number">3.1.4</span> longitude.point_wgs84_dd</a></li>
+<li><a class="nav-link" href="#latitude.point_wgs84_dd"><span class="header-section-number">3.1.5</span> latitude.point_wgs84_dd</a></li>
+<li><a class="nav-link" href="#layer.sequence_usda_uint16"><span class="header-section-number">3.1.6</span> layer.sequence_usda_uint16</a></li>
+<li><a class="nav-link" href="#layer.upper.depth_usda_cm"><span class="header-section-number">3.1.7</span> layer.upper.depth_usda_cm</a></li>
+<li><a class="nav-link" href="#layer.lower.depth_usda_cm"><span class="header-section-number">3.1.8</span> layer.lower.depth_usda_cm</a></li>
+<li><a class="nav-link" href="#observation.date.begin_iso.8601_yyyy.mm.dd"><span class="header-section-number">3.1.9</span> observation.date.begin_iso.8601_yyyy.mm.dd</a></li>
+<li><a class="nav-link" href="#observation.date.end_iso.8601_yyyy.mm.dd"><span class="header-section-number">3.1.10</span> observation.date.end_iso.8601_yyyy.mm.dd</a></li>
+<li><a class="nav-link" href="#surveyor.title_utf8_txt"><span class="header-section-number">3.1.11</span> surveyor.title_utf8_txt</a></li>
+<li><a class="nav-link" href="#id.project_ascii_txt"><span class="header-section-number">3.1.12</span> id.project_ascii_txt</a></li>
+<li><a class="nav-link" href="#id.location_olc_txt"><span class="header-section-number">3.1.13</span> id.location_olc_txt</a></li>
+<li><a class="nav-link" href="#layer.texture_usda_txt"><span class="header-section-number">3.1.14</span> layer.texture_usda_txt</a></li>
+<li><a class="nav-link" href="#pedon.taxa_usda_txt"><span class="header-section-number">3.1.15</span> pedon.taxa_usda_txt</a></li>
+<li><a class="nav-link" href="#horizon.designation_usda_txt"><span class="header-section-number">3.1.16</span> horizon.designation_usda_txt</a></li>
+<li><a class="nav-link" href="#longitude.county_wgs84_dd"><span class="header-section-number">3.1.17</span> longitude.county_wgs84_dd</a></li>
+<li><a class="nav-link" href="#latitude.county_wgs84_dd"><span class="header-section-number">3.1.18</span> latitude.county_wgs84_dd</a></li>
+<li><a class="nav-link" href="#location.point.error_any_m"><span class="header-section-number">3.1.19</span> location.point.error_any_m</a></li>
+<li><a class="nav-link" href="#location.country_iso.3166_txt"><span class="header-section-number">3.1.20</span> location.country_iso.3166_txt</a></li>
+<li><a class="nav-link" href="#observation.ogc.schema.title_ogc_txt"><span class="header-section-number">3.1.21</span> observation.ogc.schema.title_ogc_txt</a></li>
+<li><a class="nav-link" href="#observation.ogc.schema_idn_url"><span class="header-section-number">3.1.22</span> observation.ogc.schema_idn_url</a></li>
+<li><a class="nav-link" href="#surveyor.contact_ietf_email"><span class="header-section-number">3.1.23</span> surveyor.contact_ietf_email</a></li>
+<li><a class="nav-link" href="#surveyor.address_utf8_txt"><span class="header-section-number">3.1.24</span> surveyor.address_utf8_txt</a></li>
+<li><a class="nav-link" href="#dataset.title_utf8_txt"><span class="header-section-number">3.1.25</span> dataset.title_utf8_txt</a></li>
+<li><a class="nav-link" href="#dataset.owner_utf8_txt"><span class="header-section-number">3.1.26</span> dataset.owner_utf8_txt</a></li>
+<li><a class="nav-link" href="#dataset.address_idn_url"><span class="header-section-number">3.1.27</span> dataset.address_idn_url</a></li>
+<li><a class="nav-link" href="#dataset.doi_idf_url"><span class="header-section-number">3.1.28</span> dataset.doi_idf_url</a></li>
+<li><a class="nav-link" href="#dataset.license.title_ascii_txt"><span class="header-section-number">3.1.29</span> dataset.license.title_ascii_txt</a></li>
+<li><a class="nav-link" href="#dataset.license.address_idn_url"><span class="header-section-number">3.1.30</span> dataset.license.address_idn_url</a></li>
+<li><a class="nav-link" href="#dataset.contact.name_utf8_txt"><span class="header-section-number">3.1.31</span> dataset.contact.name_utf8_txt</a></li>
+<li><a class="nav-link" href="#dataset.contact_ietf_email"><span class="header-section-number">3.1.32</span> dataset.contact_ietf_email</a></li>
+<li><a class="nav-link" href="#id.dataset.site_ascii_txt"><span class="header-section-number">3.1.33</span> id.dataset.site_ascii_txt</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#soillab-table"><span class="header-section-number">3.2</span> Soil laboratory (wet chemistry) data</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#dataset.code_ascii_txt-1"><span class="header-section-number">3.2.1</span> dataset.code_ascii_txt</a></li>
+<li><a class="nav-link" href="#id.layer_uuid_txt-1"><span class="header-section-number">3.2.2</span> id.layer_uuid_txt</a></li>
+<li><a class="nav-link" href="#acidity_usda.a795_cmolc.kg"><span class="header-section-number">3.2.3</span> acidity_usda.a795_cmolc.kg</a></li>
+<li><a class="nav-link" href="#aggstb_usda.a1_w.pct"><span class="header-section-number">3.2.4</span> aggstb_usda.a1_w.pct</a></li>
+<li><a class="nav-link" href="#al.dith_usda.a65_w.pct"><span class="header-section-number">3.2.5</span> al.dith_usda.a65_w.pct</a></li>
+<li><a class="nav-link" href="#al.ext_aquaregia_g.kg"><span class="header-section-number">3.2.6</span> al.ext_aquaregia_g.kg</a></li>
+<li><a class="nav-link" href="#al.ext_usda.a1056_mg.kg"><span class="header-section-number">3.2.7</span> al.ext_usda.a1056_mg.kg</a></li>
+<li><a class="nav-link" href="#al.ext_usda.a69_cmolc.kg"><span class="header-section-number">3.2.8</span> al.ext_usda.a69_cmolc.kg</a></li>
+<li><a class="nav-link" href="#al.ox_usda.a59_w.pct"><span class="header-section-number">3.2.9</span> al.ox_usda.a59_w.pct</a></li>
+<li><a class="nav-link" href="#awc.33.1500kpa_usda.c80_w.frac"><span class="header-section-number">3.2.10</span> awc.33.1500kPa_usda.c80_w.frac</a></li>
+<li><a class="nav-link" href="#b.ext_mel3_mg.kg"><span class="header-section-number">3.2.11</span> b.ext_mel3_mg.kg</a></li>
+<li><a class="nav-link" href="#bd_iso.11272_g.cm3"><span class="header-section-number">3.2.12</span> bd_iso.11272_g.cm3</a></li>
+<li><a class="nav-link" href="#bd_usda.a21_g.cm3"><span class="header-section-number">3.2.13</span> bd_usda.a21_g.cm3</a></li>
+<li><a class="nav-link" href="#bd_usda.a4_g.cm3"><span class="header-section-number">3.2.14</span> bd_usda.a4_g.cm3</a></li>
+<li><a class="nav-link" href="#c.tot_iso.10694_w.pct"><span class="header-section-number">3.2.15</span> c.tot_iso.10694_w.pct</a></li>
+<li><a class="nav-link" href="#c.tot_usda.a622_w.pct"><span class="header-section-number">3.2.16</span> c.tot_usda.a622_w.pct</a></li>
+<li><a class="nav-link" href="#ca.ext_aquaregia_mg.kg"><span class="header-section-number">3.2.17</span> ca.ext_aquaregia_mg.kg</a></li>
+<li><a class="nav-link" href="#ca.ext_usda.a1059_mg.kg"><span class="header-section-number">3.2.18</span> ca.ext_usda.a1059_mg.kg</a></li>
+<li><a class="nav-link" href="#ca.ext_usda.a722_cmolc.kg"><span class="header-section-number">3.2.19</span> ca.ext_usda.a722_cmolc.kg</a></li>
+<li><a class="nav-link" href="#caco3_iso.10693_w.pct"><span class="header-section-number">3.2.20</span> caco3_iso.10693_w.pct</a></li>
+<li><a class="nav-link" href="#caco3_usda.a54_w.pct"><span class="header-section-number">3.2.21</span> caco3_usda.a54_w.pct</a></li>
+<li><a class="nav-link" href="#cec_iso.11260_cmolc.kg"><span class="header-section-number">3.2.22</span> cec_iso.11260_cmolc.kg</a></li>
+<li><a class="nav-link" href="#cec_usda.a723_cmolc.kg"><span class="header-section-number">3.2.23</span> cec_usda.a723_cmolc.kg</a></li>
+<li><a class="nav-link" href="#cf_iso.11464_w.pct"><span class="header-section-number">3.2.24</span> cf_iso.11464_w.pct</a></li>
+<li><a class="nav-link" href="#cf_usda.c236_w.pct"><span class="header-section-number">3.2.25</span> cf_usda.c236_w.pct</a></li>
+<li><a class="nav-link" href="#clay.tot_iso.11277_w.pct"><span class="header-section-number">3.2.26</span> clay.tot_iso.11277_w.pct</a></li>
+<li><a class="nav-link" href="#clay.tot_usda.a334_w.pct"><span class="header-section-number">3.2.27</span> clay.tot_usda.a334_w.pct</a></li>
+<li><a class="nav-link" href="#cu.ext_usda.a1063_mg.kg"><span class="header-section-number">3.2.28</span> cu.ext_usda.a1063_mg.kg</a></li>
+<li><a class="nav-link" href="#ec_iso.11265_ds.m"><span class="header-section-number">3.2.29</span> ec_iso.11265_ds.m</a></li>
+<li><a class="nav-link" href="#ec_usda.a364_ds.m"><span class="header-section-number">3.2.30</span> ec_usda.a364_ds.m</a></li>
+<li><a class="nav-link" href="#efferv_usda.a479_class"><span class="header-section-number">3.2.31</span> efferv_usda.a479_class</a></li>
+<li><a class="nav-link" href="#fe.dith_usda.a66_w.pct"><span class="header-section-number">3.2.32</span> fe.dith_usda.a66_w.pct</a></li>
+<li><a class="nav-link" href="#fe.ext_aquaregia_g.kg"><span class="header-section-number">3.2.33</span> fe.ext_aquaregia_g.kg</a></li>
+<li><a class="nav-link" href="#fe.ext_usda.a1064_mg.kg"><span class="header-section-number">3.2.34</span> fe.ext_usda.a1064_mg.kg</a></li>
+<li><a class="nav-link" href="#fe.ox_usda.a60_w.pct"><span class="header-section-number">3.2.35</span> fe.ox_usda.a60_w.pct</a></li>
+<li><a class="nav-link" href="#k.ext_aquaregia_mg.kg"><span class="header-section-number">3.2.36</span> k.ext_aquaregia_mg.kg</a></li>
+<li><a class="nav-link" href="#k.ext_usda.a1065_mg.kg"><span class="header-section-number">3.2.37</span> k.ext_usda.a1065_mg.kg</a></li>
+<li><a class="nav-link" href="#k.ext_usda.a725_cmolc.kg"><span class="header-section-number">3.2.38</span> k.ext_usda.a725_cmolc.kg</a></li>
+<li><a class="nav-link" href="#mg.ext_aquaregia_mg.kg"><span class="header-section-number">3.2.39</span> mg.ext_aquaregia_mg.kg</a></li>
+<li><a class="nav-link" href="#mg.ext_usda.a1066_mg.kg"><span class="header-section-number">3.2.40</span> mg.ext_usda.a1066_mg.kg</a></li>
+<li><a class="nav-link" href="#mg.ext_usda.a724_cmolc.kg"><span class="header-section-number">3.2.41</span> mg.ext_usda.a724_cmolc.kg</a></li>
+<li><a class="nav-link" href="#mn.ext_aquaregia_mg.kg"><span class="header-section-number">3.2.42</span> mn.ext_aquaregia_mg.kg</a></li>
+<li><a class="nav-link" href="#mn.ext_usda.a1067_mg.kg"><span class="header-section-number">3.2.43</span> mn.ext_usda.a1067_mg.kg</a></li>
+<li><a class="nav-link" href="#mn.ext_usda.a70_mg.kg"><span class="header-section-number">3.2.44</span> mn.ext_usda.a70_mg.kg</a></li>
+<li><a class="nav-link" href="#n.tot_iso.11261_w.pct"><span class="header-section-number">3.2.45</span> n.tot_iso.11261_w.pct</a></li>
+<li><a class="nav-link" href="#n.tot_iso.13878_w.pct"><span class="header-section-number">3.2.46</span> n.tot_iso.13878_w.pct</a></li>
+<li><a class="nav-link" href="#n.tot_usda.a623_w.pct"><span class="header-section-number">3.2.47</span> n.tot_usda.a623_w.pct</a></li>
+<li><a class="nav-link" href="#na.ext_aquaregia_mg.kg"><span class="header-section-number">3.2.48</span> na.ext_aquaregia_mg.kg</a></li>
+<li><a class="nav-link" href="#na.ext_usda.a1068_mg.kg"><span class="header-section-number">3.2.49</span> na.ext_usda.a1068_mg.kg</a></li>
+<li><a class="nav-link" href="#na.ext_usda.a726_cmolc.kg"><span class="header-section-number">3.2.50</span> na.ext_usda.a726_cmolc.kg</a></li>
+<li><a class="nav-link" href="#oc_iso.10694_w.pct"><span class="header-section-number">3.2.51</span> oc_iso.10694_w.pct</a></li>
+<li><a class="nav-link" href="#oc_usda.c1059_w.pct"><span class="header-section-number">3.2.52</span> oc_usda.c1059_w.pct</a></li>
+<li><a class="nav-link" href="#oc_usda.c729_w.pct"><span class="header-section-number">3.2.53</span> oc_usda.c729_w.pct</a></li>
+<li><a class="nav-link" href="#p.ext_aquaregia_mg.kg"><span class="header-section-number">3.2.54</span> p.ext_aquaregia_mg.kg</a></li>
+<li><a class="nav-link" href="#p.ext_iso.11263_mg.kg"><span class="header-section-number">3.2.55</span> p.ext_iso.11263_mg.kg</a></li>
+<li><a class="nav-link" href="#p.ext_usda.a1070_mg.kg"><span class="header-section-number">3.2.56</span> p.ext_usda.a1070_mg.kg</a></li>
+<li><a class="nav-link" href="#p.ext_usda.a270_mg.kg"><span class="header-section-number">3.2.57</span> p.ext_usda.a270_mg.kg</a></li>
+<li><a class="nav-link" href="#p.ext_usda.a274_mg.kg"><span class="header-section-number">3.2.58</span> p.ext_usda.a274_mg.kg</a></li>
+<li><a class="nav-link" href="#p.ext_usda.a652_mg.kg"><span class="header-section-number">3.2.59</span> p.ext_usda.a652_mg.kg</a></li>
+<li><a class="nav-link" href="#ph.cacl2_iso.10390_index"><span class="header-section-number">3.2.60</span> ph.cacl2_iso.10390_index</a></li>
+<li><a class="nav-link" href="#ph.cacl2_usda.a477_index"><span class="header-section-number">3.2.61</span> ph.cacl2_usda.a477_index</a></li>
+<li><a class="nav-link" href="#ph.cacl2_usda.a481_index"><span class="header-section-number">3.2.62</span> ph.cacl2_usda.a481_index</a></li>
+<li><a class="nav-link" href="#ph.h2o_iso.10390_index"><span class="header-section-number">3.2.63</span> ph.h2o_iso.10390_index</a></li>
+<li><a class="nav-link" href="#ph.h2o_usda.a268_index"><span class="header-section-number">3.2.64</span> ph.h2o_usda.a268_index</a></li>
+<li><a class="nav-link" href="#s.ext_mel3_mg.kg"><span class="header-section-number">3.2.65</span> s.ext_mel3_mg.kg</a></li>
+<li><a class="nav-link" href="#s.tot_usda.a624_w.pct"><span class="header-section-number">3.2.66</span> s.tot_usda.a624_w.pct</a></li>
+<li><a class="nav-link" href="#sand.tot_iso.11277_w.pct"><span class="header-section-number">3.2.67</span> sand.tot_iso.11277_w.pct</a></li>
+<li><a class="nav-link" href="#sand.tot_usda.c405_w.pct"><span class="header-section-number">3.2.68</span> sand.tot_usda.c405_w.pct</a></li>
+<li><a class="nav-link" href="#sand.tot_usda.c60_w.pct"><span class="header-section-number">3.2.69</span> sand.tot_usda.c60_w.pct</a></li>
+<li><a class="nav-link" href="#silt.tot_iso.11277_w.pct"><span class="header-section-number">3.2.70</span> silt.tot_iso.11277_w.pct</a></li>
+<li><a class="nav-link" href="#silt.tot_usda.c407_w.pct"><span class="header-section-number">3.2.71</span> silt.tot_usda.c407_w.pct</a></li>
+<li><a class="nav-link" href="#silt.tot_usda.c62_w.pct"><span class="header-section-number">3.2.72</span> silt.tot_usda.c62_w.pct</a></li>
+<li><a class="nav-link" href="#wr.10kpa_usda.a414_w.pct"><span class="header-section-number">3.2.73</span> wr.10kPa_usda.a414_w.pct</a></li>
+<li><a class="nav-link" href="#wr.10kpa_usda.a8_w.pct"><span class="header-section-number">3.2.74</span> wr.10kPa_usda.a8_w.pct</a></li>
+<li><a class="nav-link" href="#wr.1500kpa_usda.a417_w.pct"><span class="header-section-number">3.2.75</span> wr.1500kPa_usda.a417_w.pct</a></li>
+<li><a class="nav-link" href="#wr.33kpa_usda.a415_w.pct"><span class="header-section-number">3.2.76</span> wr.33kPa_usda.a415_w.pct</a></li>
+<li><a class="nav-link" href="#wr.33kpa_usda.a9_w.pct"><span class="header-section-number">3.2.77</span> wr.33kPa_usda.a9_w.pct</a></li>
+<li><a class="nav-link" href="#zn.ext_usda.a1073_mg.kg"><span class="header-section-number">3.2.78</span> zn.ext_usda.a1073_mg.kg</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#mir-table"><span class="header-section-number">3.3</span> MIR scans</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#id.layer_uuid_txt-2"><span class="header-section-number">3.3.1</span> id.layer_uuid_txt</a></li>
+<li><a class="nav-link" href="#id.scan_local_c"><span class="header-section-number">3.3.2</span> id.scan_local_c</a></li>
+<li><a class="nav-link" href="#scan.mir.date.begin_iso.8601_yyyy.mm.dd"><span class="header-section-number">3.3.3</span> scan.mir.date.begin_iso.8601_yyyy.mm.dd</a></li>
+<li><a class="nav-link" href="#scan.mir.date.end_iso.8601_yyyy.mm.dd"><span class="header-section-number">3.3.4</span> scan.mir.date.end_iso.8601_yyyy.mm.dd</a></li>
+<li><a class="nav-link" href="#scan.mir.model.name_utf8_txt"><span class="header-section-number">3.3.5</span> scan.mir.model.name_utf8_txt</a></li>
+<li><a class="nav-link" href="#scan.mir.model.code_any_txt"><span class="header-section-number">3.3.6</span> scan.mir.model.code_any_txt</a></li>
+<li><a class="nav-link" href="#scan.mir.method.optics_any_txt"><span class="header-section-number">3.3.7</span> scan.mir.method.optics_any_txt</a></li>
+<li><a class="nav-link" href="#scan.mir.method.preparation_any_txt"><span class="header-section-number">3.3.8</span> scan.mir.method.preparation_any_txt</a></li>
+<li><a class="nav-link" href="#scan.mir.license.title_ascii_txt"><span class="header-section-number">3.3.9</span> scan.mir.license.title_ascii_txt</a></li>
+<li><a class="nav-link" href="#scan.mir.license.address_idn_url"><span class="header-section-number">3.3.10</span> scan.mir.license.address_idn_url</a></li>
+<li><a class="nav-link" href="#scan.mir.doi_idf_url"><span class="header-section-number">3.3.11</span> scan.mir.doi_idf_url</a></li>
+<li><a class="nav-link" href="#scan.mir.contact.name_utf8_txt"><span class="header-section-number">3.3.12</span> scan.mir.contact.name_utf8_txt</a></li>
+<li><a class="nav-link" href="#scan.mir.contact.email_ietf_txt"><span class="header-section-number">3.3.13</span> scan.mir.contact.email_ietf_txt</a></li>
+<li><a class="nav-link" href="#scan_mir.600_abs"><span class="header-section-number">3.3.14</span> scan_mir.600_abs</a></li>
+<li><a class="nav-link" href="#scan_mir.4000_abs"><span class="header-section-number">3.3.15</span> scan_mir.4000_abs</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#visnir-table"><span class="header-section-number">3.4</span> VisNIR scans</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#id.layer_uuid_txt-3"><span class="header-section-number">3.4.1</span> id.layer_uuid_txt</a></li>
+<li><a class="nav-link" href="#id.scan_local_c-1"><span class="header-section-number">3.4.2</span> id.scan_local_c</a></li>
+<li><a class="nav-link" href="#scan.visnir.date.begin_iso.8601_yyyy.mm.dd"><span class="header-section-number">3.4.3</span> scan.visnir.date.begin_iso.8601_yyyy.mm.dd</a></li>
+<li><a class="nav-link" href="#scan.visnir.date.end_iso.8601_yyyy.mm.dd"><span class="header-section-number">3.4.4</span> scan.visnir.date.end_iso.8601_yyyy.mm.dd</a></li>
+<li><a class="nav-link" href="#scan.visnir.model.name_utf8_txt"><span class="header-section-number">3.4.5</span> scan.visnir.model.name_utf8_txt</a></li>
+<li><a class="nav-link" href="#scan.visnir.model.code_any_txt"><span class="header-section-number">3.4.6</span> scan.visnir.model.code_any_txt</a></li>
+<li><a class="nav-link" href="#scan.visnir.method.optics_any_txt"><span class="header-section-number">3.4.7</span> scan.visnir.method.optics_any_txt</a></li>
+<li><a class="nav-link" href="#scan.visnir.method.preparation_any_txt"><span class="header-section-number">3.4.8</span> scan.visnir.method.preparation_any_txt</a></li>
+<li><a class="nav-link" href="#scan.visnir.license.title_ascii_txt"><span class="header-section-number">3.4.9</span> scan.visnir.license.title_ascii_txt</a></li>
+<li><a class="nav-link" href="#scan.visnir.license.address_idn_url"><span class="header-section-number">3.4.10</span> scan.visnir.license.address_idn_url</a></li>
+<li><a class="nav-link" href="#scan.visnir.doi_idf_url"><span class="header-section-number">3.4.11</span> scan.visnir.doi_idf_url</a></li>
+<li><a class="nav-link" href="#scan.visnir.contact.name_utf8_txt"><span class="header-section-number">3.4.12</span> scan.visnir.contact.name_utf8_txt</a></li>
+<li><a class="nav-link" href="#scan.visnir.contact.email_ietf_txt"><span class="header-section-number">3.4.13</span> scan.visnir.contact.email_ietf_txt</a></li>
+<li><a class="nav-link" href="#scan_visnir.350_ref"><span class="header-section-number">3.4.14</span> scan_visnir.350_ref</a></li>
+<li><a class="nav-link" href="#scan_visnir.2500_ref"><span class="header-section-number">3.4.15</span> scan_visnir.2500_ref</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/soilspectroscopy/ossl-manual/blob/master/030-database_description.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/soilspectroscopy/ossl-manual/edit/master/030-database_description.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Open Soil Spectral Library</strong>" was written by Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>
