@@ -606,9 +606,9 @@ The following subsections provide the OSSL variable names, types, description, a
 - 📐 Measurement unit: Imported into the OSSL as `mg.kg`, i.e., miligrams per kilogram of soil.
 - 🔢 Type: numeric.
 - 📖 Example: 23.10000000.
-- 🟡 Availability: only level 0.
+- 🟢 Availability: level 0 and level 1 (harmonized).
 
-<img src="./heatmap_v1.2/heatmap_L0_mn.ext_usda.a1067_mg.kg.png" heigth=100% width=100%>
+<img src="./heatmap_v1.2/heatmap_L1_mn.ext_usda.a1067_mg.kg.png" heigth=100% width=100%>
 
 
 ### mn.ext_usda.a70_mg.kg

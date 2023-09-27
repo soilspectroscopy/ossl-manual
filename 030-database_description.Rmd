@@ -52,6 +52,7 @@ table.reference <- dataset.codes %>%
   crossing(label = 1:length(seq(0, 1, by = 0.05)))
 # test1 <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 # cut(test1, breaks = c(0,2,4,6,8,10), include.lowest = F, labels = F, right = F)
+i=1
 for(i in 1:length(ossl.soillab.level0.names)) {
   
   isoil.property <- ossl.soillab.level0.names[i]
@@ -72,9 +73,8 @@ for(i in 1:length(ossl.soillab.level0.names)) {
   if(iskewness <= -3 | iskewness >= 3) {
     
     plot.df <- plot.df %>%
-      mutate(!!isoil.property := ifelse(!!as.name(isoil.property) <= 0.001, NA, !!as.name(isoil.property))) %>%
       filter(!!as.symbol(isoil.property) <= i99th) %>%
-      mutate(!!isoil.property := log2(!!as.name(isoil.property)))
+      mutate(!!isoil.property := log1p(!!as.name(isoil.property)))
     
     percentiles <- plot.df %>%
       summarise(quantile = scales::percent(seq(0, 1, by = 0.05)),
@@ -85,7 +85,8 @@ for(i in 1:length(ossl.soillab.level0.names)) {
       relocate(quantile, 1) %>%
       mutate(upper = get(isoil.property)) %>%
       mutate(lower = lag(upper, 1)) %>%
-      mutate(upper = round(upper, 2), lower = round(lower, 2)) %>%
+      mutate(upper = round(expm1(upper), 2),
+             lower = round(expm1(lower), 2)) %>%
       mutate(label = paste0("[", lower, ", ", upper, ")"))
     
     n.table <- plot.df %>%
@@ -96,7 +97,7 @@ for(i in 1:length(ossl.soillab.level0.names)) {
                             include.lowest = F, labels = F, right = F),
                 .groups = 'drop') %>%
       count(dataset.code_ascii_txt, label)
-      
+    
     table.reference.filled <- left_join(table.reference, n.table,
                                         by = c("dataset.code_ascii_txt", "label")) %>%
       mutate(dataset.code_ascii_txt = factor(dataset.code_ascii_txt,
@@ -109,7 +110,7 @@ for(i in 1:length(ossl.soillab.level0.names)) {
       scale_x_continuous(breaks = (1:nrow(percentiles))[-nrow(percentiles)],
                          labels = pull(percentiles, 5)[-1],
                          expand = c(0.01, 0)) +
-      labs(title = paste0('OSSL level 0: log2(', isoil.property, ')'),
+      labs(title = paste0('OSSL level 0: ', isoil.property),
            x = "", y = "", fill = "Count:") +
       theme_minimal() +
       theme(axis.text.x = element_text(hjust = 1, vjust = 1, angle = 45),
@@ -120,7 +121,6 @@ for(i in 1:length(ossl.soillab.level0.names)) {
   } else {
     
     plot.df <- plot.df %>%
-      mutate(!!isoil.property := ifelse(!!as.name(isoil.property) <= 0.001, NA, !!as.name(isoil.property))) %>%
       filter(!!as.symbol(isoil.property) <= i99th)
     
     percentiles <- plot.df %>%
@@ -143,7 +143,7 @@ for(i in 1:length(ossl.soillab.level0.names)) {
                             include.lowest = F, labels = F, right = F),
                 .groups = 'drop') %>%
       count(dataset.code_ascii_txt, label)
-      
+    
     table.reference.filled <- left_join(table.reference, n.table,
                                         by = c("dataset.code_ascii_txt", "label")) %>%
       mutate(dataset.code_ascii_txt = factor(dataset.code_ascii_txt,
@@ -186,6 +186,7 @@ table.reference <- dataset.codes %>%
   crossing(label = 1:length(seq(0, 1, by = 0.05)))
 # test1 <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 # cut(test1, breaks = c(0,2,4,6,8,10), include.lowest = F, labels = F, right = F)
+i=1
 for(i in 1:length(ossl.soillab.level1.names)) {
   
   isoil.property <- ossl.soillab.level1.names[i]
@@ -206,9 +207,8 @@ for(i in 1:length(ossl.soillab.level1.names)) {
   if(iskewness <= -3 | iskewness >= 3) {
     
     plot.df <- plot.df %>%
-      mutate(!!isoil.property := ifelse(!!as.name(isoil.property) <= 0.001, NA, !!as.name(isoil.property))) %>%
       filter(!!as.symbol(isoil.property) <= i99th) %>%
-      mutate(!!isoil.property := log2(!!as.name(isoil.property)))
+      mutate(!!isoil.property := log1p(!!as.name(isoil.property)))
     
     percentiles <- plot.df %>%
       summarise(quantile = scales::percent(seq(0, 1, by = 0.05)),
@@ -219,7 +219,8 @@ for(i in 1:length(ossl.soillab.level1.names)) {
       relocate(quantile, 1) %>%
       mutate(upper = get(isoil.property)) %>%
       mutate(lower = lag(upper, 1)) %>%
-      mutate(upper = round(upper, 2), lower = round(lower, 2)) %>%
+      mutate(upper = round(expm1(upper), 2),
+             lower = round(expm1(lower), 2)) %>%
       mutate(label = paste0("[", lower, ", ", upper, ")"))
     
     n.table <- plot.df %>%
@@ -230,7 +231,7 @@ for(i in 1:length(ossl.soillab.level1.names)) {
                             include.lowest = F, labels = F, right = F),
                 .groups = 'drop') %>%
       count(dataset.code_ascii_txt, label)
-      
+    
     table.reference.filled <- left_join(table.reference, n.table,
                                         by = c("dataset.code_ascii_txt", "label")) %>%
       mutate(dataset.code_ascii_txt = factor(dataset.code_ascii_txt,
@@ -243,7 +244,7 @@ for(i in 1:length(ossl.soillab.level1.names)) {
       scale_x_continuous(breaks = (1:nrow(percentiles))[-nrow(percentiles)],
                          labels = pull(percentiles, 5)[-1],
                          expand = c(0.01, 0)) +
-      labs(title = paste0('OSSL level 1: log2(', isoil.property, ')'),
+      labs(title = paste0('OSSL level 1: ', isoil.property),
            x = "", y = "", fill = "Count:") +
       theme_minimal() +
       theme(axis.text.x = element_text(hjust = 1, vjust = 1, angle = 45),
@@ -254,7 +255,6 @@ for(i in 1:length(ossl.soillab.level1.names)) {
   } else {
     
     plot.df <- plot.df %>%
-      mutate(!!isoil.property := ifelse(!!as.name(isoil.property) <= 0.001, NA, !!as.name(isoil.property))) %>%
       filter(!!as.symbol(isoil.property) <= i99th)
     
     percentiles <- plot.df %>%
@@ -277,7 +277,7 @@ for(i in 1:length(ossl.soillab.level1.names)) {
                             include.lowest = F, labels = F, right = F),
                 .groups = 'drop') %>%
       count(dataset.code_ascii_txt, label)
-      
+    
     table.reference.filled <- left_join(table.reference, n.table,
                                         by = c("dataset.code_ascii_txt", "label")) %>%
       mutate(dataset.code_ascii_txt = factor(dataset.code_ascii_txt,
