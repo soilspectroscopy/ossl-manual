@@ -54,16 +54,14 @@ Example with R.
 ## Packages
 library("tidyverse")
 library("curl")
-library("qs")
+library("qs") # >=0.25.5
 
 ## Separate files
 soil <-  "https://storage.googleapis.com/soilspec4gg-public/neospectra_soillab_v1.2.qs"
-soil <- curl_fetch_memory(soil)
-soil <- qdeserialize(soil$content)
+soil <- qread_url(soil)
 
 nir <- "https://storage.googleapis.com/soilspec4gg-public/neospectra_nir_v1.2.qs"
-nir <- curl_fetch_memory(nir)
-nir <- qdeserialize(nir$content)
+nir <- qread_url(nir)
 
 ## Join
 neospectra <- right_join(soil, nir, by = c("id.sample_local_c"))

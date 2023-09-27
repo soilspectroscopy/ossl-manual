@@ -115,15 +115,14 @@
 <code class="sourceCode R"><span><span class="co">## Packages</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://tidyverse.tidyverse.org">"tidyverse"</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/jeroen/curl">"curl"</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/traversc/qs">"qs"</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/traversc/qs">"qs"</a></span><span class="op">)</span> <span class="co"># &gt;=0.25.5</span></span>
 <span></span>
 <span><span class="co">## Separate files</span></span>
 <span><span class="va">soil</span> <span class="op">&lt;-</span>  <span class="st">"https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs"</span></span>
-<span><span class="va">soil</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/curl/man/curl_fetch.html">curl_fetch_memory</a></span><span class="op">(</span><span class="va">soil</span><span class="op">)</span></span>
-<span><span class="va">soil</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/qs/man/qdeserialize.html">qdeserialize</a></span><span class="op">(</span><span class="va">soil</span><span class="op">$</span><span class="va">content</span><span class="op">)</span></span>
+<span><span class="va">soil</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/qs/man/qread_url.html">qread_url</a></span><span class="op">(</span><span class="va">soil</span><span class="op">)</span></span>
+<span></span>
 <span><span class="va">mir</span> <span class="op">&lt;-</span> <span class="st">"https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.qs"</span></span>
-<span><span class="va">mir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/curl/man/curl_fetch.html">curl_fetch_memory</a></span><span class="op">(</span><span class="va">mir</span><span class="op">)</span></span>
-<span><span class="va">mir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/qs/man/qdeserialize.html">qdeserialize</a></span><span class="op">(</span><span class="va">mir</span><span class="op">$</span><span class="va">content</span><span class="op">)</span></span>
+<span><span class="va">mir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/qs/man/qread_url.html">qread_url</a></span><span class="op">(</span><span class="va">mir</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## Join</span></span>
 <span><span class="va">ossl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span><span class="op">(</span><span class="va">mir</span>, <span class="va">soil</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"dataset.code_ascii_txt"</span>, <span class="st">"id.layer_uuid_txt"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>

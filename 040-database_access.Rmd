@@ -45,15 +45,14 @@ Example with R. Use `dataset.code_ascii_txt` and `id.layer_uuid_txt.` as joining
 ## Packages
 library("tidyverse")
 library("curl")
-library("qs")
+library("qs") # >=0.25.5
 
 ## Separate files
 soil <-  "https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs"
-soil <- curl_fetch_memory(soil)
-soil <- qdeserialize(soil$content)
+soil <- qread_url(soil)
+
 mir <- "https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.qs"
-mir <- curl_fetch_memory(mir)
-mir <- qdeserialize(mir$content)
+mir <- qread_url(mir)
 
 ## Join
 ossl <- left_join(mir, soil, by = c("dataset.code_ascii_txt", "id.layer_uuid_txt"))

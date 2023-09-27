@@ -208,22 +208,22 @@ organizations. Listed based on the date of import:
 
 - **[Africa Soil Information Service (AfSIS)](https://data.worldagroforestry.org/dataverse/icraf_soils) phases I and II** MIR spectral libraries [@Vagen_2020], a collaborative project funded by the Bill and Melinda Gates Foundation (BMGF). Partners included: CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF);  
   
-- **[European Soil Data Centre](https://esdac.jrc.ec.europa.eu/)** for providing the LUCAS topsoil (VisNIR) Soil Spectral Library [@orgiazzi2018lucas]. We have degraded location accuracy of points so that exact locations are about 1-km off;  
+- **[European Soil Data Centre](https://esdac.jrc.ec.europa.eu/)** for sharing the LUCAS topsoil (VisNIR) Soil Spectral Library [@orgiazzi2018lucas]. We have degraded location accuracy of points so that exact locations are about 1-km off;  
 
-- Laura Summerauer from **ETH Zurich**, for providing the [Central African Soil Spectral Library](https://github.com/laura-summerauer/ssl-central-africa) described in detail in @Summerauer2021;  
+- Laura Summerauer from **ETH Zurich**, for sharing the [Central African Soil Spectral Library](https://github.com/laura-summerauer/ssl-central-africa) described in detail in @Summerauer2021;  
 
-- Marcus Schiedung from **University of Zurich** for providing a [MIR soil spectral library]() from forest soils of North Canada [@Schiedung2022]; 
+- Marcus Schiedung from **University of Zurich** for sharing a [MIR soil spectral library](https://doi.org/10.5281/zenodo.6024831) from forest soils of North Canada [@Schiedung2022]; 
 
-- Loretta Garrett from **Scion Research** for providing a [MIR soil spectral library](https://figshare.com/articles/dataset/Soil_data_from_Pinus_radiata_forests_in_New_Zealand_FR380_trial_series/20506587/2) from forest soils in New Zealand [@Garrett2022]; 
+- Loretta Garrett from **Scion Research** for sharing a [MIR soil spectral library](https://figshare.com/articles/dataset/Soil_data_from_Pinus_radiata_forests_in_New_Zealand_FR380_trial_series/20506587/2) from forest soils in New Zealand [@Garrett2022]; 
 
-- Branislav Jović from **University of Novi Sad** for providing a MIR soil spectral library from Serbian soils [@Jovi2019];  
+- Branislav Jović from **University of Novi Sad** for sharing a MIR soil spectral library from Serbian soils [@Jovi2019];  
 
-We are also grateful to [Wanderson de Sousa Mendes (Leibniz Centre for Agricultural Landscape Research (ZALF))](https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/) for 
+We are also grateful to [Wanderson de Sousa Mendes](https://www.linkedin.com/in/wanderson-de-sousa-mendes-75a16195/) for 
 the help with initial screening of the data and the development of the initial R code for processing soil spectroscopy data.
 
 For more advanced uses of the soil spectral libraries **we advise to contact the original data producers** especially to get help with using, extending and improving the original SSL data.
 
-We are also grateful to **[USDA National Institute of Food and Agriculture #2020-67021-32467](https://nifa.usda.gov/press-release/nifa-invests-over-7-million-big-data-artificial-intelligence-and-other)** for providing funding for this project.
+We are also grateful to **[USDA National Institute of Food and Agriculture #2020-67021-32467](https://cris.nifa.usda.gov/cgi-bin/starfinder/0?path=fastlink1.txt&id=anon&pass=&search=R=89483&format=WEBFMT6NT)** for providing funding for this project.
 
 ## Disclaimer {.unnumbered}
 

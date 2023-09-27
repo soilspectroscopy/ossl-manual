@@ -8,43 +8,38 @@ You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is 
 
 ### KSSL.SSL
 
-_Description_: MIR and NIR spectral library and associated soil characterization database, which now
-includes >50,000 MIR spectra collected on soils primarily from the United States. Freely available by request (see below). 
+_Description_: MIR and NIR spectral library and associated soil characterization database, which now includes >80,000 MIR spectra collected on soils primarily from the United States.
 
 - 📕 Seybold, C. A., Ferguson, R., Wysocki, D., Bailey, S., Anderson, J., Nester, B., ... & Thomas, P. (2019). [Application of Mid‐Infrared Spectroscopy in Soil Survey](https://doi.org/10.2136/sssaj2019.06.0205). Soil Science Society of America Journal, 83(6), 1746-1759. <https://doi.org/10.2136/sssaj2019.06.0205> / Sanderman, J., Savage, K., & Dangal, S. R. (2020). Mid‐infrared spectroscopy for prediction of soil health indicators in the United States. Soil Science Society of America Journal, 84(1), 251-261. <https://doi.org/10.1002/saj2.20009>  
-- 🔗 Project website: <https://www.nrcs.usda.gov/wps/portal/nrcs/main/soils/research/>  
+- 🔗 Project website: <https://ncsslabdatamart.sc.egov.usda.gov/>  
 - ©️ Data license: [CC-BY](https://ncsslabdatamart.sc.egov.usda.gov/datause.aspx)  
 - 📍 Unique sites: 9,061  
 - 📋 Unique complete measurements: 76,813 (MIR) and 19,807 (VisNIR)  
-- 📝 Import steps: [KSSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/KSSL)  
+- 📝 Import steps: [ossl-imports/dataset/KSSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/KSSL)  
 
 ### ICRAF.ISRIC
 
 _Description_: [A Globally Distributed Soil Spectral Library Mid Infrared Diffuse 
-Reflectance Spectra](https://data.isric.org/geonetwork/srv/eng/catalog.search#/metadata/1b65024a-cd9f-11e9-a8f9-a0481ca9e724). MIR measurements for some 785 profiles from the ISRIC World Soil Reference Collection.
-The samples are from 58 countries spanning Africa, Asia, Europe, North America, and South America. 
-Data available under the CC-BY 4.0 license.
+Reflectance Spectra](https://data.isric.org/geonetwork/srv/eng/catalog.search#/metadata/1b65024a-cd9f-11e9-a8f9-a0481ca9e724). MIR measurements for some 785 profiles from the ISRIC World Soil Reference Collection. The samples are from 58 countries spanning Africa, Asia, Europe, North America, and South America.
 
 - 📕 World Agroforestry Centre, (2014). [The ICRAF/ISRIC spectral library](https://worldagroforestry.org/sites/default/files/Description_ICRAF-ISRIC%20Soil%20VNIR%20Spectral%20Library.pdf), Soil-Plant Spectral Diagnostics laboratory, United
 Nations Avenue, Nairobi, Kenya. <https://doi.org/10.34725/DVN/MFHA9C>  
-- 🔗 Project website: <https://www.worldagroforestry.org/sd/landhealth/soil-plant-spectral-diagnostics-laboratory/soil-spectra-library>  
+- 🔗 Project website: [ISRIC Data Hub](https://data.isric.org/geonetwork/srv/eng/catalog.search#/metadata/1b65024a-cd9f-11e9-a8f9-a0481ca9e724). 
 - ©️ Data license: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)  
 - 📍 Unique locations: 785  
 - 📋 Unique complete measurements: 4308  
-- 📝 Import steps: [ICRAF_ISRIC](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/ICRAF_ISRIC)  
+- 📝 Import steps: [ossl-imports/dataset/ICRAF_ISRIC](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/ICRAF_ISRIC)  
 
 ### LUCAS.SSL
 
-_Description_: [LUCAS 2009, 2015 top-soil data](https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data). VisNIR measurements of some 19,860 in 2009 (2012) and 21,859 points in 2015. 
-Data available publicly under condition that _"Graphical representation of individual units on a map is permitted as far as the geographical location of the soil samples is not detectable"_.
-Additional 600 samples have been scanned by Woodwell Climate Research using an MIR instrument.
+_Description_: [LUCAS 2009, 2015 top-soil data](https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data). VisNIR measurements of some 19,860 in 2009 (2012) and 21,859 points in 2015. Data available publicly under condition that _"Graphical representation of individual units on a map is permitted as far as the geographical location of the soil samples is not detectable"_. Additional 600 samples have been scanned by Woodwell Climate Research using an MIR instrument.
 
 - 📕 Jones, A, Fernandez-Ugalde, O., Scarpa, S., (2020). [LUCAS 2015 Topsoil Survey. Presentation of dataset and results](https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data), EUR 30332 EN, Publications Office of the European Union: Luxembourg, ISBN 978-92-76-21080-1, doi:10.2760/616084, JRC121325.  
 - 🔗 Project website: <https://esdac.jrc.ec.europa.eu/resource-type/soil-point-data>  
 - ©️ Data license: [JRC License Agreement](https://esdac.jrc.ec.europa.eu/content/lucas2015-topsoil-data)  
 - 📍 Unique locations: 41,719  
 - 📋 Unique complete measurements: 41,719  
-- 📝 Import steps: [LUCAS](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/LUCAS)  
+- 📝 Import steps: [ossl-imports/dataset/LUCAS](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/LUCAS)  
 
 ### AFSIS1.SSL
 
@@ -59,21 +54,21 @@ Data retrieved from: <https://registry.opendata.aws/afsis/> and <https://doi.org
 - ©️ Data license: [Open Database License ("ODbL")](https://opendatacommons.org/licenses/odbl/)   
 - 📍 Unique locations: 1903  
 - 📋 Unique complete measurements: 3806  
-- 📝 Import steps: [AFSIS](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS)  
+- 📝 Import steps: [ossl-imports/dataset/AFSIS](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS)  
 
 ### AFSIS2.SSL
 
 _Description_: Africa Soil Information Service (AfSIS) Soil Chemistry Phase II. 
 The three datasets for Tanzania (<https://doi.org/10.34725/DVN/XUDGJY>), Ghana (<https://doi.org/10.34725/DVN/SPRSFN>) and Nigeria (<https://doi.org/10.34725/DVN/WLAKR2>). 
 Documentation of the datasets is available in @hengl2021african.
-Data has been analyzed at the ICRAF Soil-Plant Spectral Diagnostics Laboratory, Nairobi, and the Rothamsted Research. From the 31,269 soil measurements, only 820 (2.6%) have reference data atteched to it.
+Data has been analyzed at the ICRAF Soil-Plant Spectral Diagnostics Laboratory, Nairobi, and the Rothamsted Research. From the 31,269 soil measurements, only 820 (2.6%) have reference data attached to it.
 
 - 📕 Hengl, T., Miller, M.A.E., Križan, J., Shepherd, K.D., Sila, A., Kilibarda, M., Antonijevi, O., Glušica, L., Dobermann, A., Haefele, S.M., McGrath, S.P., Acquah, G.E., Collinson, J., Parente, L., Sheykhmousa, M., Saito, K., Johnson, J-M., Chamberlin, J., Silatsa, F.B.T., Yemefack, M., Wendt, J., MacMillan, R.A., Wheeler I. and Crouch, J. (2021) African soil properties and nutrients mapped at 30 m spatial resolution using two-scale ensemble machine learning. Scientific Reports, 11, 6130. <https://www.nature.com/articles/s41598-021-85639-y>.  
 - 🔗 Project website: <https://data.worldagroforestry.org/dataverse/icraf_soils>  
 - ©️ Data license: [Creative Commons — CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)   
 - 📍 Unique locations: 367  
 - 📋 Unique complete measurements: 820  
-- 📝 Import steps: [AFSIS2](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS2)  
+- 📝 Import steps: [ossl-imports/dataset/AFSIS2](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS2)  
 
 ### CAF.SSL
 
@@ -84,7 +79,7 @@ _Description_: [The Central African Soil Spectral Library](https://doi.org/10.51
 - ©️ Data license: CC-BY?  
 - 📍 Unique locations:   
 - 📋 Unique complete measurements: 1852  
-- 📝 Import steps: [CASSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL)  
+- 📝 Import steps: [ossl-imports/dataset/CASSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL)  
 
 ### SCHIEDUNG.SSL
 
@@ -95,7 +90,7 @@ _Description_: Dataset to the manuscript @Schiedung2022. MIR measurements of 284
 - ©️ Data license: CC-BY 4.0  
 - 📍 Unique locations: 289   
 - 📋 Unique complete measurements: 259  
-- 📝 Import steps: [Schiedung](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Schiedung)  
+- 📝 Import steps: [ossl-imports/dataset/Schiedung](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Schiedung)  
 
 ### GARRETT.SSL
 
@@ -106,7 +101,7 @@ _Description_: A soil dataset from the FR380 trial series spanning 35 Pinus radi
 - ©️ Data license: CC-BY 4.0  
 - 📍 Unique locations: 35   
 - 📋 Unique complete measurements: 184  
-- 📝 Import steps: [Garrett](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Garrett)  
+- 📝 Import steps: [ossl-imports/dataset/Garrett](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Garrett)  
 
 ### SERBIA.SSL
 
@@ -117,7 +112,7 @@ _Description_: The Serbian SSL is a dataset with 135 samples shared by Universit
 - ©️ Data license: CC-BY 4.0  
 - 📍 Unique locations: 45   
 - 📋 Unique complete measurements: 135  
-- 📝 Import steps: [Serbia](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Serbia)  
+- 📝 Import steps: [ossl-imports/dataset/Serbia](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Serbia)  
 
 ## Soil Spectroscopy Instruments
 
