@@ -964,7 +964,7 @@ The following subsections provide the OSSL variable names, types, description, a
 
 **Middle-infrared (MIR) spectra** is provided in absorbance units per wavenumber, with values usually ranging between 0 and 3. The spectral range imported into the OSSL falls between 600 and 4000 cm<sup>-1</sup>, with an interval of 2 cm<sup>-1</sup>. All datasets are harmonized to this specification.
 
-One can convert reflectance (R) values to absorbance units (A) as `A = log10(1/R)`, or backtransform with `R = 1/(10^A)`. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with `WN = 1/(WL*10000000)`, or backtransform with `WL = 1/(WL*10000000)`. The factor 10M is used to convert cm to nm.
+One can convert reflectance (R) values to absorbance units (A) as `A = log10(1/R)`, or backtransform with `R = 1/(10^A)`. Similarly, headers containing wavenumbers (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with `WL = 1/(WN/10000000)`, or backtransformed with `WN = 1/(WL/10000000)`. The factor 10M is used to convert cm to nm.
 
 
 ### id.layer_uuid_txt
@@ -1046,7 +1046,7 @@ One can convert reflectance (R) values to absorbance units (A) as `A = log10(1/R
 
 **Visible and Near-Infrared (VisNIR) spectra** is provided in reflectance units per wavelength, with values usually ranging between 0 and 1 as fraction percent. The spectral range imported into the OSSL falls between 350 and 2500 nm, with an interval of 2 nm. All datasets are harmonized to this specification.
 
-One can convert reflectance (R) values to absorbance units (A) as `A = log10(1/R)`, or backtransform with `R = 1/(10^A)`. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with `WN = 1/(WL*10000000)`, or backtransform with `WL = 1/(WL*10000000)`. The factor 10M is used to convert cm to nm.
+One can convert reflectance (R) values to absorbance units (A) as `A = log10(1/R)`, or backtransform with `R = 1/(10^A)`. Similarly, headers containing wavenumbers (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with `WL = 1/(WN/10000000)`, or backtransformed with `WN = 1/(WL/10000000)`. The factor 10M is used to convert cm to nm.
 
 
 ### id.layer_uuid_txt

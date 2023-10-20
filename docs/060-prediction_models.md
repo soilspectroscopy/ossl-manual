@@ -30,6 +30,7 @@ In summary, we have provided 5 different model types depending on the availabili
 The model types are composed of two different subsets, i.e. using the KSSL soil spectral library alone (`kssl` code) or the full OSSL database (`ossl` code), in combination with three spectral types: VisNIR (`visnir` code), NIR from the Neospectra instrument (`nir.neospectra` code), and MIR (`mir` code).
 
 
+
 |spectra_type   |subset |geo |model_name                         |
 |:--------------|:------|:---|:----------------------------------|
 |mir            |kssl   |na  |mir_cubist_kssl_na_v1.2            |
@@ -37,6 +38,8 @@ The model types are composed of two different subsets, i.e. using the KSSL soil 
 |nir.neospectra |ossl   |na  |nir.neospectra_cubist_ossl_na_v1.2 |
 |visnir         |ossl   |na  |visnir_cubist_ossl_na_v1.2         |
 |visnir         |kssl   |na  |visnir_cubist_kssl_na_v1.2         |
+
+
 
 >> **We highly recommend using the OSSL model types**. The models fitted exclusively with the KSSL can be used when the spectra to be predicted has the same instrument manufacturer/model as the spectrometers used to build the KSSL VisNIR and MIR libraries, and the KSSL library is representative for the new spectra based both on spectral similarity and range of soil properties of interest.  
 

@@ -7,7 +7,7 @@
 <title>3 Database description | Open Soil Spectral Library</title>
 <meta name="author" content="Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors">
 <meta name="description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. The following subsections provide the OSSL variable...">
-<meta name="generator" content="bookdown 0.31 with bs4_book()">
+<meta name="generator" content="bookdown 0.36 with bs4_book()">
 <meta property="og:title" content="3 Database description | Open Soil Spectral Library">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://soilspectroscopy.github.io/ossl-manual/database-description.html">
@@ -20,7 +20,7 @@
 <meta name="twitter:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-06HBX7FM0K"></script><script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -1464,7 +1464,7 @@
 <span class="header-section-number">3.3</span> MIR scans<a class="anchor" aria-label="anchor" href="#mir-table"><i class="fas fa-link"></i></a>
 </h2>
 <p><strong>Middle-infrared (MIR) spectra</strong> is provided in absorbance units per wavenumber, with values usually ranging between 0 and 3. The spectral range imported into the OSSL falls between 600 and 4000 cm<sup>-1</sup>, with an interval of 2 cm<sup>-1</sup>. All datasets are harmonized to this specification.</p>
-<p>One can convert reflectance (R) values to absorbance units (A) as <code>A = log10(1/R)</code>, or backtransform with <code>R = 1/(10^A)</code>. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with <code>WN = 1/(WL*10000000)</code>, or backtransform with <code>WL = 1/(WL*10000000)</code>. The factor 10M is used to convert cm to nm.</p>
+<p>One can convert reflectance (R) values to absorbance units (A) as <code>A = log10(1/R)</code>, or backtransform with <code>R = 1/(10^A)</code>. Similarly, headers containing wavenumbers (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with <code>WL = 1/(WN/10000000)</code>, or backtransformed with <code>WN = 1/(WL/10000000)</code>. The factor 10M is used to convert cm to nm.</p>
 <div id="id.layer_uuid_txt-2" class="section level3" number="3.3.1">
 <h3>
 <span class="header-section-number">3.3.1</span> id.layer_uuid_txt<a class="anchor" aria-label="anchor" href="#id.layer_uuid_txt-2"><i class="fas fa-link"></i></a>
@@ -1621,7 +1621,7 @@
 <span class="header-section-number">3.4</span> VisNIR scans<a class="anchor" aria-label="anchor" href="#visnir-table"><i class="fas fa-link"></i></a>
 </h2>
 <p><strong>Visible and Near-Infrared (VisNIR) spectra</strong> is provided in reflectance units per wavelength, with values usually ranging between 0 and 1 as fraction percent. The spectral range imported into the OSSL falls between 350 and 2500 nm, with an interval of 2 nm. All datasets are harmonized to this specification.</p>
-<p>One can convert reflectance (R) values to absorbance units (A) as <code>A = log10(1/R)</code>, or backtransform with <code>R = 1/(10^A)</code>. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with <code>WN = 1/(WL*10000000)</code>, or backtransform with <code>WL = 1/(WL*10000000)</code>. The factor 10M is used to convert cm to nm.</p>
+<p>One can convert reflectance (R) values to absorbance units (A) as <code>A = log10(1/R)</code>, or backtransform with <code>R = 1/(10^A)</code>. Similarly, headers containing wavenumbers (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with <code>WL = 1/(WN/10000000)</code>, or backtransformed with <code>WN = 1/(WL/10000000)</code>. The factor 10M is used to convert cm to nm.</p>
 <div id="id.layer_uuid_txt-3" class="section level3" number="3.4.1">
 <h3>
 <span class="header-section-number">3.4.1</span> id.layer_uuid_txt<a class="anchor" aria-label="anchor" href="#id.layer_uuid_txt-3"><i class="fas fa-link"></i></a>
