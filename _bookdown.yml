@@ -11,6 +11,7 @@ rmd_files: [
   "050-neospectra_database.Rmd",
   "060-prediction_models.Rmd",
   "070-apps_api.Rmd",
+  "080-modeling_tutorial.Rmd",
   "references.Rmd"
 ]
 
