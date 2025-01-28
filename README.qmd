@@ -1,0 +1,26 @@
+---
+output:
+  format: gfm
+  toc: false
+---
+
+<!-- Badges on top of the page -->
+
+<a href="https://doi.org/10.1371/journal.pone.0296545">
+<img src="https://journals.plos.org/resource/img/one/logo.png" style="background-color:white;height:45px;">
+
+[![](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/soilspectroscopy)
+
+[![](https://zenodo.org/badge/doi/10.5281/zenodo.5759693.svg)](https://doi.org/10.5281/zenodo.5759693)
+
+Welcome to the Open Soil Spectral Library (OSSL) manual!
+
+This is the code repository, please visit the [manual webpage](https://soilspectroscopy.github.io/ossl-manual/) to navigate over the different content sections.
+
+The OSSL is a public and growing database that is compiled by the [Soil Spectroscopy for Global Good](https://soilspectroscopy.org/) initiative.
+
+A [peer-reviewed and open-access publication](https://doi.org/10.1371/journal.pone.0296545) is available for additional reference.
+
+You can also visit other additional open-access repositories in our [GitHub organization](https://github.com/soilspectroscopy).
+
+![](img/soilspec4gg-logo_fc.png){wfig-align="center" width=50%}
