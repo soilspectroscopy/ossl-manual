@@ -11,9 +11,9 @@
 
 Welcome to the Open Soil Spectral Library (OSSL) manual!
 
-This is the code repository, please visit the [manual
+This is a code repository, please visit the [manual
 webpage](https://soilspectroscopy.github.io/ossl-manual/) to navigate
-over the different content sections.
+over different content sections.
 
 The OSSL is a public and growing database that is compiled by the [Soil
 Spectroscopy for Global Good](https://soilspectroscopy.org/) initiative.
