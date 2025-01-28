@@ -1,307 +1,1053 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>6 Prediction models | Open Soil Spectral Library</title>
-<meta name="author" content="Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors">
-<meta name="description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. We have received important feedback since the release...">
-<meta name="generator" content="bookdown 0.36 with bs4_book()">
-<meta property="og:title" content="6 Prediction models | Open Soil Spectral Library">
-<meta property="og:type" content="book">
-<meta property="og:url" content="https://soilspectroscopy.github.io/ossl-manual/prediction-models.html">
-<meta property="og:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
-<meta property="og:description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. We have received important feedback since the release...">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="6 Prediction models | Open Soil Spectral Library">
-<meta name="twitter:site" content="@soilspec">
-<meta name="twitter:description" content="You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending. We have received important feedback since the release...">
-<meta name="twitter:image" content="https://soilspectroscopy.github.io/ossl-manual/cover.png">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.1/transition.js"></script><script src="libs/bs3compat-0.5.1/tabs.js"></script><script src="libs/bs3compat-0.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-06HBX7FM0K"></script><script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<meta name="generator" content="quarto-1.4.550">
 
-      gtag('config', 'G-06HBX7FM0K');
-    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
-    
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  </style>
-<style type="text/css">
-    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-        }
-    .hanging div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }
-  </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Open Soil Spectral Library - 5&nbsp; Prediction models</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./web-services.html" rel="next">
+<link href="./neospectra.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
 </head>
-<body data-spy="scroll" data-target="#toc">
 
-<div class="container-fluid">
-<div class="row">
-  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+<body class="nav-sidebar floating">
 
-    <div class="d-flex align-items-start justify-content-between">
-      <h1>
-        <a href="index.html" title="">Open Soil Spectral Library</a>
-      </h1>
-      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prediction-models.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Prediction models</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
     </div>
-
-    <div id="main-nav" class="collapse-lg">
-      <form role="search">
-        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
-</form>
-
-      <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html">About</a></li>
-<li><a class="" href="new-to-markdown.html"><span class="header-section-number">1</span> New to markdown</a></li>
-<li><a class="" href="soil-spectroscopy-tools-and-users.html"><span class="header-section-number">2</span> Soil spectroscopy tools and users</a></li>
-<li><a class="" href="database-description.html"><span class="header-section-number">3</span> Database description</a></li>
-<li><a class="" href="database-access.html"><span class="header-section-number">4</span> Database access</a></li>
-<li><a class="" href="neospectra-database.html"><span class="header-section-number">5</span> Neospectra database</a></li>
-<li><a class="active" href="prediction-models.html"><span class="header-section-number">6</span> Prediction models</a></li>
-<li><a class="" href="web-applications-and-api.html"><span class="header-section-number">7</span> Web applications and API</a></li>
-<li><a class="" href="hands-on-tutorial.html"><span class="header-section-number">8</span> Hands-on tutorial</a></li>
-<li><a class="" href="references.html"><span class="header-section-number">9</span> References</a></li>
-</ul>
-
-        <div class="book-extra">
-          <p><a id="book-repo" href="https://github.com/soilspectroscopy/ossl-manual">View book source <i class="fab fa-github"></i></a></p>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Open Soil Spectral Library</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/soilspectroscopy/ossl-manual/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </nav>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./soilspec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Soil spectroscopy</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./db-desc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Database description</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./db-access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database access</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./neospectra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Neospectra database</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prediction-models.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Prediction models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./web-services.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Web services</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Hands-on tutorial</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#modeling-framework" id="toc-modeling-framework" class="nav-link active" data-scroll-target="#modeling-framework"><span class="header-section-number">5.1</span> Modeling framework</a></li>
+  <li><a href="#model-performance" id="toc-model-performance" class="nav-link" data-scroll-target="#model-performance"><span class="header-section-number">5.2</span> Model performance</a></li>
+  <li><a href="#uncertainty-and-representation-flag" id="toc-uncertainty-and-representation-flag" class="nav-link" data-scroll-target="#uncertainty-and-representation-flag"><span class="header-section-number">5.3</span> Uncertainty and representation flag</a></li>
+  <li><a href="#using-the-ossl-models" id="toc-using-the-ossl-models" class="nav-link" data-scroll-target="#using-the-ossl-models"><span class="header-section-number">5.4</span> Using the OSSL models</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/soilspectroscopy/ossl-manual/edit/main/prediction-models.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/soilspectroscopy/ossl-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Prediction models</span></h1>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="prediction-models" class="section level1" number="6">
-<h1>
-<span class="header-section-number">6</span> Prediction models<a class="anchor" aria-label="anchor" href="#prediction-models"><i class="fas fa-link"></i></a>
-</h1>
-<div class="rmdnote">
-<p>You are reading the work-in-progress of the SoilSpec4GG manual. This chapter is currently draft version, a peer-review publication is pending.</p>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>We have received important feedback since the release of the first models and web services (Dec. 2021). The feedback was that the previous model versions were doing a great job, but for others not that much.</p>
-<p>Variable model performance may have happened due to the specific soil types not being well represented or due to the spectra not being well aligned with the OSSL instruments. This led us to improve the current outputs to include a flag that indicates if the new samples to be predicted are represented by the calibration set. In addition to that, we revised our uncertainty estimation method by switching to conformal predictions, a simple and robust method for delivering uncertainty bands.</p>
-<p>In addition to that, we conducted a systematic analysis of learning algorithms, compression strategies, and preprocessing using the OSSL database and external test sets, and the insights from ring trial experiment - a separate project that was developed to understand the dissimilarity across multiple soil spectroscopy laboratories.</p>
-<p>We also removed spatial covariates and even not fused spectral regions compared to the first models, in order to make them simpler and generally applicable. These further combinations require more time to verify the potential performance improvements, although recent literature have been supporting it.</p>
-<p>The following sections describe the steps used to produce the OSSL models, which
-are used in the OSSL Engine and API, and also public available from Google Cloud Storage.</p>
-<p>It is important to note that the current models are not free of error and may still provide variable results. Please, let us know about any inconsistency you might find to help us improve even more the current models.</p>
-<p>For an in-depth inspection of the modeling steps, please visit the <a href="https://github.com/soilspectroscopy/ossl-models">ossl-models</a> GitHub repository.</p>
-<div id="modeling-framework" class="section level2" number="6.1">
-<h2>
-<span class="header-section-number">6.1</span> Modeling framework<a class="anchor" aria-label="anchor" href="#modeling-framework"><i class="fas fa-link"></i></a>
-</h2>
-<p>We have used the <a href="https://mlr3book.mlr-org.com/">MLR3 framework</a> <span class="citation">(<a href="references.html#ref-mlr3" role="doc-biblioref">Lang et al., 2019</a>)</span> for fitting machine learning models, specifically with the <a href="https://cran.r-project.org/web/packages/Cubist/vignettes/cubist.html">Cubist algorithm</a> <span class="citation">(<a href="references.html#ref-quinlan1992learning" role="doc-biblioref">Quinlan, 1992</a>, <a href="references.html#ref-quinlan1993combining" role="doc-biblioref">1993</a>)</span>.</p>
-<p>The <a href="https://github.com/soilspectroscopy/ossl-models/tree/main/R-mlr"><code>R-mlr</code> folder</a> on <code>ossl-models</code> GitHub presents the code used to calibrate the models.</p>
-<p>In summary, we have provided 5 different model types depending on the availability of samples in for each soil property, which was fitted without the use of ancillary information (<code>na</code> code), i.e., site information or environmental layers are not used as predictors, only the spectral variation.</p>
-<p>The model types are composed of two different subsets, i.e. using the KSSL soil spectral library alone (<code>kssl</code> code) or the full OSSL database (<code>ossl</code> code), in combination with three spectral types: VisNIR (<code>visnir</code> code), NIR from the Neospectra instrument (<code>nir.neospectra</code> code), and MIR (<code>mir</code> code).</p>
-<div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
-<th align="left">spectra_type</th>
-<th align="left">subset</th>
-<th align="left">geo</th>
-<th align="left">model_name</th>
-</tr></thead>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A full documentation of the modeling framework is presented and discussed in our paper <span class="citation" data-cites="Safanelli2025">[<a href="references.html#ref-Safanelli2025" role="doc-biblioref">1</a>]</span>.</p>
+<blockquote class="blockquote">
+<p>Safanelli, J. L., Hengl, T., Parente, L. L., Minarik, R., Bloom, D. E., Todd-Brown, K., … Sanderman, J. (2025). Open Soil Spectral Library (OSSL): Building reproducible soil calibration models through open development and community engagement. PloS One, 20(1), e0296545. doi:<a href="https://doi.org/10.1371/journal.pone.0296545">10.1371/journal.pone.0296545</a>.</p>
+</blockquote>
+</div>
+</div>
+<p>Since the project’s inception in December 2021, various modeling strategies and data fusion approaches have been tested. We have also received valuable feedback on the initial models and web services from early adopters.</p>
+<p>We conducted a systematic analysis of common learning algorithms, compression strategies, and preprocessing using the OSSL database and independent test sets, incorporating insights from the MIR ring trial experiment <span class="citation" data-cites="Safanelli2023">[<a href="references.html#ref-Safanelli2023" role="doc-biblioref">2</a>]</span> - a separate initiative developed to understand the differences between multiple soil spectroscopy laboratories.</p>
+<p>At this initial phase, we also excluded the combination of spectra with spatial covariates or the fusing of spectral regions to make the prediction models more accessible and generally applicable to end users. The ability to easily deploy pre-trained models was significant for our team, as local modeling approaches or fine-tuning/transfer learning would require more computing power and skills beyond our expertise and the project’s initial scope.</p>
+<p>More novel and sophisticated modeling strategies necessitate additional time to verify potential performance improvements while accommodating computational and end-user requirements.</p>
+<p>The subsequent sections detail the steps taken to produce the OSSL models, which are utilized in the OSSL Engine and API and are publicly accessible from Google Cloud Storage.</p>
+<p>It’s essential to note that the current models may yield poor predictions. Please let us know about any inconsistencies you may discover to assist us in further improving the existing models.</p>
+<p>For a comprehensive review of the modeling framework, please visit our open-access <a href="https://github.com/soilspectroscopy/ossl-models">GitHub repository</a>.</p>
+<section id="modeling-framework" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="modeling-framework"><span class="header-section-number">5.1</span> Modeling framework</h2>
+<p>We have used the <a href="https://mlr3book.mlr-org.com/">MLR3 framework</a> <span class="citation" data-cites="mlr3">[<a href="references.html#ref-mlr3" role="doc-biblioref">3</a>]</span> for fitting machine learning models, specifically with the <a href="https://cran.r-project.org/web/packages/Cubist/vignettes/cubist.html">Cubist algorithm</a> <span class="citation" data-cites="quinlan1992learning quinlan1993combining">[<a href="references.html#ref-quinlan1992learning" role="doc-biblioref">4</a>,<a href="references.html#ref-quinlan1993combining" role="doc-biblioref">5</a>]</span>.</p>
+<p>The <a href="https://github.com/soilspectroscopy/ossl-models/tree/main/R-mlr"><code>R-mlr</code> folder</a> in the <a href="https://github.com/soilspectroscopy/ossl-models">ossl-models GitHub repository</a> contains the open-access R code used to calibrate the prediction models.</p>
+<p>In summary, we have provided 5 different model types depending on the availability of samples for each soil property, which was fitted without the use of ancillary information (<code>na</code> code), i.e., site information or environmental layers are not used as predictors, only the spectral variations.</p>
+<p>The model types are composed of two different subsets, i.e., either using the KSSL soil spectral library alone (<code>kssl</code> code) or the full OSSL database (<code>ossl</code> code), in combination with three spectral types: VisNIR (<code>visnir</code> code), NIR from the Neospectra instrument (<code>nir.neospectra</code> code), and MIR (<code>mir</code> code).</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">spectra_type</th>
+<th style="text-align: left;">subset</th>
+<th style="text-align: left;">geo</th>
+<th style="text-align: left;">model_name</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left">mir</td>
-<td align="left">kssl</td>
-<td align="left">na</td>
-<td align="left">mir_cubist_kssl_na_v1.2</td>
+<td style="text-align: left;">mir</td>
+<td style="text-align: left;">kssl</td>
+<td style="text-align: left;">na</td>
+<td style="text-align: left;">mir_cubist_kssl_na_v1.2</td>
 </tr>
 <tr class="even">
-<td align="left">mir</td>
-<td align="left">ossl</td>
-<td align="left">na</td>
-<td align="left">mir_cubist_ossl_na_v1.2</td>
+<td style="text-align: left;">mir</td>
+<td style="text-align: left;">ossl</td>
+<td style="text-align: left;">na</td>
+<td style="text-align: left;">mir_cubist_ossl_na_v1.2</td>
 </tr>
 <tr class="odd">
-<td align="left">nir.neospectra</td>
-<td align="left">ossl</td>
-<td align="left">na</td>
-<td align="left">nir.neospectra_cubist_ossl_na_v1.2</td>
+<td style="text-align: left;">nir.neospectra</td>
+<td style="text-align: left;">ossl</td>
+<td style="text-align: left;">na</td>
+<td style="text-align: left;">nir.neospectra_cubist_ossl_na_v1.2</td>
 </tr>
 <tr class="even">
-<td align="left">visnir</td>
-<td align="left">ossl</td>
-<td align="left">na</td>
-<td align="left">visnir_cubist_ossl_na_v1.2</td>
+<td style="text-align: left;">visnir</td>
+<td style="text-align: left;">ossl</td>
+<td style="text-align: left;">na</td>
+<td style="text-align: left;">visnir_cubist_ossl_na_v1.2</td>
 </tr>
 <tr class="odd">
-<td align="left">visnir</td>
-<td align="left">kssl</td>
-<td align="left">na</td>
-<td align="left">visnir_cubist_kssl_na_v1.2</td>
+<td style="text-align: left;">visnir</td>
+<td style="text-align: left;">kssl</td>
+<td style="text-align: left;">na</td>
+<td style="text-align: left;">visnir_cubist_kssl_na_v1.2</td>
 </tr>
 </tbody>
-</table></div>
-<blockquote>
-<blockquote>
-<p><strong>We highly recommend using the OSSL model types</strong>. The models fitted exclusively with the KSSL can be used when the spectra to be predicted has the same instrument manufacturer/model as the spectrometers used to build the KSSL VisNIR and MIR libraries, and the KSSL library is representative for the new spectra based both on spectral similarity and range of soil properties of interest.</p>
-</blockquote>
-</blockquote>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>We highly recommend using the OSSL model types</strong>. The models fitted exclusively with the KSSL can be used when the spectra to be predicted has the same instrument manufacturer/model as the spectrometers used to build the KSSL VisNIR and MIR libraries. Also, the KSSL library must be representative for the new soil samples based both on spectral similarity and range of soil properties of interest.</p>
+</div>
+</div>
 <p>The machine learning algorithm Cubist (coding name <code>cubist</code>) takes advantage of a decision-tree splitting method but fits linear regression models at each terminal leaf. It also uses a boosting mechanism (sequential trees adjusted by weights) that allows the growth of a forest by tuning the number of committees. We haven’t used the correction of final predictions by the nearest neighbors’ influence due to the lack of this feature in the MLR3 framework.</p>
-<p>As predictors, we have used the first 120 PCs of the compressed spectra, a threshold that considers the trade-off between spectral representation and compression magnitude <span class="citation">(<a href="references.html#ref-chang2001near" role="doc-biblioref">Chang, Laird, Mausbach, &amp; Hurburgh Jr, 2001</a>)</span>. The remaining farther components were used for the trustworthiness test, i.e., checking if a sample is underrepresented in respect of the feature space from the calibration set because of some unique features presented in those farther components <span class="citation">(<a href="references.html#ref-Jackson1979" role="doc-biblioref">Jackson &amp; Mudholkar, 1979</a>; <a href="references.html#ref-deSantana2023" role="doc-biblioref">Santana et al., 2023</a>)</span>.</p>
-<p>Before PCA compression, spectra was preprocessed with Standard Normal Variate (SNV) to reduce some of the variability caused by contrasting instruments and SOPs, besides the minimization of particle size, light scattering, and multicollinearity known issues of diffuse reflectance <span class="citation">(<a href="references.html#ref-Barnes1989" role="doc-biblioref">Barnes, Dhanoa, &amp; Lister, 1989</a>)</span>.</p>
-<p>Hyperparameter optimization was done with internal resampling (<code>inner</code>) using 5-fold cross-validation and a smaller subset for speeding up this operation <span class="citation">(<a href="references.html#ref-Yang2020" role="doc-biblioref">Yang &amp; Shami, 2020</a>)</span>. This task was performed with a grid search of the hyperparameter space testing up to 5 configurations of Comitees to find the lowest Root Mean Squared Error (RMSE). The final model with the best optimal hyperparameter was fitted at the end with the full train data.</p>
-<p>Some highly-skewed soil properties were natural-log transformed (with offset = 1, that is why we use the <code>log1p</code> function) to improve the prediction performance <span class="citation">(<a href="references.html#ref-Dangal2019" role="doc-biblioref">Dangal, Sanderman, Wills, &amp; Ramirez-Lopez, 2019</a>)</span>. They were back-transformed only at the end after running all modeling steps, including performance estimation and the definition of the uncertainty intervals.</p>
+<p>As predictors, we have used the first 120 PCs of the compressed spectra (to represent about 99.99% of the original variance), a threshold that considers the trade-off between spectral representation and compression magnitude <span class="citation" data-cites="chang2001near">[<a href="references.html#ref-chang2001near" role="doc-biblioref">6</a>]</span>. The remaining farther components were used for the representation flag, i.e., checking if a sample is underrepresented in respect of the feature space from the calibration set due to some potential spectral features that are not well characterized <span class="citation" data-cites="Jackson1979 deSantana2023">[<a href="references.html#ref-Jackson1979" role="doc-biblioref">7</a>,<a href="references.html#ref-deSantana2023" role="doc-biblioref">8</a>]</span>.</p>
+<p>Before PCA compression, spectra was preprocessed with Standard Normal Variate (SNV) to reduce some of the variability caused by offset and spectral dissimiliraty, while minimizing the effects of particle size, light scattering, and multicollinearity that are known issues of diffuse reflectance <span class="citation" data-cites="Barnes1989">[<a href="references.html#ref-Barnes1989" role="doc-biblioref">9</a>]</span>.</p>
+<p>Hyperparameter optimization was done with 5-fold cross-validation and a smaller subset for speeding up this operation <span class="citation" data-cites="Yang2020">[<a href="references.html#ref-Yang2020" role="doc-biblioref">10</a>]</span>. This task was performed with a grid search of the hyperparameter space testing up to 5 configurations of Committees to find the lowest Root Mean Squared Error (RMSE). The final model with the best optimal hyperparameter was fitted at the end with the full train data.</p>
+<p>Some highly-skewed soil properties were natural-log transformed (with offset = 1, that is why we use the <code>log1p</code> function) to improve the prediction performance <span class="citation" data-cites="Dangal2019">[<a href="references.html#ref-Dangal2019" role="doc-biblioref">11</a>]</span>. They were back-transformed only at the end after running all modeling steps, including performance estimation and the definition of the uncertainty intervals.</p>
 <p>Final fitted models are listed on <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/out/fitted_modeling_combinations_v1.2.csv">GitHub</a>.</p>
-</div>
-<div id="model-performance" class="section level2" number="6.2">
-<h2>
-<span class="header-section-number">6.2</span> Model performance<a class="anchor" aria-label="anchor" href="#model-performance"><i class="fas fa-link"></i></a>
-</h2>
-<p>Model evaluation was performed with external (<code>outer</code>) 10-fold cross validation of the tuned models using RMSE (<code>rmse</code>), mean error (<code>bias</code>), R squared (<code>rsq</code>), Lin’s concordance correlation coefficient (<code>ccc</code>), and the ratio of performance to the interquartile range (<code>rpiq</code>) <span class="citation">(<a href="references.html#ref-malone2021soil" role="doc-biblioref">Wadoux et al., 2021</a>)</span>.</p>
+</section>
+<section id="model-performance" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="model-performance"><span class="header-section-number">5.2</span> Model performance</h2>
+<p>Model evaluation was performed with 10-fold cross validation with refitting of the tuned models using RMSE (<code>rmse</code>), mean error (<code>bias</code>), R squared (<code>rsq</code>), Lin’s concordance correlation coefficient (<code>ccc</code>), and the ratio of performance to the interquartile range (<code>rpiq</code>) <span class="citation" data-cites="malone2021soil">[<a href="references.html#ref-malone2021soil" role="doc-biblioref">12</a>]</span>.</p>
 <p>The final fitted models along with their performance metrics are listed on <a href="https://github.com/soilspectroscopy/ossl-models/raw/main/out/fitted_models_performance_v1.2.csv">GitHub</a>.</p>
-<p>All validation scatterplots are available on <a href="https://github.com/soilspectroscopy/ossl-models/tree/main/out/plots">GitHub</a>. Example of a validation plot.</p>
-<div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:ac-toc"></span>
-<img src="https://storage.googleapis.com/soilspec4gg-public/models/log..c.tot_usda.a622_w.pct/valplot_mir_cubist_ossl_na_v1.2.png" alt="Validation scatterplot for `log..c.tot_usda.a622_w.pct` using `mir_cubist_ossl_na_v1.2`." width="70%"><p class="caption">
-Figure 6.1: Validation scatterplot for <code>log..c.tot_usda.a622_w.pct</code> using <code>mir_cubist_ossl_na_v1.2</code>.
-</p>
-</div>
-<!-- ```{r perf_metrics, echo=FALSE} -->
-<!-- readr::read_csv("https://github.com/soilspectroscopy/ossl-models/raw/main/out/fitted_models_performance_v1.2.csv", show_col_types = FALSE) |> -->
-<!--   knitr::kable() -->
-<!-- ``` -->
-</div>
-<div id="uncertainty-and-trustworthiness" class="section level2" number="6.3">
-<h2>
-<span class="header-section-number">6.3</span> Uncertainty and trustworthiness<a class="anchor" aria-label="anchor" href="#uncertainty-and-trustworthiness"><i class="fas fa-link"></i></a>
-</h2>
-<p>The cross-validated predictions were used to estimate the unbiased absolute error, which were employed to calibrate uncertainty models via <a href="https://en.wikipedia.org/wiki/Conformal_prediction">conformal prediction intervals</a>.The conformal prediction is built upon past experience, i.e. the error model is calibrated using the same fine-tuned structure of the respective response model. Non-conformity of the calibration set were estimated from the predicted error with a defined confidence level of 68% to approximate one standard deviation. The confidence interval (CI) can be derived with the prediction of the response and error values corrected by the non-conformity score of the calibration set <span class="citation">(<a href="references.html#ref-CortsCiriano2015" role="doc-biblioref">Cortés-Ciriano et al., 2015</a>; <a href="references.html#ref-Norinder2014" role="doc-biblioref">Norinder, Carlsson, Boyer, &amp; Eklund, 2014</a>)</span>. The main advantage of conformal prediction is that the intervals are always valid, i.e. a confidence of 80% means that the predicted confidence regions may contain the observed value in at least 80% of the cases. Another big advantage of conformal prediction methods is that we take rid of resampling mechanisms such as bootstrapping or Monte Carlo simulation which significantly requires a huge computing time for large sample sizes.</p>
-<p>The trustworthiness test was built using the PCA model employed for compression <span class="citation">(<a href="references.html#ref-Jackson1979" role="doc-biblioref">Jackson &amp; Mudholkar, 1979</a>; <a href="references.html#ref-deSantana2023" role="doc-biblioref">Santana et al., 2023</a>)</span>. Considering that only the first 120 PCs are used to decompose spectra for modeling fitting, the remaining variation from farther components are denominated residual, which is calculated by the difference between the original spectra and back-transformed with the first 120 PCs, which makes possible to calculate the Q-statistics (sum of squared residual across the spectrum). The Q statistic of new samples are compared against a Q critical value estimated across the calibration set with a 99% confidence level.</p>
-</div>
-<div id="using-the-ossl-models" class="section level2" number="6.4">
-<h2>
-<span class="header-section-number">6.4</span> Using the OSSL models<a class="anchor" aria-label="anchor" href="#using-the-ossl-models"><i class="fas fa-link"></i></a>
-</h2>
-<p>To load the complete analysis-ready models, train data, cross-validated predictions, validation performance metrics, and validation plot in R, please use the public URLs described <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/out/fitted_models_access.csv">GitHub</a>.</p>
-<p><code>qs</code> is a serialized and compressed file format that is faster than native R <code>rds</code>. You need to have <a href="https://github.com/traversc/qs">qs package</a> version &gt;= 0.25.5 to load files direct from the URLs.</p>
-<p><strong>NOTE: For using the trained models with new spectra, the supplemented data must be formatted following the defined spectral ranges:</strong><br><strong>- VisNIR: 400 - 2500 nm</strong><br><strong>- NIR Neospectra: 1350 - 2550 nm</strong><br><strong>- MIR: 600 - 4000 cm<sup>-1</sup></strong></p>
-<p><strong>Shorter intervals will raise an error! Users can impute the edges and fill the missing columns with the last available value of the border wavelengths.</strong></p>
-<p>We provided on GitHub both <a href="https://github.com/soilspectroscopy/ossl-models/tree/main/sample-data">examples of datasets</a> and a <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/R-mlr/OSSL_functions.R">prediction bundle</a> that incorporates all processing operations to get the outputs.</p>
-<p>Please, check the example datasets for formatting your spectra to the minimum required level of the prediction bundle You can provide either <code>csv</code> files or directly <code>asd</code> or opus (<code>.0</code>) for VisNIR and MIR scans, respectively.</p>
-<p>The results table has the prediction value (already back-transformed if log transformation was used) for the soil property of interest, 1-standard-deviation uncertainty band, and a flag column for <strong>potential underrepresented</strong> samples given the calibration data.</p>
-<p>The prediction function requires the <a href="https://www.tidyverse.org/">tidyverse</a>, <a href="https://mlr3book.mlr-org.com">mlr3 and mlr3extralearners</a>, <a href="https://topepo.github.io/Cubist//">Cubist</a>. <a href="https://github.com/traversc/qs">qs</a>, <a href="https://github.com/pierreroudier/asdreader">asdreader</a>, <a href="https://github.com/spectral-cockpit/opusreader2">opusreader2</a>, and <a href="https://cran.rstudio.com/web/packages/matrixStats/index.html">matrixStats</a> packages.</p>
-<p>Parameters:</p>
-<ul>
-<li>
-<code>target</code>: the soil property of interest. Log-transformed properties must have <code>log..</code> appended at the beginning of the name as indicated in the <code>export_name</code> column.<br>
-</li>
-<li>
-<code>spectra.file</code>: the path for the spectral measurements, either a <code>csv</code> table (following the sample-data specifications), <code>asd</code>, or opus (<code>.0</code>) file.<br>
-</li>
-<li>
-<code>spectra.type</code>: the spectral range of interest. Either <code>visnir</code>, <code>nir.neospectra</code>, or <code>mir</code>.<br>
-</li>
-<li>
-<code>subset.type</code>: the subset of interest, either the whole <code>ossl</code> or the <code>kssl</code> alone.<br>
-</li>
-<li>
-<code>geo.type</code>: only available for <code>na</code>.<br>
-</li>
-<li>
-<code>models.dir</code>: the path for the <code>ossl_models</code> folder. Should follow the same structure and naming code as represented in <a href="out/fitted_models_access.csv">fitted_models_access.csv</a>.</li>
-</ul>
-<p>All files that represent the <strong>ossl_models</strong> directory tree for local run or online access are described in <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/out/ossl_models_directory_tree.csv">ossl_models_directory_tree.csv</a>.</p>
-<blockquote>
-<p>Please note that the soil properties indication follows the export name. In addition, check <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/out/fitted_models_performance_v1.2.csv">fitted_models_performance_v1.2.csv</a> for the complete list of models as some spectra types are not completely available. More importantly, for natural-log soil properties, the upper and lower bands were estimated before the back-transformation.</p>
-</blockquote>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span><span class="op">(</span><span class="st">"R-mlr/OSSL_functions.R"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html">list.files</a></span><span class="op">(</span><span class="st">"sample-data"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">clay.visnir.ossl</span> <span class="op">&lt;-</span> <span class="fu">predict.ossl</span><span class="op">(</span>target <span class="op">=</span> <span class="st">"clay.tot_usda.a334_w.pct"</span>,</span>
-<span>                                 spectra.file <span class="op">=</span> <span class="st">"sample-data/101453MD01.asd"</span>,</span>
-<span>                                 spectra.type <span class="op">=</span> <span class="st">"visnir"</span>,</span>
-<span>                                 subset.type <span class="op">=</span> <span class="st">"ossl"</span>,</span>
-<span>                                 geo.type <span class="op">=</span> <span class="st">"na"</span>,</span>
-<span>                                 models.dir <span class="op">=</span> <span class="st">"~/mnt-ossl/ossl_models/"</span><span class="op">)</span></span></code></pre></div>
-<div id="registering-and-hosting-models" class="section level3" number="6.4.1">
-<h3>
-<span class="header-section-number">6.4.1</span> Registering and hosting models<a class="anchor" aria-label="anchor" href="#registering-and-hosting-models"><i class="fas fa-link"></i></a>
-</h3>
-<p>If you plan to contribute with your own models to the Soil Spectroscopy for Global Good project,
-please follow these steps:</p>
-<ol style="list-style-type: decimal">
-<li>We recommend registering and sharing new models via S3 file
-service system (Amazon or Google Cloud) with RDS files produced using
-<a href="https://github.com/nuest/docker-reproducible-research">Dockerized solution for full scientific reproducibility</a>.<br>
-</li>
-<li>For each model the following metadata need to be supplied:
-<ul>
-<li>Registered <a href="https://hub.docker.com/r/opengeohub/r-geo">docker image</a>; which should specify in detail: software in
-use, R package versions etc;</li>
-<li>DOI of the zenodo repository with a back-up for the data (i.e. how to cite your models);</li>
-<li>URL for accessing the RDS file via S3;</li>
-</ul>
-</li>
-</ol>
-<p>We can host your models on our infrastructure at no additional costs. Please
-<a href="https://soilspectroscopy.org/contact/">contact us</a> and apply for registering your models via soilspectroscopy.org.</p>
-
+<p>All validation scatterplots are available on <a href="https://github.com/soilspectroscopy/ossl-models/tree/main/out/plots">GitHub</a>. Check below an example of a validation plot.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://storage.googleapis.com/soilspec4gg-public/models/log..c.tot_usda.a622_w.pct/valplot_mir_cubist_ossl_na_v1.2.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>Validation scatterplot for <code>log..c.tot_usda.a622_w.pct</code> using <code>mir_cubist_ossl_na_v1.2</code>.</figcaption>
+</figure>
 </div>
 </div>
 </div>
-  <div class="chapter-nav">
-<div class="prev"><a href="neospectra-database.html"><span class="header-section-number">5</span> Neospectra database</a></div>
-<div class="next"><a href="web-applications-and-api.html"><span class="header-section-number">7</span> Web applications and API</a></div>
-</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#prediction-models"><span class="header-section-number">6</span> Prediction models</a></li>
-<li><a class="nav-link" href="#modeling-framework"><span class="header-section-number">6.1</span> Modeling framework</a></li>
-<li><a class="nav-link" href="#model-performance"><span class="header-section-number">6.2</span> Model performance</a></li>
-<li><a class="nav-link" href="#uncertainty-and-trustworthiness"><span class="header-section-number">6.3</span> Uncertainty and trustworthiness</a></li>
-<li>
-<a class="nav-link" href="#using-the-ossl-models"><span class="header-section-number">6.4</span> Using the OSSL models</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#registering-and-hosting-models"><span class="header-section-number">6.4.1</span> Registering and hosting models</a></li></ul>
-</li>
-</ul>
-
-      <div class="book-extra">
-        <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/soilspectroscopy/ossl-manual/blob/master/060-prediction_models.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/soilspectroscopy/ossl-manual/edit/master/060-prediction_models.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
-        </ul>
+</section>
+<section id="uncertainty-and-representation-flag" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="uncertainty-and-representation-flag"><span class="header-section-number">5.3</span> Uncertainty and representation flag</h2>
+<p>The cross-validated predictions were used to estimate the unbiased absolute error, which was employed to calibrate uncertainty estimaton models via <a href="https://en.wikipedia.org/wiki/Conformal_prediction">conformal prediction</a>.The conformal prediction is built upon past experience, i.e.&nbsp;the error model is calibrated using the same fine-tuned structure of the respective response model.</p>
+<p>Non-conformity scores of the calibration set were estimated from the predicted error with a defined confidence level of 68% to approximate one standard deviation. The prediction interval (PI) can be derived by estimating the response and error values corrected by the non-conformity score of the calibration set <span class="citation" data-cites="Norinder2014 CortsCiriano2015">[<a href="references.html#ref-Norinder2014" role="doc-biblioref">13</a>,<a href="references.html#ref-CortsCiriano2015" role="doc-biblioref">14</a>]</span>.</p>
+<p>The main advantage of conformal prediction is that the intervals are always covered, i.e.&nbsp;a confidence of 68% means that the predicted interval regions may contain the observed value in at least 68% of the cases. Another big advantage of conformal prediction is that it is model agnostic and we get rid of resampling mechanisms such as bootstrapping or Monte Carlo simulation which significantly requires a huge computation time for large sample sizes.</p>
+<p>The representation flag was built using the PCA model employed for compression <span class="citation" data-cites="Jackson1979 deSantana2023">[<a href="references.html#ref-Jackson1979" role="doc-biblioref">7</a>,<a href="references.html#ref-deSantana2023" role="doc-biblioref">8</a>]</span>. Considering that only the first 120 PCs are used to decompose spectra for modeling fitting, the remaining variation from farther components are residual. The difference between the original spectra and back-transformed with the first 120 PCs made possible the calculation of the Q-statistics (sum of squared residual across the spectrum). The Q statistic of new spectra are compared against a Q critical value estimated from the calibration set with a 99% confidence level.</p>
+</section>
+<section id="using-the-ossl-models" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="using-the-ossl-models"><span class="header-section-number">5.4</span> Using the OSSL models</h2>
+<p>To use the OSSL models locally, download pre-trained models and complementary files as provided in <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/out/fitted_models_access.csv">GitHub</a>.</p>
+<p>You need to follow a specific directory tree for local runs as described in <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/out/ossl_models_directory_tree.csv">ossl_models_directory_tree.csv</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-    </nav>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Please note that soil properties names are encoded into a specific string format. Check <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/out/fitted_models_performance_v1.2.csv">fitted_models_performance_v1.2.csv</a> for the complete list of models as some combinations of spectral regions and soil properties are not available.</p>
+</div>
+</div>
+<p>You will also need to install R and download the <code>qs</code> and <code>MLR3</code> ecosystem packages. <code>qs</code> is a serialized and compressed file format that is faster than native R <code>rds</code>. You need to have <a href="https://github.com/traversc/qs">qs package</a> version &gt;= 0.25.5 to load files direct from the URLs.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For using the pre-trained models with new spectra, the spectra to be predicted must follow these range specifications:<br>
+- VisNIR: 400-2500 nm.<br>
+- NIR Neospectra: 1350-2550 nm.<br>
+- MIR: 600-4000 cm<sup>-1</sup>.</p>
+</div>
+</div>
+<p>We provided on GitHub both <a href="https://github.com/soilspectroscopy/ossl-models/tree/main/sample-data">examples of datasets</a> and a <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/R-mlr/OSSL_functions.R">prediction function</a> that incorporates all input preparation and output generation.</p>
+<p>Please, check the example datasets for formatting your spectra to the minimum required level of the prediction function.</p>
+<p>You can provide either <code>csv</code>, <code>asd</code> (for VisNIR), or opus (<code>.0</code>) for MIR scans.</p>
+<p>The output table has the prediction value (already back-transformed if log transformation was used) for the soil property of interest, 1-standard-deviation prediction intervals (lower and upper limits), and a flag column for <strong>potential underrepresented</strong> samples.</p>
+<p>The prediction function requires the <a href="https://www.tidyverse.org/">tidyverse</a>, <a href="https://mlr3book.mlr-org.com">mlr3 and mlr3extralearners</a>, <a href="https://topepo.github.io/Cubist//">Cubist</a>, <a href="https://github.com/traversc/qs">qs</a>, <a href="https://github.com/pierreroudier/asdreader">asdreader</a>, <a href="https://github.com/spectral-cockpit/opusreader2">opusreader2</a>, and <a href="https://cran.rstudio.com/web/packages/matrixStats/index.html">matrixStats</a> packages.</p>
+<p><code>predict.ossl</code> parameters:<br>
+- <code>target</code>: the soil property of interest. Log-transformed properties must have <code>log..</code> appended at the beginning of the name as indicated in the <code>export_name</code> column.<br>
+- <code>spectra.file</code>: the path for the spectral measurements, either a <code>csv</code> table (following the sample-data specifications), <code>asd</code>, or opus (<code>.0</code>) file.<br>
+- <code>spectra.type</code>: the spectral range of interest. Either <code>visnir</code>, <code>nir.neospectra</code>, or <code>mir</code>.<br>
+- <code>subset.type</code>: the subset of interest, either the whole <code>ossl</code> or the <code>kssl</code> alone.<br>
+- <code>geo.type</code>: only available for <code>na</code>.<br>
+- <code>models.dir</code>: the path for the <code>ossl_models</code> folder. Should follow the same structure and naming code as represented in <a href="out/fitted_models_access.csv">fitted_models_access.csv</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R-mlr/OSSL_functions.R"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="st">"sample-data"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>clay.visnir.ossl <span class="ot">&lt;-</span> <span class="fu">predict.ossl</span>(<span class="at">target =</span> <span class="st">"clay.tot_usda.a334_w.pct"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">spectra.file =</span> <span class="st">"sample-data/101453MD01.asd"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">spectra.type =</span> <span class="st">"visnir"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">subset.type =</span> <span class="st">"ossl"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">geo.type =</span> <span class="st">"na"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">models.dir =</span> <span class="st">"~/mnt-ossl/ossl_models/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
+
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-Safanelli2025" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Safanelli JL, Hengl T, Parente LL, Minarik R, Bloom DE, Todd-Brown K, et al. Open soil spectral library (<span>OSSL)</span>: Building reproducible soil calibration models through open development and community engagement. PLoS One. 2025;20: e0296545. doi:<a href="https://doi.org/10.1371/journal.pone.0296545">10.1371/journal.pone.0296545</a></div>
 </div>
-</div> <!-- .container -->
+<div id="ref-Safanelli2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Safanelli JL, Sanderman J, Bloom D, Todd-Brown K, Parente LL, Hengl T, et al. An interlaboratory comparison of mid-infrared spectra acquisition: Instruments and procedures matter. Geoderma. 2023;440: 116724. doi:<a href="https://doi.org/10.1016/j.geoderma.2023.116724">10.1016/j.geoderma.2023.116724</a></div>
+</div>
+<div id="ref-mlr3" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Lang M, Binder M, Richter J, Schratz P, Pfisterer F, Coors S, et al. <span class="nocase">mlr3</span>: A modern object-oriented machine learning framework in <span>R</span>. Journal of Open Source Software. 2019. doi:<a href="https://doi.org/10.21105/joss.01903">10.21105/joss.01903</a></div>
+</div>
+<div id="ref-quinlan1992learning" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Quinlan J. Learning with continuous classes. Proc 5th australian joint conference on artificial intelligence, tasmania, 1992. 1992. pp. 343–348. </div>
+</div>
+<div id="ref-quinlan1993combining" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Quinlan J. Combining instance-based and model-based learning. Proc Tenth int Conference on machine learning. 1993. pp. 236–243. </div>
+</div>
+<div id="ref-chang2001near" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Chang C-W, Laird D, Mausbach MJ, Hurburgh Jr CR. Near-infrared reflectance spectroscopy–principal components regression analyses of soil properties. Soil Science Society of America Journal. 2001;65: 480. doi:<a href="https://doi.org/10.2136/sssaj2001.652480x">10.2136/sssaj2001.652480x</a></div>
+</div>
+<div id="ref-Jackson1979" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Jackson JE, Mudholkar GS. Control procedures for residuals associated with principal component analysis. Technometrics. 1979;21: 341–349. doi:<a href="https://doi.org/10.1080/00401706.1979.10489779">10.1080/00401706.1979.10489779</a></div>
+</div>
+<div id="ref-deSantana2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Santana FB de, Hall RebeccaL, Lowe V, Browne MA, Grunsky EC, Fitzsimons MM, et al. A systematic approach to predicting and mapping soil particle size distribution from unknown samples using large mid-infrared spectral libraries covering large-scale heterogeneous areas. Geoderma. 2023;434: 116491. doi:<a href="https://doi.org/10.1016/j.geoderma.2023.116491">10.1016/j.geoderma.2023.116491</a></div>
+</div>
+<div id="ref-Barnes1989" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Barnes RJ, Dhanoa MS, Lister SJ. Standard normal variate transformation and de-trending of near-infrared diffuse reflectance spectra. Applied Spectroscopy. 1989;43: 772–777. doi:<a href="https://doi.org/10.1366/0003702894202201">10.1366/0003702894202201</a></div>
+</div>
+<div id="ref-Yang2020" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Yang L, Shami A. On hyperparameter optimization of machine learning algorithms: Theory and practice. Neurocomputing. 2020;415: 295–316. doi:<a href="https://doi.org/10.1016/j.neucom.2020.07.061">10.1016/j.neucom.2020.07.061</a></div>
+</div>
+<div id="ref-Dangal2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Dangal S, Sanderman J, Wills S, Ramirez-Lopez L. Accurate and precise prediction of soil properties from a large mid-infrared spectral library. Soil Systems. 2019;3: 11. doi:<a href="https://doi.org/10.3390/soilsystems3010011">10.3390/soilsystems3010011</a></div>
+</div>
+<div id="ref-malone2021soil" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Wadoux AMJC, Malone B, McBratney AB, Fajardo M, Minasny B. <span class="nocase">Soil Spectral Inference with R: Analysing Digital Soil Spectra Using the R Programming Environment</span>. Springer International Publishing; 2021. </div>
+</div>
+<div id="ref-Norinder2014" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Norinder U, Carlsson L, Boyer S, Eklund M. Introducing conformal prediction in predictive modeling. A transparent and flexible alternative to applicability domain determination. Journal of Chemical Information and Modeling. 2014;54: 1596–1603. doi:<a href="https://doi.org/10.1021/ci5001168">10.1021/ci5001168</a></div>
+</div>
+<div id="ref-CortsCiriano2015" class="csl-entry" role="listitem">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Cortés-Ciriano I, Westen GJP van, Bouvier G, Nilges M, Overington JP, Bender A, et al. Improved large-scale prediction of growth inhibition patterns using the <span>NCI</span>60 cancer cell line panel. Bioinformatics. 2015;32: 85–95. doi:<a href="https://doi.org/10.1093/bioinformatics/btv529">10.1093/bioinformatics/btv529</a></div>
+</div>
+</div>
+</section>
 
-<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
-
-  <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Open Soil Spectral Library</strong>" was written by Woodwell Climate Research Center, University of Florida, OpenGeoHub and contributors. </p>
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./neospectra.html" class="pagination-link" aria-label="Neospectra database">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Neospectra database</span></span>
+      </a>          
   </div>
-
-  <div class="col-12 col-md-6 mt-3">
-    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  <div class="nav-page nav-page-next">
+      <a href="./web-services.html" class="pagination-link" aria-label="Web services">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Web services</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
-
-</div></div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Written by the SS4GG team.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/soilspectroscopy/ossl-manual/edit/main/prediction-models.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/soilspectroscopy/ossl-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
 </footer>
-</body>
-</html>
+
+
+
+
+</body></html>

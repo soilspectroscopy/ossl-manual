@@ -1,0 +1,50 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Open Soil Spectral Library"
+  page-footer:
+    left: |
+      Written by the SS4GG team.
+    right: |
+      Built with <a href="https://quarto.org/">Quarto</a>.
+  site-url: https://soilspectroscopy.github.io/ossl-manual/
+  repo-url: https://github.com/soilspectroscopy/ossl-manual/
+  cover-image: img/cover.jpg
+  repo-branch: main
+  repo-actions: [edit, issue]
+  author:
+    - name: Soil Spectroscopy for Global Good team
+      email: soilspec4gg@woodwellclimate.org
+      affiliations:
+  date: "01/13/2025"
+  chapters:
+    - index.qmd
+    - about.qmd
+    - soilspec.qmd
+    - db-desc.qmd
+    - db-access.qmd
+    - neospectra.qmd
+    - prediction-models.qmd
+    - web-services.qmd
+    - tutorial.qmd
+    - references.qmd
+
+bibliography: references.bib
+csl: plos-one.csl
+
+format:
+  html:
+    theme:
+      light:
+      - cosmo
+      dark:
+      - cosmo
+      - dark.scss
+  pdf:
+    documentclass: scrreprt
+
+engine: knitr
+editor: source
+

@@ -1,0 +1,125 @@
+# Prediction models
+
+::: {.callout-tip}
+A full documentation of the modeling framework is presented and discussed in our paper @Safanelli2025.  
+
+> Safanelli, J. L., Hengl, T., Parente, L. L., Minarik, R., Bloom, D. E., Todd-Brown, K., … Sanderman, J. (2025). Open Soil Spectral Library (OSSL): Building reproducible soil calibration models through open development and community engagement. PloS One, 20(1), e0296545. doi:[10.1371/journal.pone.0296545](https://doi.org/10.1371/journal.pone.0296545).
+:::
+
+Since the project's inception in December 2021, various modeling strategies and data fusion approaches have been tested. We have also received valuable feedback on the initial models and web services from early adopters.  
+
+We conducted a systematic analysis of common learning algorithms, compression strategies, and preprocessing using the OSSL database and independent test sets, incorporating insights from the MIR ring trial experiment @Safanelli2023 - a separate initiative developed to understand the differences between multiple soil spectroscopy laboratories.
+
+At this initial phase, we also excluded the combination of spectra with spatial covariates or the fusing of spectral regions to make the prediction models more accessible and generally applicable to end users. The ability to easily deploy pre-trained models was significant for our team, as local modeling approaches or fine-tuning/transfer learning would require more computing power and skills beyond our expertise and the project's initial scope.  
+
+More novel and sophisticated modeling strategies necessitate additional time to verify potential performance improvements while accommodating computational and end-user requirements.  
+
+The subsequent sections detail the steps taken to produce the OSSL models, which are utilized in the OSSL Engine and API and are publicly accessible from Google Cloud Storage.  
+
+It's essential to note that the current models may yield poor predictions. Please let us know about any inconsistencies you may discover to assist us in further improving the existing models.  
+
+For a comprehensive review of the modeling framework, please visit our open-access [GitHub repository](https://github.com/soilspectroscopy/ossl-models).
+
+## Modeling framework
+
+We have used the [MLR3 framework](https://mlr3book.mlr-org.com/) [@mlr3] for fitting machine learning models, specifically with the [Cubist algorithm](https://cran.r-project.org/web/packages/Cubist/vignettes/cubist.html) [@quinlan1992learning; @quinlan1993combining].
+
+The [`R-mlr` folder](https://github.com/soilspectroscopy/ossl-models/tree/main/R-mlr) in the [ossl-models GitHub repository](https://github.com/soilspectroscopy/ossl-models) contains the open-access R code used to calibrate the prediction models.
+
+In summary, we have provided 5 different model types depending on the availability of samples for each soil property, which was fitted without the use of ancillary information (`na` code), i.e., site information or environmental layers are not used as predictors, only the spectral variations.
+
+The model types are composed of two different subsets, i.e., either using the KSSL soil spectral library alone (`kssl` code) or the full OSSL database (`ossl` code), in combination with three spectral types: VisNIR (`visnir` code), NIR from the Neospectra instrument (`nir.neospectra` code), and MIR (`mir` code).
+
+```{r model_types, echo=FALSE}
+readr::read_csv("https://github.com/soilspectroscopy/ossl-models/raw/main/out/fitted_modeling_combinations_v1.2.csv", show_col_types = FALSE) |>
+  dplyr::distinct(spectra_type, subset, geo, model_name) |>
+  knitr::kable()
+```
+
+::: {.callout-tip}
+**We highly recommend using the OSSL model types**. The models fitted exclusively with the KSSL can be used when the spectra to be predicted has the same instrument manufacturer/model as the spectrometers used to build the KSSL VisNIR and MIR libraries. Also, the KSSL library must be representative for the new soil samples based both on spectral similarity and range of soil properties of interest.
+:::
+
+The machine learning algorithm Cubist (coding name `cubist`) takes advantage of a decision-tree splitting method but fits linear regression models at each terminal leaf. It also uses a boosting mechanism (sequential trees adjusted by weights) that allows the growth of a forest by tuning the number of committees. We haven't used the correction of final predictions by the nearest neighbors' influence due to the lack of this feature in the MLR3 framework.
+
+As predictors, we have used the first 120 PCs of the compressed spectra (to represent about 99.99% of the original variance), a threshold that considers the trade-off between spectral representation and compression magnitude [@chang2001near]. The remaining farther components were used for the representation flag, i.e., checking if a sample is underrepresented in respect of the feature space from the calibration set due to some potential spectral features that are not well characterized [@Jackson1979;@deSantana2023].
+
+Before PCA compression, spectra was preprocessed with Standard Normal Variate (SNV) to reduce some of the variability caused by offset and spectral dissimiliraty, while minimizing the effects of particle size, light scattering, and multicollinearity that are known issues of diffuse reflectance [@Barnes1989].
+
+Hyperparameter optimization was done with 5-fold cross-validation and a smaller subset for speeding up this operation [@Yang2020]. This task was performed with a grid search of the hyperparameter space testing up to 5 configurations of Committees to find the lowest Root Mean Squared Error (RMSE). The final model with the best optimal hyperparameter was fitted at the end with the full train data.
+
+Some highly-skewed soil properties were natural-log transformed (with offset = 1, that is why we use the `log1p` function) to improve the prediction performance [@Dangal2019]. They were back-transformed only at the end after running all modeling steps, including performance estimation and the definition of the uncertainty intervals.
+
+Final fitted models are listed on [GitHub](https://github.com/soilspectroscopy/ossl-models/blob/main/out/fitted_modeling_combinations_v1.2.csv).
+
+## Model performance
+
+Model evaluation was performed with 10-fold cross validation with refitting of the tuned models using RMSE (`rmse`), mean error (`bias`), R squared (`rsq`), Lin's concordance correlation coefficient (`ccc`), and the ratio of performance to the interquartile range (`rpiq`) [@malone2021soil].
+
+The final fitted models along with their performance metrics are listed on [GitHub](https://github.com/soilspectroscopy/ossl-models/raw/main/out/fitted_models_performance_v1.2.csv).
+
+All validation scatterplots are available on [GitHub](https://github.com/soilspectroscopy/ossl-models/tree/main/out/plots). Check below an example of a validation plot.
+
+```{r ac-toc, echo=FALSE, fig.cap="Validation scatterplot for `log..c.tot_usda.a622_w.pct` using `mir_cubist_ossl_na_v1.2`.", out.width="70%"}
+knitr::include_graphics("https://storage.googleapis.com/soilspec4gg-public/models/log..c.tot_usda.a622_w.pct/valplot_mir_cubist_ossl_na_v1.2.png")
+```
+
+## Uncertainty and representation flag
+
+The cross-validated predictions were used to estimate the unbiased absolute error, which was employed to calibrate uncertainty estimaton models via [conformal prediction](https://en.wikipedia.org/wiki/Conformal_prediction).The conformal prediction is built upon past experience, i.e. the error model is calibrated using the same fine-tuned structure of the respective response model.
+
+Non-conformity scores of the calibration set were estimated from the predicted error with a defined confidence level of 68% to approximate one standard deviation. The prediction interval (PI) can be derived by estimating the response and error values corrected by the non-conformity score of the calibration set [@Norinder2014; @CortsCiriano2015].
+
+The main advantage of conformal prediction is that the intervals are always covered, i.e. a confidence of 68% means that the predicted interval regions may contain the observed value in at least 68% of the cases. Another big advantage of conformal prediction is that it is model agnostic and we get rid of resampling mechanisms such as bootstrapping or Monte Carlo simulation which significantly requires a huge computation time for large sample sizes.  
+
+The representation flag was built using the PCA model employed for compression [@Jackson1979; @deSantana2023]. Considering that only the first 120 PCs are used to decompose spectra for modeling fitting, the remaining variation from farther components are residual. The difference between the original spectra and back-transformed with the first 120 PCs made possible the calculation of the Q-statistics (sum of squared residual across the spectrum). The Q statistic of new spectra are compared against a Q critical value estimated from the calibration set with a 99% confidence level.
+
+## Using the OSSL models
+
+To use the OSSL models locally, download pre-trained models and complementary files as provided in [GitHub](https://github.com/soilspectroscopy/ossl-models/blob/main/out/fitted_models_access.csv).
+
+You need to follow a specific directory tree for local runs as described in [ossl_models_directory_tree.csv](https://github.com/soilspectroscopy/ossl-models/blob/main/out/ossl_models_directory_tree.csv).
+
+::: {.callout-tip}
+Please note that soil properties names are encoded into a specific string format. Check [fitted_models_performance_v1.2.csv](https://github.com/soilspectroscopy/ossl-models/blob/main/out/fitted_models_performance_v1.2.csv) for the complete list of models as some combinations of spectral regions and soil properties are not available.
+:::
+
+You will also need to install R and download the `qs` and `MLR3` ecosystem packages. `qs` is a serialized and compressed file format that is faster than native R `rds`. You need to have [qs package](https://github.com/traversc/qs) version >= 0.25.5 to load files direct from the URLs.
+
+::: {.callout-tip}
+For using the pre-trained models with new spectra, the spectra to be predicted must follow these range specifications:  
+- VisNIR: 400-2500 nm.  
+- NIR Neospectra: 1350-2550 nm.  
+- MIR: 600-4000 cm^-1^.  
+:::
+
+We provided on GitHub both [examples of datasets](https://github.com/soilspectroscopy/ossl-models/tree/main/sample-data) and a [prediction function](https://github.com/soilspectroscopy/ossl-models/blob/main/R-mlr/OSSL_functions.R) that incorporates all input preparation and output generation.
+
+Please, check the example datasets for formatting your spectra to the minimum required level of the prediction function.
+
+You can provide either `csv`, `asd` (for VisNIR), or opus (`.0`) for MIR scans.
+
+The output table has the prediction value (already back-transformed if log transformation was used) for the soil property of interest, 1-standard-deviation prediction intervals (lower and upper limits), and a flag column for **potential underrepresented** samples.
+
+The prediction function requires the [tidyverse](https://www.tidyverse.org/), [mlr3 and mlr3extralearners](https://mlr3book.mlr-org.com), [Cubist](https://topepo.github.io/Cubist//), [qs](https://github.com/traversc/qs), [asdreader](https://github.com/pierreroudier/asdreader), [opusreader2](https://github.com/spectral-cockpit/opusreader2), and [matrixStats](https://cran.rstudio.com/web/packages/matrixStats/index.html) packages.
+
+`predict.ossl` parameters:  
+- `target`: the soil property of interest. Log-transformed properties must have `log..` appended at the beginning of the name as indicated in the `export_name` column.  
+- `spectra.file`: the path for the spectral measurements, either a `csv` table (following the sample-data specifications), `asd`, or opus (`.0`) file.  
+- `spectra.type`: the spectral range of interest. Either `visnir`, `nir.neospectra`, or `mir`.  
+- `subset.type`: the subset of interest, either the whole `ossl` or the `kssl` alone.  
+- `geo.type`: only available for `na`.  
+- `models.dir`: the path for the `ossl_models` folder. Should follow the same structure and naming code as represented in [fitted_models_access.csv](out/fitted_models_access.csv).  
+
+```{r prediction, echo=TRUE, eval=FALSE, message=FALSE}
+source("R-mlr/OSSL_functions.R")
+
+list.files("sample-data")
+
+clay.visnir.ossl <- predict.ossl(target = "clay.tot_usda.a334_w.pct",
+                                 spectra.file = "sample-data/101453MD01.asd",
+                                 spectra.type = "visnir",
+                                 subset.type = "ossl",
+                                 geo.type = "na",
+                                 models.dir = "~/mnt-ossl/ossl_models/")
+```

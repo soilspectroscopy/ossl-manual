@@ -1,0 +1,84 @@
+# About {.unnumbered}
+
+> “Man’s most human characteristic is not his ability to learn, which he shares with many other species, but his ability to teach and store what others have developed and taught him.” Margaret Mead, Culture and Commitment: The New Relationships Between the Generations in the 1970s.
+
+## Soil Spectroscopy for Global Good
+
+The SS4GG was a USDA National Institute of Food and Agriculture (NIFA)-funded Cyberinformatics Tools Coordinated Innovation Network, award [2020-67021-32467](https://portal.nifa.usda.gov/web/crisprojectpages/1023775-fact-cin-soil-spectroscopy-for-the-global-good.html). It brought together soil scientists, data scientists and other stakeholders to overcome some of the current bottlenecks preventing a wider and more efficient use of soil spectroscopy. A series of activities addressed many topics including interoperability, machine learning, community events, and application of spectroscopy predictions for informed decision-making. For more information about the initiative, please refer to our [official webpage](https://soilspectroscopy.org/).
+
+[![](img/soilspec4gg-logo_fc.png){fig-align="center" width=50%}](https://soilspectroscopy.org/)
+
+As the original project has ended, SS4GG keeps running and improving its resources with funding from [Woodwell Climate Research Center](https://www.woodwellclimate.org/air-quality-monitoring-to-machine-learning-fund-for-climate-solutions-awards-six-new-grants/), [OpenGeoHub](https://opengeohub.org/), and [Department of Energy’s (DOE)](https://www.llnl.gov/article/50411/lawrence-livermore-grabs-two-spots-does-energy-earthshot-program), while working to secure a new round of multiyear funding.
+
+SS4GG also works with other global initiatives including the [FAO Global Soil Partnership](https://www.fao.org/global-soil-partnership/glosolan-old/soil-analysis/dry-chemistry-spectroscopy/en/) and the [IEEE P4005 - Standards and Protocols for Soil Spectroscopy](https://sagroups.ieee.org/4005/) working group.
+
+## Open Soil Spectral Library
+
+The Open Soil Spectral Library (OSSL) is a compilation of several heterogenous and independent datasets into a common standardized source. It is available as a digital asset and web-services. The OSSL compilation allowed our team to fit generally-applicable prediction models based on spectral measurements. Several resources are built around the OSSL, which includes:
+
+- A public soil spectral library shared through several formats [(S3, mongoDB, and API)](https://soilspectroscopy.github.io/ossl-manual/database-access.html) and [documented](https://soilspectroscopy.github.io/ossl-manual/database-description.html) in this manual;
+- [API](https://api.soilspectroscopy.org/__docs__/#/) with database access and an estimation service;
+- Web services facilitating user interaction: [OSSL Explorer](https://explorer.soilspectroscopy.org/) and [OSSL Engine](https://engine.soilspectroscopy.org/);
+- [Open-source code on GitHub](https://github.com/soilspectroscopy) used for data compilation, analysis, and machine learning;
+- [Tutorials and training materials](https://soilspectroscopy.github.io/ossl-manual/hands-on-tutorial.html).
+
+::: {.callout-tip}
+## Publication alert!
+A peer-reviewed and open-access publication describing the first version of OSSL database and initial predictive modeling is available in [PLOS One](https://doi.org/10.1371/journal.pone.0296545). Please use the following info when citing the OSSL:  
+
+> Safanelli, J. L., Hengl, T., Parente, L. L., Minarik, R., Bloom, D. E., Todd-Brown, K., … Sanderman, J. (2025). Open Soil Spectral Library (OSSL): Building reproducible soil calibration models through open development and community engagement. PloS One, 20(1), e0296545. doi:[10.1371/journal.pone.0296545](https://doi.org/10.1371/journal.pone.0296545).
+:::
+
+## Contributors
+
+Over the past years several people have contributed or are still contributing with the SS4GG. The following list is not exhaustive:
+
+- José Lucas Safanelli (core team)
+- Tomislav Hengl (core team)
+- Jonathan Sanderman (core team)
+- Katherine Todd-Brown (core team)
+- Rich Ferguson (advisory board)
+- Fenny van Egmond (advisory board)
+- Keith Shepherd (advisory board)
+- Leandro Parente (dev and project contributor)
+- Robert Minarik (project contributor)
+- Dellena E. Bloom (project contributor)
+- Wanderson de Sousa Mendes (project contributor)
+- Asa Gholizadeh (project contributor)
+- Colleen Partida (project contributor)
+- Aleksandar Sekulic (web services)
+- Petar Bursac (web services)
+- Henning Teickner (github contributor)
+- Deepak C. (github contributor)
+- Philipp Baumann (foss dev and github contributor)
+- Franck Albinet (foss dev)
+- Laura Summerauer (data contributor)
+- Marcus Schiedung (data contributor)
+- Loretta Garrett (data contributor)
+- Branislav Jović (data contributor)
+
+## Acknowledgments
+
+- [**USDA-NRCS Kellogg Soil Survey Laboratory (KSSL)**](https://ncsslabdatamart.sc.egov.usda.gov/), especially Rich Ferguson, Scarlett Murphy, Skye Wills, and Jonathan Maynard, for hosting the KSSL MIR @wijewardane2018predicting and RaCA VisNIR @Wijewardane2016 databases in the public domain, while assisting and answering many questions about the databases and laboratory SOPs;
+- [**World Agroforestry ICRAF**](https://www.cifor-icraf.org/) & [**World Soil Information ISRIC**](https://www.isric.org/explore/isric-soil-data-hub) for releasing a VisNIR soil spectral library @aitkenhead2018exploring based on the Soil Information System (ISIS) of ISRIC;
+- [**World Agroforestry (ICRAF)**](https://www.cifor-icraf.org/) for releasing the [Africa Soil Information Service (AfSIS)](https://data.worldagroforestry.org/dataverse/icraf_soils) phases I and II MIR spectral libraries @Vagen_2020, a collaborative project funded by the Bill and Melinda Gates Foundation (BMGF). Partners included: CIAT-TSBF, ISRIC, CIESIN, The Earth Institute at Columbia University and World Agroforestry (ICRAF);
+- [**European Soil Data Centre**](http://esdac.jrc.ec.europa.eu/) for making openly available the LUCAS Soil Spectral Library @orgiazzi2018lucas.;
+- Laura Summerauer from **ETH Zurich**, for sharing the Central African Soil Spectral Library @Summerauer2021;
+- Marcus Schiedung (formerly from **University of Zurich**, now **Thünen Institute**) for sharing a MIR soil spectral library from forest soils of North Canada @Schiedung2022;
+- Loretta Garrett from **Scion Research** for sharing several MIR spectral datasets from forest soils in New Zealand @Garrett2022;
+- Branislav Jović from the **University of Novi Sad** for sharing a MIR soil spectral library from Serbian soils @Jovi2019;
+
+## Disclaimer
+
+Whilst utmost care has been taken by the Soil Spectroscopy project and data authors while collecting and compiling the data, the data is provided “as is”. Woodwell Climate Research Center, University of Florida, OpenGeoHub foundation and its suppliers and licensors hereby disclaim all warranties of any kind, express or implied, including, without limitation, the warranties of merchantability, fitness for a particular purpose and non-infringement. Neither Woodwell Climate Research Center, University of Florida, OpenGeoHub foundation nor its suppliers and licensors, makes any warranty that the Website will be error free or that access thereto will be continuous or uninterrupted. You understand that you download from, or otherwise obtain content or services through, the Website at your own discretion and risk.
+
+In no event shall the data authors, the Soil Spectroscopy project, or relevant funding agencies be liable for any actual, incidental or consequential damages arising from use of the data. By using the Soil Spectroscopy project data, the user expressly acknowledges that the Data may contain some nonconformities, defects, or errors. No warranty is given that the data will meet the user’s needs or expectations or that all nonconformities, defects, or errors can or will be corrected. The user should always verify actual data; therefore the user bears all responsibility in determining whether the data is fit for the user’s intended use.
+
+The data and manual is always under improvement. If you notice an error or outdated information, please submit a correction/pull request to our github repository or send us an email!
+
+This is a community project. No profits are being made from building and serving the Open Soil Spectral Library.
+
+## License
+
+This manual and all project code is free to use, and if not otherwise indicated, is licensed under the MIT License. The OSSL training data and models, if not otherwise indicated, are available under the Creative Commons Attribution 4.0 International CC-BY.
+

@@ -1,0 +1,278 @@
+---
+engine: knitr
+---
+
+# Soil spectroscopy
+
+## What is soil spectroscopy
+
+Soil spectroscopy refers to the measurement of light interaction with soil. Various methods exist to measure this interaction with the goal of understanding the mineral and organic composition of soils. The most common technique is to measure the absorption when a non-collimated flux of light from the [visible and infrared region of the electromagnetic spectrum](https://en.wikipedia.org/wiki/Electromagnetic_spectrum) is applied to a soil surface. The proportion of the incident radiation reflected by the soil compared to a reference material is measured, forming the basis of [diffuse reflectance spectroscopy](https://en.wikipedia.org/wiki/Diffuse_reflectance_spectroscopy). Distinct characteristic spectra can then be used to estimate various soil properties, including particle size distribution, minerals, and organic compounds. The OSSL is composed of diffuse reflectance spectra collected across the visible (Vis), near- (NIR), and mid-infrared (MIR) regions.
+
+::: {.callout-tip}
+## Spectral regions
+Visible and near-infrared (VisNIR) is typically represented between 350–2500 nm, while the mid-infrared (MIR) ranges between 2500–25000 nm (formally described as 4000–400 cm^-1^). In the OSSL, we have also imported a specific near-infrared library built with the Neospectra scanner (Si-Ware), with its range covering the 1350-2550 nm region. 
+:::
+
+
+![Schematic explanation of diffuse reflectance spectroscopy for soil analysis.](img/drs-schematic.jpeg)
+
+With a collection of soil spectra and corresponding soil properties measured by conventional methods, one can fit [predictive models](https://soilspectroscopy.github.io/soilspec-workshop/intro.html) to quantitatively estimate various soil properties on new scanned soil samples. This method is cost-effective, faster, does not produce chemical residues, and is more scalable than traditional soil analysis techniques. A soil spectral library, such as the OSSL, provides the training data for building and testing predictive models, which are typically developed using machine learning or chemometric algorithms. The effectiveness of these predictive models depends significantly on how well the library represents the variability and diversity of both current and new soil samples intended for prediction.
+
+## Estimating soil properties
+
+Given that each soil spectral library that was imported into the OSSL used distinct procedures for analytically determining reference values, the incompatibility has been a subject of internal discussion in this project. Some global initiatives have been facing this same issue in their soil databases but there still no clear or full consensus on how to harmonize those different methods. This has been a topic of great discussion and research development at the [Global Soil Partnership’s Global Soil Laboratory Network (GLOSOLAN)](https://www.fao.org/global-soil-partnership/glosolan/en/).
+
+In order to maximize transparency, for now, we have decided to produce two different levels for the OSSL database. `Level 0` takes into account the original methods employed in each dataset but tries to initially fit them to two reference lists: [KSSL Guidance – Laboratory Methods and Manuals](https://www.nrcs.usda.gov/resources/guides-and-instructions/kssl-guidance) and ISO standards. A copy of the KSSL procedures and coding scheme is archived in [ossl-imports](https://github.com/soilspectroscopy/ossl-imports/blob/main/out/kssl_procedures.csv).
+
+If a reference method does not fall in any previous method, then we create a new variable sharing at least a common property and unit. A final harmonization takes place in the OSSL `Level 1`, where those common properties sharing different methods are converted to a target method using some publicly available transformation rule, or in the worst scenario, they are naively binded or kept separated to produce its specific model. All the implementations are documented in the [ossl-import/ossl_level0_to_level1_soillab_harmonization.csv](https://github.com/soilspectroscopy/ossl-imports/blob/main/out/ossl_level0_to_level1_soillab_harmonization.csv) repository.
+
+In addition, [GLOSOLAN's Standard Operating Procedures (SOPs)](http://www.fao.org/global-soil-partnership/glosolan/soil-analysis) list four groups of soil variables of interest to international soil spectroscopy projects:
+
+Soil chemical variables:
+
+- pH,  
+- Carbon,  
+- Phosphorous,  
+- Potassium,  
+- Nitrogen,  
+- Exchangeable cations and CEC,  
+- Extractable microelements,  
+- Trace and major element analyses,  
+- Gypsum,  
+- Electrical conductivity and total soluble salt content,  
+- Soluble sulfate and chloride analysis,  
+- Special analysis for peats, mineral and organic soils, agriculture and forest. 
+
+Soil physical variables:
+
+- Bulk density,  
+- Coarse fragments,  
+- Particle-size distribution,  
+- Water retention curve,  
+- Porosity,  
+- Hydraulic conductivity function,  
+- Aggregate stability,  
+- Moisture content,  
+
+Soil biological variables:
+
+- Microbial biomass,  
+- Soil Respiration,  
+- Enzyme activity,  
+- Microbial identification,  
+
+Soil contaminants:
+
+- Heavy metal elements: As, Hg, Cu, Cd, Pb and similar,  
+- Other soil pollutants,  
+
+## Predictive modeling
+
+From initial findings with the OSSL @Safanelli2025, on average, the MIR range appears to be the best spectral region for developing spectral prediction models, followed by VisNIR and NIR (Neospectra). This happens because the MIR contains several fundamental and resolved absorption features from mineral and organic functional groups that translate to better prediction capacity, despite challenges in the interpretation that stem from chemical heterogeneity. VisNIR and NIR spectra, in turn, are made of overtones from the fundamental vibrations of the MIR range, hence, are less sensitive to soil constituents and may result in inferior performance. In addition, we found good performance for some soil properties that may not directly affect soil spectra but can be indirectly inferred and quantified (secondary properties), such as cation exchange capacity, pH, soil contaminants, etc. However, understanding both primary and secondary components in the soil helps to better understand the factors that contribute to the improvement of spectral predictive models within the complex context of soil systems and also to select the spectral range, where they are most pronounced.
+
+![**Rank of prediction models fitted with the Open Soil Spectral Library (OSSL)**. Lin’s concordance correlation coefficient (CCC) from 10-fold cross-validation with refitting. Striped bars represent models with a ratio of performance to the interquartile range (RPIQ) < 2. Source: @Safanelli2025](img/fig5-pone-ossl.PNG)
+
+We recommend visiting a [**dedicated tutorial**](https://soilspectroscopy.github.io/soilspec-workshop/) where we present and walk through the modeling framework employed with the OSSL. We recommend checking the introduction section to understand why soil spectroscopy is a **fit-for-purpose technology**, why **good predictions flow only from good data**, and the **best practices for model calibration**.
+
+The OSSL paper @Safanelli2025 also describes and validates in detail the OSSL models.
+
+## Soil spectral libraries
+
+Several soil spectral libraries were minimally standardized/harmonized to be imported into the OSSL. The following list represents the current integrated datasets, but several more are planned to be added in the near future:
+
+### KSSL.SSL
+MIR and VisNIR spectral library and associated soil characterization data, mostly representing soils from the United States and its territories.
+
+- `r emoji::emoji("closed_book")` Seybold, C. A., Ferguson, R., Wysocki, D., Bailey, S., Anderson, J., Nester, B., ... & Thomas, P. (2019). Application of Mid‐Infrared Spectroscopy in Soil Survey. Soil Science Society of America Journal, 83(6), 1746-1759. <https://doi.org/10.2136/sssaj2019.06.0205>.  
+- `{r} emoji::emoji("link")` Project website: <https://ncsslabdatamart.sc.egov.usda.gov/>  
+- `{r} emoji::emoji("copyright")` Data license: [CC-BY](https://ncsslabdatamart.sc.egov.usda.gov/datause.aspx)  
+- `{r} emoji::emoji("round_pushpin")` Unique sites: 9,061  
+- `{r} emoji::emoji("clipboard")` Unique complete measurements: 76,813 (MIR) and 19,807 (VisNIR)  
+- `{r} emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/KSSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/KSSL)  
+
+### ICRAF.ISRIC
+
+A Globally Distributed Soil Spectral Library. VisNIR and MIR measurements for some 785 profiles from the ISRIC World Soil Reference Collection. The samples are from 58 countries spanning Africa, Asia, Europe, North America, and South America.
+
+- `{r} emoji::emoji("closed_book")` World Agroforestry Centre (ICRAF) and ISRIC - World Soil Information. 2010. The ICRAF/ISRIC Soil VisNIR and MIR spectral libraries. Nairobi, Kenya: World Agroforestry Centre (ICRAF).
+- `{r} emoji::emoji("link")` Project websites: [ISRIC Data Hub](https://data.isric.org/geonetwork/srv/eng/catalog.search#/metadata/1b65024a-cd9f-11e9-a8f9-a0481ca9e724), [ICRAF Dataverse](https://doi.org/10.34725/DVN/MFHA9C). 
+- `{r} emoji::emoji("copyright")` Data license: [CC-BY](https://creativecommons.org/licenses/by/4.0/)  
+- `{r} emoji::emoji("round_pushpin")` Unique locations: 785  
+- `{r} emoji::emoji("clipboard")` Unique complete measurements: 4308  
+- `{r} emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/ICRAF_ISRIC](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/ICRAF_ISRIC)  
+
+### LUCAS.SSL
+
+Soil samples from the [LUCAS (Land Use/Cover Area frame statistical Survey)](https://esdac.jrc.ec.europa.eu/projects/lucas) of 23-28 European Union member states collected in 2009 and 2015 were scanned for VisNIR. Data is available through the OSSL with permission and under condition that _"Graphical representation of individual units on a map is permitted as far as the geographical location of the soil samples is not detectable"_. Additional 600 samples from the LUCAS soil samples archive were scanned at Woodwell Climate Research using an MIR instrument.
+
+- `r emoji::emoji("closed_book")` Orgiazzi, A., Ballabio, C., Panagos, P., Jones, A., & Fernández-Ugalde, O. (2018). LUCAS Soil, the largest expandable soil dataset for Europe: a review. European Journal of Soil Science, 69(1), 140–153. doi:[10.1111/ejss.12499](https://doi.org/10.1111/ejss.12499).  
+- `r emoji::emoji("link")` Project website: [LUCAS 2009](https://esdac.jrc.ec.europa.eu/content/lucas-2009-topsoil-data), [LUCAS 2015](https://esdac.jrc.ec.europa.eu/content/lucas2015-topsoil-data).
+- `r emoji::emoji("copyright")` Data license: [JRC License Agreement for LUCAS 2009](https://esdac.jrc.ec.europa.eu/content/lucas-2009-topsoil-data) and [LUCAS 2015](https://esdac.jrc.ec.europa.eu/content/lucas-2009-topsoil-data) under **Notification** section.    
+- `r emoji::emoji("round_pushpin")` Unique locations: 41,719  
+- `r emoji::emoji("clipboard")` Unique complete measurements: 41,719  
+- `r emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/LUCAS](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/LUCAS)  
+
+::: {.callout-warning}
+## Note
+The LUCAS topsoil dataset used in this work was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>.
+:::
+
+### AFSIS1.SSL
+
+Africa Soil Information Service (AfSIS) Soil Chemistry Phase I consists of MIR and VisNIR measurements of 1903 georeferenced soil samples collected from 19 countries in Sub-Saharan Africa including a suite of wet chemistry data.
+
+- `r emoji::emoji("closed_book")` Vågen, T.-G., Winowiecki, L.A., Desta, L., Tondoh, E.J., Weullow, E., Shepherd, K., Sila, A., (2020). Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory: Africa Soil Information Service (AfSIS) Phase I 2009-2013. World Agroforestry (ICRAF), V1, <https://doi.org/10.34725/DVN/QXCWP1>.  
+- `r emoji::emoji("link")` Project website: [AfSIS](http://africasoils.net/services/data/soil-databases/), [AWS Open Registry](https://registry.opendata.aws/afsis/), [ICRAF Dataverse](https://doi.org/10.34725/DVN/QXCWP1).
+- `r emoji::emoji("copyright")` Data license: [Open Database License ("ODbL")](https://opendatacommons.org/licenses/odbl/)   
+- `r emoji::emoji("round_pushpin")` Unique locations: 1903  
+- `r emoji::emoji("clipboard")` Unique complete measurements: 3806  
+- `r emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/AFSIS](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS)  
+
+### AFSIS2.SSL
+
+Africa Soil Information Service (AfSIS) Soil Chemistry Phase II. Three datasets for Tanzania, Ghana, and Nigeria. Data has been analyzed at the ICRAF Soil-Plant Spectral Diagnostics Laboratory, Nairobi, and the Rothamsted Research. More information can be found on [ICRAF Dataverse](https://data.worldagroforestry.org/dataverse/icraf_soils).
+
+- `r emoji::emoji("closed_book")` Hengl, T., Miller, M.A.E., Križan, J., Shepherd, K.D., Sila, A., Kilibarda, M., Antonijevi, O., Glušica, L., Dobermann, A., Haefele, S.M., McGrath, S.P., Acquah, G.E., Collinson, J., Parente, L., Sheykhmousa, M., Saito, K., Johnson, J-M., Chamberlin, J., Silatsa, F.B.T., Yemefack, M., Wendt, J., MacMillan, R.A., Wheeler I. and Crouch, J. (2021) African soil properties and nutrients mapped at 30 m spatial resolution using two-scale ensemble machine learning. Scientific Reports, 11, 6130. <https://www.nature.com/articles/s41598-021-85639-y>.  
+- `r emoji::emoji("link")` Project website: [Tanzania](https://doi.org/10.34725/DVN/XUDGJY), [Ghana](https://doi.org/10.34725/DVN/SPRSFN), and [Nigeria](https://doi.org/10.34725/DVN/WLAKR2).
+- `r emoji::emoji("copyright")` Data license: [CC-BY](https://creativecommons.org/publicdomain/zero/1.0/)   
+- `r emoji::emoji("round_pushpin")` Unique locations: 367  
+- `r emoji::emoji("clipboard")` Unique complete measurements: 820  
+- `r emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/AFSIS2](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS2)  
+
+### CAF.SSL
+
+The Central African Soil Spectral Library consists of MIR measurements of 1800 soil samples collected in Central Africa. 
+
+- `r emoji::emoji("closed_book")` Summerauer, L., Baumann, P., Ramirez-Lopez, L., Barthel, M., Bauters, M., Bukombe, B., Reichenbach, M., Boeckx, P., Kearsley, E., Van Oost, K., Vanlauwe, B., Chiragaga, D., Heri-Kazi, A. B., Moonen, P., Sila, A., Shepherd, K., Bazirake Mujinya, B., Van Ranst, E., Baert, G., Doetterl, S., and Six, J. (2021). The central African soil spectral library: a new soil infrared repository and a geographical prediction analysis. SOIL, 7, 693–715, <https://doi.org/10.5194/soil-7-693-2021>  
+- `r emoji::emoji("link")` Project website: [Github](https://github.com/laura-summerauer/ssl-central-africa)  
+- `r emoji::emoji("copyright")` Data license: CC-BY  
+- `r emoji::emoji("round_pushpin")` Unique locations: ?  
+- `r emoji::emoji("clipboard")` Unique complete measurements: 1852  
+- `r emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/CASSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL)  
+
+### SCHIEDUNG.SSL
+
+Dataset to the manuscript Schiedung et al. (2022). MIR measurements of 284 samples from high-latitude forest soils of Canada.
+
+- `r emoji::emoji("closed_book")` Schiedung, M., Bellè, S.-L., Malhotra, A., & Abiven, S. (2022). Organic carbon stocks, quality and prediction in permafrost-affected forest soils in north Canada. Catena, 213, 106194. <https://doi.org/10.1016/j.catena.2022.106194>.  
+- `r emoji::emoji("link")` Project website: [Zenodo](https://doi.org/10.5281/zenodo.6024831)  
+- `r emoji::emoji("copyright")` Data license: CC-BY  
+- `r emoji::emoji("round_pushpin")` Unique locations: 289   
+- `r emoji::emoji("clipboard")` Unique complete measurements: 259  
+- `r emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/Schiedung](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Schiedung)  
+
+### GARRETT.SSL
+
+A soil dataset from the FR380 trial series spanning 35 Pinus radiata forest sites in New Zealand. The dataset underpins three existing publications by Watt et al. (2005; 2008) and Ross et al. (2009) which details sample sites and the time zero (i.e. time of tree planting) sample collection and testing method. The publication by Garret et al. (2022) details the soil mid-infrared spectroscopy method and extension on soil chemistry testing using the same time zero samples. A total of 184 samples have publicly available MIR measurements.  
+
+- `r emoji::emoji("closed_book")` Garrett, L. G., Sanderman, J., Palmer, D. J., Dean, F., Patel, S., Bridson, J. H., & Carlin, T. (2022). Mid-infrared spectroscopy for planted forest soil and foliage nutrition predictions, New Zealand case study. In Trees, Forests and People (Vol. 8, p. 100280). <https://doi.org/10.1016/j.tfp.2022.100280>.   
+- `r emoji::emoji("link")` Project website: [Figshare](https://doi.org/10.6084/m9.figshare.20506587.v2)  
+- `r emoji::emoji("copyright")` Data license: CC-BY  
+- `r emoji::emoji("round_pushpin")` Unique locations: 35   
+- `r emoji::emoji("clipboard")` Unique complete measurements: 184  
+- `r emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/Garrett](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Garrett)  
+
+### SERBIA.SSL
+
+The Serbian SSL is a dataset with 135 samples shared by University of Novi Sad and published in Jović et al. (2019). The soil samples were sampled in 2009. Samples were taken from three different types of soil: arable, meadow, and forest, with 3 different depths: 0-30 cm, 30-60 cm and 60-90 cm for each location (n=45). Classical wet chemistry analyses includes texture, carbon total, carbon organic, carbon inorganic, pH, C/N ratio, and CaCO3. Only texture has complete data for all depths, the other soil properties were determined only for the 0-30 cm layer. The spectra in the MIR range were taken for all depths using a ThermoFisher Nicolet Nexus 670 with a DTGS detector, diffuse reflectance module, and gold as background reference. MIR spectra were obtained in the spectral range of 400-4000 cm-1 in duplicates. The coordinates of the sampling sites are given with lower precision.
+
+- `r emoji::emoji("closed_book")` Jović, B., Ćirićb, V., Kovačevića, M., Šeremešićb, S., Kordića, B. (2019). Empirical equation for preliminary assessment of soil texture. In Spectrochimica Acta Part A: Molecular and Biomolecular Spectroscopy (Vol. 206, p. 506-511). <https://doi.org/10.1016/j.saa.2018.08.039>.   
+- `r emoji::emoji("link")` Project website: Data shared by email. More info in the paper  
+- `r emoji::emoji("copyright")` Data license: CC-BY  
+- `r emoji::emoji("round_pushpin")` Unique locations: 45   
+- `r emoji::emoji("clipboard")` Unique complete measurements: 135  
+- `r emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/Serbia](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Serbia)  
+
+## Instruments
+
+A [Global Soil Spectroscopy Assessment](https://openknowledge.fao.org/items/43aca83e-f3eb-4648-9f61-e3acdc7e62a3) was published in 2021 by FAO @BenedettiEgmond2021, where a number of instruments were identified in soil spectroscopy laboratories. Within the SS4GG initiative, we published a paper on the spectral dissimilarity of 20 MIR instruments @Safanelli2023 providing clear recommendations to overcome this problem. A second analysis of VisNIR instruments is being developed in collaboration with the [IEEE P4005 working group](https://sagroups.ieee.org/4005/).
+
+![Most frequent MIR and VisNIR instruments reported in @BenedettiEgmond2021](img/ssl_instruments_list.png)
+
+## Software
+
+There are many proprietary and open source software used to process spectral measurements. We provide below a list (not exhaustive) of the most common packages/modules that can be used in R or Python (both FOSS) for importing, preprocessing, and analyzing soil spectral data:
+
+### SoilSpecData
+
+- `r emoji::emoji("name_badge")` Name: SoilSpecData  
+- `r emoji::emoji("briefcase")` Specialty: A Python package for handling soil spectroscopy data, with a focus on the Open Soil Spectral Library (OSSL) in Python.  
+- `r emoji::emoji("computer")` Programming language: Python    
+- `r emoji::emoji("link")` Homepage: [Website](https://fr.anckalbi.net/soilspecdata/), [GitHub](https://github.com/franckalbinet/soilspecdata)  
+- `r emoji::emoji("closed_book")` Albinet, F. SoilSpecData: A Python package for handling soil spectroscopy data, with a focus on the Open Soil Spectral Library (OSSL). Python package. Available in: <https://fr.anckalbi.net/soilspecdata/>.    
+- `r emoji::emoji("copyright")` License: [Apache-2.0 license](https://github.com/franckalbinet/soilspecdata?tab=Apache-2.0-1-ov-file#readme)
+- `r emoji::emoji("e-mail")` Maintainer: [Franck Albinet](https://github.com/franckalbinet)
+
+### SoilSpecTfm
+
+- `r emoji::emoji("name_badge")` Name: SoilSpecTfm  
+- `r emoji::emoji("briefcase")` Specialty: A Python package for handling soil spectroscopy data, with a focus on the Open Soil Spectral Library (OSSL) in Python.  
+- `r emoji::emoji("computer")` Programming language: Python    
+- `r emoji::emoji("link")` Homepage: [Website](https://fr.anckalbi.net/soilspectfm/), [GitHub](https://github.com/franckalbinet/soilspecdata)  
+- `r emoji::emoji("closed_book")` Albinet, F. SoilSpecTfm: Provides Scikit-Learn compatible transforms for spectroscopic data preprocessing. Python package. Available in: <https://github.com/franckalbinet/soilspectfm>.    
+- `r emoji::emoji("copyright")` License: [Apache-2.0 license](https://github.com/franckalbinet/soilspectfm#Apache-2.0-1-ov-file)
+- `r emoji::emoji("e-mail")` Maintainer: [Franck Albinet](https://github.com/franckalbinet)
+
+### opusreader2
+
+- `r emoji::emoji("name_badge")` Name: opusreader2  
+- `r emoji::emoji("briefcase")` Specialty: Read OPUS binary files from Fourier-Transform Infrared (FT-IR) spectrometers of the company Bruker Optics GmbH & Co. in R
+- `r emoji::emoji("computer")` Programming language: R    
+- `r emoji::emoji("link")` Homepage: [GitHub](https://github.com/spectral-cockpit/opusreader2)  
+- `r emoji::emoji("closed_book")` Baumann P, Knecht T, Roudier P (2023). opusreader2: Read spectroscopic data
+  from Bruker OPUS binary Files. R package version 0.6.3.  
+- `r emoji::emoji("copyright")` License: [MIT](https://github.com/spectral-cockpit/opusreader2/blob/main/LICENSE)
+- `r emoji::emoji("e-mail")` Maintainer: [spectral-cockpit](https://github.com/spectral-cockpit)
+
+### asdreader
+
+- `r emoji::emoji("name_badge")` Name:   asdreader
+- `r emoji::emoji("briefcase")` Specialty: Reading ASD binary files in R  
+- `r emoji::emoji("computer")` Programming language: R  
+- `r emoji::emoji("link")` Homepage: [GitHub](https://github.com/pierreroudier/asdreader)  
+- `r emoji::emoji("closed_book")` Roudier, P. (2020). asdreader: reading ASD binary files in R. R package version 0.1-3 CRAN.  
+- `r emoji::emoji("copyright")` License: GPL  
+- `r emoji::emoji("e-mail")` Maintainer: [Pierre Roudier](https://github.com/pierreroudier)
+
+### prospectr
+
+- `r emoji::emoji("name_badge")` Name: prospectr  
+- `r emoji::emoji("briefcase")` Specialty: Signal processing, resampling  
+- `r emoji::emoji("computer")` Programming language: R  
+- `r emoji::emoji("link")` Homepage: [GitHub](https://github.com/l-ramirez-lopez/prospectr)  
+- `r emoji::emoji("closed_book")` Stevens, A., & Ramirez-Lopez, L. (2022). An introduction to the prospectr package. R Package Vignette. R Package Version 0.2.6.  
+- `r emoji::emoji("copyright")` License: [MIT](https://cran.r-project.org/web/licenses/MIT) + [file LICENSE](https://cran.r-project.org/web/packages/prospectr/LICENSE)  
+- `r emoji::emoji("e-mail")` Maintainer: [Leornardo Ramirez-Lopez](https://github.com/l-ramirez-lopez)
+
+### simplerspec
+
+- `r emoji::emoji("name_badge")` Name: simplerspec  
+- `r emoji::emoji("briefcase")` Specialty: Soil and plant spectroscopic model building and prediction  
+- `r emoji::emoji("computer")` Programming language: R  
+- `r emoji::emoji("link")` Homepage: [GitHub](https://philipp-baumann.github.io/simplerspec)  
+- `r emoji::emoji("closed_book")` Baumann, P. (2020). simplerspec: Soil and plant spectroscopic model building and prediction. Packages R CRAN.  
+- `r emoji::emoji("copyright")` License: [GNU General Public License v3.0](https://github.com/philipp-baumann/simplerspec/blob/master/LICENSE.md)  
+- `r emoji::emoji("e-mail")` Maintainer: [Philipp Baumann](https://github.com/philipp-baumann)
+
+### resemble
+
+- `r emoji::emoji("name_badge")` Name: resemble  
+- `r emoji::emoji("briefcase")` Specialty: Memory-based learning in spectral chemometrics
+- `r emoji::emoji("computer")` Programming language: R  
+- `r emoji::emoji("link")` Homepage: [GitHub](https://github.com/l-ramirez-lopez/resemble)  
+- `r emoji::emoji("closed_book")` Ramirez-Lopez, L., and Stevens, A., and Viscarra Rossel, R., and Lobsey, C., and Wadoux, A., and Breure, T. (2022). resemble: Regression and similarity evaluation for memory-based learning in spectral chemometrics. R package Vignette. R package version 2.2.1.
+- `r emoji::emoji("copyright")` License: [MIT](https://cran.r-project.org/web/licenses/MIT) + [file LICENSE](https://github.com/l-ramirez-lopez/resemble/blob/main/LICENSE)
+- `r emoji::emoji("e-mail")` Maintainer: [Leonardo Ramirez Lopez](https://github.com/l-ramirez-lopez)
+
+### mdatools
+
+- `r emoji::emoji("name_badge")` Name: mdatools  
+- `r emoji::emoji("briefcase")` Specialty: A package for preprocessing, exploring and analysis of multivariate data. The package provides methods mostly common for Chemometrics.
+- `r emoji::emoji("computer")` Programming language: R  
+- `r emoji::emoji("link")` Homepage: [Website](https://www.mdatools.com/), [GitHub](https://github.com/svkucheryavski/mdatools)  
+- `r emoji::emoji("closed_book")` Kucheryavskiy, S. (2020). mdatools – R package for chemometrics. Chemometrics and Intelligent Laboratory Systems: An International Journal Sponsored by the Chemometrics Society, 198(103937), 103937. doi:[10.1016/j.chemolab.2020.103937](https://doi.org/10.1016/j.chemolab.2020.103937).
+- `r emoji::emoji("copyright")` License: [MIT](https://github.com/svkucheryavski/mdatools/blob/master/LICENSE.md)
+- `r emoji::emoji("e-mail")` Maintainer: [Sergey Kucheryavskiy](https://github.com/svkucheryavski)
+
+
+## Suggested literature

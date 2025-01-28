@@ -1,0 +1,20 @@
+<!-- Badges on top of the page -->
+
+<a href="https://doi.org/10.1371/journal.pone.0296545">
+<img src="https://journals.plos.org/resource/img/one/logo.png" style="background-color:white;height:45px;"><a> </a><img src="https://journals.plos.org/resource/img/icon.oa.gif" style="background-color:white"></a>
+
+[![](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/soilspectroscopy)
+
+[![](https://zenodo.org/badge/doi/10.5281/zenodo.5759693.svg)](https://doi.org/10.5281/zenodo.5759693)
+
+<!-- Content -->
+
+# Welcome! {.unnumbered}
+
+Welcome to the Open Soil Spectral Library (OSSL) manual!
+
+The OSSL is a public and growing dataset that is compiled by the [Soil Spectroscopy for Global Good](https://soilspectroscopy.org/) initiative.
+
+A [peer-reviewed and open-access publication](https://doi.org/10.1371/journal.pone.0296545) is available for additional reference.
+
+Please navigate to the different sections (left menu) to learn more about soil spectroscopy and all the available resources built by the SS4GG and the community.
