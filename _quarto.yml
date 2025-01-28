@@ -11,6 +11,7 @@ book:
       Built with <a href="https://quarto.org/">Quarto</a>.
   site-url: https://soilspectroscopy.github.io/ossl-manual/
   repo-url: https://github.com/soilspectroscopy/ossl-manual/
+  google-analytics: "G-EDY0LB3E4D"
   cover-image: img/cover.jpg
   repo-branch: main
   repo-actions: [edit, issue]
