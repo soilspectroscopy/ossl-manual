@@ -2,7 +2,7 @@
 engine: knitr
 ---
 
-# Soil spectroscopy
+# Soil spectroscopy {#sec-soilspec}
 
 ## What is soil spectroscopy
 
@@ -274,5 +274,4 @@ There are many proprietary and open source software used to process spectral mea
 - `r emoji::emoji("copyright")` License: [MIT](https://github.com/svkucheryavski/mdatools/blob/master/LICENSE.md)
 - `r emoji::emoji("e-mail")` Maintainer: [Sergey Kucheryavskiy](https://github.com/svkucheryavski)
 
-
-## Suggested literature
+<!-- ## Suggested literature -->

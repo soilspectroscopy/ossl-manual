@@ -1,4 +1,4 @@
-# Prediction models
+# Prediction models {#sec-prediction-models}
 
 ::: {.callout-tip}
 A full documentation of the modeling framework is presented and discussed in our paper @Safanelli2025.  

@@ -1,4 +1,4 @@
-# Neospectra database
+# Neospectra database {#sec-neospectra}
 
 Recent advances in hardware technology have enabled the development of handheld sensors with similar performance specifications as laboratory-grade near-infrared (NIR) spectrometers.
 

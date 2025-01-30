@@ -1,4 +1,4 @@
-# Database description
+# Database description {#sec-db-desc}
 
 In this section you can find a detailed description of the OSSL database, which includes the variable names, types, human-readable description, and example values. You can also find all this information in tabular format:
 

@@ -1,4 +1,4 @@
-# Database access
+# Database access {#sec-db-access}
 
 The OSSL is distributed through Google Cloud Storage bucket, MongoDB (deprecated), and [API (experimental)](https://api.soilspectroscopy.org/__docs__/#/).
 

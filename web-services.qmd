@@ -1,4 +1,4 @@
-# Web services
+# Web services {#sec-web-services}
 
 ## [OSSL Explorer](https://explorer.soilspectroscopy.org/)
 

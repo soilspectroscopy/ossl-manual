@@ -34,6 +34,7 @@ book:
     - prediction-models.qmd
     - web-services.qmd
     - tutorial.qmd
+    - publications.qmd
     - references.qmd
 
 bibliography: references.bib

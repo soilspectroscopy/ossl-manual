@@ -1,59 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://soilspectroscopy.github.io/soilspec-workshop/index.html</loc>
-    <lastmod>2025-01-14T18:51:58.842Z</lastmod>
-  </url>
-  <url>
     <loc>https://soilspectroscopy.github.io/ossl-manual/index.html</loc>
-    <lastmod>2025-01-28T16:42:45.371Z</lastmod>
-  </url>
-  <url>
-    <loc>https://soilspectroscopy.github.io/ossl-manual/intro.html</loc>
-    <lastmod>2025-01-14T18:51:58.842Z</lastmod>
-  </url>
-  <url>
-    <loc>https://soilspectroscopy.github.io/ossl-manual/summary.html</loc>
-    <lastmod>2025-01-14T18:51:58.843Z</lastmod>
-  </url>
-  <url>
-    <loc>https://soilspectroscopy.github.io/ossl-manual/references.html</loc>
-    <lastmod>2025-01-28T16:42:45.373Z</lastmod>
+    <lastmod>2025-01-30T14:51:03.445Z</lastmod>
   </url>
   <url>
     <loc>https://soilspectroscopy.github.io/ossl-manual/about.html</loc>
-    <lastmod>2025-01-28T15:18:13.978Z</lastmod>
+    <lastmod>2025-01-29T19:30:15.082Z</lastmod>
   </url>
   <url>
     <loc>https://soilspectroscopy.github.io/ossl-manual/soilspec.html</loc>
-    <lastmod>2025-01-28T16:42:45.373Z</lastmod>
-  </url>
-  <url>
-    <loc>https://soilspectroscopy.github.io/ossl-manual/tutorial.html</loc>
-    <lastmod>2025-01-28T16:42:45.373Z</lastmod>
+    <lastmod>2025-01-29T19:12:52.186Z</lastmod>
   </url>
   <url>
     <loc>https://soilspectroscopy.github.io/ossl-manual/db-desc.html</loc>
-    <lastmod>2025-01-28T15:19:37.243Z</lastmod>
+    <lastmod>2025-01-29T19:13:21.549Z</lastmod>
   </url>
   <url>
     <loc>https://soilspectroscopy.github.io/ossl-manual/db-access.html</loc>
-    <lastmod>2025-01-28T17:37:02.198Z</lastmod>
+    <lastmod>2025-01-29T19:13:45.773Z</lastmod>
   </url>
   <url>
     <loc>https://soilspectroscopy.github.io/ossl-manual/neospectra.html</loc>
-    <lastmod>2025-01-28T16:42:45.372Z</lastmod>
-  </url>
-  <url>
-    <loc>https://soilspectroscopy.github.io/ossl-manual/prediction.html</loc>
-    <lastmod>2025-01-28T16:13:48.730Z</lastmod>
-  </url>
-  <url>
-    <loc>https://soilspectroscopy.github.io/ossl-manual/web-services.html</loc>
-    <lastmod>2025-01-28T16:42:45.373Z</lastmod>
+    <lastmod>2025-01-29T19:14:12.329Z</lastmod>
   </url>
   <url>
     <loc>https://soilspectroscopy.github.io/ossl-manual/prediction-models.html</loc>
-    <lastmod>2025-01-28T16:42:45.372Z</lastmod>
+    <lastmod>2025-01-29T19:14:19.796Z</lastmod>
+  </url>
+  <url>
+    <loc>https://soilspectroscopy.github.io/ossl-manual/web-services.html</loc>
+    <lastmod>2025-01-29T19:14:38.921Z</lastmod>
+  </url>
+  <url>
+    <loc>https://soilspectroscopy.github.io/ossl-manual/tutorial.html</loc>
+    <lastmod>2025-01-29T19:15:01.888Z</lastmod>
+  </url>
+  <url>
+    <loc>https://soilspectroscopy.github.io/ossl-manual/publications.html</loc>
+    <lastmod>2025-01-30T15:41:22.111Z</lastmod>
+  </url>
+  <url>
+    <loc>https://soilspectroscopy.github.io/ossl-manual/references.html</loc>
+    <lastmod>2025-01-30T15:39:11.818Z</lastmod>
   </url>
 </urlset>

@@ -1,4 +1,4 @@
-# Hands-on tutorial
+# Hands-on tutorial {#sec-tutorial}
 
 After a series of events in 2023, which included a training
 workshop on [**Predictive Soil Spectroscopy**](https://soilspectroscopy.github.io/soilspec-workshop/) at the ACS International Meeting 2023 in St Louis - MO, USA, we made available a hands-on tutorial where we walk-through the reader on processing and predictive modeling steps that are currently employed in the OSSL. Common concepts and analysis are also introduced.

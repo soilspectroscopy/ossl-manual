@@ -1,3 +1,6 @@
+---
+engine: knitr
+---
 <!-- Badges on top of the page -->
 
 <a href="https://doi.org/10.1371/journal.pone.0296545">
@@ -17,4 +20,15 @@ The OSSL is a public and growing dataset that is compiled by the [Soil Spectrosc
 
 A [peer-reviewed and open-access publication](https://doi.org/10.1371/journal.pone.0296545) is available for additional reference.
 
-Please navigate to the different sections (left menu) to learn more about soil spectroscopy and all the available resources built by the SS4GG and the community.
+Please navigate to the different sections to learn more about:
+
+- `r emoji::emoji("blue_book")` [About](#sec-about): Our team, OSSL resources, contributors, citation, and other information.
+- `r emoji::emoji("blue_book")` [Soil Spectroscopy](#sec-soilspec): Soil spectroscopy in general, predictive modeling, imported soil spectral libraries, instruments and software.
+- `r emoji::emoji("blue_book")` [Database description](#sec-db-desc): Database definitions, including variable names, types, human-readable description, and example values.
+- `r emoji::emoji("blue_book")` [Database access](#sec-db-access): Ways of accessing the OSSL.
+- `r emoji::emoji("blue_book")` [Neospectra database](#sec-neospectra): Data, models, and studies from a low-cost NIR scanner.
+- `r emoji::emoji("blue_book")` [Predictive models](#sec-prediction-models): Fitted models with the OSSL.
+- `r emoji::emoji("blue_book")` [Web services](#sec-web-services): User-friendly and online applications.
+- `r emoji::emoji("blue_book")` [Hands-on tutorial](#sec-tutorial): Training materials.
+- `r emoji::emoji("blue_book")` [Scientific publications](#sec-publications): Papers that our team or collaborators have published.
+- `r emoji::emoji("blue_book")` [References](#sec-references).
