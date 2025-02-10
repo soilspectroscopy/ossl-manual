@@ -74,52 +74,6 @@ The main advantage of conformal prediction is that the intervals are always cove
 
 The representation flag was built using the PCA model employed for compression [@Jackson1979; @deSantana2023]. Considering that only the first 120 PCs are used to decompose spectra for modeling fitting, the remaining variation from farther components are residual. The difference between the original spectra and back-transformed with the first 120 PCs made possible the calculation of the Q-statistics (sum of squared residual across the spectrum). The Q statistic of new spectra are compared against a Q critical value estimated from the calibration set with a 99% confidence level.
 
-## Using the OSSL models
+## Local run of the OSSL models
 
-To use the OSSL models locally, download pre-trained models and complementary files as provided in [GitHub](https://github.com/soilspectroscopy/ossl-models/blob/main/out/fitted_models_access.csv).
-
-You need to follow a specific directory tree for local runs as described in [ossl_models_directory_tree.csv](https://github.com/soilspectroscopy/ossl-models/blob/main/out/ossl_models_directory_tree.csv).
-
-::: {.callout-tip}
-Please note that soil properties names are encoded into a specific string format. Check [fitted_models_performance_v1.2.csv](https://github.com/soilspectroscopy/ossl-models/blob/main/out/fitted_models_performance_v1.2.csv) for the complete list of models as some combinations of spectral regions and soil properties are not available.
-:::
-
-You will also need to install R and download the `qs` and `MLR3` ecosystem packages. `qs` is a serialized and compressed file format that is faster than native R `rds`. You need to have [qs package](https://github.com/traversc/qs) version >= 0.25.5 to load files direct from the URLs.
-
-::: {.callout-tip}
-For using the pre-trained models with new spectra, the spectra to be predicted must follow these range specifications:  
-- VisNIR: 400-2500 nm.  
-- NIR Neospectra: 1350-2550 nm.  
-- MIR: 600-4000 cm^-1^.  
-:::
-
-We provided on GitHub both [examples of datasets](https://github.com/soilspectroscopy/ossl-models/tree/main/sample-data) and a [prediction function](https://github.com/soilspectroscopy/ossl-models/blob/main/R-mlr/OSSL_functions.R) that incorporates all input preparation and output generation.
-
-Please, check the example datasets for formatting your spectra to the minimum required level of the prediction function.
-
-You can provide either `csv`, `asd` (for VisNIR), or opus (`.0`) for MIR scans.
-
-The output table has the prediction value (already back-transformed if log transformation was used) for the soil property of interest, 1-standard-deviation prediction intervals (lower and upper limits), and a flag column for **potential underrepresented** samples.
-
-The prediction function requires the [tidyverse](https://www.tidyverse.org/), [mlr3 and mlr3extralearners](https://mlr3book.mlr-org.com), [Cubist](https://topepo.github.io/Cubist//), [qs](https://github.com/traversc/qs), [asdreader](https://github.com/pierreroudier/asdreader), [opusreader2](https://github.com/spectral-cockpit/opusreader2), and [matrixStats](https://cran.rstudio.com/web/packages/matrixStats/index.html) packages.
-
-`predict.ossl` parameters:  
-- `target`: the soil property of interest. Log-transformed properties must have `log..` appended at the beginning of the name as indicated in the `export_name` column.  
-- `spectra.file`: the path for the spectral measurements, either a `csv` table (following the sample-data specifications), `asd`, or opus (`.0`) file.  
-- `spectra.type`: the spectral range of interest. Either `visnir`, `nir.neospectra`, or `mir`.  
-- `subset.type`: the subset of interest, either the whole `ossl` or the `kssl` alone.  
-- `geo.type`: only available for `na`.  
-- `models.dir`: the path for the `ossl_models` folder. Should follow the same structure and naming code as represented in [fitted_models_access.csv](out/fitted_models_access.csv).  
-
-```{r prediction, echo=TRUE, eval=FALSE, message=FALSE}
-source("R-mlr/OSSL_functions.R")
-
-list.files("sample-data")
-
-clay.visnir.ossl <- predict.ossl(target = "clay.tot_usda.a334_w.pct",
-                                 spectra.file = "sample-data/101453MD01.asd",
-                                 spectra.type = "visnir",
-                                 subset.type = "ossl",
-                                 geo.type = "na",
-                                 models.dir = "~/mnt-ossl/ossl_models/")
-```
+Please follow the instructions provided in the [**ossl-nix**](https://github.com/soilspectroscopy/ossl-nix) GitHub repository for a full reproducible and local execution of the OSSL models.

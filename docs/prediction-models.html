@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -253,7 +219,7 @@ gtag('config', 'G-EDY0LB3E4D', { 'anonymize_ip': true});
   <li><a href="#modeling-framework" id="toc-modeling-framework" class="nav-link active" data-scroll-target="#modeling-framework"><span class="header-section-number">5.1</span> Modeling framework</a></li>
   <li><a href="#model-performance" id="toc-model-performance" class="nav-link" data-scroll-target="#model-performance"><span class="header-section-number">5.2</span> Model performance</a></li>
   <li><a href="#uncertainty-and-representation-flag" id="toc-uncertainty-and-representation-flag" class="nav-link" data-scroll-target="#uncertainty-and-representation-flag"><span class="header-section-number">5.3</span> Uncertainty and representation flag</a></li>
-  <li><a href="#using-the-ossl-models" id="toc-using-the-ossl-models" class="nav-link" data-scroll-target="#using-the-ossl-models"><span class="header-section-number">5.4</span> Using the OSSL models</a></li>
+  <li><a href="#local-run-of-the-ossl-models" id="toc-local-run-of-the-ossl-models" class="nav-link" data-scroll-target="#local-run-of-the-ossl-models"><span class="header-section-number">5.4</span> Local run of the OSSL models</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/soilspectroscopy/ossl-manual/edit/main/prediction-models.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/soilspectroscopy/ossl-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -397,64 +363,9 @@ Tip
 <p>The main advantage of conformal prediction is that the intervals are always covered, i.e.&nbsp;a confidence of 68% means that the predicted interval regions may contain the observed value in at least 68% of the cases. Another big advantage of conformal prediction is that it is model agnostic and we get rid of resampling mechanisms such as bootstrapping or Monte Carlo simulation which significantly requires a huge computation time for large sample sizes.</p>
 <p>The representation flag was built using the PCA model employed for compression <span class="citation" data-cites="Jackson1979 deSantana2023">[<a href="references.html#ref-Jackson1979" role="doc-biblioref">7</a>,<a href="references.html#ref-deSantana2023" role="doc-biblioref">8</a>]</span>. Considering that only the first 120 PCs are used to decompose spectra for modeling fitting, the remaining variation from farther components are residual. The difference between the original spectra and back-transformed with the first 120 PCs made possible the calculation of the Q-statistics (sum of squared residual across the spectrum). The Q statistic of new spectra are compared against a Q critical value estimated from the calibration set with a 99% confidence level.</p>
 </section>
-<section id="using-the-ossl-models" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="using-the-ossl-models"><span class="header-section-number">5.4</span> Using the OSSL models</h2>
-<p>To use the OSSL models locally, download pre-trained models and complementary files as provided in <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/out/fitted_models_access.csv">GitHub</a>.</p>
-<p>You need to follow a specific directory tree for local runs as described in <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/out/ossl_models_directory_tree.csv">ossl_models_directory_tree.csv</a>.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Please note that soil properties names are encoded into a specific string format. Check <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/out/fitted_models_performance_v1.2.csv">fitted_models_performance_v1.2.csv</a> for the complete list of models as some combinations of spectral regions and soil properties are not available.</p>
-</div>
-</div>
-<p>You will also need to install R and download the <code>qs</code> and <code>MLR3</code> ecosystem packages. <code>qs</code> is a serialized and compressed file format that is faster than native R <code>rds</code>. You need to have <a href="https://github.com/traversc/qs">qs package</a> version &gt;= 0.25.5 to load files direct from the URLs.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For using the pre-trained models with new spectra, the spectra to be predicted must follow these range specifications:<br>
-- VisNIR: 400-2500 nm.<br>
-- NIR Neospectra: 1350-2550 nm.<br>
-- MIR: 600-4000 cm<sup>-1</sup>.</p>
-</div>
-</div>
-<p>We provided on GitHub both <a href="https://github.com/soilspectroscopy/ossl-models/tree/main/sample-data">examples of datasets</a> and a <a href="https://github.com/soilspectroscopy/ossl-models/blob/main/R-mlr/OSSL_functions.R">prediction function</a> that incorporates all input preparation and output generation.</p>
-<p>Please, check the example datasets for formatting your spectra to the minimum required level of the prediction function.</p>
-<p>You can provide either <code>csv</code>, <code>asd</code> (for VisNIR), or opus (<code>.0</code>) for MIR scans.</p>
-<p>The output table has the prediction value (already back-transformed if log transformation was used) for the soil property of interest, 1-standard-deviation prediction intervals (lower and upper limits), and a flag column for <strong>potential underrepresented</strong> samples.</p>
-<p>The prediction function requires the <a href="https://www.tidyverse.org/">tidyverse</a>, <a href="https://mlr3book.mlr-org.com">mlr3 and mlr3extralearners</a>, <a href="https://topepo.github.io/Cubist//">Cubist</a>, <a href="https://github.com/traversc/qs">qs</a>, <a href="https://github.com/pierreroudier/asdreader">asdreader</a>, <a href="https://github.com/spectral-cockpit/opusreader2">opusreader2</a>, and <a href="https://cran.rstudio.com/web/packages/matrixStats/index.html">matrixStats</a> packages.</p>
-<p><code>predict.ossl</code> parameters:<br>
-- <code>target</code>: the soil property of interest. Log-transformed properties must have <code>log..</code> appended at the beginning of the name as indicated in the <code>export_name</code> column.<br>
-- <code>spectra.file</code>: the path for the spectral measurements, either a <code>csv</code> table (following the sample-data specifications), <code>asd</code>, or opus (<code>.0</code>) file.<br>
-- <code>spectra.type</code>: the spectral range of interest. Either <code>visnir</code>, <code>nir.neospectra</code>, or <code>mir</code>.<br>
-- <code>subset.type</code>: the subset of interest, either the whole <code>ossl</code> or the <code>kssl</code> alone.<br>
-- <code>geo.type</code>: only available for <code>na</code>.<br>
-- <code>models.dir</code>: the path for the <code>ossl_models</code> folder. Should follow the same structure and naming code as represented in <a href="out/fitted_models_access.csv">fitted_models_access.csv</a>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R-mlr/OSSL_functions.R"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="st">"sample-data"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>clay.visnir.ossl <span class="ot">&lt;-</span> <span class="fu">predict.ossl</span>(<span class="at">target =</span> <span class="st">"clay.tot_usda.a334_w.pct"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">spectra.file =</span> <span class="st">"sample-data/101453MD01.asd"</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">spectra.type =</span> <span class="st">"visnir"</span>,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">subset.type =</span> <span class="st">"ossl"</span>,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">geo.type =</span> <span class="st">"na"</span>,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">models.dir =</span> <span class="st">"~/mnt-ossl/ossl_models/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="local-run-of-the-ossl-models" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="local-run-of-the-ossl-models"><span class="header-section-number">5.4</span> Local run of the OSSL models</h2>
+<p>Please follow the instructions provided in the <a href="https://github.com/soilspectroscopy/ossl-nix"><strong>ossl-nix</strong></a> GitHub repository for a full reproducible and local execution of the OSSL models.</p>
 
 
 <div id="refs" class="references csl-bib-body" role="list" style="display: none">
