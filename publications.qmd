@@ -3,6 +3,8 @@
 
 Please find bellow all scientific publications that our team or collaborators have published right before or during the project timeline. We will keep listing all soil spectroscopy works derived from the SS4GG activities and extended collaborations:
 
+- Sanderman, J., Partida, C., Safanelli, J. L., Shepherd, K., Ge, Y., Mitu, S. M., & Ferguson, R. (2025). Application of a Handheld Near Infrared Spectrophotometer to Farm‐Scale Soil Carbon Monitoring. In European Journal of Soil Science (Vol. 76, Issue 1). Wiley. <https://doi.org/10.1111/ejss.70053>
+
 - Safanelli, J. L., Hengl, T., Parente, L. L., Minarik, R., Bloom, D. E., Todd-Brown, K., Gholizadeh, A., Mendes, W. de S., & Sanderman, J. (2025). Open Soil Spectral Library (OSSL): Building reproducible soil calibration models through open development and community engagement. In B. Das (Ed.), PLOS ONE (Vol. 20, Issue 1, p. e0296545). Public Library of Science (PLoS). <https://doi.org/10.1371/journal.pone.0296545>
 
 - Partida, C., Safanelli, J. L., Mitu, S. M., Murad, M. O. F., Ge, Y., Ferguson, R., Shepherd, K., & Sanderman, J. (2025). Building a near-infrared (NIR) soil spectral dataset and predictive machine learning models using a handheld NIR spectrophotometer. In Data in Brief (Vol. 58, p. 111229). Elsevier BV. <https://doi.org/10.1016/j.dib.2024.111229>
