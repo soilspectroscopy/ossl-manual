@@ -34,6 +34,7 @@ A peer-reviewed and open-access publication describing the first version of OSSL
 Over the past years several people have contributed or are still contributing with the SS4GG. The following list is not exhaustive:
 
 - José Lucas Safanelli (core team)
+- Ran Zhi (core team)
 - Tomislav Hengl (core team)
 - Jonathan Sanderman (core team)
 - Katherine Todd-Brown (core team)

@@ -9,7 +9,7 @@ book:
       Written by the SS4GG team.
     right: |
       Built with <a href="https://quarto.org/">Quarto</a>.
-  site-url: https://soilspectroscopy.github.io/ossl-manual/
+  site-url: https://docs.soilspectroscopy.org/
   repo-url: https://github.com/soilspectroscopy/ossl-manual/
   google-analytics: "G-EDY0LB3E4D"
   body-footer: |
@@ -23,11 +23,12 @@ book:
     - name: Soil Spectroscopy for Global Good team
       email: soilspec4gg@woodwellclimate.org
       affiliations:
-  date: "01/13/2025"
+  date: "03/15/2026"
   chapters:
     - index.qmd
     - about.qmd
     - soilspec.qmd
+    - libraries.qmd
     - db-desc.qmd
     - db-access.qmd
     - neospectra.qmd

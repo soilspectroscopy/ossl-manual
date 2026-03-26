@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Open Soil Spectral Library - 8&nbsp; Hands-on tutorial</title>
+<title>Open Soil Spectral Library - 2&nbsp; Soil spectral libraries</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./publications.html" rel="next">
-<link href="./web-services.html" rel="prev">
+<link href="./db-desc.html" rel="next">
+<link href="./soilspec.html" rel="prev">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,6 +72,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description','listing-version','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EDY0LB3E4D"></script>
 
 <script type="text/javascript">
@@ -80,6 +111,35 @@ gtag('js', new Date());
 gtag('config', 'G-EDY0LB3E4D', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -92,7 +152,7 @@ gtag('config', 'G-EDY0LB3E4D', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tutorial.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hands-on tutorial</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./libraries.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Soil spectral libraries</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -141,7 +201,7 @@ gtag('config', 'G-EDY0LB3E4D', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./libraries.html" class="sidebar-item-text sidebar-link">
+  <a href="./libraries.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Soil spectral libraries</span></span></a>
   </div>
 </li>
@@ -177,7 +237,7 @@ gtag('config', 'G-EDY0LB3E4D', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorial.html" class="sidebar-item-text sidebar-link active">
+  <a href="./tutorial.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hands-on tutorial</span></span></a>
   </div>
 </li>
@@ -200,13 +260,13 @@ gtag('config', 'G-EDY0LB3E4D', { 'anonymize_ip': true});
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="MIR">MIR <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VNIR-MIR">VNIR-MIR <span class="quarto-category-count">(1)</span></div><div class="category" data-category="national">national <span class="quarto-category-count">(2)</span></div><div class="category" data-category="open">open <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-tutorial" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hands-on tutorial</span></span></h1>
+<h1 class="title"><span id="sec-libraries" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Soil spectral libraries</span></span></h1>
 </div>
 
 
@@ -223,16 +283,164 @@ gtag('config', 'G-EDY0LB3E4D', { 'anonymize_ip': true});
 </header>
 
 
-<p>After a series of events in 2023, which included a training workshop on <a href="https://soilspectroscopy.github.io/soilspec-workshop/"><strong>Predictive Soil Spectroscopy</strong></a> at the ACS International Meeting 2023 in St Louis - MO, USA, we made available a hands-on tutorial where we walk-through the reader on processing and predictive modeling steps that are currently employed in the OSSL. Common concepts and analysis are also introduced.</p>
-<p><a href="https://soilspectroscopy.github.io/soilspec-workshop/"><img src="img/tutorial.png" class="img-fluid" style="width:100.0%"></a></p>
-<p>In this tutorial, you will find information on why soil spectroscopy should be a fit-for-purpose technology, why good predictions flow from good data, and what are the best practices for model building.</p>
-<p>Further on, we walk the reader through examples of data import, preparation, visualization, spectra resampling, preprocessing, and compression.</p>
-<p>Lastly, we conclude the guide with an introduction the the MLR3 modeling framework and basic Chemometrics, exploring aspects of data splitting and resampling, model optimization, benchmarking, and uncertainty estimation via conformal prediction.</p>
-<p>We hope that this tutorial gives a good overview of predictive soil spectroscopy and helps people explore new ideas.</p>
+<p>Several soil spectral libraries were minimally standardized to be imported into the OSSL. The following list represents the current curated datasets, but several more are planned to be added in the future:</p>
+<!-- ## KSSL.SSL -->
+<!-- MIR and VisNIR spectral library and associated soil characterization data, mostly representing soils from the United States and its territories. -->
+<!-- - 📕 Seybold, C. A., Ferguson, R., Wysocki, D., Bailey, S., Anderson, J., Nester, B., ... & Thomas, P. (2019). Application of Mid‐Infrared Spectroscopy in Soil Survey. Soil Science Society of America Journal, 83(6), 1746-1759. <https://doi.org/10.2136/sssaj2019.06.0205>.   -->
+<!-- - 🔗 Project website: <https://ncsslabdatamart.sc.egov.usda.gov/>   -->
+<!-- - ©️ Data license: [CC-BY](https://ncsslabdatamart.sc.egov.usda.gov/datause.aspx)   -->
+<!-- - 📍 Unique sites: 9,061   -->
+<!-- - 📋 Unique complete measurements: 76,813 (MIR) and 19,807 (VisNIR)   -->
+<!-- - 📝 Harmonization and import steps: [ossl-imports/dataset/KSSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/KSSL)   -->
+<!-- ## ICRAF.ISRIC -->
+<!-- A Globally Distributed Soil Spectral Library. VisNIR and MIR measurements for some 785 profiles from the ISRIC World Soil Reference Collection. The samples are from 58 countries spanning Africa, Asia, Europe, North America, and South America. -->
+<!-- - 📕 World Agroforestry Centre (ICRAF) and ISRIC - World Soil Information. 2010. The ICRAF/ISRIC Soil VisNIR and MIR spectral libraries. Nairobi, Kenya: World Agroforestry Centre (ICRAF). -->
+<!-- - 🔗 Project websites: [ISRIC Data Hub](https://data.isric.org/geonetwork/srv/eng/catalog.search#/metadata/1b65024a-cd9f-11e9-a8f9-a0481ca9e724), [ICRAF Dataverse](https://doi.org/10.34725/DVN/MFHA9C).  -->
+<!-- - ©️ Data license: [CC-BY](https://creativecommons.org/licenses/by/4.0/)   -->
+<!-- - 📍 Unique locations: 785   -->
+<!-- - 📋 Unique complete measurements: 4308   -->
+<!-- - 📝 Harmonization and import steps: [ossl-imports/dataset/ICRAF_ISRIC](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/ICRAF_ISRIC)   -->
+<!-- ## LUCAS.SSL -->
+<!-- Soil samples from the [LUCAS (Land Use/Cover Area frame statistical Survey)](https://esdac.jrc.ec.europa.eu/projects/lucas) of 23-28 European Union member states collected in 2009 and 2015 were scanned for VisNIR. Data is available through the OSSL with permission and under condition that _"Graphical representation of individual units on a map is permitted as far as the geographical location of the soil samples is not detectable"_. Additional 600 samples from the LUCAS soil samples archive were scanned at Woodwell Climate Research using an MIR instrument. -->
+<!-- - 📕 Orgiazzi, A., Ballabio, C., Panagos, P., Jones, A., & Fernández-Ugalde, O. (2018). LUCAS Soil, the largest expandable soil dataset for Europe: a review. European Journal of Soil Science, 69(1), 140–153. doi:[10.1111/ejss.12499](https://doi.org/10.1111/ejss.12499).   -->
+<!-- - 🔗 Project website: [LUCAS 2009](https://esdac.jrc.ec.europa.eu/content/lucas-2009-topsoil-data), [LUCAS 2015](https://esdac.jrc.ec.europa.eu/content/lucas2015-topsoil-data). -->
+<!-- - ©️ Data license: [JRC License Agreement for LUCAS 2009](https://esdac.jrc.ec.europa.eu/content/lucas-2009-topsoil-data) and [LUCAS 2015](https://esdac.jrc.ec.europa.eu/content/lucas-2009-topsoil-data) under **Notification** section.     -->
+<!-- - 📍 Unique locations: 41,719   -->
+<!-- - 📋 Unique complete measurements: 41,719   -->
+<!-- - 📝 Harmonization and import steps: [ossl-imports/dataset/LUCAS](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/LUCAS)   -->
+<!-- ::: {.callout-warning} -->
+<!-- ## Note -->
+<!-- The LUCAS topsoil dataset used in this work was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>. -->
+<!-- ::: -->
+<!-- ## AFSIS1.SSL -->
+<!-- Africa Soil Information Service (AfSIS) Soil Chemistry Phase I consists of MIR and VisNIR measurements of 1903 georeferenced soil samples collected from 19 countries in Sub-Saharan Africa including a suite of wet chemistry data. -->
+<!-- - 📕 Vågen, T.-G., Winowiecki, L.A., Desta, L., Tondoh, E.J., Weullow, E., Shepherd, K., Sila, A., (2020). Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory: Africa Soil Information Service (AfSIS) Phase I 2009-2013. World Agroforestry (ICRAF), V1, <https://doi.org/10.34725/DVN/QXCWP1>.   -->
+<!-- - 🔗 Project website: [AfSIS](http://africasoils.net/services/data/soil-databases/), [AWS Open Registry](https://registry.opendata.aws/afsis/), [ICRAF Dataverse](https://doi.org/10.34725/DVN/QXCWP1). -->
+<!-- - ©️ Data license: [Open Database License ("ODbL")](https://opendatacommons.org/licenses/odbl/)    -->
+<!-- - 📍 Unique locations: 1903   -->
+<!-- - 📋 Unique complete measurements: 3806   -->
+<!-- - 📝 Harmonization and import steps: [ossl-imports/dataset/AFSIS](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS)   -->
+<!-- ## AFSIS2.SSL -->
+<!-- Africa Soil Information Service (AfSIS) Soil Chemistry Phase II. Three datasets for Tanzania, Ghana, and Nigeria. Data has been analyzed at the ICRAF Soil-Plant Spectral Diagnostics Laboratory, Nairobi, and the Rothamsted Research. More information can be found on [ICRAF Dataverse](https://data.worldagroforestry.org/dataverse/icraf_soils). -->
+<!-- - 📕 Hengl, T., Miller, M.A.E., Križan, J., Shepherd, K.D., Sila, A., Kilibarda, M., Antonijevi, O., Glušica, L., Dobermann, A., Haefele, S.M., McGrath, S.P., Acquah, G.E., Collinson, J., Parente, L., Sheykhmousa, M., Saito, K., Johnson, J-M., Chamberlin, J., Silatsa, F.B.T., Yemefack, M., Wendt, J., MacMillan, R.A., Wheeler I. and Crouch, J. (2021) African soil properties and nutrients mapped at 30 m spatial resolution using two-scale ensemble machine learning. Scientific Reports, 11, 6130. <https://www.nature.com/articles/s41598-021-85639-y>.   -->
+<!-- - 🔗 Project website: [Tanzania](https://doi.org/10.34725/DVN/XUDGJY), [Ghana](https://doi.org/10.34725/DVN/SPRSFN), and [Nigeria](https://doi.org/10.34725/DVN/WLAKR2). -->
+<!-- - ©️ Data license: [CC-BY](https://creativecommons.org/publicdomain/zero/1.0/)    -->
+<!-- - 📍 Unique locations: 367   -->
+<!-- - 📋 Unique complete measurements: 820   -->
+<!-- - 📝 Harmonization and import steps: [ossl-imports/dataset/AFSIS2](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS2)   -->
+<!-- ## CAF.SSL -->
+<!-- The Central African Soil Spectral Library consists of MIR measurements of 1800 soil samples collected in Central Africa.  -->
+<!-- - 📕 Summerauer, L., Baumann, P., Ramirez-Lopez, L., Barthel, M., Bauters, M., Bukombe, B., Reichenbach, M., Boeckx, P., Kearsley, E., Van Oost, K., Vanlauwe, B., Chiragaga, D., Heri-Kazi, A. B., Moonen, P., Sila, A., Shepherd, K., Bazirake Mujinya, B., Van Ranst, E., Baert, G., Doetterl, S., and Six, J. (2021). The central African soil spectral library: a new soil infrared repository and a geographical prediction analysis. SOIL, 7, 693–715, <https://doi.org/10.5194/soil-7-693-2021>   -->
+<!-- - 🔗 Project website: [Github](https://github.com/laura-summerauer/ssl-central-africa)   -->
+<!-- - ©️ Data license: CC-BY   -->
+<!-- - 📍 Unique locations: ?   -->
+<!-- - 📋 Unique complete measurements: 1852   -->
+<!-- - 📝 Harmonization and import steps: [ossl-imports/dataset/CASSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL)   -->
+<!-- ## SCHIEDUNG.SSL -->
+<!-- Dataset to the manuscript Schiedung et al. (2022). MIR measurements of 284 samples from high-latitude forest soils of Canada. -->
+<!-- - 📕 Schiedung, M., Bellè, S.-L., Malhotra, A., & Abiven, S. (2022). Organic carbon stocks, quality and prediction in permafrost-affected forest soils in north Canada. Catena, 213, 106194. <https://doi.org/10.1016/j.catena.2022.106194>.   -->
+<!-- - 🔗 Project website: [Zenodo](https://doi.org/10.5281/zenodo.6024831)   -->
+<!-- - ©️ Data license: CC-BY   -->
+<!-- - 📍 Unique locations: 289    -->
+<!-- - 📋 Unique complete measurements: 259   -->
+<!-- - 📝 Harmonization and import steps: [ossl-imports/dataset/Schiedung](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Schiedung)   -->
+<!-- ## GARRETT.SSL -->
+<!-- A soil dataset from the FR380 trial series spanning 35 Pinus radiata forest sites in New Zealand. The dataset underpins three existing publications by Watt et al. (2005; 2008) and Ross et al. (2009) which details sample sites and the time zero (i.e. time of tree planting) sample collection and testing method. The publication by Garret et al. (2022) details the soil mid-infrared spectroscopy method and extension on soil chemistry testing using the same time zero samples. A total of 184 samples have publicly available MIR measurements.   -->
+<!-- - 📕 Garrett, L. G., Sanderman, J., Palmer, D. J., Dean, F., Patel, S., Bridson, J. H., & Carlin, T. (2022). Mid-infrared spectroscopy for planted forest soil and foliage nutrition predictions, New Zealand case study. In Trees, Forests and People (Vol. 8, p. 100280). <https://doi.org/10.1016/j.tfp.2022.100280>.    -->
+<!-- - 🔗 Project website: [Figshare](https://doi.org/10.6084/m9.figshare.20506587.v2)   -->
+<!-- - ©️ Data license: CC-BY   -->
+<!-- - 📍 Unique locations: 35    -->
+<!-- - 📋 Unique complete measurements: 184   -->
+<!-- - 📝 Harmonization and import steps: [ossl-imports/dataset/Garrett](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Garrett)   -->
+<!-- ## SERBIA.SSL -->
+<!-- The Serbian SSL is a dataset with 135 samples shared by University of Novi Sad and published in Jović et al. (2019). The soil samples were sampled in 2009. Samples were taken from three different types of soil: arable, meadow, and forest, with 3 different depths: 0-30 cm, 30-60 cm and 60-90 cm for each location (n=45). Classical wet chemistry analyses includes texture, carbon total, carbon organic, carbon inorganic, pH, C/N ratio, and CaCO3. Only texture has complete data for all depths, the other soil properties were determined only for the 0-30 cm layer. The spectra in the MIR range were taken for all depths using a ThermoFisher Nicolet Nexus 670 with a DTGS detector, diffuse reflectance module, and gold as background reference. MIR spectra were obtained in the spectral range of 400-4000 cm-1 in duplicates. The coordinates of the sampling sites are given with lower precision. -->
+<!-- - 📕 Jović, B., Ćirićb, V., Kovačevića, M., Šeremešićb, S., Kordića, B. (2019). Empirical equation for preliminary assessment of soil texture. In Spectrochimica Acta Part A: Molecular and Biomolecular Spectroscopy (Vol. 206, p. 506-511). <https://doi.org/10.1016/j.saa.2018.08.039>.    -->
+<!-- - 🔗 Project website: Data shared by email. More info in the paper   -->
+<!-- - ©️ Data license: CC-BY   -->
+<!-- - 📍 Unique locations: 45    -->
+<!-- - 📋 Unique complete measurements: 135   -->
+<!-- - 📝 Harmonization and import steps: [ossl-imports/dataset/Serbia](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Serbia)   -->
 
 
 
-<script async="" defer="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script></main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="open,national,VNIR-MIR" data-listing-date-sort="1773633600000">
+<a href="datasets/BESB.qmd" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+BESB
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('open'); return false;">
+open
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('national'); return false;">
+national
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('VNIR-MIR'); return false;">
+VNIR-MIR
+</div>
+</div>
+<div class="card-text listing-description">
+Brazilian Soil Spectral Library
+</div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+version
+</td>
+<td class="version">
+v2.0
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="open,national,MIR" data-listing-date-sort="1773633600000">
+<a href="datasets/BESB.qmd" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+XYZ
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('open'); return false;">
+open
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('national'); return false;">
+national
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('MIR'); return false;">
+MIR
+</div>
+</div>
+<div class="card-text listing-description">
+XYZ long title
+</div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+version
+</td>
+<td class="version">
+v2.0
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div><script async="" defer="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -766,13 +974,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./web-services.html" class="pagination-link" aria-label="Web services">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Web services</span></span>
+      <a href="./soilspec.html" class="pagination-link" aria-label="Soil spectroscopy">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Soil spectroscopy</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./publications.html" class="pagination-link" aria-label="Scientific publications">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Scientific publications</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./db-desc.html" class="pagination-link" aria-label="Database description">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database description</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -784,7 +992,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/soilspectroscopy/ossl-manual/edit/main/tutorial.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/soilspectroscopy/ossl-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/soilspectroscopy/ossl-manual/edit/main/libraries.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/soilspectroscopy/ossl-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

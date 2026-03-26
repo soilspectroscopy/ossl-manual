@@ -1,0 +1,117 @@
+---
+listing:
+  contents: datasets/cards.yml
+  type: grid
+  sort: "title"
+  categories: true
+  grid-columns: 3
+  fields: [title, description, version, categories]
+engine: knitr
+---
+
+# Soil spectral libraries {#sec-libraries}
+
+Several soil spectral libraries were minimally standardized to be imported into the OSSL. The following list represents the current curated datasets, but several more are planned to be added in the future:
+
+<!-- ## KSSL.SSL -->
+<!-- MIR and VisNIR spectral library and associated soil characterization data, mostly representing soils from the United States and its territories. -->
+
+<!-- - `r emoji::emoji("closed_book")` Seybold, C. A., Ferguson, R., Wysocki, D., Bailey, S., Anderson, J., Nester, B., ... & Thomas, P. (2019). Application of Mid‐Infrared Spectroscopy in Soil Survey. Soil Science Society of America Journal, 83(6), 1746-1759. <https://doi.org/10.2136/sssaj2019.06.0205>.   -->
+<!-- - `{r} emoji::emoji("link")` Project website: <https://ncsslabdatamart.sc.egov.usda.gov/>   -->
+<!-- - `{r} emoji::emoji("copyright")` Data license: [CC-BY](https://ncsslabdatamart.sc.egov.usda.gov/datause.aspx)   -->
+<!-- - `{r} emoji::emoji("round_pushpin")` Unique sites: 9,061   -->
+<!-- - `{r} emoji::emoji("clipboard")` Unique complete measurements: 76,813 (MIR) and 19,807 (VisNIR)   -->
+<!-- - `{r} emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/KSSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/KSSL)   -->
+
+<!-- ## ICRAF.ISRIC -->
+
+<!-- A Globally Distributed Soil Spectral Library. VisNIR and MIR measurements for some 785 profiles from the ISRIC World Soil Reference Collection. The samples are from 58 countries spanning Africa, Asia, Europe, North America, and South America. -->
+
+<!-- - `{r} emoji::emoji("closed_book")` World Agroforestry Centre (ICRAF) and ISRIC - World Soil Information. 2010. The ICRAF/ISRIC Soil VisNIR and MIR spectral libraries. Nairobi, Kenya: World Agroforestry Centre (ICRAF). -->
+<!-- - `{r} emoji::emoji("link")` Project websites: [ISRIC Data Hub](https://data.isric.org/geonetwork/srv/eng/catalog.search#/metadata/1b65024a-cd9f-11e9-a8f9-a0481ca9e724), [ICRAF Dataverse](https://doi.org/10.34725/DVN/MFHA9C).  -->
+<!-- - `{r} emoji::emoji("copyright")` Data license: [CC-BY](https://creativecommons.org/licenses/by/4.0/)   -->
+<!-- - `{r} emoji::emoji("round_pushpin")` Unique locations: 785   -->
+<!-- - `{r} emoji::emoji("clipboard")` Unique complete measurements: 4308   -->
+<!-- - `{r} emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/ICRAF_ISRIC](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/ICRAF_ISRIC)   -->
+
+<!-- ## LUCAS.SSL -->
+
+<!-- Soil samples from the [LUCAS (Land Use/Cover Area frame statistical Survey)](https://esdac.jrc.ec.europa.eu/projects/lucas) of 23-28 European Union member states collected in 2009 and 2015 were scanned for VisNIR. Data is available through the OSSL with permission and under condition that _"Graphical representation of individual units on a map is permitted as far as the geographical location of the soil samples is not detectable"_. Additional 600 samples from the LUCAS soil samples archive were scanned at Woodwell Climate Research using an MIR instrument. -->
+
+<!-- - `r emoji::emoji("closed_book")` Orgiazzi, A., Ballabio, C., Panagos, P., Jones, A., & Fernández-Ugalde, O. (2018). LUCAS Soil, the largest expandable soil dataset for Europe: a review. European Journal of Soil Science, 69(1), 140–153. doi:[10.1111/ejss.12499](https://doi.org/10.1111/ejss.12499).   -->
+<!-- - `r emoji::emoji("link")` Project website: [LUCAS 2009](https://esdac.jrc.ec.europa.eu/content/lucas-2009-topsoil-data), [LUCAS 2015](https://esdac.jrc.ec.europa.eu/content/lucas2015-topsoil-data). -->
+<!-- - `r emoji::emoji("copyright")` Data license: [JRC License Agreement for LUCAS 2009](https://esdac.jrc.ec.europa.eu/content/lucas-2009-topsoil-data) and [LUCAS 2015](https://esdac.jrc.ec.europa.eu/content/lucas-2009-topsoil-data) under **Notification** section.     -->
+<!-- - `r emoji::emoji("round_pushpin")` Unique locations: 41,719   -->
+<!-- - `r emoji::emoji("clipboard")` Unique complete measurements: 41,719   -->
+<!-- - `r emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/LUCAS](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/LUCAS)   -->
+
+<!-- ::: {.callout-warning} -->
+<!-- ## Note -->
+<!-- The LUCAS topsoil dataset used in this work was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <http://esdac.jrc.ec.europa.eu/>. -->
+<!-- ::: -->
+
+<!-- ## AFSIS1.SSL -->
+
+<!-- Africa Soil Information Service (AfSIS) Soil Chemistry Phase I consists of MIR and VisNIR measurements of 1903 georeferenced soil samples collected from 19 countries in Sub-Saharan Africa including a suite of wet chemistry data. -->
+
+<!-- - `r emoji::emoji("closed_book")` Vågen, T.-G., Winowiecki, L.A., Desta, L., Tondoh, E.J., Weullow, E., Shepherd, K., Sila, A., (2020). Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory: Africa Soil Information Service (AfSIS) Phase I 2009-2013. World Agroforestry (ICRAF), V1, <https://doi.org/10.34725/DVN/QXCWP1>.   -->
+<!-- - `r emoji::emoji("link")` Project website: [AfSIS](http://africasoils.net/services/data/soil-databases/), [AWS Open Registry](https://registry.opendata.aws/afsis/), [ICRAF Dataverse](https://doi.org/10.34725/DVN/QXCWP1). -->
+<!-- - `r emoji::emoji("copyright")` Data license: [Open Database License ("ODbL")](https://opendatacommons.org/licenses/odbl/)    -->
+<!-- - `r emoji::emoji("round_pushpin")` Unique locations: 1903   -->
+<!-- - `r emoji::emoji("clipboard")` Unique complete measurements: 3806   -->
+<!-- - `r emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/AFSIS](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS)   -->
+
+<!-- ## AFSIS2.SSL -->
+
+<!-- Africa Soil Information Service (AfSIS) Soil Chemistry Phase II. Three datasets for Tanzania, Ghana, and Nigeria. Data has been analyzed at the ICRAF Soil-Plant Spectral Diagnostics Laboratory, Nairobi, and the Rothamsted Research. More information can be found on [ICRAF Dataverse](https://data.worldagroforestry.org/dataverse/icraf_soils). -->
+
+<!-- - `r emoji::emoji("closed_book")` Hengl, T., Miller, M.A.E., Križan, J., Shepherd, K.D., Sila, A., Kilibarda, M., Antonijevi, O., Glušica, L., Dobermann, A., Haefele, S.M., McGrath, S.P., Acquah, G.E., Collinson, J., Parente, L., Sheykhmousa, M., Saito, K., Johnson, J-M., Chamberlin, J., Silatsa, F.B.T., Yemefack, M., Wendt, J., MacMillan, R.A., Wheeler I. and Crouch, J. (2021) African soil properties and nutrients mapped at 30 m spatial resolution using two-scale ensemble machine learning. Scientific Reports, 11, 6130. <https://www.nature.com/articles/s41598-021-85639-y>.   -->
+<!-- - `r emoji::emoji("link")` Project website: [Tanzania](https://doi.org/10.34725/DVN/XUDGJY), [Ghana](https://doi.org/10.34725/DVN/SPRSFN), and [Nigeria](https://doi.org/10.34725/DVN/WLAKR2). -->
+<!-- - `r emoji::emoji("copyright")` Data license: [CC-BY](https://creativecommons.org/publicdomain/zero/1.0/)    -->
+<!-- - `r emoji::emoji("round_pushpin")` Unique locations: 367   -->
+<!-- - `r emoji::emoji("clipboard")` Unique complete measurements: 820   -->
+<!-- - `r emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/AFSIS2](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS2)   -->
+
+<!-- ## CAF.SSL -->
+
+<!-- The Central African Soil Spectral Library consists of MIR measurements of 1800 soil samples collected in Central Africa.  -->
+
+<!-- - `r emoji::emoji("closed_book")` Summerauer, L., Baumann, P., Ramirez-Lopez, L., Barthel, M., Bauters, M., Bukombe, B., Reichenbach, M., Boeckx, P., Kearsley, E., Van Oost, K., Vanlauwe, B., Chiragaga, D., Heri-Kazi, A. B., Moonen, P., Sila, A., Shepherd, K., Bazirake Mujinya, B., Van Ranst, E., Baert, G., Doetterl, S., and Six, J. (2021). The central African soil spectral library: a new soil infrared repository and a geographical prediction analysis. SOIL, 7, 693–715, <https://doi.org/10.5194/soil-7-693-2021>   -->
+<!-- - `r emoji::emoji("link")` Project website: [Github](https://github.com/laura-summerauer/ssl-central-africa)   -->
+<!-- - `r emoji::emoji("copyright")` Data license: CC-BY   -->
+<!-- - `r emoji::emoji("round_pushpin")` Unique locations: ?   -->
+<!-- - `r emoji::emoji("clipboard")` Unique complete measurements: 1852   -->
+<!-- - `r emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/CASSL](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL)   -->
+
+<!-- ## SCHIEDUNG.SSL -->
+
+<!-- Dataset to the manuscript Schiedung et al. (2022). MIR measurements of 284 samples from high-latitude forest soils of Canada. -->
+
+<!-- - `r emoji::emoji("closed_book")` Schiedung, M., Bellè, S.-L., Malhotra, A., & Abiven, S. (2022). Organic carbon stocks, quality and prediction in permafrost-affected forest soils in north Canada. Catena, 213, 106194. <https://doi.org/10.1016/j.catena.2022.106194>.   -->
+<!-- - `r emoji::emoji("link")` Project website: [Zenodo](https://doi.org/10.5281/zenodo.6024831)   -->
+<!-- - `r emoji::emoji("copyright")` Data license: CC-BY   -->
+<!-- - `r emoji::emoji("round_pushpin")` Unique locations: 289    -->
+<!-- - `r emoji::emoji("clipboard")` Unique complete measurements: 259   -->
+<!-- - `r emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/Schiedung](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Schiedung)   -->
+
+<!-- ## GARRETT.SSL -->
+
+<!-- A soil dataset from the FR380 trial series spanning 35 Pinus radiata forest sites in New Zealand. The dataset underpins three existing publications by Watt et al. (2005; 2008) and Ross et al. (2009) which details sample sites and the time zero (i.e. time of tree planting) sample collection and testing method. The publication by Garret et al. (2022) details the soil mid-infrared spectroscopy method and extension on soil chemistry testing using the same time zero samples. A total of 184 samples have publicly available MIR measurements.   -->
+
+<!-- - `r emoji::emoji("closed_book")` Garrett, L. G., Sanderman, J., Palmer, D. J., Dean, F., Patel, S., Bridson, J. H., & Carlin, T. (2022). Mid-infrared spectroscopy for planted forest soil and foliage nutrition predictions, New Zealand case study. In Trees, Forests and People (Vol. 8, p. 100280). <https://doi.org/10.1016/j.tfp.2022.100280>.    -->
+<!-- - `r emoji::emoji("link")` Project website: [Figshare](https://doi.org/10.6084/m9.figshare.20506587.v2)   -->
+<!-- - `r emoji::emoji("copyright")` Data license: CC-BY   -->
+<!-- - `r emoji::emoji("round_pushpin")` Unique locations: 35    -->
+<!-- - `r emoji::emoji("clipboard")` Unique complete measurements: 184   -->
+<!-- - `r emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/Garrett](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Garrett)   -->
+
+<!-- ## SERBIA.SSL -->
+
+<!-- The Serbian SSL is a dataset with 135 samples shared by University of Novi Sad and published in Jović et al. (2019). The soil samples were sampled in 2009. Samples were taken from three different types of soil: arable, meadow, and forest, with 3 different depths: 0-30 cm, 30-60 cm and 60-90 cm for each location (n=45). Classical wet chemistry analyses includes texture, carbon total, carbon organic, carbon inorganic, pH, C/N ratio, and CaCO3. Only texture has complete data for all depths, the other soil properties were determined only for the 0-30 cm layer. The spectra in the MIR range were taken for all depths using a ThermoFisher Nicolet Nexus 670 with a DTGS detector, diffuse reflectance module, and gold as background reference. MIR spectra were obtained in the spectral range of 400-4000 cm-1 in duplicates. The coordinates of the sampling sites are given with lower precision. -->
+
+<!-- - `r emoji::emoji("closed_book")` Jović, B., Ćirićb, V., Kovačevića, M., Šeremešićb, S., Kordića, B. (2019). Empirical equation for preliminary assessment of soil texture. In Spectrochimica Acta Part A: Molecular and Biomolecular Spectroscopy (Vol. 206, p. 506-511). <https://doi.org/10.1016/j.saa.2018.08.039>.    -->
+<!-- - `r emoji::emoji("link")` Project website: Data shared by email. More info in the paper   -->
+<!-- - `r emoji::emoji("copyright")` Data license: CC-BY   -->
+<!-- - `r emoji::emoji("round_pushpin")` Unique locations: 45    -->
+<!-- - `r emoji::emoji("clipboard")` Unique complete measurements: 135   -->
+<!-- - `r emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/Serbia](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Serbia)   -->

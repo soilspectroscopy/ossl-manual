@@ -49,7 +49,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./db-desc.html" rel="next">
+<link href="./libraries.html" rel="next">
 <link href="./about.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -160,44 +160,50 @@ gtag('config', 'G-EDY0LB3E4D', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./libraries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Soil spectral libraries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./db-desc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Database description</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database description</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./db-access.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Database access</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Database access</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./neospectra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Neospectra database</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Neospectra database</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prediction-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Prediction models</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Prediction models</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./web-services.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Web services</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Web services</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tutorial.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Hands-on tutorial</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Hands-on tutorial</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./publications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Scientific publications</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Scientific publications</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -219,29 +225,17 @@ gtag('config', 'G-EDY0LB3E4D', { 'anonymize_ip': true});
   <li><a href="#what-is-soil-spectroscopy" id="toc-what-is-soil-spectroscopy" class="nav-link active" data-scroll-target="#what-is-soil-spectroscopy"><span class="header-section-number">1.1</span> What is soil spectroscopy</a></li>
   <li><a href="#estimating-soil-properties" id="toc-estimating-soil-properties" class="nav-link" data-scroll-target="#estimating-soil-properties"><span class="header-section-number">1.2</span> Estimating soil properties</a></li>
   <li><a href="#predictive-modeling" id="toc-predictive-modeling" class="nav-link" data-scroll-target="#predictive-modeling"><span class="header-section-number">1.3</span> Predictive modeling</a></li>
-  <li><a href="#soil-spectral-libraries" id="toc-soil-spectral-libraries" class="nav-link" data-scroll-target="#soil-spectral-libraries"><span class="header-section-number">1.4</span> Soil spectral libraries</a>
+  <li><a href="#instruments" id="toc-instruments" class="nav-link" data-scroll-target="#instruments"><span class="header-section-number">1.4</span> Instruments</a></li>
+  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software"><span class="header-section-number">1.5</span> Software</a>
   <ul class="collapse">
-  <li><a href="#kssl.ssl" id="toc-kssl.ssl" class="nav-link" data-scroll-target="#kssl.ssl"><span class="header-section-number">1.4.1</span> KSSL.SSL</a></li>
-  <li><a href="#icraf.isric" id="toc-icraf.isric" class="nav-link" data-scroll-target="#icraf.isric"><span class="header-section-number">1.4.2</span> ICRAF.ISRIC</a></li>
-  <li><a href="#lucas.ssl" id="toc-lucas.ssl" class="nav-link" data-scroll-target="#lucas.ssl"><span class="header-section-number">1.4.3</span> LUCAS.SSL</a></li>
-  <li><a href="#afsis1.ssl" id="toc-afsis1.ssl" class="nav-link" data-scroll-target="#afsis1.ssl"><span class="header-section-number">1.4.4</span> AFSIS1.SSL</a></li>
-  <li><a href="#afsis2.ssl" id="toc-afsis2.ssl" class="nav-link" data-scroll-target="#afsis2.ssl"><span class="header-section-number">1.4.5</span> AFSIS2.SSL</a></li>
-  <li><a href="#caf.ssl" id="toc-caf.ssl" class="nav-link" data-scroll-target="#caf.ssl"><span class="header-section-number">1.4.6</span> CAF.SSL</a></li>
-  <li><a href="#schiedung.ssl" id="toc-schiedung.ssl" class="nav-link" data-scroll-target="#schiedung.ssl"><span class="header-section-number">1.4.7</span> SCHIEDUNG.SSL</a></li>
-  <li><a href="#garrett.ssl" id="toc-garrett.ssl" class="nav-link" data-scroll-target="#garrett.ssl"><span class="header-section-number">1.4.8</span> GARRETT.SSL</a></li>
-  <li><a href="#serbia.ssl" id="toc-serbia.ssl" class="nav-link" data-scroll-target="#serbia.ssl"><span class="header-section-number">1.4.9</span> SERBIA.SSL</a></li>
-  </ul></li>
-  <li><a href="#instruments" id="toc-instruments" class="nav-link" data-scroll-target="#instruments"><span class="header-section-number">1.5</span> Instruments</a></li>
-  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software"><span class="header-section-number">1.6</span> Software</a>
-  <ul class="collapse">
-  <li><a href="#soilspecdata" id="toc-soilspecdata" class="nav-link" data-scroll-target="#soilspecdata"><span class="header-section-number">1.6.1</span> SoilSpecData</a></li>
-  <li><a href="#soilspectfm" id="toc-soilspectfm" class="nav-link" data-scroll-target="#soilspectfm"><span class="header-section-number">1.6.2</span> SoilSpecTfm</a></li>
-  <li><a href="#opusreader2" id="toc-opusreader2" class="nav-link" data-scroll-target="#opusreader2"><span class="header-section-number">1.6.3</span> opusreader2</a></li>
-  <li><a href="#asdreader" id="toc-asdreader" class="nav-link" data-scroll-target="#asdreader"><span class="header-section-number">1.6.4</span> asdreader</a></li>
-  <li><a href="#prospectr" id="toc-prospectr" class="nav-link" data-scroll-target="#prospectr"><span class="header-section-number">1.6.5</span> prospectr</a></li>
-  <li><a href="#simplerspec" id="toc-simplerspec" class="nav-link" data-scroll-target="#simplerspec"><span class="header-section-number">1.6.6</span> simplerspec</a></li>
-  <li><a href="#resemble" id="toc-resemble" class="nav-link" data-scroll-target="#resemble"><span class="header-section-number">1.6.7</span> resemble</a></li>
-  <li><a href="#mdatools" id="toc-mdatools" class="nav-link" data-scroll-target="#mdatools"><span class="header-section-number">1.6.8</span> mdatools</a></li>
+  <li><a href="#soilspecdata" id="toc-soilspecdata" class="nav-link" data-scroll-target="#soilspecdata"><span class="header-section-number">1.5.1</span> SoilSpecData</a></li>
+  <li><a href="#soilspectfm" id="toc-soilspectfm" class="nav-link" data-scroll-target="#soilspectfm"><span class="header-section-number">1.5.2</span> SoilSpecTfm</a></li>
+  <li><a href="#opusreader2" id="toc-opusreader2" class="nav-link" data-scroll-target="#opusreader2"><span class="header-section-number">1.5.3</span> opusreader2</a></li>
+  <li><a href="#asdreader" id="toc-asdreader" class="nav-link" data-scroll-target="#asdreader"><span class="header-section-number">1.5.4</span> asdreader</a></li>
+  <li><a href="#prospectr" id="toc-prospectr" class="nav-link" data-scroll-target="#prospectr"><span class="header-section-number">1.5.5</span> prospectr</a></li>
+  <li><a href="#simplerspec" id="toc-simplerspec" class="nav-link" data-scroll-target="#simplerspec"><span class="header-section-number">1.5.6</span> simplerspec</a></li>
+  <li><a href="#resemble" id="toc-resemble" class="nav-link" data-scroll-target="#resemble"><span class="header-section-number">1.5.7</span> resemble</a></li>
+  <li><a href="#mdatools" id="toc-mdatools" class="nav-link" data-scroll-target="#mdatools"><span class="header-section-number">1.5.8</span> mdatools</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/soilspectroscopy/ossl-manual/edit/main/soilspec.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/soilspectroscopy/ossl-manual/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -361,196 +355,31 @@ Spectral regions
 </section>
 <section id="predictive-modeling" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="predictive-modeling"><span class="header-section-number">1.3</span> Predictive modeling</h2>
-<p>From initial findings with the OSSL <span class="citation" data-cites="Safanelli2025">[<a href="references.html#ref-Safanelli2025" role="doc-biblioref">1</a>]</span>, on average, the MIR range appears to be the best spectral region for developing spectral prediction models, followed by VisNIR and NIR (Neospectra). This happens because the MIR contains several fundamental and resolved absorption features from mineral and organic functional groups that translate to better prediction capacity, despite challenges in the interpretation that stem from chemical heterogeneity. VisNIR and NIR spectra, in turn, are made of overtones from the fundamental vibrations of the MIR range, hence, are less sensitive to soil constituents and may result in inferior performance. In addition, we found good performance for some soil properties that may not directly affect soil spectra but can be indirectly inferred and quantified (secondary properties), such as cation exchange capacity, pH, soil contaminants, etc. However, understanding both primary and secondary components in the soil helps to better understand the factors that contribute to the improvement of spectral predictive models within the complex context of soil systems and also to select the spectral range, where they are most pronounced.</p>
+<p>From initial findings with the OSSL <span class="citation" data-cites="Safanelli2025">[<a href="#ref-Safanelli2025" role="doc-biblioref">1</a>]</span>, on average, the MIR range appears to be the best spectral region for developing spectral prediction models, followed by VisNIR and NIR (Neospectra). This happens because the MIR contains several fundamental and resolved absorption features from mineral and organic functional groups that translate to better prediction capacity, despite challenges in the interpretation that stem from chemical heterogeneity. VisNIR and NIR spectra, in turn, are made of overtones from the fundamental vibrations of the MIR range, hence, are less sensitive to soil constituents and may result in inferior performance. In addition, we found good performance for some soil properties that may not directly affect soil spectra but can be indirectly inferred and quantified (secondary properties), such as cation exchange capacity, pH, soil contaminants, etc. However, understanding both primary and secondary components in the soil helps to better understand the factors that contribute to the improvement of spectral predictive models within the complex context of soil systems and also to select the spectral range, where they are most pronounced.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/fig5-pone-ossl.PNG" class="img-fluid figure-img"></p>
-<figcaption><strong>Rank of prediction models fitted with the Open Soil Spectral Library (OSSL)</strong>. Lin’s concordance correlation coefficient (CCC) from 10-fold cross-validation with refitting. Striped bars represent models with a ratio of performance to the interquartile range (RPIQ) &lt; 2. Source: <span class="citation" data-cites="Safanelli2025">[<a href="references.html#ref-Safanelli2025" role="doc-biblioref">1</a>]</span></figcaption>
+<figcaption><strong>Rank of prediction models fitted with the Open Soil Spectral Library (OSSL)</strong>. Lin’s concordance correlation coefficient (CCC) from 10-fold cross-validation with refitting. Striped bars represent models with a ratio of performance to the interquartile range (RPIQ) &lt; 2. Source: <span class="citation" data-cites="Safanelli2025">[<a href="#ref-Safanelli2025" role="doc-biblioref">1</a>]</span></figcaption>
 </figure>
 </div>
 <p>We recommend visiting a <a href="https://soilspectroscopy.github.io/soilspec-workshop/"><strong>dedicated tutorial</strong></a> where we present and walk through the modeling framework employed with the OSSL. We recommend checking the introduction section to understand why soil spectroscopy is a <strong>fit-for-purpose technology</strong>, why <strong>good predictions flow only from good data</strong>, and the <strong>best practices for model calibration</strong>.</p>
-<p>The OSSL paper <span class="citation" data-cites="Safanelli2025">[<a href="references.html#ref-Safanelli2025" role="doc-biblioref">1</a>]</span> also describes and validates in detail the OSSL models.</p>
+<p>The OSSL paper <span class="citation" data-cites="Safanelli2025">[<a href="#ref-Safanelli2025" role="doc-biblioref">1</a>]</span> also describes and validates in detail the OSSL models.</p>
 </section>
-<section id="soil-spectral-libraries" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="soil-spectral-libraries"><span class="header-section-number">1.4</span> Soil spectral libraries</h2>
-<p>Several soil spectral libraries were minimally standardized/harmonized to be imported into the OSSL. The following list represents the current integrated datasets, but several more are planned to be added in the near future:</p>
-<section id="kssl.ssl" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="kssl.ssl"><span class="header-section-number">1.4.1</span> KSSL.SSL</h3>
-<p>MIR and VisNIR spectral library and associated soil characterization data, mostly representing soils from the United States and its territories.</p>
-<ul>
-<li>📕 Seybold, C. A., Ferguson, R., Wysocki, D., Bailey, S., Anderson, J., Nester, B., … &amp; Thomas, P. (2019). Application of Mid‐Infrared Spectroscopy in Soil Survey. Soil Science Society of America Journal, 83(6), 1746-1759. <a href="https://doi.org/10.2136/sssaj2019.06.0205" class="uri">https://doi.org/10.2136/sssaj2019.06.0205</a>.<br>
-</li>
-<li>🔗 Project website: <a href="https://ncsslabdatamart.sc.egov.usda.gov/" class="uri">https://ncsslabdatamart.sc.egov.usda.gov/</a><br>
-</li>
-<li>©️ Data license: <a href="https://ncsslabdatamart.sc.egov.usda.gov/datause.aspx">CC-BY</a><br>
-</li>
-<li>📍 Unique sites: 9,061<br>
-</li>
-<li>📋 Unique complete measurements: 76,813 (MIR) and 19,807 (VisNIR)<br>
-</li>
-<li>📝 Harmonization and import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/KSSL">ossl-imports/dataset/KSSL</a></li>
-</ul>
-</section>
-<section id="icraf.isric" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="icraf.isric"><span class="header-section-number">1.4.2</span> ICRAF.ISRIC</h3>
-<p>A Globally Distributed Soil Spectral Library. VisNIR and MIR measurements for some 785 profiles from the ISRIC World Soil Reference Collection. The samples are from 58 countries spanning Africa, Asia, Europe, North America, and South America.</p>
-<ul>
-<li>📕 World Agroforestry Centre (ICRAF) and ISRIC - World Soil Information. 2010. The ICRAF/ISRIC Soil VisNIR and MIR spectral libraries. Nairobi, Kenya: World Agroforestry Centre (ICRAF).</li>
-<li>🔗 Project websites: <a href="https://data.isric.org/geonetwork/srv/eng/catalog.search#/metadata/1b65024a-cd9f-11e9-a8f9-a0481ca9e724">ISRIC Data Hub</a>, <a href="https://doi.org/10.34725/DVN/MFHA9C">ICRAF Dataverse</a>.</li>
-<li>©️ Data license: <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a><br>
-</li>
-<li>📍 Unique locations: 785<br>
-</li>
-<li>📋 Unique complete measurements: 4308<br>
-</li>
-<li>📝 Harmonization and import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/ICRAF_ISRIC">ossl-imports/dataset/ICRAF_ISRIC</a></li>
-</ul>
-</section>
-<section id="lucas.ssl" class="level3" data-number="1.4.3">
-<h3 data-number="1.4.3" class="anchored" data-anchor-id="lucas.ssl"><span class="header-section-number">1.4.3</span> LUCAS.SSL</h3>
-<p>Soil samples from the <a href="https://esdac.jrc.ec.europa.eu/projects/lucas">LUCAS (Land Use/Cover Area frame statistical Survey)</a> of 23-28 European Union member states collected in 2009 and 2015 were scanned for VisNIR. Data is available through the OSSL with permission and under condition that <em>“Graphical representation of individual units on a map is permitted as far as the geographical location of the soil samples is not detectable”</em>. Additional 600 samples from the LUCAS soil samples archive were scanned at Woodwell Climate Research using an MIR instrument.</p>
-<ul>
-<li>📕 Orgiazzi, A., Ballabio, C., Panagos, P., Jones, A., &amp; Fernández-Ugalde, O. (2018). LUCAS Soil, the largest expandable soil dataset for Europe: a review. European Journal of Soil Science, 69(1), 140–153. doi:<a href="https://doi.org/10.1111/ejss.12499">10.1111/ejss.12499</a>.<br>
-</li>
-<li>🔗 Project website: <a href="https://esdac.jrc.ec.europa.eu/content/lucas-2009-topsoil-data">LUCAS 2009</a>, <a href="https://esdac.jrc.ec.europa.eu/content/lucas2015-topsoil-data">LUCAS 2015</a>.</li>
-<li>©️ Data license: <a href="https://esdac.jrc.ec.europa.eu/content/lucas-2009-topsoil-data">JRC License Agreement for LUCAS 2009</a> and <a href="https://esdac.jrc.ec.europa.eu/content/lucas-2009-topsoil-data">LUCAS 2015</a> under <strong>Notification</strong> section.<br>
-</li>
-<li>📍 Unique locations: 41,719<br>
-</li>
-<li>📋 Unique complete measurements: 41,719<br>
-</li>
-<li>📝 Harmonization and import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/LUCAS">ossl-imports/dataset/LUCAS</a></li>
-</ul>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The LUCAS topsoil dataset used in this work was made available by the European Commission through the European Soil Data Centre managed by the Joint Research Centre (JRC), <a href="http://esdac.jrc.ec.europa.eu/" class="uri">http://esdac.jrc.ec.europa.eu/</a>.</p>
-</div>
-</div>
-</section>
-<section id="afsis1.ssl" class="level3" data-number="1.4.4">
-<h3 data-number="1.4.4" class="anchored" data-anchor-id="afsis1.ssl"><span class="header-section-number">1.4.4</span> AFSIS1.SSL</h3>
-<p>Africa Soil Information Service (AfSIS) Soil Chemistry Phase I consists of MIR and VisNIR measurements of 1903 georeferenced soil samples collected from 19 countries in Sub-Saharan Africa including a suite of wet chemistry data.</p>
-<ul>
-<li>📕 Vågen, T.-G., Winowiecki, L.A., Desta, L., Tondoh, E.J., Weullow, E., Shepherd, K., Sila, A., (2020). Mid-Infrared Spectra (MIRS) from ICRAF Soil and Plant Spectroscopy Laboratory: Africa Soil Information Service (AfSIS) Phase I 2009-2013. World Agroforestry (ICRAF), V1, <a href="https://doi.org/10.34725/DVN/QXCWP1" class="uri">https://doi.org/10.34725/DVN/QXCWP1</a>.<br>
-</li>
-<li>🔗 Project website: <a href="http://africasoils.net/services/data/soil-databases/">AfSIS</a>, <a href="https://registry.opendata.aws/afsis/">AWS Open Registry</a>, <a href="https://doi.org/10.34725/DVN/QXCWP1">ICRAF Dataverse</a>.</li>
-<li>©️ Data license: <a href="https://opendatacommons.org/licenses/odbl/">Open Database License (“ODbL”)</a><br>
-</li>
-<li>📍 Unique locations: 1903<br>
-</li>
-<li>📋 Unique complete measurements: 3806<br>
-</li>
-<li>📝 Harmonization and import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS">ossl-imports/dataset/AFSIS</a></li>
-</ul>
-</section>
-<section id="afsis2.ssl" class="level3" data-number="1.4.5">
-<h3 data-number="1.4.5" class="anchored" data-anchor-id="afsis2.ssl"><span class="header-section-number">1.4.5</span> AFSIS2.SSL</h3>
-<p>Africa Soil Information Service (AfSIS) Soil Chemistry Phase II. Three datasets for Tanzania, Ghana, and Nigeria. Data has been analyzed at the ICRAF Soil-Plant Spectral Diagnostics Laboratory, Nairobi, and the Rothamsted Research. More information can be found on <a href="https://data.worldagroforestry.org/dataverse/icraf_soils">ICRAF Dataverse</a>.</p>
-<ul>
-<li>📕 Hengl, T., Miller, M.A.E., Križan, J., Shepherd, K.D., Sila, A., Kilibarda, M., Antonijevi, O., Glušica, L., Dobermann, A., Haefele, S.M., McGrath, S.P., Acquah, G.E., Collinson, J., Parente, L., Sheykhmousa, M., Saito, K., Johnson, J-M., Chamberlin, J., Silatsa, F.B.T., Yemefack, M., Wendt, J., MacMillan, R.A., Wheeler I. and Crouch, J. (2021) African soil properties and nutrients mapped at 30 m spatial resolution using two-scale ensemble machine learning. Scientific Reports, 11, 6130. <a href="https://www.nature.com/articles/s41598-021-85639-y" class="uri">https://www.nature.com/articles/s41598-021-85639-y</a>.<br>
-</li>
-<li>🔗 Project website: <a href="https://doi.org/10.34725/DVN/XUDGJY">Tanzania</a>, <a href="https://doi.org/10.34725/DVN/SPRSFN">Ghana</a>, and <a href="https://doi.org/10.34725/DVN/WLAKR2">Nigeria</a>.</li>
-<li>©️ Data license: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC-BY</a><br>
-</li>
-<li>📍 Unique locations: 367<br>
-</li>
-<li>📋 Unique complete measurements: 820<br>
-</li>
-<li>📝 Harmonization and import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS2">ossl-imports/dataset/AFSIS2</a></li>
-</ul>
-</section>
-<section id="caf.ssl" class="level3" data-number="1.4.6">
-<h3 data-number="1.4.6" class="anchored" data-anchor-id="caf.ssl"><span class="header-section-number">1.4.6</span> CAF.SSL</h3>
-<p>The Central African Soil Spectral Library consists of MIR measurements of 1800 soil samples collected in Central Africa.</p>
-<ul>
-<li>📕 Summerauer, L., Baumann, P., Ramirez-Lopez, L., Barthel, M., Bauters, M., Bukombe, B., Reichenbach, M., Boeckx, P., Kearsley, E., Van Oost, K., Vanlauwe, B., Chiragaga, D., Heri-Kazi, A. B., Moonen, P., Sila, A., Shepherd, K., Bazirake Mujinya, B., Van Ranst, E., Baert, G., Doetterl, S., and Six, J. (2021). The central African soil spectral library: a new soil infrared repository and a geographical prediction analysis. SOIL, 7, 693–715, <a href="https://doi.org/10.5194/soil-7-693-2021" class="uri">https://doi.org/10.5194/soil-7-693-2021</a><br>
-</li>
-<li>🔗 Project website: <a href="https://github.com/laura-summerauer/ssl-central-africa">Github</a><br>
-</li>
-<li>©️ Data license: CC-BY<br>
-</li>
-<li>📍 Unique locations: ?<br>
-</li>
-<li>📋 Unique complete measurements: 1852<br>
-</li>
-<li>📝 Harmonization and import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CASSL">ossl-imports/dataset/CASSL</a></li>
-</ul>
-</section>
-<section id="schiedung.ssl" class="level3" data-number="1.4.7">
-<h3 data-number="1.4.7" class="anchored" data-anchor-id="schiedung.ssl"><span class="header-section-number">1.4.7</span> SCHIEDUNG.SSL</h3>
-<p>Dataset to the manuscript Schiedung et al.&nbsp;(2022). MIR measurements of 284 samples from high-latitude forest soils of Canada.</p>
-<ul>
-<li>📕 Schiedung, M., Bellè, S.-L., Malhotra, A., &amp; Abiven, S. (2022). Organic carbon stocks, quality and prediction in permafrost-affected forest soils in north Canada. Catena, 213, 106194. <a href="https://doi.org/10.1016/j.catena.2022.106194" class="uri">https://doi.org/10.1016/j.catena.2022.106194</a>.<br>
-</li>
-<li>🔗 Project website: <a href="https://doi.org/10.5281/zenodo.6024831">Zenodo</a><br>
-</li>
-<li>©️ Data license: CC-BY<br>
-</li>
-<li>📍 Unique locations: 289<br>
-</li>
-<li>📋 Unique complete measurements: 259<br>
-</li>
-<li>📝 Harmonization and import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Schiedung">ossl-imports/dataset/Schiedung</a></li>
-</ul>
-</section>
-<section id="garrett.ssl" class="level3" data-number="1.4.8">
-<h3 data-number="1.4.8" class="anchored" data-anchor-id="garrett.ssl"><span class="header-section-number">1.4.8</span> GARRETT.SSL</h3>
-<p>A soil dataset from the FR380 trial series spanning 35 Pinus radiata forest sites in New Zealand. The dataset underpins three existing publications by Watt et al.&nbsp;(2005; 2008) and Ross et al.&nbsp;(2009) which details sample sites and the time zero (i.e.&nbsp;time of tree planting) sample collection and testing method. The publication by Garret et al.&nbsp;(2022) details the soil mid-infrared spectroscopy method and extension on soil chemistry testing using the same time zero samples. A total of 184 samples have publicly available MIR measurements.</p>
-<ul>
-<li>📕 Garrett, L. G., Sanderman, J., Palmer, D. J., Dean, F., Patel, S., Bridson, J. H., &amp; Carlin, T. (2022). Mid-infrared spectroscopy for planted forest soil and foliage nutrition predictions, New Zealand case study. In Trees, Forests and People (Vol. 8, p.&nbsp;100280). <a href="https://doi.org/10.1016/j.tfp.2022.100280" class="uri">https://doi.org/10.1016/j.tfp.2022.100280</a>.<br>
-</li>
-<li>🔗 Project website: <a href="https://doi.org/10.6084/m9.figshare.20506587.v2">Figshare</a><br>
-</li>
-<li>©️ Data license: CC-BY<br>
-</li>
-<li>📍 Unique locations: 35<br>
-</li>
-<li>📋 Unique complete measurements: 184<br>
-</li>
-<li>📝 Harmonization and import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Garrett">ossl-imports/dataset/Garrett</a></li>
-</ul>
-</section>
-<section id="serbia.ssl" class="level3" data-number="1.4.9">
-<h3 data-number="1.4.9" class="anchored" data-anchor-id="serbia.ssl"><span class="header-section-number">1.4.9</span> SERBIA.SSL</h3>
-<p>The Serbian SSL is a dataset with 135 samples shared by University of Novi Sad and published in Jović et al.&nbsp;(2019). The soil samples were sampled in 2009. Samples were taken from three different types of soil: arable, meadow, and forest, with 3 different depths: 0-30 cm, 30-60 cm and 60-90 cm for each location (n=45). Classical wet chemistry analyses includes texture, carbon total, carbon organic, carbon inorganic, pH, C/N ratio, and CaCO3. Only texture has complete data for all depths, the other soil properties were determined only for the 0-30 cm layer. The spectra in the MIR range were taken for all depths using a ThermoFisher Nicolet Nexus 670 with a DTGS detector, diffuse reflectance module, and gold as background reference. MIR spectra were obtained in the spectral range of 400-4000 cm-1 in duplicates. The coordinates of the sampling sites are given with lower precision.</p>
-<ul>
-<li>📕 Jović, B., Ćirićb, V., Kovačevića, M., Šeremešićb, S., Kordića, B. (2019). Empirical equation for preliminary assessment of soil texture. In Spectrochimica Acta Part A: Molecular and Biomolecular Spectroscopy (Vol. 206, p.&nbsp;506-511). <a href="https://doi.org/10.1016/j.saa.2018.08.039" class="uri">https://doi.org/10.1016/j.saa.2018.08.039</a>.<br>
-</li>
-<li>🔗 Project website: Data shared by email. More info in the paper<br>
-</li>
-<li>©️ Data license: CC-BY<br>
-</li>
-<li>📍 Unique locations: 45<br>
-</li>
-<li>📋 Unique complete measurements: 135<br>
-</li>
-<li>📝 Harmonization and import steps: <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Serbia">ossl-imports/dataset/Serbia</a></li>
-</ul>
-</section>
-</section>
-<section id="instruments" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="instruments"><span class="header-section-number">1.5</span> Instruments</h2>
-<p>A <a href="https://openknowledge.fao.org/items/43aca83e-f3eb-4648-9f61-e3acdc7e62a3">Global Soil Spectroscopy Assessment</a> was published in 2021 by FAO <span class="citation" data-cites="BenedettiEgmond2021">[<a href="references.html#ref-BenedettiEgmond2021" role="doc-biblioref">2</a>]</span>, where a number of instruments were identified in soil spectroscopy laboratories. Within the SS4GG initiative, we published a paper on the spectral dissimilarity of 20 MIR instruments <span class="citation" data-cites="Safanelli2023">[<a href="references.html#ref-Safanelli2023" role="doc-biblioref">3</a>]</span> providing clear recommendations to overcome this problem. A second analysis of VisNIR instruments is being developed in collaboration with the <a href="https://sagroups.ieee.org/4005/">IEEE P4005 working group</a>.</p>
+<section id="instruments" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="instruments"><span class="header-section-number">1.4</span> Instruments</h2>
+<p>A <a href="https://openknowledge.fao.org/items/43aca83e-f3eb-4648-9f61-e3acdc7e62a3">Global Soil Spectroscopy Assessment</a> was published in 2021 by FAO <span class="citation" data-cites="BenedettiEgmond2021">[<a href="#ref-BenedettiEgmond2021" role="doc-biblioref">2</a>]</span>, where a number of instruments were identified in soil spectroscopy laboratories. Within the SS4GG initiative, we published a paper on the spectral dissimilarity of 20 MIR instruments <span class="citation" data-cites="Safanelli2023">[<a href="#ref-Safanelli2023" role="doc-biblioref">3</a>]</span> providing clear recommendations to overcome this problem. A second analysis of VisNIR instruments is being developed in collaboration with the <a href="https://sagroups.ieee.org/4005/">IEEE P4005 working group</a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/ssl_instruments_list.png" class="img-fluid figure-img"></p>
-<figcaption>Most frequent MIR and VisNIR instruments reported in <span class="citation" data-cites="BenedettiEgmond2021">[<a href="references.html#ref-BenedettiEgmond2021" role="doc-biblioref">2</a>]</span></figcaption>
+<figcaption>Most frequent MIR and VisNIR instruments reported in <span class="citation" data-cites="BenedettiEgmond2021">[<a href="#ref-BenedettiEgmond2021" role="doc-biblioref">2</a>]</span></figcaption>
 </figure>
 </div>
 </section>
-<section id="software" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="software"><span class="header-section-number">1.6</span> Software</h2>
+<section id="software" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="software"><span class="header-section-number">1.5</span> Software</h2>
 <p>There are many proprietary and open source software used to process spectral measurements. We provide below a list (not exhaustive) of the most common packages/modules that can be used in R or Python (both FOSS) for importing, preprocessing, and analyzing soil spectral data:</p>
-<section id="soilspecdata" class="level3" data-number="1.6.1">
-<h3 data-number="1.6.1" class="anchored" data-anchor-id="soilspecdata"><span class="header-section-number">1.6.1</span> SoilSpecData</h3>
+<section id="soilspecdata" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="soilspecdata"><span class="header-section-number">1.5.1</span> SoilSpecData</h3>
 <ul>
 <li>📛 Name: SoilSpecData<br>
 </li>
@@ -566,8 +395,8 @@ Note
 <li>📧 Maintainer: <a href="https://github.com/franckalbinet">Franck Albinet</a></li>
 </ul>
 </section>
-<section id="soilspectfm" class="level3" data-number="1.6.2">
-<h3 data-number="1.6.2" class="anchored" data-anchor-id="soilspectfm"><span class="header-section-number">1.6.2</span> SoilSpecTfm</h3>
+<section id="soilspectfm" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="soilspectfm"><span class="header-section-number">1.5.2</span> SoilSpecTfm</h3>
 <ul>
 <li>📛 Name: SoilSpecTfm<br>
 </li>
@@ -583,8 +412,8 @@ Note
 <li>📧 Maintainer: <a href="https://github.com/franckalbinet">Franck Albinet</a></li>
 </ul>
 </section>
-<section id="opusreader2" class="level3" data-number="1.6.3">
-<h3 data-number="1.6.3" class="anchored" data-anchor-id="opusreader2"><span class="header-section-number">1.6.3</span> opusreader2</h3>
+<section id="opusreader2" class="level3" data-number="1.5.3">
+<h3 data-number="1.5.3" class="anchored" data-anchor-id="opusreader2"><span class="header-section-number">1.5.3</span> opusreader2</h3>
 <ul>
 <li>📛 Name: opusreader2<br>
 </li>
@@ -599,8 +428,8 @@ Note
 <li>📧 Maintainer: <a href="https://github.com/spectral-cockpit">spectral-cockpit</a></li>
 </ul>
 </section>
-<section id="asdreader" class="level3" data-number="1.6.4">
-<h3 data-number="1.6.4" class="anchored" data-anchor-id="asdreader"><span class="header-section-number">1.6.4</span> asdreader</h3>
+<section id="asdreader" class="level3" data-number="1.5.4">
+<h3 data-number="1.5.4" class="anchored" data-anchor-id="asdreader"><span class="header-section-number">1.5.4</span> asdreader</h3>
 <ul>
 <li>📛 Name: asdreader</li>
 <li>💼 Specialty: Reading ASD binary files in R<br>
@@ -616,8 +445,8 @@ Note
 <li>📧 Maintainer: <a href="https://github.com/pierreroudier">Pierre Roudier</a></li>
 </ul>
 </section>
-<section id="prospectr" class="level3" data-number="1.6.5">
-<h3 data-number="1.6.5" class="anchored" data-anchor-id="prospectr"><span class="header-section-number">1.6.5</span> prospectr</h3>
+<section id="prospectr" class="level3" data-number="1.5.5">
+<h3 data-number="1.5.5" class="anchored" data-anchor-id="prospectr"><span class="header-section-number">1.5.5</span> prospectr</h3>
 <ul>
 <li>📛 Name: prospectr<br>
 </li>
@@ -634,8 +463,8 @@ Note
 <li>📧 Maintainer: <a href="https://github.com/l-ramirez-lopez">Leornardo Ramirez-Lopez</a></li>
 </ul>
 </section>
-<section id="simplerspec" class="level3" data-number="1.6.6">
-<h3 data-number="1.6.6" class="anchored" data-anchor-id="simplerspec"><span class="header-section-number">1.6.6</span> simplerspec</h3>
+<section id="simplerspec" class="level3" data-number="1.5.6">
+<h3 data-number="1.5.6" class="anchored" data-anchor-id="simplerspec"><span class="header-section-number">1.5.6</span> simplerspec</h3>
 <ul>
 <li>📛 Name: simplerspec<br>
 </li>
@@ -652,8 +481,8 @@ Note
 <li>📧 Maintainer: <a href="https://github.com/philipp-baumann">Philipp Baumann</a></li>
 </ul>
 </section>
-<section id="resemble" class="level3" data-number="1.6.7">
-<h3 data-number="1.6.7" class="anchored" data-anchor-id="resemble"><span class="header-section-number">1.6.7</span> resemble</h3>
+<section id="resemble" class="level3" data-number="1.5.7">
+<h3 data-number="1.5.7" class="anchored" data-anchor-id="resemble"><span class="header-section-number">1.5.7</span> resemble</h3>
 <ul>
 <li>📛 Name: resemble<br>
 </li>
@@ -667,8 +496,8 @@ Note
 <li>📧 Maintainer: <a href="https://github.com/l-ramirez-lopez">Leonardo Ramirez Lopez</a></li>
 </ul>
 </section>
-<section id="mdatools" class="level3" data-number="1.6.8">
-<h3 data-number="1.6.8" class="anchored" data-anchor-id="mdatools"><span class="header-section-number">1.6.8</span> mdatools</h3>
+<section id="mdatools" class="level3" data-number="1.5.8">
+<h3 data-number="1.5.8" class="anchored" data-anchor-id="mdatools"><span class="header-section-number">1.5.8</span> mdatools</h3>
 <ul>
 <li>📛 Name: mdatools<br>
 </li>
@@ -684,7 +513,7 @@ Note
 <!-- ## Suggested literature -->
 
 
-<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body" role="list">
 <div id="ref-Safanelli2025" class="csl-entry" role="listitem">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Safanelli JL, Hengl T, Parente LL, Minarik R, Bloom DE, Todd-Brown K, et al. Open soil spectral library (<span>OSSL)</span>: Building reproducible soil calibration models through open development and community engagement. PLoS One. 2025;20: e0296545. doi:<a href="https://doi.org/10.1371/journal.pone.0296545">10.1371/journal.pone.0296545</a></div>
 </div>
@@ -1237,8 +1066,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./db-desc.html" class="pagination-link" aria-label="Database description">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Database description</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./libraries.html" class="pagination-link" aria-label="Soil spectral libraries">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Soil spectral libraries</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

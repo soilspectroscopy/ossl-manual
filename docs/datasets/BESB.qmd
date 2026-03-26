@@ -1,0 +1,16 @@
+---
+title: "BESB"
+engine: knitr
+output: html
+---
+
+## ICRAF.ISRIC
+
+A Globally Distributed Soil Spectral Library. VisNIR and MIR measurements for some 785 profiles from the ISRIC World Soil Reference Collection. The samples are from 58 countries spanning Africa, Asia, Europe, North America, and South America.
+
+- `{r} emoji::emoji("closed_book")` World Agroforestry Centre (ICRAF) and ISRIC - World Soil Information. 2010. The ICRAF/ISRIC Soil VisNIR and MIR spectral libraries. Nairobi, Kenya: World Agroforestry Centre (ICRAF).
+- `{r} emoji::emoji("link")` Project websites: [ISRIC Data Hub](https://data.isric.org/geonetwork/srv/eng/catalog.search#/metadata/1b65024a-cd9f-11e9-a8f9-a0481ca9e724), [ICRAF Dataverse](https://doi.org/10.34725/DVN/MFHA9C).
+- `{r} emoji::emoji("copyright")` Data license: [CC-BY](https://creativecommons.org/licenses/by/4.0/)
+- `{r} emoji::emoji("round_pushpin")` Unique locations: 785
+- `{r} emoji::emoji("clipboard")` Unique complete measurements: 4308
+- `{r} emoji::emoji("memo")` Harmonization and import steps: [ossl-imports/dataset/ICRAF_ISRIC](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/ICRAF_ISRIC)

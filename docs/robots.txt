@@ -1,1 +1,1 @@
-Sitemap: https://soilspectroscopy.github.io/ossl-manual/sitemap.xml
+Sitemap: https://docs.soilspectroscopy.org/sitemap.xml
