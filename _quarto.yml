@@ -49,8 +49,6 @@ format:
       dark:
       - cosmo
       - dark.scss
-  pdf:
-    documentclass: scrreprt
 
 engine: knitr
 editor: source

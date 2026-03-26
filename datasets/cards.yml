@@ -1,13 +1,12 @@
-# cards.yml
 - title: "BESB"
   description: "Brazilian Soil Spectral Library"
   date: "2026-03-16"
   version: "v2.0"
   categories: [open, national, VNIR-MIR]
-  path: datasets/BESB.qmd
+  path: datasets/BESB.html
 - title: "XYZ"
   description: "XYZ long title"
   date: "2026-03-16"
   version: "v2.0"
   categories: [open, national, MIR]
-  path: datasets/BESB.qmd
+  path: datasets/BESB.html

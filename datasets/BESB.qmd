@@ -1,7 +1,6 @@
 ---
 title: "BESB"
 engine: knitr
-output: html
 ---
 
 ## ICRAF.ISRIC

@@ -1,0 +1,25 @@
+project:
+  type: website
+  output-dir: ../docs/datasets
+
+website:
+  navbar:
+    left:
+      - text: "← Back to listed libraries"
+        href: ../libraries.html
+        
+  sidebar:
+    style: "docked"
+    contents:
+      - text: "Libraries"
+        href: ../libraries.html
+      - auto: "*.qmd"   # auto-discovers all dataset qmd files
+      
+format:
+  html:
+    theme:
+      light:
+      - cosmo
+      dark:
+      - cosmo
+      - ../dark.scss
