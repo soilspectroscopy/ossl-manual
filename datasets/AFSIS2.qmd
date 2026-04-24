@@ -1,0 +1,72 @@
+---
+title: "AFSIS2"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+# AFSIS2
+
+Soil spectral library from Africa Soil Information Service (AfSIS) Phase II
+
+## Overview
+
+- **Sample size:** <1,000
+- **Version:** first release (v1)
+- **Spectral range:** mir
+- **Extent:** continental
+
+## Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/AFSIS2/README_files/figure-gfm/map-1.png)
+
+## Database access
+
+[Open dataset files](https://storage.googleapis.com/soilspec4gg-public/datasets/AFSIS2/)
+
+## Soil laboratory information
+
+- **n properties available:** 14
+- **n properties standardized:** 14
+- **n properties harmonized:** pending
+- **properties themes:** physical, chemical, carbon & nutrients, metal elements
+
+## Soil site information
+
+- **coordinates precision:** precise, country
+- **sampling depth:** various
+- **geography:** soil taxonomy, landuse
+
+## MIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** absorbance
+- **Original range:** 602-4000
+- **Standardized range:** 600-4000
+- **Instrument:** Alpha 1 ZnSe
+- **Manufacturer:** Bruker
+- **Scan accessory:** Not available
+- **Sample preparation:** Finely ground <0.1 mm
+- **Additional info:** Not available
+
+### MIR plot
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/AFSIS2/README_files/figure-gfm/mir_plot-1.png)
+
+
+## VNIR
+
+Not available.
+
+
+## NIR
+
+Not available.
+
+
+
+## References
+
+References will be added.
+

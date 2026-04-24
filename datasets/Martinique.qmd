@@ -1,0 +1,71 @@
+---
+title: "Martinique"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+# Martinique
+
+Near-infrared soil spectral library from rural areas of the Martinique island
+
+## Overview
+
+- **Sample size:** <1,000
+- **Version:** version 3.1
+- **Spectral range:** nir
+- **Extent:** national
+
+## Map
+
+![](../img/missing-map.jpg)
+
+## Database access
+
+[Open dataset files](https://storage.googleapis.com/soilspec4gg-public/datasets/Martinique/)
+
+## Soil laboratory information
+
+- **n properties available:** 13
+- **n properties standardized:** 12
+- **n properties harmonized:** pending
+- **properties themes:** physical, carbon & nutrients
+
+## Soil site information
+
+- **coordinates precision:** precise
+- **sampling depth:** various
+- **geography:** soil taxonomy, landuse
+
+## MIR
+
+Not available.
+
+
+## VNIR
+
+Not available.
+
+
+## NIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** absorbance
+- **Original range:** 1100-2498
+- **Instrument:** Foss NIRSystems 5000 spectrophotometer
+- **Manufacturer:** Laurel, MD, USA; 2003
+- **Instrument co-scans:** 32
+- **Scan repeats:** 2
+- **Scan accessory:** Not available
+- **Original resolution:** 2 nm
+- **Sample preparation:** Oven-dried, Sieved < 2mm
+- **Additional info:** Not available
+
+
+
+
+## References
+
+References will be added.
+

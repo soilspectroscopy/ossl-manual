@@ -1,0 +1,72 @@
+---
+title: "CAF"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+# CAF
+
+Soil spectral library for Central Africa
+
+## Overview
+
+- **Sample size:** 1,000+
+- **Version:** first release (v1)
+- **Spectral range:** mir
+- **Extent:** regional
+
+## Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/CASSL/README_files/figure-gfm/map-1.png)
+
+## Database access
+
+[Open dataset files](https://storage.googleapis.com/soilspec4gg-public/datasets/CAF/)
+
+## Soil laboratory information
+
+- **n properties available:** 18
+- **n properties standardized:** 15
+- **n properties harmonized:** pending
+- **properties themes:** physical, chemical, carbon & nutrients, metal elements
+
+## Soil site information
+
+- **coordinates precision:** precise, region
+- **sampling depth:** various
+- **geography:** landuse
+
+## MIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** absorbance
+- **Original range:** 600-7500
+- **Standardized range:** 600-7500
+- **Instrument:** VERTEX 70 FT-IR
+- **Manufacturer:** Bruker Optics GmbH (Germany)
+- **Scan accessory:** Not available
+- **Sample preparation:** Ground < 50 μm
+- **Additional info:** Not available
+
+### MIR plot
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/CASSL/README_files/figure-gfm/mir_plot-1.png)
+
+
+## VNIR
+
+Not available.
+
+
+## NIR
+
+Not available.
+
+
+
+## References
+
+References will be added.
+

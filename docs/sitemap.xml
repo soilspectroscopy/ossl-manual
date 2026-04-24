@@ -2,10 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://docs.soilspectroscopy.org/index.html</loc>
-    <lastmod>2025-01-30T14:51:03.445Z</lastmod>
+    <lastmod>2026-03-26T17:18:49.278Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.soilspectroscopy.org/about.html</loc>
+    <lastmod>2026-03-26T18:50:34.926Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.soilspectroscopy.org/soilspec.html</loc>
+    <lastmod>2026-03-26T18:50:34.942Z</lastmod>
   </url>
   <url>
     <loc>https://docs.soilspectroscopy.org/libraries.html</loc>
-    <lastmod>2026-03-26T18:13:22.832Z</lastmod>
+    <lastmod>2026-04-16T03:24:43.302Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.soilspectroscopy.org/db-desc.html</loc>
+    <lastmod>2026-03-26T17:18:49.133Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.soilspectroscopy.org/db-access.html</loc>
+    <lastmod>2026-03-26T17:18:49.133Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.soilspectroscopy.org/neospectra.html</loc>
+    <lastmod>2026-04-24T14:38:46.031Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.soilspectroscopy.org/prediction-models.html</loc>
+    <lastmod>2026-03-26T17:18:49.278Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.soilspectroscopy.org/web-services.html</loc>
+    <lastmod>2026-03-26T17:18:49.280Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.soilspectroscopy.org/tutorial.html</loc>
+    <lastmod>2026-03-26T17:18:49.280Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.soilspectroscopy.org/publications.html</loc>
+    <lastmod>2026-03-26T17:18:49.278Z</lastmod>
+  </url>
+  <url>
+    <loc>https://docs.soilspectroscopy.org/references.html</loc>
+    <lastmod>2026-03-26T17:18:49.278Z</lastmod>
   </url>
 </urlset>

@@ -1,24 +1,2092 @@
 [
   {
+    "objectID": "CAF.html",
+    "href": "CAF.html",
+    "title": "CAF",
+    "section": "",
+    "text": "Soil spectral library for Central Africa\n\n\n\nSample size: 1,000+\nVersion: first release (v1)\nSpectral range: mir\nExtent: regional\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 18\nn properties standardized: 15\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients, metal elements\n\n\n\n\n\ncoordinates precision: precise, region\nsampling depth: various\ngeography: landuse\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 600-7500\nStandardized range: 600-7500\nInstrument: VERTEX 70 FT-IR\nManufacturer: Bruker Optics GmbH (Germany)\nScan accessory: Not available\nSample preparation: Ground &lt; 50 μm\nAdditional info: Not available\n\n\n\n\n\n\n\n\nNot available.\n\n\n\nNot available.\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "CAF"
+    ]
+  },
+  {
+    "objectID": "CAF.html#overview",
+    "href": "CAF.html#overview",
+    "title": "CAF",
+    "section": "",
+    "text": "Sample size: 1,000+\nVersion: first release (v1)\nSpectral range: mir\nExtent: regional",
+    "crumbs": [
+      "← Back to listed libraries",
+      "CAF"
+    ]
+  },
+  {
+    "objectID": "CAF.html#database-access",
+    "href": "CAF.html#database-access",
+    "title": "CAF",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "CAF"
+    ]
+  },
+  {
+    "objectID": "CAF.html#soil-laboratory-information",
+    "href": "CAF.html#soil-laboratory-information",
+    "title": "CAF",
+    "section": "",
+    "text": "n properties available: 18\nn properties standardized: 15\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients, metal elements",
+    "crumbs": [
+      "← Back to listed libraries",
+      "CAF"
+    ]
+  },
+  {
+    "objectID": "CAF.html#soil-site-information",
+    "href": "CAF.html#soil-site-information",
+    "title": "CAF",
+    "section": "",
+    "text": "coordinates precision: precise, region\nsampling depth: various\ngeography: landuse",
+    "crumbs": [
+      "← Back to listed libraries",
+      "CAF"
+    ]
+  },
+  {
+    "objectID": "CAF.html#mir",
+    "href": "CAF.html#mir",
+    "title": "CAF",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: absorbance\nOriginal range: 600-7500\nStandardized range: 600-7500\nInstrument: VERTEX 70 FT-IR\nManufacturer: Bruker Optics GmbH (Germany)\nScan accessory: Not available\nSample preparation: Ground &lt; 50 μm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "CAF"
+    ]
+  },
+  {
+    "objectID": "CAF.html#vnir",
+    "href": "CAF.html#vnir",
+    "title": "CAF",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "CAF"
+    ]
+  },
+  {
+    "objectID": "CAF.html#nir",
+    "href": "CAF.html#nir",
+    "title": "CAF",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "CAF"
+    ]
+  },
+  {
+    "objectID": "CAF.html#references",
+    "href": "CAF.html#references",
+    "title": "CAF",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "CAF"
+    ]
+  },
+  {
+    "objectID": "Martinique.html",
+    "href": "Martinique.html",
+    "title": "Martinique",
+    "section": "",
+    "text": "Near-infrared soil spectral library from rural areas of the Martinique island\n\n\n\nSample size: &lt;1,000\nVersion: version 3.1\nSpectral range: nir\nExtent: national\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 13\nn properties standardized: 12\nn properties harmonized: pending\nproperties themes: physical, carbon & nutrients\n\n\n\n\n\ncoordinates precision: precise\nsampling depth: various\ngeography: soil taxonomy, landuse\n\n\n\n\nNot available.\n\n\n\nNot available.\n\n\n\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 1100-2498\nInstrument: Foss NIRSystems 5000 spectrophotometer\nManufacturer: Laurel, MD, USA; 2003\nInstrument co-scans: 32\nScan repeats: 2\nScan accessory: Not available\nOriginal resolution: 2 nm\nSample preparation: Oven-dried, Sieved &lt; 2mm\nAdditional info: Not available\n\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Martinique"
+    ]
+  },
+  {
+    "objectID": "Martinique.html#overview",
+    "href": "Martinique.html#overview",
+    "title": "Martinique",
+    "section": "",
+    "text": "Sample size: &lt;1,000\nVersion: version 3.1\nSpectral range: nir\nExtent: national",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Martinique"
+    ]
+  },
+  {
+    "objectID": "Martinique.html#database-access",
+    "href": "Martinique.html#database-access",
+    "title": "Martinique",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Martinique"
+    ]
+  },
+  {
+    "objectID": "Martinique.html#soil-laboratory-information",
+    "href": "Martinique.html#soil-laboratory-information",
+    "title": "Martinique",
+    "section": "",
+    "text": "n properties available: 13\nn properties standardized: 12\nn properties harmonized: pending\nproperties themes: physical, carbon & nutrients",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Martinique"
+    ]
+  },
+  {
+    "objectID": "Martinique.html#soil-site-information",
+    "href": "Martinique.html#soil-site-information",
+    "title": "Martinique",
+    "section": "",
+    "text": "coordinates precision: precise\nsampling depth: various\ngeography: soil taxonomy, landuse",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Martinique"
+    ]
+  },
+  {
+    "objectID": "Martinique.html#mir",
+    "href": "Martinique.html#mir",
+    "title": "Martinique",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Martinique"
+    ]
+  },
+  {
+    "objectID": "Martinique.html#vnir",
+    "href": "Martinique.html#vnir",
+    "title": "Martinique",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Martinique"
+    ]
+  },
+  {
+    "objectID": "Martinique.html#nir",
+    "href": "Martinique.html#nir",
+    "title": "Martinique",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: absorbance\nOriginal range: 1100-2498\nInstrument: Foss NIRSystems 5000 spectrophotometer\nManufacturer: Laurel, MD, USA; 2003\nInstrument co-scans: 32\nScan repeats: 2\nScan accessory: Not available\nOriginal resolution: 2 nm\nSample preparation: Oven-dried, Sieved &lt; 2mm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Martinique"
+    ]
+  },
+  {
+    "objectID": "Martinique.html#references",
+    "href": "Martinique.html#references",
+    "title": "Martinique",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Martinique"
+    ]
+  },
+  {
+    "objectID": "GEMAS.html",
+    "href": "GEMAS.html",
+    "title": "GEMAS",
+    "section": "",
+    "text": "Soil spectral library from the Geochemical Mapping of Agricultural and Grazing Land Soil (GEMAS), Europe\n\n\n\nSample size: 4,000+\nVersion: first release (v1)\nSpectral range: mir\nExtent: continental\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 12\nn properties standardized: 4\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients, metal elements\n\n\n\n\n\ncoordinates precision: precise, country\nsampling depth: top\ngeography: soil taxonomy\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 450-7800\nStandardized range: 500-4000\nInstrument: Spectrum-One™ FT-IR Spectrometer\nManufacturer: PerkinElmer Inc. (MA, USA)\nScan accessory: Not available\nSample preparation: Sieved&lt;2mm\nAdditional info: Not available\n\n\n\n\nNot available.\n\n\n\nNot available.\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "GEMAS"
+    ]
+  },
+  {
+    "objectID": "GEMAS.html#overview",
+    "href": "GEMAS.html#overview",
+    "title": "GEMAS",
+    "section": "",
+    "text": "Sample size: 4,000+\nVersion: first release (v1)\nSpectral range: mir\nExtent: continental",
+    "crumbs": [
+      "← Back to listed libraries",
+      "GEMAS"
+    ]
+  },
+  {
+    "objectID": "GEMAS.html#database-access",
+    "href": "GEMAS.html#database-access",
+    "title": "GEMAS",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "GEMAS"
+    ]
+  },
+  {
+    "objectID": "GEMAS.html#soil-laboratory-information",
+    "href": "GEMAS.html#soil-laboratory-information",
+    "title": "GEMAS",
+    "section": "",
+    "text": "n properties available: 12\nn properties standardized: 4\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients, metal elements",
+    "crumbs": [
+      "← Back to listed libraries",
+      "GEMAS"
+    ]
+  },
+  {
+    "objectID": "GEMAS.html#soil-site-information",
+    "href": "GEMAS.html#soil-site-information",
+    "title": "GEMAS",
+    "section": "",
+    "text": "coordinates precision: precise, country\nsampling depth: top\ngeography: soil taxonomy",
+    "crumbs": [
+      "← Back to listed libraries",
+      "GEMAS"
+    ]
+  },
+  {
+    "objectID": "GEMAS.html#mir",
+    "href": "GEMAS.html#mir",
+    "title": "GEMAS",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: absorbance\nOriginal range: 450-7800\nStandardized range: 500-4000\nInstrument: Spectrum-One™ FT-IR Spectrometer\nManufacturer: PerkinElmer Inc. (MA, USA)\nScan accessory: Not available\nSample preparation: Sieved&lt;2mm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "GEMAS"
+    ]
+  },
+  {
+    "objectID": "GEMAS.html#vnir",
+    "href": "GEMAS.html#vnir",
+    "title": "GEMAS",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "GEMAS"
+    ]
+  },
+  {
+    "objectID": "GEMAS.html#nir",
+    "href": "GEMAS.html#nir",
+    "title": "GEMAS",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "GEMAS"
+    ]
+  },
+  {
+    "objectID": "GEMAS.html#references",
+    "href": "GEMAS.html#references",
+    "title": "GEMAS",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "GEMAS"
+    ]
+  },
+  {
+    "objectID": "PlantedForests_NewZealand.html",
+    "href": "PlantedForests_NewZealand.html",
+    "title": "PlantedForests_NewZealand",
+    "section": "",
+    "text": "Soil spectral library from planted forest soils of New Zealand\n\n\n\nSample size: &lt;300\nVersion: first release (v1)\nSpectral range: mir\nExtent: regional\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 88\nn properties standardized: 27\nn properties harmonized: pending\nproperties themes: physical, chemical, hydrological, carbon & nutrients, metal elements\n\n\n\n\n\ncoordinates precision: precise\nsampling depth: various\ngeography: soil taxonomy, elevation, landuse\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 400-8000\nStandardized range: 600-4000\nInstrument: Invenio-S FT-IR\nManufacturer: Bruker Optics\nScan accessory: Not available\nSample preparation: Ground 180s (Zirconia mill)\nAdditional info: Not available\n\n\n\n\n\n\n\n\nNot available.\n\n\n\nNot available.\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "PlantedForests_NewZealand"
+    ]
+  },
+  {
+    "objectID": "PlantedForests_NewZealand.html#overview",
+    "href": "PlantedForests_NewZealand.html#overview",
+    "title": "PlantedForests_NewZealand",
+    "section": "",
+    "text": "Sample size: &lt;300\nVersion: first release (v1)\nSpectral range: mir\nExtent: regional",
+    "crumbs": [
+      "← Back to listed libraries",
+      "PlantedForests_NewZealand"
+    ]
+  },
+  {
+    "objectID": "PlantedForests_NewZealand.html#database-access",
+    "href": "PlantedForests_NewZealand.html#database-access",
+    "title": "PlantedForests_NewZealand",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "PlantedForests_NewZealand"
+    ]
+  },
+  {
+    "objectID": "PlantedForests_NewZealand.html#soil-laboratory-information",
+    "href": "PlantedForests_NewZealand.html#soil-laboratory-information",
+    "title": "PlantedForests_NewZealand",
+    "section": "",
+    "text": "n properties available: 88\nn properties standardized: 27\nn properties harmonized: pending\nproperties themes: physical, chemical, hydrological, carbon & nutrients, metal elements",
+    "crumbs": [
+      "← Back to listed libraries",
+      "PlantedForests_NewZealand"
+    ]
+  },
+  {
+    "objectID": "PlantedForests_NewZealand.html#soil-site-information",
+    "href": "PlantedForests_NewZealand.html#soil-site-information",
+    "title": "PlantedForests_NewZealand",
+    "section": "",
+    "text": "coordinates precision: precise\nsampling depth: various\ngeography: soil taxonomy, elevation, landuse",
+    "crumbs": [
+      "← Back to listed libraries",
+      "PlantedForests_NewZealand"
+    ]
+  },
+  {
+    "objectID": "PlantedForests_NewZealand.html#mir",
+    "href": "PlantedForests_NewZealand.html#mir",
+    "title": "PlantedForests_NewZealand",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: absorbance\nOriginal range: 400-8000\nStandardized range: 600-4000\nInstrument: Invenio-S FT-IR\nManufacturer: Bruker Optics\nScan accessory: Not available\nSample preparation: Ground 180s (Zirconia mill)\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "PlantedForests_NewZealand"
+    ]
+  },
+  {
+    "objectID": "PlantedForests_NewZealand.html#vnir",
+    "href": "PlantedForests_NewZealand.html#vnir",
+    "title": "PlantedForests_NewZealand",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "PlantedForests_NewZealand"
+    ]
+  },
+  {
+    "objectID": "PlantedForests_NewZealand.html#nir",
+    "href": "PlantedForests_NewZealand.html#nir",
+    "title": "PlantedForests_NewZealand",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "PlantedForests_NewZealand"
+    ]
+  },
+  {
+    "objectID": "PlantedForests_NewZealand.html#references",
+    "href": "PlantedForests_NewZealand.html#references",
+    "title": "PlantedForests_NewZealand",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "PlantedForests_NewZealand"
+    ]
+  },
+  {
+    "objectID": "Korean.html",
+    "href": "Korean.html",
+    "title": "Korean",
+    "section": "",
+    "text": "Near-infrared soil spectral library from South Korea\n\n\n\nSample size: 1,000+\nVersion: version 3\nSpectral range: nir\nExtent: national\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 1\nn properties standardized: 1\nn properties harmonized: pending\nproperties themes: carbon & nutrients\n\n\n\n\n\ncoordinates precision: precise, region\nsampling depth: top\ngeography: landuse\n\n\n\n\nNot available.\n\n\n\nNot available.\n\n\n\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 1400-2500\nInstrument: SpectraStar XT\nManufacturer: Unity Scientific, Westborough, MA, USA\nInstrument co-scans: 12\nScan repeats: 12\nScan accessory: Not available\nOriginal resolution: 1 nm\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available\n\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Korean"
+    ]
+  },
+  {
+    "objectID": "Korean.html#overview",
+    "href": "Korean.html#overview",
+    "title": "Korean",
+    "section": "",
+    "text": "Sample size: 1,000+\nVersion: version 3\nSpectral range: nir\nExtent: national",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Korean"
+    ]
+  },
+  {
+    "objectID": "Korean.html#database-access",
+    "href": "Korean.html#database-access",
+    "title": "Korean",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Korean"
+    ]
+  },
+  {
+    "objectID": "Korean.html#soil-laboratory-information",
+    "href": "Korean.html#soil-laboratory-information",
+    "title": "Korean",
+    "section": "",
+    "text": "n properties available: 1\nn properties standardized: 1\nn properties harmonized: pending\nproperties themes: carbon & nutrients",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Korean"
+    ]
+  },
+  {
+    "objectID": "Korean.html#soil-site-information",
+    "href": "Korean.html#soil-site-information",
+    "title": "Korean",
+    "section": "",
+    "text": "coordinates precision: precise, region\nsampling depth: top\ngeography: landuse",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Korean"
+    ]
+  },
+  {
+    "objectID": "Korean.html#mir",
+    "href": "Korean.html#mir",
+    "title": "Korean",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Korean"
+    ]
+  },
+  {
+    "objectID": "Korean.html#vnir",
+    "href": "Korean.html#vnir",
+    "title": "Korean",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Korean"
+    ]
+  },
+  {
+    "objectID": "Korean.html#nir",
+    "href": "Korean.html#nir",
+    "title": "Korean",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: absorbance\nOriginal range: 1400-2500\nInstrument: SpectraStar XT\nManufacturer: Unity Scientific, Westborough, MA, USA\nInstrument co-scans: 12\nScan repeats: 12\nScan accessory: Not available\nOriginal resolution: 1 nm\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Korean"
+    ]
+  },
+  {
+    "objectID": "Korean.html#references",
+    "href": "Korean.html#references",
+    "title": "Korean",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Korean"
+    ]
+  },
+  {
+    "objectID": "Hungarian.html",
+    "href": "Hungarian.html",
+    "title": "Hungarian",
+    "section": "",
+    "text": "Soil spectral library from the Hungarian Soil Degradation Observation System\n\n\n\nSample size: 5,000+\nVersion: version v3\nSpectral range: vnir\nExtent: national\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 8\nn properties standardized: 7\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients\n\n\n\n\n\ncoordinates precision: precise\nsampling depth: various\ngeography: none\n\n\n\n\nNot available.\n\n\n\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: FieldSpec 4 Spectroradiometer\nManufacturer: ASD (currently Malvern Panalytical)\nInstrument co-scans: 50\nScan repeats: 5\nScan accessory: Not available\nOriginal resolution: 3\nSample preparation: Dried and seived\nAdditional info: Not available\n\n\n\n\nNot available.\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Hungarian"
+    ]
+  },
+  {
+    "objectID": "Hungarian.html#overview",
+    "href": "Hungarian.html#overview",
+    "title": "Hungarian",
+    "section": "",
+    "text": "Sample size: 5,000+\nVersion: version v3\nSpectral range: vnir\nExtent: national",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Hungarian"
+    ]
+  },
+  {
+    "objectID": "Hungarian.html#database-access",
+    "href": "Hungarian.html#database-access",
+    "title": "Hungarian",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Hungarian"
+    ]
+  },
+  {
+    "objectID": "Hungarian.html#soil-laboratory-information",
+    "href": "Hungarian.html#soil-laboratory-information",
+    "title": "Hungarian",
+    "section": "",
+    "text": "n properties available: 8\nn properties standardized: 7\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Hungarian"
+    ]
+  },
+  {
+    "objectID": "Hungarian.html#soil-site-information",
+    "href": "Hungarian.html#soil-site-information",
+    "title": "Hungarian",
+    "section": "",
+    "text": "coordinates precision: precise\nsampling depth: various\ngeography: none",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Hungarian"
+    ]
+  },
+  {
+    "objectID": "Hungarian.html#mir",
+    "href": "Hungarian.html#mir",
+    "title": "Hungarian",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Hungarian"
+    ]
+  },
+  {
+    "objectID": "Hungarian.html#vnir",
+    "href": "Hungarian.html#vnir",
+    "title": "Hungarian",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: FieldSpec 4 Spectroradiometer\nManufacturer: ASD (currently Malvern Panalytical)\nInstrument co-scans: 50\nScan repeats: 5\nScan accessory: Not available\nOriginal resolution: 3\nSample preparation: Dried and seived\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Hungarian"
+    ]
+  },
+  {
+    "objectID": "Hungarian.html#nir",
+    "href": "Hungarian.html#nir",
+    "title": "Hungarian",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Hungarian"
+    ]
+  },
+  {
+    "objectID": "Hungarian.html#references",
+    "href": "Hungarian.html#references",
+    "title": "Hungarian",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Hungarian"
+    ]
+  },
+  {
+    "objectID": "NewZealand_Forest.html",
+    "href": "NewZealand_Forest.html",
+    "title": "Garrett",
+    "section": "",
+    "text": "MIR soil spectral library from forest soils of New Zealand\n\n🔗 Source: DOI\n© Data license: CC-BY\n📍 Extent: regional\n🏷️ Spectral Range: mir\n🌐 URL: https://doi.org/10.6084/m9.figshare.20506587.v2\n📖 Publication: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Garrett"
+    ]
+  },
+  {
+    "objectID": "NewZealand_Forest.html#garrett",
+    "href": "NewZealand_Forest.html#garrett",
+    "title": "Garrett",
+    "section": "",
+    "text": "MIR soil spectral library from forest soils of New Zealand\n\n🔗 Source: DOI\n© Data license: CC-BY\n📍 Extent: regional\n🏷️ Spectral Range: mir\n🌐 URL: https://doi.org/10.6084/m9.figshare.20506587.v2\n📖 Publication: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Garrett"
+    ]
+  },
+  {
+    "objectID": "ICRAF_ISRIC.html",
+    "href": "ICRAF_ISRIC.html",
+    "title": "ICRAF_ISRIC",
+    "section": "",
+    "text": "Soil spectral libraries from the ISRIC World Soil Reference Collection (58 countries)\n\n\n\nSample size: 4,000+\nVersion: first release (v1)\nSpectral range: vnir, mir\nExtent: global\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 46\nn properties standardized: 18\nn properties harmonized: pending\nproperties themes: physical, chemical, hydrological, carbon & nutrients, metal elements\n\n\n\n\n\ncoordinates precision: precise, country\nsampling depth: various\ngeography: landuse\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 400-4000\nStandardized range: 400-4000\nInstrument: FTS-7000 FT-IR Spectrometer\nManufacturer: Digilab (Bio-Rad, Randolph, MA, USA)\nScan accessory: Not available\nSample preparation: Finely ground &lt;0.1 mm\nAdditional info: Not available\n\n\n\n\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: Not available\nOriginal range: 350-2500\nInstrument: FieldSpec FR Spectroradiometer\nManufacturer: Analytical Spectral Devices (Boulder, CO, USA)\nInstrument co-scans: 25\nScan repeats: 2\nScan accessory: Not available\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available\n\n\n\n\n\n\n\n\nNot available.\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "ICRAF_ISRIC"
+    ]
+  },
+  {
+    "objectID": "ICRAF_ISRIC.html#overview",
+    "href": "ICRAF_ISRIC.html#overview",
+    "title": "ICRAF_ISRIC",
+    "section": "",
+    "text": "Sample size: 4,000+\nVersion: first release (v1)\nSpectral range: vnir, mir\nExtent: global",
+    "crumbs": [
+      "← Back to listed libraries",
+      "ICRAF_ISRIC"
+    ]
+  },
+  {
+    "objectID": "ICRAF_ISRIC.html#database-access",
+    "href": "ICRAF_ISRIC.html#database-access",
+    "title": "ICRAF_ISRIC",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "ICRAF_ISRIC"
+    ]
+  },
+  {
+    "objectID": "ICRAF_ISRIC.html#soil-laboratory-information",
+    "href": "ICRAF_ISRIC.html#soil-laboratory-information",
+    "title": "ICRAF_ISRIC",
+    "section": "",
+    "text": "n properties available: 46\nn properties standardized: 18\nn properties harmonized: pending\nproperties themes: physical, chemical, hydrological, carbon & nutrients, metal elements",
+    "crumbs": [
+      "← Back to listed libraries",
+      "ICRAF_ISRIC"
+    ]
+  },
+  {
+    "objectID": "ICRAF_ISRIC.html#soil-site-information",
+    "href": "ICRAF_ISRIC.html#soil-site-information",
+    "title": "ICRAF_ISRIC",
+    "section": "",
+    "text": "coordinates precision: precise, country\nsampling depth: various\ngeography: landuse",
+    "crumbs": [
+      "← Back to listed libraries",
+      "ICRAF_ISRIC"
+    ]
+  },
+  {
+    "objectID": "ICRAF_ISRIC.html#mir",
+    "href": "ICRAF_ISRIC.html#mir",
+    "title": "ICRAF_ISRIC",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: reflectance\nOriginal range: 400-4000\nStandardized range: 400-4000\nInstrument: FTS-7000 FT-IR Spectrometer\nManufacturer: Digilab (Bio-Rad, Randolph, MA, USA)\nScan accessory: Not available\nSample preparation: Finely ground &lt;0.1 mm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "ICRAF_ISRIC"
+    ]
+  },
+  {
+    "objectID": "ICRAF_ISRIC.html#vnir",
+    "href": "ICRAF_ISRIC.html#vnir",
+    "title": "ICRAF_ISRIC",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: Not available\nOriginal range: 350-2500\nInstrument: FieldSpec FR Spectroradiometer\nManufacturer: Analytical Spectral Devices (Boulder, CO, USA)\nInstrument co-scans: 25\nScan repeats: 2\nScan accessory: Not available\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "ICRAF_ISRIC"
+    ]
+  },
+  {
+    "objectID": "ICRAF_ISRIC.html#nir",
+    "href": "ICRAF_ISRIC.html#nir",
+    "title": "ICRAF_ISRIC",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "ICRAF_ISRIC"
+    ]
+  },
+  {
+    "objectID": "ICRAF_ISRIC.html#references",
+    "href": "ICRAF_ISRIC.html#references",
+    "title": "ICRAF_ISRIC",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "ICRAF_ISRIC"
+    ]
+  },
+  {
+    "objectID": "Watersheds_SouthIndia.html",
+    "href": "Watersheds_SouthIndia.html",
+    "title": "Watersheds_SouthIndia",
+    "section": "",
+    "text": "Soil spectral library from tropical and sub-humid watersheds of Southwestern India\n\n\n\nSample size: &lt;300\nVersion: version 1\nSpectral range: mir\nExtent: regional\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 20\nn properties standardized: 17\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients, metal elements\n\n\n\n\n\ncoordinates precision: none\nsampling depth: various\ngeography: none\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 400-4000\nInstrument: TENSOR 27 Spectrophotometer\nManufacturer: Bruker (Switzerland)\nScan accessory: Not available\nSample preparation: Sieved&lt;2mm\nAdditional info: Not available\n\n\n\n\nNot available.\n\n\n\nNot available.\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Watersheds_SouthIndia"
+    ]
+  },
+  {
+    "objectID": "Watersheds_SouthIndia.html#overview",
+    "href": "Watersheds_SouthIndia.html#overview",
+    "title": "Watersheds_SouthIndia",
+    "section": "",
+    "text": "Sample size: &lt;300\nVersion: version 1\nSpectral range: mir\nExtent: regional",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Watersheds_SouthIndia"
+    ]
+  },
+  {
+    "objectID": "Watersheds_SouthIndia.html#database-access",
+    "href": "Watersheds_SouthIndia.html#database-access",
+    "title": "Watersheds_SouthIndia",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Watersheds_SouthIndia"
+    ]
+  },
+  {
+    "objectID": "Watersheds_SouthIndia.html#soil-laboratory-information",
+    "href": "Watersheds_SouthIndia.html#soil-laboratory-information",
+    "title": "Watersheds_SouthIndia",
+    "section": "",
+    "text": "n properties available: 20\nn properties standardized: 17\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients, metal elements",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Watersheds_SouthIndia"
+    ]
+  },
+  {
+    "objectID": "Watersheds_SouthIndia.html#soil-site-information",
+    "href": "Watersheds_SouthIndia.html#soil-site-information",
+    "title": "Watersheds_SouthIndia",
+    "section": "",
+    "text": "coordinates precision: none\nsampling depth: various\ngeography: none",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Watersheds_SouthIndia"
+    ]
+  },
+  {
+    "objectID": "Watersheds_SouthIndia.html#mir",
+    "href": "Watersheds_SouthIndia.html#mir",
+    "title": "Watersheds_SouthIndia",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 400-4000\nInstrument: TENSOR 27 Spectrophotometer\nManufacturer: Bruker (Switzerland)\nScan accessory: Not available\nSample preparation: Sieved&lt;2mm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Watersheds_SouthIndia"
+    ]
+  },
+  {
+    "objectID": "Watersheds_SouthIndia.html#vnir",
+    "href": "Watersheds_SouthIndia.html#vnir",
+    "title": "Watersheds_SouthIndia",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Watersheds_SouthIndia"
+    ]
+  },
+  {
+    "objectID": "Watersheds_SouthIndia.html#nir",
+    "href": "Watersheds_SouthIndia.html#nir",
+    "title": "Watersheds_SouthIndia",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Watersheds_SouthIndia"
+    ]
+  },
+  {
+    "objectID": "Watersheds_SouthIndia.html#references",
+    "href": "Watersheds_SouthIndia.html#references",
+    "title": "Watersheds_SouthIndia",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Watersheds_SouthIndia"
+    ]
+  },
+  {
+    "objectID": "Brazilian_Agricultural.html",
+    "href": "Brazilian_Agricultural.html",
+    "title": "TropicalFarm",
+    "section": "",
+    "text": "VisNIR soil spectral library from Brazilian agricultural areas.\n\n🔗 Source: DOI\n© Data license: CC-BY\n📍 Extent: local\n🏷️ Spectral Range: vnir\n🌐 URL: https://data.mendeley.com/datasets/88c5kvmgbf/1\n📖 Publication: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "TropicalFarm"
+    ]
+  },
+  {
+    "objectID": "Brazilian_Agricultural.html#tropicalfarm",
+    "href": "Brazilian_Agricultural.html#tropicalfarm",
+    "title": "TropicalFarm",
+    "section": "",
+    "text": "VisNIR soil spectral library from Brazilian agricultural areas.\n\n🔗 Source: DOI\n© Data license: CC-BY\n📍 Extent: local\n🏷️ Spectral Range: vnir\n🌐 URL: https://data.mendeley.com/datasets/88c5kvmgbf/1\n📖 Publication: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "TropicalFarm"
+    ]
+  },
+  {
+    "objectID": "LUCAS.html",
+    "href": "LUCAS.html",
+    "title": "LUCAS",
+    "section": "",
+    "text": "Land Use and Cover Survey (LUCAS) library from European soils (23-28 countries)\n\n\n\nSample size: 20,000+\nVersion: 2009, 2012, 2015\nSpectral range: vnir\nExtent: continental\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 13\nn properties standardized: 13\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients, metal elements\n\n\n\n\n\ncoordinates precision: precise, country\nsampling depth: top\ngeography: soil taxonomy, elevation, landuse\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: Not available\nStandardized range: 628-4000\nInstrument: Vertex 70 FT-IR\nManufacturer: Bruker\nScan accessory: Not available\nSample preparation: Not available\nAdditional info: KBr beamsplitter; Gold mirror; Mirror background\n\n\n\n\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: Not available\nOriginal range: Not available\nInstrument: FOSS NIRS XDS RapidContent Analyzer\nManufacturer: Metrohm\nInstrument co-scans: Not available\nScan repeats: Not available\nScan accessory: Not available\nOriginal resolution: Not available\nSample preparation: Air-dried, Sieved &lt;2 mm\nAdditional info: Not available\n\n\n\n\n\n\n\n\nNot available.\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LUCAS"
+    ]
+  },
+  {
+    "objectID": "LUCAS.html#overview",
+    "href": "LUCAS.html#overview",
+    "title": "LUCAS",
+    "section": "",
+    "text": "Sample size: 20,000+\nVersion: 2009, 2012, 2015\nSpectral range: vnir\nExtent: continental",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LUCAS"
+    ]
+  },
+  {
+    "objectID": "LUCAS.html#database-access",
+    "href": "LUCAS.html#database-access",
+    "title": "LUCAS",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LUCAS"
+    ]
+  },
+  {
+    "objectID": "LUCAS.html#soil-laboratory-information",
+    "href": "LUCAS.html#soil-laboratory-information",
+    "title": "LUCAS",
+    "section": "",
+    "text": "n properties available: 13\nn properties standardized: 13\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients, metal elements",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LUCAS"
+    ]
+  },
+  {
+    "objectID": "LUCAS.html#soil-site-information",
+    "href": "LUCAS.html#soil-site-information",
+    "title": "LUCAS",
+    "section": "",
+    "text": "coordinates precision: precise, country\nsampling depth: top\ngeography: soil taxonomy, elevation, landuse",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LUCAS"
+    ]
+  },
+  {
+    "objectID": "LUCAS.html#mir",
+    "href": "LUCAS.html#mir",
+    "title": "LUCAS",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: reflectance\nOriginal range: Not available\nStandardized range: 628-4000\nInstrument: Vertex 70 FT-IR\nManufacturer: Bruker\nScan accessory: Not available\nSample preparation: Not available\nAdditional info: KBr beamsplitter; Gold mirror; Mirror background",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LUCAS"
+    ]
+  },
+  {
+    "objectID": "LUCAS.html#vnir",
+    "href": "LUCAS.html#vnir",
+    "title": "LUCAS",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: Not available\nOriginal range: Not available\nInstrument: FOSS NIRS XDS RapidContent Analyzer\nManufacturer: Metrohm\nInstrument co-scans: Not available\nScan repeats: Not available\nScan accessory: Not available\nOriginal resolution: Not available\nSample preparation: Air-dried, Sieved &lt;2 mm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LUCAS"
+    ]
+  },
+  {
+    "objectID": "LUCAS.html#nir",
+    "href": "LUCAS.html#nir",
+    "title": "LUCAS",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LUCAS"
+    ]
+  },
+  {
+    "objectID": "LUCAS.html#references",
+    "href": "LUCAS.html#references",
+    "title": "LUCAS",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LUCAS"
+    ]
+  },
+  {
+    "objectID": "LocalFarms_Brazil.html",
+    "href": "LocalFarms_Brazil.html",
+    "title": "LocalFarms_Brazil",
+    "section": "",
+    "text": "Farm-scale soil spectral library from two Brazilian agricultural areas\n\n\n\nSample size: &lt;300\nVersion: version 3\nSpectral range: vnir\nExtent: local\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 9\nn properties standardized: 8\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients, metal elements\n\n\n\n\n\ncoordinates precision: none\nsampling depth: top\ngeography: none\n\n\n\n\nNot available.\n\n\n\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 431-2153\nInstrument: Veris MSP3 (USB4000 & C9914GB detectors)\nManufacturer: Veris Technologies (Salina, KS, USA)\nInstrument co-scans: Not available\nScan repeats: 3\nScan accessory: Not available\nOriginal resolution: 5\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available\n\n\n\n\nNot available.\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LocalFarms_Brazil"
+    ]
+  },
+  {
+    "objectID": "LocalFarms_Brazil.html#overview",
+    "href": "LocalFarms_Brazil.html#overview",
+    "title": "LocalFarms_Brazil",
+    "section": "",
+    "text": "Sample size: &lt;300\nVersion: version 3\nSpectral range: vnir\nExtent: local",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LocalFarms_Brazil"
+    ]
+  },
+  {
+    "objectID": "LocalFarms_Brazil.html#database-access",
+    "href": "LocalFarms_Brazil.html#database-access",
+    "title": "LocalFarms_Brazil",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LocalFarms_Brazil"
+    ]
+  },
+  {
+    "objectID": "LocalFarms_Brazil.html#soil-laboratory-information",
+    "href": "LocalFarms_Brazil.html#soil-laboratory-information",
+    "title": "LocalFarms_Brazil",
+    "section": "",
+    "text": "n properties available: 9\nn properties standardized: 8\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients, metal elements",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LocalFarms_Brazil"
+    ]
+  },
+  {
+    "objectID": "LocalFarms_Brazil.html#soil-site-information",
+    "href": "LocalFarms_Brazil.html#soil-site-information",
+    "title": "LocalFarms_Brazil",
+    "section": "",
+    "text": "coordinates precision: none\nsampling depth: top\ngeography: none",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LocalFarms_Brazil"
+    ]
+  },
+  {
+    "objectID": "LocalFarms_Brazil.html#mir",
+    "href": "LocalFarms_Brazil.html#mir",
+    "title": "LocalFarms_Brazil",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LocalFarms_Brazil"
+    ]
+  },
+  {
+    "objectID": "LocalFarms_Brazil.html#vnir",
+    "href": "LocalFarms_Brazil.html#vnir",
+    "title": "LocalFarms_Brazil",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: reflectance\nOriginal range: 431-2153\nInstrument: Veris MSP3 (USB4000 & C9914GB detectors)\nManufacturer: Veris Technologies (Salina, KS, USA)\nInstrument co-scans: Not available\nScan repeats: 3\nScan accessory: Not available\nOriginal resolution: 5\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LocalFarms_Brazil"
+    ]
+  },
+  {
+    "objectID": "LocalFarms_Brazil.html#nir",
+    "href": "LocalFarms_Brazil.html#nir",
+    "title": "LocalFarms_Brazil",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LocalFarms_Brazil"
+    ]
+  },
+  {
+    "objectID": "LocalFarms_Brazil.html#references",
+    "href": "LocalFarms_Brazil.html#references",
+    "title": "LocalFarms_Brazil",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "LocalFarms_Brazil"
+    ]
+  },
+  {
+    "objectID": "Serbian.html",
+    "href": "Serbian.html",
+    "title": "Serbian",
+    "section": "",
+    "text": "Soil spectral library from Serbia\n\n\n\nSample size: &lt;300\nVersion: first release (v1)\nSpectral range: mir\nExtent: national\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 10\nn properties standardized: 8\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients\n\n\n\n\n\ncoordinates precision: precise\nsampling depth: various\ngeography: soil taxonomy, landuse\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: Nexus 670 FT-IR\nManufacturer: Thermo-Nicolet\nScan accessory: Not available\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: DTGS detector\n\n\n\n\n\n\n\n\nNot available.\n\n\n\nNot available.\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Serbian"
+    ]
+  },
+  {
+    "objectID": "Serbian.html#overview",
+    "href": "Serbian.html#overview",
+    "title": "Serbian",
+    "section": "",
+    "text": "Sample size: &lt;300\nVersion: first release (v1)\nSpectral range: mir\nExtent: national",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Serbian"
+    ]
+  },
+  {
+    "objectID": "Serbian.html#database-access",
+    "href": "Serbian.html#database-access",
+    "title": "Serbian",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Serbian"
+    ]
+  },
+  {
+    "objectID": "Serbian.html#soil-laboratory-information",
+    "href": "Serbian.html#soil-laboratory-information",
+    "title": "Serbian",
+    "section": "",
+    "text": "n properties available: 10\nn properties standardized: 8\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Serbian"
+    ]
+  },
+  {
+    "objectID": "Serbian.html#soil-site-information",
+    "href": "Serbian.html#soil-site-information",
+    "title": "Serbian",
+    "section": "",
+    "text": "coordinates precision: precise\nsampling depth: various\ngeography: soil taxonomy, landuse",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Serbian"
+    ]
+  },
+  {
+    "objectID": "Serbian.html#mir",
+    "href": "Serbian.html#mir",
+    "title": "Serbian",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: Nexus 670 FT-IR\nManufacturer: Thermo-Nicolet\nScan accessory: Not available\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: DTGS detector",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Serbian"
+    ]
+  },
+  {
+    "objectID": "Serbian.html#vnir",
+    "href": "Serbian.html#vnir",
+    "title": "Serbian",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Serbian"
+    ]
+  },
+  {
+    "objectID": "Serbian.html#nir",
+    "href": "Serbian.html#nir",
+    "title": "Serbian",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Serbian"
+    ]
+  },
+  {
+    "objectID": "Serbian.html#references",
+    "href": "Serbian.html#references",
+    "title": "Serbian",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Serbian"
+    ]
+  },
+  {
+    "objectID": "South_India.html",
+    "href": "South_India.html",
+    "title": "South-India",
+    "section": "",
+    "text": "MIR spectral library from small-scale tropical, sub-humid and semi-arid watersheds under shrubland and dry deciduous forest in Southwestern India.\n\n:link: Source: DOI\n:copyright: Data license: CC-BY\n:round_pushpin: Extent: regional\n:label: Spectral Range: mir\n:globe_with_meridians: URL: https://zenodo.org/records/5675793\n:book: Publication: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "South-India"
+    ]
+  },
+  {
+    "objectID": "South_India.html#south-india",
+    "href": "South_India.html#south-india",
+    "title": "South-India",
+    "section": "",
+    "text": "MIR spectral library from small-scale tropical, sub-humid and semi-arid watersheds under shrubland and dry deciduous forest in Southwestern India.\n\n:link: Source: DOI\n:copyright: Data license: CC-BY\n:round_pushpin: Extent: regional\n:label: Spectral Range: mir\n:globe_with_meridians: URL: https://zenodo.org/records/5675793\n:book: Publication: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "South-India"
+    ]
+  },
+  {
+    "objectID": "Austrian.html",
+    "href": "Austrian.html",
+    "title": "Austrian",
+    "section": "",
+    "text": "Near-infared soil spectral library from all environmental zones of Austria\n\n\n\nSample size: 2,000+\nVersion: version v4\nSpectral range: nir\nExtent: national\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 13\nn properties standardized: 10\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients\n\n\n\n\n\ncoordinates precision: county\nsampling depth: various\ngeography: landuse, vegetation\n\n\n\n\nNot available.\n\n\n\nNot available.\n\n\n\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 680-2500\nInstrument: SpectraStar™ XL\nManufacturer: Unity Scientific (Brookfield, CT, USA)\nInstrument co-scans: 24\nScan repeats: 2\nScan accessory: Not available\nOriginal resolution: 1 nm\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available\n\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Austrian"
+    ]
+  },
+  {
+    "objectID": "Austrian.html#overview",
+    "href": "Austrian.html#overview",
+    "title": "Austrian",
+    "section": "",
+    "text": "Sample size: 2,000+\nVersion: version v4\nSpectral range: nir\nExtent: national",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Austrian"
+    ]
+  },
+  {
+    "objectID": "Austrian.html#database-access",
+    "href": "Austrian.html#database-access",
+    "title": "Austrian",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Austrian"
+    ]
+  },
+  {
+    "objectID": "Austrian.html#soil-laboratory-information",
+    "href": "Austrian.html#soil-laboratory-information",
+    "title": "Austrian",
+    "section": "",
+    "text": "n properties available: 13\nn properties standardized: 10\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Austrian"
+    ]
+  },
+  {
+    "objectID": "Austrian.html#soil-site-information",
+    "href": "Austrian.html#soil-site-information",
+    "title": "Austrian",
+    "section": "",
+    "text": "coordinates precision: county\nsampling depth: various\ngeography: landuse, vegetation",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Austrian"
+    ]
+  },
+  {
+    "objectID": "Austrian.html#mir",
+    "href": "Austrian.html#mir",
+    "title": "Austrian",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Austrian"
+    ]
+  },
+  {
+    "objectID": "Austrian.html#vnir",
+    "href": "Austrian.html#vnir",
+    "title": "Austrian",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Austrian"
+    ]
+  },
+  {
+    "objectID": "Austrian.html#nir",
+    "href": "Austrian.html#nir",
+    "title": "Austrian",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: absorbance\nOriginal range: 680-2500\nInstrument: SpectraStar™ XL\nManufacturer: Unity Scientific (Brookfield, CT, USA)\nInstrument co-scans: 24\nScan repeats: 2\nScan accessory: Not available\nOriginal resolution: 1 nm\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Austrian"
+    ]
+  },
+  {
+    "objectID": "Austrian.html#references",
+    "href": "Austrian.html#references",
+    "title": "Austrian",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Austrian"
+    ]
+  },
+  {
+    "objectID": "AFSIS1.html",
+    "href": "AFSIS1.html",
+    "title": "AFSIS1",
+    "section": "",
+    "text": "Soil spectral library from Africa Soil Information Service (AfSIS) Phase I\n\n\n\nSample size: 1,000+\nVersion: first release (v1)\nSpectral range: mir\nExtent: continental\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 23\nn properties standardized: 20\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients, metal elements\n\n\n\n\n\ncoordinates precision: precise, country\nsampling depth: various\ngeography: soil taxonomy, landuse\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 602-4000\nStandardized range: 600-4000\nInstrument: Tensor 27 FT-IR\nManufacturer: Bruker Optics\nScan accessory: Not available\nSample preparation: Finely ground &lt;0.1 mm\nAdditional info: Not available\n\n\n\n\n\n\n\n\nNot available.\n\n\n\nNot available.\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS1"
+    ]
+  },
+  {
+    "objectID": "AFSIS1.html#overview",
+    "href": "AFSIS1.html#overview",
+    "title": "AFSIS1",
+    "section": "",
+    "text": "Sample size: 1,000+\nVersion: first release (v1)\nSpectral range: mir\nExtent: continental",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS1"
+    ]
+  },
+  {
+    "objectID": "AFSIS1.html#database-access",
+    "href": "AFSIS1.html#database-access",
+    "title": "AFSIS1",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS1"
+    ]
+  },
+  {
+    "objectID": "AFSIS1.html#soil-laboratory-information",
+    "href": "AFSIS1.html#soil-laboratory-information",
+    "title": "AFSIS1",
+    "section": "",
+    "text": "n properties available: 23\nn properties standardized: 20\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients, metal elements",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS1"
+    ]
+  },
+  {
+    "objectID": "AFSIS1.html#soil-site-information",
+    "href": "AFSIS1.html#soil-site-information",
+    "title": "AFSIS1",
+    "section": "",
+    "text": "coordinates precision: precise, country\nsampling depth: various\ngeography: soil taxonomy, landuse",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS1"
+    ]
+  },
+  {
+    "objectID": "AFSIS1.html#mir",
+    "href": "AFSIS1.html#mir",
+    "title": "AFSIS1",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: absorbance\nOriginal range: 602-4000\nStandardized range: 600-4000\nInstrument: Tensor 27 FT-IR\nManufacturer: Bruker Optics\nScan accessory: Not available\nSample preparation: Finely ground &lt;0.1 mm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS1"
+    ]
+  },
+  {
+    "objectID": "AFSIS1.html#vnir",
+    "href": "AFSIS1.html#vnir",
+    "title": "AFSIS1",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS1"
+    ]
+  },
+  {
+    "objectID": "AFSIS1.html#nir",
+    "href": "AFSIS1.html#nir",
+    "title": "AFSIS1",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS1"
+    ]
+  },
+  {
+    "objectID": "AFSIS1.html#references",
+    "href": "AFSIS1.html#references",
+    "title": "AFSIS1",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS1"
+    ]
+  },
+  {
+    "objectID": "AFSIS2.html",
+    "href": "AFSIS2.html",
+    "title": "AFSIS2",
+    "section": "",
+    "text": "Soil spectral library from Africa Soil Information Service (AfSIS) Phase II\n\n\n\nSample size: &lt;1,000\nVersion: first release (v1)\nSpectral range: mir\nExtent: continental\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 14\nn properties standardized: 14\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients, metal elements\n\n\n\n\n\ncoordinates precision: precise, country\nsampling depth: various\ngeography: soil taxonomy, landuse\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 602-4000\nStandardized range: 600-4000\nInstrument: Alpha 1 ZnSe\nManufacturer: Bruker\nScan accessory: Not available\nSample preparation: Finely ground &lt;0.1 mm\nAdditional info: Not available\n\n\n\n\n\n\n\n\nNot available.\n\n\n\nNot available.\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS2"
+    ]
+  },
+  {
+    "objectID": "AFSIS2.html#overview",
+    "href": "AFSIS2.html#overview",
+    "title": "AFSIS2",
+    "section": "",
+    "text": "Sample size: &lt;1,000\nVersion: first release (v1)\nSpectral range: mir\nExtent: continental",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS2"
+    ]
+  },
+  {
+    "objectID": "AFSIS2.html#database-access",
+    "href": "AFSIS2.html#database-access",
+    "title": "AFSIS2",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS2"
+    ]
+  },
+  {
+    "objectID": "AFSIS2.html#soil-laboratory-information",
+    "href": "AFSIS2.html#soil-laboratory-information",
+    "title": "AFSIS2",
+    "section": "",
+    "text": "n properties available: 14\nn properties standardized: 14\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients, metal elements",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS2"
+    ]
+  },
+  {
+    "objectID": "AFSIS2.html#soil-site-information",
+    "href": "AFSIS2.html#soil-site-information",
+    "title": "AFSIS2",
+    "section": "",
+    "text": "coordinates precision: precise, country\nsampling depth: various\ngeography: soil taxonomy, landuse",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS2"
+    ]
+  },
+  {
+    "objectID": "AFSIS2.html#mir",
+    "href": "AFSIS2.html#mir",
+    "title": "AFSIS2",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: absorbance\nOriginal range: 602-4000\nStandardized range: 600-4000\nInstrument: Alpha 1 ZnSe\nManufacturer: Bruker\nScan accessory: Not available\nSample preparation: Finely ground &lt;0.1 mm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS2"
+    ]
+  },
+  {
+    "objectID": "AFSIS2.html#vnir",
+    "href": "AFSIS2.html#vnir",
+    "title": "AFSIS2",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS2"
+    ]
+  },
+  {
+    "objectID": "AFSIS2.html#nir",
+    "href": "AFSIS2.html#nir",
+    "title": "AFSIS2",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS2"
+    ]
+  },
+  {
+    "objectID": "AFSIS2.html#references",
+    "href": "AFSIS2.html#references",
+    "title": "AFSIS2",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "AFSIS2"
+    ]
+  },
+  {
+    "objectID": "KSSL.html",
+    "href": "KSSL.html",
+    "title": "KSSL",
+    "section": "",
+    "text": "The USDA-NRCS NCSS Kellogg Soil Survey Laboratory libraries of soils from the United States and other territories\n\n\n\nSample size: 90,000+\nVersion: snapshot Jul 2022\nSpectral range: vnir, mir\nExtent: national\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 1000+\nn properties standardized: 51\nn properties harmonized: pending\nproperties themes: physical, chemical, biological, hydrological, carbon & nutrients, metal elements\n\n\n\n\n\ncoordinates precision: precise, county, country\nsampling depth: various\ngeography: soil taxonomy, soil horizon\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: Vertex 70 FT-IR\nManufacturer: Bruker Optics\nScan accessory: Not available\nSample preparation: Air-dried, finely ground &lt; 80mesh\nAdditional info: detector, beamsplitter, background, mirror material, sample dilution, sample presentation\n\n\n\n\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: Not available\nOriginal range: Not available\nInstrument: ASD Labspec 2500\nManufacturer: Not available\nInstrument co-scans: Not available\nScan repeats: Not available\nScan accessory: Not available\nOriginal resolution: Not available\nSample preparation: Not available\nAdditional info: Not available\n\n\n\n\n\n\n\n\nNot available.\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "KSSL"
+    ]
+  },
+  {
+    "objectID": "KSSL.html#overview",
+    "href": "KSSL.html#overview",
+    "title": "KSSL",
+    "section": "",
+    "text": "Sample size: 90,000+\nVersion: snapshot Jul 2022\nSpectral range: vnir, mir\nExtent: national",
+    "crumbs": [
+      "← Back to listed libraries",
+      "KSSL"
+    ]
+  },
+  {
+    "objectID": "KSSL.html#database-access",
+    "href": "KSSL.html#database-access",
+    "title": "KSSL",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "KSSL"
+    ]
+  },
+  {
+    "objectID": "KSSL.html#soil-laboratory-information",
+    "href": "KSSL.html#soil-laboratory-information",
+    "title": "KSSL",
+    "section": "",
+    "text": "n properties available: 1000+\nn properties standardized: 51\nn properties harmonized: pending\nproperties themes: physical, chemical, biological, hydrological, carbon & nutrients, metal elements",
+    "crumbs": [
+      "← Back to listed libraries",
+      "KSSL"
+    ]
+  },
+  {
+    "objectID": "KSSL.html#soil-site-information",
+    "href": "KSSL.html#soil-site-information",
+    "title": "KSSL",
+    "section": "",
+    "text": "coordinates precision: precise, county, country\nsampling depth: various\ngeography: soil taxonomy, soil horizon",
+    "crumbs": [
+      "← Back to listed libraries",
+      "KSSL"
+    ]
+  },
+  {
+    "objectID": "KSSL.html#mir",
+    "href": "KSSL.html#mir",
+    "title": "KSSL",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: reflectance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: Vertex 70 FT-IR\nManufacturer: Bruker Optics\nScan accessory: Not available\nSample preparation: Air-dried, finely ground &lt; 80mesh\nAdditional info: detector, beamsplitter, background, mirror material, sample dilution, sample presentation",
+    "crumbs": [
+      "← Back to listed libraries",
+      "KSSL"
+    ]
+  },
+  {
+    "objectID": "KSSL.html#vnir",
+    "href": "KSSL.html#vnir",
+    "title": "KSSL",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: Not available\nOriginal range: Not available\nInstrument: ASD Labspec 2500\nManufacturer: Not available\nInstrument co-scans: Not available\nScan repeats: Not available\nScan accessory: Not available\nOriginal resolution: Not available\nSample preparation: Not available\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "KSSL"
+    ]
+  },
+  {
+    "objectID": "KSSL.html#nir",
+    "href": "KSSL.html#nir",
+    "title": "KSSL",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "KSSL"
+    ]
+  },
+  {
+    "objectID": "KSSL.html#references",
+    "href": "KSSL.html#references",
+    "title": "KSSL",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "KSSL"
+    ]
+  },
+  {
+    "objectID": "Neospectra.html",
+    "href": "Neospectra.html",
+    "title": "Neospectra",
+    "section": "",
+    "text": "Near-infrared soil spectral library from selected KSSL samples (USA) and Africa\n\n\n\nSample size: 2,000+\nVersion: second update (v1)\nSpectral range: nir\nExtent: national\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 23\nn properties standardized: 23\nn properties harmonized: pending\nproperties themes: physical, chemical, hydrological, carbon & nutrients, metal elements\n\n\n\n\n\ncoordinates precision: precise, county, country\nsampling depth: various\ngeography: soil taxonomy, soil horizon\n\n\n\n\nNot available.\n\n\n\nNot available.\n\n\n\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 1350-2550\nInstrument: Neospectra\nManufacturer: SiWare\nInstrument co-scans: Not available\nScan repeats: 6\nScan accessory: Not available\nOriginal resolution: 8-16 cm-1\nSample preparation: Oven-dried, Sieved &lt; 2mm\nAdditional info: Not available\n\n\n\n\n\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Neospectra"
+    ]
+  },
+  {
+    "objectID": "Neospectra.html#overview",
+    "href": "Neospectra.html#overview",
+    "title": "Neospectra",
+    "section": "",
+    "text": "Sample size: 2,000+\nVersion: second update (v1)\nSpectral range: nir\nExtent: national",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Neospectra"
+    ]
+  },
+  {
+    "objectID": "Neospectra.html#database-access",
+    "href": "Neospectra.html#database-access",
+    "title": "Neospectra",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Neospectra"
+    ]
+  },
+  {
+    "objectID": "Neospectra.html#soil-laboratory-information",
+    "href": "Neospectra.html#soil-laboratory-information",
+    "title": "Neospectra",
+    "section": "",
+    "text": "n properties available: 23\nn properties standardized: 23\nn properties harmonized: pending\nproperties themes: physical, chemical, hydrological, carbon & nutrients, metal elements",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Neospectra"
+    ]
+  },
+  {
+    "objectID": "Neospectra.html#soil-site-information",
+    "href": "Neospectra.html#soil-site-information",
+    "title": "Neospectra",
+    "section": "",
+    "text": "coordinates precision: precise, county, country\nsampling depth: various\ngeography: soil taxonomy, soil horizon",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Neospectra"
+    ]
+  },
+  {
+    "objectID": "Neospectra.html#mir",
+    "href": "Neospectra.html#mir",
+    "title": "Neospectra",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Neospectra"
+    ]
+  },
+  {
+    "objectID": "Neospectra.html#vnir",
+    "href": "Neospectra.html#vnir",
+    "title": "Neospectra",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Neospectra"
+    ]
+  },
+  {
+    "objectID": "Neospectra.html#nir",
+    "href": "Neospectra.html#nir",
+    "title": "Neospectra",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: reflectance\nOriginal range: 1350-2550\nInstrument: Neospectra\nManufacturer: SiWare\nInstrument co-scans: Not available\nScan repeats: 6\nScan accessory: Not available\nOriginal resolution: 8-16 cm-1\nSample preparation: Oven-dried, Sieved &lt; 2mm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Neospectra"
+    ]
+  },
+  {
+    "objectID": "Neospectra.html#references",
+    "href": "Neospectra.html#references",
+    "title": "Neospectra",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Neospectra"
+    ]
+  },
+  {
+    "objectID": "NEON.html",
+    "href": "NEON.html",
+    "title": "NEON",
+    "section": "",
+    "text": "National Ecological Observatory Network (NEON) soil spectral library\n\n\n\nSample size: TBD\nVersion: first release (v1)\nSpectral range: mir\nExtent: national\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: NULL\nn properties harmonized: pending\n\n\n\n\n\ncoordinates precision: precise\nsampling depth: various\ngeography: soil taxonomy, soil horizon\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: Not available\nOriginal range: Not available\nStandardized range: Not available\nInstrument: Not available\nManufacturer: Not available\nScan accessory: Not available\nSample preparation: Not available\nAdditional info: Not available\n\n\n\n\n\n\n\n\nNot available.\n\n\n\nNot available.\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "NEON"
+    ]
+  },
+  {
+    "objectID": "NEON.html#overview",
+    "href": "NEON.html#overview",
+    "title": "NEON",
+    "section": "",
+    "text": "Sample size: TBD\nVersion: first release (v1)\nSpectral range: mir\nExtent: national",
+    "crumbs": [
+      "← Back to listed libraries",
+      "NEON"
+    ]
+  },
+  {
+    "objectID": "NEON.html#database-access",
+    "href": "NEON.html#database-access",
+    "title": "NEON",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "NEON"
+    ]
+  },
+  {
+    "objectID": "NEON.html#soil-laboratory-information",
+    "href": "NEON.html#soil-laboratory-information",
+    "title": "NEON",
+    "section": "",
+    "text": "n properties available: NULL\nn properties harmonized: pending",
+    "crumbs": [
+      "← Back to listed libraries",
+      "NEON"
+    ]
+  },
+  {
+    "objectID": "NEON.html#soil-site-information",
+    "href": "NEON.html#soil-site-information",
+    "title": "NEON",
+    "section": "",
+    "text": "coordinates precision: precise\nsampling depth: various\ngeography: soil taxonomy, soil horizon",
+    "crumbs": [
+      "← Back to listed libraries",
+      "NEON"
+    ]
+  },
+  {
+    "objectID": "NEON.html#mir",
+    "href": "NEON.html#mir",
+    "title": "NEON",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: Not available\nOriginal range: Not available\nStandardized range: Not available\nInstrument: Not available\nManufacturer: Not available\nScan accessory: Not available\nSample preparation: Not available\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "NEON"
+    ]
+  },
+  {
+    "objectID": "NEON.html#vnir",
+    "href": "NEON.html#vnir",
+    "title": "NEON",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "NEON"
+    ]
+  },
+  {
+    "objectID": "NEON.html#nir",
+    "href": "NEON.html#nir",
+    "title": "NEON",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "NEON"
+    ]
+  },
+  {
+    "objectID": "NEON.html#references",
+    "href": "NEON.html#references",
+    "title": "NEON",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "NEON"
+    ]
+  },
+  {
+    "objectID": "Geocradle.html",
+    "href": "Geocradle.html",
+    "title": "Geocradle",
+    "section": "",
+    "text": "Soil spectral library from the Geocradle region (Balkans, Middle East, and North Africa)\n\n\n\nSample size: 1,000+\nVersion: first release (v1)\nSpectral range: vnir\nExtent: regional\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 18\nn properties standardized: 7\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients\n\n\n\n\n\ncoordinates precision: precise, country\nsampling depth: various\ngeography: soil taxonomy, elevation\n\n\n\n\nNot available.\n\n\n\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: ASD FieldSpec Pro & PSR+ Spectrometer\nManufacturer: (PANanalytical BV, Boulder, CO, USA formerly Analytical Spectral Devices) & pectral Evolution Inc., Lawrence, Massachusetts,USA\nInstrument co-scans: 10\nScan repeats: Not available\nScan accessory: Not available\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available\n\n\n\n\nNot available.\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Geocradle"
+    ]
+  },
+  {
+    "objectID": "Geocradle.html#overview",
+    "href": "Geocradle.html#overview",
+    "title": "Geocradle",
+    "section": "",
+    "text": "Sample size: 1,000+\nVersion: first release (v1)\nSpectral range: vnir\nExtent: regional",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Geocradle"
+    ]
+  },
+  {
+    "objectID": "Geocradle.html#database-access",
+    "href": "Geocradle.html#database-access",
+    "title": "Geocradle",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Geocradle"
+    ]
+  },
+  {
+    "objectID": "Geocradle.html#soil-laboratory-information",
+    "href": "Geocradle.html#soil-laboratory-information",
+    "title": "Geocradle",
+    "section": "",
+    "text": "n properties available: 18\nn properties standardized: 7\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Geocradle"
+    ]
+  },
+  {
+    "objectID": "Geocradle.html#soil-site-information",
+    "href": "Geocradle.html#soil-site-information",
+    "title": "Geocradle",
+    "section": "",
+    "text": "coordinates precision: precise, country\nsampling depth: various\ngeography: soil taxonomy, elevation",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Geocradle"
+    ]
+  },
+  {
+    "objectID": "Geocradle.html#mir",
+    "href": "Geocradle.html#mir",
+    "title": "Geocradle",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Geocradle"
+    ]
+  },
+  {
+    "objectID": "Geocradle.html#vnir",
+    "href": "Geocradle.html#vnir",
+    "title": "Geocradle",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: ASD FieldSpec Pro & PSR+ Spectrometer\nManufacturer: (PANanalytical BV, Boulder, CO, USA formerly Analytical Spectral Devices) & pectral Evolution Inc., Lawrence, Massachusetts,USA\nInstrument co-scans: 10\nScan repeats: Not available\nScan accessory: Not available\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Geocradle"
+    ]
+  },
+  {
+    "objectID": "Geocradle.html#nir",
+    "href": "Geocradle.html#nir",
+    "title": "Geocradle",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Geocradle"
+    ]
+  },
+  {
+    "objectID": "Geocradle.html#references",
+    "href": "Geocradle.html#references",
+    "title": "Geocradle",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Geocradle"
+    ]
+  },
+  {
+    "objectID": "Serbia.html",
+    "href": "Serbia.html",
+    "title": "Serbia",
+    "section": "",
+    "text": "MIR soil spectral library from Serbia\n\n🔗 Source: internal\n© Data license: agreement\n📍 Extent: national\n🏷️ Spectral Range: mir\n🌐 URL: https://doi.org/10.1016/j.saa.2018.08.039\n📖 Publication: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Serbia"
+    ]
+  },
+  {
+    "objectID": "Serbia.html#serbia",
+    "href": "Serbia.html#serbia",
+    "title": "Serbia",
+    "section": "",
+    "text": "MIR soil spectral library from Serbia\n\n🔗 Source: internal\n© Data license: agreement\n📍 Extent: national\n🏷️ Spectral Range: mir\n🌐 URL: https://doi.org/10.1016/j.saa.2018.08.039\n📖 Publication: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Serbia"
+    ]
+  },
+  {
     "objectID": "BESB.html",
     "href": "BESB.html",
     "title": "BESB",
     "section": "",
-    "text": "A Globally Distributed Soil Spectral Library. VisNIR and MIR measurements for some 785 profiles from the ISRIC World Soil Reference Collection. The samples are from 58 countries spanning Africa, Asia, Europe, North America, and South America.\n\n📕 World Agroforestry Centre (ICRAF) and ISRIC - World Soil Information. 2010. The ICRAF/ISRIC Soil VisNIR and MIR spectral libraries. Nairobi, Kenya: World Agroforestry Centre (ICRAF).\n🔗 Project websites: ISRIC Data Hub, ICRAF Dataverse.\n©️ Data license: CC-BY\n📍 Unique locations: 785\n📋 Unique complete measurements: 4308\n📝 Harmonization and import steps: ossl-imports/dataset/ICRAF_ISRIC",
+    "text": "Soil spectral libraries from Brazil\n\n\n\nSample size: 15,000+\nVersion: version v.002\nSpectral range: vnir, mir\nExtent: national\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 8\nn properties standardized: 8\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients\n\n\n\n\n\ncoordinates precision: precise, state/province, region\nsampling depth: top\ngeography: soil taxonomy, landuse, vegetation\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 600-4000\nStandardized range: 600-4000\nInstrument: Alpha FT-IR Spectroradiometer\nManufacturer: Bruker Optics Corporation (Billerica, MA, USA)\nScan accessory: Not available\nSample preparation: Sieved&lt;2mm\nAdditional info: Not available\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: FieldSpec 3 Spectroradiometer\nManufacturer: Analytical Spectral Devices (ASD, Boulder, CO)\nInstrument co-scans: 100\nScan repeats: 2\nScan accessory: Not available\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available\n\n\n\n\nNot available.\n\n\n\nReferences will be added.",
     "crumbs": [
       "← Back to listed libraries",
       "BESB"
     ]
   },
   {
-    "objectID": "BESB.html#icraf.isric",
-    "href": "BESB.html#icraf.isric",
+    "objectID": "BESB.html#overview",
+    "href": "BESB.html#overview",
     "title": "BESB",
     "section": "",
-    "text": "A Globally Distributed Soil Spectral Library. VisNIR and MIR measurements for some 785 profiles from the ISRIC World Soil Reference Collection. The samples are from 58 countries spanning Africa, Asia, Europe, North America, and South America.\n\n📕 World Agroforestry Centre (ICRAF) and ISRIC - World Soil Information. 2010. The ICRAF/ISRIC Soil VisNIR and MIR spectral libraries. Nairobi, Kenya: World Agroforestry Centre (ICRAF).\n🔗 Project websites: ISRIC Data Hub, ICRAF Dataverse.\n©️ Data license: CC-BY\n📍 Unique locations: 785\n📋 Unique complete measurements: 4308\n📝 Harmonization and import steps: ossl-imports/dataset/ICRAF_ISRIC",
+    "text": "Sample size: 15,000+\nVersion: version v.002\nSpectral range: vnir, mir\nExtent: national",
     "crumbs": [
       "← Back to listed libraries",
       "BESB"
+    ]
+  },
+  {
+    "objectID": "BESB.html#database-access",
+    "href": "BESB.html#database-access",
+    "title": "BESB",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "BESB"
+    ]
+  },
+  {
+    "objectID": "BESB.html#soil-laboratory-information",
+    "href": "BESB.html#soil-laboratory-information",
+    "title": "BESB",
+    "section": "",
+    "text": "n properties available: 8\nn properties standardized: 8\nn properties harmonized: pending\nproperties themes: physical, chemical, carbon & nutrients",
+    "crumbs": [
+      "← Back to listed libraries",
+      "BESB"
+    ]
+  },
+  {
+    "objectID": "BESB.html#soil-site-information",
+    "href": "BESB.html#soil-site-information",
+    "title": "BESB",
+    "section": "",
+    "text": "coordinates precision: precise, state/province, region\nsampling depth: top\ngeography: soil taxonomy, landuse, vegetation",
+    "crumbs": [
+      "← Back to listed libraries",
+      "BESB"
+    ]
+  },
+  {
+    "objectID": "BESB.html#mir",
+    "href": "BESB.html#mir",
+    "title": "BESB",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: reflectance\nOriginal range: 600-4000\nStandardized range: 600-4000\nInstrument: Alpha FT-IR Spectroradiometer\nManufacturer: Bruker Optics Corporation (Billerica, MA, USA)\nScan accessory: Not available\nSample preparation: Sieved&lt;2mm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "BESB"
+    ]
+  },
+  {
+    "objectID": "BESB.html#vnir",
+    "href": "BESB.html#vnir",
+    "title": "BESB",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: FieldSpec 3 Spectroradiometer\nManufacturer: Analytical Spectral Devices (ASD, Boulder, CO)\nInstrument co-scans: 100\nScan repeats: 2\nScan accessory: Not available\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "BESB"
+    ]
+  },
+  {
+    "objectID": "BESB.html#nir",
+    "href": "BESB.html#nir",
+    "title": "BESB",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "BESB"
+    ]
+  },
+  {
+    "objectID": "BESB.html#references",
+    "href": "BESB.html#references",
+    "title": "BESB",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "BESB"
+    ]
+  },
+  {
+    "objectID": "NorthCanada.html",
+    "href": "NorthCanada.html",
+    "title": "Schiedung",
+    "section": "",
+    "text": "MIR soil spectral library from high latitude forest soils of Canada\n\n🔗 Source: DOI\n© Data license: CC-BY\n📍 Extent: local\n🏷️ Spectral Range: mir\n🌐 URL: https://zenodo.org/records/10609291\n📖 Publication: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Schiedung"
+    ]
+  },
+  {
+    "objectID": "NorthCanada.html#schiedung",
+    "href": "NorthCanada.html#schiedung",
+    "title": "Schiedung",
+    "section": "",
+    "text": "MIR soil spectral library from high latitude forest soils of Canada\n\n🔗 Source: DOI\n© Data license: CC-BY\n📍 Extent: local\n🏷️ Spectral Range: mir\n🌐 URL: https://zenodo.org/records/10609291\n📖 Publication: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Schiedung"
+    ]
+  },
+  {
+    "objectID": "HighLatitudeForests_NorthCanada.html",
+    "href": "HighLatitudeForests_NorthCanada.html",
+    "title": "HighLatitudeForests_NorthCanada",
+    "section": "",
+    "text": "Soil spectral library from high-latitude forest soils of Canada\n\n\n\nSample size: &lt;300\nVersion: first release (v1)\nSpectral range: mir\nExtent: local\n\n\n\n\n\n\n\n\nOpen dataset files\n\n\n\n\nn properties available: 20\nn properties standardized: 9\nn properties harmonized: pending\nproperties themes: physical, chemical, hydrological, carbon & nutrients, metal elements\n\n\n\n\n\ncoordinates precision: precise\nsampling depth: various\ngeography: none\n\n\n\n\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 400-4000\nInstrument: TENSOR 27 Spectrophotometer\nManufacturer: Bruker (Fällanden, Switzerland)\nScan accessory: Not available\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available\n\n\n\n\n\n\n\n\nNot available.\n\n\n\nNot available.\n\n\n\nReferences will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "HighLatitudeForests_NorthCanada"
+    ]
+  },
+  {
+    "objectID": "HighLatitudeForests_NorthCanada.html#overview",
+    "href": "HighLatitudeForests_NorthCanada.html#overview",
+    "title": "HighLatitudeForests_NorthCanada",
+    "section": "",
+    "text": "Sample size: &lt;300\nVersion: first release (v1)\nSpectral range: mir\nExtent: local",
+    "crumbs": [
+      "← Back to listed libraries",
+      "HighLatitudeForests_NorthCanada"
+    ]
+  },
+  {
+    "objectID": "HighLatitudeForests_NorthCanada.html#database-access",
+    "href": "HighLatitudeForests_NorthCanada.html#database-access",
+    "title": "HighLatitudeForests_NorthCanada",
+    "section": "",
+    "text": "Open dataset files",
+    "crumbs": [
+      "← Back to listed libraries",
+      "HighLatitudeForests_NorthCanada"
+    ]
+  },
+  {
+    "objectID": "HighLatitudeForests_NorthCanada.html#soil-laboratory-information",
+    "href": "HighLatitudeForests_NorthCanada.html#soil-laboratory-information",
+    "title": "HighLatitudeForests_NorthCanada",
+    "section": "",
+    "text": "n properties available: 20\nn properties standardized: 9\nn properties harmonized: pending\nproperties themes: physical, chemical, hydrological, carbon & nutrients, metal elements",
+    "crumbs": [
+      "← Back to listed libraries",
+      "HighLatitudeForests_NorthCanada"
+    ]
+  },
+  {
+    "objectID": "HighLatitudeForests_NorthCanada.html#soil-site-information",
+    "href": "HighLatitudeForests_NorthCanada.html#soil-site-information",
+    "title": "HighLatitudeForests_NorthCanada",
+    "section": "",
+    "text": "coordinates precision: precise\nsampling depth: various\ngeography: none",
+    "crumbs": [
+      "← Back to listed libraries",
+      "HighLatitudeForests_NorthCanada"
+    ]
+  },
+  {
+    "objectID": "HighLatitudeForests_NorthCanada.html#mir",
+    "href": "HighLatitudeForests_NorthCanada.html#mir",
+    "title": "HighLatitudeForests_NorthCanada",
+    "section": "",
+    "text": "Acquisition mode: Not available\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 400-4000\nInstrument: TENSOR 27 Spectrophotometer\nManufacturer: Bruker (Fällanden, Switzerland)\nScan accessory: Not available\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available",
+    "crumbs": [
+      "← Back to listed libraries",
+      "HighLatitudeForests_NorthCanada"
+    ]
+  },
+  {
+    "objectID": "HighLatitudeForests_NorthCanada.html#vnir",
+    "href": "HighLatitudeForests_NorthCanada.html#vnir",
+    "title": "HighLatitudeForests_NorthCanada",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "HighLatitudeForests_NorthCanada"
+    ]
+  },
+  {
+    "objectID": "HighLatitudeForests_NorthCanada.html#nir",
+    "href": "HighLatitudeForests_NorthCanada.html#nir",
+    "title": "HighLatitudeForests_NorthCanada",
+    "section": "",
+    "text": "Not available.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "HighLatitudeForests_NorthCanada"
+    ]
+  },
+  {
+    "objectID": "HighLatitudeForests_NorthCanada.html#references",
+    "href": "HighLatitudeForests_NorthCanada.html#references",
+    "title": "HighLatitudeForests_NorthCanada",
+    "section": "",
+    "text": "References will be added.",
+    "crumbs": [
+      "← Back to listed libraries",
+      "HighLatitudeForests_NorthCanada"
     ]
   }
 ]

@@ -1,0 +1,86 @@
+---
+title: "ICRAF_ISRIC"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+# ICRAF_ISRIC
+
+Soil spectral libraries from the ISRIC World Soil Reference Collection (58 countries)
+
+## Overview
+
+- **Sample size:** 4,000+
+- **Version:** first release (v1)
+- **Spectral range:** vnir, mir
+- **Extent:** global
+
+## Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/ICRAF_ISRIC/README_files/figure-gfm/map-1.png)
+
+## Database access
+
+[Open dataset files](https://storage.googleapis.com/soilspec4gg-public/datasets/ICRAF_ISRIC/)
+
+## Soil laboratory information
+
+- **n properties available:** 46
+- **n properties standardized:** 18
+- **n properties harmonized:** pending
+- **properties themes:** physical, chemical, hydrological, carbon & nutrients, metal elements
+
+## Soil site information
+
+- **coordinates precision:** precise, country
+- **sampling depth:** various
+- **geography:** landuse
+
+## MIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** reflectance
+- **Original range:** 400-4000
+- **Standardized range:** 400-4000
+- **Instrument:** FTS-7000 FT-IR Spectrometer
+- **Manufacturer:** Digilab (Bio-Rad, Randolph, MA, USA)
+- **Scan accessory:** Not available
+- **Sample preparation:** Finely ground <0.1 mm
+- **Additional info:** Not available
+
+### MIR plot
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/ICRAF_ISRIC/README_files/figure-gfm/mir_plot-1.png)
+
+
+## VNIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** Not available
+- **Original range:** 350-2500
+- **Instrument:** FieldSpec FR Spectroradiometer
+- **Manufacturer:** Analytical Spectral Devices (Boulder, CO, USA)
+- **Instrument co-scans:** 25
+- **Scan repeats:** 2
+- **Scan accessory:** Not available
+- **Original resolution:** 1
+- **Sample preparation:** Air-dried, Sieved < 2 mm
+- **Additional info:** Not available
+
+### VNIR plot
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/ICRAF_ISRIC/README_files/figure-gfm/visnir_plot-1.png)
+
+
+## NIR
+
+Not available.
+
+
+
+## References
+
+References will be added.
+

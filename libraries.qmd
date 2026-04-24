@@ -1,17 +1,36 @@
 ---
+css: styles/cards.css
 listing:
   contents: datasets/cards.yml
   type: grid
   sort: "title"
   categories: true
   grid-columns: 3
-  fields: [title, description, version, categories]
+  page-size: 9
+  image-height: 200px
+  fields: [image, title, description, sample_size, version, categories]
 engine: knitr
 ---
 
 # Soil spectral libraries {#sec-libraries}
 
-Several soil spectral libraries were minimally standardized to be imported into the OSSL. The following list represents the current curated datasets, but several more are planned to be added in the future:
+Several soil spectral libraries were minimally standardized to be imported into the OSSL. The following list represents the current curated datasets, but several more are planned to be added in the future.
+
+
+The Open Soil Spectral Library (OSSL) integrates diverse datasets into a unified,  standardized format. 
+
+::: {.callout-note}
+### Filter by Category
+Use the **Categories** sidebar on the right to filter datasets by Spectral range or Geographic extent. 
+:::
+
+We are actively expanding this collection; if you wish to contribute a library, please 
+[contact the team](mailto:soilspec4gg@woodwellclimate.org).
+
+
+
+
+
 
 <!-- ## KSSL.SSL -->
 <!-- MIR and VisNIR spectral library and associated soil characterization data, mostly representing soils from the United States and its territories. -->

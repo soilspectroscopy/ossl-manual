@@ -1,0 +1,71 @@
+---
+title: "Geocradle"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+# Geocradle
+
+Soil spectral library from the Geocradle region (Balkans, Middle East, and North Africa)
+
+## Overview
+
+- **Sample size:** 1,000+
+- **Version:** first release (v1)
+- **Spectral range:** vnir
+- **Extent:** regional
+
+## Map
+
+![](../img/missing-map.jpg)
+
+## Database access
+
+[Open dataset files](https://storage.googleapis.com/soilspec4gg-public/datasets/Geocradle/)
+
+## Soil laboratory information
+
+- **n properties available:** 18
+- **n properties standardized:** 7
+- **n properties harmonized:** pending
+- **properties themes:** physical, chemical, carbon & nutrients
+
+## Soil site information
+
+- **coordinates precision:** precise, country
+- **sampling depth:** various
+- **geography:** soil taxonomy, elevation
+
+## MIR
+
+Not available.
+
+
+## VNIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** reflectance
+- **Original range:** 350-2500
+- **Instrument:** ASD FieldSpec Pro & PSR+ Spectrometer
+- **Manufacturer:** (PANanalytical BV, Boulder, CO, USA formerly Analytical Spectral Devices) & pectral Evolution Inc., Lawrence, Massachusetts,USA
+- **Instrument co-scans:** 10
+- **Scan repeats:** Not available
+- **Scan accessory:** Not available
+- **Original resolution:** 1
+- **Sample preparation:** Air-dried, Sieved < 2 mm
+- **Additional info:** Not available
+
+
+
+## NIR
+
+Not available.
+
+
+
+## References
+
+References will be added.
+

@@ -1,0 +1,15 @@
+---
+title: "Serbia"
+engine: knitr
+---
+
+## Serbia
+
+MIR soil spectral library from Serbia
+
+* 🔗 **Source:** internal
+* © **Data license:** agreement
+* 📍 **Extent:** national
+* 🏷️ **Spectral Range:** mir
+* 🌐 **URL:** [https://doi.org/10.1016/j.saa.2018.08.039](https://doi.org/10.1016/j.saa.2018.08.039)
+* 📖 **Publication:** Not available

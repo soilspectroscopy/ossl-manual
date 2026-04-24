@@ -1,0 +1,86 @@
+---
+title: "KSSL"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+# KSSL
+
+The USDA-NRCS NCSS Kellogg Soil Survey Laboratory libraries of soils from the United States and other territories
+
+## Overview
+
+- **Sample size:** 90,000+
+- **Version:** snapshot Jul 2022
+- **Spectral range:** vnir, mir
+- **Extent:** national
+
+## Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/KSSL/README_files/figure-gfm/map-1.png)
+
+## Database access
+
+[Open dataset files](https://storage.googleapis.com/soilspec4gg-public/datasets/KSSL/)
+
+## Soil laboratory information
+
+- **n properties available:** 1000+
+- **n properties standardized:** 51
+- **n properties harmonized:** pending
+- **properties themes:** physical, chemical, biological, hydrological, carbon & nutrients, metal elements
+
+## Soil site information
+
+- **coordinates precision:** precise, county, country
+- **sampling depth:** various
+- **geography:** soil taxonomy, soil horizon
+
+## MIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** reflectance
+- **Original range:** 400-4000
+- **Standardized range:** 600-4000
+- **Instrument:** Vertex 70 FT-IR
+- **Manufacturer:** Bruker Optics
+- **Scan accessory:** Not available
+- **Sample preparation:** Air-dried, finely ground < 80mesh
+- **Additional info:** detector, beamsplitter, background, mirror material, sample dilution, sample presentation
+
+### MIR plot
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/KSSL/README_files/figure-gfm/mir_plot-1.png)
+
+
+## VNIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** Not available
+- **Original range:** Not available
+- **Instrument:** ASD Labspec 2500
+- **Manufacturer:** Not available
+- **Instrument co-scans:** Not available
+- **Scan repeats:** Not available
+- **Scan accessory:** Not available
+- **Original resolution:** Not available
+- **Sample preparation:** Not available
+- **Additional info:** Not available
+
+### VNIR plot
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/KSSL/README_files/figure-gfm/visnir_plot-1.png)
+
+
+## NIR
+
+Not available.
+
+
+
+## References
+
+References will be added.
+

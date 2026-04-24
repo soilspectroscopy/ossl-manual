@@ -1,0 +1,69 @@
+---
+title: "GEMAS"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+# GEMAS
+
+Soil spectral library from the Geochemical Mapping of Agricultural and Grazing Land Soil (GEMAS), Europe
+
+## Overview
+
+- **Sample size:** 4,000+
+- **Version:** first release (v1)
+- **Spectral range:** mir
+- **Extent:** continental
+
+## Map
+
+![](../img/missing-map.jpg)
+
+## Database access
+
+[Open dataset files](https://storage.googleapis.com/soilspec4gg-public/datasets/GEMAS/)
+
+## Soil laboratory information
+
+- **n properties available:** 12
+- **n properties standardized:** 4
+- **n properties harmonized:** pending
+- **properties themes:** physical, chemical, carbon & nutrients, metal elements
+
+## Soil site information
+
+- **coordinates precision:** precise, country
+- **sampling depth:** top
+- **geography:** soil taxonomy
+
+## MIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** absorbance
+- **Original range:** 450-7800
+- **Standardized range:** 500-4000
+- **Instrument:** Spectrum-One™ FT-IR Spectrometer
+- **Manufacturer:** PerkinElmer Inc. (MA, USA)
+- **Scan accessory:** Not available
+- **Sample preparation:** Sieved<2mm
+- **Additional info:** Not available
+
+
+
+## VNIR
+
+Not available.
+
+
+## NIR
+
+Not available.
+
+
+
+## References
+
+References will be added.
+

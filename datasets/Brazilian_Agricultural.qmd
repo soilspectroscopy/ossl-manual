@@ -1,0 +1,15 @@
+---
+title: "TropicalFarm"
+engine: knitr
+---
+
+## TropicalFarm
+
+VisNIR soil spectral library from Brazilian agricultural areas.
+
+* 🔗 **Source:** DOI
+* © **Data license:** CC-BY
+* 📍 **Extent:** local
+* 🏷️ **Spectral Range:** vnir
+* 🌐 **URL:** [https://data.mendeley.com/datasets/88c5kvmgbf/1](https://data.mendeley.com/datasets/88c5kvmgbf/1)
+* 📖 **Publication:** Not available

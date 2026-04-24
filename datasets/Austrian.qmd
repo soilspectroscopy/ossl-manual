@@ -1,0 +1,71 @@
+---
+title: "Austrian"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+# Austrian
+
+Near-infared soil spectral library from all environmental zones of Austria
+
+## Overview
+
+- **Sample size:** 2,000+
+- **Version:** version v4
+- **Spectral range:** nir
+- **Extent:** national
+
+## Map
+
+![](../img/missing-map.jpg)
+
+## Database access
+
+[Open dataset files](https://storage.googleapis.com/soilspec4gg-public/datasets/Austrian/)
+
+## Soil laboratory information
+
+- **n properties available:** 13
+- **n properties standardized:** 10
+- **n properties harmonized:** pending
+- **properties themes:** physical, chemical, carbon & nutrients
+
+## Soil site information
+
+- **coordinates precision:** county
+- **sampling depth:** various
+- **geography:** landuse, vegetation
+
+## MIR
+
+Not available.
+
+
+## VNIR
+
+Not available.
+
+
+## NIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** absorbance
+- **Original range:** 680-2500
+- **Instrument:** SpectraStar™ XL
+- **Manufacturer:** Unity Scientific (Brookfield, CT, USA)
+- **Instrument co-scans:** 24
+- **Scan repeats:** 2
+- **Scan accessory:** Not available
+- **Original resolution:** 1 nm
+- **Sample preparation:** Air-dried, Sieved < 2 mm
+- **Additional info:** Not available
+
+
+
+
+## References
+
+References will be added.
+

@@ -1,0 +1,86 @@
+---
+title: "LUCAS"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+# LUCAS
+
+Land Use and Cover Survey (LUCAS) library from European soils (23-28 countries)
+
+## Overview
+
+- **Sample size:** 20,000+
+- **Version:** 2009, 2012, 2015
+- **Spectral range:** vnir
+- **Extent:** continental
+
+## Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/LUCAS/README_files/figure-gfm/map-1.png)
+
+## Database access
+
+[Open dataset files](https://storage.googleapis.com/soilspec4gg-public/datasets/LUCAS/)
+
+## Soil laboratory information
+
+- **n properties available:** 13
+- **n properties standardized:** 13
+- **n properties harmonized:** pending
+- **properties themes:** physical, chemical, carbon & nutrients, metal elements
+
+## Soil site information
+
+- **coordinates precision:** precise, country
+- **sampling depth:** top
+- **geography:** soil taxonomy, elevation, landuse
+
+## MIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** reflectance
+- **Original range:** Not available
+- **Standardized range:** 628-4000
+- **Instrument:** Vertex 70 FT-IR
+- **Manufacturer:** Bruker
+- **Scan accessory:** Not available
+- **Sample preparation:** Not available
+- **Additional info:** KBr beamsplitter; Gold mirror; Mirror background
+
+### MIR plot
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/LUCAS/README_files/figure-gfm/mir_plot-1.png)
+
+
+## VNIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** Not available
+- **Original range:** Not available
+- **Instrument:** FOSS NIRS XDS RapidContent Analyzer
+- **Manufacturer:** Metrohm
+- **Instrument co-scans:** Not available
+- **Scan repeats:** Not available
+- **Scan accessory:** Not available
+- **Original resolution:** Not available
+- **Sample preparation:** Air-dried, Sieved <2 mm
+- **Additional info:** Not available
+
+### VNIR plot
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/LUCAS/README_files/figure-gfm/visnir_plot-1.png)
+
+
+## NIR
+
+Not available.
+
+
+
+## References
+
+References will be added.
+

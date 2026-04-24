@@ -1,0 +1,15 @@
+---
+title: "Garrett"
+engine: knitr
+---
+
+## Garrett
+
+MIR soil spectral library from forest soils of New Zealand
+
+* 🔗 **Source:** DOI
+* © **Data license:** CC-BY
+* 📍 **Extent:** regional
+* 🏷️ **Spectral Range:** mir
+* 🌐 **URL:** [https://doi.org/10.6084/m9.figshare.20506587.v2](https://doi.org/10.6084/m9.figshare.20506587.v2)
+* 📖 **Publication:** Not available

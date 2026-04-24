@@ -1,0 +1,72 @@
+---
+title: "Serbian"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+# Serbian
+
+Soil spectral library from Serbia
+
+## Overview
+
+- **Sample size:** <300
+- **Version:** first release (v1)
+- **Spectral range:** mir
+- **Extent:** national
+
+## Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Serbia/README_files/figure-gfm/map-1.png)
+
+## Database access
+
+[Open dataset files](https://storage.googleapis.com/soilspec4gg-public/datasets/Serbian/)
+
+## Soil laboratory information
+
+- **n properties available:** 10
+- **n properties standardized:** 8
+- **n properties harmonized:** pending
+- **properties themes:** physical, chemical, carbon & nutrients
+
+## Soil site information
+
+- **coordinates precision:** precise
+- **sampling depth:** various
+- **geography:** soil taxonomy, landuse
+
+## MIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** absorbance
+- **Original range:** 400-4000
+- **Standardized range:** 600-4000
+- **Instrument:** Nexus 670 FT-IR
+- **Manufacturer:** Thermo-Nicolet
+- **Scan accessory:** Not available
+- **Sample preparation:** Air-dried, Sieved < 2 mm
+- **Additional info:** DTGS detector
+
+### MIR plot
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Serbia/README_files/figure-gfm/mir_plot-1.png)
+
+
+## VNIR
+
+Not available.
+
+
+## NIR
+
+Not available.
+
+
+
+## References
+
+References will be added.
+

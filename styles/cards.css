@@ -1,0 +1,57 @@
+/* Make card body vertical */
+.quarto-grid-item .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stack category tags vertically */
+.quarto-grid-item .listing-categories {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.35rem;
+  margin-bottom: 0.8rem;
+}
+
+.quarto-grid-item .listing-categories > * {
+  display: block !important;
+  width: auto !important;
+}
+
+/* Push metadata toward the bottom */
+.quarto-grid-item .card-body > table,
+.quarto-grid-item .card-body > dl {
+  margin-top: auto;
+}
+
+/* Slight spacing before metadata */
+.quarto-grid-item .card-text {
+  margin-bottom: 1rem;
+}
+
+/* Make dataset titles bold */
+.quarto-grid-item .card-title,
+.quarto-grid-item .listing-title {
+  font-weight: 700;
+}
+
+/* Style category tags */
+.quarto-grid-item .listing-category,
+.quarto-grid-item .listing-categories > * {
+  background-color: #eef3ff;
+  border: 1px solid #c9d7ff;
+  color: #3559a8;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+

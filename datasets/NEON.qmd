@@ -1,0 +1,70 @@
+---
+title: "NEON"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+# NEON
+
+National Ecological Observatory Network (NEON) soil spectral library
+
+## Overview
+
+- **Sample size:** TBD
+- **Version:** first release (v1)
+- **Spectral range:** mir
+- **Extent:** national
+
+## Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/NEON/README_files/figure-gfm/map-1.png)
+
+## Database access
+
+[Open dataset files](https://storage.googleapis.com/soilspec4gg-public/datasets/NEON/)
+
+## Soil laboratory information
+
+- **n properties available:** NULL
+- **n properties harmonized:** pending
+
+## Soil site information
+
+- **coordinates precision:** precise
+- **sampling depth:** various
+- **geography:** soil taxonomy, soil horizon
+
+## MIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** Not available
+- **Original range:** Not available
+- **Standardized range:** Not available
+- **Instrument:** Not available
+- **Manufacturer:** Not available
+- **Scan accessory:** Not available
+- **Sample preparation:** Not available
+- **Additional info:** Not available
+
+### MIR plot
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/NEON/README_files/figure-gfm/mir_plot-1.png)
+
+
+## VNIR
+
+Not available.
+
+
+## NIR
+
+Not available.
+
+
+
+## References
+
+References will be added.
+

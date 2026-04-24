@@ -1,6 +1,9 @@
 project:
   type: book
   output-dir: docs
+  render: 
+    - "*.qmd"
+    - "datasets/*.qmd"
 
 book:
   title: "Open Soil Spectral Library"

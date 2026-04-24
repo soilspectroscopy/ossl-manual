@@ -1,0 +1,74 @@
+---
+title: "Neospectra"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+# Neospectra
+
+Near-infrared soil spectral library from selected KSSL samples (USA) and Africa
+
+## Overview
+
+- **Sample size:** 2,000+
+- **Version:** second update (v1)
+- **Spectral range:** nir
+- **Extent:** national
+
+## Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Neospectra/README_files/figure-gfm/map-1.png)
+
+## Database access
+
+[Open dataset files](https://storage.googleapis.com/soilspec4gg-public/datasets/Neospectra/)
+
+## Soil laboratory information
+
+- **n properties available:** 23
+- **n properties standardized:** 23
+- **n properties harmonized:** pending
+- **properties themes:** physical, chemical, hydrological, carbon & nutrients, metal elements
+
+## Soil site information
+
+- **coordinates precision:** precise, county, country
+- **sampling depth:** various
+- **geography:** soil taxonomy, soil horizon
+
+## MIR
+
+Not available.
+
+
+## VNIR
+
+Not available.
+
+
+## NIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** reflectance
+- **Original range:** 1350-2550
+- **Instrument:** Neospectra
+- **Manufacturer:** SiWare
+- **Instrument co-scans:** Not available
+- **Scan repeats:** 6
+- **Scan accessory:** Not available
+- **Original resolution:** 8-16 cm-1
+- **Sample preparation:** Oven-dried, Sieved < 2mm
+- **Additional info:** Not available
+
+### NIR plot
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Neospectra/README_files/figure-gfm/nir_plot-1.png)
+
+
+
+## References
+
+References will be added.
+

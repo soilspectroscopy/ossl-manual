@@ -1,12 +1,188 @@
-- title: "BESB"
-  description: "Brazilian Soil Spectral Library"
-  date: "2026-03-16"
-  version: "v2.0"
-  categories: [open, national, VNIR-MIR]
+- title: KSSL
+  description: The USDA-NRCS NCSS Kellogg Soil Survey Laboratory across the United
+    States
+  sample_size: 90,000+
+  version: snapshot Jul 2022
+  image: https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/KSSL/README_files/figure-gfm/map-1.png
+  path: datasets/KSSL.html
+  categories:
+  - 'Spectral: vnir, mir'
+  - 'Extent: national'
+- title: ICRAF_ISRIC
+  description: Soil spectral libraries from the ISRIC World Soil Reference Collection
+    (58 countries)
+  sample_size: 4000+
+  version: first release (v1)
+  image: https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/ICRAF_ISRIC/README_files/figure-gfm/map-1.png
+  path: datasets/ICRAF_ISRIC.html
+  categories:
+  - 'Spectral: vnir, mir'
+  - 'Extent: global'
+- title: LUCAS
+  description: Land Use and Cover Survey (LUCAS) point data across Europe
+  sample_size: 20,000+
+  version: 2009, 2012, 2015
+  image: https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/LUCAS/README_files/figure-gfm/map-1.png
+  path: datasets/LUCAS.html
+  categories:
+  - 'Spectral: vnir'
+  - 'Extent: continental'
+- title: AFSIS
+  description: Soil spectral libraries from Africa Soil Information Service (AfSIS)
+    Phase I
+  sample_size: 1000+
+  version: first release (v1)
+  image: https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/AFSIS/README_files/figure-gfm/map-1.png
+  path: datasets/AFSIS.html
+  categories:
+  - 'Spectral: mir'
+  - 'Extent: continental'
+- title: AFSIS2
+  description: Soil spectral libraries from Africa Soil Information Service (AfSIS)
+    Phase II
+  sample_size: <1000
+  version: first release (v1)
+  image: https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/AFSIS2/README_files/figure-gfm/map-1.png
+  path: datasets/AFSIS2.html
+  categories:
+  - 'Spectral: mir'
+  - 'Extent: continental'
+- title: CAF
+  description: Soil spectral libraries for Central African
+  sample_size: 1000+
+  version: first release (v1)
+  image: https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/CASSL/README_files/figure-gfm/map-1.png
+  path: datasets/CAF.html
+  categories:
+  - 'Spectral: mir'
+  - 'Extent: regional'
+- title: NEON
+  description: MIR National Ecological Observatory Network (NEON) Soil Spectral Library
+  sample_size: ''
+  version: first release (v1)
+  image: https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/NEON/README_files/figure-gfm/map-1.png
+  path: datasets/NEON.html
+  categories:
+  - 'Spectral: mir'
+  - 'Extent: national'
+- title: NorthCanada
+  description: MIR soil spectral library from high latitude forest soils of Canada
+  sample_size: <300
+  version: first release (v1)
+  image: https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Schiedung/README_files/figure-gfm/map-1.png
+  path: datasets/NorthCanada.html
+  categories:
+  - 'Spectral: mir'
+  - 'Extent: local'
+- title: NewZealand_Forest
+  description: MIR soil spectral library from forest soils of New Zealand
+  sample_size: <300
+  version: first release (v1)
+  image: https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Garrett/README_files/figure-gfm/map-1.png
+  path: datasets/NewZealand_Forest.html
+  categories:
+  - 'Spectral: mir'
+  - 'Extent: regional'
+- title: Serbia
+  description: MIR soil spectral library from Serbia
+  sample_size: <300
+  version: first release (v1)
+  image: https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Serbia/README_files/figure-gfm/map-1.png
+  path: datasets/Serbia.html
+  categories:
+  - 'Spectral: mir'
+  - 'Extent: national'
+- title: Neospectra
+  description: NIR soil spectral library from selected KSSL samples (USA) and Africa
+  sample_size: 2000+
+  version: second update (v1)
+  image: https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Neospectra/README_files/figure-gfm/map-1.png
+  path: datasets/Neospectra.html
+  categories:
+  - 'Spectral: nir'
+  - 'Extent: national'
+- title: BESB
+  description: MIR and VisNIR soil spectral libraries from Brazil
+  sample_size: 15,000+
+  version: version v.002
+  image: datasets/img/missing_map.jpg
   path: datasets/BESB.html
-- title: "XYZ"
-  description: "XYZ long title"
-  date: "2026-03-16"
-  version: "v2.0"
-  categories: [open, national, MIR]
-  path: datasets/BESB.html
+  categories:
+  - 'Spectral: vnir, mir'
+  - 'Extent: national'
+- title: Hungrian
+  description: VisNIR soil spectral library from Hungarian Soil Degradation Observation
+    System
+  sample_size: 5000+
+  version: version v3
+  image: datasets/img/missing_map.jpg
+  path: datasets/Hungrian.html
+  categories:
+  - 'Spectral: vnir'
+  - 'Extent: national'
+- title: Austrian
+  description: NIR soil spectral library from all environmental zones of Austria
+  sample_size: 2000+
+  version: version v4
+  image: datasets/img/missing_map.jpg
+  path: datasets/Austrian.html
+  categories:
+  - 'Spectral: nir'
+  - 'Extent: national'
+- title: GEMAS
+  description: Soil spectral library from the Geochemical Mapping of Agricultural
+    and Grazing Land Soil (GEMAS)
+  sample_size: 4000+
+  version: first release (v1)
+  image: datasets/img/missing_map.jpg
+  path: datasets/GEMAS.html
+  categories:
+  - 'Spectral: mir'
+  - 'Extent: continental'
+- title: Geocradle
+  description: Soil spectral library from the Geocradle region (Balkans, Middle East,
+    and North Africa)
+  sample_size: 1000+
+  version: first release (v1)
+  image: datasets/img/missing_map.jpg
+  path: datasets/Geocradle.html
+  categories:
+  - 'Spectral: vnir'
+  - 'Extent: regional'
+- title: Martinique
+  description: NIR soil spectral library from rural areas of the Martinique island
+  sample_size: <1000
+  version: version 3.1
+  image: datasets/img/missing_map.jpg
+  path: datasets/Martinique.html
+  categories:
+  - 'Spectral: nir'
+  - 'Extent: national'
+- title: Brazilian_Agricultural
+  description: VisNIR soil spectral library from Brazilian agricultural areas
+  sample_size: <300
+  version: version 3
+  image: datasets/img/missing_map.jpg
+  path: datasets/Brazilian_Agricultural.html
+  categories:
+  - 'Spectral: vnir'
+  - 'Extent: local'
+- title: Korean
+  description: NIR soil spectral library from Korean
+  sample_size: 1000+
+  version: version 3
+  image: datasets/img/missing_map.jpg
+  path: datasets/Korean.html
+  categories:
+  - 'Spectral: nir'
+  - 'Extent: national'
+- title: South-India
+  description: Soil spectral library from tropical and sub-humid watersheds of Southwestern
+    India
+  sample_size: <300
+  version: version 1
+  image: datasets/img/missing_map.jpg
+  path: datasets/South-India.html
+  categories:
+  - 'Spectral: mir'
+  - 'Extent: regional'
