@@ -1,57 +1,311 @@
-/* Make card body vertical */
-.quarto-grid-item .card-body {
+/* ========================================================================
+   OSSL — custom card listing
+   Replaces Quarto's default grid renderer.
+   Paired with: styles/cards-template.ejs.md
+   ======================================================================== */
+
+/* ---------- Grid container ---------- */
+.ossl-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  max-width: 1500px;
+  margin: 1.5rem auto;
+}
+
+@media (max-width: 992px) {
+  .ossl-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .ossl-card-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Clickable wrapper ---------- */
+.ossl-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+.ossl-card-link:hover,
+.ossl-card-link:focus {
+  text-decoration: none;
+  color: inherit;
+}
+.ossl-card-link:focus-visible {
+  outline: 2px solid #3559a8;
+  outline-offset: 3px;
+  border-radius: 14px;
+}
+
+/* ---------- Card surface ---------- */
+.ossl-card {
+  background: var(--bs-body-bg, #fff);
+  border: 1px solid var(--bs-border-color, #e6e8eb);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  transition: transform 0.15s ease,
+              box-shadow 0.15s ease,
+              border-color 0.15s ease;
+}
+.ossl-card-link:hover .ossl-card {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  border-color: var(--bs-secondary-border-subtle, #cdd3d8);
 }
 
-/* Stack category tags vertically */
-.quarto-grid-item .listing-categories {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
+/* ---------- Logo band ---------- */
+.ossl-card-band {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem;
+}
+.ossl-card-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* ---------- Card body ---------- */
+.ossl-card-body {
+  padding: 1rem 1.1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Description */
+.ossl-card-desc {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--bs-body-color, #1f2933);
+  margin: 0 0 0.85rem;
+}
+
+/* ---------- Spectral pills ---------- */
+.ossl-pill-row {
+  display: flex;
   gap: 0.35rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.7rem;
+  flex-wrap: wrap;
+}
+.ossl-pill {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  line-height: 1;
+}
+.ossl-pill-on {
+  background: #0F6E56;
+  color: #fff;
+}
+.ossl-pill-off {
+  background: var(--bs-secondary-bg, #eef0f2);
+  color: var(--bs-tertiary-color, #9aa3ac);
 }
 
-.quarto-grid-item .listing-categories > * {
-  display: block !important;
-  width: auto !important;
+/* ---------- Extent line ---------- */
+.ossl-extent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--bs-secondary-color, #475569);
+  margin-bottom: 0.85rem;
+}
+.ossl-extent i {
+  font-size: 0.95rem;
+  color: #475569;
 }
 
-/* Push metadata toward the bottom */
-.quarto-grid-item .card-body > table,
-.quarto-grid-item .card-body > dl {
-  margin-top: auto;
+/* ---------- Stats ---------- */
+.ossl-stats {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.75rem;
+  row-gap: 0.25rem;
+  font-size: 0.8rem;
+  margin: 0 0 1rem;
 }
-
-/* Slight spacing before metadata */
-.quarto-grid-item .card-text {
-  margin-bottom: 1rem;
-}
-
-/* Make dataset titles bold */
-.quarto-grid-item .card-title,
-.quarto-grid-item .listing-title {
-  font-weight: 700;
-}
-
-/* Style category tags */
-.quarto-grid-item .listing-category,
-.quarto-grid-item .listing-categories > * {
-  background-color: #eef3ff;
-  border: 1px solid #c9d7ff;
-  color: #3559a8;
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.35rem;
-  font-size: 0.75rem;
+.ossl-stats dt {
+  color: var(--bs-secondary-color, #51585f);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-weight: 600;
 }
+.ossl-stats dt i {
+  font-size: 0.95rem;
+}
+.ossl-stats dd {
+  color: var(--bs-body-color, #1f2933);
+  font-weight: 500;
+  margin: 0;
+  text-align: right;
+}
+
+/* ---------- CTA ---------- */
+.ossl-cta {
+  margin-top: auto;
+  background: var(--bs-tertiary-bg, #e2e8f0);
+  color: var(--bs-body-color, #1f2933);
+  border-radius: 6px;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.ossl-cta i {
+  font-size: 1rem;
+  transition: transform 0.15s ease;
+}
+.ossl-card-link:hover .ossl-cta {
+  background: #0F6E56;
+  color: #fff;
+}
+.ossl-card-link:hover .ossl-cta i {
+  transform: translateX(2px);
+}
+
+/* ---------- Category sidebar — keep Quarto's defaults, lightly polished ---------- */
+.quarto-listing-category .category {
+  font-size: 0.85rem;
+}
 
 
-
-
-
-
-
-
-
+/* ========================================================================
+   OSSL — dataset detail page styles
+   (Loaded from each dataset's .qmd via `css: ../styles/cards.css`)
+   ======================================================================== */
+ 
+/* Hero banner — colored band echoing the card on the listing page */
+.ossl-hero {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 28px 32px;
+  border-radius: 12px 12px 0 0;
+  margin: 0;
+}
+.ossl-hero-logo {
+  flex-shrink: 0;
+}
+.ossl-hero-logo img {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+.ossl-hero-text {
+  flex: 1;
+  min-width: 0;
+}
+.ossl-hero-title {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.88);
+}
+.ossl-hero-desc {
+  font-size: 14px;
+  margin: 0 0 14px;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.5;
+}
+.ossl-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+ 
+/* Spectral pills (reused from the cards layout, but tuned for the band bg) */
+.ossl-pill {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  line-height: 1;
+  display: inline-block;
+}
+.ossl-hero .ossl-pill-row {
+  display: flex;
+  gap: 4px;
+  margin: 0;
+}
+.ossl-hero .ossl-pill-on {
+  background: rgba(0, 0, 0, 0.78);
+  color: #fff;
+}
+.ossl-hero .ossl-pill-off {
+  background: rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.32);
+}
+ 
+.ossl-meta-divider {
+  width: 1px;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.18);
+  display: inline-block;
+}
+.ossl-meta-item {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.7);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.ossl-meta-item i {
+  font-size: 15px;
+}
+ 
+/* Quick-stats strip — attached directly below the hero, sharing the rounded corners */
+.ossl-quick-stats {
+  display: flex;
+  gap: 28px;
+  padding: 12px 32px;
+  background: var(--bs-tertiary-bg, #f4f6f8);
+  border-radius: 0 0 12px 12px;
+  margin: 0 0 2rem;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.ossl-stat-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--bs-secondary-color, #51585f);
+}
+.ossl-stat-item i {
+  font-size: 15px;
+  color: var(--bs-tertiary-color, #888);
+}
+.ossl-stat-val {
+  color: var(--bs-body-color, #1f2933);
+  font-weight: 500;
+}
+ 
+/* Section headings — icons sit inline before the title and scale with it.
+   font-size is relative (em) so the icon stays visually balanced against
+   whatever h2 size the theme uses. */
+.ossl-section-icon {
+  font-size: 0.9em;
+  margin-right: 10px;
+  color: var(--bs-tertiary-color, #999);
+  vertical-align: -3px;
+}

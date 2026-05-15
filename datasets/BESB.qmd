@@ -4,55 +4,89 @@ format:
   html:
     toc: true
     toc-depth: 2
+    css: ../styles/cards.css
+    include-in-header:
+      text: |
+        <style>#title-block-header { display: none !important; }</style>
 ---
 
-# BESB
+```{=html}
+<div class="ossl-hero" style="background: #f1f3f5;">
+  <div class="ossl-hero-logo">
+    <img src="logo/BESB.png" alt="BESB logo">
+  </div>
+  <div class="ossl-hero-text">
+    <h1 class="ossl-hero-title">BESB</h1>
+    <p class="ossl-hero-desc">Brazilian Soil Spectral Library (BESB)</p>
+    <div class="ossl-hero-meta">
+      <div class="ossl-pill-row">
+        <span class="ossl-pill ossl-pill-on">VNIR</span>
+        <span class="ossl-pill ossl-pill-off">NIR</span>
+        <span class="ossl-pill ossl-pill-on">MIR</span>
+      </div>
+      <span class="ossl-meta-divider"></span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National — Brazil</span>
+    </div>
+  </div>
+</div>
+<div class="ossl-quick-stats">
+  <span class="ossl-stat-item"><i class="bi bi-database" aria-hidden="true"></i><span class="ossl-stat-val">15,000+</span> samples</span>
+  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">version v.002</span></span>
+  <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">CC-BY</span></span>
+</div>
 
-Soil spectral libraries from Brazil
+```
 
-## Overview
+## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
-- **Sample size:** 15,000+
-- **Version:** version v.002
-- **Spectral range:** vnir, mir
-- **Extent:** national
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/BESB/README_files/figure-gfm/map-1.png)
 
-## Map
+## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
 
-![](../img/missing-map.jpg)
+Data originally provided by:
 
-## Database access
+- **Contact:** José A.M. Demattê
+- **Email:** [jamdemat@usp.br](mailto:jamdemat@usp.br)
+- **Original source:** <https://zenodo.org/records/8361419>
 
-[Open dataset files](https://storage.googleapis.com/soilspec4gg-public/datasets/BESB/)
+**Available files**
 
-## Soil laboratory information
+| Type | Filename | Link |
+|------|----------|------|
+| MIR spectra — CSV (gzip) | `ossl_mir_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/BESB/ossl_mir_v1.3.csv.gz) |
+| MIR spectra — Parquet | `ossl_mir_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/BESB/ossl_mir_v1.3.parquet) |
+| Soil lab measurements — CSV (gzip) | `ossl_soillab_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/BESB/ossl_soillab_v1.3.csv.gz) |
+| Soil lab measurements — Parquet | `ossl_soillab_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/BESB/ossl_soillab_v1.3.parquet) |
+| Soil site metadata — CSV (gzip) | `ossl_soilsite_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/BESB/ossl_soilsite_v1.3.csv.gz) |
+| Soil site metadata — Parquet | `ossl_soilsite_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/BESB/ossl_soilsite_v1.3.parquet) |
+| VisNIR spectra — CSV (gzip) | `ossl_visnir_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/BESB/ossl_visnir_v1.3.csv.gz) |
+| VisNIR spectra — Parquet | `ossl_visnir_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/BESB/ossl_visnir_v1.3.parquet) |
 
-- **n properties available:** 8
-- **n properties standardized:** 8
-- **n properties harmonized:** pending
-- **properties themes:** physical, chemical, carbon & nutrients
 
-## Soil site information
+## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
+
+_Soil analytical data summary not available for this dataset._
+
+## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
 
 - **coordinates precision:** precise, state/province, region
 - **sampling depth:** top
 - **geography:** soil taxonomy, landuse, vegetation
 
-## MIR
+## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR
 
 - **Acquisition mode:** Not available
-- **Intensity:** reflectance
+- **Intensity:** absorbance
 - **Original range:** 600-4000
 - **Standardized range:** 600-4000
-- **Instrument:** Alpha FT-IR Spectroradiometer
-- **Manufacturer:** Bruker Optics Corporation (Billerica, MA, USA)
+- **Instrument:** Alpha Sample Compartment RTDLaTGS ZnSe
+- **Manufacturer:** Bruker Optik GmbH, Ettlingen, Germany
 - **Scan accessory:** Not available
-- **Sample preparation:** Sieved<2mm
-- **Additional info:** Not available
+- **Sample preparation:** Sieved<2mm, ground
+- **Additional info:** The sensor has a HeNe laser; A gold reference plate was used as standard
 
 
-
-## VNIR
+## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> VNIR
 
 - **Acquisition mode:** Not available
 - **Intensity:** reflectance
@@ -64,17 +98,12 @@ Soil spectral libraries from Brazil
 - **Scan accessory:** Not available
 - **Original resolution:** 1
 - **Sample preparation:** Air-dried, Sieved < 2 mm
-- **Additional info:** Not available
+- **Additional info:** The sensor is calibrated using a white Spectralon plate (Lab-sphere, North Sutton, NH, USA) representing a 100% reflectance standard
 
 
+## <i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References
 
-## NIR
-
-Not available.
-
-
-
-## References
-
-References will be added.
+1. [Publication 1](https://doi.org/10.1016/j.geoderma.2019.05.043)
+2. [Publication 2](https://doi.org/10.1016/j.geoderma.2022.115776)
+3. [Publication 3](https://doi.org/10.19047/0136-1694-2024-119-261-305)
 

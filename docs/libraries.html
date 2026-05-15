@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>2&nbsp; Soil spectral libraries – Open Soil Spectral Library</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -40,14 +43,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-9f47384f092792145d194f4ee226bc93.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-63fd25cd15366251c069b1e3bb40272c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -85,10 +88,10 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-image','listing-title','listing-description','listing-sample_size','listing-version','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-order_id','listing-title','listing-description','listing-sample_size','listing-version','listing-extent','listing-has_vnir','listing-has_nir','listing-has_mir','listing-band_color','listing-image','listing-categories',{ data: ['index'] },{ data: ['categories'] }],
       page: 9,
     pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-title","listing-description","listing-sample_size","listing-version","listing-image","listing-categories"],
+      searchColumns: ["listing-order_id","listing-title","listing-description","listing-sample_size","listing-version","listing-extent","listing-has_vnir","listing-has_nir","listing-has_mir","listing-band_color","listing-image","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -116,7 +119,7 @@ gtag('config', 'G-EDY0LB3E4D', { 'anonymize_ip': true});
 </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -129,7 +132,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -387,7 +390,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./neospectra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Neospectra</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Neospectra database</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -427,7 +430,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(20)</span></div><div class="category" data-category="RXh0ZW50JTNBJTIwY29udGluZW50YWw=">Extent: continental <span class="quarto-category-count">(4)</span></div><div class="category" data-category="RXh0ZW50JTNBJTIwZ2xvYmFs">Extent: global <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RXh0ZW50JTNBJTIwbG9jYWw=">Extent: local <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RXh0ZW50JTNBJTIwbmF0aW9uYWw=">Extent: national <span class="quarto-category-count">(9)</span></div><div class="category" data-category="RXh0ZW50JTNBJTIwcmVnaW9uYWw=">Extent: regional <span class="quarto-category-count">(4)</span></div><div class="category" data-category="U3BlY3RyYWwlM0ElMjBtaXI=">Spectral: mir <span class="quarto-category-count">(9)</span></div><div class="category" data-category="U3BlY3RyYWwlM0ElMjBuaXI=">Spectral: nir <span class="quarto-category-count">(4)</span></div><div class="category" data-category="U3BlY3RyYWwlM0ElMjB2bmly">Spectral: vnir <span class="quarto-category-count">(4)</span></div><div class="category" data-category="U3BlY3RyYWwlM0ElMjB2bmlyJTJDJTIwbWly">Spectral: vnir, mir <span class="quarto-category-count">(3)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(20)</span></div><div class="category" data-category="RXh0ZW50JTNBJTIwY29udGluZW50YWw=">Extent: continental <span class="quarto-category-count">(4)</span></div><div class="category" data-category="RXh0ZW50JTNBJTIwZ2xvYmFs">Extent: global <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RXh0ZW50JTNBJTIwbG9jYWw=">Extent: local <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RXh0ZW50JTNBJTIwbmF0aW9uYWw=">Extent: national <span class="quarto-category-count">(9)</span></div><div class="category" data-category="RXh0ZW50JTNBJTIwcmVnaW9uYWw=">Extent: regional <span class="quarto-category-count">(4)</span></div><div class="category" data-category="U3BlY3RyYWwlM0ElMjBtaXI=">Spectral: mir <span class="quarto-category-count">(13)</span></div><div class="category" data-category="U3BlY3RyYWwlM0ElMjBuaXI=">Spectral: nir <span class="quarto-category-count">(4)</span></div><div class="category" data-category="U3BlY3RyYWwlM0ElMjB2bmly">Spectral: vnir <span class="quarto-category-count">(7)</span></div><div class="category" data-category="U3BlY3RyYWwlM0ElMjB2bmlyJTIwJTI2JTIwbWly">Spectral: vnir &amp; mir <span class="quarto-category-count">(4)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -459,7 +462,7 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Filter by Category
+<span class="screen-reader-only">Note</span>Filter by Category
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -547,888 +550,729 @@ Filter by Category
 
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjBjb250aW5lbnRhbA==">
-<a href="datasets/AFSIS.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/AFSIS/README_files/figure-gfm/map-1.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-AFSIS
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjBtaXI='); return false;">Spectral: mir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwY29udGluZW50YWw='); return false;">Extent: continental</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Soil spectral libraries from Africa Soil Information Service (AfSIS) Phase I</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-1000+
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-first release (v1)
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjBjb250aW5lbnRhbA==">
-<a href="datasets/AFSIS2.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/AFSIS2/README_files/figure-gfm/map-1.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-AFSIS2
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjBtaXI='); return false;">Spectral: mir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwY29udGluZW50YWw='); return false;">Extent: continental</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Soil spectral libraries from Africa Soil Information Service (AfSIS) Phase II</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-&lt;1000
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-first release (v1)
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="U3BlY3RyYWwlM0ElMjBuaXIlMkNFeHRlbnQlM0ElMjBuYXRpb25hbA==">
-<a href="datasets/Austrian.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="datasets/img/missing_map.jpg" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Austrian
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjBuaXI='); return false;">Spectral: nir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwbmF0aW9uYWw='); return false;">Extent: national</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>NIR soil spectral library from all environmental zones of Austria</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-2000+
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-version v4
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="U3BlY3RyYWwlM0ElMjB2bmlyJTJDJTIwbWlyJTJDRXh0ZW50JTNBJTIwbmF0aW9uYWw=">
-<a href="datasets/BESB.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="datasets/img/missing_map.jpg" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-BESB
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjB2bmlyJTJDJTIwbWly'); return false;">Spectral: vnir, mir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwbmF0aW9uYWw='); return false;">Extent: national</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>MIR and VisNIR soil spectral libraries from Brazil</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-15,000+
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-version v.002
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="U3BlY3RyYWwlM0ElMjB2bmlyJTJDRXh0ZW50JTNBJTIwbG9jYWw=">
-<a href="datasets/Brazilian_Agricultural.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="datasets/img/missing_map.jpg" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Brazilian_Agricultural
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjB2bmly'); return false;">Spectral: vnir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwbG9jYWw='); return false;">Extent: local</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>VisNIR soil spectral library from Brazilian agricultural areas</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-&lt;300
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-version 3
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjByZWdpb25hbA==">
-<a href="datasets/CAF.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/CASSL/README_files/figure-gfm/map-1.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-CAF
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjBtaXI='); return false;">Spectral: mir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwcmVnaW9uYWw='); return false;">Extent: regional</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Soil spectral libraries for Central African</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-1000+
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-first release (v1)
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="6" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjBjb250aW5lbnRhbA==">
-<a href="datasets/GEMAS.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="datasets/img/missing_map.jpg" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-GEMAS
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjBtaXI='); return false;">Spectral: mir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwY29udGluZW50YWw='); return false;">Extent: continental</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Soil spectral library from the Geochemical Mapping of Agricultural and Grazing Land Soil (GEMAS)</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-4000+
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-first release (v1)
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="7" data-categories="U3BlY3RyYWwlM0ElMjB2bmlyJTJDRXh0ZW50JTNBJTIwcmVnaW9uYWw=">
-<a href="datasets/Geocradle.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="datasets/img/missing_map.jpg" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Geocradle
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjB2bmly'); return false;">Spectral: vnir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwcmVnaW9uYWw='); return false;">Extent: regional</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Soil spectral library from the Geocradle region (Balkans, Middle East, and North Africa)</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-1000+
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-first release (v1)
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="8" data-categories="U3BlY3RyYWwlM0ElMjB2bmlyJTJDRXh0ZW50JTNBJTIwbmF0aW9uYWw=">
-<a href="datasets/Hungrian.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="datasets/img/missing_map.jpg" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Hungrian
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjB2bmly'); return false;">Spectral: vnir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwbmF0aW9uYWw='); return false;">Extent: national</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>VisNIR soil spectral library from Hungarian Soil Degradation Observation System</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-5000+
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-version v3
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="9" data-categories="U3BlY3RyYWwlM0ElMjB2bmlyJTJDJTIwbWlyJTJDRXh0ZW50JTNBJTIwZ2xvYmFs">
-<a href="datasets/ICRAF_ISRIC.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/ICRAF_ISRIC/README_files/figure-gfm/map-1.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-ICRAF_ISRIC
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjB2bmlyJTJDJTIwbWly'); return false;">Spectral: vnir, mir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwZ2xvYmFs'); return false;">Extent: global</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Soil spectral libraries from the ISRIC World Soil Reference Collection (58 countries)</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-4000+
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-first release (v1)
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="10" data-categories="U3BlY3RyYWwlM0ElMjB2bmlyJTJDJTIwbWlyJTJDRXh0ZW50JTNBJTIwbmF0aW9uYWw=">
-<a href="datasets/KSSL.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/KSSL/README_files/figure-gfm/map-1.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-KSSL
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjB2bmlyJTJDJTIwbWly'); return false;">Spectral: vnir, mir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwbmF0aW9uYWw='); return false;">Extent: national</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>The USDA-NRCS NCSS Kellogg Soil Survey Laboratory across the United States</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-90,000+
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-snapshot Jul 2022
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="11" data-categories="U3BlY3RyYWwlM0ElMjBuaXIlMkNFeHRlbnQlM0ElMjBuYXRpb25hbA==">
-<a href="datasets/Korean.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="datasets/img/missing_map.jpg" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Korean
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjBuaXI='); return false;">Spectral: nir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwbmF0aW9uYWw='); return false;">Extent: national</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>NIR soil spectral library from Korean</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-1000+
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-version 3
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="12" data-categories="U3BlY3RyYWwlM0ElMjB2bmlyJTJDRXh0ZW50JTNBJTIwY29udGluZW50YWw=">
-<a href="datasets/LUCAS.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/LUCAS/README_files/figure-gfm/map-1.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-LUCAS
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjB2bmly'); return false;">Spectral: vnir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwY29udGluZW50YWw='); return false;">Extent: continental</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Land Use and Cover Survey (LUCAS) point data across Europe</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-20,000+
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-2009, 2012, 2015
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="13" data-categories="U3BlY3RyYWwlM0ElMjBuaXIlMkNFeHRlbnQlM0ElMjBuYXRpb25hbA==">
-<a href="datasets/Martinique.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="datasets/img/missing_map.jpg" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Martinique
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjBuaXI='); return false;">Spectral: nir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwbmF0aW9uYWw='); return false;">Extent: national</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>NIR soil spectral library from rural areas of the Martinique island</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-&lt;1000
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-version 3.1
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="14" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjBuYXRpb25hbA==">
-<a href="datasets/NEON.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/NEON/README_files/figure-gfm/map-1.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-NEON
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjBtaXI='); return false;">Spectral: mir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwbmF0aW9uYWw='); return false;">Extent: national</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>MIR National Ecological Observatory Network (NEON) Soil Spectral Library</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-&nbsp;
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-first release (v1)
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="15" data-categories="U3BlY3RyYWwlM0ElMjBuaXIlMkNFeHRlbnQlM0ElMjBuYXRpb25hbA==">
-<a href="datasets/Neospectra.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Neospectra/README_files/figure-gfm/map-1.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Neospectra
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjBuaXI='); return false;">Spectral: nir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwbmF0aW9uYWw='); return false;">Extent: national</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>NIR soil spectral library from selected KSSL samples (USA) and Africa</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-2000+
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-second update (v1)
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="16" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjByZWdpb25hbA==">
-<a href="datasets/NewZealand_Forest.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Garrett/README_files/figure-gfm/map-1.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-NewZealand_Forest
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjBtaXI='); return false;">Spectral: mir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwcmVnaW9uYWw='); return false;">Extent: regional</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>MIR soil spectral library from forest soils of New Zealand</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-&lt;300
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-first release (v1)
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="17" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjBsb2NhbA==">
-<a href="datasets/NorthCanada.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Schiedung/README_files/figure-gfm/map-1.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-NorthCanada
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjBtaXI='); return false;">Spectral: mir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwbG9jYWw='); return false;">Extent: local</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>MIR soil spectral library from high latitude forest soils of Canada</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-&lt;300
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-first release (v1)
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="18" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjBuYXRpb25hbA==">
-<a href="datasets/Serbia.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Serbia/README_files/figure-gfm/map-1.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Serbia
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjBtaXI='); return false;">Spectral: mir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwbmF0aW9uYWw='); return false;">Extent: national</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>MIR soil spectral library from Serbia</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-&lt;300
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-first release (v1)
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="19" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjByZWdpb25hbA==">
-<a href="datasets/South-India.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" data-src="datasets/img/missing_map.jpg" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-South-India
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('U3BlY3RyYWwlM0ElMjBtaXI='); return false;">Spectral: mir</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXh0ZW50JTNBJTIwcmVnaW9uYWw='); return false;">Extent: regional</div>
-
-</div>
-<div class="card-text listing-description delink">
-<p>Soil spectral library from tropical and sub-humid watersheds of Southwestern India</p>
-</div>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-sample_size
-</td>
-<td class="sample_size">
-&lt;300
-</td>
-</tr>
-
-<tr>
-<td>
-version
-</td>
-<td class="version">
-version 1
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
+<div class="quarto-listing quarto-listing-container-custom" id="listing-listing">
+<div class="list ossl-card-grid">
+
+  <a href="datasets/KSSL.html" class="ossl-card-link" data-index="0" data-categories="U3BlY3RyYWwlM0ElMjB2bmlyJTIwJTI2JTIwbWlyJTJDU3BlY3RyYWwlM0ElMjB2bmlyJTJDU3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjBuYXRpb25hbA==">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/KSSL.png" alt="KSSL logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">The USDA-NRCS NCSS Kellogg Soil Survey Laboratory (KSSL) soil libraries from the United States and other territories</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-on">VNIR</span>
+          <span class="ossl-pill ossl-pill-off">NIR</span>
+          <span class="ossl-pill ossl-pill-on">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>national</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>90,000+</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>snapshot Jul 2022</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/ICRAF_ISRIC.html" class="ossl-card-link" data-index="1" data-categories="U3BlY3RyYWwlM0ElMjB2bmlyJTIwJTI2JTIwbWlyJTJDU3BlY3RyYWwlM0ElMjB2bmlyJTJDU3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjBnbG9iYWw=">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/ICRAF_ISRIC.png" alt="ICRAF_ISRIC logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Soil spectral libraries from the ISRIC World Soil Reference Collection (58 countries) scanned by ICRAF</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-on">VNIR</span>
+          <span class="ossl-pill ossl-pill-off">NIR</span>
+          <span class="ossl-pill ossl-pill-on">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>global</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>4,000+</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>first release (v1)</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/LUCAS.html" class="ossl-card-link" data-index="2" data-categories="U3BlY3RyYWwlM0ElMjB2bmlyJTIwJTI2JTIwbWlyJTJDU3BlY3RyYWwlM0ElMjB2bmlyJTJDU3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjBjb250aW5lbnRhbA==">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/LUCAS.png" alt="LUCAS logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Land Use and Cover Survey (LUCAS) library from European soils (23-28 countries)</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-on">VNIR</span>
+          <span class="ossl-pill ossl-pill-off">NIR</span>
+          <span class="ossl-pill ossl-pill-on">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>continental</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>20,000+</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>2009, 2012, 2015</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/AFSIS1.html" class="ossl-card-link" data-index="3" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjBjb250aW5lbnRhbA==">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/AFSIS1.png" alt="AFSIS1 logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Soil spectral library from Africa Soil Information Service Phase I (AFSIS1)</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-off">VNIR</span>
+          <span class="ossl-pill ossl-pill-off">NIR</span>
+          <span class="ossl-pill ossl-pill-on">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>continental</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>1,000+</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>first release (v1)</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/AFSIS2.html" class="ossl-card-link" data-index="4" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjBjb250aW5lbnRhbA==">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/AFSIS2.png" alt="AFSIS2 logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Soil spectral library from Africa Soil Information Service Phase II (AFSIS2)</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-off">VNIR</span>
+          <span class="ossl-pill ossl-pill-off">NIR</span>
+          <span class="ossl-pill ossl-pill-on">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>continental</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>&lt;1,000</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>first release (v1)</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/CAF.html" class="ossl-card-link" data-index="5" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjByZWdpb25hbA==">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/CAF.png" alt="CAF logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Soil spectral library for Central Africa (CAF)</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-off">VNIR</span>
+          <span class="ossl-pill ossl-pill-off">NIR</span>
+          <span class="ossl-pill ossl-pill-on">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>regional</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>1,000+</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>first release (v1)</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/NEON.html" class="ossl-card-link" data-index="6" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjBuYXRpb25hbA==">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/NEON.png" alt="NEON logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">National Ecological Observatory Network (NEON) soil spectral library</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-off">VNIR</span>
+          <span class="ossl-pill ossl-pill-off">NIR</span>
+          <span class="ossl-pill ossl-pill-on">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>national</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>TBD</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>first release (v1)</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/HLF_CAN.html" class="ossl-card-link" data-index="7" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjBsb2NhbA==">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/HLF_CAN.png" alt="HLF_CAN logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Soil spectral library from High-Latitude Forests of North Canada (HLF_CAN)</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-off">VNIR</span>
+          <span class="ossl-pill ossl-pill-off">NIR</span>
+          <span class="ossl-pill ossl-pill-on">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>local</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>&lt;300</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>first release (v1)</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/PF_NZL.html" class="ossl-card-link" data-index="8" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjByZWdpb25hbA==">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/PF_NZL.png" alt="PF_NZL logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Soil spectral library from Planted Forest soils of New Zealand (PF_NZL)</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-off">VNIR</span>
+          <span class="ossl-pill ossl-pill-off">NIR</span>
+          <span class="ossl-pill ossl-pill-on">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>regional</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>&lt;300</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>first release (v1)</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/SRB.html" class="ossl-card-link" data-index="9" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjBuYXRpb25hbA==">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/SRB.png" alt="SRB logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Soil spectral library from Serbia (SRB)</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-off">VNIR</span>
+          <span class="ossl-pill ossl-pill-off">NIR</span>
+          <span class="ossl-pill ossl-pill-on">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>national</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>&lt;300</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>first release (v1)</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/Neospectra.html" class="ossl-card-link" data-index="10" data-categories="U3BlY3RyYWwlM0ElMjBuaXIlMkNFeHRlbnQlM0ElMjBuYXRpb25hbA==">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/Neospectra.png" alt="Neospectra logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Near-infrared soil spectral library (Neospectra) from selected KSSL samples (USA) and Africa</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-off">VNIR</span>
+          <span class="ossl-pill ossl-pill-on">NIR</span>
+          <span class="ossl-pill ossl-pill-off">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>national</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>2,000+</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>second update (v1)</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/BESB.html" class="ossl-card-link" data-index="11" data-categories="U3BlY3RyYWwlM0ElMjB2bmlyJTIwJTI2JTIwbWlyJTJDU3BlY3RyYWwlM0ElMjB2bmlyJTJDU3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjBuYXRpb25hbA==">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/BESB.png" alt="BESB logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Brazilian Soil Spectral Library (BESB)</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-on">VNIR</span>
+          <span class="ossl-pill ossl-pill-off">NIR</span>
+          <span class="ossl-pill ossl-pill-on">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>national</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>15,000+</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>version v.002</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/HSDOS.html" class="ossl-card-link" data-index="12" data-categories="U3BlY3RyYWwlM0ElMjB2bmlyJTJDRXh0ZW50JTNBJTIwbmF0aW9uYWw=">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/HSDOS.png" alt="HSDOS logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Soil spectral library from the Hungarian Soil Degradation Observation System (HSDOS)</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-on">VNIR</span>
+          <span class="ossl-pill ossl-pill-off">NIR</span>
+          <span class="ossl-pill ossl-pill-off">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>national</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>5,000+</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>version v3</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/AUT.html" class="ossl-card-link" data-index="13" data-categories="U3BlY3RyYWwlM0ElMjBuaXIlMkNFeHRlbnQlM0ElMjBuYXRpb25hbA==">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/AUT.png" alt="AUT logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Austrian NIR soil spectral library for soil health assessments (AUT)</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-off">VNIR</span>
+          <span class="ossl-pill ossl-pill-on">NIR</span>
+          <span class="ossl-pill ossl-pill-off">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>national</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>2,000+</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>version v4</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/GEMAS.html" class="ossl-card-link" data-index="14" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjBjb250aW5lbnRhbA==">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/GEMAS.png" alt="GEMAS logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Soil spectral library from the Geochemical Mapping of Agricultural and Grazing Land Soil (GEMAS), Europe</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-off">VNIR</span>
+          <span class="ossl-pill ossl-pill-off">NIR</span>
+          <span class="ossl-pill ossl-pill-on">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>continental</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>4,000+</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>first release (v1)</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/Geocradle.html" class="ossl-card-link" data-index="15" data-categories="U3BlY3RyYWwlM0ElMjB2bmlyJTJDRXh0ZW50JTNBJTIwcmVnaW9uYWw=">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/Geocradle.png" alt="Geocradle logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Soil spectral library from the Geocradle region (Balkans, Middle East, and North Africa)</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-on">VNIR</span>
+          <span class="ossl-pill ossl-pill-off">NIR</span>
+          <span class="ossl-pill ossl-pill-off">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>regional</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>1,000+</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>first release (v1)</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/MTQ.html" class="ossl-card-link" data-index="16" data-categories="U3BlY3RyYWwlM0ElMjBuaXIlMkNFeHRlbnQlM0ElMjBuYXRpb25hbA==">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/MTQ.png" alt="MTQ logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Near-infrared soil spectral library from rural areas of the Martinique island (MTQ)</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-off">VNIR</span>
+          <span class="ossl-pill ossl-pill-on">NIR</span>
+          <span class="ossl-pill ossl-pill-off">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>national</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>&lt;1,000</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>version 3.1</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/LF_BRA.html" class="ossl-card-link" data-index="17" data-categories="U3BlY3RyYWwlM0ElMjB2bmlyJTJDRXh0ZW50JTNBJTIwbG9jYWw=">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/LF_BRA.png" alt="LF_BRA logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Farm-scale soil spectral library from two local farms from Brazil (LF_BRA)</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-on">VNIR</span>
+          <span class="ossl-pill ossl-pill-off">NIR</span>
+          <span class="ossl-pill ossl-pill-off">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>local</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>&lt;300</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>version 3</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/GPKOR.html" class="ossl-card-link" data-index="18" data-categories="U3BlY3RyYWwlM0ElMjBuaXIlMkNFeHRlbnQlM0ElMjBuYXRpb25hbA==">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/GPKOR.png" alt="GPKOR logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Near-infrared soil spectral library from Gyeonggi Province, South Korea (GPKOR)</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-off">VNIR</span>
+          <span class="ossl-pill ossl-pill-on">NIR</span>
+          <span class="ossl-pill ossl-pill-off">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>national</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>1,000+</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>version 3</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
+  <a href="datasets/WS_SWIND.html" class="ossl-card-link" data-index="19" data-categories="U3BlY3RyYWwlM0ElMjBtaXIlMkNFeHRlbnQlM0ElMjByZWdpb25hbA==">
+    <article class="ossl-card">
+      <div class="ossl-card-band" style="background-color: #f1f3f5;">
+        <img src="datasets/logo/WS_SWIND.png" alt="WS_SWIND logo" class="ossl-card-logo">
+      </div>
+
+      <div class="ossl-card-body">
+        <p class="ossl-card-desc">Soil spectral library from tropical and sub-humid Watersheds of Southwestern India (WS_SWIND)</p>
+
+        
+        <div class="ossl-pill-row" aria-label="Spectral ranges available">
+          <span class="ossl-pill ossl-pill-off">VNIR</span>
+          <span class="ossl-pill ossl-pill-off">NIR</span>
+          <span class="ossl-pill ossl-pill-on">MIR</span>
+        </div>
+
+        <div class="ossl-extent">
+          <i class="bi bi-globe-americas" aria-hidden="true"></i>
+          <span>regional</span>
+        </div>
+
+        <dl class="ossl-stats">
+          <dt><i class="bi bi-database" aria-hidden="true"></i>Sample size</dt>
+          <dd>&lt;300</dd>
+          <dt><i class="bi bi-calendar3" aria-hidden="true"></i>Version</dt>
+          <dd>version 1</dd>
+        </dl>
+
+        <div class="ossl-cta">
+          <span>View dataset</span>
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </article>
+  </a>
+
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 <nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
@@ -1499,13 +1343,14 @@ version 1
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

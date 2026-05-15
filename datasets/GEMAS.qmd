@@ -4,66 +4,88 @@ format:
   html:
     toc: true
     toc-depth: 2
+    css: ../styles/cards.css
+    include-in-header:
+      text: |
+        <style>#title-block-header { display: none !important; }</style>
 ---
 
-# GEMAS
+```{=html}
+<div class="ossl-hero" style="background: #f1f3f5;">
+  <div class="ossl-hero-logo">
+    <img src="logo/GEMAS.png" alt="GEMAS logo">
+  </div>
+  <div class="ossl-hero-text">
+    <h1 class="ossl-hero-title">GEMAS</h1>
+    <p class="ossl-hero-desc">Soil spectral library from the Geochemical Mapping of Agricultural and Grazing Land Soil (GEMAS), Europe</p>
+    <div class="ossl-hero-meta">
+      <div class="ossl-pill-row">
+        <span class="ossl-pill ossl-pill-off">VNIR</span>
+        <span class="ossl-pill ossl-pill-off">NIR</span>
+        <span class="ossl-pill ossl-pill-on">MIR</span>
+      </div>
+      <span class="ossl-meta-divider"></span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>Continental — Europe</span>
+    </div>
+  </div>
+</div>
+<div class="ossl-quick-stats">
+  <span class="ossl-stat-item"><i class="bi bi-database" aria-hidden="true"></i><span class="ossl-stat-val">4,000+</span> samples</span>
+  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">first release (v1)</span></span>
+  <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">Other (Custom)</span></span>
+</div>
 
-Soil spectral library from the Geochemical Mapping of Agricultural and Grazing Land Soil (GEMAS), Europe
+```
 
-## Overview
+## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
-- **Sample size:** 4,000+
-- **Version:** first release (v1)
-- **Spectral range:** mir
-- **Extent:** continental
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/GEMAS/README_files/figure-gfm/map-1.png)
 
-## Map
+## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
 
-![](../img/missing-map.jpg)
+Data originally provided by:
 
-## Database access
+- **Contact:** Federal Institute for Geosciences and Natural Resources
+- **Email:** [gemas@bgr.de](mailto:gemas@bgr.de)
+- **Original source:** <https://gemas.eurogeosurveys.org/>
 
-[Open dataset files](https://storage.googleapis.com/soilspec4gg-public/datasets/GEMAS/)
+**Available files**
 
-## Soil laboratory information
+| Type | Filename | Link |
+|------|----------|------|
+| MIR spectra — CSV (gzip) | `ossl_mir_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/GEMAS/ossl_mir_v1.3.csv.gz) |
+| MIR spectra — Parquet | `ossl_mir_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/GEMAS/ossl_mir_v1.3.parquet) |
+| Soil lab measurements — CSV (gzip) | `ossl_soillab_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/GEMAS/ossl_soillab_v1.3.csv.gz) |
+| Soil lab measurements — Parquet | `ossl_soillab_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/GEMAS/ossl_soillab_v1.3.parquet) |
+| Soil site metadata — CSV (gzip) | `ossl_soilsite_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/GEMAS/ossl_soilsite_v1.3.csv.gz) |
+| Soil site metadata — Parquet | `ossl_soilsite_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/GEMAS/ossl_soilsite_v1.3.parquet) |
 
-- **n properties available:** 12
-- **n properties standardized:** 4
-- **n properties harmonized:** pending
-- **properties themes:** physical, chemical, carbon & nutrients, metal elements
 
-## Soil site information
+## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
+
+_Soil analytical data summary not available for this dataset._
+
+## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
 
 - **coordinates precision:** precise, country
 - **sampling depth:** top
 - **geography:** soil taxonomy
 
-## MIR
+## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR
 
 - **Acquisition mode:** Not available
 - **Intensity:** absorbance
 - **Original range:** 450-7800
-- **Standardized range:** 500-4000
+- **Standardized range:** 600-4000
 - **Instrument:** Spectrum-One™ FT-IR Spectrometer
 - **Manufacturer:** PerkinElmer Inc. (MA, USA)
 - **Scan accessory:** Not available
-- **Sample preparation:** Sieved<2mm
-- **Additional info:** Not available
+- **Sample preparation:** Oven dried, Sieved<2mm
+- **Additional info:** extended range KBr beam-splitter, a high intensity ceramic source, a deuterium triglycine-sulphate (DTGS) Peltier-cooled detector; Background reference scans were carried out using silicon carbide discs (PerkinElmer Life and Analytical Sciences Pty Ltd., Australia)
 
 
+## <i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References
 
-## VNIR
-
-Not available.
-
-
-## NIR
-
-Not available.
-
-
-
-## References
-
-References will be added.
+1. [Publication 1](https://doi.org/10.1016/j.apgeochem.2012.11.005)
+2. [Publication 2](https://doi.org/10.1016/j.apgeochem.2013.09.015)
 

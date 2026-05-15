@@ -4,52 +4,80 @@ format:
   html:
     toc: true
     toc-depth: 2
+    css: ../styles/cards.css
+    include-in-header:
+      text: |
+        <style>#title-block-header { display: none !important; }</style>
 ---
 
-# Geocradle
+```{=html}
+<div class="ossl-hero" style="background: #f1f3f5;">
+  <div class="ossl-hero-logo">
+    <img src="logo/Geocradle.png" alt="Geocradle logo">
+  </div>
+  <div class="ossl-hero-text">
+    <h1 class="ossl-hero-title">Geocradle</h1>
+    <p class="ossl-hero-desc">Soil spectral library from the Geocradle region (Balkans, Middle East, and North Africa)</p>
+    <div class="ossl-hero-meta">
+      <div class="ossl-pill-row">
+        <span class="ossl-pill ossl-pill-on">VNIR</span>
+        <span class="ossl-pill ossl-pill-off">NIR</span>
+        <span class="ossl-pill ossl-pill-off">MIR</span>
+      </div>
+      <span class="ossl-meta-divider"></span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>Regional — Balkans, Middle East, and North Africa</span>
+    </div>
+  </div>
+</div>
+<div class="ossl-quick-stats">
+  <span class="ossl-stat-item"><i class="bi bi-database" aria-hidden="true"></i><span class="ossl-stat-val">1,000+</span> samples</span>
+  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">first release (v1)</span></span>
+  <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">ODbL</span></span>
+</div>
 
-Soil spectral library from the Geocradle region (Balkans, Middle East, and North Africa)
+```
 
-## Overview
+## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
-- **Sample size:** 1,000+
-- **Version:** first release (v1)
-- **Spectral range:** vnir
-- **Extent:** regional
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Geocradle/README_files/figure-gfm/map-1.png)
 
-## Map
+## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
 
-![](../img/missing-map.jpg)
+Data originally provided by:
 
-## Database access
+- **Contact:** Nikos Tsakiridis
+- **Email:** [tsakirin@auth.gr](mailto:tsakirin@auth.gr)
+- **Original source:** <http://datahub.geocradle.eu/dataset/regional-soil-spectral-library>
 
-[Open dataset files](https://storage.googleapis.com/soilspec4gg-public/datasets/Geocradle/)
+**Available files**
 
-## Soil laboratory information
+| Type | Filename | Link |
+|------|----------|------|
+| Soil lab measurements — CSV (gzip) | `ossl_soillab_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/Geocradle/ossl_soillab_v1.3.csv.gz) |
+| Soil lab measurements — Parquet | `ossl_soillab_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/Geocradle/ossl_soillab_v1.3.parquet) |
+| Soil site metadata — CSV (gzip) | `ossl_soilsite_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/Geocradle/ossl_soilsite_v1.3.csv.gz) |
+| Soil site metadata — Parquet | `ossl_soilsite_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/Geocradle/ossl_soilsite_v1.3.parquet) |
+| VisNIR spectra — CSV (gzip) | `ossl_visnir_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/Geocradle/ossl_visnir_v1.3.csv.gz) |
+| VisNIR spectra — Parquet | `ossl_visnir_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/Geocradle/ossl_visnir_v1.3.parquet) |
 
-- **n properties available:** 18
-- **n properties standardized:** 7
-- **n properties harmonized:** pending
-- **properties themes:** physical, chemical, carbon & nutrients
 
-## Soil site information
+## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
+
+_Soil analytical data summary not available for this dataset._
+
+## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
 
 - **coordinates precision:** precise, country
 - **sampling depth:** various
 - **geography:** soil taxonomy, elevation
 
-## MIR
-
-Not available.
-
-
-## VNIR
+## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> VNIR
 
 - **Acquisition mode:** Not available
 - **Intensity:** reflectance
 - **Original range:** 350-2500
 - **Instrument:** ASD FieldSpec Pro & PSR+ Spectrometer
-- **Manufacturer:** (PANanalytical BV, Boulder, CO, USA formerly Analytical Spectral Devices) & pectral Evolution Inc., Lawrence, Massachusetts,USA
+- **Manufacturer:** (PANanalytical BV, Boulder, CO, USA formerly Analytical Spectral Devices) & Spectral Evolution Inc., Lawrence, Massachusetts,USA
 - **Instrument co-scans:** 10
 - **Scan repeats:** Not available
 - **Scan accessory:** Not available
@@ -58,14 +86,8 @@ Not available.
 - **Additional info:** Not available
 
 
+## <i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References
 
-## NIR
-
-Not available.
-
-
-
-## References
-
-References will be added.
+1. [Publication 1](https://doi.org/10.1016/j.rse.2020.111793)
+2. [Publication 2](https://doi.org/10.1016/j.geoderma.2018.12.044)
 

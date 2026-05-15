@@ -1,0 +1,92 @@
+---
+title: "AUT"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    css: ../styles/cards.css
+    include-in-header:
+      text: |
+        <style>#title-block-header { display: none !important; }</style>
+---
+
+```{=html}
+<div class="ossl-hero" style="background: #f1f3f5;">
+  <div class="ossl-hero-logo">
+    <img src="logo/AUT.png" alt="AUT logo">
+  </div>
+  <div class="ossl-hero-text">
+    <h1 class="ossl-hero-title">AUT</h1>
+    <p class="ossl-hero-desc">Austrian NIR soil spectral library for soil health assessments (AUT)</p>
+    <div class="ossl-hero-meta">
+      <div class="ossl-pill-row">
+        <span class="ossl-pill ossl-pill-off">VNIR</span>
+        <span class="ossl-pill ossl-pill-on">NIR</span>
+        <span class="ossl-pill ossl-pill-off">MIR</span>
+      </div>
+      <span class="ossl-meta-divider"></span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National — Austria</span>
+    </div>
+  </div>
+</div>
+<div class="ossl-quick-stats">
+  <span class="ossl-stat-item"><i class="bi bi-database" aria-hidden="true"></i><span class="ossl-stat-val">2,000+</span> samples</span>
+  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">version v4</span></span>
+  <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">CC-BY</span></span>
+</div>
+
+```
+
+## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Austrian/README_files/figure-gfm/map-1.png)
+
+## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
+
+Data originally provided by:
+
+- **Contact:** Julia Fohrafellner
+- **Email:** [julia.fohrafellner@ages.at](mailto:julia.fohrafellner@ages.at)
+- **Original source:** <https://zenodo.org/records/17941270>
+
+**Available files**
+
+| Type | Filename | Link |
+|------|----------|------|
+| NIR spectra — CSV (gzip) | `ossl_nir_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/AUT/ossl_nir_v1.3.csv.gz) |
+| NIR spectra — Parquet | `ossl_nir_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/AUT/ossl_nir_v1.3.parquet) |
+| Soil lab measurements — CSV (gzip) | `ossl_soillab_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/AUT/ossl_soillab_v1.3.csv.gz) |
+| Soil lab measurements — Parquet | `ossl_soillab_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/AUT/ossl_soillab_v1.3.parquet) |
+| Soil site metadata — CSV (gzip) | `ossl_soilsite_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/AUT/ossl_soilsite_v1.3.csv.gz) |
+| Soil site metadata — Parquet | `ossl_soilsite_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/AUT/ossl_soilsite_v1.3.parquet) |
+
+
+## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
+
+_Soil analytical data summary not available for this dataset._
+
+## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
+
+- **coordinates precision:** county
+- **sampling depth:** various
+- **geography:** landuse, vegetation
+
+## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> NIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** reflectance
+- **Original range:** 680-2500
+- **Instrument:** SpectraStar™ XL
+- **Manufacturer:** Unity Scientific (Brookfield, CT, USA)
+- **Instrument co-scans:** 24
+- **Scan repeats:** 2
+- **Scan accessory:** Not available
+- **Original resolution:** 1 nm
+- **Sample preparation:** Air-dried, Sieved < 2 mm
+- **Additional info:** A mattesurface gold-plated metal reflector was used as an internal reference; The standard used was White Sand (Lucky Bay, Australia), which enables harmonizing results from different near-infrared spectrometers used within the ProbeField project.
+
+
+## <i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References
+
+1. [Publication 1](https://doi.org/10.5194/essd-18-219-2026)
+

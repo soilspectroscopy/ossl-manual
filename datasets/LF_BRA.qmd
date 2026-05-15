@@ -1,0 +1,93 @@
+---
+title: "LF_BRA"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    css: ../styles/cards.css
+    include-in-header:
+      text: |
+        <style>#title-block-header { display: none !important; }</style>
+---
+
+```{=html}
+<div class="ossl-hero" style="background: #f1f3f5;">
+  <div class="ossl-hero-logo">
+    <img src="logo/LF_BRA.png" alt="LF_BRA logo">
+  </div>
+  <div class="ossl-hero-text">
+    <h1 class="ossl-hero-title">LF_BRA</h1>
+    <p class="ossl-hero-desc">Farm-scale soil spectral library from two local farms from Brazil (LF_BRA)</p>
+    <div class="ossl-hero-meta">
+      <div class="ossl-pill-row">
+        <span class="ossl-pill ossl-pill-on">VNIR</span>
+        <span class="ossl-pill ossl-pill-off">NIR</span>
+        <span class="ossl-pill ossl-pill-off">MIR</span>
+      </div>
+      <span class="ossl-meta-divider"></span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>Local — Brazil</span>
+    </div>
+  </div>
+</div>
+<div class="ossl-quick-stats">
+  <span class="ossl-stat-item"><i class="bi bi-database" aria-hidden="true"></i><span class="ossl-stat-val"><300</span> samples</span>
+  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">version 3</span></span>
+  <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">CC-BY</span></span>
+</div>
+
+```
+
+## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/TropicalFarm/README_files/figure-gfm/map-1.png)
+
+## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
+
+Data originally provided by:
+
+- **Contact:** Tiago Rodrigues Tavares
+- **Email:** [tiagosrt@usp.br](mailto:tiagosrt@usp.br)
+- **Original source:** <https://data.mendeley.com/datasets/88c5kvmgbf/1>
+
+**Available files**
+
+| Type | Filename | Link |
+|------|----------|------|
+| Soil lab measurements — CSV (gzip) | `ossl_soillab_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/LF_BRA/ossl_soillab_v1.3.csv.gz) |
+| Soil lab measurements — Parquet | `ossl_soillab_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/LF_BRA/ossl_soillab_v1.3.parquet) |
+| Soil site metadata — CSV (gzip) | `ossl_soilsite_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/LF_BRA/ossl_soilsite_v1.3.csv.gz) |
+| Soil site metadata — Parquet | `ossl_soilsite_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/LF_BRA/ossl_soilsite_v1.3.parquet) |
+| VisNIR spectra — CSV (gzip) | `ossl_visnir_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/LF_BRA/ossl_visnir_v1.3.csv.gz) |
+| VisNIR spectra — Parquet | `ossl_visnir_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/LF_BRA/ossl_visnir_v1.3.parquet) |
+
+
+## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
+
+_Soil analytical data summary not available for this dataset._
+
+## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
+
+- **coordinates precision:** none
+- **sampling depth:** top
+- **geography:** none
+
+## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> VNIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** reflectance
+- **Original range:** 431-2153
+- **Instrument:** Veris MSP3 (USB4000 & C9914GB detectors)
+- **Manufacturer:** Veris Technologies (Salina, KS, USA)
+- **Instrument co-scans:** Not available
+- **Scan repeats:** 3
+- **Scan accessory:** Not available
+- **Original resolution:** 5
+- **Sample preparation:** Air-dried, Sieved < 2 mm
+- **Additional info:** Not available
+
+
+## <i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References
+
+1. [Publication 1](https://doi.org/10.1016/j.dib.2022.108004)
+2. [Publication 2](https://doi.org/10.3390/s21010148)
+

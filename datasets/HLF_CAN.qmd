@@ -1,0 +1,93 @@
+---
+title: "HLF_CAN"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    css: ../styles/cards.css
+    include-in-header:
+      text: |
+        <style>#title-block-header { display: none !important; }</style>
+---
+
+```{=html}
+<div class="ossl-hero" style="background: #f1f3f5;">
+  <div class="ossl-hero-logo">
+    <img src="logo/HLF_CAN.png" alt="HLF_CAN logo">
+  </div>
+  <div class="ossl-hero-text">
+    <h1 class="ossl-hero-title">HLF_CAN</h1>
+    <p class="ossl-hero-desc">Soil spectral library from High-Latitude Forests of North Canada (HLF_CAN)</p>
+    <div class="ossl-hero-meta">
+      <div class="ossl-pill-row">
+        <span class="ossl-pill ossl-pill-off">VNIR</span>
+        <span class="ossl-pill ossl-pill-off">NIR</span>
+        <span class="ossl-pill ossl-pill-on">MIR</span>
+      </div>
+      <span class="ossl-meta-divider"></span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>Local — Canada</span>
+    </div>
+  </div>
+</div>
+<div class="ossl-quick-stats">
+  <span class="ossl-stat-item"><i class="bi bi-database" aria-hidden="true"></i><span class="ossl-stat-val"><300</span> samples</span>
+  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">first release (v1)</span></span>
+  <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">CC-BY</span></span>
+</div>
+
+```
+
+## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Schiedung/README_files/figure-gfm/map-1.png)
+
+## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
+
+Data originally provided by:
+
+- **Contact:** Marcus Schiedung
+- **Email:** [marcus.schiedung@geo.uzh.ch](mailto:marcus.schiedung@geo.uzh.ch)
+- **Original source:** <https://zenodo.org/records/10609291>
+
+**Available files**
+
+| Type | Filename | Link |
+|------|----------|------|
+| MIR spectra — CSV (gzip) | `ossl_mir_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/HLF_CAN/ossl_mir_v1.3.csv.gz) |
+| MIR spectra — Parquet | `ossl_mir_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/HLF_CAN/ossl_mir_v1.3.parquet) |
+| Soil lab measurements — CSV (gzip) | `ossl_soillab_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/HLF_CAN/ossl_soillab_v1.3.csv.gz) |
+| Soil lab measurements — Parquet | `ossl_soillab_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/HLF_CAN/ossl_soillab_v1.3.parquet) |
+| Soil site metadata — CSV (gzip) | `ossl_soilsite_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/HLF_CAN/ossl_soilsite_v1.3.csv.gz) |
+| Soil site metadata — Parquet | `ossl_soilsite_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/HLF_CAN/ossl_soilsite_v1.3.parquet) |
+
+
+## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
+
+_Soil analytical data summary not available for this dataset._
+
+## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
+
+- **coordinates precision:** precise
+- **sampling depth:** various
+- **geography:** none
+
+## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR
+
+- **Acquisition mode:** Not available
+- **Intensity:** absorbance
+- **Original range:** 400-4000
+- **Standardized range:** 600-4000
+- **Instrument:** TENSOR 27 Spectrophotometer
+- **Manufacturer:** Bruker (Fällanden, Switzerland)
+- **Scan accessory:** Not available
+- **Sample preparation:** Oven dried, Sieved < 2 mm
+- **Additional info:** Original raw spectra (imported) and KBr background-corrected spectra
+
+### MIR plot
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Schiedung/README_files/figure-gfm/mir_plot-1.png)
+
+## <i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References
+
+1. [Publication 1](https://doi.org/10.1016/j.catena.2022.106194)
+
