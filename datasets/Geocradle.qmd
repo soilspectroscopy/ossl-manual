@@ -11,7 +11,7 @@ format:
 ---
 
 ```{=html}
-<div class="ossl-hero" style="background: #f1f3f5;">
+<div class="ossl-hero" style="background: #FFF4F0;">
   <div class="ossl-hero-logo">
     <img src="logo/Geocradle.png" alt="Geocradle logo">
   </div>
@@ -39,7 +39,7 @@ format:
 
 ## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Geocradle/README_files/figure-gfm/map-1.png)
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Geocradle/README_files/figure-commonmark/map-1.png)
 
 ## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
 
@@ -63,7 +63,17 @@ Data originally provided by:
 
 ## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
 
-_Soil analytical data summary not available for this dataset._
+Summary statistics for soil properties in this dataset, sourced from the [ossl-imports README](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/Geocradle).
+
+| skim_variable            | n_missing |  mean |    sd |   p0 |   p25 |   p50 |   p75 |   p100 |
+|:-------------------------|----------:|------:|------:|-----:|------:|------:|------:|-------:|
+| sand.tot_usda.c405_w.pct |       264 | 53.48 | 22.85 | 0.40 | 36.85 | 54.00 | 69.00 |  99.00 |
+| clay.tot_usda.a334_w.pct |        77 | 21.26 | 16.01 | 0.00 |  9.39 | 17.00 | 29.10 |  94.80 |
+| silt.tot_usda.c407_w.pct |       264 | 26.67 | 14.31 | 0.00 | 16.00 | 26.00 | 37.40 |  68.00 |
+| oc_iso.10694_w.pct       |       132 |  0.74 |  0.84 | 0.00 |  0.29 |  0.58 |  0.94 |  20.75 |
+| caco3_iso.10693_w.pct    |       388 |  6.83 | 14.87 | 0.00 |  0.00 |  0.20 |  3.40 |  89.99 |
+| ph.h2o_usda.a268_index   |      1141 |  7.22 |  1.09 | 3.50 |  6.50 |  7.44 |  8.01 |  10.07 |
+| ec_iso.11265_ds.m        |      1412 |  2.29 |  9.32 | 0.02 |  0.16 |  0.67 |  1.42 | 120.00 |
 
 ## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
 

@@ -11,7 +11,7 @@ format:
 ---
 
 ```{=html}
-<div class="ossl-hero" style="background: #f1f3f5;">
+<div class="ossl-hero" style="background: #DCFFDE;">
   <div class="ossl-hero-logo">
     <img src="logo/CAF.png" alt="CAF logo">
   </div>
@@ -39,7 +39,7 @@ format:
 
 ## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/CAF/README_files/figure-gfm/map-1.png)
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/CAF/README_files/figure-commonmark/map-1.png)
 
 ## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
 
@@ -63,7 +63,24 @@ Data originally provided by:
 
 ## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
 
-_Soil analytical data summary not available for this dataset._
+Summary statistics for soil properties in this dataset, sourced from the [ossl-imports README](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CAF).
+
+| skim_variable | n_missing | mean | sd | p0 | p25 | p50 | p75 | p100 |
+|:---|---:|---:|---:|---:|---:|---:|---:|---:|
+| c.tot_usda.a622_w.pct | 184 | 1.98 | 2.51 | 0.08 | 0.89 | 1.38 | 2.31 | 45.54 |
+| n.tot_usda.a623_w.pct | 168 | 0.16 | 0.18 | 0.01 | 0.07 | 0.11 | 0.18 | 2.92 |
+| ph.h2o_usda.a268_index | 1317 | 5.10 | 0.94 | 3.32 | 4.51 | 4.84 | 5.36 | 8.56 |
+| clay.tot_usda.a334_w.pct | 1262 | 34.63 | 21.73 | 1.04 | 12.41 | 34.88 | 51.59 | 86.88 |
+| silt.tot_usda.c62_w.pct | 1309 | 23.85 | 14.97 | 4.00 | 13.48 | 19.28 | 29.87 | 74.75 |
+| sand.tot_usda.c60_w.pct | 1309 | 42.30 | 23.77 | 1.30 | 21.12 | 40.50 | 61.12 | 89.90 |
+| al.ext_aquaregia_g.kg | 1128 | 25.20 | 24.69 | 0.16 | 7.94 | 12.37 | 36.24 | 121.32 |
+| fe.ext_aquaregia_g.kg | 1128 | 38.84 | 39.55 | 0.34 | 10.15 | 20.13 | 59.62 | 352.66 |
+| ca.ext_aquaregia_mg.kg | 1128 | 634.26 | 1352.25 | 0.00 | 52.50 | 186.94 | 589.29 | 19922.26 |
+| mg.ext_aquaregia_mg.kg | 1128 | 800.40 | 1425.40 | 9.27 | 79.37 | 141.16 | 836.50 | 9500.41 |
+| k.ext_aquaregia_mg.kg | 1128 | 616.41 | 1020.57 | 7.96 | 77.21 | 163.31 | 795.00 | 8073.54 |
+| mn.ext_aquaregia_mg.kg | 1128 | 480.73 | 934.36 | 2.23 | 30.09 | 64.16 | 455.98 | 6468.45 |
+| na.ext_aquaregia_mg.kg | 1128 | 69.57 | 128.62 | 0.00 | 4.99 | 13.99 | 71.72 | 1213.29 |
+| p.ext_aquaregia_mg.kg | 1128 | 534.89 | 773.33 | 13.90 | 130.72 | 214.20 | 580.34 | 6679.17 |
 
 ## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
 

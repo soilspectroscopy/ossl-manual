@@ -2,7 +2,7 @@
   title: KSSL
   description: The USDA-NRCS NCSS Kellogg Soil Survey Laboratory (KSSL) soil libraries
     from the United States and other territories
-  sample_size: 90,000+
+  sample_size: 80,000+
   version: snapshot Jul 2022
   extent: national
   has_vnir: yes
@@ -102,7 +102,7 @@
 - order_id: 7
   title: NEON
   description: National Ecological Observatory Network (NEON) soil spectral library
-  sample_size: TBD
+  sample_size: <300
   version: first release (v1)
   extent: national
   has_vnir: no
@@ -132,9 +132,9 @@
 - order_id: 9
   title: PF_NZL
   description: Soil spectral library from Planted Forest soils of New Zealand (PF_NZL)
-  sample_size: <300
+  sample_size: <1,000
   version: first release (v1)
-  extent: regional
+  extent: national
   has_vnir: no
   has_nir: no
   has_mir: yes
@@ -143,7 +143,7 @@
   path: datasets/PF_NZL.html
   categories:
   - 'Spectral: mir'
-  - 'Extent: regional'
+  - 'Extent: national'
 - order_id: 10
   title: SRB
   description: Soil spectral library from Serbia (SRB)

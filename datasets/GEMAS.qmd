@@ -11,7 +11,7 @@ format:
 ---
 
 ```{=html}
-<div class="ossl-hero" style="background: #f1f3f5;">
+<div class="ossl-hero" style="background: #F4F3FE;">
   <div class="ossl-hero-logo">
     <img src="logo/GEMAS.png" alt="GEMAS logo">
   </div>
@@ -39,7 +39,7 @@ format:
 
 ## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/GEMAS/README_files/figure-gfm/map-1.png)
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/GEMAS/README_files/figure-commonmark/map-1.png)
 
 ## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
 
@@ -63,7 +63,14 @@ Data originally provided by:
 
 ## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
 
-_Soil analytical data summary not available for this dataset._
+Summary statistics for soil properties in this dataset, sourced from the [ossl-imports README](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/GEMAS).
+
+| skim_variable            | n_missing |  mean |   sd |  p0 |   p25 |   p50 |   p75 |  p100 |
+|:-------------------------|----------:|------:|-----:|----:|------:|------:|------:|------:|
+| c.tot_iso.10694_w.pct    |         0 |  3.91 | 4.94 |   0 |  1.64 |  2.68 |  4.34 | 50.10 |
+| oc_iso.10694_w.pct       |         0 |  3.27 | 4.76 |   0 |  1.40 |  2.10 |  3.40 | 49.00 |
+| cec_usda.a723_cmolc.kg   |         0 | 19.14 | 9.17 |   0 | 11.90 | 17.50 | 24.90 | 49.88 |
+| ph.cacl2_iso.10390_index |         0 |  5.78 | 1.14 |   0 |  4.81 |  5.62 |  6.97 |  8.06 |
 
 ## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
 

@@ -3,13 +3,9 @@ css: styles/cards.css
 listing:
   contents: datasets/cards.yml
   template: styles/cards-template.ejs.md
-  #type: grid
   sort: "order_id"
   categories: true
-  #grid-columns: 3
   page-size: 9
-  #image-height: 300px
-  #fields: [image, description, Sample size, Version, categories]
 engine: knitr
 ---
 

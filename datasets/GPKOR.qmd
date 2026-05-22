@@ -11,7 +11,7 @@ format:
 ---
 
 ```{=html}
-<div class="ossl-hero" style="background: #f1f3f5;">
+<div class="ossl-hero" style="background: #F4F4FF;">
   <div class="ossl-hero-logo">
     <img src="logo/GPKOR.png" alt="GPKOR logo">
   </div>
@@ -39,7 +39,7 @@ format:
 
 ## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Korean/README_files/figure-gfm/map-1.png)
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/GPKOR/README_files/figure-commonmark/map-1.png)
 
 ## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
 
@@ -63,7 +63,11 @@ Data originally provided by:
 
 ## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
 
-_Soil analytical data summary not available for this dataset._
+Summary statistics for soil properties in this dataset, sourced from the [ossl-imports README](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/GPKOR).
+
+| skim_variable      | n_missing | mean |  sd |  p0 | p25 | p50 | p75 | p100 |
+|:-------------------|----------:|-----:|----:|----:|----:|----:|----:|-----:|
+| oc_iso.10694_w.pct |       788 | 2.78 | 1.8 | 0.1 | 1.5 | 2.5 | 3.7 | 10.5 |
 
 ## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
 

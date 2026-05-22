@@ -11,7 +11,7 @@ format:
 ---
 
 ```{=html}
-<div class="ossl-hero" style="background: #f1f3f5;">
+<div class="ossl-hero" style="background: #E0FFE0;">
   <div class="ossl-hero-logo">
     <img src="logo/BESB.png" alt="BESB logo">
   </div>
@@ -39,7 +39,7 @@ format:
 
 ## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/BESB/README_files/figure-gfm/map-1.png)
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/BESB/README_files/figure-commonmark/map-1.png)
 
 ## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
 
@@ -65,7 +65,18 @@ Data originally provided by:
 
 ## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
 
-_Soil analytical data summary not available for this dataset._
+Summary statistics for soil properties in this dataset, sourced from the [ossl-imports README](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/BESB).
+
+| skim_variable             | n_missing |  mean |    sd |   p0 |   p25 |   p50 |   p75 |  p100 |
+|:--------------------------|----------:|------:|------:|-----:|------:|------:|------:|------:|
+| sand.tot_usda.c405_w.pct  |       959 | 54.17 | 28.26 | 0.47 | 26.70 | 61.40 | 80.00 | 95.40 |
+| clay.tot_usda.a334_w.pct  |       977 | 31.15 | 21.58 | 0.70 | 13.00 | 24.00 | 48.00 | 96.10 |
+| oc_iso.10694_w.pct        |      2737 |  1.31 |  0.89 | 0.08 |  0.70 |  1.06 |  1.68 |  7.49 |
+| ph.h2o_usda.a268_index    |     12601 |  4.64 |  0.61 | 3.10 |  4.10 |  4.60 |  5.10 |  7.00 |
+| ca.ext_usda.a722_cmolc.kg |      3588 |  1.95 |  2.27 | 0.00 |  0.60 |  1.30 |  2.43 | 25.20 |
+| mg.ext_usda.a724_cmolc.kg |      3585 |  0.84 |  1.05 | 0.01 |  0.28 |  0.60 |  1.04 | 18.62 |
+| na.ext_usda.a726_cmolc.kg |     15423 |  0.73 |  2.17 | 0.00 |  0.01 |  0.04 |  0.32 | 18.90 |
+| cec_usda.a723_cmolc.kg    |      3588 |  5.33 |  3.34 | 0.22 |  3.06 |  4.44 |  6.86 | 18.99 |
 
 ## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
 
