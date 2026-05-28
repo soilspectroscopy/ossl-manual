@@ -37,10 +37,6 @@ format:
 
 ```
 
-## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
-
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Geocradle/README_files/figure-commonmark/map-1.png)
-
 ## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
 
 Data originally provided by:
@@ -81,6 +77,10 @@ Summary statistics for soil properties in this dataset, sourced from the [ossl-i
 - **sampling depth:** various
 - **geography:** soil taxonomy, elevation
 
+## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Geocradle/README_files/figure-commonmark/map-1.png)
+
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> VNIR
 
 - **Acquisition mode:** Not available
@@ -95,6 +95,9 @@ Summary statistics for soil properties in this dataset, sourced from the [ossl-i
 - **Sample preparation:** Air-dried, Sieved < 2 mm
 - **Additional info:** Not available
 
+### VNIR plot
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Geocradle/README_files/figure-commonmark/visnir_plot-1.png)
 
 ## <i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References
 

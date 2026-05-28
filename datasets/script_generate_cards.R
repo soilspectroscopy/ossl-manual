@@ -1,16 +1,18 @@
 library(googlesheets4)
+library(readr)
 library(yaml)
 library(dplyr)
 library(purrr)
 library(colorspace)
 
 # ---------- 1. Authorize and read the Google Sheet ----------
-gs4_auth(email = "rzhi@woodwellclimate.org")
+# gs4_auth(email = "rzhi@woodwellclimate.org")
+# gs4_auth(email = "jsafanelli@woodwellclimate.org")
 
 sheet_id <- "19PuiJx1mzNaFff4odODNzS6ZB72lcz9UbcVPWCt8Gz8"
 raw_data <- read_sheet(sheet_id, sheet = "Access")
 
-write.csv(raw_data, "datasets/OSSL_v2_listed_libraries.csv", row.names = FALSE)
+readr::write_csv(raw_data, "datasets/OSSL_v2_listed_libraries.csv")
 
 # ---------- 2. Helpers ----------
 logo_folder <- "datasets/logo/"

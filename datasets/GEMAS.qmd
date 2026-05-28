@@ -37,10 +37,6 @@ format:
 
 ```
 
-## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
-
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/GEMAS/README_files/figure-commonmark/map-1.png)
-
 ## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
 
 Data originally provided by:
@@ -78,6 +74,10 @@ Summary statistics for soil properties in this dataset, sourced from the [ossl-i
 - **sampling depth:** top
 - **geography:** soil taxonomy
 
+## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/GEMAS/README_files/figure-commonmark/map-1.png)
+
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR
 
 - **Acquisition mode:** Not available
@@ -90,6 +90,9 @@ Summary statistics for soil properties in this dataset, sourced from the [ossl-i
 - **Sample preparation:** Oven dried, Sieved<2mm
 - **Additional info:** extended range KBr beam-splitter, a high intensity ceramic source, a deuterium triglycine-sulphate (DTGS) Peltier-cooled detector; Background reference scans were carried out using silicon carbide discs (PerkinElmer Life and Analytical Sciences Pty Ltd., Australia)
 
+### MIR plot
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/GEMAS/README_files/figure-commonmark/mir_plot-1.png)
 
 ## <i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References
 

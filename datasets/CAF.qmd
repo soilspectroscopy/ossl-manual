@@ -37,10 +37,6 @@ format:
 
 ```
 
-## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
-
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/CAF/README_files/figure-commonmark/map-1.png)
-
 ## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
 
 Data originally provided by:
@@ -88,6 +84,10 @@ Summary statistics for soil properties in this dataset, sourced from the [ossl-i
 - **sampling depth:** various
 - **geography:** landuse
 
+## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/CAF/README_files/figure-commonmark/map-1.png)
+
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR
 
 - **Acquisition mode:** Not available
@@ -102,7 +102,7 @@ Summary statistics for soil properties in this dataset, sourced from the [ossl-i
 
 ### MIR plot
 
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/CASSL/README_files/figure-gfm/mir_plot-1.png)
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/CAF/README_files/figure-commonmark/mir_plot-1.png)
 
 ## <i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References
 

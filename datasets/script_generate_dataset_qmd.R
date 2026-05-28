@@ -9,7 +9,8 @@ library(colorspace)
 # ============================================================================
 # 1. Authorize and read data sources
 # ============================================================================
-gs4_auth(email = "rzhi@woodwellclimate.org")
+# gs4_auth(email = "rzhi@woodwellclimate.org")
+gs4_auth(email = "jsafanelli@woodwellclimate.org")
 
 sheet_id <- "19PuiJx1mzNaFff4odODNzS6ZB72lcz9UbcVPWCt8Gz8"
 
@@ -450,10 +451,6 @@ format:
 quick_stats_html, '
 ```
 
-', section_heading("geo-alt", "Map"), '
-
-![](', map_url, ')
-
 ', section_heading("cloud-download", "Database access"), '
 
 ', db_access_text, '
@@ -465,6 +462,10 @@ quick_stats_html, '
 ', section_heading("pin-map", "Soil site information"), '
 
 ', soil_site_text, '
+
+', section_heading("geo-alt", "Map"), '
+
+![](', map_url, ')
 
 ', mir_text,
    vnir_text,
