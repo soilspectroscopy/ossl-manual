@@ -418,10 +418,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#map" id="toc-map" class="nav-link active" data-scroll-target="#map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</a></li>
-  <li><a href="#database-access" id="toc-database-access" class="nav-link" data-scroll-target="#database-access"><i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access</a></li>
+  <li><a href="#database-access" id="toc-database-access" class="nav-link active" data-scroll-target="#database-access"><i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access</a></li>
   <li><a href="#soil-laboratory-information" id="toc-soil-laboratory-information" class="nav-link" data-scroll-target="#soil-laboratory-information"><i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information</a></li>
   <li><a href="#soil-site-information" id="toc-soil-site-information" class="nav-link" data-scroll-target="#soil-site-information"><i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information</a></li>
+  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</a></li>
   <li><a href="#mir" id="toc-mir" class="nav-link" data-scroll-target="#mir"><i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References</a></li>
   </ul>
@@ -450,7 +450,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="ossl-hero" style="background: #f1f3f5;">
+<div class="ossl-hero" style="background: #DCFFDE;">
   <div class="ossl-hero-logo">
     <img src="logo/CAF.png" alt="CAF logo">
   </div>
@@ -474,10 +474,6 @@ ul.task-list li input[type="checkbox"] {
   <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">CC-BY</span></span>
 </div>
 
-<section id="map" class="level2">
-<h2 class="anchored" data-anchor-id="map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</h2>
-<p><img src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/CAF/README_files/figure-gfm/map-1.png" class="img-fluid"></p>
-</section>
 <section id="database-access" class="level2">
 <h2 class="anchored" data-anchor-id="database-access"><i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access</h2>
 <p>Data originally provided by:</p>
@@ -531,7 +527,189 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="soil-laboratory-information" class="level2">
 <h2 class="anchored" data-anchor-id="soil-laboratory-information"><i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information</h2>
-<p><em>Soil analytical data summary not available for this dataset.</em></p>
+<p>Summary statistics for soil properties in this dataset, sourced from the <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/CAF">ossl-imports README</a>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">c.tot_usda.a622_w.pct</td>
+<td style="text-align: right;">184</td>
+<td style="text-align: right;">1.98</td>
+<td style="text-align: right;">2.51</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">0.89</td>
+<td style="text-align: right;">1.38</td>
+<td style="text-align: right;">2.31</td>
+<td style="text-align: right;">45.54</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">n.tot_usda.a623_w.pct</td>
+<td style="text-align: right;">168</td>
+<td style="text-align: right;">0.16</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: right;">0.11</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">2.92</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ph.h2o_usda.a268_index</td>
+<td style="text-align: right;">1317</td>
+<td style="text-align: right;">5.10</td>
+<td style="text-align: right;">0.94</td>
+<td style="text-align: right;">3.32</td>
+<td style="text-align: right;">4.51</td>
+<td style="text-align: right;">4.84</td>
+<td style="text-align: right;">5.36</td>
+<td style="text-align: right;">8.56</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">clay.tot_usda.a334_w.pct</td>
+<td style="text-align: right;">1262</td>
+<td style="text-align: right;">34.63</td>
+<td style="text-align: right;">21.73</td>
+<td style="text-align: right;">1.04</td>
+<td style="text-align: right;">12.41</td>
+<td style="text-align: right;">34.88</td>
+<td style="text-align: right;">51.59</td>
+<td style="text-align: right;">86.88</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">silt.tot_usda.c62_w.pct</td>
+<td style="text-align: right;">1309</td>
+<td style="text-align: right;">23.85</td>
+<td style="text-align: right;">14.97</td>
+<td style="text-align: right;">4.00</td>
+<td style="text-align: right;">13.48</td>
+<td style="text-align: right;">19.28</td>
+<td style="text-align: right;">29.87</td>
+<td style="text-align: right;">74.75</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sand.tot_usda.c60_w.pct</td>
+<td style="text-align: right;">1309</td>
+<td style="text-align: right;">42.30</td>
+<td style="text-align: right;">23.77</td>
+<td style="text-align: right;">1.30</td>
+<td style="text-align: right;">21.12</td>
+<td style="text-align: right;">40.50</td>
+<td style="text-align: right;">61.12</td>
+<td style="text-align: right;">89.90</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">al.ext_aquaregia_g.kg</td>
+<td style="text-align: right;">1128</td>
+<td style="text-align: right;">25.20</td>
+<td style="text-align: right;">24.69</td>
+<td style="text-align: right;">0.16</td>
+<td style="text-align: right;">7.94</td>
+<td style="text-align: right;">12.37</td>
+<td style="text-align: right;">36.24</td>
+<td style="text-align: right;">121.32</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fe.ext_aquaregia_g.kg</td>
+<td style="text-align: right;">1128</td>
+<td style="text-align: right;">38.84</td>
+<td style="text-align: right;">39.55</td>
+<td style="text-align: right;">0.34</td>
+<td style="text-align: right;">10.15</td>
+<td style="text-align: right;">20.13</td>
+<td style="text-align: right;">59.62</td>
+<td style="text-align: right;">352.66</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ca.ext_aquaregia_mg.kg</td>
+<td style="text-align: right;">1128</td>
+<td style="text-align: right;">634.26</td>
+<td style="text-align: right;">1352.25</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">52.50</td>
+<td style="text-align: right;">186.94</td>
+<td style="text-align: right;">589.29</td>
+<td style="text-align: right;">19922.26</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mg.ext_aquaregia_mg.kg</td>
+<td style="text-align: right;">1128</td>
+<td style="text-align: right;">800.40</td>
+<td style="text-align: right;">1425.40</td>
+<td style="text-align: right;">9.27</td>
+<td style="text-align: right;">79.37</td>
+<td style="text-align: right;">141.16</td>
+<td style="text-align: right;">836.50</td>
+<td style="text-align: right;">9500.41</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">k.ext_aquaregia_mg.kg</td>
+<td style="text-align: right;">1128</td>
+<td style="text-align: right;">616.41</td>
+<td style="text-align: right;">1020.57</td>
+<td style="text-align: right;">7.96</td>
+<td style="text-align: right;">77.21</td>
+<td style="text-align: right;">163.31</td>
+<td style="text-align: right;">795.00</td>
+<td style="text-align: right;">8073.54</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mn.ext_aquaregia_mg.kg</td>
+<td style="text-align: right;">1128</td>
+<td style="text-align: right;">480.73</td>
+<td style="text-align: right;">934.36</td>
+<td style="text-align: right;">2.23</td>
+<td style="text-align: right;">30.09</td>
+<td style="text-align: right;">64.16</td>
+<td style="text-align: right;">455.98</td>
+<td style="text-align: right;">6468.45</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">na.ext_aquaregia_mg.kg</td>
+<td style="text-align: right;">1128</td>
+<td style="text-align: right;">69.57</td>
+<td style="text-align: right;">128.62</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">4.99</td>
+<td style="text-align: right;">13.99</td>
+<td style="text-align: right;">71.72</td>
+<td style="text-align: right;">1213.29</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">p.ext_aquaregia_mg.kg</td>
+<td style="text-align: right;">1128</td>
+<td style="text-align: right;">534.89</td>
+<td style="text-align: right;">773.33</td>
+<td style="text-align: right;">13.90</td>
+<td style="text-align: right;">130.72</td>
+<td style="text-align: right;">214.20</td>
+<td style="text-align: right;">580.34</td>
+<td style="text-align: right;">6679.17</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="soil-site-information" class="level2">
 <h2 class="anchored" data-anchor-id="soil-site-information"><i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information</h2>
@@ -540,6 +718,10 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>sampling depth:</strong> various</li>
 <li><strong>geography:</strong> landuse</li>
 </ul>
+</section>
+<section id="map" class="level2">
+<h2 class="anchored" data-anchor-id="map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</h2>
+<p><img src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/CAF/README_files/figure-commonmark/map-1.png" class="img-fluid"></p>
 </section>
 <section id="mir" class="level2">
 <h2 class="anchored" data-anchor-id="mir"><i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR</h2>
@@ -556,7 +738,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <section id="mir-plot" class="level3">
 <h3 class="anchored" data-anchor-id="mir-plot">MIR plot</h3>
-<p><img src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/CASSL/README_files/figure-gfm/mir_plot-1.png" class="img-fluid"></p>
+<p><img src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/CAF/README_files/figure-commonmark/mir_plot-1.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="references" class="level2">

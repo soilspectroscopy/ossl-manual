@@ -11,7 +11,7 @@ format:
 ---
 
 ```{=html}
-<div class="ossl-hero" style="background: #f1f3f5;">
+<div class="ossl-hero" style="background: #DEFFDB;">
   <div class="ossl-hero-logo">
     <img src="logo/MTQ.png" alt="MTQ logo">
   </div>
@@ -37,10 +37,6 @@ format:
 
 ```
 
-## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
-
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/Martinique/README_files/figure-gfm/map-1.png)
-
 ## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
 
 Data originally provided by:
@@ -63,13 +59,27 @@ Data originally provided by:
 
 ## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
 
-_Soil analytical data summary not available for this dataset._
+Summary statistics for soil properties in this dataset, sourced from the [ossl-imports README](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/MTQ).
+
+| skim_variable            | n_missing |  mean |    sd |   p0 |   p25 |   p50 |   p75 |  p100 |
+|:-------------------------|----------:|------:|------:|-----:|------:|------:|------:|------:|
+| oc_iso.10694_w.pct       |         0 |  1.60 |  1.19 | 0.09 |  0.74 |  1.33 |  2.08 |  8.85 |
+| n.tot_iso.13878_w.pct    |         0 |  0.15 |  0.10 | 0.01 |  0.07 |  0.13 |  0.18 |  0.62 |
+| clay.tot_iso.11277_w.pct |       222 | 43.10 | 21.94 | 3.30 | 21.00 | 50.40 | 61.30 | 82.40 |
+| bd_iso.11277_g.cm3       |         0 |  0.92 |  0.18 | 0.35 |  0.79 |  0.92 |  1.04 |  1.49 |
+| cf_iso.11464_w.pct       |       344 | 38.81 | 15.16 | 2.10 | 29.10 | 39.15 | 46.87 | 88.90 |
+| sand.tot_iso.11277_w.pct |       222 | 36.47 | 21.93 | 2.30 | 18.22 | 29.35 | 58.05 | 87.90 |
+| silt.tot_iso.11277_w.pct |       222 | 20.46 |  6.14 | 6.40 | 16.70 | 21.05 | 25.10 | 34.30 |
 
 ## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
 
 - **coordinates precision:** precise
 - **sampling depth:** various
 - **geography:** soil taxonomy, landuse
+
+## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/MTQ/README_files/figure-commonmark/map-1.png)
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> NIR
 
@@ -85,6 +95,9 @@ _Soil analytical data summary not available for this dataset._
 - **Sample preparation:** Oven-dried, Sieved < 2mm
 - **Additional info:** Not available
 
+### NIR plot
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/MTQ/README_files/figure-commonmark/nir_plot-1.png)
 
 ## <i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References
 

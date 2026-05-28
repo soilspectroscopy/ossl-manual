@@ -11,7 +11,7 @@ format:
 ---
 
 ```{=html}
-<div class="ossl-hero" style="background: #f1f3f5;">
+<div class="ossl-hero" style="background: #F2FDCF;">
   <div class="ossl-hero-logo">
     <img src="logo/AFSIS1.png" alt="AFSIS1 logo">
   </div>
@@ -37,10 +37,6 @@ format:
 
 ```
 
-## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
-
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/AFSIS/README_files/figure-gfm/map-1.png)
-
 ## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
 
 Data originally provided by:
@@ -63,36 +59,40 @@ Data originally provided by:
 
 ## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
 
-Summary statistics for soil properties in this dataset, sourced from the [ossl-imports README](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS).
+Summary statistics for soil properties in this dataset, sourced from the [ossl-imports README](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS1).
 
-| skim\_variable             | n\_missing |    mean |      sd |   p0 |    p25 |    p50 |     p75 |     p100 |
-|:---------------------------|-----------:|--------:|--------:|-----:|-------:|-------:|--------:|---------:|
-| ec\_usda.a364\_ds.m        |          0 |    0.13 |    0.39 | 0.01 |   0.03 |   0.06 |    0.11 |     8.73 |
-| al.ext\_usda.a1056\_mg.kg  |          0 |  821.58 |  466.22 | 1.67 | 457.00 | 733.00 | 1109.50 |  3041.00 |
-| b.ext\_mel3\_mg.kg         |          2 |    0.44 |    1.79 | 0.00 |   0.00 |   0.10 |    0.36 |    55.09 |
-| ca.ext\_usda.a1059\_mg.kg  |          0 | 1841.05 | 3438.81 | 0.00 | 290.00 | 634.00 | 1693.50 | 35200.00 |
-| cu.ext\_usda.a1063\_mg.kg  |          0 |    1.77 |    2.06 | 0.00 |   0.50 |   1.12 |    2.42 |    23.70 |
-| fe.ext\_usda.a1064\_mg.kg  |          0 |  112.11 |   81.46 | 1.26 |  60.05 |  91.90 |  139.10 |   981.00 |
-| k.ext\_usda.a1065\_mg.kg   |          0 |  173.99 |  289.98 | 0.00 |  51.48 |  91.41 |  177.85 |  5047.00 |
-| mg.ext\_usda.a1066\_mg.kg  |          0 |  311.58 |  416.64 | 0.00 |  79.15 | 159.00 |  383.95 |  4740.00 |
-| mn.ext\_usda.a1067\_mg.kg  |          0 |   98.93 |  100.63 | 0.57 |  24.00 |  69.40 |  139.00 |   686.60 |
-| na.ext\_usda.a1068\_mg.kg  |          6 |  140.34 | 1169.35 | 0.00 |  22.30 |  34.30 |   50.92 | 31800.00 |
-| p.ext\_usda.a652\_mg.kg    |          0 |   12.30 |   28.75 | 0.00 |   2.55 |   4.97 |   10.09 |   396.00 |
-| s.ext\_mel3\_mg.kg         |          2 |   24.87 |  165.80 | 0.62 |   5.00 |   7.62 |   12.40 |  3940.00 |
-| zn.ext\_usda.a1073\_mg.kg  |          0 |    1.53 |    1.77 | 0.00 |   0.71 |   1.10 |    1.75 |    36.51 |
-| ph.h2o\_usda.a268\_index   |          0 |    6.21 |    1.07 | 3.61 |   5.44 |   6.08 |    6.69 |     9.86 |
-| n.tot\_usda.a623\_w.pct    |          2 |    0.08 |    0.08 | 0.00 |   0.03 |   0.05 |    0.10 |     0.66 |
-| c.tot\_usda.a622\_w.pct    |          2 |    1.24 |    1.34 | 0.08 |   0.42 |   0.78 |    1.51 |    11.29 |
-| oc\_usda.c1059\_w.pct      |          2 |    1.18 |    1.28 | 0.07 |   0.39 |   0.73 |    1.46 |    10.93 |
-| clay.tot\_usda.a334\_w.pct |          8 |   42.99 |   24.09 | 0.32 |  22.16 |  40.16 |   63.13 |   100.00 |
-| silt.tot\_usda.c62\_w.pct  |         14 |   17.73 |   10.05 | 0.34 |  10.00 |  16.48 |   23.42 |    57.27 |
-| sand.tot\_usda.c60\_w.pct  |         13 |   39.50 |   26.20 | 0.12 |  15.72 |  36.96 |   60.31 |   100.00 |
+| skim_variable | n_missing | mean | sd | p0 | p25 | p50 | p75 | p100 |
+|:---|---:|---:|---:|---:|---:|---:|---:|---:|
+| ec_usda.a364_ds.m | 0 | 0.13 | 0.39 | 0.01 | 0.03 | 0.06 | 0.11 | 8.73 |
+| al.ext_usda.a1056_mg.kg | 0 | 821.58 | 466.22 | 1.67 | 457.00 | 733.00 | 1109.50 | 3041.00 |
+| b.ext_mel3_mg.kg | 2 | 0.44 | 1.79 | 0.00 | 0.00 | 0.10 | 0.36 | 55.09 |
+| ca.ext_usda.a1059_mg.kg | 0 | 1841.05 | 3438.81 | 0.00 | 290.00 | 634.00 | 1693.50 | 35200.00 |
+| cu.ext_usda.a1063_mg.kg | 0 | 1.77 | 2.06 | 0.00 | 0.50 | 1.12 | 2.42 | 23.70 |
+| fe.ext_usda.a1064_mg.kg | 0 | 112.11 | 81.46 | 1.26 | 60.05 | 91.90 | 139.10 | 981.00 |
+| k.ext_usda.a1065_mg.kg | 0 | 173.99 | 289.98 | 0.00 | 51.48 | 91.41 | 177.85 | 5047.00 |
+| mg.ext_usda.a1066_mg.kg | 0 | 311.58 | 416.64 | 0.00 | 79.15 | 159.00 | 383.95 | 4740.00 |
+| mn.ext_usda.a1067_mg.kg | 0 | 98.93 | 100.63 | 0.57 | 24.00 | 69.40 | 139.00 | 686.60 |
+| na.ext_usda.a1068_mg.kg | 6 | 140.34 | 1169.35 | 0.00 | 22.30 | 34.30 | 50.92 | 31800.00 |
+| p.ext_usda.a652_mg.kg | 0 | 12.30 | 28.75 | 0.00 | 2.55 | 4.97 | 10.09 | 396.00 |
+| s.ext_mel3_mg.kg | 2 | 24.87 | 165.80 | 0.62 | 5.00 | 7.62 | 12.40 | 3940.00 |
+| zn.ext_usda.a1073_mg.kg | 0 | 1.53 | 1.77 | 0.00 | 0.71 | 1.10 | 1.75 | 36.51 |
+| ph.h2o_usda.a268_index | 0 | 6.21 | 1.07 | 3.61 | 5.44 | 6.08 | 6.69 | 9.86 |
+| n.tot_usda.a623_w.pct | 2 | 0.08 | 0.08 | 0.00 | 0.03 | 0.05 | 0.10 | 0.66 |
+| c.tot_usda.a622_w.pct | 2 | 1.24 | 1.34 | 0.08 | 0.42 | 0.78 | 1.51 | 11.29 |
+| oc_usda.c1059_w.pct | 2 | 1.18 | 1.28 | 0.07 | 0.39 | 0.73 | 1.46 | 10.93 |
+| clay.tot_usda.a334_w.pct | 8 | 42.99 | 24.09 | 0.32 | 22.16 | 40.16 | 63.13 | 100.00 |
+| silt.tot_usda.c62_w.pct | 14 | 17.73 | 10.05 | 0.34 | 10.00 | 16.48 | 23.42 | 57.27 |
+| sand.tot_usda.c60_w.pct | 13 | 39.50 | 26.20 | 0.12 | 15.72 | 36.96 | 60.31 | 100.00 |
 
 ## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
 
 - **coordinates precision:** precise, country
 - **sampling depth:** various
 - **geography:** soil taxonomy, landuse
+
+## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/AFSIS1/README_files/figure-commonmark/map-1.png)
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR
 
@@ -108,7 +108,7 @@ Summary statistics for soil properties in this dataset, sourced from the [ossl-i
 
 ### MIR plot
 
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/AFSIS/README_files/figure-gfm/mir_plot-1.png)
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/AFSIS1/README_files/figure-commonmark/mir_plot-1.png)
 
 ## <i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References
 

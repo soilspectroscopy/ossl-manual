@@ -11,7 +11,7 @@ format:
 ---
 
 ```{=html}
-<div class="ossl-hero" style="background: #f1f3f5;">
+<div class="ossl-hero" style="background: #FFF5EB;">
   <div class="ossl-hero-logo">
     <img src="logo/AFSIS2.png" alt="AFSIS2 logo">
   </div>
@@ -37,10 +37,6 @@ format:
 
 ```
 
-## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
-
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/AFSIS2/README_files/figure-gfm/map-1.png)
-
 ## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
 
 Data originally provided by:
@@ -65,28 +61,32 @@ Data originally provided by:
 
 Summary statistics for soil properties in this dataset, sourced from the [ossl-imports README](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AFSIS2).
 
-| skim\_variable            | n\_missing |    mean |      sd |    p0 |    p25 |    p50 |     p75 |     p100 |
-|:--------------------------|-----------:|--------:|--------:|------:|-------:|-------:|--------:|---------:|
-| ph.h2o\_usda.a268\_index  |         11 |    6.31 |    0.80 |  4.10 |   5.80 |   6.34 |    6.76 |     8.72 |
-| al.ext\_usda.a1056\_mg.kg |          1 |  766.22 |  321.64 | 18.00 | 521.25 | 769.50 |  956.00 |  1851.00 |
-| b.ext\_mel3\_mg.kg        |        526 |    1.79 |    0.70 |  0.30 |   1.00 |   2.00 |    2.00 |     4.00 |
-| ca.ext\_usda.a1059\_mg.kg |          1 | 1484.03 | 1801.00 | 12.00 | 404.00 | 858.50 | 1961.50 | 21565.00 |
-| cu.ext\_usda.a1063\_mg.kg |         15 |    2.22 |    2.41 |  0.03 |   0.53 |   1.40 |    3.16 |    18.19 |
-| fe.ext\_usda.a1064\_mg.kg |          1 |  123.62 |   77.15 | 13.20 |  78.10 | 103.05 |  145.65 |   578.00 |
-| k.ext\_usda.a1065\_mg.kg  |          2 |  280.76 |  426.69 |  5.00 |  51.00 | 125.00 |  316.00 |  3600.00 |
-| mg.ext\_usda.a1066\_mg.kg |          1 |  304.29 |  365.74 |  2.00 |  89.00 | 190.00 |  368.75 |  3241.00 |
-| mn.ext\_usda.a1067\_mg.kg |          1 |  154.51 |  120.37 |  0.70 |  58.70 | 129.55 |  225.90 |   741.10 |
-| s.ext\_mel3\_mg.kg        |          9 |    8.57 |   18.51 |  1.00 |   3.00 |   5.00 |    8.00 |   266.00 |
-| zn.ext\_usda.a1073\_mg.kg |         29 |    1.79 |    3.17 |  0.06 |   0.40 |   0.90 |    2.10 |    48.79 |
-| n.tot\_usda.a623\_w.pct   |          0 |    0.10 |    0.08 |  0.01 |   0.05 |   0.08 |    0.13 |     0.53 |
-| c.tot\_usda.a622\_w.pct   |          0 |    1.28 |    1.04 |  0.10 |   0.58 |   0.99 |    1.66 |     7.15 |
-| oc\_usda.c1059\_w.pct     |          0 |    1.26 |    1.01 |  0.10 |   0.58 |   0.99 |    1.62 |     7.09 |
+| skim_variable | n_missing | mean | sd | p0 | p25 | p50 | p75 | p100 |
+|:---|---:|---:|---:|---:|---:|---:|---:|---:|
+| ph.h2o_usda.a268_index | 11 | 6.31 | 0.80 | 4.10 | 5.80 | 6.34 | 6.76 | 8.72 |
+| al.ext_usda.a1056_mg.kg | 1 | 766.22 | 321.64 | 18.00 | 521.25 | 769.50 | 956.00 | 1851.00 |
+| b.ext_mel3_mg.kg | 526 | 1.79 | 0.70 | 0.30 | 1.00 | 2.00 | 2.00 | 4.00 |
+| ca.ext_usda.a1059_mg.kg | 1 | 1484.03 | 1801.00 | 12.00 | 404.00 | 858.50 | 1961.50 | 21565.00 |
+| cu.ext_usda.a1063_mg.kg | 15 | 2.22 | 2.41 | 0.03 | 0.53 | 1.40 | 3.16 | 18.19 |
+| fe.ext_usda.a1064_mg.kg | 1 | 123.62 | 77.15 | 13.20 | 78.10 | 103.05 | 145.65 | 578.00 |
+| k.ext_usda.a1065_mg.kg | 2 | 280.76 | 426.69 | 5.00 | 51.00 | 125.00 | 316.00 | 3600.00 |
+| mg.ext_usda.a1066_mg.kg | 1 | 304.29 | 365.74 | 2.00 | 89.00 | 190.00 | 368.75 | 3241.00 |
+| mn.ext_usda.a1067_mg.kg | 1 | 154.51 | 120.37 | 0.70 | 58.70 | 129.55 | 225.90 | 741.10 |
+| s.ext_mel3_mg.kg | 9 | 8.57 | 18.51 | 1.00 | 3.00 | 5.00 | 8.00 | 266.00 |
+| zn.ext_usda.a1073_mg.kg | 29 | 1.79 | 3.17 | 0.06 | 0.40 | 0.90 | 2.10 | 48.79 |
+| n.tot_usda.a623_w.pct | 0 | 0.10 | 0.08 | 0.01 | 0.05 | 0.08 | 0.13 | 0.53 |
+| c.tot_usda.a622_w.pct | 0 | 1.28 | 1.04 | 0.10 | 0.58 | 0.99 | 1.66 | 7.15 |
+| oc_usda.c1059_w.pct | 0 | 1.26 | 1.01 | 0.10 | 0.58 | 0.99 | 1.62 | 7.09 |
 
 ## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
 
 - **coordinates precision:** precise, country
 - **sampling depth:** various
 - **geography:** soil taxonomy, landuse
+
+## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/AFSIS2/README_files/figure-commonmark/map-1.png)
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR
 
@@ -102,7 +102,7 @@ Summary statistics for soil properties in this dataset, sourced from the [ossl-i
 
 ### MIR plot
 
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/AFSIS2/README_files/figure-gfm/mir_plot-1.png)
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/AFSIS2/README_files/figure-commonmark/mir_plot-1.png)
 
 ## <i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References
 

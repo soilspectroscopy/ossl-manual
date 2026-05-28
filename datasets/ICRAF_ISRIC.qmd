@@ -11,7 +11,7 @@ format:
 ---
 
 ```{=html}
-<div class="ossl-hero" style="background: #f1f3f5;">
+<div class="ossl-hero" style="background: #FEF6E2;">
   <div class="ossl-hero-logo">
     <img src="logo/ICRAF_ISRIC.png" alt="ICRAF_ISRIC logo">
   </div>
@@ -36,10 +36,6 @@ format:
 </div>
 
 ```
-
-## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
-
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/ICRAF_ISRIC/README_files/figure-gfm/map-1.png)
 
 ## <i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access
 
@@ -67,32 +63,36 @@ Data originally provided by:
 
 Summary statistics for soil properties in this dataset, sourced from the [ossl-imports README](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/ICRAF_ISRIC).
 
-| skim\_variable               | n\_missing |  mean |    sd |   p0 |   p25 |   p50 |   p75 |   p100 |
-|:-----------------------------|-----------:|------:|------:|-----:|------:|------:|------:|-------:|
-| ph.h2o\_usda.a268\_index     |        297 |  6.11 |  1.40 | 3.00 |  5.00 |  5.90 |  7.10 |  10.50 |
-| ph.cacl2\_usda.a481\_index   |       4039 |  4.99 |  1.26 | 3.10 |  4.00 |  5.10 |  6.05 |   7.90 |
-| caco3\_usda.a54\_w.pct       |       2956 |  9.94 | 16.41 | 0.00 |  1.00 |  2.60 | 11.60 |  99.70 |
-| oc\_usda.c1059\_w.pct        |        373 |  1.20 |  2.66 | 0.00 |  0.22 |  0.48 |  1.20 |  60.00 |
-| ca.ext\_usda.a722\_cmolc.kg  |        401 | 10.81 | 15.58 | 0.00 |  0.40 |  3.60 | 14.90 | 168.20 |
-| mg.ext\_usda.a724\_cmolc.kg  |        393 |  2.81 |  4.69 | 0.00 |  0.20 |  1.00 |  3.40 |  68.00 |
-| na.ext\_usda.a726\_cmolc.kg  |        409 |  0.62 |  2.39 | 0.00 |  0.00 |  0.10 |  0.30 |  31.60 |
-| k.ext\_usda.a725\_cmolc.kg   |        399 |  0.33 |  0.57 | 0.00 |  0.10 |  0.20 |  0.40 |   9.80 |
-| acidity\_usda.a795\_cmolc.kg |       2562 |  1.99 |  2.95 | 0.00 |  0.20 |  0.90 |  2.60 |  25.50 |
-| al.ext\_usda.a69\_cmolc.kg   |       2532 |  1.58 |  2.56 | 0.00 |  0.00 |  0.70 |  2.10 |  25.30 |
-| cec\_usda.a723\_cmolc.kg     |        419 | 16.27 | 16.41 | 0.00 |  5.20 | 11.50 | 21.60 | 189.60 |
-| sand.tot\_usda.c60\_w.pct    |        392 | 38.24 | 29.15 | 0.00 | 11.10 | 33.00 | 61.20 |  99.60 |
-| silt.tot\_usda.c62\_w.pct    |        339 | 29.22 | 20.39 | 0.00 | 13.00 | 25.00 | 42.50 | 256.00 |
-| clay.tot\_usda.a334\_w.pct   |        333 | 32.60 | 22.27 | 0.00 | 14.70 | 30.10 | 47.00 |  96.80 |
-| bd\_usda.a21\_g.cm3          |       3074 |  1.26 |  0.29 | 0.28 |  1.10 |  1.31 |  1.48 |   1.89 |
-| wr.10kPa\_usda.a8\_w.pct     |       3145 | 36.77 | 13.27 | 4.40 | 28.60 | 36.45 | 45.62 |  77.30 |
-| wr.33kPa\_usda.a9\_w.pct     |       3150 | 31.82 | 13.34 | 2.30 | 22.90 | 31.40 | 41.50 |  71.40 |
-| wr.1500kPa\_usda.a417\_w.pct |       3102 | 21.74 | 11.44 | 0.10 | 12.90 | 21.90 | 29.55 |  56.40 |
+| skim_variable              | n_missing |  mean |    sd |   p0 |   p25 |   p50 |   p75 |   p100 |
+|:---------------------------|----------:|------:|------:|-----:|------:|------:|------:|-------:|
+| ph.h2o_usda.a268_index     |       297 |  6.11 |  1.40 | 3.00 |  5.00 |  5.90 |  7.10 |  10.50 |
+| ph.cacl2_usda.a481_index   |      4039 |  4.99 |  1.26 | 3.10 |  4.00 |  5.10 |  6.05 |   7.90 |
+| caco3_usda.a54_w.pct       |      2956 |  9.94 | 16.41 | 0.00 |  1.00 |  2.60 | 11.60 |  99.70 |
+| oc_usda.c1059_w.pct        |       373 |  1.20 |  2.66 | 0.00 |  0.22 |  0.48 |  1.20 |  60.00 |
+| ca.ext_usda.a722_cmolc.kg  |       401 | 10.81 | 15.58 | 0.00 |  0.40 |  3.60 | 14.90 | 168.20 |
+| mg.ext_usda.a724_cmolc.kg  |       393 |  2.81 |  4.69 | 0.00 |  0.20 |  1.00 |  3.40 |  68.00 |
+| na.ext_usda.a726_cmolc.kg  |       409 |  0.62 |  2.39 | 0.00 |  0.00 |  0.10 |  0.30 |  31.60 |
+| k.ext_usda.a725_cmolc.kg   |       399 |  0.33 |  0.57 | 0.00 |  0.10 |  0.20 |  0.40 |   9.80 |
+| acidity_usda.a795_cmolc.kg |      2562 |  1.99 |  2.95 | 0.00 |  0.20 |  0.90 |  2.60 |  25.50 |
+| al.ext_usda.a69_cmolc.kg   |      2532 |  1.58 |  2.56 | 0.00 |  0.00 |  0.70 |  2.10 |  25.30 |
+| cec_usda.a723_cmolc.kg     |       419 | 16.27 | 16.41 | 0.00 |  5.20 | 11.50 | 21.60 | 189.60 |
+| sand.tot_usda.c60_w.pct    |       392 | 38.24 | 29.15 | 0.00 | 11.10 | 33.00 | 61.20 |  99.60 |
+| silt.tot_usda.c62_w.pct    |       339 | 29.22 | 20.39 | 0.00 | 13.00 | 25.00 | 42.50 | 256.00 |
+| clay.tot_usda.a334_w.pct   |       333 | 32.60 | 22.27 | 0.00 | 14.70 | 30.10 | 47.00 |  96.80 |
+| bd_usda.a21_g.cm3          |      3074 |  1.26 |  0.29 | 0.28 |  1.10 |  1.31 |  1.48 |   1.89 |
+| wr.10kPa_usda.a8_w.pct     |      3145 | 36.77 | 13.27 | 4.40 | 28.60 | 36.45 | 45.62 |  77.30 |
+| wr.33kPa_usda.a9_w.pct     |      3150 | 31.82 | 13.34 | 2.30 | 22.90 | 31.40 | 41.50 |  71.40 |
+| wr.1500kPa_usda.a417_w.pct |      3102 | 21.74 | 11.44 | 0.10 | 12.90 | 21.90 | 29.55 |  56.40 |
 
 ## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
 
 - **coordinates precision:** precise, country
 - **sampling depth:** various
 - **geography:** landuse
+
+## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
+
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/ICRAF_ISRIC/README_files/figure-commonmark/map-1.png)
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR
 
@@ -108,7 +108,7 @@ Summary statistics for soil properties in this dataset, sourced from the [ossl-i
 
 ### MIR plot
 
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/ICRAF_ISRIC/README_files/figure-gfm/mir_plot-1.png)
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/ICRAF_ISRIC/README_files/figure-commonmark/mir_plot-1.png)
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> VNIR
 
@@ -126,7 +126,7 @@ Summary statistics for soil properties in this dataset, sourced from the [ossl-i
 
 ### VNIR plot
 
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/ICRAF_ISRIC/README_files/figure-gfm/visnir_plot-1.png)
+![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/ICRAF_ISRIC/README_files/figure-commonmark/visnir_plot-1.png)
 
 ## <i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References
 

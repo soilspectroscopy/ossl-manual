@@ -418,10 +418,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#map" id="toc-map" class="nav-link active" data-scroll-target="#map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</a></li>
-  <li><a href="#database-access" id="toc-database-access" class="nav-link" data-scroll-target="#database-access"><i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access</a></li>
+  <li><a href="#database-access" id="toc-database-access" class="nav-link active" data-scroll-target="#database-access"><i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access</a></li>
   <li><a href="#soil-laboratory-information" id="toc-soil-laboratory-information" class="nav-link" data-scroll-target="#soil-laboratory-information"><i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information</a></li>
   <li><a href="#soil-site-information" id="toc-soil-site-information" class="nav-link" data-scroll-target="#soil-site-information"><i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information</a></li>
+  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</a></li>
   <li><a href="#mir" id="toc-mir" class="nav-link" data-scroll-target="#mir"><i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References</a></li>
   </ul>
@@ -450,7 +450,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="ossl-hero" style="background: #f1f3f5;">
+<div class="ossl-hero" style="background: #F4F3FE;">
   <div class="ossl-hero-logo">
     <img src="logo/GEMAS.png" alt="GEMAS logo">
   </div>
@@ -474,10 +474,6 @@ ul.task-list li input[type="checkbox"] {
   <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">Other (Custom)</span></span>
 </div>
 
-<section id="map" class="level2">
-<h2 class="anchored" data-anchor-id="map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</h2>
-<p><img src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/GEMAS/README_files/figure-gfm/map-1.png" class="img-fluid"></p>
-</section>
 <section id="database-access" class="level2">
 <h2 class="anchored" data-anchor-id="database-access"><i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access</h2>
 <p>Data originally provided by:</p>
@@ -531,7 +527,79 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="soil-laboratory-information" class="level2">
 <h2 class="anchored" data-anchor-id="soil-laboratory-information"><i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information</h2>
-<p><em>Soil analytical data summary not available for this dataset.</em></p>
+<p>Summary statistics for soil properties in this dataset, sourced from the <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/GEMAS">ossl-imports README</a>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 13%">
+<col style="width: 8%">
+<col style="width: 7%">
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">c.tot_iso.10694_w.pct</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3.91</td>
+<td style="text-align: right;">4.94</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.64</td>
+<td style="text-align: right;">2.68</td>
+<td style="text-align: right;">4.34</td>
+<td style="text-align: right;">50.10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">oc_iso.10694_w.pct</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3.27</td>
+<td style="text-align: right;">4.76</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.40</td>
+<td style="text-align: right;">2.10</td>
+<td style="text-align: right;">3.40</td>
+<td style="text-align: right;">49.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">cec_usda.a723_cmolc.kg</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">19.14</td>
+<td style="text-align: right;">9.17</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11.90</td>
+<td style="text-align: right;">17.50</td>
+<td style="text-align: right;">24.90</td>
+<td style="text-align: right;">49.88</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ph.cacl2_iso.10390_index</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5.78</td>
+<td style="text-align: right;">1.14</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4.81</td>
+<td style="text-align: right;">5.62</td>
+<td style="text-align: right;">6.97</td>
+<td style="text-align: right;">8.06</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="soil-site-information" class="level2">
 <h2 class="anchored" data-anchor-id="soil-site-information"><i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information</h2>
@@ -540,6 +608,10 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>sampling depth:</strong> top</li>
 <li><strong>geography:</strong> soil taxonomy</li>
 </ul>
+</section>
+<section id="map" class="level2">
+<h2 class="anchored" data-anchor-id="map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</h2>
+<p><img src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/GEMAS/README_files/figure-commonmark/map-1.png" class="img-fluid"></p>
 </section>
 <section id="mir" class="level2">
 <h2 class="anchored" data-anchor-id="mir"><i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR</h2>
@@ -554,6 +626,10 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Sample preparation:</strong> Oven dried, Sieved&lt;2mm</li>
 <li><strong>Additional info:</strong> extended range KBr beam-splitter, a high intensity ceramic source, a deuterium triglycine-sulphate (DTGS) Peltier-cooled detector; Background reference scans were carried out using silicon carbide discs (PerkinElmer Life and Analytical Sciences Pty Ltd., Australia)</li>
 </ul>
+<section id="mir-plot" class="level3">
+<h3 class="anchored" data-anchor-id="mir-plot">MIR plot</h3>
+<p><img src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/GEMAS/README_files/figure-commonmark/mir_plot-1.png" class="img-fluid"></p>
+</section>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references"><i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References</h2>
