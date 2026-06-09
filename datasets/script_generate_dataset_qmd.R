@@ -1,3 +1,4 @@
+#install.packages("arrow")
 library(googlesheets4)
 library(dplyr)
 library(purrr)
@@ -5,20 +6,26 @@ library(stringr)
 library(readr)
 library(httr)
 library(colorspace)
+library(arrow)
 
 # ============================================================================
 # 1. Authorize and read data sources
 # ============================================================================
-# gs4_auth(email = "rzhi@woodwellclimate.org")
-gs4_auth(email = "jsafanelli@woodwellclimate.org")
+gs4_auth(email = "rzhi@woodwellclimate.org")
 
 sheet_id <- "19PuiJx1mzNaFff4odODNzS6ZB72lcz9UbcVPWCt8Gz8"
 
 access    <- read_sheet(sheet_id, sheet = "Access")
 soil_site <- read_sheet(sheet_id, sheet = "Soil_site")
+soil_lab  <- read_sheet(sheet_id, sheet = "Soil_lab")
 mir       <- read_sheet(sheet_id, sheet = "MIR")
 vnir      <- read_sheet(sheet_id, sheet = "VNIR")
 nir       <- read_sheet(sheet_id, sheet = "NIR")
+
+# OSSL property code descriptions (separate spreadsheet)
+coding_sheet_id <- "1KnPj2eUqrAZ_5JzEyXzZ-qvK8h6EcwQwRlR2-FXnbqg"
+ossl_codes_soillab <- read_sheet(coding_sheet_id,
+                                 sheet = "ossl_level0_names_soillab")
 
 dataset_files <- read_csv(
   "datasets/ossl_individual_datasets_urls_v1.3.csv",
@@ -50,6 +57,183 @@ safe_value <- function(x, default = "Not available") {
   }
   as.character(x[[1]])
 }
+
+# ----- Cache directory for soilsite parquet files ---------------------------
+soilsite_cache_dir <- "cache/soilsite"
+if (!dir.exists(soilsite_cache_dir)) {
+  dir.create(soilsite_cache_dir, recursive = TRUE)
+}
+
+# A column is "populated" if it has at least one non-NA, non-empty value.
+is_populated_column <- function(col) {
+  if (length(col) == 0) return(FALSE)
+  if (is.numeric(col) || is.integer(col) || is.logical(col)) {
+    return(any(!is.na(col)))
+  }
+  any(!is.na(col) & nzchar(trimws(as.character(col))))
+}
+
+# Fetch this dataset's soilsite parquet (with local caching) and return
+# the total column count plus the list of populated column names.
+fetch_soilsite_columns <- function(code, dataset_files) {
+  url_row <- dataset_files |>
+    filter(dataset_code == code,
+           ossl_file    == "ossl_soilsite_v1.3.parquet")
+  if (nrow(url_row) == 0) return(NULL)
+  
+  url        <- url_row$public_url[[1]]
+  cache_path <- file.path(soilsite_cache_dir, paste0(code, "_soilsite.parquet"))
+  
+  if (!file.exists(cache_path)) {
+    ok <- tryCatch({
+      download.file(url, cache_path, mode = "wb", quiet = TRUE)
+      TRUE
+    }, error = function(e) {
+      message("Could not download soilsite parquet for ", code, ": ", e$message)
+      FALSE
+    })
+    if (!ok || !file.exists(cache_path)) return(NULL)
+  }
+  
+  df <- tryCatch(
+    arrow::read_parquet(cache_path),
+    error = function(e) {
+      message("Could not read soilsite parquet for ", code, ": ", e$message)
+      NULL
+    }
+  )
+  if (is.null(df) || nrow(df) == 0) return(NULL)
+  
+  list(
+    total_columns     = ncol(df),
+    populated_columns = names(df)[vapply(df, is_populated_column, logical(1))]
+  )
+}
+
+
+
+# Escape special characters for safe inclusion in HTML attributes/text
+html_escape <- function(x) {
+  if (is.null(x) || length(x) == 0) return("")
+  x <- as.character(x)
+  if (is.na(x) || x == "NULL") return("")
+  x <- gsub("&",  "&amp;",  x, fixed = TRUE)
+  x <- gsub("<",  "&lt;",   x, fixed = TRUE)
+  x <- gsub(">",  "&gt;",   x, fixed = TRUE)
+  x <- gsub("\"", "&quot;", x, fixed = TRUE)
+  x <- gsub("'",  "&#39;",  x, fixed = TRUE)
+  x
+}
+
+# Build a named-list lookup: ossl_name -> list(analyte, description, unit, unit_description)
+build_code_lookup <- function(df) {
+  out <- list()
+  for (i in seq_len(nrow(df))) {
+    name <- trimws(as.character(df$ossl_name[[i]]))
+    if (!is.na(name) && nchar(name) > 0) {
+      out[[name]] <- list(
+        analyte          = as.character(df$analyte[[i]]),
+        method           = as.character(df$ossl_method[[i]]),
+        unit             = as.character(df$ossl_unit[[i]])
+      )
+    }
+  }
+  out
+}
+
+# Build the HTML for one OSSL code with its tooltip popover
+build_tooltip_span <- function(code, info) {
+  analyte <- html_escape(info$analyte)
+  method  <- html_escape(info$method)
+  unit    <- html_escape(info$unit)
+  
+  paste0(
+    '<span class="ossl-tt">', html_escape(code),
+    '<span class="ossl-tt-pop">',
+    if (nchar(analyte) > 0) paste0('<span class="tt-analyte">', analyte, '</span>') else '',
+    if (nchar(method)  > 0) paste0('<span class="tt-desc">Method: <code>', method, '</code></span>') else '',
+    if (nchar(unit)    > 0) paste0('<span class="tt-unit">Unit: <code>', unit, '</code></span>')   else '',
+    '</span>',
+    '</span>'
+  )
+}
+
+# Parse a markdown pipe-table row into trimmed cell strings
+parse_pipe_row <- function(line) {
+  line <- trimws(line)
+  line <- sub("^\\|", "", line)
+  line <- sub("\\|$", "", line)
+  cells <- strsplit(line, "|", fixed = TRUE)[[1]]
+  trimws(cells)
+}
+
+# Detect alignment from a separator row like |:---|---:|:-:|
+parse_alignments <- function(sep_cells) {
+  vapply(sep_cells, function(s) {
+    s <- trimws(s)
+    left  <- startsWith(s, ":")
+    right <- endsWith(s, ":")
+    if (right && !left)      "right"
+    else if (left && right)  "center"
+    else                     "left"
+  }, character(1), USE.NAMES = FALSE)
+}
+
+# Convert a markdown pipe table to an HTML table, injecting tooltips into the first column
+convert_soil_lab_table_to_html <- function(table_md, lookup) {
+  if (is.na(table_md) || nchar(table_md) == 0) return(NA_character_)
+  
+  lines <- strsplit(table_md, "\n", fixed = TRUE)[[1]]
+  lines <- lines[grepl("^\\s*\\|", lines, perl = TRUE)]
+  if (length(lines) < 3) return(table_md)  # need header + separator + 1+ data row
+  
+  header     <- parse_pipe_row(lines[1])
+  sep_cells  <- parse_pipe_row(lines[2])
+  alignments <- parse_alignments(sep_cells)
+  data_lines <- lines[3:length(lines)]
+  
+  thead_html <- paste0(
+    "<thead><tr>",
+    paste0("<th style=\"text-align:", alignments, "\">",
+           vapply(header, html_escape, character(1)), "</th>", collapse = ""),
+    "</tr></thead>"
+  )
+  
+  body_rows <- vapply(data_lines, function(line) {
+    cells <- parse_pipe_row(line)
+    if (length(cells) < length(header)) {
+      cells <- c(cells, rep("", length(header) - length(cells)))
+    }
+    
+    code <- cells[1]
+    info <- lookup[[code]]
+    first_html <- if (!is.null(info)) build_tooltip_span(code, info) else html_escape(code)
+    
+    rest_html <- paste0(
+      "<td style=\"text-align:", alignments[-1], "\">",
+      vapply(cells[-1], html_escape, character(1)),
+      "</td>",
+      collapse = ""
+    )
+    
+    paste0(
+      "<tr>",
+      "<td style=\"text-align:", alignments[1], "\">", first_html, "</td>",
+      rest_html,
+      "</tr>"
+    )
+  }, character(1), USE.NAMES = FALSE)
+  
+  paste0(
+    "<table class=\"soil-lab-table\">",
+    thead_html,
+    "<tbody>", paste(body_rows, collapse = ""), "</tbody>",
+    "</table>"
+  )
+}
+
+
+
 
 # Word-boundary match for spectral range names — so "vnir" doesn't false-match
 # inside other text and "nir" doesn't match within "vnir".
@@ -85,7 +269,9 @@ make_bullets_from_row <- function(df_row, exclude_cols = character()) {
   vals <- lapply(cols, function(col) {
     value <- as.character(df_row[[col]][1])
     if (is.na(value) || trimws(value) == "") return(NULL)
-    paste0("- **", gsub("_", " ", col), ":** ", value)
+    label <- gsub("_", " ", col)
+    label <- paste0(toupper(substr(label, 1, 1)), substr(label, 2, nchar(label)))
+    paste0("- **", label, ":** ", value)
   })
   vals <- vals[!vapply(vals, is.null, logical(1))]
   if (length(vals) == 0) return("Not available.\n")
@@ -216,35 +402,21 @@ make_quick_stats <- function(row_access) {
   )
 }
 
-# ----- Fetch the "Variable type: numeric" table from a dataset README -------
-fetch_soil_lab_table <- function(folder, debug_dir = "datasets/_debug_readme") {
-  url <- paste0(GITHUB_BASE, "/", folder, "/README.md")
 
-  resp <- tryCatch(
-    httr::GET(url, httr::timeout(20)),
-    error = function(e) NULL
-  )
-  if (is.null(resp) || httr::status_code(resp) != 200) return(NA_character_)
-
-  text <- httr::content(resp, as = "text", encoding = "UTF-8")
-  text  <- gsub("\r\n?", "\n", text, perl = TRUE)
+# ----- Parse the "Variable type: numeric" table from README text ------------
+extract_soil_lab_table <- function(text) {
   lines <- strsplit(text, "\n", fixed = TRUE)[[1]]
-
+  
   cleaned <- trimws(gsub("^[*#\\s]+|[*#\\s]+$", "", lines, perl = TRUE))
   marker_idx <- grep(
     "^Variable type:\\s*numeric\\s*:?$",
     cleaned, perl = TRUE, ignore.case = TRUE
   )
-
-  if (length(marker_idx) == 0) {
-    if (!dir.exists(debug_dir)) dir.create(debug_dir, recursive = TRUE)
-    writeLines(text, file.path(debug_dir, paste0(folder, "_README.md")))
-    return(NA_character_)
-  }
+  if (length(marker_idx) == 0) return(NA_character_)
   marker_idx <- marker_idx[1]
-
+  
   after <- lines[(marker_idx + 1):length(lines)]
-
+  
   pipe_start <- NA_integer_
   for (i in seq_along(after)) {
     if (grepl("^\\s*\\|", after[i], perl = TRUE)) {
@@ -261,31 +433,53 @@ fetch_soil_lab_table <- function(folder, debug_dir = "datasets/_debug_readme") {
     }
     if (length(table_lines) > 0) return(paste(table_lines, collapse = "\n"))
   }
-
+  
   html_start <- grep("^\\s*<table", after, perl = TRUE, ignore.case = TRUE)
   html_end   <- grep("</table>",       after, perl = TRUE, ignore.case = TRUE)
   if (length(html_start) > 0 && length(html_end) > 0 && html_end[1] >= html_start[1]) {
     return(paste(after[html_start[1]:html_end[1]], collapse = "\n"))
   }
-
+  
   NA_character_
+}
+
+# ----- Parse "Number of rows" from README text ------------------------------
+extract_n_rows <- function(text) {
+  m <- regmatches(
+    text,
+    regexpr("Number of rows[^0-9]*([0-9]+)", text, perl = TRUE)
+  )
+  if (length(m) > 0 && nchar(m[1]) > 0) {
+    n <- regmatches(m[1], regexpr("[0-9]+", m[1]))
+    if (length(n) > 0) return(as.integer(n))
+  }
+  NA_integer_
 }
 
 fetch_soil_lab_summary <- function(code) {
   candidates <- unique(c(code, sub("[0-9]+$", "", code)))
   for (folder in candidates) {
-    result <- fetch_soil_lab_table(folder)
-    if (!is.na(result) && nchar(result) > 0) {
-      source_url <- paste0(GITHUB_VIEW, "/", folder)
-      header <- paste0(
-        "Summary statistics for soil properties in this dataset, ",
-        "sourced from the [ossl-imports README](", source_url, ").\n\n"
-      )
-      return(paste0(header, result))
+    url <- paste0(GITHUB_BASE, "/", folder, "/README.md")
+    
+    resp <- tryCatch(
+      httr::GET(url, httr::timeout(20)),
+      error = function(e) NULL
+    )
+    if (is.null(resp) || httr::status_code(resp) != 200) next
+    
+    text <- httr::content(resp, as = "text", encoding = "UTF-8")
+    text <- gsub("\r\n?", "\n", text, perl = TRUE)
+    
+    table_md <- extract_soil_lab_table(text)
+    n_rows   <- extract_n_rows(text)
+    
+    if (!is.na(table_md) && nchar(table_md) > 0) {
+      return(list(table = table_md, n_rows = n_rows))
     }
   }
-  NA_character_
+  list(table = NA_character_, n_rows = NA_integer_)
 }
+
 
 # ----- File-type label helper for download table ----------------------------
 nice_file_label <- function(filename) {
@@ -379,6 +573,7 @@ access <- access %>%
   left_join(logo_palette, by = "new_code")
 
 soil_site <- soil_site %>% mutate(new_code = fix_blank(new_code))
+soil_lab  <- soil_lab  %>% mutate(new_code = fix_blank(new_code))
 mir       <- mir       %>% mutate(new_code = fix_blank(new_code))
 vnir      <- vnir      %>% mutate(new_code = fix_blank(new_code))
 nir       <- nir       %>% mutate(new_code = fix_blank(new_code))
@@ -386,6 +581,10 @@ nir       <- nir       %>% mutate(new_code = fix_blank(new_code))
 # ============================================================================
 # 4. Build one .qmd per dataset
 # ============================================================================
+
+# Build OSSL code -> description lookup once (reused for every dataset page)
+code_lookup <- build_code_lookup(ossl_codes_soillab)
+
 for (i in seq_len(nrow(access))) {
 
   row_access <- access[i, ]
@@ -417,15 +616,97 @@ for (i in seq_len(nrow(access))) {
 
   db_access_text <- make_database_access(row_access, code, dataset_files)
 
-  soil_lab_text <- fetch_soil_lab_summary(code)
-  if (is.na(soil_lab_text)) {
-    soil_lab_text <- "_Soil analytical data summary not available for this dataset._"
+  # --- Fetch the skimr table and total sample count from README ---
+  lab_info  <- fetch_soil_lab_summary(code)
+  raw_table <- lab_info$table
+  n_samples <- lab_info$n_rows
+  
+  # --- Soil lab framing paragraph from Soil_lab sheet ---
+  lab_row <- soil_lab |> filter(new_code == code)
+  
+  lab_intro <- if (nrow(lab_row) == 1 &&
+                   !is.na(lab_row$n_properties_standardized[[1]]) &&
+                   !is.na(lab_row$n_properties_available[[1]])) {
+    n_avail <- lab_row$n_properties_available[[1]]
+    n_std   <- lab_row$n_properties_standardized[[1]]
+    themes  <- lab_row$properties_themes[[1]]
+    
+    theme_list <- str_split(themes, "\\s{2,}")[[1]]
+    theme_list <- theme_list[nchar(trimws(theme_list)) > 0]
+    themes_fmt <- paste(theme_list, collapse = ", ")
+    
+    samples_bullet <- if (!is.na(n_samples)) {
+      paste0("- **Total samples:** ", format(n_samples, big.mark = ","), "\n")
+    } else ""
+    
+    paste0(
+      samples_bullet,
+      "- **Properties available (original):** ", n_avail, "\n",
+      "- **Properties standardized (OSSL):** ", n_std,
+      " — summarized in **@tbl-soillab-", tolower(code), "** below\n",
+      "- **Categories:** ", themes_fmt, "\n",
+      "- **Original source:** see [Database access](#database-access)"
+    )
+  } else {
+    paste0(
+      "- **Original source:** see [Database access](#database-access)"
+    )
   }
-
-  soil_site_text <- make_bullets_from_row(
+  
+  # --- Convert table to HTML with tooltip spans on OSSL codes ---
+  raw_table_html <- convert_soil_lab_table_to_html(raw_table, code_lookup)
+  
+  soil_lab_text <- if (!is.na(raw_table_html) && nchar(raw_table_html) > 0) {
+    hint <- paste0(
+      '<p class="ossl-tt-hint">',
+      '<i class="bi bi-info-circle" aria-hidden="true"></i> ',
+      'Hover over any OSSL code in the table below to see its full description.',
+      '</p>'
+    )
+    paste0(
+      lab_intro, "\n\n",
+      "```{=html}\n", hint, "\n```\n\n",
+      "::: {#tbl-soillab-", tolower(code), "}\n\n",
+      "```{=html}\n", raw_table_html, "\n```\n\n",
+      "Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n",
+      ":::"
+    )
+  } else {
+    paste0(lab_intro, "\n\n_Detailed summary statistics not available for this dataset._")
+  }
+  
+  # Existing bullets from the Soil_site spreadsheet
+  soil_site_spreadsheet <- make_bullets_from_row(
     row_site,
     exclude_cols = c("new_code", "old_code")
   )
+  
+  # New bullets derived from the dataset's soilsite parquet
+  soilsite_info <- fetch_soilsite_columns(code, dataset_files)
+  
+  soil_site_parquet <- ""
+  if (!is.null(soilsite_info)) {
+    # Drop the metadata key column from the displayed list
+    populated   <- setdiff(soilsite_info$populated_columns, "dataset.code_ascii_txt")
+    n_total     <- soilsite_info$total_columns - 1  # exclude the same key column
+    n_populated <- length(populated)
+    
+    # Render each code as inline `code` styling
+    columns_text <- paste0("`", populated, "`", collapse = ", ")
+    
+    soil_site_parquet <- paste0(
+      "- **Variables available (OSSL):** ", n_populated, " out of ", n_total,
+      " — see [Database description](../db-desc.html#panel-soilsite) for full schema\n",
+      "- **Populated columns:** ", columns_text
+    )
+  }
+  
+  soil_site_text <- if (nzchar(soil_site_parquet)) {
+    paste0(soil_site_spreadsheet, "\n", soil_site_parquet)
+  } else {
+    soil_site_spreadsheet
+  }
+  
 
   mir_text  <- make_spectra_section(row_mir,  "MIR")
   vnir_text <- make_spectra_section(row_vnir, "VNIR")
@@ -455,17 +736,17 @@ quick_stats_html, '
 
 ', db_access_text, '
 
-', section_heading("clipboard-data", "Soil laboratory information"), '
+', section_heading("geo-alt", "Map"), '
 
-', soil_lab_text, '
+![](', map_url, ')
 
 ', section_heading("pin-map", "Soil site information"), '
 
 ', soil_site_text, '
 
-', section_heading("geo-alt", "Map"), '
+', section_heading("clipboard-data", "Soil laboratory information"), '
 
-![](', map_url, ')
+', soil_lab_text, '
 
 ', mir_text,
    vnir_text,

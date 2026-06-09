@@ -11,7 +11,7 @@ format:
 ---
 
 ```{=html}
-<div class="ossl-hero" style="background: #E0FFDD;">
+<div class="ossl-hero" style="background: #f1f3f5;">
   <div class="ossl-hero-logo">
     <img src="logo/KSSL.png" alt="KSSL logo">
   </div>
@@ -48,19 +48,24 @@ Data originally provided by:
 No file listing available for this dataset.
 
 
-## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
-
-_Soil analytical data summary not available for this dataset._
-
-## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
-
-- **coordinates precision:** precise, county, country
-- **sampling depth:** various
-- **geography:** soil taxonomy, soil horizon
-
 ## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
 ![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/KSSL/README_files/figure-commonmark/map-1.png)
+
+## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
+
+- **Coordinates precision:** precise, county, country
+- **Sampling depth:** various
+- **Geography:** soil taxonomy, soil horizon
+
+## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
+
+- **Properties available (original):** 1000+
+- **Properties standardized (OSSL):** 51 — summarized in **@tbl-soillab-kssl** below
+- **Categories:** physical, chemical, biological, hydrological, carbon & nutrients, metal elements
+- **Original source:** see [Database access](#database-access)
+
+_Detailed summary statistics not available for this dataset._
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR
 

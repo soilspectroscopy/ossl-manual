@@ -11,7 +11,7 @@ format:
 ---
 
 ```{=html}
-<div class="ossl-hero" style="background: #F6F7E3;">
+<div class="ossl-hero" style="background: #f1f3f5;">
   <div class="ossl-hero-logo">
     <img src="logo/NEON.png" alt="NEON logo">
   </div>
@@ -45,45 +45,47 @@ Data originally provided by:
 - **Email:** [jsanderman@woodwellclimate.org](mailto:jsanderman@woodwellclimate.org)
 - **Original source:** <https://www.neonscience.org/samples/soil-archive>
 
-No file listing available for this dataset.
+**Available files**
 
+| Type | Filename | Link |
+|------|----------|------|
+| MIR spectra — CSV (gzip) | `ossl_mir_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/NEON/ossl_mir_v1.3.csv.gz) |
+| MIR spectra — Parquet | `ossl_mir_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/NEON/ossl_mir_v1.3.parquet) |
+| Soil lab measurements — CSV (gzip) | `ossl_soillab_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/NEON/ossl_soillab_v1.3.csv.gz) |
+| Soil lab measurements — Parquet | `ossl_soillab_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/NEON/ossl_soillab_v1.3.parquet) |
+| Soil site metadata — CSV (gzip) | `ossl_soilsite_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/NEON/ossl_soilsite_v1.3.csv.gz) |
+| Soil site metadata — Parquet | `ossl_soilsite_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/NEON/ossl_soilsite_v1.3.parquet) |
 
-## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
-
-Summary statistics for soil properties in this dataset, sourced from the [ossl-imports README](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/NEON).
-
-| skim_variable             | n_missing |  mean |    sd |   p0 |   p25 |   p50 |   p75 |   p100 |
-|:--------------------------|----------:|------:|------:|-----:|------:|------:|------:|-------:|
-| c.tot_usda.a622_w.pct     |         0 |  3.92 |  8.87 | 0.02 |  0.25 |  1.09 |  2.96 |  55.51 |
-| n.tot_usda.a623_w.pct     |        25 |  0.20 |  0.32 | 0.01 |  0.04 |  0.07 |  0.20 |   1.82 |
-| s.tot_usda.a624_w.pct     |       138 |  0.05 |  0.15 | 0.01 |  0.01 |  0.02 |  0.04 |   2.01 |
-| oc_usda.c729_w.pct        |         0 |  3.49 |  8.93 | 0.00 |  0.10 |  0.50 |  2.00 |  55.50 |
-| ph.h2o_usda.a268_index    |         1 |  5.72 |  1.50 | 3.10 |  4.60 |  5.10 |  7.40 |   8.70 |
-| ph.cacl2_usda.a481_index  |         1 |  6.40 |  1.40 | 3.80 |  5.30 |  5.80 |  7.90 |   9.20 |
-| ec_usda.a364_ds.m         |         2 |  0.40 |  1.06 | 0.01 |  0.03 |  0.09 |  0.24 |   7.70 |
-| caco3_usda.a54_w.pct      |         0 |  3.62 |  9.95 | 0.00 |  0.00 |  0.00 |  0.00 |  68.00 |
-| ca.ext_usda.a722_cmolc.kg |         0 | 16.48 | 21.40 | 0.00 |  0.70 |  4.70 | 26.30 | 142.00 |
-| k.ext_usda.a725_cmolc.kg  |         0 |  0.46 |  0.67 | 0.00 |  0.10 |  0.20 |  0.50 |   4.30 |
-| mg.ext_usda.a724_cmolc.kg |         0 |  3.63 |  6.12 | 0.00 |  0.20 |  1.50 |  5.10 |  70.70 |
-| na.ext_usda.a726_cmolc.kg |         0 |  0.83 |  3.66 | 0.00 |  0.00 |  0.00 |  0.00 |  36.40 |
-| cec_usda.a723_cmolc.kg    |         0 | 16.26 | 16.19 | 0.00 |  5.60 | 10.60 | 21.10 | 100.30 |
-| al.ext_usda.a69_cmolc.kg  |       161 |  2.12 |  2.50 | 0.00 |  0.30 |  1.00 |  2.92 |  11.80 |
-| cf_usda.c232_w.pct        |         0 |  5.33 |  6.78 | 0.00 |  0.00 |  2.50 |  8.60 |  36.80 |
-| cf_usda.c235_w.pct        |         0 |  6.18 | 10.54 | 0.00 |  0.00 |  1.00 |  8.60 |  72.80 |
-| sand.tot_usda.c60_w.pct   |        11 | 50.93 | 27.81 | 1.60 | 27.52 | 53.20 | 74.55 |  97.60 |
-| silt.tot_usda.c62_w.pct   |        11 | 31.15 | 17.57 | 1.30 | 17.02 | 29.90 | 44.03 |  78.80 |
-| clay.tot_usda.a334_w.pct  |        11 | 17.92 | 14.35 | 0.00 |  5.90 | 14.55 | 27.40 |  60.30 |
-| bd_usda.a4_g.cm3          |         6 |  1.23 |  0.42 | 0.03 |  1.04 |  1.30 |  1.52 |   2.27 |
-
-## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
-
-- **coordinates precision:** precise
-- **sampling depth:** various
-- **geography:** soil taxonomy, soil horizon
 
 ## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
 ![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/NEON/README_files/figure-commonmark/map-1.png)
+
+## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
+
+- **Coordinates precision:** precise
+- **Sampling depth:** various
+- **Geography:** soil taxonomy, soil horizon
+- **Variables available (OSSL):** 11 out of 11 — see [Database description](../db-desc.html#panel-soilsite) for full schema
+- **Populated columns:** `id.layer_uuid_txt`, `id.layer_local_c`, `id.biogeo_src_txt`, `site.domain_src_txt`, `site.id_src_txt`, `site.pit_src_txt`, `observation.date_src_yyyy.mm.dd`, `site.pit.name_src_txt`, `pedon.horizon_src_txt`, `layer.upper.depth_usda_cm`, `layer.lower.depth_usda_cm`
+
+## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
+
+- **Original source:** see [Database access](#database-access)
+
+```{=html}
+<p class="ossl-tt-hint"><i class="bi bi-info-circle" aria-hidden="true"></i> Hover over any OSSL code in the table below to see its full description.</p>
+```
+
+::: {#tbl-soillab-neon}
+
+```{=html}
+<table class="soil-lab-table"><thead><tr><th style="text-align:left">skim_variable</th><th style="text-align:right">n_missing</th><th style="text-align:right">mean</th><th style="text-align:right">sd</th><th style="text-align:right">p0</th><th style="text-align:right">p25</th><th style="text-align:right">p50</th><th style="text-align:right">p75</th><th style="text-align:right">p100</th></tr></thead><tbody><tr><td style="text-align:left"><span class="ossl-tt">c.tot_usda.a622_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Carbon, Total NCS</span><span class="tt-desc">Method: <code>usda.a622</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">3.92</td><td style="text-align:right">8.87</td><td style="text-align:right">0.02</td><td style="text-align:right">0.25</td><td style="text-align:right">1.09</td><td style="text-align:right">2.96</td><td style="text-align:right">55.51</td></tr><tr><td style="text-align:left"><span class="ossl-tt">n.tot_usda.a623_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Nitrogen, Total NCS</span><span class="tt-desc">Method: <code>usda.a623</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">25</td><td style="text-align:right">0.20</td><td style="text-align:right">0.32</td><td style="text-align:right">0.01</td><td style="text-align:right">0.04</td><td style="text-align:right">0.07</td><td style="text-align:right">0.20</td><td style="text-align:right">1.82</td></tr><tr><td style="text-align:left"><span class="ossl-tt">s.tot_usda.a624_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Sulfur, Total NCS</span><span class="tt-desc">Method: <code>usda.a624</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">138</td><td style="text-align:right">0.05</td><td style="text-align:right">0.15</td><td style="text-align:right">0.01</td><td style="text-align:right">0.01</td><td style="text-align:right">0.02</td><td style="text-align:right">0.04</td><td style="text-align:right">2.01</td></tr><tr><td style="text-align:left"><span class="ossl-tt">oc_usda.c729_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Organic Carbon, Total C without CaCO3, S prep</span><span class="tt-desc">Method: <code>usda.c729</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">3.49</td><td style="text-align:right">8.93</td><td style="text-align:right">0.00</td><td style="text-align:right">0.10</td><td style="text-align:right">0.50</td><td style="text-align:right">2.00</td><td style="text-align:right">55.50</td></tr><tr><td style="text-align:left"><span class="ossl-tt">ph.h2o_usda.a268_index<span class="ossl-tt-pop"><span class="tt-analyte">pH, 1:1 Soil-Water Suspension</span><span class="tt-desc">Method: <code>usda.a268</code></span><span class="tt-unit">Unit: <code>index</code></span></span></span></td><td style="text-align:right">1</td><td style="text-align:right">5.72</td><td style="text-align:right">1.50</td><td style="text-align:right">3.10</td><td style="text-align:right">4.60</td><td style="text-align:right">5.10</td><td style="text-align:right">7.40</td><td style="text-align:right">8.70</td></tr><tr><td style="text-align:left"><span class="ossl-tt">ph.cacl2_usda.a481_index<span class="ossl-tt-pop"><span class="tt-analyte">pH, 1:2 Soil-CaCl2 Suspension</span><span class="tt-desc">Method: <code>usda.a481</code></span><span class="tt-unit">Unit: <code>index</code></span></span></span></td><td style="text-align:right">1</td><td style="text-align:right">6.40</td><td style="text-align:right">1.40</td><td style="text-align:right">3.80</td><td style="text-align:right">5.30</td><td style="text-align:right">5.80</td><td style="text-align:right">7.90</td><td style="text-align:right">9.20</td></tr><tr><td style="text-align:left"><span class="ossl-tt">ec_usda.a364_ds.m<span class="ossl-tt-pop"><span class="tt-analyte">Electrical Conductivity, (w/w)</span><span class="tt-desc">Method: <code>usda.a364</code></span><span class="tt-unit">Unit: <code>ds.m</code></span></span></span></td><td style="text-align:right">2</td><td style="text-align:right">0.40</td><td style="text-align:right">1.06</td><td style="text-align:right">0.01</td><td style="text-align:right">0.03</td><td style="text-align:right">0.09</td><td style="text-align:right">0.24</td><td style="text-align:right">7.70</td></tr><tr><td style="text-align:left"><span class="ossl-tt">caco3_usda.a54_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Carbonate, &lt;2mm Fraction</span><span class="tt-desc">Method: <code>usda.a54</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">3.62</td><td style="text-align:right">9.95</td><td style="text-align:right">0.00</td><td style="text-align:right">0.00</td><td style="text-align:right">0.00</td><td style="text-align:right">0.00</td><td style="text-align:right">68.00</td></tr><tr><td style="text-align:left"><span class="ossl-tt">ca.ext_usda.a722_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">Calcium, Extractable, NH4OAc</span><span class="tt-desc">Method: <code>usda.a722</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">16.48</td><td style="text-align:right">21.40</td><td style="text-align:right">0.00</td><td style="text-align:right">0.70</td><td style="text-align:right">4.70</td><td style="text-align:right">26.30</td><td style="text-align:right">142.00</td></tr><tr><td style="text-align:left"><span class="ossl-tt">k.ext_usda.a725_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">Potassium, Extractable, NH4OAc, 2M KCl displacement</span><span class="tt-desc">Method: <code>usda.a725</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">0.46</td><td style="text-align:right">0.67</td><td style="text-align:right">0.00</td><td style="text-align:right">0.10</td><td style="text-align:right">0.20</td><td style="text-align:right">0.50</td><td style="text-align:right">4.30</td></tr><tr><td style="text-align:left"><span class="ossl-tt">mg.ext_usda.a724_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">Magnesium, Extractable, NH4OAc, 2M KCl displacement</span><span class="tt-desc">Method: <code>usda.a724</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">3.63</td><td style="text-align:right">6.12</td><td style="text-align:right">0.00</td><td style="text-align:right">0.20</td><td style="text-align:right">1.50</td><td style="text-align:right">5.10</td><td style="text-align:right">70.70</td></tr><tr><td style="text-align:left"><span class="ossl-tt">na.ext_usda.a726_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">Sodium, Extractable, NH4OAc, 2M KCl displacement</span><span class="tt-desc">Method: <code>usda.a726</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">0.83</td><td style="text-align:right">3.66</td><td style="text-align:right">0.00</td><td style="text-align:right">0.00</td><td style="text-align:right">0.00</td><td style="text-align:right">0.00</td><td style="text-align:right">36.40</td></tr><tr><td style="text-align:left"><span class="ossl-tt">cec_usda.a723_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">CEC, pH 7.0, NH4OAc, 2M KCl displacement</span><span class="tt-desc">Method: <code>usda.a723</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">16.26</td><td style="text-align:right">16.19</td><td style="text-align:right">0.00</td><td style="text-align:right">5.60</td><td style="text-align:right">10.60</td><td style="text-align:right">21.10</td><td style="text-align:right">100.30</td></tr><tr><td style="text-align:left"><span class="ossl-tt">al.ext_usda.a69_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">Aluminum, Extractable, KCl</span><span class="tt-desc">Method: <code>usda.a69</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td><td style="text-align:right">161</td><td style="text-align:right">2.12</td><td style="text-align:right">2.50</td><td style="text-align:right">0.00</td><td style="text-align:right">0.30</td><td style="text-align:right">1.00</td><td style="text-align:right">2.92</td><td style="text-align:right">11.80</td></tr><tr><td style="text-align:left">cf_usda.c232_w.pct</td><td style="text-align:right">0</td><td style="text-align:right">5.33</td><td style="text-align:right">6.78</td><td style="text-align:right">0.00</td><td style="text-align:right">0.00</td><td style="text-align:right">2.50</td><td style="text-align:right">8.60</td><td style="text-align:right">36.80</td></tr><tr><td style="text-align:left">cf_usda.c235_w.pct</td><td style="text-align:right">0</td><td style="text-align:right">6.18</td><td style="text-align:right">10.54</td><td style="text-align:right">0.00</td><td style="text-align:right">0.00</td><td style="text-align:right">1.00</td><td style="text-align:right">8.60</td><td style="text-align:right">72.80</td></tr><tr><td style="text-align:left"><span class="ossl-tt">sand.tot_usda.c60_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Sand, Total, S prep</span><span class="tt-desc">Method: <code>usda.c60</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">11</td><td style="text-align:right">50.93</td><td style="text-align:right">27.81</td><td style="text-align:right">1.60</td><td style="text-align:right">27.52</td><td style="text-align:right">53.20</td><td style="text-align:right">74.55</td><td style="text-align:right">97.60</td></tr><tr><td style="text-align:left"><span class="ossl-tt">silt.tot_usda.c62_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Silt, Total, S prep</span><span class="tt-desc">Method: <code>usda.c62</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">11</td><td style="text-align:right">31.15</td><td style="text-align:right">17.57</td><td style="text-align:right">1.30</td><td style="text-align:right">17.02</td><td style="text-align:right">29.90</td><td style="text-align:right">44.03</td><td style="text-align:right">78.80</td></tr><tr><td style="text-align:left"><span class="ossl-tt">clay.tot_usda.a334_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Clay</span><span class="tt-desc">Method: <code>usda.a334</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">11</td><td style="text-align:right">17.92</td><td style="text-align:right">14.35</td><td style="text-align:right">0.00</td><td style="text-align:right">5.90</td><td style="text-align:right">14.55</td><td style="text-align:right">27.40</td><td style="text-align:right">60.30</td></tr><tr><td style="text-align:left"><span class="ossl-tt">bd_usda.a4_g.cm3<span class="ossl-tt-pop"><span class="tt-analyte">Bulk Density, &lt;2mm fraction, Clod</span><span class="tt-desc">Method: <code>usda.a4</code></span><span class="tt-unit">Unit: <code>g.cm3</code></span></span></span></td><td style="text-align:right">6</td><td style="text-align:right">1.23</td><td style="text-align:right">0.42</td><td style="text-align:right">0.03</td><td style="text-align:right">1.04</td><td style="text-align:right">1.30</td><td style="text-align:right">1.52</td><td style="text-align:right">2.27</td></tr></tbody></table>
+```
+
+Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.
+
+:::
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR
 

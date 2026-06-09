@@ -11,7 +11,7 @@ format:
 ---
 
 ```{=html}
-<div class="ossl-hero" style="background: #F4F3FE;">
+<div class="ossl-hero" style="background: #f1f3f5;">
   <div class="ossl-hero-logo">
     <img src="logo/GEMAS.png" alt="GEMAS logo">
   </div>
@@ -57,26 +57,39 @@ Data originally provided by:
 | Soil site metadata — Parquet | `ossl_soilsite_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/GEMAS/ossl_soilsite_v1.3.parquet) |
 
 
-## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
-
-Summary statistics for soil properties in this dataset, sourced from the [ossl-imports README](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/GEMAS).
-
-| skim_variable            | n_missing |  mean |   sd |  p0 |   p25 |   p50 |   p75 |  p100 |
-|:-------------------------|----------:|------:|-----:|----:|------:|------:|------:|------:|
-| c.tot_iso.10694_w.pct    |         0 |  3.91 | 4.94 |   0 |  1.64 |  2.68 |  4.34 | 50.10 |
-| oc_iso.10694_w.pct       |         0 |  3.27 | 4.76 |   0 |  1.40 |  2.10 |  3.40 | 49.00 |
-| cec_usda.a723_cmolc.kg   |         0 | 19.14 | 9.17 |   0 | 11.90 | 17.50 | 24.90 | 49.88 |
-| ph.cacl2_iso.10390_index |         0 |  5.78 | 1.14 |   0 |  4.81 |  5.62 |  6.97 |  8.06 |
-
-## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
-
-- **coordinates precision:** precise, country
-- **sampling depth:** top
-- **geography:** soil taxonomy
-
 ## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
 ![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/GEMAS/README_files/figure-commonmark/map-1.png)
+
+## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
+
+- **Coordinates precision:** precise, country
+- **Sampling depth:** top
+- **Geography:** soil taxonomy
+- **Variables available (OSSL):** 10 out of 10 — see [Database description](../db-desc.html#panel-soilsite) for full schema
+- **Populated columns:** `id.layer_uuid_txt`, `id.layer_local_c`, `loc.country_src_code`, `site.land.use_src_code`, `site.alt_src_m`, `longitude.point_wgs84_dd`, `latitude.point_wgs84_dd`, `layer.upper.depth_usda_cm`, `layer.lower.depth_usda_cm`, `layer.sequence_usda_uint16`
+
+## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
+
+- **Total samples:** 4,131
+- **Properties available (original):** 12
+- **Properties standardized (OSSL):** 4 — summarized in **@tbl-soillab-gemas** below
+- **Categories:** physical, chemical, carbon & nutrients, metal elements
+- **Original source:** see [Database access](#database-access)
+
+```{=html}
+<p class="ossl-tt-hint"><i class="bi bi-info-circle" aria-hidden="true"></i> Hover over any OSSL code in the table below to see its full description.</p>
+```
+
+::: {#tbl-soillab-gemas}
+
+```{=html}
+<table class="soil-lab-table"><thead><tr><th style="text-align:left">skim_variable</th><th style="text-align:right">n_missing</th><th style="text-align:right">mean</th><th style="text-align:right">sd</th><th style="text-align:right">p0</th><th style="text-align:right">p25</th><th style="text-align:right">p50</th><th style="text-align:right">p75</th><th style="text-align:right">p100</th></tr></thead><tbody><tr><td style="text-align:left"><span class="ossl-tt">c.tot_iso.10694_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Carbon, Total NCS, ISO 10694</span><span class="tt-desc">Method: <code>iso.10694</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">3.91</td><td style="text-align:right">4.94</td><td style="text-align:right">0</td><td style="text-align:right">1.64</td><td style="text-align:right">2.68</td><td style="text-align:right">4.34</td><td style="text-align:right">50.10</td></tr><tr><td style="text-align:left"><span class="ossl-tt">oc_iso.10694_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Organic Carbon, ISO 10694</span><span class="tt-desc">Method: <code>iso.10694</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">3.27</td><td style="text-align:right">4.76</td><td style="text-align:right">0</td><td style="text-align:right">1.40</td><td style="text-align:right">2.10</td><td style="text-align:right">3.40</td><td style="text-align:right">49.00</td></tr><tr><td style="text-align:left"><span class="ossl-tt">cec_usda.a723_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">CEC, pH 7.0, NH4OAc, 2M KCl displacement</span><span class="tt-desc">Method: <code>usda.a723</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">19.14</td><td style="text-align:right">9.17</td><td style="text-align:right">0</td><td style="text-align:right">11.90</td><td style="text-align:right">17.50</td><td style="text-align:right">24.90</td><td style="text-align:right">49.88</td></tr><tr><td style="text-align:left"><span class="ossl-tt">ph.cacl2_iso.10390_index<span class="ossl-tt-pop"><span class="tt-analyte">pH, 1:2 Soil-CaCl2 Suspension, ISO 10390</span><span class="tt-desc">Method: <code>iso.10390</code></span><span class="tt-unit">Unit: <code>index</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">5.78</td><td style="text-align:right">1.14</td><td style="text-align:right">0</td><td style="text-align:right">4.81</td><td style="text-align:right">5.62</td><td style="text-align:right">6.97</td><td style="text-align:right">8.06</td></tr></tbody></table>
+```
+
+Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.
+
+:::
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR
 
