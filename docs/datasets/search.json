@@ -22,11 +22,11 @@
     ]
   },
   {
-    "objectID": "CAF.html#soil-laboratory-information",
-    "href": "CAF.html#soil-laboratory-information",
+    "objectID": "CAF.html#map",
+    "href": "CAF.html#map",
     "title": "CAF",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nc.tot_usda.a622_w.pct\n184\n1.98\n2.51\n0.08\n0.89\n1.38\n2.31\n45.54\n\n\nn.tot_usda.a623_w.pct\n168\n0.16\n0.18\n0.01\n0.07\n0.11\n0.18\n2.92\n\n\nph.h2o_usda.a268_index\n1317\n5.10\n0.94\n3.32\n4.51\n4.84\n5.36\n8.56\n\n\nclay.tot_usda.a334_w.pct\n1262\n34.63\n21.73\n1.04\n12.41\n34.88\n51.59\n86.88\n\n\nsilt.tot_usda.c62_w.pct\n1309\n23.85\n14.97\n4.00\n13.48\n19.28\n29.87\n74.75\n\n\nsand.tot_usda.c60_w.pct\n1309\n42.30\n23.77\n1.30\n21.12\n40.50\n61.12\n89.90\n\n\nal.ext_aquaregia_g.kg\n1128\n25.20\n24.69\n0.16\n7.94\n12.37\n36.24\n121.32\n\n\nfe.ext_aquaregia_g.kg\n1128\n38.84\n39.55\n0.34\n10.15\n20.13\n59.62\n352.66\n\n\nca.ext_aquaregia_mg.kg\n1128\n634.26\n1352.25\n0.00\n52.50\n186.94\n589.29\n19922.26\n\n\nmg.ext_aquaregia_mg.kg\n1128\n800.40\n1425.40\n9.27\n79.37\n141.16\n836.50\n9500.41\n\n\nk.ext_aquaregia_mg.kg\n1128\n616.41\n1020.57\n7.96\n77.21\n163.31\n795.00\n8073.54\n\n\nmn.ext_aquaregia_mg.kg\n1128\n480.73\n934.36\n2.23\n30.09\n64.16\n455.98\n6468.45\n\n\nna.ext_aquaregia_mg.kg\n1128\n69.57\n128.62\n0.00\n4.99\n13.99\n71.72\n1213.29\n\n\np.ext_aquaregia_mg.kg\n1128\n534.89\n773.33\n13.90\n130.72\n214.20\n580.34\n6679.17",
+    "section": " Map",
+    "text": "Map",
     "crumbs": [
       "← Back to listed libraries",
       "CAF"
@@ -37,18 +37,18 @@
     "href": "CAF.html#soil-site-information",
     "title": "CAF",
     "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise, region\nsampling depth: various\ngeography: landuse",
+    "text": "Soil site information\n\nCoordinates precision: precise, region\nSampling depth: various\nGeography: landuse\nVariables available (OSSL): 19 out of 20 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, id.loc_src_txt, loc.country_src_txt, loc.country_src_code, loc.province_src_txt, loc.subdiv.name_src_txt, loc.subdiv.type_src_txt, observation.date_src_yyyy.mm.dd, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm, longitude.point_wgs84_dd, latitude.point_wgs84_dd, location.point.error_any_m, site.alt_src_m, site.land.use_src_txt, site.crop_src_txt, site.forest_src_txt, layer.sequence_usda_uint16",
     "crumbs": [
       "← Back to listed libraries",
       "CAF"
     ]
   },
   {
-    "objectID": "CAF.html#map",
-    "href": "CAF.html#map",
+    "objectID": "CAF.html#soil-laboratory-information",
+    "href": "CAF.html#soil-laboratory-information",
     "title": "CAF",
-    "section": " Map",
-    "text": "Map",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 1,852\nProperties available (original): 18\nProperties standardized (OSSL): 15 — summarized in Table 1 below\nCategories: physical, chemical, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nc.tot_usda.a622_w.pctCarbon, Total NCSMethod: usda.a622Unit: w.pct\n184\n1.98\n2.51\n0.08\n0.89\n1.38\n2.31\n45.54\n\n\nn.tot_usda.a623_w.pctNitrogen, Total NCSMethod: usda.a623Unit: w.pct\n168\n0.16\n0.18\n0.01\n0.07\n0.11\n0.18\n2.92\n\n\nph.h2o_usda.a268_indexpH, 1:1 Soil-Water SuspensionMethod: usda.a268Unit: index\n1317\n5.10\n0.94\n3.32\n4.51\n4.84\n5.36\n8.56\n\n\nclay.tot_usda.a334_w.pctClayMethod: usda.a334Unit: w.pct\n1262\n34.63\n21.73\n1.04\n12.41\n34.88\n51.59\n86.88\n\n\nsilt.tot_usda.c62_w.pctSilt, Total, S prepMethod: usda.c62Unit: w.pct\n1309\n23.85\n14.97\n4.00\n13.48\n19.28\n29.87\n74.75\n\n\nsand.tot_usda.c60_w.pctSand, Total, S prepMethod: usda.c60Unit: w.pct\n1309\n42.30\n23.77\n1.30\n21.12\n40.50\n61.12\n89.90\n\n\nal.ext_aquaregia_g.kgAluminum, Extractable, Aqua RegiaMethod: aquaregiaUnit: g.kg\n1128\n25.20\n24.69\n0.16\n7.94\n12.37\n36.24\n121.32\n\n\nfe.ext_aquaregia_g.kgIron, Extractable, Aqua RegiaMethod: aquaregiaUnit: g.kg\n1128\n38.84\n39.55\n0.34\n10.15\n20.13\n59.62\n352.66\n\n\nca.ext_aquaregia_mg.kgCalcium, Extractable, Aqua RegiaMethod: aquaregiaUnit: mg.kg\n1128\n634.26\n1352.25\n0.00\n52.50\n186.94\n589.29\n19922.26\n\n\nmg.ext_aquaregia_mg.kgMagnesium, Extractable, Aqua RegiaMethod: aquaregiaUnit: mg.kg\n1128\n800.40\n1425.40\n9.27\n79.37\n141.16\n836.50\n9500.41\n\n\nk.ext_aquaregia_mg.kgPotassium, Extractable, Aqua RegiaMethod: aquaregiaUnit: mg.kg\n1128\n616.41\n1020.57\n7.96\n77.21\n163.31\n795.00\n8073.54\n\n\nmn.ext_aquaregia_mg.kgManganese, Extractable, Aqua RegiaMethod: aquaregiaUnit: mg.kg\n1128\n480.73\n934.36\n2.23\n30.09\n64.16\n455.98\n6468.45\n\n\nna.ext_aquaregia_mg.kgSodium, Extractable, Aqua RegiaMethod: aquaregiaUnit: mg.kg\n1128\n69.57\n128.62\n0.00\n4.99\n13.99\n71.72\n1213.29\n\n\np.ext_aquaregia_mg.kgPhosphorus, Extractable, Aqua RegiaMethod: aquaregiaUnit: mg.kg\n1128\n534.89\n773.33\n13.90\n130.72\n214.20\n580.34\n6679.17",
     "crumbs": [
       "← Back to listed libraries",
       "CAF"
@@ -99,11 +99,11 @@
     ]
   },
   {
-    "objectID": "BESB.html#soil-laboratory-information",
-    "href": "BESB.html#soil-laboratory-information",
+    "objectID": "BESB.html#map",
+    "href": "BESB.html#map",
     "title": "BESB",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nsand.tot_usda.c405_w.pct\n959\n54.17\n28.26\n0.47\n26.70\n61.40\n80.00\n95.40\n\n\nclay.tot_usda.a334_w.pct\n977\n31.15\n21.58\n0.70\n13.00\n24.00\n48.00\n96.10\n\n\noc_iso.10694_w.pct\n2737\n1.31\n0.89\n0.08\n0.70\n1.06\n1.68\n7.49\n\n\nph.h2o_usda.a268_index\n12601\n4.64\n0.61\n3.10\n4.10\n4.60\n5.10\n7.00\n\n\nca.ext_usda.a722_cmolc.kg\n3588\n1.95\n2.27\n0.00\n0.60\n1.30\n2.43\n25.20\n\n\nmg.ext_usda.a724_cmolc.kg\n3585\n0.84\n1.05\n0.01\n0.28\n0.60\n1.04\n18.62\n\n\nna.ext_usda.a726_cmolc.kg\n15423\n0.73\n2.17\n0.00\n0.01\n0.04\n0.32\n18.90\n\n\ncec_usda.a723_cmolc.kg\n3588\n5.33\n3.34\n0.22\n3.06\n4.44\n6.86\n18.99",
+    "section": " Map",
+    "text": "Map",
     "crumbs": [
       "← Back to listed libraries",
       "BESB"
@@ -114,18 +114,18 @@
     "href": "BESB.html#soil-site-information",
     "title": "BESB",
     "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise, state/province, region\nsampling depth: top\ngeography: soil taxonomy, landuse, vegetation",
+    "text": "Soil site information\n\nCoordinates precision: precise, state/province, region\nSampling depth: top\nGeography: soil taxonomy, landuse, vegetation\nVariables available (OSSL): 15 out of 15 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, dataset.contributor_src_code, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm, observation.type_src_txt, latitude.point_wgs84_dd, longitude.point_wgs84_dd, loc.region_src_txt, loc.state_src_txt, loc.municipality_src_txt, site.biome_src_txt, site.vegetation_src_txt, site.geology_src_txt, layer.sequence_usda_uint16",
     "crumbs": [
       "← Back to listed libraries",
       "BESB"
     ]
   },
   {
-    "objectID": "BESB.html#map",
-    "href": "BESB.html#map",
+    "objectID": "BESB.html#soil-laboratory-information",
+    "href": "BESB.html#soil-laboratory-information",
     "title": "BESB",
-    "section": " Map",
-    "text": "Map",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 16,084\nProperties available (original): 8\nProperties standardized (OSSL): 8 — summarized in Table 1 below\nCategories: physical, chemical, carbon & nutrients\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nsand.tot_usda.c405_w.pctSand, Total, N prepMethod: usda.c405Unit: w.pct\n959\n54.17\n28.26\n0.47\n26.70\n61.40\n80.00\n95.40\n\n\nclay.tot_usda.a334_w.pctClayMethod: usda.a334Unit: w.pct\n977\n31.15\n21.58\n0.70\n13.00\n24.00\n48.00\n96.10\n\n\noc_iso.10694_w.pctOrganic Carbon, ISO 10694Method: iso.10694Unit: w.pct\n2737\n1.31\n0.89\n0.08\n0.70\n1.06\n1.68\n7.49\n\n\nph.h2o_usda.a268_indexpH, 1:1 Soil-Water SuspensionMethod: usda.a268Unit: index\n12601\n4.64\n0.61\n3.10\n4.10\n4.60\n5.10\n7.00\n\n\nca.ext_usda.a722_cmolc.kgCalcium, Extractable, NH4OAcMethod: usda.a722Unit: cmolc.kg\n3588\n1.95\n2.27\n0.00\n0.60\n1.30\n2.43\n25.20\n\n\nmg.ext_usda.a724_cmolc.kgMagnesium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a724Unit: cmolc.kg\n3585\n0.84\n1.05\n0.01\n0.28\n0.60\n1.04\n18.62\n\n\nna.ext_usda.a726_cmolc.kgSodium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a726Unit: cmolc.kg\n15423\n0.73\n2.17\n0.00\n0.01\n0.04\n0.32\n18.90\n\n\ncec_usda.a723_cmolc.kgCEC, pH 7.0, NH4OAc, 2M KCl displacementMethod: usda.a723Unit: cmolc.kg\n3588\n5.33\n3.34\n0.22\n3.06\n4.44\n6.86\n18.99",
     "crumbs": [
       "← Back to listed libraries",
       "BESB"
@@ -187,11 +187,11 @@
     ]
   },
   {
-    "objectID": "Geocradle.html#soil-laboratory-information",
-    "href": "Geocradle.html#soil-laboratory-information",
+    "objectID": "Geocradle.html#map",
+    "href": "Geocradle.html#map",
     "title": "Geocradle",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nsand.tot_usda.c405_w.pct\n264\n53.48\n22.85\n0.40\n36.85\n54.00\n69.00\n99.00\n\n\nclay.tot_usda.a334_w.pct\n77\n21.26\n16.01\n0.00\n9.39\n17.00\n29.10\n94.80\n\n\nsilt.tot_usda.c407_w.pct\n264\n26.67\n14.31\n0.00\n16.00\n26.00\n37.40\n68.00\n\n\noc_iso.10694_w.pct\n132\n0.74\n0.84\n0.00\n0.29\n0.58\n0.94\n20.75\n\n\ncaco3_iso.10693_w.pct\n388\n6.83\n14.87\n0.00\n0.00\n0.20\n3.40\n89.99\n\n\nph.h2o_usda.a268_index\n1141\n7.22\n1.09\n3.50\n6.50\n7.44\n8.01\n10.07\n\n\nec_iso.11265_ds.m\n1412\n2.29\n9.32\n0.02\n0.16\n0.67\n1.42\n120.00",
+    "section": " Map",
+    "text": "Map",
     "crumbs": [
       "← Back to listed libraries",
       "Geocradle"
@@ -202,18 +202,18 @@
     "href": "Geocradle.html#soil-site-information",
     "title": "Geocradle",
     "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise, country\nsampling depth: various\ngeography: soil taxonomy, elevation",
+    "text": "Soil site information\n\nCoordinates precision: precise, country\nSampling depth: various\nGeography: soil taxonomy, elevation\nVariables available (OSSL): 13 out of 13 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, latitude.point_wgs84_dd, longitude.point_wgs84_dd, observation.date_src_yyyy.mm.dd, layer.lower.depth_usda_cm, loc.country_src_txt, site.clim.koeppen_src_code, site.alt_src_m, pedon.taxa_wrb_code, pedon.taxa_wrb_txt, pedon.taxa_usda_txt, layer.texture_usda_txt",
     "crumbs": [
       "← Back to listed libraries",
       "Geocradle"
     ]
   },
   {
-    "objectID": "Geocradle.html#map",
-    "href": "Geocradle.html#map",
+    "objectID": "Geocradle.html#soil-laboratory-information",
+    "href": "Geocradle.html#soil-laboratory-information",
     "title": "Geocradle",
-    "section": " Map",
-    "text": "Map",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 1,753\nProperties available (original): 18\nProperties standardized (OSSL): 7 — summarized in Table 1 below\nCategories: physical, chemical, carbon & nutrients\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nsand.tot_usda.c405_w.pctSand, Total, N prepMethod: usda.c405Unit: w.pct\n264\n53.48\n22.85\n0.40\n36.85\n54.00\n69.00\n99.00\n\n\nclay.tot_usda.a334_w.pctClayMethod: usda.a334Unit: w.pct\n77\n21.26\n16.01\n0.00\n9.39\n17.00\n29.10\n94.80\n\n\nsilt.tot_usda.c407_w.pctSilt, Total, N prepMethod: usda.c407Unit: w.pct\n264\n26.67\n14.31\n0.00\n16.00\n26.00\n37.40\n68.00\n\n\noc_iso.10694_w.pctOrganic Carbon, ISO 10694Method: iso.10694Unit: w.pct\n132\n0.74\n0.84\n0.00\n0.29\n0.58\n0.94\n20.75\n\n\ncaco3_iso.10693_w.pctCarbonate, ISO 10693Method: iso.10693Unit: w.pct\n388\n6.83\n14.87\n0.00\n0.00\n0.20\n3.40\n89.99\n\n\nph.h2o_usda.a268_indexpH, 1:1 Soil-Water SuspensionMethod: usda.a268Unit: index\n1141\n7.22\n1.09\n3.50\n6.50\n7.44\n8.01\n10.07\n\n\nec_iso.11265_ds.mElectrical Conductivity, ISO 11265Method: iso.11265Unit: ds.m\n1412\n2.29\n9.32\n0.02\n0.16\n0.67\n1.42\n120.00",
     "crumbs": [
       "← Back to listed libraries",
       "Geocradle"
@@ -264,11 +264,11 @@
     ]
   },
   {
-    "objectID": "LF_BRA.html#soil-laboratory-information",
-    "href": "LF_BRA.html#soil-laboratory-information",
+    "objectID": "LF_BRA.html#map",
+    "href": "LF_BRA.html#map",
     "title": "LF_BRA",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nclay.tot_usda.a334_w.pct\n0\n34.54\n9.42\n17.50\n25.02\n37.90\n41.05\n51.10\n\n\noc_iso.10694_w.pct\n0\n2.54\n0.60\n1.40\n2.00\n2.50\n3.10\n3.70\n\n\ncec_usda.a723_cmolc.kg\n0\n8.00\n2.59\n3.75\n5.85\n7.99\n9.78\n14.89\n\n\nph.cacl2_iso.10390_index\n0\n5.33\n0.44\n4.60\n5.00\n5.20\n5.60\n6.30\n\n\np.ext_brazil.ier_mg.kg\n0\n21.46\n14.46\n4.00\n12.00\n17.50\n26.00\n104.00\n\n\nk.ext_brazil.ier_cmolc.kg\n0\n0.34\n0.24\n0.09\n0.10\n0.28\n0.55\n1.03\n\n\nca.ext_brazil.ier_cmolc.kg\n0\n3.49\n1.92\n0.80\n1.52\n3.30\n5.00\n7.80\n\n\nmg.ext_brazil.ier_cmolc.kg\n0\n1.79\n1.26\n0.30\n0.60\n1.50\n2.80\n5.40",
+    "section": " Map",
+    "text": "Map",
     "crumbs": [
       "← Back to listed libraries",
       "LF_BRA"
@@ -279,18 +279,18 @@
     "href": "LF_BRA.html#soil-site-information",
     "title": "LF_BRA",
     "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: none\nsampling depth: top\ngeography: none",
+    "text": "Soil site information\n\nCoordinates precision: none\nSampling depth: top\nGeography: none\nVariables available (OSSL): 5 out of 5 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, loc.field_src_txt, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm",
     "crumbs": [
       "← Back to listed libraries",
       "LF_BRA"
     ]
   },
   {
-    "objectID": "LF_BRA.html#map",
-    "href": "LF_BRA.html#map",
+    "objectID": "LF_BRA.html#soil-laboratory-information",
+    "href": "LF_BRA.html#soil-laboratory-information",
     "title": "LF_BRA",
-    "section": " Map",
-    "text": "Map",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 102\nProperties available (original): 9\nProperties standardized (OSSL): 8 — summarized in Table 1 below\nCategories: physical, chemical, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nclay.tot_usda.a334_w.pctClayMethod: usda.a334Unit: w.pct\n0\n34.54\n9.42\n17.50\n25.02\n37.90\n41.05\n51.10\n\n\noc_iso.10694_w.pctOrganic Carbon, ISO 10694Method: iso.10694Unit: w.pct\n0\n2.54\n0.60\n1.40\n2.00\n2.50\n3.10\n3.70\n\n\ncec_usda.a723_cmolc.kgCEC, pH 7.0, NH4OAc, 2M KCl displacementMethod: usda.a723Unit: cmolc.kg\n0\n8.00\n2.59\n3.75\n5.85\n7.99\n9.78\n14.89\n\n\nph.cacl2_iso.10390_indexpH, 1:2 Soil-CaCl2 Suspension, ISO 10390Method: iso.10390Unit: index\n0\n5.33\n0.44\n4.60\n5.00\n5.20\n5.60\n6.30\n\n\np.ext_brazil.ier_mg.kgPhosphorus, Extractable, Ion Exchange Resin (IER)Method: brazil.ierUnit: mg.kg\n0\n21.46\n14.46\n4.00\n12.00\n17.50\n26.00\n104.00\n\n\nk.ext_brazil.ier_cmolc.kgPotassium, Extractable, Ion Exchange Resin (IER)Method: brazil.ierUnit: cmolc.kg\n0\n0.34\n0.24\n0.09\n0.10\n0.28\n0.55\n1.03\n\n\nca.ext_brazil.ier_cmolc.kgCalcium, Extractable, Ion Exchange Resin (IER)Method: brazil.ierUnit: cmolc.kg\n0\n3.49\n1.92\n0.80\n1.52\n3.30\n5.00\n7.80\n\n\nmg.ext_brazil.ier_cmolc.kgMagnesium, Extractable, Ion Exchange Resin (IER)Method: brazil.ierUnit: cmolc.kg\n0\n1.79\n1.26\n0.30\n0.60\n1.50\n2.80\n5.40",
     "crumbs": [
       "← Back to listed libraries",
       "LF_BRA"
@@ -341,11 +341,11 @@
     ]
   },
   {
-    "objectID": "GPKOR.html#soil-laboratory-information",
-    "href": "GPKOR.html#soil-laboratory-information",
+    "objectID": "GPKOR.html#map",
+    "href": "GPKOR.html#map",
     "title": "GPKOR",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\noc_iso.10694_w.pct\n788\n2.78\n1.8\n0.1\n1.5\n2.5\n3.7\n10.5",
+    "section": " Map",
+    "text": "Map",
     "crumbs": [
       "← Back to listed libraries",
       "GPKOR"
@@ -356,18 +356,18 @@
     "href": "GPKOR.html#soil-site-information",
     "title": "GPKOR",
     "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise, region\nsampling depth: top\ngeography: landuse",
+    "text": "Soil site information\n\nCoordinates precision: precise, region\nSampling depth: top\nGeography: landuse\nVariables available (OSSL): 10 out of 10 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, loc.region_src_txt, site.land.use_src_txt, site.elevation_src_m, observation.date_src_yyyy.mm.dd, latitude.point_wgs84_dd, longitude.point_wgs84_dd, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm",
     "crumbs": [
       "← Back to listed libraries",
       "GPKOR"
     ]
   },
   {
-    "objectID": "GPKOR.html#map",
-    "href": "GPKOR.html#map",
+    "objectID": "GPKOR.html#soil-laboratory-information",
+    "href": "GPKOR.html#soil-laboratory-information",
     "title": "GPKOR",
-    "section": " Map",
-    "text": "Map",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 1,500\nProperties available (original): 1\nProperties standardized (OSSL): 1 — summarized in Table 1 below\nCategories: carbon & nutrients\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\noc_iso.10694_w.pctOrganic Carbon, ISO 10694Method: iso.10694Unit: w.pct\n788\n2.78\n1.8\n0.1\n1.5\n2.5\n3.7\n10.5",
     "crumbs": [
       "← Back to listed libraries",
       "GPKOR"
@@ -418,11 +418,11 @@
     ]
   },
   {
-    "objectID": "WS_SWIND.html#soil-laboratory-information",
-    "href": "WS_SWIND.html#soil-laboratory-information",
+    "objectID": "WS_SWIND.html#map",
+    "href": "WS_SWIND.html#map",
     "title": "WS_SWIND",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nbd_iso.11272_g.cm3\n0\n1.43\n0.13\n1.10\n1.36\n1.44\n1.53\n1.75\n\n\nc.tot_iso.10694_w.pct\n0\n1.58\n0.95\n0.37\n0.89\n1.33\n1.99\n4.95\n\n\noc_iso.10694_w.pct\n0\n1.31\n0.68\n0.36\n0.86\n1.14\n1.61\n5.03\n\n\nn.tot_iso.13878_w.pct\n0\n0.11\n0.06\n0.04\n0.07\n0.09\n0.14\n0.31\n\n\nph.cacl2_iso.10390_index\n9\n5.61\n0.49\n4.75\n5.24\n5.52\n5.85\n6.92\n\n\nec_iso.11265_ds.m\n20\n0.00\n0.00\n0.00\n0.00\n0.00\n0.00\n0.00\n\n\ncec_iso.11260_cmolc.kg\n9\n15.86\n9.79\n6.22\n9.03\n10.93\n17.53\n37.99\n\n\nclay.tot_iso.11277_w.pct\n9\n25.72\n9.89\n11.89\n17.60\n21.62\n32.04\n47.17\n\n\nsilt.tot_iso.11278_w.pct\n9\n24.81\n5.02\n17.77\n20.68\n23.94\n28.80\n35.94\n\n\nsand.tot_iso.11279_w.pct\n9\n49.48\n12.59\n23.85\n42.22\n52.73\n60.01\n64.31\n\n\nfe.ext_usda.a1064_mg.kg\n9\n45586.67\n20204.54\n22000.00\n28175.00\n40500.00\n56400.00\n101200.00\n\n\nal.ext_usda.a1056_mg.kg\n9\n85524.44\n12235.23\n60700.00\n74200.00\n87000.00\n93600.00\n114100.00\n\n\nk.ext_usda.a1065_mg.kg\n9\n7999.44\n4264.54\n1200.00\n6375.00\n7400.00\n7900.00\n19000.00\n\n\nna.ext_usda.a1068_mg.kg\n9\n10817.22\n2125.89\n6300.00\n8900.00\n10950.00\n12400.00\n16000.00\n\n\nca.ext_usda.a1059_mg.kg\n9\n11698.33\n5937.87\n3900.00\n8500.00\n10600.00\n14200.00\n36800.00\n\n\np.ext_usda.a1070_mg.kg\n54\n132.59\n125.68\n0.00\n0.00\n100.00\n200.00\n500.00\n\n\nmg.ext_usda.a1066_mg.kg\n9\n10056.67\n3355.79\n6300.00\n7800.00\n8900.00\n12300.00\n21500.00",
+    "section": " Map",
+    "text": "Map",
     "crumbs": [
       "← Back to listed libraries",
       "WS_SWIND"
@@ -433,18 +433,18 @@
     "href": "WS_SWIND.html#soil-site-information",
     "title": "WS_SWIND",
     "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: none\nsampling depth: various\ngeography: none",
+    "text": "Soil site information\n\nCoordinates precision: none\nSampling depth: various\nGeography: none\nVariables available (OSSL): 6 out of 6 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, site.id_src_txt, site.pit_src_txt, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm",
     "crumbs": [
       "← Back to listed libraries",
       "WS_SWIND"
     ]
   },
   {
-    "objectID": "WS_SWIND.html#map",
-    "href": "WS_SWIND.html#map",
+    "objectID": "WS_SWIND.html#soil-laboratory-information",
+    "href": "WS_SWIND.html#soil-laboratory-information",
     "title": "WS_SWIND",
-    "section": " Map",
-    "text": "Map",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 189\nProperties available (original): 20\nProperties standardized (OSSL): 17 — summarized in Table 1 below\nCategories: physical, chemical, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nbd_iso.11272_g.cm3Bulk Density, ISO 11272Method: iso.11272Unit: g.cm3\n0\n1.43\n0.13\n1.10\n1.36\n1.44\n1.53\n1.75\n\n\nc.tot_iso.10694_w.pctCarbon, Total NCS, ISO 10694Method: iso.10694Unit: w.pct\n0\n1.58\n0.95\n0.37\n0.89\n1.33\n1.99\n4.95\n\n\noc_iso.10694_w.pctOrganic Carbon, ISO 10694Method: iso.10694Unit: w.pct\n0\n1.31\n0.68\n0.36\n0.86\n1.14\n1.61\n5.03\n\n\nn.tot_iso.13878_w.pctNitrogen, Total NCS, ISO 13878Method: iso.13878Unit: w.pct\n0\n0.11\n0.06\n0.04\n0.07\n0.09\n0.14\n0.31\n\n\nph.cacl2_iso.10390_indexpH, 1:2 Soil-CaCl2 Suspension, ISO 10390Method: iso.10390Unit: index\n9\n5.61\n0.49\n4.75\n5.24\n5.52\n5.85\n6.92\n\n\nec_iso.11265_ds.mElectrical Conductivity, ISO 11265Method: iso.11265Unit: ds.m\n20\n0.00\n0.00\n0.00\n0.00\n0.00\n0.00\n0.00\n\n\ncec_iso.11260_cmolc.kgCEC, pH 7.0, ISO 11260Method: iso.11260Unit: cmolc.kg\n9\n15.86\n9.79\n6.22\n9.03\n10.93\n17.53\n37.99\n\n\nclay.tot_iso.11277_w.pctClay, ISO 11277Method: iso.11277Unit: w.pct\n9\n25.72\n9.89\n11.89\n17.60\n21.62\n32.04\n47.17\n\n\nsilt.tot_iso.11278_w.pct\n9\n24.81\n5.02\n17.77\n20.68\n23.94\n28.80\n35.94\n\n\nsand.tot_iso.11279_w.pct\n9\n49.48\n12.59\n23.85\n42.22\n52.73\n60.01\n64.31\n\n\nfe.ext_usda.a1064_mg.kgIron, Extractable, Mehlich3Method: usda.a1064Unit: mg.kg\n9\n45586.67\n20204.54\n22000.00\n28175.00\n40500.00\n56400.00\n101200.00\n\n\nal.ext_usda.a1056_mg.kgAluminum, Extractable, Mehlich3Method: usda.a1056Unit: mg.kg\n9\n85524.44\n12235.23\n60700.00\n74200.00\n87000.00\n93600.00\n114100.00\n\n\nk.ext_usda.a1065_mg.kgPotassium, Extractable, Mehlich3Method: usda.a1065Unit: mg.kg\n9\n7999.44\n4264.54\n1200.00\n6375.00\n7400.00\n7900.00\n19000.00\n\n\nna.ext_usda.a1068_mg.kgSodium, Extractable, Mehlich3Method: usda.a1068Unit: mg.kg\n9\n10817.22\n2125.89\n6300.00\n8900.00\n10950.00\n12400.00\n16000.00\n\n\nca.ext_usda.a1059_mg.kgCalcium, Extractable, Mehlich3Method: usda.a1059Unit: mg.kg\n9\n11698.33\n5937.87\n3900.00\n8500.00\n10600.00\n14200.00\n36800.00\n\n\np.ext_usda.a1070_mg.kgPhosphorus, Extractable, Mehlich3Method: usda.a1070Unit: mg.kg\n54\n132.59\n125.68\n0.00\n0.00\n100.00\n200.00\n500.00\n\n\nmg.ext_usda.a1066_mg.kgMagnesium, Extractable, Mehlich3Method: usda.a1066Unit: mg.kg\n9\n10056.67\n3355.79\n6300.00\n7800.00\n8900.00\n12300.00\n21500.00",
     "crumbs": [
       "← Back to listed libraries",
       "WS_SWIND"
@@ -495,11 +495,11 @@
     ]
   },
   {
-    "objectID": "KSSL.html#soil-laboratory-information",
-    "href": "KSSL.html#soil-laboratory-information",
+    "objectID": "KSSL.html#map",
+    "href": "KSSL.html#map",
     "title": "KSSL",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSoil analytical data summary not available for this dataset.",
+    "section": " Map",
+    "text": "Map",
     "crumbs": [
       "← Back to listed libraries",
       "KSSL"
@@ -510,18 +510,18 @@
     "href": "KSSL.html#soil-site-information",
     "title": "KSSL",
     "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise, county, country\nsampling depth: various\ngeography: soil taxonomy, soil horizon",
+    "text": "Soil site information\n\nCoordinates precision: precise, county, country\nSampling depth: various\nGeography: soil taxonomy, soil horizon",
     "crumbs": [
       "← Back to listed libraries",
       "KSSL"
     ]
   },
   {
-    "objectID": "KSSL.html#map",
-    "href": "KSSL.html#map",
+    "objectID": "KSSL.html#soil-laboratory-information",
+    "href": "KSSL.html#soil-laboratory-information",
     "title": "KSSL",
-    "section": " Map",
-    "text": "Map",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nProperties available (original): 1000+\nProperties standardized (OSSL): 51 — summarized in ?@tbl-soillab-kssl below\nCategories: physical, chemical, biological, hydrological, carbon & nutrients, metal elements\nOriginal source: see Database access\n\nDetailed summary statistics not available for this dataset.",
     "crumbs": [
       "← Back to listed libraries",
       "KSSL"
@@ -583,11 +583,11 @@
     ]
   },
   {
-    "objectID": "AFSIS1.html#soil-laboratory-information",
-    "href": "AFSIS1.html#soil-laboratory-information",
+    "objectID": "AFSIS1.html#map",
+    "href": "AFSIS1.html#map",
     "title": "AFSIS1",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nec_usda.a364_ds.m\n0\n0.13\n0.39\n0.01\n0.03\n0.06\n0.11\n8.73\n\n\nal.ext_usda.a1056_mg.kg\n0\n821.58\n466.22\n1.67\n457.00\n733.00\n1109.50\n3041.00\n\n\nb.ext_mel3_mg.kg\n2\n0.44\n1.79\n0.00\n0.00\n0.10\n0.36\n55.09\n\n\nca.ext_usda.a1059_mg.kg\n0\n1841.05\n3438.81\n0.00\n290.00\n634.00\n1693.50\n35200.00\n\n\ncu.ext_usda.a1063_mg.kg\n0\n1.77\n2.06\n0.00\n0.50\n1.12\n2.42\n23.70\n\n\nfe.ext_usda.a1064_mg.kg\n0\n112.11\n81.46\n1.26\n60.05\n91.90\n139.10\n981.00\n\n\nk.ext_usda.a1065_mg.kg\n0\n173.99\n289.98\n0.00\n51.48\n91.41\n177.85\n5047.00\n\n\nmg.ext_usda.a1066_mg.kg\n0\n311.58\n416.64\n0.00\n79.15\n159.00\n383.95\n4740.00\n\n\nmn.ext_usda.a1067_mg.kg\n0\n98.93\n100.63\n0.57\n24.00\n69.40\n139.00\n686.60\n\n\nna.ext_usda.a1068_mg.kg\n6\n140.34\n1169.35\n0.00\n22.30\n34.30\n50.92\n31800.00\n\n\np.ext_usda.a652_mg.kg\n0\n12.30\n28.75\n0.00\n2.55\n4.97\n10.09\n396.00\n\n\ns.ext_mel3_mg.kg\n2\n24.87\n165.80\n0.62\n5.00\n7.62\n12.40\n3940.00\n\n\nzn.ext_usda.a1073_mg.kg\n0\n1.53\n1.77\n0.00\n0.71\n1.10\n1.75\n36.51\n\n\nph.h2o_usda.a268_index\n0\n6.21\n1.07\n3.61\n5.44\n6.08\n6.69\n9.86\n\n\nn.tot_usda.a623_w.pct\n2\n0.08\n0.08\n0.00\n0.03\n0.05\n0.10\n0.66\n\n\nc.tot_usda.a622_w.pct\n2\n1.24\n1.34\n0.08\n0.42\n0.78\n1.51\n11.29\n\n\noc_usda.c1059_w.pct\n2\n1.18\n1.28\n0.07\n0.39\n0.73\n1.46\n10.93\n\n\nclay.tot_usda.a334_w.pct\n8\n42.99\n24.09\n0.32\n22.16\n40.16\n63.13\n100.00\n\n\nsilt.tot_usda.c62_w.pct\n14\n17.73\n10.05\n0.34\n10.00\n16.48\n23.42\n57.27\n\n\nsand.tot_usda.c60_w.pct\n13\n39.50\n26.20\n0.12\n15.72\n36.96\n60.31\n100.00",
+    "section": " Map",
+    "text": "Map",
     "crumbs": [
       "← Back to listed libraries",
       "AFSIS1"
@@ -598,18 +598,18 @@
     "href": "AFSIS1.html#soil-site-information",
     "title": "AFSIS1",
     "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise, country\nsampling depth: various\ngeography: soil taxonomy, landuse",
+    "text": "Soil site information\n\nCoordinates precision: precise, country\nSampling depth: various\nGeography: soil taxonomy, landuse\nVariables available (OSSL): 16 out of 16 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, latitude.point_wgs84_dd, longitude.point_wgs84_dd, surveyor.title_utf8_txt, site.cluster_src_id, site.plot_src_id, site.name_src_txt, loc.country_src_txt, loc.region_src_txt, site.cultivated_src_logical, observation.date.begin_iso.8601_yyyy.mm.dd, observation.date.end_iso.8601_yyyy.mm.dd, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm, layer.sequence_usda_uint16",
     "crumbs": [
       "← Back to listed libraries",
       "AFSIS1"
     ]
   },
   {
-    "objectID": "AFSIS1.html#map",
-    "href": "AFSIS1.html#map",
+    "objectID": "AFSIS1.html#soil-laboratory-information",
+    "href": "AFSIS1.html#soil-laboratory-information",
     "title": "AFSIS1",
-    "section": " Map",
-    "text": "Map",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 1,907\nProperties available (original): 23\nProperties standardized (OSSL): 20 — summarized in Table 1 below\nCategories: physical, chemical, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nec_usda.a364_ds.mElectrical Conductivity, (w/w)Method: usda.a364Unit: ds.m\n0\n0.13\n0.39\n0.01\n0.03\n0.06\n0.11\n8.73\n\n\nal.ext_usda.a1056_mg.kgAluminum, Extractable, Mehlich3Method: usda.a1056Unit: mg.kg\n0\n821.58\n466.22\n1.67\n457.00\n733.00\n1109.50\n3041.00\n\n\nb.ext_mel3_mg.kgBoron, Extractable, Mehlich3Method: mel3Unit: mg.kg\n2\n0.44\n1.79\n0.00\n0.00\n0.10\n0.36\n55.09\n\n\nca.ext_usda.a1059_mg.kgCalcium, Extractable, Mehlich3Method: usda.a1059Unit: mg.kg\n0\n1841.05\n3438.81\n0.00\n290.00\n634.00\n1693.50\n35200.00\n\n\ncu.ext_usda.a1063_mg.kgCopper, Extractable, Mehlich3Method: usda.a1063Unit: mg.kg\n0\n1.77\n2.06\n0.00\n0.50\n1.12\n2.42\n23.70\n\n\nfe.ext_usda.a1064_mg.kgIron, Extractable, Mehlich3Method: usda.a1064Unit: mg.kg\n0\n112.11\n81.46\n1.26\n60.05\n91.90\n139.10\n981.00\n\n\nk.ext_usda.a1065_mg.kgPotassium, Extractable, Mehlich3Method: usda.a1065Unit: mg.kg\n0\n173.99\n289.98\n0.00\n51.48\n91.41\n177.85\n5047.00\n\n\nmg.ext_usda.a1066_mg.kgMagnesium, Extractable, Mehlich3Method: usda.a1066Unit: mg.kg\n0\n311.58\n416.64\n0.00\n79.15\n159.00\n383.95\n4740.00\n\n\nmn.ext_usda.a1067_mg.kgManganese, Extractable, Mehlich3Method: usda.a1067Unit: mg.kg\n0\n98.93\n100.63\n0.57\n24.00\n69.40\n139.00\n686.60\n\n\nna.ext_usda.a1068_mg.kgSodium, Extractable, Mehlich3Method: usda.a1068Unit: mg.kg\n6\n140.34\n1169.35\n0.00\n22.30\n34.30\n50.92\n31800.00\n\n\np.ext_usda.a652_mg.kgPhosphorus, Extractable, Mehlich3Method: usda.a652Unit: mg.kg\n0\n12.30\n28.75\n0.00\n2.55\n4.97\n10.09\n396.00\n\n\ns.ext_mel3_mg.kgSulphur, Extractable, Mehlich3Method: mel3Unit: mg.kg\n2\n24.87\n165.80\n0.62\n5.00\n7.62\n12.40\n3940.00\n\n\nzn.ext_usda.a1073_mg.kgZinc, Extractable, Mehlich3Method: usda.a1073Unit: mg.kg\n0\n1.53\n1.77\n0.00\n0.71\n1.10\n1.75\n36.51\n\n\nph.h2o_usda.a268_indexpH, 1:1 Soil-Water SuspensionMethod: usda.a268Unit: index\n0\n6.21\n1.07\n3.61\n5.44\n6.08\n6.69\n9.86\n\n\nn.tot_usda.a623_w.pctNitrogen, Total NCSMethod: usda.a623Unit: w.pct\n2\n0.08\n0.08\n0.00\n0.03\n0.05\n0.10\n0.66\n\n\nc.tot_usda.a622_w.pctCarbon, Total NCSMethod: usda.a622Unit: w.pct\n2\n1.24\n1.34\n0.08\n0.42\n0.78\n1.51\n11.29\n\n\noc_usda.c1059_w.pctOrganic Carbon, Total C without CaCO3, N prepMethod: usda.c1059Unit: w.pct\n2\n1.18\n1.28\n0.07\n0.39\n0.73\n1.46\n10.93\n\n\nclay.tot_usda.a334_w.pctClayMethod: usda.a334Unit: w.pct\n8\n42.99\n24.09\n0.32\n22.16\n40.16\n63.13\n100.00\n\n\nsilt.tot_usda.c62_w.pctSilt, Total, S prepMethod: usda.c62Unit: w.pct\n14\n17.73\n10.05\n0.34\n10.00\n16.48\n23.42\n57.27\n\n\nsand.tot_usda.c60_w.pctSand, Total, S prepMethod: usda.c60Unit: w.pct\n13\n39.50\n26.20\n0.12\n15.72\n36.96\n60.31\n100.00",
     "crumbs": [
       "← Back to listed libraries",
       "AFSIS1"
@@ -660,11 +660,11 @@
     ]
   },
   {
-    "objectID": "LUCAS.html#soil-laboratory-information",
-    "href": "LUCAS.html#soil-laboratory-information",
+    "objectID": "LUCAS.html#map",
+    "href": "LUCAS.html#map",
     "title": "LUCAS",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\ncf_iso.11464_w.pct\n17601\n14.89\n13.09\n0.00\n5.00\n11.00\n21.00\n92.00\n\n\nclay.tot_iso.11277_w.pct\n17628\n19.69\n14.63\n0.00\n8.00\n17.00\n28.00\n96.00\n\n\nsilt.tot_iso.11277_w.pct\n17630\n37.24\n19.06\n0.00\n24.00\n38.00\n51.00\n93.00\n\n\nsand.tot_iso.11277_w.pct\n17628\n38.78\n26.01\n0.00\n16.00\n36.00\n59.00\n100.00\n\n\nph.h2o_iso.10390_index\n2\n6.19\n1.34\n3.17\n5.02\n6.18\n7.48\n10.37\n\n\nph.cacl2_iso.10390_index\n2\n5.71\n1.40\n2.57\n4.50\n5.76\n7.10\n10.00\n\n\noc_iso.10694_w.pct\n249\n4.52\n8.22\n0.01\n1.26\n2.02\n3.79\n58.68\n\n\ncaco3_iso.10693_w.pct\n697\n5.44\n13.05\n0.00\n0.00\n0.10\n1.60\n97.60\n\n\nn.tot_iso.11261_w.pct\n7\n0.30\n0.36\n0.00\n0.12\n0.18\n0.30\n3.86\n\n\np.ext_iso.11263_mg.kg\n697\n31.21\n32.69\n0.00\n10.90\n22.70\n43.00\n1366.40\n\n\nk.ext_usda.a725_cmolc.kg\n2\n1.02\n1.18\n0.00\n0.39\n0.74\n1.29\n51.31\n\n\ncec_iso.11260_cmolc.kg\n21882\n17.31\n15.19\n0.00\n7.50\n13.50\n22.80\n234.00\n\n\nec_iso.11265_ds.m\n22066\n0.26\n0.33\n0.00\n0.10\n0.17\n0.28\n9.69",
+    "section": " Map",
+    "text": "Map",
     "crumbs": [
       "← Back to listed libraries",
       "LUCAS"
@@ -675,18 +675,18 @@
     "href": "LUCAS.html#soil-site-information",
     "title": "LUCAS",
     "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise, country\nsampling depth: top\ngeography: soil taxonomy, elevation, landuse",
+    "text": "Soil site information\n\nCoordinates precision: precise, country\nSampling depth: top\nGeography: soil taxonomy, elevation, landuse\nVariables available (OSSL): 12 out of 12 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, longitude.point_wgs84_dd, latitude.point_wgs84_dd, loc.country_src_txt, site.landuse2009_src_code, site.landuse2012_src_code, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm, observation.date.begin_iso.8601_yyyy.mm.dd, observation.date.end_iso.8601_yyyy.mm.dd, site.landuse2015_src_code",
     "crumbs": [
       "← Back to listed libraries",
       "LUCAS"
     ]
   },
   {
-    "objectID": "LUCAS.html#map",
-    "href": "LUCAS.html#map",
+    "objectID": "LUCAS.html#soil-laboratory-information",
+    "href": "LUCAS.html#soil-laboratory-information",
     "title": "LUCAS",
-    "section": " Map",
-    "text": "Map",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 43,925\nProperties available (original): 13\nProperties standardized (OSSL): 13 — summarized in Table 1 below\nCategories: physical, chemical, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\ncf_iso.11464_w.pctCoarse Fragments, ISO 11464Method: iso.11464Unit: w.pct\n17601\n14.89\n13.09\n0.00\n5.00\n11.00\n21.00\n92.00\n\n\nclay.tot_iso.11277_w.pctClay, ISO 11277Method: iso.11277Unit: w.pct\n17628\n19.69\n14.63\n0.00\n8.00\n17.00\n28.00\n96.00\n\n\nsilt.tot_iso.11277_w.pctSilt, Total, ISO 11277Method: iso.11277Unit: w.pct\n17630\n37.24\n19.06\n0.00\n24.00\n38.00\n51.00\n93.00\n\n\nsand.tot_iso.11277_w.pctSand, Total, ISO 11277Method: iso.11277Unit: w.pct\n17628\n38.78\n26.01\n0.00\n16.00\n36.00\n59.00\n100.00\n\n\nph.h2o_iso.10390_indexpH, 1:5 Soil-Water Suspension, ISO 10390Method: iso.10390Unit: index\n2\n6.19\n1.34\n3.17\n5.02\n6.18\n7.48\n10.37\n\n\nph.cacl2_iso.10390_indexpH, 1:2 Soil-CaCl2 Suspension, ISO 10390Method: iso.10390Unit: index\n2\n5.71\n1.40\n2.57\n4.50\n5.76\n7.10\n10.00\n\n\noc_iso.10694_w.pctOrganic Carbon, ISO 10694Method: iso.10694Unit: w.pct\n249\n4.52\n8.22\n0.01\n1.26\n2.02\n3.79\n58.68\n\n\ncaco3_iso.10693_w.pctCarbonate, ISO 10693Method: iso.10693Unit: w.pct\n697\n5.44\n13.05\n0.00\n0.00\n0.10\n1.60\n97.60\n\n\nn.tot_iso.11261_w.pctNitrogen, Total NCS, ISO 11261Method: iso.11261Unit: w.pct\n7\n0.30\n0.36\n0.00\n0.12\n0.18\n0.30\n3.86\n\n\np.ext_iso.11263_mg.kgPhosphorus, Extractable, ISO 11263Method: iso.11263Unit: mg.kg\n697\n31.21\n32.69\n0.00\n10.90\n22.70\n43.00\n1366.40\n\n\nk.ext_usda.a725_cmolc.kgPotassium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a725Unit: cmolc.kg\n2\n1.02\n1.18\n0.00\n0.39\n0.74\n1.29\n51.31\n\n\ncec_iso.11260_cmolc.kgCEC, pH 7.0, ISO 11260Method: iso.11260Unit: cmolc.kg\n21882\n17.31\n15.19\n0.00\n7.50\n13.50\n22.80\n234.00\n\n\nec_iso.11265_ds.mElectrical Conductivity, ISO 11265Method: iso.11265Unit: ds.m\n22066\n0.26\n0.33\n0.00\n0.10\n0.17\n0.28\n9.69",
     "crumbs": [
       "← Back to listed libraries",
       "LUCAS"
@@ -748,11 +748,11 @@
     ]
   },
   {
-    "objectID": "MTQ.html#soil-laboratory-information",
-    "href": "MTQ.html#soil-laboratory-information",
+    "objectID": "MTQ.html#map",
+    "href": "MTQ.html#map",
     "title": "MTQ",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\noc_iso.10694_w.pct\n0\n1.60\n1.19\n0.09\n0.74\n1.33\n2.08\n8.85\n\n\nn.tot_iso.13878_w.pct\n0\n0.15\n0.10\n0.01\n0.07\n0.13\n0.18\n0.62\n\n\nclay.tot_iso.11277_w.pct\n222\n43.10\n21.94\n3.30\n21.00\n50.40\n61.30\n82.40\n\n\nbd_iso.11277_g.cm3\n0\n0.92\n0.18\n0.35\n0.79\n0.92\n1.04\n1.49\n\n\ncf_iso.11464_w.pct\n344\n38.81\n15.16\n2.10\n29.10\n39.15\n46.87\n88.90\n\n\nsand.tot_iso.11277_w.pct\n222\n36.47\n21.93\n2.30\n18.22\n29.35\n58.05\n87.90\n\n\nsilt.tot_iso.11277_w.pct\n222\n20.46\n6.14\n6.40\n16.70\n21.05\n25.10\n34.30",
+    "section": " Map",
+    "text": "Map",
     "crumbs": [
       "← Back to listed libraries",
       "MTQ"
@@ -763,18 +763,18 @@
     "href": "MTQ.html#soil-site-information",
     "title": "MTQ",
     "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise\nsampling depth: various\ngeography: soil taxonomy, landuse",
+    "text": "Soil site information\n\nCoordinates precision: precise\nSampling depth: various\nGeography: soil taxonomy, landuse\nVariables available (OSSL): 13 out of 13 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, site.id_src_txt, loc.region_src_txt, loc.municipality_src_txt, latitude.point_wgs84_dd, longitude.point_wgs84_dd, pedon.taxa_src_txt, site.land.use_src_txt, site.land.history_src_txt, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm, layer.sequence_usda_uint16",
     "crumbs": [
       "← Back to listed libraries",
       "MTQ"
     ]
   },
   {
-    "objectID": "MTQ.html#map",
-    "href": "MTQ.html#map",
+    "objectID": "MTQ.html#soil-laboratory-information",
+    "href": "MTQ.html#soil-laboratory-information",
     "title": "MTQ",
-    "section": " Map",
-    "text": "Map",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 516\nProperties available (original): 13\nProperties standardized (OSSL): 12 — summarized in Table 1 below\nCategories: physical, carbon & nutrients\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\noc_iso.10694_w.pctOrganic Carbon, ISO 10694Method: iso.10694Unit: w.pct\n0\n1.60\n1.19\n0.09\n0.74\n1.33\n2.08\n8.85\n\n\nn.tot_iso.13878_w.pctNitrogen, Total NCS, ISO 13878Method: iso.13878Unit: w.pct\n0\n0.15\n0.10\n0.01\n0.07\n0.13\n0.18\n0.62\n\n\nclay.tot_iso.11277_w.pctClay, ISO 11277Method: iso.11277Unit: w.pct\n222\n43.10\n21.94\n3.30\n21.00\n50.40\n61.30\n82.40\n\n\nbd_iso.11277_g.cm3\n0\n0.92\n0.18\n0.35\n0.79\n0.92\n1.04\n1.49\n\n\ncf_iso.11464_w.pctCoarse Fragments, ISO 11464Method: iso.11464Unit: w.pct\n344\n38.81\n15.16\n2.10\n29.10\n39.15\n46.87\n88.90\n\n\nsand.tot_iso.11277_w.pctSand, Total, ISO 11277Method: iso.11277Unit: w.pct\n222\n36.47\n21.93\n2.30\n18.22\n29.35\n58.05\n87.90\n\n\nsilt.tot_iso.11277_w.pctSilt, Total, ISO 11277Method: iso.11277Unit: w.pct\n222\n20.46\n6.14\n6.40\n16.70\n21.05\n25.10\n34.30",
     "crumbs": [
       "← Back to listed libraries",
       "MTQ"
@@ -818,29 +818,7 @@
     "href": "SRB.html#database-access",
     "title": "SRB",
     "section": " Database access",
-    "text": "Database access\nData originally provided by:\n\nContact: Branislav Jović\nEmail: branislav.jovic@dh.uns.ac.rs\nOriginal source: https://doi.org/10.1016/j.saa.2018.08.039\n\nNo file listing available for this dataset.",
-    "crumbs": [
-      "← Back to listed libraries",
-      "SRB"
-    ]
-  },
-  {
-    "objectID": "SRB.html#soil-laboratory-information",
-    "href": "SRB.html#soil-laboratory-information",
-    "title": "SRB",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nsilt.tot_usda.c62_w.pct\n0\n25.35\n12.61\n1.23\n15.04\n27.83\n35.60\n53.39\n\n\nclay.tot_usda.a334_w.pct\n0\n27.61\n13.54\n5.53\n15.95\n27.43\n36.92\n60.81\n\n\nsand.tot_usda.c60_w.pct\n0\n47.13\n23.87\n9.03\n28.84\n38.65\n68.61\n92.27\n\n\nc.tot_usda.a622_w.pct\n90\n3.47\n1.49\n1.43\n2.15\n2.99\n4.79\n7.06\n\n\noc_usda.c729_w.pct\n90\n2.83\n0.97\n1.30\n2.12\n2.67\n3.33\n5.02\n\n\nph.h2o_usda.a268_index\n90\n7.41\n0.87\n5.38\n6.77\n7.80\n7.97\n9.18\n\n\nn.tot_usda.a623_w.pct\n90\n0.19\n0.11\n0.05\n0.12\n0.19\n0.24\n0.49\n\n\ncaco3_usda.a54_w.pct\n90\n5.33\n6.54\n0.00\n0.00\n2.19\n10.11\n21.99",
-    "crumbs": [
-      "← Back to listed libraries",
-      "SRB"
-    ]
-  },
-  {
-    "objectID": "SRB.html#soil-site-information",
-    "href": "SRB.html#soil-site-information",
-    "title": "SRB",
-    "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise\nsampling depth: various\ngeography: soil taxonomy, landuse",
+    "text": "Database access\nData originally provided by:\n\nContact: Branislav Jović\nEmail: branislav.jovic@dh.uns.ac.rs\nOriginal source: https://doi.org/10.1016/j.saa.2018.08.039\n\nAvailable files\n\n\n\nType\nFilename\nLink\n\n\n\n\nMIR spectra — CSV (gzip)\nossl_mir_v1.3.csv.gz\nDownload\n\n\nMIR spectra — Parquet\nossl_mir_v1.3.parquet\nDownload\n\n\nSoil lab measurements — CSV (gzip)\nossl_soillab_v1.3.csv.gz\nDownload\n\n\nSoil lab measurements — Parquet\nossl_soillab_v1.3.parquet\nDownload\n\n\nSoil site metadata — CSV (gzip)\nossl_soilsite_v1.3.csv.gz\nDownload\n\n\nSoil site metadata — Parquet\nossl_soilsite_v1.3.parquet\nDownload",
     "crumbs": [
       "← Back to listed libraries",
       "SRB"
@@ -852,6 +830,28 @@
     "title": "SRB",
     "section": " Map",
     "text": "Map",
+    "crumbs": [
+      "← Back to listed libraries",
+      "SRB"
+    ]
+  },
+  {
+    "objectID": "SRB.html#soil-site-information",
+    "href": "SRB.html#soil-site-information",
+    "title": "SRB",
+    "section": " Soil site information",
+    "text": "Soil site information\n\nCoordinates precision: precise\nSampling depth: various\nGeography: soil taxonomy, landuse\nVariables available (OSSL): 8 out of 8 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, site.location.use_src_txt, longitude.point_wgs84_dd, latitude.point_wgs84_dd, pedon.taxa_src_txt, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm",
+    "crumbs": [
+      "← Back to listed libraries",
+      "SRB"
+    ]
+  },
+  {
+    "objectID": "SRB.html#soil-laboratory-information",
+    "href": "SRB.html#soil-laboratory-information",
+    "title": "SRB",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 135\nProperties available (original): 10\nProperties standardized (OSSL): 8 — summarized in Table 1 below\nCategories: physical, chemical, carbon & nutrients\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nsilt.tot_usda.c62_w.pctSilt, Total, S prepMethod: usda.c62Unit: w.pct\n0\n25.35\n12.61\n1.23\n15.04\n27.83\n35.60\n53.39\n\n\nclay.tot_usda.a334_w.pctClayMethod: usda.a334Unit: w.pct\n0\n27.61\n13.54\n5.53\n15.95\n27.43\n36.92\n60.81\n\n\nsand.tot_usda.c60_w.pctSand, Total, S prepMethod: usda.c60Unit: w.pct\n0\n47.13\n23.87\n9.03\n28.84\n38.65\n68.61\n92.27\n\n\nc.tot_usda.a622_w.pctCarbon, Total NCSMethod: usda.a622Unit: w.pct\n90\n3.47\n1.49\n1.43\n2.15\n2.99\n4.79\n7.06\n\n\noc_usda.c729_w.pctOrganic Carbon, Total C without CaCO3, S prepMethod: usda.c729Unit: w.pct\n90\n2.83\n0.97\n1.30\n2.12\n2.67\n3.33\n5.02\n\n\nph.h2o_usda.a268_indexpH, 1:1 Soil-Water SuspensionMethod: usda.a268Unit: index\n90\n7.41\n0.87\n5.38\n6.77\n7.80\n7.97\n9.18\n\n\nn.tot_usda.a623_w.pctNitrogen, Total NCSMethod: usda.a623Unit: w.pct\n90\n0.19\n0.11\n0.05\n0.12\n0.19\n0.24\n0.49\n\n\ncaco3_usda.a54_w.pctCarbonate, &lt;2mm FractionMethod: usda.a54Unit: w.pct\n90\n5.33\n6.54\n0.00\n0.00\n2.19\n10.11\n21.99",
     "crumbs": [
       "← Back to listed libraries",
       "SRB"
@@ -902,11 +902,11 @@
     ]
   },
   {
-    "objectID": "HLF_CAN.html#soil-laboratory-information",
-    "href": "HLF_CAN.html#soil-laboratory-information",
+    "objectID": "HLF_CAN.html#map",
+    "href": "HLF_CAN.html#map",
     "title": "HLF_CAN",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nbd_iso.11272_g.cm3\n0\n1.27\n0.25\n0.38\n1.17\n1.33\n1.44\n1.72\n\n\nn.tot_iso.13878_w.pct\n23\n0.10\n0.09\n0.02\n0.04\n0.07\n0.14\n0.68\n\n\nc.tot_iso.10694_w.pct\n0\n1.79\n1.97\n0.00\n0.53\n1.24\n2.38\n15.68\n\n\noc_iso.10694_w.pct\n0\n1.56\n1.87\n0.07\n0.31\n0.90\n2.13\n11.84\n\n\nph.cacl2_iso.10390_index\n13\n5.24\n0.91\n3.65\n4.53\n5.18\n5.87\n7.07\n\n\nec_iso.11265_ds.m\n13\n2.32\n0.03\n2.25\n2.31\n2.32\n2.34\n2.41\n\n\nclay.tot_iso.11277_w.pct\n13\n14.18\n11.32\n2.00\n5.00\n8.00\n25.00\n40.00\n\n\nsilt.tot_iso.11277_w.pct\n13\n30.47\n18.68\n3.00\n15.00\n28.00\n50.00\n66.00\n\n\nsand.tot_iso.11277_w.pct\n13\n54.16\n29.64\n12.00\n23.75\n65.00\n81.00\n95.00",
+    "section": " Map",
+    "text": "Map",
     "crumbs": [
       "← Back to listed libraries",
       "HLF_CAN"
@@ -917,18 +917,18 @@
     "href": "HLF_CAN.html#soil-site-information",
     "title": "HLF_CAN",
     "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise\nsampling depth: various\ngeography: none",
+    "text": "Soil site information\n\nCoordinates precision: precise\nSampling depth: various\nGeography: none\nVariables available (OSSL): 7 out of 7 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, longitude.point_wgs84_dd, latitude.point_wgs84_dd, id.dataset.site_ascii_txt, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm",
     "crumbs": [
       "← Back to listed libraries",
       "HLF_CAN"
     ]
   },
   {
-    "objectID": "HLF_CAN.html#map",
-    "href": "HLF_CAN.html#map",
+    "objectID": "HLF_CAN.html#soil-laboratory-information",
+    "href": "HLF_CAN.html#soil-laboratory-information",
     "title": "HLF_CAN",
-    "section": " Map",
-    "text": "Map",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 289\nProperties available (original): 20\nProperties standardized (OSSL): 9 — summarized in Table 1 below\nCategories: physical, chemical, hydrological, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nbd_iso.11272_g.cm3Bulk Density, ISO 11272Method: iso.11272Unit: g.cm3\n0\n1.27\n0.25\n0.38\n1.17\n1.33\n1.44\n1.72\n\n\nn.tot_iso.13878_w.pctNitrogen, Total NCS, ISO 13878Method: iso.13878Unit: w.pct\n23\n0.10\n0.09\n0.02\n0.04\n0.07\n0.14\n0.68\n\n\nc.tot_iso.10694_w.pctCarbon, Total NCS, ISO 10694Method: iso.10694Unit: w.pct\n0\n1.79\n1.97\n0.00\n0.53\n1.24\n2.38\n15.68\n\n\noc_iso.10694_w.pctOrganic Carbon, ISO 10694Method: iso.10694Unit: w.pct\n0\n1.56\n1.87\n0.07\n0.31\n0.90\n2.13\n11.84\n\n\nph.cacl2_iso.10390_indexpH, 1:2 Soil-CaCl2 Suspension, ISO 10390Method: iso.10390Unit: index\n13\n5.24\n0.91\n3.65\n4.53\n5.18\n5.87\n7.07\n\n\nec_iso.11265_ds.mElectrical Conductivity, ISO 11265Method: iso.11265Unit: ds.m\n13\n2.32\n0.03\n2.25\n2.31\n2.32\n2.34\n2.41\n\n\nclay.tot_iso.11277_w.pctClay, ISO 11277Method: iso.11277Unit: w.pct\n13\n14.18\n11.32\n2.00\n5.00\n8.00\n25.00\n40.00\n\n\nsilt.tot_iso.11277_w.pctSilt, Total, ISO 11277Method: iso.11277Unit: w.pct\n13\n30.47\n18.68\n3.00\n15.00\n28.00\n50.00\n66.00\n\n\nsand.tot_iso.11277_w.pctSand, Total, ISO 11277Method: iso.11277Unit: w.pct\n13\n54.16\n29.64\n12.00\n23.75\n65.00\n81.00\n95.00",
     "crumbs": [
       "← Back to listed libraries",
       "HLF_CAN"
@@ -979,11 +979,11 @@
     ]
   },
   {
-    "objectID": "HSDOS.html#soil-laboratory-information",
-    "href": "HSDOS.html#soil-laboratory-information",
+    "objectID": "HSDOS.html#map",
+    "href": "HSDOS.html#map",
     "title": "HSDOS",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nph_kcl_iso.10390_index\n0\n7.36\n0.85\n4.18\n6.84\n7.62\n7.94\n9.93\n\n\noc_wb1934_w.pct\n0\n1.63\n0.99\n0.10\n0.84\n1.46\n2.21\n8.00\n\n\ncaco3_iso.10693_w.pct\n0\n7.81\n10.16\n0.00\n0.00\n3.60\n13.00\n90.00\n\n\nec_iso.11265_ds.m\n0\n0.99\n0.93\n0.50\n0.50\n0.50\n1.25\n12.75\n\n\nn.tot_iso.11261_w.pct\n0\n0.00\n0.00\n0.00\n0.00\n0.00\n0.00\n0.05\n\n\np.ext_msz.20135_mg.kg\n0\n162.69\n297.26\n1.50\n38.90\n83.70\n176.00\n7900.00\n\n\nk.ext_msz.20135_mg.kg\n0\n197.12\n160.74\n5.10\n103.00\n158.00\n242.00\n3320.00",
+    "section": " Map",
+    "text": "Map",
     "crumbs": [
       "← Back to listed libraries",
       "HSDOS"
@@ -994,18 +994,18 @@
     "href": "HSDOS.html#soil-site-information",
     "title": "HSDOS",
     "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise\nsampling depth: various\ngeography: none",
+    "text": "Soil site information\n\nCoordinates precision: precise\nSampling depth: various\nGeography: none\nVariables available (OSSL): 8 out of 8 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, observation.date_src_yyy.mm.dd, longitude.point_wgs84_dd, latitude.point_wgs84_dd, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm, layer.sequence_usda_uint16",
     "crumbs": [
       "← Back to listed libraries",
       "HSDOS"
     ]
   },
   {
-    "objectID": "HSDOS.html#map",
-    "href": "HSDOS.html#map",
+    "objectID": "HSDOS.html#soil-laboratory-information",
+    "href": "HSDOS.html#soil-laboratory-information",
     "title": "HSDOS",
-    "section": " Map",
-    "text": "Map",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 5,490\nProperties available (original): 8\nProperties standardized (OSSL): 7 — summarized in Table 1 below\nCategories: physical, chemical, carbon & nutrients\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nph_kcl_iso.10390_index\n0\n7.36\n0.85\n4.18\n6.84\n7.62\n7.94\n9.93\n\n\noc_wb1934_w.pctOrganic Carbon, Walkey-Black 1934Method: wb1934Unit: w.pct\n0\n1.63\n0.99\n0.10\n0.84\n1.46\n2.21\n8.00\n\n\ncaco3_iso.10693_w.pctCarbonate, ISO 10693Method: iso.10693Unit: w.pct\n0\n7.81\n10.16\n0.00\n0.00\n3.60\n13.00\n90.00\n\n\nec_iso.11265_ds.mElectrical Conductivity, ISO 11265Method: iso.11265Unit: ds.m\n0\n0.99\n0.93\n0.50\n0.50\n0.50\n1.25\n12.75\n\n\nn.tot_iso.11261_w.pctNitrogen, Total NCS, ISO 11261Method: iso.11261Unit: w.pct\n0\n0.00\n0.00\n0.00\n0.00\n0.00\n0.00\n0.05\n\n\np.ext_msz.20135_mg.kgPhosphorus, Extractable, Ammonium Lactate (AL)Method: msz.20135Unit: mg.kg\n0\n162.69\n297.26\n1.50\n38.90\n83.70\n176.00\n7900.00\n\n\nk.ext_msz.20135_mg.kgPotassium, Extractable, Ammonium Lactate (AL)Method: msz.20135Unit: mg.kg\n0\n197.12\n160.74\n5.10\n103.00\n158.00\n242.00\n3320.00",
     "crumbs": [
       "← Back to listed libraries",
       "HSDOS"
@@ -1056,11 +1056,11 @@
     ]
   },
   {
-    "objectID": "AFSIS2.html#soil-laboratory-information",
-    "href": "AFSIS2.html#soil-laboratory-information",
+    "objectID": "AFSIS2.html#map",
+    "href": "AFSIS2.html#map",
     "title": "AFSIS2",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nph.h2o_usda.a268_index\n11\n6.31\n0.80\n4.10\n5.80\n6.34\n6.76\n8.72\n\n\nal.ext_usda.a1056_mg.kg\n1\n766.22\n321.64\n18.00\n521.25\n769.50\n956.00\n1851.00\n\n\nb.ext_mel3_mg.kg\n526\n1.79\n0.70\n0.30\n1.00\n2.00\n2.00\n4.00\n\n\nca.ext_usda.a1059_mg.kg\n1\n1484.03\n1801.00\n12.00\n404.00\n858.50\n1961.50\n21565.00\n\n\ncu.ext_usda.a1063_mg.kg\n15\n2.22\n2.41\n0.03\n0.53\n1.40\n3.16\n18.19\n\n\nfe.ext_usda.a1064_mg.kg\n1\n123.62\n77.15\n13.20\n78.10\n103.05\n145.65\n578.00\n\n\nk.ext_usda.a1065_mg.kg\n2\n280.76\n426.69\n5.00\n51.00\n125.00\n316.00\n3600.00\n\n\nmg.ext_usda.a1066_mg.kg\n1\n304.29\n365.74\n2.00\n89.00\n190.00\n368.75\n3241.00\n\n\nmn.ext_usda.a1067_mg.kg\n1\n154.51\n120.37\n0.70\n58.70\n129.55\n225.90\n741.10\n\n\ns.ext_mel3_mg.kg\n9\n8.57\n18.51\n1.00\n3.00\n5.00\n8.00\n266.00\n\n\nzn.ext_usda.a1073_mg.kg\n29\n1.79\n3.17\n0.06\n0.40\n0.90\n2.10\n48.79\n\n\nn.tot_usda.a623_w.pct\n0\n0.10\n0.08\n0.01\n0.05\n0.08\n0.13\n0.53\n\n\nc.tot_usda.a622_w.pct\n0\n1.28\n1.04\n0.10\n0.58\n0.99\n1.66\n7.15\n\n\noc_usda.c1059_w.pct\n0\n1.26\n1.01\n0.10\n0.58\n0.99\n1.62\n7.09",
+    "section": " Map",
+    "text": "Map",
     "crumbs": [
       "← Back to listed libraries",
       "AFSIS2"
@@ -1071,18 +1071,18 @@
     "href": "AFSIS2.html#soil-site-information",
     "title": "AFSIS2",
     "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise, country\nsampling depth: various\ngeography: soil taxonomy, landuse",
+    "text": "Soil site information\n\nCoordinates precision: precise, country\nSampling depth: various\nGeography: soil taxonomy, landuse\nVariables available (OSSL): 10 out of 16 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, latitude.point_wgs84_dd, longitude.point_wgs84_dd, loc.country_src_txt, observation.date.begin_iso.8601_yyyy.mm.dd, observation.date.end_iso.8601_yyyy.mm.dd, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm, layer.sequence_usda_uint16",
     "crumbs": [
       "← Back to listed libraries",
       "AFSIS2"
     ]
   },
   {
-    "objectID": "AFSIS2.html#map",
-    "href": "AFSIS2.html#map",
+    "objectID": "AFSIS2.html#soil-laboratory-information",
+    "href": "AFSIS2.html#soil-laboratory-information",
     "title": "AFSIS2",
-    "section": " Map",
-    "text": "Map",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 819\nProperties available (original): 14\nProperties standardized (OSSL): 14 — summarized in Table 1 below\nCategories: physical, chemical, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nph.h2o_usda.a268_indexpH, 1:1 Soil-Water SuspensionMethod: usda.a268Unit: index\n11\n6.31\n0.80\n4.10\n5.80\n6.34\n6.76\n8.72\n\n\nal.ext_usda.a1056_mg.kgAluminum, Extractable, Mehlich3Method: usda.a1056Unit: mg.kg\n1\n766.22\n321.64\n18.00\n521.25\n769.50\n956.00\n1851.00\n\n\nb.ext_mel3_mg.kgBoron, Extractable, Mehlich3Method: mel3Unit: mg.kg\n526\n1.79\n0.70\n0.30\n1.00\n2.00\n2.00\n4.00\n\n\nca.ext_usda.a1059_mg.kgCalcium, Extractable, Mehlich3Method: usda.a1059Unit: mg.kg\n1\n1484.03\n1801.00\n12.00\n404.00\n858.50\n1961.50\n21565.00\n\n\ncu.ext_usda.a1063_mg.kgCopper, Extractable, Mehlich3Method: usda.a1063Unit: mg.kg\n15\n2.22\n2.41\n0.03\n0.53\n1.40\n3.16\n18.19\n\n\nfe.ext_usda.a1064_mg.kgIron, Extractable, Mehlich3Method: usda.a1064Unit: mg.kg\n1\n123.62\n77.15\n13.20\n78.10\n103.05\n145.65\n578.00\n\n\nk.ext_usda.a1065_mg.kgPotassium, Extractable, Mehlich3Method: usda.a1065Unit: mg.kg\n2\n280.76\n426.69\n5.00\n51.00\n125.00\n316.00\n3600.00\n\n\nmg.ext_usda.a1066_mg.kgMagnesium, Extractable, Mehlich3Method: usda.a1066Unit: mg.kg\n1\n304.29\n365.74\n2.00\n89.00\n190.00\n368.75\n3241.00\n\n\nmn.ext_usda.a1067_mg.kgManganese, Extractable, Mehlich3Method: usda.a1067Unit: mg.kg\n1\n154.51\n120.37\n0.70\n58.70\n129.55\n225.90\n741.10\n\n\ns.ext_mel3_mg.kgSulphur, Extractable, Mehlich3Method: mel3Unit: mg.kg\n9\n8.57\n18.51\n1.00\n3.00\n5.00\n8.00\n266.00\n\n\nzn.ext_usda.a1073_mg.kgZinc, Extractable, Mehlich3Method: usda.a1073Unit: mg.kg\n29\n1.79\n3.17\n0.06\n0.40\n0.90\n2.10\n48.79\n\n\nn.tot_usda.a623_w.pctNitrogen, Total NCSMethod: usda.a623Unit: w.pct\n0\n0.10\n0.08\n0.01\n0.05\n0.08\n0.13\n0.53\n\n\nc.tot_usda.a622_w.pctCarbon, Total NCSMethod: usda.a622Unit: w.pct\n0\n1.28\n1.04\n0.10\n0.58\n0.99\n1.66\n7.15\n\n\noc_usda.c1059_w.pctOrganic Carbon, Total C without CaCO3, N prepMethod: usda.c1059Unit: w.pct\n0\n1.26\n1.01\n0.10\n0.58\n0.99\n1.62\n7.09",
     "crumbs": [
       "← Back to listed libraries",
       "AFSIS2"
@@ -1133,11 +1133,11 @@
     ]
   },
   {
-    "objectID": "ICRAF_ISRIC.html#soil-laboratory-information",
-    "href": "ICRAF_ISRIC.html#soil-laboratory-information",
+    "objectID": "ICRAF_ISRIC.html#map",
+    "href": "ICRAF_ISRIC.html#map",
     "title": "ICRAF_ISRIC",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nph.h2o_usda.a268_index\n297\n6.11\n1.40\n3.00\n5.00\n5.90\n7.10\n10.50\n\n\nph.cacl2_usda.a481_index\n4039\n4.99\n1.26\n3.10\n4.00\n5.10\n6.05\n7.90\n\n\ncaco3_usda.a54_w.pct\n2956\n9.94\n16.41\n0.00\n1.00\n2.60\n11.60\n99.70\n\n\noc_usda.c1059_w.pct\n373\n1.20\n2.66\n0.00\n0.22\n0.48\n1.20\n60.00\n\n\nca.ext_usda.a722_cmolc.kg\n401\n10.81\n15.58\n0.00\n0.40\n3.60\n14.90\n168.20\n\n\nmg.ext_usda.a724_cmolc.kg\n393\n2.81\n4.69\n0.00\n0.20\n1.00\n3.40\n68.00\n\n\nna.ext_usda.a726_cmolc.kg\n409\n0.62\n2.39\n0.00\n0.00\n0.10\n0.30\n31.60\n\n\nk.ext_usda.a725_cmolc.kg\n399\n0.33\n0.57\n0.00\n0.10\n0.20\n0.40\n9.80\n\n\nacidity_usda.a795_cmolc.kg\n2562\n1.99\n2.95\n0.00\n0.20\n0.90\n2.60\n25.50\n\n\nal.ext_usda.a69_cmolc.kg\n2532\n1.58\n2.56\n0.00\n0.00\n0.70\n2.10\n25.30\n\n\ncec_usda.a723_cmolc.kg\n419\n16.27\n16.41\n0.00\n5.20\n11.50\n21.60\n189.60\n\n\nsand.tot_usda.c60_w.pct\n392\n38.24\n29.15\n0.00\n11.10\n33.00\n61.20\n99.60\n\n\nsilt.tot_usda.c62_w.pct\n339\n29.22\n20.39\n0.00\n13.00\n25.00\n42.50\n256.00\n\n\nclay.tot_usda.a334_w.pct\n333\n32.60\n22.27\n0.00\n14.70\n30.10\n47.00\n96.80\n\n\nbd_usda.a21_g.cm3\n3074\n1.26\n0.29\n0.28\n1.10\n1.31\n1.48\n1.89\n\n\nwr.10kPa_usda.a8_w.pct\n3145\n36.77\n13.27\n4.40\n28.60\n36.45\n45.62\n77.30\n\n\nwr.33kPa_usda.a9_w.pct\n3150\n31.82\n13.34\n2.30\n22.90\n31.40\n41.50\n71.40\n\n\nwr.1500kPa_usda.a417_w.pct\n3102\n21.74\n11.44\n0.10\n12.90\n21.90\n29.55\n56.40",
+    "section": " Map",
+    "text": "Map",
     "crumbs": [
       "← Back to listed libraries",
       "ICRAF_ISRIC"
@@ -1148,18 +1148,18 @@
     "href": "ICRAF_ISRIC.html#soil-site-information",
     "title": "ICRAF_ISRIC",
     "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise, country\nsampling depth: various\ngeography: landuse",
+    "text": "Soil site information\n\nCoordinates precision: precise, country\nSampling depth: various\nGeography: landuse\nVariables available (OSSL): 8 out of 8 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, loc.country_src_txt, layer.sequence_usda_uint16, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm, longitude.point_wgs84_dd, latitude.point_wgs84_dd",
     "crumbs": [
       "← Back to listed libraries",
       "ICRAF_ISRIC"
     ]
   },
   {
-    "objectID": "ICRAF_ISRIC.html#map",
-    "href": "ICRAF_ISRIC.html#map",
+    "objectID": "ICRAF_ISRIC.html#soil-laboratory-information",
+    "href": "ICRAF_ISRIC.html#soil-laboratory-information",
     "title": "ICRAF_ISRIC",
-    "section": " Map",
-    "text": "Map",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 4,073\nProperties available (original): 46\nProperties standardized (OSSL): 18 — summarized in Table 1 below\nCategories: physical, chemical, hydrological, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nph.h2o_usda.a268_indexpH, 1:1 Soil-Water SuspensionMethod: usda.a268Unit: index\n297\n6.11\n1.40\n3.00\n5.00\n5.90\n7.10\n10.50\n\n\nph.cacl2_usda.a481_indexpH, 1:2 Soil-CaCl2 SuspensionMethod: usda.a481Unit: index\n4039\n4.99\n1.26\n3.10\n4.00\n5.10\n6.05\n7.90\n\n\ncaco3_usda.a54_w.pctCarbonate, &lt;2mm FractionMethod: usda.a54Unit: w.pct\n2956\n9.94\n16.41\n0.00\n1.00\n2.60\n11.60\n99.70\n\n\noc_usda.c1059_w.pctOrganic Carbon, Total C without CaCO3, N prepMethod: usda.c1059Unit: w.pct\n373\n1.20\n2.66\n0.00\n0.22\n0.48\n1.20\n60.00\n\n\nca.ext_usda.a722_cmolc.kgCalcium, Extractable, NH4OAcMethod: usda.a722Unit: cmolc.kg\n401\n10.81\n15.58\n0.00\n0.40\n3.60\n14.90\n168.20\n\n\nmg.ext_usda.a724_cmolc.kgMagnesium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a724Unit: cmolc.kg\n393\n2.81\n4.69\n0.00\n0.20\n1.00\n3.40\n68.00\n\n\nna.ext_usda.a726_cmolc.kgSodium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a726Unit: cmolc.kg\n409\n0.62\n2.39\n0.00\n0.00\n0.10\n0.30\n31.60\n\n\nk.ext_usda.a725_cmolc.kgPotassium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a725Unit: cmolc.kg\n399\n0.33\n0.57\n0.00\n0.10\n0.20\n0.40\n9.80\n\n\nacidity_usda.a795_cmolc.kgAcidity, BaCl2-TEA Extractable, pH 8.2Method: usda.a795Unit: cmolc.kg\n2562\n1.99\n2.95\n0.00\n0.20\n0.90\n2.60\n25.50\n\n\nal.ext_usda.a69_cmolc.kgAluminum, Extractable, KClMethod: usda.a69Unit: cmolc.kg\n2532\n1.58\n2.56\n0.00\n0.00\n0.70\n2.10\n25.30\n\n\ncec_usda.a723_cmolc.kgCEC, pH 7.0, NH4OAc, 2M KCl displacementMethod: usda.a723Unit: cmolc.kg\n419\n16.27\n16.41\n0.00\n5.20\n11.50\n21.60\n189.60\n\n\nsand.tot_usda.c60_w.pctSand, Total, S prepMethod: usda.c60Unit: w.pct\n392\n38.24\n29.15\n0.00\n11.10\n33.00\n61.20\n99.60\n\n\nsilt.tot_usda.c62_w.pctSilt, Total, S prepMethod: usda.c62Unit: w.pct\n339\n29.22\n20.39\n0.00\n13.00\n25.00\n42.50\n256.00\n\n\nclay.tot_usda.a334_w.pctClayMethod: usda.a334Unit: w.pct\n333\n32.60\n22.27\n0.00\n14.70\n30.10\n47.00\n96.80\n\n\nbd_usda.a21_g.cm3Bulk Density, &lt;2 mm fraction, CoreMethod: usda.a21Unit: g.cm3\n3074\n1.26\n0.29\n0.28\n1.10\n1.31\n1.48\n1.89\n\n\nwr.10kPa_usda.a8_w.pctWater Retention, 1/10 Bar (10 kPa), ClodMethod: usda.a8Unit: w.pct\n3145\n36.77\n13.27\n4.40\n28.60\n36.45\n45.62\n77.30\n\n\nwr.33kPa_usda.a9_w.pctWater Retention, 1/3 Bar (33 kPa), ClodMethod: usda.a9Unit: w.pct\n3150\n31.82\n13.34\n2.30\n22.90\n31.40\n41.50\n71.40\n\n\nwr.1500kPa_usda.a417_w.pctWater Retention, 15 Bar (1500 kPa)Method: usda.a417Unit: w.pct\n3102\n21.74\n11.44\n0.10\n12.90\n21.90\n29.55\n56.40",
     "crumbs": [
       "← Back to listed libraries",
       "ICRAF_ISRIC"
@@ -1214,29 +1214,7 @@
     "href": "Neospectra.html#database-access",
     "title": "Neospectra",
     "section": " Database access",
-    "text": "Database access\nData originally provided by:\n\nContact: Jonathan Sanderman\nEmail: jsanderman@woodwellclimate.org\nOriginal source: https://doi.org/10.5281/zenodo.13122321\n\nNo file listing available for this dataset.",
-    "crumbs": [
-      "← Back to listed libraries",
-      "Neospectra"
-    ]
-  },
-  {
-    "objectID": "Neospectra.html#soil-laboratory-information",
-    "href": "Neospectra.html#soil-laboratory-information",
-    "title": "Neospectra",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nscan_nir.1500_ref\n0\n0.48\n0.12\n0.11\n0.40\n0.48\n0.56\n0.93\n\n\noc_usda.c729_w.pct\n0\n2.00\n2.71\n-0.03\n0.59\n1.31\n2.63\n53.88\n\n\nc.tot_usda.a622_w.pct\n90\n2.29\n2.80\n0.02\n0.82\n1.59\n2.97\n53.88\n\n\nn.tot_usda.a623_w.pct\n0\n0.17\n0.18\n0.00\n0.06\n0.12\n0.22\n3.02\n\n\ns.tot_usda.a624_w.pct\n90\n0.13\n1.02\n0.00\n0.00\n0.01\n0.03\n18.38\n\n\nph.h2o_usda.a268_index\n10\n6.25\n1.26\n3.69\n5.21\n6.12\n7.35\n9.52\n\n\nbd_usda.a4_g.cm3\n1142\n1.31\n0.24\n0.30\n1.18\n1.34\n1.47\n2.03\n\n\nclay.tot_usda.a334_w.pct\n0\n20.55\n14.54\n0.00\n9.08\n18.33\n28.82\n86.69\n\n\nsilt.tot_usda.c62_w.pct\n0\n37.57\n20.30\n0.00\n21.80\n37.40\n52.10\n87.90\n\n\nsand.tot_usda.c60_w.pct\n0\n41.88\n27.95\n0.30\n17.60\n39.25\n64.38\n100.00\n\n\ncaco3_usda.a54_w.pct\n1413\n5.91\n9.49\n-0.57\n0.26\n1.64\n7.61\n89.03\n\n\ncec_usda.a723_cmolc.kg\n10\n16.05\n12.11\n0.13\n7.74\n14.08\n21.96\n190.11\n\n\nca.ext_usda.a722_cmolc.kg\n10\n19.23\n31.73\n0.00\n2.52\n9.78\n22.19\n363.64\n\n\nmg.ext_usda.a724_cmolc.kg\n10\n3.24\n4.52\n0.00\n0.68\n1.98\n4.29\n82.14\n\n\nk.ext_usda.a725_cmolc.kg\n10\n0.55\n0.73\n0.00\n0.14\n0.33\n0.68\n11.25\n\n\nna.ext_usda.a726_cmolc.kg\n10\n0.88\n8.10\n0.00\n0.00\n0.00\n0.05\n202.96\n\n\nwr.33kPa_usda.a415_w.pct\n1875\n23.87\n13.74\n1.00\n14.17\n24.22\n31.44\n127.90\n\n\nwr.1500kPa_usda.a417_w.pct\n35\n11.59\n7.27\n0.08\n6.49\n10.81\n15.21\n96.14\n\n\nal.dith_usda.a65_w.pct\n231\n0.18\n0.25\n0.00\n0.04\n0.10\n0.19\n2.28\n\n\np.ext_usda.a652_mg.kg\n1378\n35.21\n81.75\n0.00\n2.96\n11.25\n34.89\n1358.90\n\n\np.ext_usda.a1070_mg.kg\n2030\n27.26\n35.04\n0.36\n6.52\n15.96\n39.22\n256.44\n\n\nk.ext_usda.a1065_mg.kg\n2030\n185.49\n136.84\n0.00\n82.01\n147.45\n256.33\n730.19\n\n\nec_usda.a364_ds.m\n1154\n1.00\n4.72\n0.01\n0.13\n0.23\n0.46\n81.93",
-    "crumbs": [
-      "← Back to listed libraries",
-      "Neospectra"
-    ]
-  },
-  {
-    "objectID": "Neospectra.html#soil-site-information",
-    "href": "Neospectra.html#soil-site-information",
-    "title": "Neospectra",
-    "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise, county, country\nsampling depth: various\ngeography: soil taxonomy, soil horizon",
+    "text": "Database access\nData originally provided by:\n\nContact: Jonathan Sanderman\nEmail: jsanderman@woodwellclimate.org\nOriginal source: https://doi.org/10.5281/zenodo.13122321\n\nAvailable files\n\n\n\nType\nFilename\nLink\n\n\n\n\nMIR spectra — CSV (gzip)\nossl_mir_v1.3.csv.gz\nDownload\n\n\nMIR spectra — Parquet\nossl_mir_v1.3.parquet\nDownload\n\n\nNIR spectra — CSV (gzip)\nossl_nir_v1.3.csv.gz\nDownload\n\n\nNIR spectra — Parquet\nossl_nir_v1.3.parquet\nDownload\n\n\nSoil lab measurements — CSV (gzip)\nossl_soillab_v1.3.csv.gz\nDownload\n\n\nSoil lab measurements — Parquet\nossl_soillab_v1.3.parquet\nDownload\n\n\nSoil site metadata — CSV (gzip)\nossl_soilsite_v1.3.csv.gz\nDownload\n\n\nSoil site metadata — Parquet\nossl_soilsite_v1.3.parquet\nDownload",
     "crumbs": [
       "← Back to listed libraries",
       "Neospectra"
@@ -1248,6 +1226,28 @@
     "title": "Neospectra",
     "section": " Map",
     "text": "Map",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Neospectra"
+    ]
+  },
+  {
+    "objectID": "Neospectra.html#soil-site-information",
+    "href": "Neospectra.html#soil-site-information",
+    "title": "Neospectra",
+    "section": " Soil site information",
+    "text": "Soil site information\n\nCoordinates precision: precise, county, country\nSampling depth: various\nGeography: soil taxonomy, soil horizon\nVariables available (OSSL): 15 out of 15 — see Database description for full schema\nPopulated columns: id.layer_local_c, id.kssl.lay_local_txt, id.presentation_src_txt, id.kssl.smp_local_txt, loc.country_src_txt, loc.fips.code, longitude.point_wgs84_dd, latitude.point_wgs84_dd, longitude.county_wgs84_dd, latitude.county_wgs84_dd, pedon.taxa_usda_txt, pedon.horizon_usda_txt, layer.texture_usda_txt, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm",
+    "crumbs": [
+      "← Back to listed libraries",
+      "Neospectra"
+    ]
+  },
+  {
+    "objectID": "Neospectra.html#soil-laboratory-information",
+    "href": "Neospectra.html#soil-laboratory-information",
+    "title": "Neospectra",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 2,106\nProperties available (original): 23\nProperties standardized (OSSL): 23 — summarized in Table 1 below\nCategories: physical, chemical, hydrological, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nscan_nir.1500_ref\n0\n0.48\n0.12\n0.11\n0.40\n0.48\n0.56\n0.93\n\n\noc_usda.c729_w.pctOrganic Carbon, Total C without CaCO3, S prepMethod: usda.c729Unit: w.pct\n0\n2.00\n2.71\n-0.03\n0.59\n1.31\n2.63\n53.88\n\n\nc.tot_usda.a622_w.pctCarbon, Total NCSMethod: usda.a622Unit: w.pct\n90\n2.29\n2.80\n0.02\n0.82\n1.59\n2.97\n53.88\n\n\nn.tot_usda.a623_w.pctNitrogen, Total NCSMethod: usda.a623Unit: w.pct\n0\n0.17\n0.18\n0.00\n0.06\n0.12\n0.22\n3.02\n\n\ns.tot_usda.a624_w.pctSulfur, Total NCSMethod: usda.a624Unit: w.pct\n90\n0.13\n1.02\n0.00\n0.00\n0.01\n0.03\n18.38\n\n\nph.h2o_usda.a268_indexpH, 1:1 Soil-Water SuspensionMethod: usda.a268Unit: index\n10\n6.25\n1.26\n3.69\n5.21\n6.12\n7.35\n9.52\n\n\nbd_usda.a4_g.cm3Bulk Density, &lt;2mm fraction, ClodMethod: usda.a4Unit: g.cm3\n1142\n1.31\n0.24\n0.30\n1.18\n1.34\n1.47\n2.03\n\n\nclay.tot_usda.a334_w.pctClayMethod: usda.a334Unit: w.pct\n0\n20.55\n14.54\n0.00\n9.08\n18.33\n28.82\n86.69\n\n\nsilt.tot_usda.c62_w.pctSilt, Total, S prepMethod: usda.c62Unit: w.pct\n0\n37.57\n20.30\n0.00\n21.80\n37.40\n52.10\n87.90\n\n\nsand.tot_usda.c60_w.pctSand, Total, S prepMethod: usda.c60Unit: w.pct\n0\n41.88\n27.95\n0.30\n17.60\n39.25\n64.38\n100.00\n\n\ncaco3_usda.a54_w.pctCarbonate, &lt;2mm FractionMethod: usda.a54Unit: w.pct\n1413\n5.91\n9.49\n-0.57\n0.26\n1.64\n7.61\n89.03\n\n\ncec_usda.a723_cmolc.kgCEC, pH 7.0, NH4OAc, 2M KCl displacementMethod: usda.a723Unit: cmolc.kg\n10\n16.05\n12.11\n0.13\n7.74\n14.08\n21.96\n190.11\n\n\nca.ext_usda.a722_cmolc.kgCalcium, Extractable, NH4OAcMethod: usda.a722Unit: cmolc.kg\n10\n19.23\n31.73\n0.00\n2.52\n9.78\n22.19\n363.64\n\n\nmg.ext_usda.a724_cmolc.kgMagnesium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a724Unit: cmolc.kg\n10\n3.24\n4.52\n0.00\n0.68\n1.98\n4.29\n82.14\n\n\nk.ext_usda.a725_cmolc.kgPotassium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a725Unit: cmolc.kg\n10\n0.55\n0.73\n0.00\n0.14\n0.33\n0.68\n11.25\n\n\nna.ext_usda.a726_cmolc.kgSodium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a726Unit: cmolc.kg\n10\n0.88\n8.10\n0.00\n0.00\n0.00\n0.05\n202.96\n\n\nwr.33kPa_usda.a415_w.pctWater Retention, 1/3 Bar (33 kPa)Method: usda.a415Unit: w.pct\n1875\n23.87\n13.74\n1.00\n14.17\n24.22\n31.44\n127.90\n\n\nwr.1500kPa_usda.a417_w.pctWater Retention, 15 Bar (1500 kPa)Method: usda.a417Unit: w.pct\n35\n11.59\n7.27\n0.08\n6.49\n10.81\n15.21\n96.14\n\n\nal.dith_usda.a65_w.pctAluminum, Crystalline, Total Pedogenic IronMethod: usda.a65Unit: w.pct\n231\n0.18\n0.25\n0.00\n0.04\n0.10\n0.19\n2.28\n\n\np.ext_usda.a652_mg.kgPhosphorus, Extractable, Mehlich3Method: usda.a652Unit: mg.kg\n1378\n35.21\n81.75\n0.00\n2.96\n11.25\n34.89\n1358.90\n\n\np.ext_usda.a1070_mg.kgPhosphorus, Extractable, Mehlich3Method: usda.a1070Unit: mg.kg\n2030\n27.26\n35.04\n0.36\n6.52\n15.96\n39.22\n256.44\n\n\nk.ext_usda.a1065_mg.kgPotassium, Extractable, Mehlich3Method: usda.a1065Unit: mg.kg\n2030\n185.49\n136.84\n0.00\n82.01\n147.45\n256.33\n730.19\n\n\nec_usda.a364_ds.mElectrical Conductivity, (w/w)Method: usda.a364Unit: ds.m\n1154\n1.00\n4.72\n0.01\n0.13\n0.23\n0.46\n81.93",
     "crumbs": [
       "← Back to listed libraries",
       "Neospectra"
@@ -1291,29 +1291,7 @@
     "href": "NEON.html#database-access",
     "title": "NEON",
     "section": " Database access",
-    "text": "Database access\nData originally provided by:\n\nContact: Jonathan Sanderman\nEmail: jsanderman@woodwellclimate.org\nOriginal source: https://www.neonscience.org/samples/soil-archive\n\nNo file listing available for this dataset.",
-    "crumbs": [
-      "← Back to listed libraries",
-      "NEON"
-    ]
-  },
-  {
-    "objectID": "NEON.html#soil-laboratory-information",
-    "href": "NEON.html#soil-laboratory-information",
-    "title": "NEON",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nc.tot_usda.a622_w.pct\n0\n3.92\n8.87\n0.02\n0.25\n1.09\n2.96\n55.51\n\n\nn.tot_usda.a623_w.pct\n25\n0.20\n0.32\n0.01\n0.04\n0.07\n0.20\n1.82\n\n\ns.tot_usda.a624_w.pct\n138\n0.05\n0.15\n0.01\n0.01\n0.02\n0.04\n2.01\n\n\noc_usda.c729_w.pct\n0\n3.49\n8.93\n0.00\n0.10\n0.50\n2.00\n55.50\n\n\nph.h2o_usda.a268_index\n1\n5.72\n1.50\n3.10\n4.60\n5.10\n7.40\n8.70\n\n\nph.cacl2_usda.a481_index\n1\n6.40\n1.40\n3.80\n5.30\n5.80\n7.90\n9.20\n\n\nec_usda.a364_ds.m\n2\n0.40\n1.06\n0.01\n0.03\n0.09\n0.24\n7.70\n\n\ncaco3_usda.a54_w.pct\n0\n3.62\n9.95\n0.00\n0.00\n0.00\n0.00\n68.00\n\n\nca.ext_usda.a722_cmolc.kg\n0\n16.48\n21.40\n0.00\n0.70\n4.70\n26.30\n142.00\n\n\nk.ext_usda.a725_cmolc.kg\n0\n0.46\n0.67\n0.00\n0.10\n0.20\n0.50\n4.30\n\n\nmg.ext_usda.a724_cmolc.kg\n0\n3.63\n6.12\n0.00\n0.20\n1.50\n5.10\n70.70\n\n\nna.ext_usda.a726_cmolc.kg\n0\n0.83\n3.66\n0.00\n0.00\n0.00\n0.00\n36.40\n\n\ncec_usda.a723_cmolc.kg\n0\n16.26\n16.19\n0.00\n5.60\n10.60\n21.10\n100.30\n\n\nal.ext_usda.a69_cmolc.kg\n161\n2.12\n2.50\n0.00\n0.30\n1.00\n2.92\n11.80\n\n\ncf_usda.c232_w.pct\n0\n5.33\n6.78\n0.00\n0.00\n2.50\n8.60\n36.80\n\n\ncf_usda.c235_w.pct\n0\n6.18\n10.54\n0.00\n0.00\n1.00\n8.60\n72.80\n\n\nsand.tot_usda.c60_w.pct\n11\n50.93\n27.81\n1.60\n27.52\n53.20\n74.55\n97.60\n\n\nsilt.tot_usda.c62_w.pct\n11\n31.15\n17.57\n1.30\n17.02\n29.90\n44.03\n78.80\n\n\nclay.tot_usda.a334_w.pct\n11\n17.92\n14.35\n0.00\n5.90\n14.55\n27.40\n60.30\n\n\nbd_usda.a4_g.cm3\n6\n1.23\n0.42\n0.03\n1.04\n1.30\n1.52\n2.27",
-    "crumbs": [
-      "← Back to listed libraries",
-      "NEON"
-    ]
-  },
-  {
-    "objectID": "NEON.html#soil-site-information",
-    "href": "NEON.html#soil-site-information",
-    "title": "NEON",
-    "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise\nsampling depth: various\ngeography: soil taxonomy, soil horizon",
+    "text": "Database access\nData originally provided by:\n\nContact: Jonathan Sanderman\nEmail: jsanderman@woodwellclimate.org\nOriginal source: https://www.neonscience.org/samples/soil-archive\n\nAvailable files\n\n\n\nType\nFilename\nLink\n\n\n\n\nMIR spectra — CSV (gzip)\nossl_mir_v1.3.csv.gz\nDownload\n\n\nMIR spectra — Parquet\nossl_mir_v1.3.parquet\nDownload\n\n\nSoil lab measurements — CSV (gzip)\nossl_soillab_v1.3.csv.gz\nDownload\n\n\nSoil lab measurements — Parquet\nossl_soillab_v1.3.parquet\nDownload\n\n\nSoil site metadata — CSV (gzip)\nossl_soilsite_v1.3.csv.gz\nDownload\n\n\nSoil site metadata — Parquet\nossl_soilsite_v1.3.parquet\nDownload",
     "crumbs": [
       "← Back to listed libraries",
       "NEON"
@@ -1325,6 +1303,28 @@
     "title": "NEON",
     "section": " Map",
     "text": "Map",
+    "crumbs": [
+      "← Back to listed libraries",
+      "NEON"
+    ]
+  },
+  {
+    "objectID": "NEON.html#soil-site-information",
+    "href": "NEON.html#soil-site-information",
+    "title": "NEON",
+    "section": " Soil site information",
+    "text": "Soil site information\n\nCoordinates precision: precise\nSampling depth: various\nGeography: soil taxonomy, soil horizon\nVariables available (OSSL): 11 out of 11 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, id.biogeo_src_txt, site.domain_src_txt, site.id_src_txt, site.pit_src_txt, observation.date_src_yyyy.mm.dd, site.pit.name_src_txt, pedon.horizon_src_txt, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm",
+    "crumbs": [
+      "← Back to listed libraries",
+      "NEON"
+    ]
+  },
+  {
+    "objectID": "NEON.html#soil-laboratory-information",
+    "href": "NEON.html#soil-laboratory-information",
+    "title": "NEON",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nc.tot_usda.a622_w.pctCarbon, Total NCSMethod: usda.a622Unit: w.pct\n0\n3.92\n8.87\n0.02\n0.25\n1.09\n2.96\n55.51\n\n\nn.tot_usda.a623_w.pctNitrogen, Total NCSMethod: usda.a623Unit: w.pct\n25\n0.20\n0.32\n0.01\n0.04\n0.07\n0.20\n1.82\n\n\ns.tot_usda.a624_w.pctSulfur, Total NCSMethod: usda.a624Unit: w.pct\n138\n0.05\n0.15\n0.01\n0.01\n0.02\n0.04\n2.01\n\n\noc_usda.c729_w.pctOrganic Carbon, Total C without CaCO3, S prepMethod: usda.c729Unit: w.pct\n0\n3.49\n8.93\n0.00\n0.10\n0.50\n2.00\n55.50\n\n\nph.h2o_usda.a268_indexpH, 1:1 Soil-Water SuspensionMethod: usda.a268Unit: index\n1\n5.72\n1.50\n3.10\n4.60\n5.10\n7.40\n8.70\n\n\nph.cacl2_usda.a481_indexpH, 1:2 Soil-CaCl2 SuspensionMethod: usda.a481Unit: index\n1\n6.40\n1.40\n3.80\n5.30\n5.80\n7.90\n9.20\n\n\nec_usda.a364_ds.mElectrical Conductivity, (w/w)Method: usda.a364Unit: ds.m\n2\n0.40\n1.06\n0.01\n0.03\n0.09\n0.24\n7.70\n\n\ncaco3_usda.a54_w.pctCarbonate, &lt;2mm FractionMethod: usda.a54Unit: w.pct\n0\n3.62\n9.95\n0.00\n0.00\n0.00\n0.00\n68.00\n\n\nca.ext_usda.a722_cmolc.kgCalcium, Extractable, NH4OAcMethod: usda.a722Unit: cmolc.kg\n0\n16.48\n21.40\n0.00\n0.70\n4.70\n26.30\n142.00\n\n\nk.ext_usda.a725_cmolc.kgPotassium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a725Unit: cmolc.kg\n0\n0.46\n0.67\n0.00\n0.10\n0.20\n0.50\n4.30\n\n\nmg.ext_usda.a724_cmolc.kgMagnesium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a724Unit: cmolc.kg\n0\n3.63\n6.12\n0.00\n0.20\n1.50\n5.10\n70.70\n\n\nna.ext_usda.a726_cmolc.kgSodium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a726Unit: cmolc.kg\n0\n0.83\n3.66\n0.00\n0.00\n0.00\n0.00\n36.40\n\n\ncec_usda.a723_cmolc.kgCEC, pH 7.0, NH4OAc, 2M KCl displacementMethod: usda.a723Unit: cmolc.kg\n0\n16.26\n16.19\n0.00\n5.60\n10.60\n21.10\n100.30\n\n\nal.ext_usda.a69_cmolc.kgAluminum, Extractable, KClMethod: usda.a69Unit: cmolc.kg\n161\n2.12\n2.50\n0.00\n0.30\n1.00\n2.92\n11.80\n\n\ncf_usda.c232_w.pct\n0\n5.33\n6.78\n0.00\n0.00\n2.50\n8.60\n36.80\n\n\ncf_usda.c235_w.pct\n0\n6.18\n10.54\n0.00\n0.00\n1.00\n8.60\n72.80\n\n\nsand.tot_usda.c60_w.pctSand, Total, S prepMethod: usda.c60Unit: w.pct\n11\n50.93\n27.81\n1.60\n27.52\n53.20\n74.55\n97.60\n\n\nsilt.tot_usda.c62_w.pctSilt, Total, S prepMethod: usda.c62Unit: w.pct\n11\n31.15\n17.57\n1.30\n17.02\n29.90\n44.03\n78.80\n\n\nclay.tot_usda.a334_w.pctClayMethod: usda.a334Unit: w.pct\n11\n17.92\n14.35\n0.00\n5.90\n14.55\n27.40\n60.30\n\n\nbd_usda.a4_g.cm3Bulk Density, &lt;2mm fraction, ClodMethod: usda.a4Unit: g.cm3\n6\n1.23\n0.42\n0.03\n1.04\n1.30\n1.52\n2.27",
     "crumbs": [
       "← Back to listed libraries",
       "NEON"
@@ -1368,29 +1368,7 @@
     "href": "PF_NZL.html#database-access",
     "title": "PF_NZL",
     "section": " Database access",
-    "text": "Database access\nData originally provided by:\n\nContact: Loretta Garrett\nEmail: loretta.garrett@scionresearch.com\nOriginal source: https://doi.org/10.6084/m9.figshare.20506587.v2\n\nNo file listing available for this dataset.",
-    "crumbs": [
-      "← Back to listed libraries",
-      "PF_NZL"
-    ]
-  },
-  {
-    "objectID": "PF_NZL.html#soil-laboratory-information",
-    "href": "PF_NZL.html#soil-laboratory-information",
-    "title": "PF_NZL",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nclay.tot_usda.a334_w.pct\n640\n41.88\n27.64\n3.00\n20.75\n35.50\n56.50\n100.00\n\n\nsand.tot_usda.c60_w.pct\n640\n37.93\n19.61\n0.00\n26.75\n39.00\n50.00\n79.00\n\n\nsilt.tot_usda.c62_w.pct\n640\n20.14\n15.33\n0.00\n7.00\n18.50\n29.25\n61.00\n\n\nbd_usda.a4_g.cm3\n297\n0.91\n0.30\n0.24\n0.66\n0.93\n1.16\n1.69\n\n\nwr.10kPa_usda.a414_w.pct\n745\n46.19\n27.64\n10.85\n32.11\n38.87\n56.45\n143.33\n\n\nwr.1500kPa_usda.a417_w.pct\n745\n20.17\n13.37\n1.60\n10.43\n18.50\n25.35\n62.65\n\n\nc.tot_usda.a622_w.pct\n1\n3.13\n2.27\n0.03\n1.50\n2.84\n4.42\n21.56\n\n\nn.tot_usda.a623_w.pct\n3\n0.21\n0.14\n0.00\n0.09\n0.18\n0.28\n1.15\n\n\np.ext_usda.a274_mg.kg\n649\n4.35\n4.96\n0.00\n1.01\n2.44\n5.84\n29.07\n\n\np.ext_usda.a270_mg.kg\n649\n14.93\n32.09\n0.97\n3.11\n6.90\n14.68\n328.41\n\n\ncec_usda.a723_cmolc.kg\n492\n16.07\n10.05\n0.51\n9.23\n14.08\n21.74\n71.62\n\n\nca.ext_usda.a722_cmolc.kg\n492\n2.26\n3.63\n0.00\n0.41\n1.08\n2.86\n29.03\n\n\nmg.ext_usda.a724_cmolc.kg\n492\n1.17\n3.45\n0.01\n0.17\n0.47\n1.18\n32.38\n\n\nk.ext_usda.a725_cmolc.kg\n492\n0.29\n0.25\n0.00\n0.11\n0.20\n0.40\n1.30\n\n\nna.ext_usda.a726_cmolc.kg\n492\n0.26\n0.22\n0.00\n0.11\n0.20\n0.36\n1.64\n\n\nph.h2o_usda.a268_index\n216\n4.99\n0.52\n3.40\n4.63\n5.01\n5.31\n6.69\n\n\nb.ext_mel3_mg.kg\n331\n0.26\n0.18\n0.03\n0.15\n0.19\n0.33\n1.20\n\n\nal.ext_usda.a1056_mg.kg\n216\n1442.78\n643.73\n33.22\n999.51\n1470.35\n1859.20\n4952.69\n\n\nna.ext_usda.a1068_mg.kg\n216\n35.03\n26.64\n2.53\n18.13\n26.18\n44.37\n280.29\n\n\nmg.ext_usda.a1066_mg.kg\n216\n90.73\n203.71\n1.38\n13.40\n42.50\n102.37\n2380.07\n\n\np.ext_usda.a652_mg.kg\n219\n18.82\n27.84\n0.11\n4.94\n11.24\n21.85\n376.21\n\n\nk.ext_usda.a1065_mg.kg\n216\n84.73\n85.94\n4.90\n37.71\n70.26\n110.44\n1361.72\n\n\nca.ext_usda.a1059_mg.kg\n216\n315.04\n574.15\n5.15\n65.93\n158.55\n391.95\n7907.54\n\n\nmn.ext_usda.a1067_mg.kg\n217\n21.44\n39.90\n0.06\n4.02\n9.04\n20.68\n336.87\n\n\nfe.ext_usda.a1064_mg.kg\n216\n167.20\n121.31\n10.12\n79.34\n122.28\n222.45\n668.26\n\n\ncu.ext_usda.a1063_mg.kg\n218\n1.49\n2.39\n0.04\n0.48\n0.93\n1.69\n32.81\n\n\nzn.ext_usda.a1073_mg.kg\n228\n1.65\n1.32\n0.09\n0.74\n1.22\n2.17\n9.21",
-    "crumbs": [
-      "← Back to listed libraries",
-      "PF_NZL"
-    ]
-  },
-  {
-    "objectID": "PF_NZL.html#soil-site-information",
-    "href": "PF_NZL.html#soil-site-information",
-    "title": "PF_NZL",
-    "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise\nsampling depth: various\ngeography: soil taxonomy, elevation, landuse",
+    "text": "Database access\nData originally provided by:\n\nContact: Loretta Garrett\nEmail: loretta.garrett@scionresearch.com\nOriginal source: https://doi.org/10.6084/m9.figshare.20506587.v2\n\nAvailable files\n\n\n\nType\nFilename\nLink\n\n\n\n\nMIR spectra — CSV (gzip)\nossl_mir_v1.3.csv.gz\nDownload\n\n\nMIR spectra — Parquet\nossl_mir_v1.3.parquet\nDownload\n\n\nSoil lab measurements — CSV (gzip)\nossl_soillab_v1.3.csv.gz\nDownload\n\n\nSoil lab measurements — Parquet\nossl_soillab_v1.3.parquet\nDownload\n\n\nSoil site metadata — CSV (gzip)\nossl_soilsite_v1.3.csv.gz\nDownload\n\n\nSoil site metadata — Parquet\nossl_soilsite_v1.3.parquet\nDownload",
     "crumbs": [
       "← Back to listed libraries",
       "PF_NZL"
@@ -1402,6 +1380,28 @@
     "title": "PF_NZL",
     "section": " Map",
     "text": "Map",
+    "crumbs": [
+      "← Back to listed libraries",
+      "PF_NZL"
+    ]
+  },
+  {
+    "objectID": "PF_NZL.html#soil-site-information",
+    "href": "PF_NZL.html#soil-site-information",
+    "title": "PF_NZL",
+    "section": " Soil site information",
+    "text": "Soil site information\n\nCoordinates precision: precise\nSampling depth: various\nGeography: soil taxonomy, elevation, landuse\nVariables available (OSSL): 20 out of 20 — see Database description for full schema\nPopulated columns: id.layer_local_c, id.layer_uuid_txt, id.trial_src_txt, id.period_src_txt, id.sample_local_c, id.site_src_txt, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm, latitude.point_wgs84_dd, longitude.point_wgs84_dd, observation.date_src_yyyy.mm.dd, site.altitude_src_m, site.slope_src_deg, site.aspect_src_deg, layer.texture_usda_txt, site.species_src_txt, id.site.name_src_txt, site.physiography_src_txt, site.slope.shape_src_txt, id.treatment_src_txt",
+    "crumbs": [
+      "← Back to listed libraries",
+      "PF_NZL"
+    ]
+  },
+  {
+    "objectID": "PF_NZL.html#soil-laboratory-information",
+    "href": "PF_NZL.html#soil-laboratory-information",
+    "title": "PF_NZL",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 776\nProperties available (original): 88\nProperties standardized (OSSL): 27 — summarized in Table 1 below\nCategories: physical, chemical, hydrological, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nclay.tot_usda.a334_w.pctClayMethod: usda.a334Unit: w.pct\n640\n41.88\n27.64\n3.00\n20.75\n35.50\n56.50\n100.00\n\n\nsand.tot_usda.c60_w.pctSand, Total, S prepMethod: usda.c60Unit: w.pct\n640\n37.93\n19.61\n0.00\n26.75\n39.00\n50.00\n79.00\n\n\nsilt.tot_usda.c62_w.pctSilt, Total, S prepMethod: usda.c62Unit: w.pct\n640\n20.14\n15.33\n0.00\n7.00\n18.50\n29.25\n61.00\n\n\nbd_usda.a4_g.cm3Bulk Density, &lt;2mm fraction, ClodMethod: usda.a4Unit: g.cm3\n297\n0.91\n0.30\n0.24\n0.66\n0.93\n1.16\n1.69\n\n\nwr.10kPa_usda.a414_w.pctWater Retention, 1/10 Bar (10 kPa)Method: usda.a414Unit: w.pct\n745\n46.19\n27.64\n10.85\n32.11\n38.87\n56.45\n143.33\n\n\nwr.1500kPa_usda.a417_w.pctWater Retention, 15 Bar (1500 kPa)Method: usda.a417Unit: w.pct\n745\n20.17\n13.37\n1.60\n10.43\n18.50\n25.35\n62.65\n\n\nc.tot_usda.a622_w.pctCarbon, Total NCSMethod: usda.a622Unit: w.pct\n1\n3.13\n2.27\n0.03\n1.50\n2.84\n4.42\n21.56\n\n\nn.tot_usda.a623_w.pctNitrogen, Total NCSMethod: usda.a623Unit: w.pct\n3\n0.21\n0.14\n0.00\n0.09\n0.18\n0.28\n1.15\n\n\np.ext_usda.a274_mg.kgPhosphorus, Extractable, OlsenMethod: usda.a274Unit: mg.kg\n649\n4.35\n4.96\n0.00\n1.01\n2.44\n5.84\n29.07\n\n\np.ext_usda.a270_mg.kgPhosphorus, Extractable, Bray1Method: usda.a270Unit: mg.kg\n649\n14.93\n32.09\n0.97\n3.11\n6.90\n14.68\n328.41\n\n\ncec_usda.a723_cmolc.kgCEC, pH 7.0, NH4OAc, 2M KCl displacementMethod: usda.a723Unit: cmolc.kg\n492\n16.07\n10.05\n0.51\n9.23\n14.08\n21.74\n71.62\n\n\nca.ext_usda.a722_cmolc.kgCalcium, Extractable, NH4OAcMethod: usda.a722Unit: cmolc.kg\n492\n2.26\n3.63\n0.00\n0.41\n1.08\n2.86\n29.03\n\n\nmg.ext_usda.a724_cmolc.kgMagnesium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a724Unit: cmolc.kg\n492\n1.17\n3.45\n0.01\n0.17\n0.47\n1.18\n32.38\n\n\nk.ext_usda.a725_cmolc.kgPotassium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a725Unit: cmolc.kg\n492\n0.29\n0.25\n0.00\n0.11\n0.20\n0.40\n1.30\n\n\nna.ext_usda.a726_cmolc.kgSodium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a726Unit: cmolc.kg\n492\n0.26\n0.22\n0.00\n0.11\n0.20\n0.36\n1.64\n\n\nph.h2o_usda.a268_indexpH, 1:1 Soil-Water SuspensionMethod: usda.a268Unit: index\n216\n4.99\n0.52\n3.40\n4.63\n5.01\n5.31\n6.69\n\n\nb.ext_mel3_mg.kgBoron, Extractable, Mehlich3Method: mel3Unit: mg.kg\n331\n0.26\n0.18\n0.03\n0.15\n0.19\n0.33\n1.20\n\n\nal.ext_usda.a1056_mg.kgAluminum, Extractable, Mehlich3Method: usda.a1056Unit: mg.kg\n216\n1442.78\n643.73\n33.22\n999.51\n1470.35\n1859.20\n4952.69\n\n\nna.ext_usda.a1068_mg.kgSodium, Extractable, Mehlich3Method: usda.a1068Unit: mg.kg\n216\n35.03\n26.64\n2.53\n18.13\n26.18\n44.37\n280.29\n\n\nmg.ext_usda.a1066_mg.kgMagnesium, Extractable, Mehlich3Method: usda.a1066Unit: mg.kg\n216\n90.73\n203.71\n1.38\n13.40\n42.50\n102.37\n2380.07\n\n\np.ext_usda.a652_mg.kgPhosphorus, Extractable, Mehlich3Method: usda.a652Unit: mg.kg\n219\n18.82\n27.84\n0.11\n4.94\n11.24\n21.85\n376.21\n\n\nk.ext_usda.a1065_mg.kgPotassium, Extractable, Mehlich3Method: usda.a1065Unit: mg.kg\n216\n84.73\n85.94\n4.90\n37.71\n70.26\n110.44\n1361.72\n\n\nca.ext_usda.a1059_mg.kgCalcium, Extractable, Mehlich3Method: usda.a1059Unit: mg.kg\n216\n315.04\n574.15\n5.15\n65.93\n158.55\n391.95\n7907.54\n\n\nmn.ext_usda.a1067_mg.kgManganese, Extractable, Mehlich3Method: usda.a1067Unit: mg.kg\n217\n21.44\n39.90\n0.06\n4.02\n9.04\n20.68\n336.87\n\n\nfe.ext_usda.a1064_mg.kgIron, Extractable, Mehlich3Method: usda.a1064Unit: mg.kg\n216\n167.20\n121.31\n10.12\n79.34\n122.28\n222.45\n668.26\n\n\ncu.ext_usda.a1063_mg.kgCopper, Extractable, Mehlich3Method: usda.a1063Unit: mg.kg\n218\n1.49\n2.39\n0.04\n0.48\n0.93\n1.69\n32.81\n\n\nzn.ext_usda.a1073_mg.kgZinc, Extractable, Mehlich3Method: usda.a1073Unit: mg.kg\n228\n1.65\n1.32\n0.09\n0.74\n1.22\n2.17\n9.21",
     "crumbs": [
       "← Back to listed libraries",
       "PF_NZL"
@@ -1452,11 +1452,11 @@
     ]
   },
   {
-    "objectID": "AUT.html#soil-laboratory-information",
-    "href": "AUT.html#soil-laboratory-information",
+    "objectID": "AUT.html#map",
+    "href": "AUT.html#map",
     "title": "AUT",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\noc_usda.c729_w.pct\n19\n2.76\n3.20\n0.02\n1.53\n1.96\n2.71\n44.82\n\n\nc.tot_usda.a622_w.pct\n2039\n6.54\n6.23\n1.00\n2.63\n4.90\n6.66\n39.08\n\n\ncaco3_usda.a54_w.pct\n1804\n13.26\n12.57\n0.01\n4.30\n9.70\n20.40\n81.90\n\n\nn.tot_usda.a623_w.pct\n1095\n0.25\n0.21\n0.03\n0.16\n0.19\n0.25\n2.42\n\n\np.ext_austria.cal_mg.kg\n488\n112.89\n136.73\n1.00\n45.00\n78.00\n120.00\n1623.53\n\n\nph.cacl2_iso.10390_index\n214\n6.92\n0.85\n3.18\n6.60\n7.26\n7.51\n7.93\n\n\ncec_iso.11260_cmolc.kg\n1490\n20.91\n8.75\n2.88\n15.81\n20.95\n24.42\n85.45\n\n\nsand.tot_iso.11277_w.pct\n1569\n36.25\n18.69\n5.60\n21.00\n32.20\n49.48\n92.50\n\n\nsilt.tot_iso.11277_w.pct\n1569\n45.71\n14.26\n5.00\n35.80\n47.10\n56.70\n75.70\n\n\nclay.tot_iso.11277_w.pct\n1597\n18.01\n9.05\n1.50\n10.93\n17.30\n23.80\n47.10",
+    "section": " Map",
+    "text": "Map",
     "crumbs": [
       "← Back to listed libraries",
       "AUT"
@@ -1467,18 +1467,18 @@
     "href": "AUT.html#soil-site-information",
     "title": "AUT",
     "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: county\nsampling depth: various\ngeography: landuse, vegetation",
+    "text": "Soil site information\n\nCoordinates precision: county\nSampling depth: various\nGeography: landuse, vegetation\nVariables available (OSSL): 11 out of 11 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, observation.date_src_yyyy, loc.experiment_src_txt, observation.source_src_txt, loc.municipality_src_code, loc.env.zone_src_txt, site.land.use_src_txt, layer.upper.depth_usda_cm, layer.bottom.depth_usda_cm, layer.sequence_usda_uint16",
     "crumbs": [
       "← Back to listed libraries",
       "AUT"
     ]
   },
   {
-    "objectID": "AUT.html#map",
-    "href": "AUT.html#map",
+    "objectID": "AUT.html#soil-laboratory-information",
+    "href": "AUT.html#soil-laboratory-information",
     "title": "AUT",
-    "section": " Map",
-    "text": "Map",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 2,131\nProperties available (original): 13\nProperties standardized (OSSL): 10 — summarized in Table 1 below\nCategories: physical, chemical, carbon & nutrients\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\noc_usda.c729_w.pctOrganic Carbon, Total C without CaCO3, S prepMethod: usda.c729Unit: w.pct\n19\n2.76\n3.20\n0.02\n1.53\n1.96\n2.71\n44.82\n\n\nc.tot_usda.a622_w.pctCarbon, Total NCSMethod: usda.a622Unit: w.pct\n2039\n6.54\n6.23\n1.00\n2.63\n4.90\n6.66\n39.08\n\n\ncaco3_usda.a54_w.pctCarbonate, &lt;2mm FractionMethod: usda.a54Unit: w.pct\n1804\n13.26\n12.57\n0.01\n4.30\n9.70\n20.40\n81.90\n\n\nn.tot_usda.a623_w.pctNitrogen, Total NCSMethod: usda.a623Unit: w.pct\n1095\n0.25\n0.21\n0.03\n0.16\n0.19\n0.25\n2.42\n\n\np.ext_austria.cal_mg.kgPhosphorus, Extractable, Calcium-Acetate-Lactate (CAL)Method: austria.calUnit: mg.kg\n488\n112.89\n136.73\n1.00\n45.00\n78.00\n120.00\n1623.53\n\n\nph.cacl2_iso.10390_indexpH, 1:2 Soil-CaCl2 Suspension, ISO 10390Method: iso.10390Unit: index\n214\n6.92\n0.85\n3.18\n6.60\n7.26\n7.51\n7.93\n\n\ncec_iso.11260_cmolc.kgCEC, pH 7.0, ISO 11260Method: iso.11260Unit: cmolc.kg\n1490\n20.91\n8.75\n2.88\n15.81\n20.95\n24.42\n85.45\n\n\nsand.tot_iso.11277_w.pctSand, Total, ISO 11277Method: iso.11277Unit: w.pct\n1569\n36.25\n18.69\n5.60\n21.00\n32.20\n49.48\n92.50\n\n\nsilt.tot_iso.11277_w.pctSilt, Total, ISO 11277Method: iso.11277Unit: w.pct\n1569\n45.71\n14.26\n5.00\n35.80\n47.10\n56.70\n75.70\n\n\nclay.tot_iso.11277_w.pctClay, ISO 11277Method: iso.11277Unit: w.pct\n1597\n18.01\n9.05\n1.50\n10.93\n17.30\n23.80\n47.10",
     "crumbs": [
       "← Back to listed libraries",
       "AUT"
@@ -1529,11 +1529,11 @@
     ]
   },
   {
-    "objectID": "GEMAS.html#soil-laboratory-information",
-    "href": "GEMAS.html#soil-laboratory-information",
+    "objectID": "GEMAS.html#map",
+    "href": "GEMAS.html#map",
     "title": "GEMAS",
-    "section": " Soil laboratory information",
-    "text": "Soil laboratory information\nSummary statistics for soil properties in this dataset, sourced from the ossl-imports README.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nc.tot_iso.10694_w.pct\n0\n3.91\n4.94\n0\n1.64\n2.68\n4.34\n50.10\n\n\noc_iso.10694_w.pct\n0\n3.27\n4.76\n0\n1.40\n2.10\n3.40\n49.00\n\n\ncec_usda.a723_cmolc.kg\n0\n19.14\n9.17\n0\n11.90\n17.50\n24.90\n49.88\n\n\nph.cacl2_iso.10390_index\n0\n5.78\n1.14\n0\n4.81\n5.62\n6.97\n8.06",
+    "section": " Map",
+    "text": "Map",
     "crumbs": [
       "← Back to listed libraries",
       "GEMAS"
@@ -1544,18 +1544,18 @@
     "href": "GEMAS.html#soil-site-information",
     "title": "GEMAS",
     "section": " Soil site information",
-    "text": "Soil site information\n\ncoordinates precision: precise, country\nsampling depth: top\ngeography: soil taxonomy",
+    "text": "Soil site information\n\nCoordinates precision: precise, country\nSampling depth: top\nGeography: soil taxonomy\nVariables available (OSSL): 10 out of 10 — see Database description for full schema\nPopulated columns: id.layer_uuid_txt, id.layer_local_c, loc.country_src_code, site.land.use_src_code, site.alt_src_m, longitude.point_wgs84_dd, latitude.point_wgs84_dd, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm, layer.sequence_usda_uint16",
     "crumbs": [
       "← Back to listed libraries",
       "GEMAS"
     ]
   },
   {
-    "objectID": "GEMAS.html#map",
-    "href": "GEMAS.html#map",
+    "objectID": "GEMAS.html#soil-laboratory-information",
+    "href": "GEMAS.html#soil-laboratory-information",
     "title": "GEMAS",
-    "section": " Map",
-    "text": "Map",
+    "section": " Soil laboratory information",
+    "text": "Soil laboratory information\n\nTotal samples: 4,131\nProperties available (original): 12\nProperties standardized (OSSL): 4 — summarized in Table 1 below\nCategories: physical, chemical, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nc.tot_iso.10694_w.pctCarbon, Total NCS, ISO 10694Method: iso.10694Unit: w.pct\n0\n3.91\n4.94\n0\n1.64\n2.68\n4.34\n50.10\n\n\noc_iso.10694_w.pctOrganic Carbon, ISO 10694Method: iso.10694Unit: w.pct\n0\n3.27\n4.76\n0\n1.40\n2.10\n3.40\n49.00\n\n\ncec_usda.a723_cmolc.kgCEC, pH 7.0, NH4OAc, 2M KCl displacementMethod: usda.a723Unit: cmolc.kg\n0\n19.14\n9.17\n0\n11.90\n17.50\n24.90\n49.88\n\n\nph.cacl2_iso.10390_indexpH, 1:2 Soil-CaCl2 Suspension, ISO 10390Method: iso.10390Unit: index\n0\n5.78\n1.14\n0\n4.81\n5.62\n6.97\n8.06",
     "crumbs": [
       "← Back to listed libraries",
       "GEMAS"
