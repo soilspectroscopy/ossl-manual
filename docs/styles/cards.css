@@ -309,3 +309,187 @@
   color: var(--bs-tertiary-color, #999);
   vertical-align: -3px;
 }
+
+
+/* ========================================================================
+   OSSL property code tooltips — soil lab table on dataset detail pages
+   ======================================================================== */
+
+/* Hint line above the soil lab table */
+.ossl-tt-hint {
+  font-size: 13px;
+  color: var(--bs-secondary-color, #6c757d);
+  font-style: italic;
+  margin: 1rem 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ossl-tt-hint i {
+  font-size: 15px;
+  color: #534AB7;
+  font-style: normal;
+}
+
+/* Soil lab HTML table — visual parity with the previous markdown rendering */
+.soil-lab-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin: 0.25rem 0 1rem;
+  /* allow tooltip pop-up to escape the cell */
+  overflow: visible;
+}
+.soil-lab-table thead th {
+  font-weight: 600;
+  padding: 8px 12px;
+  border-bottom: 2px solid #dee2e6;
+  color: #1f2933;
+  background: transparent;
+  white-space: nowrap;
+}
+.soil-lab-table tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1f3f5;
+  color: #343a40;
+  overflow: visible;
+}
+.soil-lab-table tbody tr:hover {
+  background: #fafbfc;
+}
+
+/* The OSSL code pill — anchors the tooltip and signals interactivity */
+.ossl-tt {
+  position: relative;
+  display: inline-block;
+  font-family: var(--bs-font-monospace, monospace);
+  font-size: 0.85em;
+  color: #534AB7;
+  background: #EEEDFE;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border-bottom: 1.5px dotted #7F77DD;
+  cursor: help;
+  white-space: nowrap;
+  transition: background 0.1s;
+}
+.ossl-tt:hover {
+  background: #CECBF6;
+}
+
+/* The pop-up itself — dark popover above the code */
+.ossl-tt-pop {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  width: 320px;
+  background: #2C2C2A;
+  color: #F1EFE8;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-family: var(--bs-font-sans-serif, -apple-system, sans-serif);
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  white-space: normal;
+  /* hidden by default */
+  display: none;
+  z-index: 1000;
+  pointer-events: none;
+}
+.ossl-tt-pop::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 18px;
+  border: 6px solid transparent;
+  border-top-color: #2C2C2A;
+}
+.ossl-tt:hover .ossl-tt-pop {
+  display: block;
+}
+
+/* Pop-up content blocks (each rendered as inline-spans, stacked via display:block) */
+.ossl-tt-pop .tt-analyte,
+.ossl-tt-pop .tt-desc,
+.ossl-tt-pop .tt-unit {
+  display: block;
+}
+.ossl-tt-pop .tt-analyte {
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+.ossl-tt-pop .tt-desc {
+  color: #D3D1C7;
+  margin-bottom: 6px;
+}
+.ossl-tt-pop .tt-unit {
+  color: #AFA9EC;
+  font-size: 11.5px;
+}
+
+.ossl-tt-pop .tt-unit code,
+.ossl-tt-pop .tt-desc code {
+  font-family: var(--bs-font-monospace, monospace);
+  background: rgba(255, 255, 255, 0.10);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 11.5px;
+  color: #fff;
+}
+
+/* When tooltip would overflow page right edge — flip to align right */
+.soil-lab-table tbody tr:last-child .ossl-tt-pop,
+.soil-lab-table tbody tr:nth-last-child(2) .ossl-tt-pop {
+  bottom: auto;
+  top: calc(100% + 8px);
+}
+.soil-lab-table tbody tr:last-child .ossl-tt-pop::after,
+.soil-lab-table tbody tr:nth-last-child(2) .ossl-tt-pop::after {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: #2C2C2A;
+}
+
+/* ========================================================================
+   Font size bumps — hero band, quick stats, and TOC
+   ======================================================================== */
+
+/* Hero band: description, meta line, and spectral pills */
+.ossl-hero-desc {
+  font-size: 16px;
+}
+.ossl-meta-item {
+  font-size: 15px;
+}
+.ossl-meta-item i {
+  font-size: 17px;
+}
+.ossl-hero .ossl-pill {
+  font-size: 13px;
+  padding: 4px 11px;
+}
+
+/* Quick-stats strip below the hero (samples, version, license) */
+.ossl-quick-stats {
+  font-size: 15px;
+}
+.ossl-stat-item i {
+  font-size: 17px;
+}
+
+/* Right-hand "On this page" TOC */
+#toc-title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+nav[role="doc-toc"] > ul {
+  font-size: 1rem;
+}
+
+
+
+

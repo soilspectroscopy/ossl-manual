@@ -1,406 +1,3006 @@
-# Database description {#sec-db-desc}
+---
+title: "Database description"
+format:
+  html:
+    toc: false
+    css: styles/db-description.css
+    include-in-header:
+      text: |
+        <style>#title-block-header { display: none !important; }</style>
+---
 
-In this section you can find a detailed description of the OSSL database, which includes the variable names, types, human-readable description, and example values. You can also find all this information in tabular format:
+```{=html}
+<h1 class="db-page-title">Database description</h1>
+<p class="db-page-intro">
+  Variable names, types, measurement units, analytical methods, and
+  plain-language descriptions for all fields in the OSSL database.
+  Use the tabs to browse each data type, the search box to find a specific
+  variable, and click the <strong>+</strong> button on any row to expand its
+  full details.
+</p>
 
-- [OSSL soil site data](https://github.com/soilspectroscopy/ossl-manual/tree/main/tabular/ossl_level0_names_soilsite.csv).
-- [OSSL soil lab data (level 0)](https://github.com/soilspectroscopy/ossl-manual/tree/main/tabular/ossl_level0_names_soillab.csv).
-- [OSSL soil lab data (level 1)](https://github.com/soilspectroscopy/ossl-manual/tree/main/tabular/ossl_level1_names_soillab.csv).
-- [OSSL soil MIR data](https://github.com/soilspectroscopy/ossl-manual/tree/main/tabular/ossl_level0_names_mir.csv).
-- [OSSL soil VisNIR data](https://github.com/soilspectroscopy/ossl-manual/tree/main/tabular/ossl_level0_names_visnir.csv).
+<div class="db-tabs" role="tablist">
+  <button class="db-tab active" role="tab" aria-selected="true"
+          aria-controls="panel-soillab" data-target="panel-soillab">
+    Soil lab <span class="tab-count">86</span>
+  </button>
+  <button class="db-tab" role="tab" aria-selected="false"
+          aria-controls="panel-soilsite" data-target="panel-soilsite">
+    Soil site <span class="tab-count">33</span>
+  </button>
+  <button class="db-tab" role="tab" aria-selected="false"
+          aria-controls="panel-mir" data-target="panel-mir">
+    MIR scans <span class="tab-count">15</span>
+  </button>
+  <button class="db-tab" role="tab" aria-selected="false"
+          aria-controls="panel-visnir" data-target="panel-visnir">
+    VisNIR scans <span class="tab-count">15</span>
+  </button>
+  <button class="db-tab" role="tab" aria-selected="false"
+          aria-controls="panel-nir" data-target="panel-nir">
+    NIR scans <span class="tab-count">16</span>
+  </button>
+</div>
 
-```{r config, echo=FALSE}
-knitr::opts_chunk$set(message = FALSE)
-knitr::opts_chunk$set(warning = FALSE)
-heatmap.dir <- "./img/heatmap"
-if(!fs::dir_exists(heatmap.dir)){fs::dir_create(heatmap.dir)}
-```
+<div id="panel-soillab" class="tab-panel" style="display:none" role="tabpanel">
+  <div class="search-row">
+    <input type="text" id="panel-soillab-srch"
+           placeholder="Search by code or description&#x2026;" aria-label="Search variables">
+  </div>
+  <p class="count-note" id="panel-soillab-cnt">Showing 86 variables</p>
+  <div class="table-wrap">
+  <table id="panel-soillab-tbl">
+    <thead><tr>
+      <th class="exp-cell"></th>
+      <th class="code-col">OSSL CODE</th>
+      <th>DESCRIPTION</th>
+      <th style="width:110px">OSSL UNIT</th>
+      <th style="width:110px">DATA TYPE</th>
+    </tr></thead>
+    <tbody>
+<tr data-code="dataset.code_ascii_txt" data-desc="Dataset code used for internal reference">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">dataset.code_ascii_txt</code></td>
+  <td class="desc-col">OSSL dataset code</td>
+  <td class="unit-col">txt</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Dataset code used for internal reference</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">ascii</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">text</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>AFSIS1.SSL</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">dataset.code</div></div>
+    </div>
+  </td>
+</tr>
 
-```{r load_data, include=FALSE, eval=FALSE}
-library("tidyverse")
-library("readr")
-library("qs")
-library("curl")
-ossl.soilsite <- "https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.qs"
-ossl.soilsite <- curl_fetch_memory(ossl.soilsite)
-ossl.soilsite <- qdeserialize(ossl.soilsite$content) %>% as_tibble()
-ossl.soillab.level0 <- "https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.qs"
-ossl.soillab.level0 <- curl_fetch_memory(ossl.soillab.level0)
-ossl.soillab.level0 <- qdeserialize(ossl.soillab.level0$content) %>% as_tibble()
-ossl.soillab.level1 <- "https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs"
-ossl.soillab.level1 <- curl_fetch_memory(ossl.soillab.level1)
-ossl.soillab.level1 <- qdeserialize(ossl.soillab.level1$content) %>% as_tibble()
-```
+<tr data-code="id.layer_uuid_txt" data-desc="Unique identifier">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">id.layer_uuid_txt</code></td>
+  <td class="desc-col">OSSL unique identifier</td>
+  <td class="unit-col">txt</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Unique identifier</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">uuid</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">text</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>ded584d70bf0474202d30e575ae24784</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">id.layer</div></div>
+    </div>
+  </td>
+</tr>
 
-```{r heatmap_plots, include=FALSE, eval=FALSE}
-library("ggplot2")
-library("viridis")
-library("rlang")
-library("moments")
-names.remove <- c("dataset.code_ascii_txt", "id.layer_uuid_txt", "efferv_usda.a479_class")
-ossl.soillab.level0.names <- ossl.soillab.level0 %>%
-  select(-all_of(names.remove)) %>%
-  names()
-dataset.codes <- ossl.soillab.level0 %>%
-  distinct(dataset.code_ascii_txt)
-table.reference <- dataset.codes %>%
-  crossing(label = 1:length(seq(0, 1, by = 0.05)))
-# test1 <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-# cut(test1, breaks = c(0,2,4,6,8,10), include.lowest = F, labels = F, right = F)
+<tr data-code="acidity_usda.a795_cmolc.kg" data-desc="Extractable acidity, BaCl2-TEA at pH 8.2, is a measure of the amount of acid neutralized at a set pH">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">acidity_usda.a795_cmolc.kg</code></td>
+  <td class="desc-col">Acidity, BaCl2-TEA Extractable, pH 8.2</td>
+  <td class="unit-col">cmolc.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Extractable acidity, BaCl2-TEA at pH 8.2, is a measure of the amount of acid neutralized at a set pH</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a795</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">centimoles of charge per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.40000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">acidity</div></div>
+    </div>
+  </td>
+</tr>
 
-i=1
-for(i in 1:length(ossl.soillab.level0.names)) {
-  
-  isoil.property <- ossl.soillab.level0.names[i]
-  
-  out.png = paste0(heatmap.dir, "/heatmap_L0_", isoil.property, ".png")
-  
-  plot.df = ossl.soillab.level0 %>%
-    select(dataset.code_ascii_txt, all_of(isoil.property))
-  
-  iskewness <- plot.df %>%
-    pull(all_of(isoil.property)) %>%
-    skewness(na.rm = T)
-  
-  i99th <- plot.df %>%
-    summarise(!!isoil.property := quantile(!!as.name(isoil.property), p = 0.99, na.rm = T)) %>%
-    pull(all_of(isoil.property))
-  
-  if(iskewness <= -3 | iskewness >= 3) {
-    
-    plot.df <- plot.df %>%
-      filter(!!as.symbol(isoil.property) <= i99th) %>%
-      mutate(!!isoil.property := log1p(!!as.name(isoil.property)))
-    
-    percentiles <- plot.df %>%
-      summarise(quantile = scales::percent(seq(0, 1, by = 0.05)),
-                !!isoil.property := quantile(!!as.name(isoil.property), seq(0, 1, by = 0.05),
-                                             names = F, type = 7)) %>%
-      group_by(!!as.name(isoil.property)) %>%
-      summarise_all(last) %>%
-      relocate(quantile, 1) %>%
-      mutate(upper = get(isoil.property)) %>%
-      mutate(lower = lag(upper, 1)) %>%
-      mutate(upper = round(expm1(upper), 2),
-             lower = round(expm1(lower), 2)) %>%
-      mutate(label = paste0("[", lower, ", ", upper, ")"))
-    
-    n.table <- plot.df %>%
-      filter(!is.na(!!as.symbol(isoil.property))) %>%
-      group_by(dataset.code_ascii_txt) %>%
-      summarise(label = cut(!!as.name(isoil.property),
-                            breaks = pull(percentiles, var = 2),
-                            include.lowest = F, labels = F, right = F),
-                .groups = 'drop') %>%
-      count(dataset.code_ascii_txt, label)
-    
-    table.reference.filled <- left_join(table.reference, n.table,
-                                        by = c("dataset.code_ascii_txt", "label")) %>%
-      mutate(dataset.code_ascii_txt = factor(dataset.code_ascii_txt,
-                                             levels = rev(pull(dataset.codes, 1)))) %>%
-      filter(!(label == 21))
-    
-    plot <- ggplot(table.reference.filled, aes(x = label, y = dataset.code_ascii_txt, fill = n)) +
-      geom_tile(color = "gray20") +
-      scale_fill_viridis(discrete = FALSE, na.value = "grey90", trans = "log10") +
-      scale_x_continuous(breaks = (1:nrow(percentiles))[-nrow(percentiles)],
-                         labels = pull(percentiles, 5)[-1],
-                         expand = c(0.01, 0)) +
-      labs(title = paste0('OSSL level 0: ', isoil.property),
-           x = "", y = "", fill = "Count:") +
-      theme_minimal() +
-      theme(axis.text.x = element_text(hjust = 1, vjust = 1, angle = 45),
-            legend.position = "bottom",
-            plot.background = element_rect(fill = 'white', colour = "white"),
-            legend.text = element_text(hjust = 1, vjust = 1, angle = 45)); plot
-    
-  } else {
-    
-    plot.df <- plot.df %>%
-      filter(!!as.symbol(isoil.property) <= i99th)
-    
-    percentiles <- plot.df %>%
-      summarise(quantile = scales::percent(seq(0, 1, by = 0.05)),
-                !!isoil.property := quantile(!!as.name(isoil.property), seq(0, 1, by = 0.05),
-                                             names = F, type = 7)) %>%
-      group_by(!!as.name(isoil.property)) %>%
-      summarise_all(last) %>%
-      relocate(quantile, 1) %>%
-      mutate(upper = get(isoil.property)) %>%
-      mutate(lower = lag(upper, 1)) %>%
-      mutate(upper = round(upper, 2), lower = round(lower, 2)) %>%
-      mutate(label = paste0("[", lower, ", ", upper, ")"))
-    
-    n.table <- plot.df %>%
-      filter(!is.na(!!as.symbol(isoil.property))) %>%
-      group_by(dataset.code_ascii_txt) %>%
-      summarise(label = cut(!!as.name(isoil.property),
-                            breaks = pull(percentiles, var = 2),
-                            include.lowest = F, labels = F, right = F),
-                .groups = 'drop') %>%
-      count(dataset.code_ascii_txt, label)
-    
-    table.reference.filled <- left_join(table.reference, n.table,
-                                        by = c("dataset.code_ascii_txt", "label")) %>%
-      mutate(dataset.code_ascii_txt = factor(dataset.code_ascii_txt,
-                                             levels = rev(pull(dataset.codes, 1)))) %>%
-      filter(!(label == 21))
-    
-    plot <- ggplot(table.reference.filled, aes(x = label, y = dataset.code_ascii_txt, fill = n)) +
-      geom_tile(color = "gray20") +
-      scale_fill_viridis(discrete = FALSE, na.value = "grey90", trans = "log10") +
-      scale_x_continuous(breaks = (1:nrow(percentiles))[-nrow(percentiles)],
-                         labels = pull(percentiles, 5)[-1],
-                         expand = c(0.01, 0)) +
-      labs(title = paste0('OSSL level 0: ', isoil.property),
-           x = "", y = "", fill = "Count:") +
-      theme_minimal() +
-      theme(axis.text.x = element_text(hjust = 1, vjust = 1, angle = 45),
-            legend.position = "bottom",
-            plot.background = element_rect(fill = 'white', colour = "white"),
-            legend.text = element_text(hjust = 1, vjust = 1, angle = 45)); plot
-    
+<tr data-code="aggstb_usda.a1_w.pct" data-desc="Aggregate stability is the weight percent of 0.5 mm - 2 mm aggregates remaining after wet sieving.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">aggstb_usda.a1_w.pct</code></td>
+  <td class="desc-col">Aggregate Stability</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Aggregate stability is the weight percent of 0.5 mm - 2 mm aggregates remaining after wet sieving.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a1</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>74</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">aggstb</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="al.dith_usda.a65_w.pct" data-desc="Dithionite citrate extractable aluminum is an indicator of the amount of aluminum substituted for iron in iron oxides.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">al.dith_usda.a65_w.pct</code></td>
+  <td class="desc-col">Aluminum, Crystalline, Total Pedogenic Iron</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Dithionite citrate extractable aluminum is an indicator of the amount of aluminum substituted for iron in iron oxides.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a65</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.13652</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">al.dith</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="al.ext_aquaregia_g.kg" data-desc="Exchangeable Al.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">al.ext_aquaregia_g.kg</code></td>
+  <td class="desc-col">Aluminum, Extractable, Aqua Regia</td>
+  <td class="unit-col">g.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable Al.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">aquaregia</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">grams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>42.9620831</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">al.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="al.ext_usda.a1056_mg.kg" data-desc="Exchangeable Al.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">al.ext_usda.a1056_mg.kg</code></td>
+  <td class="desc-col">Aluminum, Extractable, Mehlich3</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable Al.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a1056</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>1270.00000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">al.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="al.ext_usda.a69_cmolc.kg" data-desc="Exchangeable Al.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">al.ext_usda.a69_cmolc.kg</code></td>
+  <td class="desc-col">Aluminum, Extractable, KCl</td>
+  <td class="unit-col">cmolc.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable Al.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a69</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">centimoles of charge per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.20000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">al.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="al.ox_usda.a59_w.pct" data-desc="Ammonium oxalate extractable aluminum is an estimate of the total pedogenic Al, much of which may be in noncrystalline materials or complexed by organic matter.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">al.ox_usda.a59_w.pct</code></td>
+  <td class="desc-col">Aluminum, Amorphous, Total Non-Crystalline Iron</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Ammonium oxalate extractable aluminum is an estimate of the total pedogenic Al, much of which may be in noncrystalline materials or complexed by organic matter.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a59</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.12951</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">al.ox</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="awc.33.1500kPa_usda.c80_w.frac" data-desc="The amount (fraction) of water released between 1/3 (33 kPa) and 15 (1500 kPa) bar tensions determined as gravimetric percent.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">awc.33.1500kPa_usda.c80_w.frac</code></td>
+  <td class="desc-col">Available Water Content, Difference 33-1500 kPa</td>
+  <td class="unit-col">w.frac</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">The amount (fraction) of water released between 1/3 (33 kPa) and 15 (1500 kPa) bar tensions determined as gravimetric percent.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.c80</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight fraction</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.08658</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">awc.33.1500kPa</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="b.ext_mel3_mg.kg" data-desc="Plant available B.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">b.ext_mel3_mg.kg</code></td>
+  <td class="desc-col">Boron, Extractable, Mehlich3</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Plant available B.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">mel3</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.00100000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">b.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="bd_iso.11272_g.cm3" data-desc="Bulk density is the weight per unit volume of the fine earth fraction (&lt;2 mm).">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">bd_iso.11272_g.cm3</code></td>
+  <td class="desc-col">Bulk Density, ISO 11272</td>
+  <td class="unit-col">g.cm3</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Bulk density is the weight per unit volume of the fine earth fraction (&lt;2 mm).</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">iso.11272</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">grams per cubic centimeter</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>1.57100</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">bd</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="bd_usda.a21_g.cm3" data-desc="Bulk density is the weight per unit volume of the fine earth fraction (&lt;2 mm).">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">bd_usda.a21_g.cm3</code></td>
+  <td class="desc-col">Bulk Density, &lt;2 mm fraction, Core</td>
+  <td class="unit-col">g.cm3</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Bulk density is the weight per unit volume of the fine earth fraction (&lt;2 mm).</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a21</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">grams per cubic centimeter</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>1.57100</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">bd</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="bd_usda.a4_g.cm3" data-desc="Bulk density is the weight per unit volume of the fine earth fraction (&lt;2 mm).">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">bd_usda.a4_g.cm3</code></td>
+  <td class="desc-col">Bulk Density, &lt;2mm fraction, Clod</td>
+  <td class="unit-col">g.cm3</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Bulk density is the weight per unit volume of the fine earth fraction (&lt;2 mm).</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a4</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">grams per cubic centimeter</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>1.3477999</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">bd</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="c.tot_iso.10694_w.pct" data-desc="Total carbon is a measure of all organic and inorganic carbon, including that found in carbonate minerals.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">c.tot_iso.10694_w.pct</code></td>
+  <td class="desc-col">Carbon, Total NCS, ISO 10694</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Total carbon is a measure of all organic and inorganic carbon, including that found in carbonate minerals.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">iso.10694</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>3.668778009</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">c.tot</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="c.tot_usda.a622_w.pct" data-desc="Total carbon is a measure of all organic and inorganic carbon, including that found in carbonate minerals.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">c.tot_usda.a622_w.pct</code></td>
+  <td class="desc-col">Carbon, Total NCS</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Total carbon is a measure of all organic and inorganic carbon, including that found in carbonate minerals.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a622</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>1.55128592</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">c.tot</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="ca.ext_aquaregia_mg.kg" data-desc="Exchangeable or plant available Ca.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">ca.ext_aquaregia_mg.kg</code></td>
+  <td class="desc-col">Calcium, Extractable, Aqua Regia</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available Ca.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">aquaregia</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>368.535095</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">ca.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="ca.ext_usda.a1059_mg.kg" data-desc="Exchangeable or plant available Ca.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">ca.ext_usda.a1059_mg.kg</code></td>
+  <td class="desc-col">Calcium, Extractable, Mehlich3</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available Ca.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a1059</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>78.20000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">ca.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="ca.ext_usda.a722_cmolc.kg" data-desc="Exchangeable or plant available Ca.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">ca.ext_usda.a722_cmolc.kg</code></td>
+  <td class="desc-col">Calcium, Extractable, NH4OAc</td>
+  <td class="unit-col">cmolc.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available Ca.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a722</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">centimoles of charge per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>2.617060178</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">ca.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="ca.ext_brazil.ier_cmolc.kg" data-desc="Exchangeable or plant available Ca.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">ca.ext_brazil.ier_cmolc.kg</code></td>
+  <td class="desc-col">Calcium, Extractable, Ion Exchange Resin (IER)</td>
+  <td class="unit-col">cmolc.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available Ca.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">brazil.ier</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">centimoles of charge per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code></code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">ca.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="caco3_iso.10693_w.pct" data-desc="Carbonate in the &lt;2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a &lt;2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">caco3_iso.10693_w.pct</code></td>
+  <td class="desc-col">Carbonate, ISO 10693</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Carbonate in the &lt;2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a &lt;2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">iso.10693</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>27.0</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">caco3</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="caco3_usda.a54_w.pct" data-desc="Carbonate in the &lt;2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a &lt;2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">caco3_usda.a54_w.pct</code></td>
+  <td class="desc-col">Carbonate, &lt;2mm Fraction</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Carbonate in the &lt;2mm fraction is measured by CO2 evolution after acid treatment. It is reported as gravimetric percent CaCO3 on a &lt;2 mm base, even though carbonates of Mg, Na, K, and Fe may be present and react with the acid.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a54</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.50000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">caco3</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="cec_iso.11260_cmolc.kg" data-desc="Cation exchange capacity of a sample highly buffered at pH 7.0. It is reported as cmolc kg-1 (= meq per 100 grams) on a &lt;2 mm base.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">cec_iso.11260_cmolc.kg</code></td>
+  <td class="desc-col">CEC, pH 7.0, ISO 11260</td>
+  <td class="unit-col">cmolc.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Cation exchange capacity of a sample highly buffered at pH 7.0. It is reported as cmolc kg-1 (= meq per 100 grams) on a &lt;2 mm base.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">iso.11260</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">centimoles of charge per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>37.8</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">cec</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="cec_usda.a723_cmolc.kg" data-desc="Cation exchange capacity of a sample highly buffered at pH 7.0. It is reported on a &lt;2 mm base.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">cec_usda.a723_cmolc.kg</code></td>
+  <td class="desc-col">CEC, pH 7.0, NH4OAc, 2M KCl displacement</td>
+  <td class="unit-col">cmolc.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Cation exchange capacity of a sample highly buffered at pH 7.0. It is reported on a &lt;2 mm base.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a723</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">centimoles of charge per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>6.6332171</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">cec</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="cf_iso.11464_w.pct" data-desc="The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">cf_iso.11464_w.pct</code></td>
+  <td class="desc-col">Coarse Fragments, ISO 11464</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">iso.11464</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>10</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">cf</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="cf_usda.c236_w.pct" data-desc="The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">cf_usda.c236_w.pct</code></td>
+  <td class="desc-col">Coarse Fragments, Greater 2mm</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">The gravimetric percentage of greater than 2 mm diameter particles reported on a whole soil base.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.c236</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>4.00000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">cf</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="clay.tot_iso.11277_w.pct" data-desc="Total clay is the soil separate with &lt;0.002 mm particle diameter. Clay size carbonate is included. It is reported on a &lt;2 mm base.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">clay.tot_iso.11277_w.pct</code></td>
+  <td class="desc-col">Clay, ISO 11277</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Total clay is the soil separate with &lt;0.002 mm particle diameter. Clay size carbonate is included. It is reported on a &lt;2 mm base.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">iso.11277</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>51</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">clay.tot</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="clay.tot_usda.a334_w.pct" data-desc="Total clay is the soil separate with &lt;0.002 mm particle diameter. Clay size carbonate is included. It is reported on a &lt;2 mm base.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">clay.tot_usda.a334_w.pct</code></td>
+  <td class="desc-col">Clay</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Total clay is the soil separate with &lt;0.002 mm particle diameter. Clay size carbonate is included. It is reported on a &lt;2 mm base.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a334</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>30.99000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">clay.tot</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="cu.ext_usda.a1063_mg.kg" data-desc="Exchangeable or plant available Cu.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">cu.ext_usda.a1063_mg.kg</code></td>
+  <td class="desc-col">Copper, Extractable, Mehlich3</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available Cu.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a1063</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.5600000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">cu.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="ec_iso.11265_ds.m" data-desc="Electrical conductivity. It is reported of a 1:2 soil:water mixture">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">ec_iso.11265_ds.m</code></td>
+  <td class="desc-col">Electrical Conductivity, ISO 11265</td>
+  <td class="unit-col">ds.m</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Electrical conductivity. It is reported of a 1:2 soil:water mixture</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">iso.11265</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">decisiemens per metre</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>2.3350</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">ec</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="ec_usda.a364_ds.m" data-desc="Electrical conductivity. It is reported of a 1:2 soil:water mixture">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">ec_usda.a364_ds.m</code></td>
+  <td class="desc-col">Electrical Conductivity, (w/w)</td>
+  <td class="unit-col">ds.m</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Electrical conductivity. It is reported of a 1:2 soil:water mixture</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a364</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">decisiemens per metre</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.03100</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">ec</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="efferv_usda.a479_class" data-desc="The visual effervescence of the prepared sample when treated with 1 N HCl.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">efferv_usda.a479_class</code></td>
+  <td class="desc-col">Effervescense, 1N HCl</td>
+  <td class="unit-col">class</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">The visual effervescence of the prepared sample when treated with 1 N HCl.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a479</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">class of visual interpretation</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>none</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">efferv</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="fe.dith_usda.a66_w.pct" data-desc="Dithionite citrate extractable iron is considered a general measure of total pedogenic iron.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">fe.dith_usda.a66_w.pct</code></td>
+  <td class="desc-col">Iron, Crystalline, Total Pedogenic Iron</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Dithionite citrate extractable iron is considered a general measure of total pedogenic iron.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a66</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>1.09028</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">fe.dith</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="fe.ext_aquaregia_g.kg" data-desc="Exchangeable or plant available Fe.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">fe.ext_aquaregia_g.kg</code></td>
+  <td class="desc-col">Iron, Extractable, Aqua Regia</td>
+  <td class="unit-col">g.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available Fe.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">aquaregia</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">grams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>71.9575342</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">fe.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="fe.ext_usda.a1064_mg.kg" data-desc="Exchangeable or plant available Fe.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">fe.ext_usda.a1064_mg.kg</code></td>
+  <td class="desc-col">Iron, Extractable, Mehlich3</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available Fe.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a1064</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>182.00000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">fe.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="fe.ox_usda.a60_w.pct" data-desc="Ammonium oxalate extractable iron is considered a measure of the noncrystalline Fe in soils.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">fe.ox_usda.a60_w.pct</code></td>
+  <td class="desc-col">Iron, Amorphous, Total Non-Crystalline Iron</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Ammonium oxalate extractable iron is considered a measure of the noncrystalline Fe in soils.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a60</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.15422</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">fe.ox</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="k.ext_aquaregia_mg.kg" data-desc="Exchangeable or plant available K.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">k.ext_aquaregia_mg.kg</code></td>
+  <td class="desc-col">Potassium, Extractable, Aqua Regia</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available K.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">aquaregia</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>1781.400966</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">k.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="k.ext_usda.a1065_mg.kg" data-desc="Exchangeable or plant available K.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">k.ext_usda.a1065_mg.kg</code></td>
+  <td class="desc-col">Potassium, Extractable, Mehlich3</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available K.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a1065</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>47.000000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">k.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="k.ext_usda.a725_cmolc.kg" data-desc="Exchangeable or plant available K.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">k.ext_usda.a725_cmolc.kg</code></td>
+  <td class="desc-col">Potassium, Extractable, NH4OAc, 2M KCl displacement</td>
+  <td class="unit-col">cmolc.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available K.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a725</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">centimoles of charge per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.200688352</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">k.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="k.ext_msz.20135_mg.kg" data-desc="Exchangeable or plant available K.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">k.ext_msz.20135_mg.kg</code></td>
+  <td class="desc-col">Potassium, Extractable, Ammonium Lactate (AL)</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available K.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">msz.20135</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code></code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">k.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="k.ext_brazil.ier_cmolc.kg" data-desc="Exchangeable or plant available K.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">k.ext_brazil.ier_cmolc.kg</code></td>
+  <td class="desc-col">Potassium, Extractable,  Ion Exchange Resin (IER)</td>
+  <td class="unit-col">cmolc.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available K.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">brazil.ier</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">centimoles of charge per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code></code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">k.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="mg.ext_aquaregia_mg.kg" data-desc="Exchangeable or plant available Mg.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">mg.ext_aquaregia_mg.kg</code></td>
+  <td class="desc-col">Magnesium, Extractable, Aqua Regia</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available Mg.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">aquaregia</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>710.429099</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">mg.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="mg.ext_usda.a1066_mg.kg" data-desc="Exchangeable or plant available Mg.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">mg.ext_usda.a1066_mg.kg</code></td>
+  <td class="desc-col">Magnesium, Extractable, Mehlich3</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available Mg.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a1066</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>19.600000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">mg.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="mg.ext_usda.a724_cmolc.kg" data-desc="Exchangeable or plant available Mg.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">mg.ext_usda.a724_cmolc.kg</code></td>
+  <td class="desc-col">Magnesium, Extractable, NH4OAc, 2M KCl displacement</td>
+  <td class="unit-col">cmolc.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available Mg.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a724</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">centimoles of charge per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>1.81655342</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">mg.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="mg.ext_brazil.ier_cmolc.kg" data-desc="Exchangeable or plant available Mg.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">mg.ext_brazil.ier_cmolc.kg</code></td>
+  <td class="desc-col">Magnesium, Extractable, Ion Exchange Resin (IER)</td>
+  <td class="unit-col">cmolc.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available Mg.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">brazil.ier</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">centimoles of charge per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code></code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">mg.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="mn.ext_aquaregia_mg.kg" data-desc="Exchangeable or plant available Mn.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">mn.ext_aquaregia_mg.kg</code></td>
+  <td class="desc-col">Manganese, Extractable, Aqua Regia</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available Mn.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">aquaregia</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>497.300369</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">mn.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="mn.ext_usda.a1067_mg.kg" data-desc="Exchangeable or plant available Mn.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">mn.ext_usda.a1067_mg.kg</code></td>
+  <td class="desc-col">Manganese, Extractable, Mehlich3</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available Mn.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a1067</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>23.10000000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">mn.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="mn.ext_usda.a70_mg.kg" data-desc="Exchangeable or plant available Mn.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">mn.ext_usda.a70_mg.kg</code></td>
+  <td class="desc-col">Manganese, Extractable, KCl</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available Mn.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a70</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.62569</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">mn.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="n.tot_iso.11261_w.pct" data-desc="Total nitrogen is a measure of all organic and inorganic nitrogen.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">n.tot_iso.11261_w.pct</code></td>
+  <td class="desc-col">Nitrogen, Total NCS, ISO 11261</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Total nitrogen is a measure of all organic and inorganic nitrogen.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">iso.11261</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.25</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">n.tot</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="n.tot_iso.13878_w.pct" data-desc="Total nitrogen is a measure of all organic and inorganic nitrogen.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">n.tot_iso.13878_w.pct</code></td>
+  <td class="desc-col">Nitrogen, Total NCS, ISO 13878</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Total nitrogen is a measure of all organic and inorganic nitrogen.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">iso.13878</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.089</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">n.tot</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="n.tot_usda.a623_w.pct" data-desc="Total nitrogen is a measure of all organic and inorganic nitrogen.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">n.tot_usda.a623_w.pct</code></td>
+  <td class="desc-col">Nitrogen, Total NCS</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Total nitrogen is a measure of all organic and inorganic nitrogen.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a623</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.079766974</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">n.tot</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="na.ext_aquaregia_mg.kg" data-desc="Exchangeable or plant availableNa.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">na.ext_aquaregia_mg.kg</code></td>
+  <td class="desc-col">Sodium, Extractable, Aqua Regia</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant availableNa.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">aquaregia</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>75.986312</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">na.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="na.ext_usda.a1068_mg.kg" data-desc="Exchangeable or plant availableNa.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">na.ext_usda.a1068_mg.kg</code></td>
+  <td class="desc-col">Sodium, Extractable, Mehlich3</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant availableNa.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a1068</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>17.800000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">na.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="na.ext_usda.a726_cmolc.kg" data-desc="Exchangeable or plant availableNa.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">na.ext_usda.a726_cmolc.kg</code></td>
+  <td class="desc-col">Sodium, Extractable, NH4OAc, 2M KCl displacement</td>
+  <td class="unit-col">cmolc.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant availableNa.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a726</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">centimoles of charge per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.124398521</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">na.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="oc_iso.10694_w.pct" data-desc="Estimated Organic Carbon based on Total C">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">oc_iso.10694_w.pct</code></td>
+  <td class="desc-col">Organic Carbon, ISO 10694</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Estimated Organic Carbon based on Total C</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">iso.10694</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>2.05000000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">oc</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="oc_usda.c1059_w.pct" data-desc="Estimated Organic Carbon based on Total C">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">oc_usda.c1059_w.pct</code></td>
+  <td class="desc-col">Organic Carbon, Total C without CaCO3, N prep</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Estimated Organic Carbon based on Total C</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.c1059</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>1.50336492</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">oc</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="oc_usda.c729_w.pct" data-desc="Estimated Organic Carbon based on Total C">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">oc_usda.c729_w.pct</code></td>
+  <td class="desc-col">Organic Carbon, Total C without CaCO3, S prep</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Estimated Organic Carbon based on Total C</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.c729</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>2.9100</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">oc</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="oc_wb1934_w.pct" data-desc="">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">oc_wb1934_w.pct</code></td>
+  <td class="desc-col">Organic Carbon, Walkey-Black 1934</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val"></div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">wb1934</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code></code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">oc</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="p.ext_aquaregia_mg.kg" data-desc="Plant available P.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">p.ext_aquaregia_mg.kg</code></td>
+  <td class="desc-col">Phosphorus, Extractable, Aqua Regia</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Plant available P.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">aquaregia</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>608.30492</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">p.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="p.ext_iso.11263_mg.kg" data-desc="Plant available P.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">p.ext_iso.11263_mg.kg</code></td>
+  <td class="desc-col">Phosphorus, Extractable, ISO 11263</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Plant available P.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">iso.11263</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>72.4</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">p.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="p.ext_usda.a1070_mg.kg" data-desc="Plant available P.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">p.ext_usda.a1070_mg.kg</code></td>
+  <td class="desc-col">Phosphorus, Extractable, Mehlich3</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Plant available P.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a1070</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>3.44739</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">p.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="p.ext_usda.a270_mg.kg" data-desc="Plant available P.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">p.ext_usda.a270_mg.kg</code></td>
+  <td class="desc-col">Phosphorus, Extractable, Bray1</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Plant available P.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a270</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>50.5348939</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">p.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="p.ext_usda.a274_mg.kg" data-desc="Plant available P.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">p.ext_usda.a274_mg.kg</code></td>
+  <td class="desc-col">Phosphorus, Extractable, Olsen</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Plant available P.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a274</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>17.23518992</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">p.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="p.ext_usda.a652_mg.kg" data-desc="Plant available P.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">p.ext_usda.a652_mg.kg</code></td>
+  <td class="desc-col">Phosphorus, Extractable, Mehlich3</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Plant available P.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a652</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>9.770000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">p.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="p.ext_msz.20135_mg.kg" data-desc="Plant available P.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">p.ext_msz.20135_mg.kg</code></td>
+  <td class="desc-col">Phosphorus, Extractable, Ammonium Lactate (AL)</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Plant available P.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">msz.20135</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code></code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">p.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="p.ext_austria.cal_mg.kg" data-desc="Plant available P.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">p.ext_austria.cal_mg.kg</code></td>
+  <td class="desc-col">Phosphorus, Extractable, Calcium-Acetate-Lactate (CAL)</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Plant available P.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">austria.cal</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code></code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">p.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="p.ext_brazil.ier_mg.kg" data-desc="Plant available P.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">p.ext_brazil.ier_mg.kg</code></td>
+  <td class="desc-col">Phosphorus, Extractable, Ion Exchange Resin (IER)</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Plant available P.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">brazil.ier</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code></code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">p.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="ph.cacl2_usda.a477_index" data-desc="pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">ph.cacl2_usda.a477_index</code></td>
+  <td class="desc-col">pH, 1:2 Soil-CaCl2 Suspension, 0.01 M CaCl2</td>
+  <td class="unit-col">index</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a477</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">negative logarithm of the hydrogen ion concentration</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>5.40</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">ph.cacl2</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="ph.cacl2_iso.10390_index" data-desc="pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">ph.cacl2_iso.10390_index</code></td>
+  <td class="desc-col">pH, 1:2 Soil-CaCl2 Suspension, ISO 10390</td>
+  <td class="unit-col">index</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">iso.10390</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">negative logarithm of the hydrogen ion concentration</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>7.24</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">ph.cacl2</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="ph.cacl2_usda.a481_index" data-desc="pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">ph.cacl2_usda.a481_index</code></td>
+  <td class="desc-col">pH, 1:2 Soil-CaCl2 Suspension</td>
+  <td class="unit-col">index</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">pH of a sample measured in 0.01 M CaCl2 at a 1:2 soil:solution ratio.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a481</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">negative logarithm of the hydrogen ion concentration</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>6.40000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">ph.cacl2</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="ph.h2o_iso.10390_index" data-desc="pH of the 1:1 soil:water suspension.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">ph.h2o_iso.10390_index</code></td>
+  <td class="desc-col">pH, 1:5 Soil-Water Suspension, ISO 10390</td>
+  <td class="unit-col">index</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">pH of the 1:1 soil:water suspension.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">iso.10390</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">negative logarithm of the hydrogen ion concentration</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>7.64</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">ph.h2o</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="ph.h2o_usda.a268_index" data-desc="pH of the 1:1 soil:water suspension.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">ph.h2o_usda.a268_index</code></td>
+  <td class="desc-col">pH, 1:1 Soil-Water Suspension</td>
+  <td class="unit-col">index</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">pH of the 1:1 soil:water suspension.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a268</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">negative logarithm of the hydrogen ion concentration</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>5.10000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">ph.h2o</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="s.ext_mel3_mg.kg" data-desc="Exchangeable or plant available S.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">s.ext_mel3_mg.kg</code></td>
+  <td class="desc-col">Sulphur, Extractable, Mehlich3</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available S.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">mel3</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>16.800</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">s.ext</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="s.tot_usda.a624_w.pct" data-desc="Total sulfur is a measure of all organic and inorganic sulfur, including that found in sulfide minerals.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">s.tot_usda.a624_w.pct</code></td>
+  <td class="desc-col">Sulfur, Total NCS</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Total sulfur is a measure of all organic and inorganic sulfur, including that found in sulfide minerals.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a624</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.03569</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">s.tot</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="sand.tot_iso.11277_w.pct" data-desc="Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a &lt;2 mm base.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">sand.tot_iso.11277_w.pct</code></td>
+  <td class="desc-col">Sand, Total, ISO 11277</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a &lt;2 mm base.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">iso.11277</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>9</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">sand.tot</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="sand.tot_usda.c405_w.pct" data-desc="Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a &lt;2 mm base.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">sand.tot_usda.c405_w.pct</code></td>
+  <td class="desc-col">Sand, Total, N prep</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a &lt;2 mm base.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.c405</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>79.4</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">sand.tot</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="sand.tot_usda.c60_w.pct" data-desc="Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a &lt;2 mm base.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">sand.tot_usda.c60_w.pct</code></td>
+  <td class="desc-col">Sand, Total, S prep</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Total sand is the soil separate with 0.05 to 2.0 mm particle diameter. It is reported on a &lt;2 mm base.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.c60</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>50.37000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">sand.tot</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="silt.tot_iso.11277_w.pct" data-desc="Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a &lt;2 mm base.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">silt.tot_iso.11277_w.pct</code></td>
+  <td class="desc-col">Silt, Total, ISO 11277</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a &lt;2 mm base.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">iso.11277</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>40</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">silt.tot</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="silt.tot_usda.c407_w.pct" data-desc="Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a &lt;2 mm base.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">silt.tot_usda.c407_w.pct</code></td>
+  <td class="desc-col">Silt, Total, N prep</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a &lt;2 mm base.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.c407</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>18.2</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">silt.tot</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="silt.tot_usda.c62_w.pct" data-desc="Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a &lt;2 mm base.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">silt.tot_usda.c62_w.pct</code></td>
+  <td class="desc-col">Silt, Total, S prep</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Total silt is the soil separate with 0.002 to 0.05 mm particle size. It is reported on a &lt;2 mm base.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.c62</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>18.64000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">silt.tot</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="wr.10kPa_usda.a414_w.pct" data-desc="The gravimetric percent water after equilibration at 1/10 bar (10 kPa) water tension.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">wr.10kPa_usda.a414_w.pct</code></td>
+  <td class="desc-col">Water Retention, 1/10 Bar (10 kPa)</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">The gravimetric percent water after equilibration at 1/10 bar (10 kPa) water tension.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a414</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>10.852961</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">wr.10kPa</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="wr.10kPa_usda.a8_w.pct" data-desc="The gravimetric percent water after equilibration at 1/10 bar (10 kPa) water tension.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">wr.10kPa_usda.a8_w.pct</code></td>
+  <td class="desc-col">Water Retention, 1/10 Bar (10 kPa), Clod</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">The gravimetric percent water after equilibration at 1/10 bar (10 kPa) water tension.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a8</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>23.00000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">wr.10kPa</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="wr.1500kPa_usda.a417_w.pct" data-desc="The gravimetric percent water after equilibration at 15 bar (1500 kPa) water tension.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">wr.1500kPa_usda.a417_w.pct</code></td>
+  <td class="desc-col">Water Retention, 15 Bar (1500 kPa)</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">The gravimetric percent water after equilibration at 15 bar (1500 kPa) water tension.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a417</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>3.000000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">wr.1500kPa</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="wr.33kPa_usda.a415_w.pct" data-desc="The gravimetric percent water after equilibration at 1/3 bar (33 kPa) water tension.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">wr.33kPa_usda.a415_w.pct</code></td>
+  <td class="desc-col">Water Retention, 1/3 Bar (33 kPa)</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">The gravimetric percent water after equilibration at 1/3 bar (33 kPa) water tension.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a415</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>29.17023</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">wr.33kPa</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="wr.33kPa_usda.a9_w.pct" data-desc="The gravimetric percent water after equilibration at 1/3 bar (33 kPa) water tension.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">wr.33kPa_usda.a9_w.pct</code></td>
+  <td class="desc-col">Water Retention, 1/3 Bar (33 kPa), Clod</td>
+  <td class="unit-col">w.pct</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">The gravimetric percent water after equilibration at 1/3 bar (33 kPa) water tension.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a9</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">weight percent</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>18.20000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">wr.33kPa</div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="zn.ext_usda.a1073_mg.kg" data-desc="Exchangeable or plant available Zn.">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">zn.ext_usda.a1073_mg.kg</code></td>
+  <td class="desc-col">Zinc, Extractable, Mehlich3</td>
+  <td class="unit-col">mg.kg</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="5">
+    <div class="detail-grid">
+<div><div class="d-label">Full description</div><div class="d-val">Exchangeable or plant available Zn.</div></div>
+<div><div class="d-label">OSSL method</div><div class="d-val">usda.a1073</div></div>
+<div><div class="d-label">Unit description</div><div class="d-val">miligrams per kilogram of soil</div></div>
+<div><div class="d-label">Example value</div><div class="d-val"><code>1.0300000</code></div></div>
+<div><div class="d-label">OSSL abbreviation</div><div class="d-val">zn.ext</div></div>
+    </div>
+  </td>
+</tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div id="panel-soilsite" class="tab-panel" style="display:none" role="tabpanel">
+  <div class="search-row">
+    <input type="text" id="panel-soilsite-srch"
+           placeholder="Search by code or description&#x2026;" aria-label="Search variables">
+  </div>
+  <p class="count-note" id="panel-soilsite-cnt">Showing 33 variables</p>
+  <div class="table-wrap">
+  <table id="panel-soilsite-tbl">
+    <thead><tr>
+      <th class="exp-cell"></th>
+      <th class="code-col">OSSL CODE</th>
+      <th>DESCRIPTION</th>
+      
+      <th style="width:110px">DATA TYPE</th>
+    </tr></thead>
+    <tbody>
+<tr data-code="dataset.code_ascii_txt" data-desc="OSSL dataset code">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">dataset.code_ascii_txt</code></td>
+  <td class="desc-col">OSSL dataset code</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>AFSIS1.SSL</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="id.layer_uuid_txt" data-desc="OSSL unique identifier">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">id.layer_uuid_txt</code></td>
+  <td class="desc-col">OSSL unique identifier</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>ded584d70bf0474202d30e575ae24784</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="id.layer_local_c" data-desc="Original observation identifier">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">id.layer_local_c</code></td>
+  <td class="desc-col">Original observation identifier</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>icr072246</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="longitude.point_wgs84_dd" data-desc="Longitude in decimal degrees (WGS84, EPSG 4326)">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">longitude.point_wgs84_dd</code></td>
+  <td class="desc-col">Longitude in decimal degrees (WGS84, EPSG 4326)</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>15.6874916700</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="latitude.point_wgs84_dd" data-desc="Latitude in decimal degrees (WGS84, EPSG 4326)">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">latitude.point_wgs84_dd</code></td>
+  <td class="desc-col">Latitude in decimal degrees (WGS84, EPSG 4326)</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>-7.37775000</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="layer.sequence_usda_uint16" data-desc="Layer sequence (incremented in depth)">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">layer.sequence_usda_uint16</code></td>
+  <td class="desc-col">Layer sequence (incremented in depth)</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>1</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="layer.upper.depth_usda_cm" data-desc="Layer top depth in cm">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">layer.upper.depth_usda_cm</code></td>
+  <td class="desc-col">Layer top depth in cm</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.0</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="layer.lower.depth_usda_cm" data-desc="Layer bottom depth in cm">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">layer.lower.depth_usda_cm</code></td>
+  <td class="desc-col">Layer bottom depth in cm</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>20.0</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="observation.date.begin_iso.8601_yyyy.mm.dd" data-desc="Begin date of observation following YYYY-MM-DD format (ISO 8601)">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">observation.date.begin_iso.8601_yyyy.mm.dd</code></td>
+  <td class="desc-col">Begin date of observation following YYYY-MM-DD format (ISO 8601)</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>2011-01-01</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="observation.date.end_iso.8601_yyyy.mm.dd" data-desc="End date of observation following YYYY-MM-DD format (ISO 8601)">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">observation.date.end_iso.8601_yyyy.mm.dd</code></td>
+  <td class="desc-col">End date of observation following YYYY-MM-DD format (ISO 8601)</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>2013-12-31</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="surveyor.title_utf8_txt" data-desc="Field surveyor name or organization">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">surveyor.title_utf8_txt</code></td>
+  <td class="desc-col">Field surveyor name or organization</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>L.T.Desta</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="id.project_ascii_txt" data-desc="Project name">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">id.project_ascii_txt</code></td>
+  <td class="desc-col">Project name</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>Africa Soil Information Service (AfSIS-1)</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="id.location_olc_txt" data-desc="Unique Open Location Code with a precision of 6 decimal places in point coordinates">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">id.location_olc_txt</code></td>
+  <td class="desc-col">Unique Open Location Code with a precision of 6 decimal places in point coordinates</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>6F4QJMCP+VX</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="layer.texture_usda_txt" data-desc="Texture description based on USDA classification">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">layer.texture_usda_txt</code></td>
+  <td class="desc-col">Texture description based on USDA classification</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>sand</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="pedon.taxa_usda_txt" data-desc="Soil classification based on the USDA Keys to Soil Taxonomy">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">pedon.taxa_usda_txt</code></td>
+  <td class="desc-col">Soil classification based on the USDA Keys to Soil Taxonomy</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>Typic Kanhaplustalf</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="horizon.designation_usda_txt" data-desc="Soil horizon based on the USDA Keys to Soil Taxonomy">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">horizon.designation_usda_txt</code></td>
+  <td class="desc-col">Soil horizon based on the USDA Keys to Soil Taxonomy</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>Ap</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="longitude.county_wgs84_dd" data-desc="County centroid, longitude in decimal degrees (WGS84, EPSG 4326)">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">longitude.county_wgs84_dd</code></td>
+  <td class="desc-col">County centroid, longitude in decimal degrees (WGS84, EPSG 4326)</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>-96.688800</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="latitude.county_wgs84_dd" data-desc="County centroid, latitude in decimal degrees (WGS84, EPSG 4326)">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">latitude.county_wgs84_dd</code></td>
+  <td class="desc-col">County centroid, latitude in decimal degrees (WGS84, EPSG 4326)</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>40.78446</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="location.point.error_any_m" data-desc="Approximate point location error in m">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">location.point.error_any_m</code></td>
+  <td class="desc-col">Approximate point location error in m</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>30</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="location.country_iso.3166_txt" data-desc="Country code following ISO 3166">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">location.country_iso.3166_txt</code></td>
+  <td class="desc-col">Country code following ISO 3166</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>NZL</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="observation.ogc.schema.title_ogc_txt" data-desc="Observation OGC schema title">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">observation.ogc.schema.title_ogc_txt</code></td>
+  <td class="desc-col">Observation OGC schema title</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>Open Soil Spectroscopy Library</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="observation.ogc.schema_idn_url" data-desc="Observation OGC schema url">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">observation.ogc.schema_idn_url</code></td>
+  <td class="desc-col">Observation OGC schema url</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>https://soilspectroscopy.github.io</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="surveyor.contact_ietf_email" data-desc="Surveyor contact email">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">surveyor.contact_ietf_email</code></td>
+  <td class="desc-col">Surveyor contact email</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>afsis.info@africasoils.net</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="surveyor.address_utf8_txt" data-desc="Surveyor or institution address">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">surveyor.address_utf8_txt</code></td>
+  <td class="desc-col">Surveyor or institution address</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>ICRAF, PO Box 30677, Nairobi, 00100, Kenya</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="dataset.title_utf8_txt" data-desc="Dataset name">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">dataset.title_utf8_txt</code></td>
+  <td class="desc-col">Dataset name</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>Africa Soil Information Service (AfSIS-1)</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="dataset.owner_utf8_txt" data-desc="Name of of organization or person that is the responsible for the dataset">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">dataset.owner_utf8_txt</code></td>
+  <td class="desc-col">Name of of organization or person that is the responsible for the dataset</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>ICRAF, CROPNUTS, RRES</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="dataset.address_idn_url" data-desc="URL address of the dataset web page">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">dataset.address_idn_url</code></td>
+  <td class="desc-col">URL address of the dataset web page</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>https://www.isric.org/explore/ISRIC-collections</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="dataset.doi_idf_url" data-desc="Digital object identifier (DOI) url of the dataset">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">dataset.doi_idf_url</code></td>
+  <td class="desc-col">Digital object identifier (DOI) url of the dataset</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>https://doi.org/10.1016/j.geodrs.2015.06.002</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="dataset.license.title_ascii_txt" data-desc="Dataset license">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">dataset.license.title_ascii_txt</code></td>
+  <td class="desc-col">Dataset license</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>ODC Open Database License</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="dataset.license.address_idn_url" data-desc="Dataset license url">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">dataset.license.address_idn_url</code></td>
+  <td class="desc-col">Dataset license url</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>https://opendatacommons.org/licenses/odbl/</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="dataset.contact.name_utf8_txt" data-desc="Dataset contact name">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">dataset.contact.name_utf8_txt</code></td>
+  <td class="desc-col">Dataset contact name</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>Keith Shepherd</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="dataset.contact_ietf_email" data-desc="Dataset contact email">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">dataset.contact_ietf_email</code></td>
+  <td class="desc-col">Dataset contact email</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>afsis.info@africasoils.net</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="id.dataset.site_ascii_txt" data-desc="Site identification">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">id.dataset.site_ascii_txt</code></td>
+  <td class="desc-col">Site identification</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>203</code></div></div>
+    </div>
+  </td>
+</tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div id="panel-mir" class="tab-panel" style="display:none" role="tabpanel">
+  <div class="panel-intro">
+
+<p><strong>Middle-infrared (MIR) spectra</strong> is provided in absorbance units per
+wavenumber, with values usually ranging between 0 and 3. The spectral range imported
+into the OSSL falls between 600 and 4000 cm<sup>-1</sup>, with an interval of 2 cm<sup>-1</sup>.
+All datasets are standardized to this specification.</p>
+
+<p>One can convert reflectance (R) values to absorbance units (A) as
+<code>A = log10(1/R)</code>, or backtransform with <code>R = 1/(10^A)</code>.
+Similarly, headers containing wavenumbers (WN, in cm<sup>-1</sup>) can be converted
+to wavelength (WL, in nm) with <code>WL = 1/(WN/10000000)</code>, or backtransformed
+with <code>WN = 1/(WL/10000000)</code>. The factor 10M is used to convert cm to nm.</p>
+
+  </div>
+  <div class="search-row">
+    <input type="text" id="panel-mir-srch"
+           placeholder="Search by code or description&#x2026;" aria-label="Search variables">
+  </div>
+  <p class="count-note" id="panel-mir-cnt">Showing 15 variables</p>
+  <div class="table-wrap">
+  <table id="panel-mir-tbl">
+    <thead><tr>
+      <th class="exp-cell"></th>
+      <th class="code-col">OSSL CODE</th>
+      <th>DESCRIPTION</th>
+      
+      <th style="width:110px">DATA TYPE</th>
+    </tr></thead>
+    <tbody>
+<tr data-code="id.layer_uuid_txt" data-desc="OSSL unique identifier">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">id.layer_uuid_txt</code></td>
+  <td class="desc-col">OSSL unique identifier</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>8585028b0344511c951fc0298b5ab3a8</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="id.scan_local_c" data-desc="Original scan identifier">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">id.scan_local_c</code></td>
+  <td class="desc-col">Original scan identifier</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>icr021044</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.mir.date.begin_iso.8601_yyyy.mm.dd" data-desc="Begin date of scanning following YYYY-MM-DD format (ISO 8601)">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.mir.date.begin_iso.8601_yyyy.mm.dd</code></td>
+  <td class="desc-col">Begin date of scanning following YYYY-MM-DD format (ISO 8601)</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>2009-01-01</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.mir.date.end_iso.8601_yyyy.mm.dd" data-desc="Begin date of scanning following YYYY-MM-DD format (ISO 8601)">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.mir.date.end_iso.8601_yyyy.mm.dd</code></td>
+  <td class="desc-col">Begin date of scanning following YYYY-MM-DD format (ISO 8601)</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>2013-12-31</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.mir.model.name_utf8_txt" data-desc="MIR instrument manufacturer, model and accessory (if any)">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.mir.model.name_utf8_txt</code></td>
+  <td class="desc-col">MIR instrument manufacturer, model and accessory (if any)</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>Bruker Tensor 27 with HTS-XT accessory</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.mir.model.code_any_txt" data-desc="MIR instrument coding">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.mir.model.code_any_txt</code></td>
+  <td class="desc-col">MIR instrument coding</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>Bruker_Tensor_27.HTS.XT</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.mir.method.optics_any_txt" data-desc="Metadata information related to instrument optics and measurements">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.mir.method.optics_any_txt</code></td>
+  <td class="desc-col">Metadata information related to instrument optics and measurements</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>KBr beamsplitter; DTGS detector</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.mir.method.preparation_any_txt" data-desc="Soil sample preparation before scanning">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.mir.method.preparation_any_txt</code></td>
+  <td class="desc-col">Soil sample preparation before scanning</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>Finely ground &lt;80 mesh</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.mir.license.title_ascii_txt" data-desc="Dataset scans license">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.mir.license.title_ascii_txt</code></td>
+  <td class="desc-col">Dataset scans license</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>CC-BY</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.mir.license.address_idn_url" data-desc="Dataset scans license url">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.mir.license.address_idn_url</code></td>
+  <td class="desc-col">Dataset scans license url</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>https://creativecommons.org/licenses/by/4.0/</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.mir.doi_idf_url" data-desc="Digital object identifier (DOI) url of the dataset scans">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.mir.doi_idf_url</code></td>
+  <td class="desc-col">Digital object identifier (DOI) url of the dataset scans</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>https://doi.org/10.34725/DVN/QXCWP1</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.mir.contact.name_utf8_txt" data-desc="Dataset scans contact name">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.mir.contact.name_utf8_txt</code></td>
+  <td class="desc-col">Dataset scans contact name</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>Vagen, Tor-Gunnar (World Agroforestry)</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.mir.contact.email_ietf_txt" data-desc="Dataset scans contact email">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.mir.contact.email_ietf_txt</code></td>
+  <td class="desc-col">Dataset scans contact email</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>afsis.info@africasoils.net</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan_mir.600_abs" data-desc="Absorbance in log10 unit, first wavenumber in the 600-4000 cm-1 range">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan_mir.600_abs</code></td>
+  <td class="desc-col">Absorbance in log10 unit, first wavenumber in the 600-4000 cm-1 range</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>1.38812</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan_mir.4000_abs" data-desc="Absorbance in log10 unit, last wavenumber in the 600-4000 cm-1 range">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan_mir.4000_abs</code></td>
+  <td class="desc-col">Absorbance in log10 unit, last wavenumber in the 600-4000 cm-1 range</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.2452604</code></div></div>
+    </div>
+  </td>
+</tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div id="panel-visnir" class="tab-panel" style="display:none" role="tabpanel">
+  <div class="panel-intro">
+
+<p><strong>Visible and Near-Infrared (VisNIR) spectra</strong> is provided in
+reflectance units per wavelength, with values usually ranging between 0 and 1 as
+fraction percent. The spectral range imported into the OSSL falls between 350 and
+2500 nm, with an interval of 2 nm. All datasets are standardized to this specification.</p>
+
+<p>One can convert reflectance (R) values to absorbance units (A) as
+<code>A = log10(1/R)</code>, or backtransform with <code>R = 1/(10^A)</code>.
+Similarly, headers containing wavenumbers (WN, in cm<sup>-1</sup>) can be converted
+to wavelength (WL, in nm) with <code>WL = 1/(WN/10000000)</code>, or backtransformed
+with <code>WN = 1/(WL/10000000)</code>. The factor 10M is used to convert cm to nm.</p>
+
+  </div>
+  <div class="search-row">
+    <input type="text" id="panel-visnir-srch"
+           placeholder="Search by code or description&#x2026;" aria-label="Search variables">
+  </div>
+  <p class="count-note" id="panel-visnir-cnt">Showing 15 variables</p>
+  <div class="table-wrap">
+  <table id="panel-visnir-tbl">
+    <thead><tr>
+      <th class="exp-cell"></th>
+      <th class="code-col">OSSL CODE</th>
+      <th>DESCRIPTION</th>
+      
+      <th style="width:110px">DATA TYPE</th>
+    </tr></thead>
+    <tbody>
+<tr data-code="id.layer_uuid_txt" data-desc="OSSL unique identifier">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">id.layer_uuid_txt</code></td>
+  <td class="desc-col">OSSL unique identifier</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>bb01d3da0ea0d4d796b3391bb1d174f1</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="id.scan_local_c" data-desc="Original scan identifier">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">id.scan_local_c</code></td>
+  <td class="desc-col">Original scan identifier</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>196784MD01</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.date.begin_iso.8601_yyyy.mm.dd" data-desc="Begin date of scanning following YYYY-MM-DD format (ISO 8601)">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.date.begin_iso.8601_yyyy.mm.dd</code></td>
+  <td class="desc-col">Begin date of scanning following YYYY-MM-DD format (ISO 8601)</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>2015-03-05</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.date.end_iso.8601_yyyy.mm.dd" data-desc="Begin date of scanning following YYYY-MM-DD format (ISO 8601)">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.date.end_iso.8601_yyyy.mm.dd</code></td>
+  <td class="desc-col">Begin date of scanning following YYYY-MM-DD format (ISO 8601)</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>2015-03-05</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.model.name_utf8_txt" data-desc="VisNIR instrument manufacturer, model and accessory (if any)">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.model.name_utf8_txt</code></td>
+  <td class="desc-col">VisNIR instrument manufacturer, model and accessory (if any)</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>ASD Labspec 2500 with Muglight accessory</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.model.code_any_txt" data-desc="VisNIR instrument coding">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.model.code_any_txt</code></td>
+  <td class="desc-col">VisNIR instrument coding</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>ASD_Labspec_2500_MA</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.method.optics_any_txt" data-desc="Metadata information related to instrument optics and measurements">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.method.optics_any_txt</code></td>
+  <td class="desc-col">Metadata information related to instrument optics and measurements</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>4.5 W halogen lamp</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.method.preparation_any_txt" data-desc="Soil sample preparation before scanning">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.method.preparation_any_txt</code></td>
+  <td class="desc-col">Soil sample preparation before scanning</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>Sieved &lt;2 mm</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.license.title_ascii_txt" data-desc="Dataset scans license">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.license.title_ascii_txt</code></td>
+  <td class="desc-col">Dataset scans license</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>CC-BY</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.license.address_idn_url" data-desc="Dataset scans license url">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.license.address_idn_url</code></td>
+  <td class="desc-col">Dataset scans license url</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>https://www.nrcs.usda.gov/resources/data-and-reports/rapid-carbon-assessment-raca</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.doi_idf_url" data-desc="Digital object identifier (DOI) url of the dataset scans">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.doi_idf_url</code></td>
+  <td class="desc-col">Digital object identifier (DOI) url of the dataset scans</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>https://doi.org/10.1007/978-3-319-04084-4_10</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.contact.name_utf8_txt" data-desc="Dataset scans contact name">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.contact.name_utf8_txt</code></td>
+  <td class="desc-col">Dataset scans contact name</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>Scarlett Murphy</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.contact.email_ietf_txt" data-desc="Dataset scans contact email">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.contact.email_ietf_txt</code></td>
+  <td class="desc-col">Dataset scans contact email</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>Scarlett.Murphy@usda.gov</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan_visnir.350_ref" data-desc="Reflectance in fraction unit, first wavelength in the 350-2500 nm range">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan_visnir.350_ref</code></td>
+  <td class="desc-col">Reflectance in fraction unit, first wavelength in the 350-2500 nm range</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.10403320</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan_visnir.2500_ref" data-desc="Reflectance in fraction unit, last wavelength in the 350-2500 nm range">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan_visnir.2500_ref</code></td>
+  <td class="desc-col">Reflectance in fraction unit, last wavelength in the 350-2500 nm range</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.3622029</code></div></div>
+    </div>
+  </td>
+</tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div id="panel-nir" class="tab-panel" style="display:none" role="tabpanel">
+  <div class="panel-intro">
+
+<p><strong>Near-Infrared (NIR) spectra</strong> from the Neospectra handheld
+instrument is provided in reflectance units per wavelength, typically ranging between
+0 and 1. The spectral range imported into the OSSL falls between 700 and 2550 nm,
+with an interval of 2 nm.</p>
+
+<p>Reflectance (R) values can be converted to absorbance units (A) using
+<code>A = log10(1/R)</code>, or backtransformed with <code>R = 1/(10^A)</code>.
+Wavelength (WL, in nm) and wavenumber (WN, in cm<sup>-1</sup>) are related by
+<code>WL = 1/(WN/10000000)</code> and <code>WN = 1/(WL/10000000)</code>.</p>
+
+  </div>
+  <div class="search-row">
+    <input type="text" id="panel-nir-srch"
+           placeholder="Search by code or description&#x2026;" aria-label="Search variables">
+  </div>
+  <p class="count-note" id="panel-nir-cnt">Showing 16 variables</p>
+  <div class="table-wrap">
+  <table id="panel-nir-tbl">
+    <thead><tr>
+      <th class="exp-cell"></th>
+      <th class="code-col">OSSL CODE</th>
+      <th>DESCRIPTION</th>
+      
+      <th style="width:110px">DATA TYPE</th>
+    </tr></thead>
+    <tbody>
+<tr data-code="id.sample_local_c" data-desc="Soil sample identifier">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">id.sample_local_c</code></td>
+  <td class="desc-col">Soil sample identifier</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>30747</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="id.scan_local_c" data-desc="Scan identifier (One average spectra per device)">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">id.scan_local_c</code></td>
+  <td class="desc-col">Scan identifier (One average spectra per device)</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>NEO1_030747</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.lab_utf8_txt" data-desc="Scanning laboratory">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.lab_utf8_txt</code></td>
+  <td class="desc-col">Scanning laboratory</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>Woodwell</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.date.begin_iso.8601_yyyy.mm.dd" data-desc="Begin date of scanning following YYYY-MM-DD format (ISO 8601)">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.date.begin_iso.8601_yyyy.mm.dd</code></td>
+  <td class="desc-col">Begin date of scanning following YYYY-MM-DD format (ISO 8601)</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>1609459200</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.date.end_iso.8601_yyyy.mm.dd" data-desc="Begin date of scanning following YYYY-MM-DD format (ISO 8601)">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.date.end_iso.8601_yyyy.mm.dd</code></td>
+  <td class="desc-col">Begin date of scanning following YYYY-MM-DD format (ISO 8601)</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>1672444800</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.nir.model.name_utf8_txt" data-desc="NIR device code">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.nir.model.name_utf8_txt</code></td>
+  <td class="desc-col">NIR device code</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>NEO1</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.nir.model.serialnumber_utf8_in" data-desc="NIR device serial number">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.nir.model.serialnumber_utf8_in</code></td>
+  <td class="desc-col">NIR device serial number</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>21020033</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.nir.accessory.used_utf8_txt" data-desc="Yes or No for scanning accesory">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.nir.accessory.used_utf8_txt</code></td>
+  <td class="desc-col">Yes or No for scanning accesory</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>y</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.method.preparation_any_txt" data-desc="Soil sample preparation before scanning">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.method.preparation_any_txt</code></td>
+  <td class="desc-col">Soil sample preparation before scanning</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>&lt;2 mm</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.license.title_ascii_txt" data-desc="Dataset scans license">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.license.title_ascii_txt</code></td>
+  <td class="desc-col">Dataset scans license</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>CC-BY</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.license.address_idn_url" data-desc="Dataset scans license url">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.license.address_idn_url</code></td>
+  <td class="desc-col">Dataset scans license url</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>https://creativecommons.org/licenses/by/4.0/</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.doi_idf_url" data-desc="Digital object identifier (DOI) url of the dataset scans">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.doi_idf_url</code></td>
+  <td class="desc-col">Digital object identifier (DOI) url of the dataset scans</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>https://doi.org/10.5281/zenodo.7586622</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.contact.name_utf8_txt" data-desc="Dataset scans contact name">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.contact.name_utf8_txt</code></td>
+  <td class="desc-col">Dataset scans contact name</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>Jonathan Sanderman</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan.visnir.contact.email_ietf_txt" data-desc="Dataset scans contact email">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan.visnir.contact.email_ietf_txt</code></td>
+  <td class="desc-col">Dataset scans contact email</td>
+  <td class="type-col">string</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>jsanderman@woodwellclimate.org</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan_nir.1350_ref" data-desc="Reflectance in fraction unit, first wavelength in the 1350-2550 nm range">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan_nir.1350_ref</code></td>
+  <td class="desc-col">Reflectance in fraction unit, first wavelength in the 1350-2550 nm range</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.10403320</code></div></div>
+    </div>
+  </td>
+</tr>
+
+<tr data-code="scan_nir.2550_ref" data-desc="Reflectance in fraction unit, last wavelength in the 1350-2550 nm range">
+  <td class="exp-cell"><button class="exp-btn" aria-label="expand row">+</button></td>
+  <td><code class="ossl-code">scan_nir.2550_ref</code></td>
+  <td class="desc-col">Reflectance in fraction unit, last wavelength in the 1350-2550 nm range</td>
+  <td class="type-col">numeric</td>
+</tr>
+<tr class="detail-row">
+  <td colspan="4">
+    <div class="detail-grid">
+<div><div class="d-label">Example value</div><div class="d-val"><code>0.3622029</code></div></div>
+    </div>
+  </td>
+</tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+
+<script>
+(function () {
+  document.querySelectorAll(".db-tab").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".db-tab").forEach(function (b) {
+        b.classList.remove("active"); b.setAttribute("aria-selected","false");
+      });
+      document.querySelectorAll(".tab-panel").forEach(function (p) {
+        p.style.display = "none";
+      });
+      btn.classList.add("active"); btn.setAttribute("aria-selected","true");
+      var t = document.getElementById(btn.dataset.target);
+      if (t) t.style.display = "block";
+    });
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!e.target.classList.contains("exp-btn")) return;
+    var tr   = e.target.closest("tr");
+    var next = tr.nextElementSibling;
+    if (!next || !next.classList.contains("detail-row")) return;
+    var open = next.style.display === "table-row";
+    next.style.display = open ? "none" : "table-row";
+    e.target.textContent = open ? "+" : "−";
+  });
+
+  function setupFilter(panelId) {
+    var panel = document.getElementById(panelId); if (!panel) return;
+    var srch  = document.getElementById(panelId + "-srch");
+    var catf  = document.getElementById(panelId + "-catf");
+    var cnt   = document.getElementById(panelId + "-cnt");
+    var rows  = panel.querySelectorAll("tbody tr:not(.detail-row)");
+    var total = rows.length;
+    function applyFilter() {
+      var q = srch ? srch.value.toLowerCase() : "";
+      var c = catf ? catf.value.toLowerCase() : "";
+      var shown = 0;
+      rows.forEach(function (tr) {
+        var match = (!q || (tr.dataset.code||"").toLowerCase().includes(q) ||
+                           (tr.dataset.desc||"").toLowerCase().includes(q)) &&
+                    (!c  || (tr.dataset.cat||"").toLowerCase() === c);
+        tr.style.display = match ? "" : "none";
+        var next = tr.nextElementSibling;
+        if (next && next.classList.contains("detail-row") && !match)
+          next.style.display = "none";
+        if (match) shown++;
+      });
+      if (cnt) cnt.textContent = "Showing " + shown + " of " + total + " variables";
+    }
+    if (srch) srch.addEventListener("input",  applyFilter);
+    if (catf) catf.addEventListener("change", applyFilter);
   }
-  
-  ggsave(out.png, plot, width = 7, height = 5, units = "in", scale = 1)
-  
-}
-```
+  ["panel-soillab","panel-soilsite","panel-mir","panel-visnir","panel-nir"].forEach(setupFilter);
 
-```{r heatmap_plots_level1, include=FALSE, eval=FALSE}
-library("ggplot2")
-library("viridis")
-library("rlang")
-library("moments")
-names.remove <- c("dataset.code_ascii_txt", "id.layer_uuid_txt", "efferv_usda.a479_class")
-ossl.soillab.level1.names <- ossl.soillab.level1 %>%
-  select(-all_of(names.remove)) %>%
-  names()
-dataset.codes <- ossl.soillab.level1 %>%
-  distinct(dataset.code_ascii_txt)
-table.reference <- dataset.codes %>%
-  crossing(label = 1:length(seq(0, 1, by = 0.05)))
-# test1 <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-# cut(test1, breaks = c(0,2,4,6,8,10), include.lowest = F, labels = F, right = F)
-i=1
-for(i in 1:length(ossl.soillab.level1.names)) {
-  
-  isoil.property <- ossl.soillab.level1.names[i]
-  
-  out.png = paste0(heatmap.dir, "/heatmap_L1_", isoil.property, ".png")
-  
-  plot.df = ossl.soillab.level1 %>%
-    select(dataset.code_ascii_txt, all_of(isoil.property))
-  
-  iskewness <- plot.df %>%
-    pull(all_of(isoil.property)) %>%
-    skewness(na.rm = T)
-  
-  i99th <- plot.df %>%
-    summarise(!!isoil.property := quantile(!!as.name(isoil.property), p = 0.99, na.rm = T)) %>%
-    pull(all_of(isoil.property))
-  
-  if(iskewness <= -3 | iskewness >= 3) {
-    
-    plot.df <- plot.df %>%
-      filter(!!as.symbol(isoil.property) <= i99th) %>%
-      mutate(!!isoil.property := log1p(!!as.name(isoil.property)))
-    
-    percentiles <- plot.df %>%
-      summarise(quantile = scales::percent(seq(0, 1, by = 0.05)),
-                !!isoil.property := quantile(!!as.name(isoil.property), seq(0, 1, by = 0.05),
-                                             names = F, type = 7)) %>%
-      group_by(!!as.name(isoil.property)) %>%
-      summarise_all(last) %>%
-      relocate(quantile, 1) %>%
-      mutate(upper = get(isoil.property)) %>%
-      mutate(lower = lag(upper, 1)) %>%
-      mutate(upper = round(expm1(upper), 2),
-             lower = round(expm1(lower), 2)) %>%
-      mutate(label = paste0("[", lower, ", ", upper, ")"))
-    
-    n.table <- plot.df %>%
-      filter(!is.na(!!as.symbol(isoil.property))) %>%
-      group_by(dataset.code_ascii_txt) %>%
-      summarise(label = cut(!!as.name(isoil.property),
-                            breaks = pull(percentiles, var = 2),
-                            include.lowest = F, labels = F, right = F),
-                .groups = 'drop') %>%
-      count(dataset.code_ascii_txt, label)
-    
-    table.reference.filled <- left_join(table.reference, n.table,
-                                        by = c("dataset.code_ascii_txt", "label")) %>%
-      mutate(dataset.code_ascii_txt = factor(dataset.code_ascii_txt,
-                                             levels = rev(pull(dataset.codes, 1)))) %>%
-      filter(!(label == 21))
-    
-    plot <- ggplot(table.reference.filled, aes(x = label, y = dataset.code_ascii_txt, fill = n)) +
-      geom_tile(color = "gray20") +
-      scale_fill_viridis(discrete = FALSE, na.value = "grey90", trans = "log10") +
-      scale_x_continuous(breaks = (1:nrow(percentiles))[-nrow(percentiles)],
-                         labels = pull(percentiles, 5)[-1],
-                         expand = c(0.01, 0)) +
-      labs(title = paste0('OSSL level 1: ', isoil.property),
-           x = "", y = "", fill = "Count:") +
-      theme_minimal() +
-      theme(axis.text.x = element_text(hjust = 1, vjust = 1, angle = 45),
-            legend.position = "bottom",
-            plot.background = element_rect(fill = 'white', colour = "white"),
-            legend.text = element_text(hjust = 1, vjust = 1, angle = 45))
-    
-  } else {
-    
-    plot.df <- plot.df %>%
-      filter(!!as.symbol(isoil.property) <= i99th)
-    
-    percentiles <- plot.df %>%
-      summarise(quantile = scales::percent(seq(0, 1, by = 0.05)),
-                !!isoil.property := quantile(!!as.name(isoil.property), seq(0, 1, by = 0.05),
-                                             names = F, type = 7)) %>%
-      group_by(!!as.name(isoil.property)) %>%
-      summarise_all(last) %>%
-      relocate(quantile, 1) %>%
-      mutate(upper = get(isoil.property)) %>%
-      mutate(lower = lag(upper, 1)) %>%
-      mutate(upper = round(upper, 2), lower = round(lower, 2)) %>%
-      mutate(label = paste0("[", lower, ", ", upper, ")"))
-    
-    n.table <- plot.df %>%
-      filter(!is.na(!!as.symbol(isoil.property))) %>%
-      group_by(dataset.code_ascii_txt) %>%
-      summarise(label = cut(!!as.name(isoil.property),
-                            breaks = pull(percentiles, var = 2),
-                            include.lowest = F, labels = F, right = F),
-                .groups = 'drop') %>%
-      count(dataset.code_ascii_txt, label)
-    
-    table.reference.filled <- left_join(table.reference, n.table,
-                                        by = c("dataset.code_ascii_txt", "label")) %>%
-      mutate(dataset.code_ascii_txt = factor(dataset.code_ascii_txt,
-                                             levels = rev(pull(dataset.codes, 1)))) %>%
-      filter(!(label == 21))
-    
-    plot <- ggplot(table.reference.filled, aes(x = label, y = dataset.code_ascii_txt, fill = n)) +
-      geom_tile(color = "gray20") +
-      scale_fill_viridis(discrete = FALSE, na.value = "grey90", trans = "log10") +
-      scale_x_continuous(breaks = (1:nrow(percentiles))[-nrow(percentiles)],
-                         labels = pull(percentiles, 5)[-1],
-                         expand = c(0.01, 0)) +
-      labs(title = paste0('OSSL level 1: ', isoil.property),
-           x = "", y = "", fill = "Count:") +
-      theme_minimal() +
-      theme(axis.text.x = element_text(hjust = 1, vjust = 1, angle = 45),
-            legend.position = "bottom",
-            plot.background = element_rect(fill = 'white', colour = "white"),
-            legend.text = element_text(hjust = 1, vjust = 1, angle = 45))
-    
+  // Show the panel matching the URL hash, or the first one
+  var hash = window.location.hash.replace("#", "");
+  var validIds = ["panel-soillab","panel-soilsite","panel-mir","panel-visnir","panel-nir"];
+  var targetId = validIds.indexOf(hash) >= 0 ? hash : "panel-soillab";
+
+  document.querySelectorAll(".db-tab").forEach(function (b) {
+    b.classList.remove("active");
+    b.setAttribute("aria-selected", "false");
+  });
+  document.querySelectorAll(".tab-panel").forEach(function (p) {
+    p.style.display = "none";
+  });
+  var targetPanel = document.getElementById(targetId);
+  var targetTab = null;
+  document.querySelectorAll(".db-tab").forEach(function (b) {
+    if (b.getAttribute("data-target") === targetId) targetTab = b;
+  });
+  if (targetPanel) targetPanel.style.display = "block";
+  if (targetTab) {
+    targetTab.classList.add("active");
+    targetTab.setAttribute("aria-selected", "true");
   }
-  
-  ggsave(out.png, plot, width = 7, height = 5, units = "in", scale = 1)
-  
-}
+})();
+</script>
 ```
 
-## Soil site data {#sites-table}
-
-```{r reference_soilsite, results='asis', echo=FALSE}
-library("tidyverse")
-library("readr")
-soilsite.level0.desc <- read_csv("./tabular/ossl_level0_names_soilsite.csv")
-for (i in 1:nrow(soilsite.level0.desc)) {
-  
-  iossl_name <- soilsite.level0.desc[[i,"ossl_name"]]
-  itype <- soilsite.level0.desc[[i,"type"]]
-  iexample <- soilsite.level0.desc[[i,"example"]]
-  idescription <- soilsite.level0.desc[[i,"description"]]
-  
-  cat(paste0('\n### ', iossl_name, '\n'))
-  cat(paste0('- ', emoji::emoji("books"), ' Description: ', idescription, '.\n'))
-  cat(paste0('- ', emoji::emoji("1234"), ' Type: ', itype, '.\n'))
-  cat(paste0('- ', emoji::emoji("book"), ' Example: ', iexample, '.\n'))
-}
-```
-
-## Soil laboratory (wet chemistry) data {#soillab-table}
-
-```{r reference_soillab, results='asis', echo=FALSE}
-soillab.level0.desc <- read_csv("./tabular/ossl_level0_names_soillab.csv")
-for (i in 1:nrow(soillab.level0.desc)) {
-  
-  iossl_name <- soillab.level0.desc[[i,"ossl_name"]]
-  idescription <- soillab.level0.desc[[i,"description"]]
-  ianalyte <- soillab.level0.desc[[i,"analyte"]]
-  iunit <- soillab.level0.desc[[i,"ossl_unit"]]
-  iunit_description <- soillab.level0.desc[[i,"unit_description"]]
-  itype <- soillab.level0.desc[[i,"type"]]
-  iexample <- soillab.level0.desc[[i,"example"]]
-  
-  cat(paste0('\n### ', iossl_name, '\n'))
-  cat(paste0('- ', emoji::emoji("books"), ' Description: ', idescription, '. It can be alternatively described as `', ianalyte, '`.\n'))
-  cat(paste0('- ', emoji::emoji("triangular_ruler"), ' Measurement unit: Imported into the OSSL as `', iunit, '`, i.e., ', iunit_description, '.\n'))
-  cat(paste0('- ', emoji::emoji("1234"), ' Type: ', itype, '.\n'))
-  cat(paste0('- ', emoji::emoji("book"), ' Example: ', iexample, '.\n'))
-  if(file.exists(paste0(heatmap.dir, "/heatmap_L1_", iossl_name, ".png"))) {
-    cat(paste0('- ', emoji::emoji("green_circle"), ' Availability: level 0 and level 1 (harmonized).\n\n'))
-  } else if(!(iossl_name %in% c("dataset.code_ascii_txt", "id.layer_uuid_txt"))){
-    cat(paste0('- ', emoji::emoji("yellow_circle"), ' Availability: only level 0.\n\n'))
-  }
-  
-  # if(file.exists(paste0("hist_v1.2/hist_L0_", iossl_name, ".png"))) {
-  #   cat(paste0('\n<img src="./hist_v1.2/hist_L0_',iossl_name, '.png" heigth=100% width=100%>'))
-  # }
-  
-  if(file.exists(paste0(heatmap.dir, "/heatmap_L1_", iossl_name, ".png"))) {
-    # cat(paste0('<img src=', heatmap.dir, '/heatmap_L1_',iossl_name, '.png" heigth=100% width=100%>\n\n'))
-    cat(paste0('![](', heatmap.dir, '/heatmap_L1_',iossl_name, '.png){heigth=100% width=100%}\n\n'))
-  } else if(file.exists(paste0(heatmap.dir, "/heatmap_L0_", iossl_name, ".png"))) {
-    # cat(paste0('<img src=', heatmap.dir, '/heatmap_L0_',iossl_name, '.png" heigth=100% width=100%>\n\n'))
-    cat(paste0('![](', heatmap.dir, '/heatmap_L0_',iossl_name, '.png){heigth=100% width=100%}\n\n'))
-  }
-}
-```
-
-## MIR scans {#mir-table}
-
-**Middle-infrared (MIR) spectra** is provided in absorbance units per wavenumber, with values usually ranging between 0 and 3. The spectral range imported into the OSSL falls between 600 and 4000 cm<sup>-1</sup>, with an interval of 2 cm<sup>-1</sup>. All datasets are harmonized to this specification.
-
-One can convert reflectance (R) values to absorbance units (A) as `A = log10(1/R)`, or backtransform with `R = 1/(10^A)`. Similarly, headers containing wavenumbers (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with `WL = 1/(WN/10000000)`, or backtransformed with `WN = 1/(WL/10000000)`. The factor 10M is used to convert cm to nm.
-
-```{r reference_mir, results='asis', echo=FALSE}
-mir.level0.desc <- read_csv("./tabular/ossl_level0_names_mir.csv")
-for (i in 1:nrow(mir.level0.desc)) {
-  
-  iossl_name <- mir.level0.desc[[i,"ossl_name"]]
-  itype <- mir.level0.desc[[i,"type"]]
-  iexample <- mir.level0.desc[[i,"example"]]
-  idescription <- mir.level0.desc[[i,"description"]]
-  
-  cat(paste0('\n### ', iossl_name, '\n'))
-  cat(paste0('- ', emoji::emoji("books"), ' Description: ', idescription, '.\n'))
-  cat(paste0('- ', emoji::emoji("1234"), ' Type: ', itype, '.\n'))
-  cat(paste0('- ', emoji::emoji("book"), ' Example: ', iexample, '.\n'))
-  
-}
-```
-
-## VisNIR scans {#visnir-table}
-
-**Visible and Near-Infrared (VisNIR) spectra** is provided in reflectance units per wavelength, with values usually ranging between 0 and 1 as fraction percent. The spectral range imported into the OSSL falls between 350 and 2500 nm, with an interval of 2 nm. All datasets are harmonized to this specification.
-
-One can convert reflectance (R) values to absorbance units (A) as `A = log10(1/R)`, or backtransform with `R = 1/(10^A)`. Similarly, headers containing wavenumbers (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with `WL = 1/(WN/10000000)`, or backtransformed with `WN = 1/(WL/10000000)`. The factor 10M is used to convert cm to nm.
-
-```{r reference_visnir, results='asis', echo=FALSE}
-visnir.level0.desc <- read_csv("./tabular/ossl_level0_names_visnir.csv")
-for (i in 1:nrow(visnir.level0.desc)) {
-  
-  iossl_name <- visnir.level0.desc[[i,"ossl_name"]]
-  itype <- visnir.level0.desc[[i,"type"]]
-  iexample <- visnir.level0.desc[[i,"example"]]
-  idescription <- visnir.level0.desc[[i,"description"]]
-  
-  cat(paste0('\n### ', iossl_name, '\n'))
-  cat(paste0('- ', emoji::emoji("books"), ' Description: ', idescription, '.\n'))
-  cat(paste0('- ', emoji::emoji("1234"), ' Type: ', itype, '.\n'))
-  cat(paste0('- ', emoji::emoji("book"), ' Example: ', iexample, '.\n'))
-  
-}
-```
