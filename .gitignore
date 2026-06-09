@@ -26,3 +26,6 @@
 .positai
 
 **/*.quarto_ipynb
+
+# Cached data files
+cache/
