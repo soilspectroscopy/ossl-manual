@@ -419,9 +419,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#database-access" id="toc-database-access" class="nav-link active" data-scroll-target="#database-access"><i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access</a></li>
-  <li><a href="#soil-laboratory-information" id="toc-soil-laboratory-information" class="nav-link" data-scroll-target="#soil-laboratory-information"><i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information</a></li>
-  <li><a href="#soil-site-information" id="toc-soil-site-information" class="nav-link" data-scroll-target="#soil-site-information"><i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information</a></li>
   <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</a></li>
+  <li><a href="#soil-site-information" id="toc-soil-site-information" class="nav-link" data-scroll-target="#soil-site-information"><i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information</a></li>
+  <li><a href="#soil-laboratory-information" id="toc-soil-laboratory-information" class="nav-link" data-scroll-target="#soil-laboratory-information"><i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information</a></li>
   <li><a href="#mir" id="toc-mir" class="nav-link" data-scroll-target="#mir"><i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References</a></li>
   </ul>
@@ -482,39 +482,96 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Email:</strong> <a href="mailto:branislav.jovic@dh.uns.ac.rs">branislav.jovic@dh.uns.ac.rs</a></li>
 <li><strong>Original source:</strong> <a href="https://doi.org/10.1016/j.saa.2018.08.039" class="uri">https://doi.org/10.1016/j.saa.2018.08.039</a></li>
 </ul>
-<p>No file listing available for this dataset.</p>
-</section>
-<section id="soil-laboratory-information" class="level2">
-<h2 class="anchored" data-anchor-id="soil-laboratory-information"><i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information</h2>
-<p>Summary statistics for soil properties in this dataset, sourced from the <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/SRB">ossl-imports README</a>.</p>
+<p><strong>Available files</strong></p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 30%">
-<col style="width: 12%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 7%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 8%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">skim_variable</th>
-<th style="text-align: right;">n_missing</th>
-<th style="text-align: right;">mean</th>
-<th style="text-align: right;">sd</th>
-<th style="text-align: right;">p0</th>
-<th style="text-align: right;">p25</th>
-<th style="text-align: right;">p50</th>
-<th style="text-align: right;">p75</th>
-<th style="text-align: right;">p100</th>
+<th>Type</th>
+<th>Filename</th>
+<th>Link</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">silt.tot_usda.c62_w.pct</td>
+<td>MIR spectra — CSV (gzip)</td>
+<td><code>ossl_mir_v1.3.csv.gz</code></td>
+<td><a href="https://storage.googleapis.com/soilspec4gg-public/datasets/SRB/ossl_mir_v1.3.csv.gz">Download</a></td>
+</tr>
+<tr class="even">
+<td>MIR spectra — Parquet</td>
+<td><code>ossl_mir_v1.3.parquet</code></td>
+<td><a href="https://storage.googleapis.com/soilspec4gg-public/datasets/SRB/ossl_mir_v1.3.parquet">Download</a></td>
+</tr>
+<tr class="odd">
+<td>Soil lab measurements — CSV (gzip)</td>
+<td><code>ossl_soillab_v1.3.csv.gz</code></td>
+<td><a href="https://storage.googleapis.com/soilspec4gg-public/datasets/SRB/ossl_soillab_v1.3.csv.gz">Download</a></td>
+</tr>
+<tr class="even">
+<td>Soil lab measurements — Parquet</td>
+<td><code>ossl_soillab_v1.3.parquet</code></td>
+<td><a href="https://storage.googleapis.com/soilspec4gg-public/datasets/SRB/ossl_soillab_v1.3.parquet">Download</a></td>
+</tr>
+<tr class="odd">
+<td>Soil site metadata — CSV (gzip)</td>
+<td><code>ossl_soilsite_v1.3.csv.gz</code></td>
+<td><a href="https://storage.googleapis.com/soilspec4gg-public/datasets/SRB/ossl_soilsite_v1.3.csv.gz">Download</a></td>
+</tr>
+<tr class="even">
+<td>Soil site metadata — Parquet</td>
+<td><code>ossl_soilsite_v1.3.parquet</code></td>
+<td><a href="https://storage.googleapis.com/soilspec4gg-public/datasets/SRB/ossl_soilsite_v1.3.parquet">Download</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="map" class="level2">
+<h2 class="anchored" data-anchor-id="map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</h2>
+<p><img src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/SRB/README_files/figure-commonmark/map-1.png" class="img-fluid"></p>
+</section>
+<section id="soil-site-information" class="level2">
+<h2 class="anchored" data-anchor-id="soil-site-information"><i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information</h2>
+<ul>
+<li><strong>Coordinates precision:</strong> precise</li>
+<li><strong>Sampling depth:</strong> various</li>
+<li><strong>Geography:</strong> soil taxonomy, landuse</li>
+<li><strong>Variables available (OSSL):</strong> 8 out of 8 — see <a href="../db-desc.html#panel-soilsite">Database description</a> for full schema</li>
+<li><strong>Populated columns:</strong> <code>id.layer_uuid_txt</code>, <code>id.layer_local_c</code>, <code>site.location.use_src_txt</code>, <code>longitude.point_wgs84_dd</code>, <code>latitude.point_wgs84_dd</code>, <code>pedon.taxa_src_txt</code>, <code>layer.upper.depth_usda_cm</code>, <code>layer.lower.depth_usda_cm</code></li>
+</ul>
+</section>
+<section id="soil-laboratory-information" class="level2">
+<h2 class="anchored" data-anchor-id="soil-laboratory-information"><i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information</h2>
+<ul>
+<li><strong>Total samples:</strong> 135</li>
+<li><strong>Properties available (original):</strong> 10</li>
+<li><strong>Properties standardized (OSSL):</strong> 8 — summarized in <strong><a href="#tbl-soillab-srb" class="quarto-xref">Table&nbsp;1</a></strong> below</li>
+<li><strong>Categories:</strong> physical, chemical, carbon &amp; nutrients</li>
+<li><strong>Original source:</strong> see <a href="#database-access">Database access</a></li>
+</ul>
+<p class="ossl-tt-hint"><i class="bi bi-info-circle" aria-hidden="true"></i> Hover over any OSSL code in the table below to see its full description.</p>
+<div id="tbl-soillab-srb" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-soillab-srb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.
+</figcaption>
+<div aria-describedby="tbl-soillab-srb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="soil-lab-table caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">skim_variable</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">n_missing</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">sd</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p0</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p25</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p50</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p75</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p100</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="ossl-tt">silt.tot_usda.c62_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Silt, Total, S prep</span><span class="tt-desc">Method: <code>usda.c62</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">25.35</td>
 <td style="text-align: right;">12.61</td>
@@ -525,7 +582,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">53.39</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">clay.tot_usda.a334_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">clay.tot_usda.a334_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Clay</span><span class="tt-desc">Method: <code>usda.a334</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">27.61</td>
 <td style="text-align: right;">13.54</td>
@@ -536,7 +593,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">60.81</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">sand.tot_usda.c60_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">sand.tot_usda.c60_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Sand, Total, S prep</span><span class="tt-desc">Method: <code>usda.c60</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">47.13</td>
 <td style="text-align: right;">23.87</td>
@@ -547,7 +604,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">92.27</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">c.tot_usda.a622_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">c.tot_usda.a622_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Carbon, Total NCS</span><span class="tt-desc">Method: <code>usda.a622</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">90</td>
 <td style="text-align: right;">3.47</td>
 <td style="text-align: right;">1.49</td>
@@ -558,7 +615,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">7.06</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">oc_usda.c729_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">oc_usda.c729_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Organic Carbon, Total C without CaCO3, S prep</span><span class="tt-desc">Method: <code>usda.c729</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">90</td>
 <td style="text-align: right;">2.83</td>
 <td style="text-align: right;">0.97</td>
@@ -569,7 +626,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">5.02</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">ph.h2o_usda.a268_index</td>
+<td style="text-align: left;"><span class="ossl-tt">ph.h2o_usda.a268_index<span class="ossl-tt-pop"><span class="tt-analyte">pH, 1:1 Soil-Water Suspension</span><span class="tt-desc">Method: <code>usda.a268</code></span><span class="tt-unit">Unit: <code>index</code></span></span></span></td>
 <td style="text-align: right;">90</td>
 <td style="text-align: right;">7.41</td>
 <td style="text-align: right;">0.87</td>
@@ -580,7 +637,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">9.18</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">n.tot_usda.a623_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">n.tot_usda.a623_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Nitrogen, Total NCS, usda.a623</span><span class="tt-desc">Method: <code>usda.a623</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">90</td>
 <td style="text-align: right;">0.19</td>
 <td style="text-align: right;">0.11</td>
@@ -591,7 +648,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">0.49</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">caco3_usda.a54_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">caco3_usda.a54_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Carbonate, &lt;2mm Fraction</span><span class="tt-desc">Method: <code>usda.a54</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">90</td>
 <td style="text-align: right;">5.33</td>
 <td style="text-align: right;">6.54</td>
@@ -603,18 +660,9 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-</section>
-<section id="soil-site-information" class="level2">
-<h2 class="anchored" data-anchor-id="soil-site-information"><i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information</h2>
-<ul>
-<li><strong>coordinates precision:</strong> precise</li>
-<li><strong>sampling depth:</strong> various</li>
-<li><strong>geography:</strong> soil taxonomy, landuse</li>
-</ul>
-</section>
-<section id="map" class="level2">
-<h2 class="anchored" data-anchor-id="map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</h2>
-<p><img src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/SRB/README_files/figure-commonmark/map-1.png" class="img-fluid"></p>
+</div>
+</figure>
+</div>
 </section>
 <section id="mir" class="level2">
 <h2 class="anchored" data-anchor-id="mir"><i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR</h2>

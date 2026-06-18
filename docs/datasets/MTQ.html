@@ -419,9 +419,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#database-access" id="toc-database-access" class="nav-link active" data-scroll-target="#database-access"><i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access</a></li>
-  <li><a href="#soil-laboratory-information" id="toc-soil-laboratory-information" class="nav-link" data-scroll-target="#soil-laboratory-information"><i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information</a></li>
-  <li><a href="#soil-site-information" id="toc-soil-site-information" class="nav-link" data-scroll-target="#soil-site-information"><i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information</a></li>
   <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</a></li>
+  <li><a href="#soil-site-information" id="toc-soil-site-information" class="nav-link" data-scroll-target="#soil-site-information"><i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information</a></li>
+  <li><a href="#soil-laboratory-information" id="toc-soil-laboratory-information" class="nav-link" data-scroll-target="#soil-laboratory-information"><i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information</a></li>
   <li><a href="#nir" id="toc-nir" class="nav-link" data-scroll-target="#nir"><i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> NIR</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References</a></li>
   </ul>
@@ -525,37 +525,53 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
+<section id="map" class="level2">
+<h2 class="anchored" data-anchor-id="map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</h2>
+<p><img src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/MTQ/README_files/figure-commonmark/map-1.png" class="img-fluid"></p>
+</section>
+<section id="soil-site-information" class="level2">
+<h2 class="anchored" data-anchor-id="soil-site-information"><i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information</h2>
+<ul>
+<li><strong>Coordinates precision:</strong> precise</li>
+<li><strong>Sampling depth:</strong> various</li>
+<li><strong>Geography:</strong> soil taxonomy, landuse</li>
+<li><strong>Variables available (OSSL):</strong> 13 out of 13 — see <a href="../db-desc.html#panel-soilsite">Database description</a> for full schema</li>
+<li><strong>Populated columns:</strong> <code>id.layer_uuid_txt</code>, <code>id.layer_local_c</code>, <code>site.id_src_txt</code>, <code>loc.region_src_txt</code>, <code>loc.municipality_src_txt</code>, <code>latitude.point_wgs84_dd</code>, <code>longitude.point_wgs84_dd</code>, <code>pedon.taxa_src_txt</code>, <code>site.land.use_src_txt</code>, <code>site.land.history_src_txt</code>, <code>layer.upper.depth_usda_cm</code>, <code>layer.lower.depth_usda_cm</code>, <code>layer.sequence_usda_uint16</code></li>
+</ul>
+</section>
 <section id="soil-laboratory-information" class="level2">
 <h2 class="anchored" data-anchor-id="soil-laboratory-information"><i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information</h2>
-<p>Summary statistics for soil properties in this dataset, sourced from the <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/MTQ">ossl-imports README</a>.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 30%">
-<col style="width: 12%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 7%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 8%">
-</colgroup>
+<ul>
+<li><strong>Total samples:</strong> 516</li>
+<li><strong>Properties available (original):</strong> 13</li>
+<li><strong>Properties standardized (OSSL):</strong> 12 — summarized in <strong><a href="#tbl-soillab-mtq" class="quarto-xref">Table&nbsp;1</a></strong> below</li>
+<li><strong>Categories:</strong> physical, carbon &amp; nutrients</li>
+<li><strong>Original source:</strong> see <a href="#database-access">Database access</a></li>
+</ul>
+<p class="ossl-tt-hint"><i class="bi bi-info-circle" aria-hidden="true"></i> Hover over any OSSL code in the table below to see its full description.</p>
+<div id="tbl-soillab-mtq" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-soillab-mtq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.
+</figcaption>
+<div aria-describedby="tbl-soillab-mtq-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="soil-lab-table caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: left;">skim_variable</th>
-<th style="text-align: right;">n_missing</th>
-<th style="text-align: right;">mean</th>
-<th style="text-align: right;">sd</th>
-<th style="text-align: right;">p0</th>
-<th style="text-align: right;">p25</th>
-<th style="text-align: right;">p50</th>
-<th style="text-align: right;">p75</th>
-<th style="text-align: right;">p100</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">skim_variable</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">n_missing</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">sd</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p0</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p25</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p50</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p75</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p100</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">oc_iso.10694_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">oc_iso.10694_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Organic Carbon, ISO 10694</span><span class="tt-desc">Method: <code>iso.10694</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.60</td>
 <td style="text-align: right;">1.19</td>
@@ -566,7 +582,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">8.85</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">n.tot_iso.13878_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">n.tot_iso.13878_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Nitrogen, Total NCS, ISO 13878</span><span class="tt-desc">Method: <code>iso.13878</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.15</td>
 <td style="text-align: right;">0.10</td>
@@ -577,7 +593,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">0.62</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">clay.tot_iso.11277_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">clay.tot_iso.11277_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Clay, ISO 11277</span><span class="tt-desc">Method: <code>iso.11277</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">222</td>
 <td style="text-align: right;">43.10</td>
 <td style="text-align: right;">21.94</td>
@@ -599,7 +615,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.49</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">cf_iso.11464_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">cf_iso.11464_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Coarse Fragments, ISO 11464</span><span class="tt-desc">Method: <code>iso.11464</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">344</td>
 <td style="text-align: right;">38.81</td>
 <td style="text-align: right;">15.16</td>
@@ -610,7 +626,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">88.90</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">sand.tot_iso.11277_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">sand.tot_iso.11277_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Sand, Total, ISO 11277</span><span class="tt-desc">Method: <code>iso.11277</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">222</td>
 <td style="text-align: right;">36.47</td>
 <td style="text-align: right;">21.93</td>
@@ -621,7 +637,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">87.90</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">silt.tot_iso.11277_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">silt.tot_iso.11277_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Silt, Total, ISO 11277</span><span class="tt-desc">Method: <code>iso.11277</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">222</td>
 <td style="text-align: right;">20.46</td>
 <td style="text-align: right;">6.14</td>
@@ -633,18 +649,9 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-</section>
-<section id="soil-site-information" class="level2">
-<h2 class="anchored" data-anchor-id="soil-site-information"><i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information</h2>
-<ul>
-<li><strong>coordinates precision:</strong> precise</li>
-<li><strong>sampling depth:</strong> various</li>
-<li><strong>geography:</strong> soil taxonomy, landuse</li>
-</ul>
-</section>
-<section id="map" class="level2">
-<h2 class="anchored" data-anchor-id="map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</h2>
-<p><img src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/MTQ/README_files/figure-commonmark/map-1.png" class="img-fluid"></p>
+</div>
+</figure>
+</div>
 </section>
 <section id="nir" class="level2">
 <h2 class="anchored" data-anchor-id="nir"><i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> NIR</h2>

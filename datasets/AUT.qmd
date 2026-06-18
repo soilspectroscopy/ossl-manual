@@ -57,32 +57,39 @@ Data originally provided by:
 | Soil site metadata — Parquet | `ossl_soilsite_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/AUT/ossl_soilsite_v1.3.parquet) |
 
 
-## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
-
-Summary statistics for soil properties in this dataset, sourced from the [ossl-imports README](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/AUT).
-
-| skim_variable            | n_missing |   mean |     sd |   p0 |   p25 |   p50 |    p75 |    p100 |
-|:-------------------------|----------:|-------:|-------:|-----:|------:|------:|-------:|--------:|
-| oc_usda.c729_w.pct       |        19 |   2.76 |   3.20 | 0.02 |  1.53 |  1.96 |   2.71 |   44.82 |
-| c.tot_usda.a622_w.pct    |      2039 |   6.54 |   6.23 | 1.00 |  2.63 |  4.90 |   6.66 |   39.08 |
-| caco3_usda.a54_w.pct     |      1804 |  13.26 |  12.57 | 0.01 |  4.30 |  9.70 |  20.40 |   81.90 |
-| n.tot_usda.a623_w.pct    |      1095 |   0.25 |   0.21 | 0.03 |  0.16 |  0.19 |   0.25 |    2.42 |
-| p.ext_austria.cal_mg.kg  |       488 | 112.89 | 136.73 | 1.00 | 45.00 | 78.00 | 120.00 | 1623.53 |
-| ph.cacl2_iso.10390_index |       214 |   6.92 |   0.85 | 3.18 |  6.60 |  7.26 |   7.51 |    7.93 |
-| cec_iso.11260_cmolc.kg   |      1490 |  20.91 |   8.75 | 2.88 | 15.81 | 20.95 |  24.42 |   85.45 |
-| sand.tot_iso.11277_w.pct |      1569 |  36.25 |  18.69 | 5.60 | 21.00 | 32.20 |  49.48 |   92.50 |
-| silt.tot_iso.11277_w.pct |      1569 |  45.71 |  14.26 | 5.00 | 35.80 | 47.10 |  56.70 |   75.70 |
-| clay.tot_iso.11277_w.pct |      1597 |  18.01 |   9.05 | 1.50 | 10.93 | 17.30 |  23.80 |   47.10 |
-
-## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
-
-- **coordinates precision:** county
-- **sampling depth:** various
-- **geography:** landuse, vegetation
-
 ## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
 ![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/AUT/README_files/figure-commonmark/map-1.png)
+
+## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
+
+- **Coordinates precision:** county
+- **Sampling depth:** various
+- **Geography:** landuse, vegetation
+- **Variables available (OSSL):** 11 out of 11 — see [Database description](../db-desc.html#panel-soilsite) for full schema
+- **Populated columns:** `id.layer_uuid_txt`, `id.layer_local_c`, `observation.date_src_yyyy`, `loc.experiment_src_txt`, `observation.source_src_txt`, `loc.municipality_src_code`, `loc.env.zone_src_txt`, `site.land.use_src_txt`, `layer.upper.depth_usda_cm`, `layer.bottom.depth_usda_cm`, `layer.sequence_usda_uint16`
+
+## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
+
+- **Total samples:** 2,131
+- **Properties available (original):** 13
+- **Properties standardized (OSSL):** 10 — summarized in **@tbl-soillab-aut** below
+- **Categories:** physical, chemical, carbon & nutrients
+- **Original source:** see [Database access](#database-access)
+
+```{=html}
+<p class="ossl-tt-hint"><i class="bi bi-info-circle" aria-hidden="true"></i> Hover over any OSSL code in the table below to see its full description.</p>
+```
+
+::: {#tbl-soillab-aut}
+
+```{=html}
+<table class="soil-lab-table"><thead><tr><th style="text-align:left">skim_variable</th><th style="text-align:right">n_missing</th><th style="text-align:right">mean</th><th style="text-align:right">sd</th><th style="text-align:right">p0</th><th style="text-align:right">p25</th><th style="text-align:right">p50</th><th style="text-align:right">p75</th><th style="text-align:right">p100</th></tr></thead><tbody><tr><td style="text-align:left"><span class="ossl-tt">oc_usda.c729_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Organic Carbon, Total C without CaCO3, S prep</span><span class="tt-desc">Method: <code>usda.c729</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">19</td><td style="text-align:right">2.76</td><td style="text-align:right">3.20</td><td style="text-align:right">0.02</td><td style="text-align:right">1.53</td><td style="text-align:right">1.96</td><td style="text-align:right">2.71</td><td style="text-align:right">44.82</td></tr><tr><td style="text-align:left"><span class="ossl-tt">c.tot_usda.a622_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Carbon, Total NCS</span><span class="tt-desc">Method: <code>usda.a622</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">2039</td><td style="text-align:right">6.54</td><td style="text-align:right">6.23</td><td style="text-align:right">1.00</td><td style="text-align:right">2.63</td><td style="text-align:right">4.90</td><td style="text-align:right">6.66</td><td style="text-align:right">39.08</td></tr><tr><td style="text-align:left"><span class="ossl-tt">caco3_usda.a54_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Carbonate, &lt;2mm Fraction</span><span class="tt-desc">Method: <code>usda.a54</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">1804</td><td style="text-align:right">13.26</td><td style="text-align:right">12.57</td><td style="text-align:right">0.01</td><td style="text-align:right">4.30</td><td style="text-align:right">9.70</td><td style="text-align:right">20.40</td><td style="text-align:right">81.90</td></tr><tr><td style="text-align:left"><span class="ossl-tt">n.tot_usda.a623_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Nitrogen, Total NCS, usda.a623</span><span class="tt-desc">Method: <code>usda.a623</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">1095</td><td style="text-align:right">0.25</td><td style="text-align:right">0.21</td><td style="text-align:right">0.03</td><td style="text-align:right">0.16</td><td style="text-align:right">0.19</td><td style="text-align:right">0.25</td><td style="text-align:right">2.42</td></tr><tr><td style="text-align:left"><span class="ossl-tt">p.ext_austria.cal_mg.kg<span class="ossl-tt-pop"><span class="tt-analyte">Phosphorus, Extractable, Calcium-Acetate-Lactate (CAL)</span><span class="tt-desc">Method: <code>austria.cal</code></span><span class="tt-unit">Unit: <code>mg.kg</code></span></span></span></td><td style="text-align:right">488</td><td style="text-align:right">112.89</td><td style="text-align:right">136.73</td><td style="text-align:right">1.00</td><td style="text-align:right">45.00</td><td style="text-align:right">78.00</td><td style="text-align:right">120.00</td><td style="text-align:right">1623.53</td></tr><tr><td style="text-align:left"><span class="ossl-tt">ph.cacl2_iso.10390_index<span class="ossl-tt-pop"><span class="tt-analyte">pH, 1:5 Soil-CaCl2 Suspension, ISO 10390</span><span class="tt-desc">Method: <code>iso.10390</code></span><span class="tt-unit">Unit: <code>index</code></span></span></span></td><td style="text-align:right">214</td><td style="text-align:right">6.92</td><td style="text-align:right">0.85</td><td style="text-align:right">3.18</td><td style="text-align:right">6.60</td><td style="text-align:right">7.26</td><td style="text-align:right">7.51</td><td style="text-align:right">7.93</td></tr><tr><td style="text-align:left"><span class="ossl-tt">cec_iso.11260_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">CEC, BaCl2, soil&#39;s own pH, ISO 11260</span><span class="tt-desc">Method: <code>iso.11260</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td><td style="text-align:right">1490</td><td style="text-align:right">20.91</td><td style="text-align:right">8.75</td><td style="text-align:right">2.88</td><td style="text-align:right">15.81</td><td style="text-align:right">20.95</td><td style="text-align:right">24.42</td><td style="text-align:right">85.45</td></tr><tr><td style="text-align:left"><span class="ossl-tt">sand.tot_iso.11277_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Sand, Total, ISO 11277</span><span class="tt-desc">Method: <code>iso.11277</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">1569</td><td style="text-align:right">36.25</td><td style="text-align:right">18.69</td><td style="text-align:right">5.60</td><td style="text-align:right">21.00</td><td style="text-align:right">32.20</td><td style="text-align:right">49.48</td><td style="text-align:right">92.50</td></tr><tr><td style="text-align:left"><span class="ossl-tt">silt.tot_iso.11277_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Silt, Total, ISO 11277</span><span class="tt-desc">Method: <code>iso.11277</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">1569</td><td style="text-align:right">45.71</td><td style="text-align:right">14.26</td><td style="text-align:right">5.00</td><td style="text-align:right">35.80</td><td style="text-align:right">47.10</td><td style="text-align:right">56.70</td><td style="text-align:right">75.70</td></tr><tr><td style="text-align:left"><span class="ossl-tt">clay.tot_iso.11277_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Clay, ISO 11277</span><span class="tt-desc">Method: <code>iso.11277</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">1597</td><td style="text-align:right">18.01</td><td style="text-align:right">9.05</td><td style="text-align:right">1.50</td><td style="text-align:right">10.93</td><td style="text-align:right">17.30</td><td style="text-align:right">23.80</td><td style="text-align:right">47.10</td></tr></tbody></table>
+```
+
+Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.
+
+:::
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> NIR
 

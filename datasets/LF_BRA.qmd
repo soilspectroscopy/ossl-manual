@@ -57,30 +57,39 @@ Data originally provided by:
 | VisNIR spectra — Parquet | `ossl_visnir_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/LF_BRA/ossl_visnir_v1.3.parquet) |
 
 
-## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
-
-Summary statistics for soil properties in this dataset, sourced from the [ossl-imports README](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/LF_BRA).
-
-| skim_variable              | n_missing |  mean |    sd |    p0 |   p25 |   p50 |   p75 |   p100 |
-|:---------------------------|----------:|------:|------:|------:|------:|------:|------:|-------:|
-| clay.tot_usda.a334_w.pct   |         0 | 34.54 |  9.42 | 17.50 | 25.02 | 37.90 | 41.05 |  51.10 |
-| oc_iso.10694_w.pct         |         0 |  2.54 |  0.60 |  1.40 |  2.00 |  2.50 |  3.10 |   3.70 |
-| cec_usda.a723_cmolc.kg     |         0 |  8.00 |  2.59 |  3.75 |  5.85 |  7.99 |  9.78 |  14.89 |
-| ph.cacl2_iso.10390_index   |         0 |  5.33 |  0.44 |  4.60 |  5.00 |  5.20 |  5.60 |   6.30 |
-| p.ext_brazil.ier_mg.kg     |         0 | 21.46 | 14.46 |  4.00 | 12.00 | 17.50 | 26.00 | 104.00 |
-| k.ext_brazil.ier_cmolc.kg  |         0 |  0.34 |  0.24 |  0.09 |  0.10 |  0.28 |  0.55 |   1.03 |
-| ca.ext_brazil.ier_cmolc.kg |         0 |  3.49 |  1.92 |  0.80 |  1.52 |  3.30 |  5.00 |   7.80 |
-| mg.ext_brazil.ier_cmolc.kg |         0 |  1.79 |  1.26 |  0.30 |  0.60 |  1.50 |  2.80 |   5.40 |
-
-## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
-
-- **coordinates precision:** none
-- **sampling depth:** top
-- **geography:** none
-
 ## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
 ![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/LF_BRA/README_files/figure-commonmark/map-1.png)
+
+## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
+
+- **Coordinates precision:** none
+- **Sampling depth:** top
+- **Geography:** none
+- **Variables available (OSSL):** 5 out of 5 — see [Database description](../db-desc.html#panel-soilsite) for full schema
+- **Populated columns:** `id.layer_uuid_txt`, `id.layer_local_c`, `loc.field_src_txt`, `layer.upper.depth_usda_cm`, `layer.lower.depth_usda_cm`
+
+## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
+
+- **Total samples:** 102
+- **Properties available (original):** 9
+- **Properties standardized (OSSL):** 8 — summarized in **@tbl-soillab-lf_bra** below
+- **Categories:** physical, chemical, carbon & nutrients, metal elements
+- **Original source:** see [Database access](#database-access)
+
+```{=html}
+<p class="ossl-tt-hint"><i class="bi bi-info-circle" aria-hidden="true"></i> Hover over any OSSL code in the table below to see its full description.</p>
+```
+
+::: {#tbl-soillab-lf_bra}
+
+```{=html}
+<table class="soil-lab-table"><thead><tr><th style="text-align:left">skim_variable</th><th style="text-align:right">n_missing</th><th style="text-align:right">mean</th><th style="text-align:right">sd</th><th style="text-align:right">p0</th><th style="text-align:right">p25</th><th style="text-align:right">p50</th><th style="text-align:right">p75</th><th style="text-align:right">p100</th></tr></thead><tbody><tr><td style="text-align:left"><span class="ossl-tt">clay.tot_usda.a334_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Clay</span><span class="tt-desc">Method: <code>usda.a334</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">34.54</td><td style="text-align:right">9.42</td><td style="text-align:right">17.50</td><td style="text-align:right">25.02</td><td style="text-align:right">37.90</td><td style="text-align:right">41.05</td><td style="text-align:right">51.10</td></tr><tr><td style="text-align:left"><span class="ossl-tt">oc_iso.10694_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Organic Carbon, ISO 10694</span><span class="tt-desc">Method: <code>iso.10694</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">2.54</td><td style="text-align:right">0.60</td><td style="text-align:right">1.40</td><td style="text-align:right">2.00</td><td style="text-align:right">2.50</td><td style="text-align:right">3.10</td><td style="text-align:right">3.70</td></tr><tr><td style="text-align:left"><span class="ossl-tt">cec_usda.a723_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">CEC, pH 7.0, NH4OAc, 2M KCl displacement</span><span class="tt-desc">Method: <code>usda.a723</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">8.00</td><td style="text-align:right">2.59</td><td style="text-align:right">3.75</td><td style="text-align:right">5.85</td><td style="text-align:right">7.99</td><td style="text-align:right">9.78</td><td style="text-align:right">14.89</td></tr><tr><td style="text-align:left"><span class="ossl-tt">ph.cacl2_iso.10390_index<span class="ossl-tt-pop"><span class="tt-analyte">pH, 1:5 Soil-CaCl2 Suspension, ISO 10390</span><span class="tt-desc">Method: <code>iso.10390</code></span><span class="tt-unit">Unit: <code>index</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">5.33</td><td style="text-align:right">0.44</td><td style="text-align:right">4.60</td><td style="text-align:right">5.00</td><td style="text-align:right">5.20</td><td style="text-align:right">5.60</td><td style="text-align:right">6.30</td></tr><tr><td style="text-align:left"><span class="ossl-tt">p.ext_brazil.ier_mg.kg<span class="ossl-tt-pop"><span class="tt-analyte">Phosphorus, Extractable, Ion Exchange Resin (IER)</span><span class="tt-desc">Method: <code>brazil.ier</code></span><span class="tt-unit">Unit: <code>mg.kg</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">21.46</td><td style="text-align:right">14.46</td><td style="text-align:right">4.00</td><td style="text-align:right">12.00</td><td style="text-align:right">17.50</td><td style="text-align:right">26.00</td><td style="text-align:right">104.00</td></tr><tr><td style="text-align:left"><span class="ossl-tt">k.ext_brazil.ier_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">Potassium, Extractable,  Ion Exchange Resin (IER)</span><span class="tt-desc">Method: <code>brazil.ier</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">0.34</td><td style="text-align:right">0.24</td><td style="text-align:right">0.09</td><td style="text-align:right">0.10</td><td style="text-align:right">0.28</td><td style="text-align:right">0.55</td><td style="text-align:right">1.03</td></tr><tr><td style="text-align:left"><span class="ossl-tt">ca.ext_brazil.ier_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">Calcium, Extractable, Ion Exchange Resin (IER)</span><span class="tt-desc">Method: <code>brazil.ier</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">3.49</td><td style="text-align:right">1.92</td><td style="text-align:right">0.80</td><td style="text-align:right">1.52</td><td style="text-align:right">3.30</td><td style="text-align:right">5.00</td><td style="text-align:right">7.80</td></tr><tr><td style="text-align:left"><span class="ossl-tt">mg.ext_brazil.ier_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">Magnesium, Extractable, Ion Exchange Resin (IER)</span><span class="tt-desc">Method: <code>brazil.ier</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">1.79</td><td style="text-align:right">1.26</td><td style="text-align:right">0.30</td><td style="text-align:right">0.60</td><td style="text-align:right">1.50</td><td style="text-align:right">2.80</td><td style="text-align:right">5.40</td></tr></tbody></table>
+```
+
+Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.
+
+:::
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> VNIR
 

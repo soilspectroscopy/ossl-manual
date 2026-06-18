@@ -419,9 +419,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#database-access" id="toc-database-access" class="nav-link active" data-scroll-target="#database-access"><i class="bi bi-cloud-download ossl-section-icon" aria-hidden="true"></i> Database access</a></li>
-  <li><a href="#soil-laboratory-information" id="toc-soil-laboratory-information" class="nav-link" data-scroll-target="#soil-laboratory-information"><i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information</a></li>
-  <li><a href="#soil-site-information" id="toc-soil-site-information" class="nav-link" data-scroll-target="#soil-site-information"><i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information</a></li>
   <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</a></li>
+  <li><a href="#soil-site-information" id="toc-soil-site-information" class="nav-link" data-scroll-target="#soil-site-information"><i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information</a></li>
+  <li><a href="#soil-laboratory-information" id="toc-soil-laboratory-information" class="nav-link" data-scroll-target="#soil-laboratory-information"><i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information</a></li>
   <li><a href="#mir" id="toc-mir" class="nav-link" data-scroll-target="#mir"><i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><i class="bi bi-journal-text ossl-section-icon" aria-hidden="true"></i> References</a></li>
   </ul>
@@ -482,39 +482,96 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Email:</strong> <a href="mailto:loretta.garrett@scionresearch.com">loretta.garrett@scionresearch.com</a></li>
 <li><strong>Original source:</strong> <a href="https://doi.org/10.6084/m9.figshare.20506587.v2" class="uri">https://doi.org/10.6084/m9.figshare.20506587.v2</a></li>
 </ul>
-<p>No file listing available for this dataset.</p>
-</section>
-<section id="soil-laboratory-information" class="level2">
-<h2 class="anchored" data-anchor-id="soil-laboratory-information"><i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information</h2>
-<p>Summary statistics for soil properties in this dataset, sourced from the <a href="https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/PF_NZL">ossl-imports README</a>.</p>
+<p><strong>Available files</strong></p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">skim_variable</th>
-<th style="text-align: right;">n_missing</th>
-<th style="text-align: right;">mean</th>
-<th style="text-align: right;">sd</th>
-<th style="text-align: right;">p0</th>
-<th style="text-align: right;">p25</th>
-<th style="text-align: right;">p50</th>
-<th style="text-align: right;">p75</th>
-<th style="text-align: right;">p100</th>
+<th>Type</th>
+<th>Filename</th>
+<th>Link</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">clay.tot_usda.a334_w.pct</td>
+<td>MIR spectra — CSV (gzip)</td>
+<td><code>ossl_mir_v1.3.csv.gz</code></td>
+<td><a href="https://storage.googleapis.com/soilspec4gg-public/datasets/PF_NZL/ossl_mir_v1.3.csv.gz">Download</a></td>
+</tr>
+<tr class="even">
+<td>MIR spectra — Parquet</td>
+<td><code>ossl_mir_v1.3.parquet</code></td>
+<td><a href="https://storage.googleapis.com/soilspec4gg-public/datasets/PF_NZL/ossl_mir_v1.3.parquet">Download</a></td>
+</tr>
+<tr class="odd">
+<td>Soil lab measurements — CSV (gzip)</td>
+<td><code>ossl_soillab_v1.3.csv.gz</code></td>
+<td><a href="https://storage.googleapis.com/soilspec4gg-public/datasets/PF_NZL/ossl_soillab_v1.3.csv.gz">Download</a></td>
+</tr>
+<tr class="even">
+<td>Soil lab measurements — Parquet</td>
+<td><code>ossl_soillab_v1.3.parquet</code></td>
+<td><a href="https://storage.googleapis.com/soilspec4gg-public/datasets/PF_NZL/ossl_soillab_v1.3.parquet">Download</a></td>
+</tr>
+<tr class="odd">
+<td>Soil site metadata — CSV (gzip)</td>
+<td><code>ossl_soilsite_v1.3.csv.gz</code></td>
+<td><a href="https://storage.googleapis.com/soilspec4gg-public/datasets/PF_NZL/ossl_soilsite_v1.3.csv.gz">Download</a></td>
+</tr>
+<tr class="even">
+<td>Soil site metadata — Parquet</td>
+<td><code>ossl_soilsite_v1.3.parquet</code></td>
+<td><a href="https://storage.googleapis.com/soilspec4gg-public/datasets/PF_NZL/ossl_soilsite_v1.3.parquet">Download</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="map" class="level2">
+<h2 class="anchored" data-anchor-id="map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</h2>
+<p><img src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/PF_NZL/README_files/figure-commonmark/map-1.png" class="img-fluid"></p>
+</section>
+<section id="soil-site-information" class="level2">
+<h2 class="anchored" data-anchor-id="soil-site-information"><i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information</h2>
+<ul>
+<li><strong>Coordinates precision:</strong> precise</li>
+<li><strong>Sampling depth:</strong> various</li>
+<li><strong>Geography:</strong> soil taxonomy, elevation, landuse</li>
+<li><strong>Variables available (OSSL):</strong> 20 out of 20 — see <a href="../db-desc.html#panel-soilsite">Database description</a> for full schema</li>
+<li><strong>Populated columns:</strong> <code>id.layer_local_c</code>, <code>id.layer_uuid_txt</code>, <code>id.trial_src_txt</code>, <code>id.period_src_txt</code>, <code>id.sample_local_c</code>, <code>id.site_src_txt</code>, <code>layer.upper.depth_usda_cm</code>, <code>layer.lower.depth_usda_cm</code>, <code>latitude.point_wgs84_dd</code>, <code>longitude.point_wgs84_dd</code>, <code>observation.date_src_yyyy.mm.dd</code>, <code>site.altitude_src_m</code>, <code>site.slope_src_deg</code>, <code>site.aspect_src_deg</code>, <code>layer.texture_usda_txt</code>, <code>site.species_src_txt</code>, <code>id.site.name_src_txt</code>, <code>site.physiography_src_txt</code>, <code>site.slope.shape_src_txt</code>, <code>id.treatment_src_txt</code></li>
+</ul>
+</section>
+<section id="soil-laboratory-information" class="level2">
+<h2 class="anchored" data-anchor-id="soil-laboratory-information"><i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information</h2>
+<ul>
+<li><strong>Total samples:</strong> 776</li>
+<li><strong>Properties available (original):</strong> 88</li>
+<li><strong>Properties standardized (OSSL):</strong> 27 — summarized in <strong><a href="#tbl-soillab-pf_nzl" class="quarto-xref">Table&nbsp;1</a></strong> below</li>
+<li><strong>Categories:</strong> physical, chemical, hydrological, carbon &amp; nutrients, metal elements</li>
+<li><strong>Original source:</strong> see <a href="#database-access">Database access</a></li>
+</ul>
+<p class="ossl-tt-hint"><i class="bi bi-info-circle" aria-hidden="true"></i> Hover over any OSSL code in the table below to see its full description.</p>
+<div id="tbl-soillab-pf_nzl" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-soillab-pf_nzl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.
+</figcaption>
+<div aria-describedby="tbl-soillab-pf_nzl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="soil-lab-table caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">skim_variable</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">n_missing</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">sd</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p0</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p25</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p50</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p75</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p100</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="ossl-tt">clay.tot_usda.a334_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Clay</span><span class="tt-desc">Method: <code>usda.a334</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">640</td>
 <td style="text-align: right;">41.88</td>
 <td style="text-align: right;">27.64</td>
@@ -525,7 +582,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">100.00</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">sand.tot_usda.c60_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">sand.tot_usda.c60_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Sand, Total, S prep</span><span class="tt-desc">Method: <code>usda.c60</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">640</td>
 <td style="text-align: right;">37.93</td>
 <td style="text-align: right;">19.61</td>
@@ -536,7 +593,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">79.00</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">silt.tot_usda.c62_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">silt.tot_usda.c62_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Silt, Total, S prep</span><span class="tt-desc">Method: <code>usda.c62</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">640</td>
 <td style="text-align: right;">20.14</td>
 <td style="text-align: right;">15.33</td>
@@ -547,7 +604,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">61.00</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">bd_usda.a4_g.cm3</td>
+<td style="text-align: left;"><span class="ossl-tt">bd_usda.a4_g.cm3<span class="ossl-tt-pop"><span class="tt-analyte">Bulk Density, &lt;2mm fraction, Clod</span><span class="tt-desc">Method: <code>usda.a4</code></span><span class="tt-unit">Unit: <code>g.cm3</code></span></span></span></td>
 <td style="text-align: right;">297</td>
 <td style="text-align: right;">0.91</td>
 <td style="text-align: right;">0.30</td>
@@ -558,7 +615,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.69</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">wr.10kPa_usda.a414_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">wr.10kPa_usda.a414_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Water Retention, 1/10 Bar (10 kPa)</span><span class="tt-desc">Method: <code>usda.a414</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">745</td>
 <td style="text-align: right;">46.19</td>
 <td style="text-align: right;">27.64</td>
@@ -569,7 +626,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">143.33</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">wr.1500kPa_usda.a417_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">wr.1500kPa_usda.a417_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Water Retention, 15 Bar (1500 kPa)</span><span class="tt-desc">Method: <code>usda.a417</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">745</td>
 <td style="text-align: right;">20.17</td>
 <td style="text-align: right;">13.37</td>
@@ -580,7 +637,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">62.65</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">c.tot_usda.a622_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">c.tot_usda.a622_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Carbon, Total NCS</span><span class="tt-desc">Method: <code>usda.a622</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">3.13</td>
 <td style="text-align: right;">2.27</td>
@@ -591,7 +648,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">21.56</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">n.tot_usda.a623_w.pct</td>
+<td style="text-align: left;"><span class="ossl-tt">n.tot_usda.a623_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Nitrogen, Total NCS, usda.a623</span><span class="tt-desc">Method: <code>usda.a623</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">0.21</td>
 <td style="text-align: right;">0.14</td>
@@ -602,7 +659,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.15</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">p.ext_usda.a274_mg.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">p.ext_usda.a274_mg.kg<span class="ossl-tt-pop"><span class="tt-analyte">Phosphorus, Extractable, Olsen</span><span class="tt-desc">Method: <code>usda.a274</code></span><span class="tt-unit">Unit: <code>mg.kg</code></span></span></span></td>
 <td style="text-align: right;">649</td>
 <td style="text-align: right;">4.35</td>
 <td style="text-align: right;">4.96</td>
@@ -613,7 +670,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">29.07</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">p.ext_usda.a270_mg.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">p.ext_usda.a270_mg.kg<span class="ossl-tt-pop"><span class="tt-analyte">Phosphorus, Extractable, Bray1</span><span class="tt-desc">Method: <code>usda.a270</code></span><span class="tt-unit">Unit: <code>mg.kg</code></span></span></span></td>
 <td style="text-align: right;">649</td>
 <td style="text-align: right;">14.93</td>
 <td style="text-align: right;">32.09</td>
@@ -624,7 +681,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">328.41</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">cec_usda.a723_cmolc.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">cec_usda.a723_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">CEC, pH 7.0, NH4OAc, 2M KCl displacement</span><span class="tt-desc">Method: <code>usda.a723</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td>
 <td style="text-align: right;">492</td>
 <td style="text-align: right;">16.07</td>
 <td style="text-align: right;">10.05</td>
@@ -635,7 +692,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">71.62</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">ca.ext_usda.a722_cmolc.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">ca.ext_usda.a722_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">Calcium, Extractable, NH4OAc</span><span class="tt-desc">Method: <code>usda.a722</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td>
 <td style="text-align: right;">492</td>
 <td style="text-align: right;">2.26</td>
 <td style="text-align: right;">3.63</td>
@@ -646,7 +703,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">29.03</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">mg.ext_usda.a724_cmolc.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">mg.ext_usda.a724_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">Magnesium, Extractable, NH4OAc, 2M KCl displacement</span><span class="tt-desc">Method: <code>usda.a724</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td>
 <td style="text-align: right;">492</td>
 <td style="text-align: right;">1.17</td>
 <td style="text-align: right;">3.45</td>
@@ -657,7 +714,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">32.38</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">k.ext_usda.a725_cmolc.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">k.ext_usda.a725_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">Potassium, Extractable, NH4OAc, 2M KCl displacement</span><span class="tt-desc">Method: <code>usda.a725</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td>
 <td style="text-align: right;">492</td>
 <td style="text-align: right;">0.29</td>
 <td style="text-align: right;">0.25</td>
@@ -668,7 +725,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.30</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">na.ext_usda.a726_cmolc.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">na.ext_usda.a726_cmolc.kg<span class="ossl-tt-pop"><span class="tt-analyte">Sodium, Extractable, NH4OAc, 2M KCl displacement</span><span class="tt-desc">Method: <code>usda.a726</code></span><span class="tt-unit">Unit: <code>cmolc.kg</code></span></span></span></td>
 <td style="text-align: right;">492</td>
 <td style="text-align: right;">0.26</td>
 <td style="text-align: right;">0.22</td>
@@ -679,7 +736,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.64</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">ph.h2o_usda.a268_index</td>
+<td style="text-align: left;"><span class="ossl-tt">ph.h2o_usda.a268_index<span class="ossl-tt-pop"><span class="tt-analyte">pH, 1:1 Soil-Water Suspension</span><span class="tt-desc">Method: <code>usda.a268</code></span><span class="tt-unit">Unit: <code>index</code></span></span></span></td>
 <td style="text-align: right;">216</td>
 <td style="text-align: right;">4.99</td>
 <td style="text-align: right;">0.52</td>
@@ -690,7 +747,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">6.69</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">b.ext_mel3_mg.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">b.ext_mel3_mg.kg<span class="ossl-tt-pop"><span class="tt-analyte">Boron, Extractable, Mehlich3</span><span class="tt-desc">Method: <code>mel3</code></span><span class="tt-unit">Unit: <code>mg.kg</code></span></span></span></td>
 <td style="text-align: right;">331</td>
 <td style="text-align: right;">0.26</td>
 <td style="text-align: right;">0.18</td>
@@ -701,7 +758,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1.20</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">al.ext_usda.a1056_mg.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">al.ext_usda.a1056_mg.kg<span class="ossl-tt-pop"><span class="tt-analyte">Aluminum, Extractable, Mehlich3</span><span class="tt-desc">Method: <code>usda.a1056</code></span><span class="tt-unit">Unit: <code>mg.kg</code></span></span></span></td>
 <td style="text-align: right;">216</td>
 <td style="text-align: right;">1442.78</td>
 <td style="text-align: right;">643.73</td>
@@ -712,7 +769,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">4952.69</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">na.ext_usda.a1068_mg.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">na.ext_usda.a1068_mg.kg<span class="ossl-tt-pop"><span class="tt-analyte">Sodium, Extractable, Mehlich3</span><span class="tt-desc">Method: <code>usda.a1068</code></span><span class="tt-unit">Unit: <code>mg.kg</code></span></span></span></td>
 <td style="text-align: right;">216</td>
 <td style="text-align: right;">35.03</td>
 <td style="text-align: right;">26.64</td>
@@ -723,7 +780,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">280.29</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">mg.ext_usda.a1066_mg.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">mg.ext_usda.a1066_mg.kg<span class="ossl-tt-pop"><span class="tt-analyte">Magnesium, Extractable, Mehlich3</span><span class="tt-desc">Method: <code>usda.a1066</code></span><span class="tt-unit">Unit: <code>mg.kg</code></span></span></span></td>
 <td style="text-align: right;">216</td>
 <td style="text-align: right;">90.73</td>
 <td style="text-align: right;">203.71</td>
@@ -734,7 +791,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">2380.07</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">p.ext_usda.a652_mg.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">p.ext_usda.a652_mg.kg<span class="ossl-tt-pop"><span class="tt-analyte">Phosphorus, Extractable, Mehlich3</span><span class="tt-desc">Method: <code>usda.a652</code></span><span class="tt-unit">Unit: <code>mg.kg</code></span></span></span></td>
 <td style="text-align: right;">219</td>
 <td style="text-align: right;">18.82</td>
 <td style="text-align: right;">27.84</td>
@@ -745,7 +802,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">376.21</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">k.ext_usda.a1065_mg.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">k.ext_usda.a1065_mg.kg<span class="ossl-tt-pop"><span class="tt-analyte">Potassium, Extractable, Mehlich3</span><span class="tt-desc">Method: <code>usda.a1065</code></span><span class="tt-unit">Unit: <code>mg.kg</code></span></span></span></td>
 <td style="text-align: right;">216</td>
 <td style="text-align: right;">84.73</td>
 <td style="text-align: right;">85.94</td>
@@ -756,7 +813,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">1361.72</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">ca.ext_usda.a1059_mg.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">ca.ext_usda.a1059_mg.kg<span class="ossl-tt-pop"><span class="tt-analyte">Calcium, Extractable, Mehlich3</span><span class="tt-desc">Method: <code>usda.a1059</code></span><span class="tt-unit">Unit: <code>mg.kg</code></span></span></span></td>
 <td style="text-align: right;">216</td>
 <td style="text-align: right;">315.04</td>
 <td style="text-align: right;">574.15</td>
@@ -767,7 +824,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">7907.54</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">mn.ext_usda.a1067_mg.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">mn.ext_usda.a1067_mg.kg<span class="ossl-tt-pop"><span class="tt-analyte">Manganese, Extractable, Mehlich3</span><span class="tt-desc">Method: <code>usda.a1067</code></span><span class="tt-unit">Unit: <code>mg.kg</code></span></span></span></td>
 <td style="text-align: right;">217</td>
 <td style="text-align: right;">21.44</td>
 <td style="text-align: right;">39.90</td>
@@ -778,7 +835,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">336.87</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">fe.ext_usda.a1064_mg.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">fe.ext_usda.a1064_mg.kg<span class="ossl-tt-pop"><span class="tt-analyte">Iron, Extractable, Mehlich3</span><span class="tt-desc">Method: <code>usda.a1064</code></span><span class="tt-unit">Unit: <code>mg.kg</code></span></span></span></td>
 <td style="text-align: right;">216</td>
 <td style="text-align: right;">167.20</td>
 <td style="text-align: right;">121.31</td>
@@ -789,7 +846,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">668.26</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">cu.ext_usda.a1063_mg.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">cu.ext_usda.a1063_mg.kg<span class="ossl-tt-pop"><span class="tt-analyte">Copper, Extractable, Mehlich3</span><span class="tt-desc">Method: <code>usda.a1063</code></span><span class="tt-unit">Unit: <code>mg.kg</code></span></span></span></td>
 <td style="text-align: right;">218</td>
 <td style="text-align: right;">1.49</td>
 <td style="text-align: right;">2.39</td>
@@ -800,7 +857,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: right;">32.81</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">zn.ext_usda.a1073_mg.kg</td>
+<td style="text-align: left;"><span class="ossl-tt">zn.ext_usda.a1073_mg.kg<span class="ossl-tt-pop"><span class="tt-analyte">Zinc, Extractable, Mehlich3</span><span class="tt-desc">Method: <code>usda.a1073</code></span><span class="tt-unit">Unit: <code>mg.kg</code></span></span></span></td>
 <td style="text-align: right;">228</td>
 <td style="text-align: right;">1.65</td>
 <td style="text-align: right;">1.32</td>
@@ -812,18 +869,9 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-</section>
-<section id="soil-site-information" class="level2">
-<h2 class="anchored" data-anchor-id="soil-site-information"><i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information</h2>
-<ul>
-<li><strong>coordinates precision:</strong> precise</li>
-<li><strong>sampling depth:</strong> various</li>
-<li><strong>geography:</strong> soil taxonomy, elevation, landuse</li>
-</ul>
-</section>
-<section id="map" class="level2">
-<h2 class="anchored" data-anchor-id="map"><i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map</h2>
-<p><img src="https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/PF_NZL/README_files/figure-commonmark/map-1.png" class="img-fluid"></p>
+</div>
+</figure>
+</div>
 </section>
 <section id="mir" class="level2">
 <h2 class="anchored" data-anchor-id="mir"><i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR</h2>

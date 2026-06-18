@@ -57,23 +57,39 @@ Data originally provided by:
 | Soil site metadata — Parquet | `ossl_soilsite_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/GPKOR/ossl_soilsite_v1.3.parquet) |
 
 
-## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
-
-Summary statistics for soil properties in this dataset, sourced from the [ossl-imports README](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/GPKOR).
-
-| skim_variable      | n_missing | mean |  sd |  p0 | p25 | p50 | p75 | p100 |
-|:-------------------|----------:|-----:|----:|----:|----:|----:|----:|-----:|
-| oc_iso.10694_w.pct |       788 | 2.78 | 1.8 | 0.1 | 1.5 | 2.5 | 3.7 | 10.5 |
-
-## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
-
-- **coordinates precision:** precise, region
-- **sampling depth:** top
-- **geography:** landuse
-
 ## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
 ![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/GPKOR/README_files/figure-commonmark/map-1.png)
+
+## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
+
+- **Coordinates precision:** precise, region
+- **Sampling depth:** top
+- **Geography:** landuse
+- **Variables available (OSSL):** 10 out of 10 — see [Database description](../db-desc.html#panel-soilsite) for full schema
+- **Populated columns:** `id.layer_uuid_txt`, `id.layer_local_c`, `loc.region_src_txt`, `site.land.use_src_txt`, `site.elevation_src_m`, `observation.date_src_yyyy.mm.dd`, `latitude.point_wgs84_dd`, `longitude.point_wgs84_dd`, `layer.upper.depth_usda_cm`, `layer.lower.depth_usda_cm`
+
+## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
+
+- **Total samples:** 1,500
+- **Properties available (original):** 1
+- **Properties standardized (OSSL):** 1 — summarized in **@tbl-soillab-gpkor** below
+- **Categories:** carbon & nutrients
+- **Original source:** see [Database access](#database-access)
+
+```{=html}
+<p class="ossl-tt-hint"><i class="bi bi-info-circle" aria-hidden="true"></i> Hover over any OSSL code in the table below to see its full description.</p>
+```
+
+::: {#tbl-soillab-gpkor}
+
+```{=html}
+<table class="soil-lab-table"><thead><tr><th style="text-align:left">skim_variable</th><th style="text-align:right">n_missing</th><th style="text-align:right">mean</th><th style="text-align:right">sd</th><th style="text-align:right">p0</th><th style="text-align:right">p25</th><th style="text-align:right">p50</th><th style="text-align:right">p75</th><th style="text-align:right">p100</th></tr></thead><tbody><tr><td style="text-align:left"><span class="ossl-tt">oc_iso.10694_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Organic Carbon, ISO 10694</span><span class="tt-desc">Method: <code>iso.10694</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">788</td><td style="text-align:right">2.78</td><td style="text-align:right">1.8</td><td style="text-align:right">0.1</td><td style="text-align:right">1.5</td><td style="text-align:right">2.5</td><td style="text-align:right">3.7</td><td style="text-align:right">10.5</td></tr></tbody></table>
+```
+
+Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.
+
+:::
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> NIR
 

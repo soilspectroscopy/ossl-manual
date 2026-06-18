@@ -45,33 +45,51 @@ Data originally provided by:
 - **Email:** [branislav.jovic@dh.uns.ac.rs](mailto:branislav.jovic@dh.uns.ac.rs)
 - **Original source:** <https://doi.org/10.1016/j.saa.2018.08.039>
 
-No file listing available for this dataset.
+**Available files**
 
+| Type | Filename | Link |
+|------|----------|------|
+| MIR spectra — CSV (gzip) | `ossl_mir_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/SRB/ossl_mir_v1.3.csv.gz) |
+| MIR spectra — Parquet | `ossl_mir_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/SRB/ossl_mir_v1.3.parquet) |
+| Soil lab measurements — CSV (gzip) | `ossl_soillab_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/SRB/ossl_soillab_v1.3.csv.gz) |
+| Soil lab measurements — Parquet | `ossl_soillab_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/SRB/ossl_soillab_v1.3.parquet) |
+| Soil site metadata — CSV (gzip) | `ossl_soilsite_v1.3.csv.gz` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/SRB/ossl_soilsite_v1.3.csv.gz) |
+| Soil site metadata — Parquet | `ossl_soilsite_v1.3.parquet` | [Download](https://storage.googleapis.com/soilspec4gg-public/datasets/SRB/ossl_soilsite_v1.3.parquet) |
 
-## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
-
-Summary statistics for soil properties in this dataset, sourced from the [ossl-imports README](https://github.com/soilspectroscopy/ossl-imports/tree/main/dataset/SRB).
-
-| skim_variable            | n_missing |  mean |    sd |   p0 |   p25 |   p50 |   p75 |  p100 |
-|:-------------------------|----------:|------:|------:|-----:|------:|------:|------:|------:|
-| silt.tot_usda.c62_w.pct  |         0 | 25.35 | 12.61 | 1.23 | 15.04 | 27.83 | 35.60 | 53.39 |
-| clay.tot_usda.a334_w.pct |         0 | 27.61 | 13.54 | 5.53 | 15.95 | 27.43 | 36.92 | 60.81 |
-| sand.tot_usda.c60_w.pct  |         0 | 47.13 | 23.87 | 9.03 | 28.84 | 38.65 | 68.61 | 92.27 |
-| c.tot_usda.a622_w.pct    |        90 |  3.47 |  1.49 | 1.43 |  2.15 |  2.99 |  4.79 |  7.06 |
-| oc_usda.c729_w.pct       |        90 |  2.83 |  0.97 | 1.30 |  2.12 |  2.67 |  3.33 |  5.02 |
-| ph.h2o_usda.a268_index   |        90 |  7.41 |  0.87 | 5.38 |  6.77 |  7.80 |  7.97 |  9.18 |
-| n.tot_usda.a623_w.pct    |        90 |  0.19 |  0.11 | 0.05 |  0.12 |  0.19 |  0.24 |  0.49 |
-| caco3_usda.a54_w.pct     |        90 |  5.33 |  6.54 | 0.00 |  0.00 |  2.19 | 10.11 | 21.99 |
-
-## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
-
-- **coordinates precision:** precise
-- **sampling depth:** various
-- **geography:** soil taxonomy, landuse
 
 ## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
 ![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/SRB/README_files/figure-commonmark/map-1.png)
+
+## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
+
+- **Coordinates precision:** precise
+- **Sampling depth:** various
+- **Geography:** soil taxonomy, landuse
+- **Variables available (OSSL):** 8 out of 8 — see [Database description](../db-desc.html#panel-soilsite) for full schema
+- **Populated columns:** `id.layer_uuid_txt`, `id.layer_local_c`, `site.location.use_src_txt`, `longitude.point_wgs84_dd`, `latitude.point_wgs84_dd`, `pedon.taxa_src_txt`, `layer.upper.depth_usda_cm`, `layer.lower.depth_usda_cm`
+
+## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
+
+- **Total samples:** 135
+- **Properties available (original):** 10
+- **Properties standardized (OSSL):** 8 — summarized in **@tbl-soillab-srb** below
+- **Categories:** physical, chemical, carbon & nutrients
+- **Original source:** see [Database access](#database-access)
+
+```{=html}
+<p class="ossl-tt-hint"><i class="bi bi-info-circle" aria-hidden="true"></i> Hover over any OSSL code in the table below to see its full description.</p>
+```
+
+::: {#tbl-soillab-srb}
+
+```{=html}
+<table class="soil-lab-table"><thead><tr><th style="text-align:left">skim_variable</th><th style="text-align:right">n_missing</th><th style="text-align:right">mean</th><th style="text-align:right">sd</th><th style="text-align:right">p0</th><th style="text-align:right">p25</th><th style="text-align:right">p50</th><th style="text-align:right">p75</th><th style="text-align:right">p100</th></tr></thead><tbody><tr><td style="text-align:left"><span class="ossl-tt">silt.tot_usda.c62_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Silt, Total, S prep</span><span class="tt-desc">Method: <code>usda.c62</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">25.35</td><td style="text-align:right">12.61</td><td style="text-align:right">1.23</td><td style="text-align:right">15.04</td><td style="text-align:right">27.83</td><td style="text-align:right">35.60</td><td style="text-align:right">53.39</td></tr><tr><td style="text-align:left"><span class="ossl-tt">clay.tot_usda.a334_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Clay</span><span class="tt-desc">Method: <code>usda.a334</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">27.61</td><td style="text-align:right">13.54</td><td style="text-align:right">5.53</td><td style="text-align:right">15.95</td><td style="text-align:right">27.43</td><td style="text-align:right">36.92</td><td style="text-align:right">60.81</td></tr><tr><td style="text-align:left"><span class="ossl-tt">sand.tot_usda.c60_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Sand, Total, S prep</span><span class="tt-desc">Method: <code>usda.c60</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">0</td><td style="text-align:right">47.13</td><td style="text-align:right">23.87</td><td style="text-align:right">9.03</td><td style="text-align:right">28.84</td><td style="text-align:right">38.65</td><td style="text-align:right">68.61</td><td style="text-align:right">92.27</td></tr><tr><td style="text-align:left"><span class="ossl-tt">c.tot_usda.a622_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Carbon, Total NCS</span><span class="tt-desc">Method: <code>usda.a622</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">90</td><td style="text-align:right">3.47</td><td style="text-align:right">1.49</td><td style="text-align:right">1.43</td><td style="text-align:right">2.15</td><td style="text-align:right">2.99</td><td style="text-align:right">4.79</td><td style="text-align:right">7.06</td></tr><tr><td style="text-align:left"><span class="ossl-tt">oc_usda.c729_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Organic Carbon, Total C without CaCO3, S prep</span><span class="tt-desc">Method: <code>usda.c729</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">90</td><td style="text-align:right">2.83</td><td style="text-align:right">0.97</td><td style="text-align:right">1.30</td><td style="text-align:right">2.12</td><td style="text-align:right">2.67</td><td style="text-align:right">3.33</td><td style="text-align:right">5.02</td></tr><tr><td style="text-align:left"><span class="ossl-tt">ph.h2o_usda.a268_index<span class="ossl-tt-pop"><span class="tt-analyte">pH, 1:1 Soil-Water Suspension</span><span class="tt-desc">Method: <code>usda.a268</code></span><span class="tt-unit">Unit: <code>index</code></span></span></span></td><td style="text-align:right">90</td><td style="text-align:right">7.41</td><td style="text-align:right">0.87</td><td style="text-align:right">5.38</td><td style="text-align:right">6.77</td><td style="text-align:right">7.80</td><td style="text-align:right">7.97</td><td style="text-align:right">9.18</td></tr><tr><td style="text-align:left"><span class="ossl-tt">n.tot_usda.a623_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Nitrogen, Total NCS, usda.a623</span><span class="tt-desc">Method: <code>usda.a623</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">90</td><td style="text-align:right">0.19</td><td style="text-align:right">0.11</td><td style="text-align:right">0.05</td><td style="text-align:right">0.12</td><td style="text-align:right">0.19</td><td style="text-align:right">0.24</td><td style="text-align:right">0.49</td></tr><tr><td style="text-align:left"><span class="ossl-tt">caco3_usda.a54_w.pct<span class="ossl-tt-pop"><span class="tt-analyte">Carbonate, &lt;2mm Fraction</span><span class="tt-desc">Method: <code>usda.a54</code></span><span class="tt-unit">Unit: <code>w.pct</code></span></span></span></td><td style="text-align:right">90</td><td style="text-align:right">5.33</td><td style="text-align:right">6.54</td><td style="text-align:right">0.00</td><td style="text-align:right">0.00</td><td style="text-align:right">2.19</td><td style="text-align:right">10.11</td><td style="text-align:right">21.99</td></tr></tbody></table>
+```
+
+Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.
+
+:::
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR
 

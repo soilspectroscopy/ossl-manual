@@ -1,0 +1,290 @@
+/* ============================================================
+   Database description page — styles
+   ============================================================ */
+
+.db-page-title {
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: #1a1a2e;
+}
+
+.db-page-intro {
+  font-size: 1rem;
+  color: #495057;
+  margin-bottom: 1.75rem;
+  max-width: 760px;
+  line-height: 1.6;
+}
+
+.db-page-intro strong {
+  display: inline-block;
+  background: #EEEDFE;
+  color: #534AB7;
+  padding: 0 6px;
+  border-radius: 3px;
+  font-family: var(--bs-font-monospace, monospace);
+  font-weight: 600;
+}
+
+/* ── Tab strip ──────────────────────────────────────────── */
+.db-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.db-tab {
+  padding: 8px 18px;
+  border-radius: 6px 6px 0 0;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-bottom: none;
+  background: transparent;
+  color: #6c757d;
+  font-weight: 400;
+  transition: background 0.15s, color 0.15s;
+  position: relative;
+  bottom: -1px;
+}
+
+.db-tab:hover {
+  background: #f8f9fa;
+  color: #343a40;
+}
+
+.db-tab.active {
+  background: #ffffff;
+  color: #1a1a2e;
+  font-weight: 500;
+  border-color: #e9ecef;
+  border-bottom-color: #ffffff;
+}
+
+.tab-count {
+  display: inline-block;
+  font-size: 12px;
+  padding: 1px 7px;
+  border-radius: 10px;
+  background: #e9ecef;
+  color: #6c757d;
+  margin-left: 6px;
+  font-weight: 500;
+  vertical-align: 1px;
+}
+
+.db-tab.active .tab-count {
+  background: #dde3ff;
+  color: #3d3a8c;
+}
+
+/* ── Search row ─────────────────────────────────────────── */
+.search-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 0.75rem;
+  align-items: center;
+}
+
+.search-row input[type="text"] {
+  flex: 1;
+  padding: 9px 14px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  font-size: 0.95rem;
+  color: #343a40;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.search-row input[type="text"]:focus {
+  border-color: #8884d8;
+  box-shadow: 0 0 0 3px rgba(136, 132, 216, 0.15);
+}
+
+.count-note {
+  font-size: 0.875rem;
+  color: #868e96;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Glossary table ─────────────────────────────────────── */
+.table-wrap {
+  overflow-x: auto;
+}
+
+.tab-panel table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  table-layout: auto;
+}
+
+.tab-panel thead th {
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: #6c757d;
+  padding: 8px 10px;
+  border-bottom: 1.5px solid #dee2e6;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.exp-cell,
+th.exp-cell {
+  width: 36px;
+  padding: 6px 4px 6px 0;
+}
+
+.code-col {
+  white-space: nowrap;
+}
+
+.tab-panel tbody tr:not(.detail-row) {
+  border-bottom: 1px solid #f1f3f5;
+  transition: background 0.1s;
+}
+
+.tab-panel tbody tr:not(.detail-row):hover {
+  background: #f8f9fa;
+}
+
+.tab-panel td {
+  padding: 9px 10px;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+/* OSSL code pill */
+.ossl-code {
+  font-family: var(--bs-font-monospace, monospace);
+  font-size: 0.85rem;
+  color: #534AB7;
+  background: #EEEDFE;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.desc-col {
+  color: #343a40;
+  min-width: 220px;
+}
+
+.unit-col {
+  font-family: var(--bs-font-monospace, monospace);
+  font-size: 0.85rem;
+  color: #6c757d;
+  white-space: nowrap;
+}
+
+.type-col {
+  font-size: 0.9rem;
+  color: #6c757d;
+  white-space: nowrap;
+}
+
+/* Expand button */
+.exp-btn {
+  background: none;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #6c757d;
+  font-size: 14px;
+  width: 24px;
+  height: 24px;
+  line-height: 1;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.1s, color 0.1s, border-color 0.1s;
+}
+
+.exp-btn:hover {
+  background: #EEEDFE;
+  color: #534AB7;
+  border-color: #c9c4f5;
+}
+
+/* Detail row */
+.detail-row {
+  display: none;
+  background: #f8f9fa;
+}
+
+.detail-row td {
+  padding: 14px 16px 16px;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px 20px;
+}
+
+.d-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #868e96;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.d-val {
+  font-size: 0.92rem;
+  color: #343a40;
+  line-height: 1.55;
+}
+
+.d-val code {
+  font-family: var(--bs-font-monospace, monospace);
+  font-size: 0.85rem;
+  background: #e9ecef;
+  padding: 1px 6px;
+  border-radius: 3px;
+  color: #495057;
+}
+
+/* ── Panel intro paragraphs (for MIR / VisNIR / NIR) ─────── */
+.panel-intro {
+  background: #f8f9fa;
+  border-left: 3px solid #8884d8;
+  padding: 12px 16px 12px 18px;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #343a40;
+}
+
+.panel-intro p {
+  margin: 0 0 0.6rem;
+}
+
+.panel-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.panel-intro code {
+  font-family: var(--bs-font-monospace, monospace);
+  font-size: 0.85em;
+  background: #EEEDFE;
+  color: #534AB7;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.panel-intro sup {
+  font-size: 0.75em;
+}
