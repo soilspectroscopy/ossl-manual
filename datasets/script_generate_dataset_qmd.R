@@ -11,7 +11,8 @@ library(arrow)
 # ============================================================================
 # 1. Authorize and read data sources
 # ============================================================================
-gs4_auth(email = "rzhi@woodwellclimate.org")
+# gs4_auth(email = "rzhi@woodwellclimate.org")
+# gs4_auth(email = "jsafanelli@woodwellclimate.org")
 
 sheet_id <- "19PuiJx1mzNaFff4odODNzS6ZB72lcz9UbcVPWCt8Gz8"
 

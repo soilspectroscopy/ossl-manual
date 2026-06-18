@@ -13,7 +13,8 @@ CSS_PATH   <- "styles/db-description.css"
 # ============================================================================
 # 1. Authorize and read sheets
 # ============================================================================
-gs4_auth(email = "rzhi@woodwellclimate.org")
+# gs4_auth(email = "rzhi@woodwellclimate.org")
+# gs4_auth(email = "jsafanelli@woodwellclimate.org")
 
 coding_sheet_id <- "1KnPj2eUqrAZ_5JzEyXzZ-qvK8h6EcwQwRlR2-FXnbqg"
 

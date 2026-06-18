@@ -11,7 +11,7 @@ format:
 ---
 
 ```{=html}
-<div class="ossl-hero" style="background: #f1f3f5;">
+<div class="ossl-hero" style="background: #E0FFE0;">
   <div class="ossl-hero-logo">
     <img src="logo/BESB.png" alt="BESB logo">
   </div>
