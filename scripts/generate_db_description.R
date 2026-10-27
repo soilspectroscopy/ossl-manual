@@ -5,7 +5,7 @@ library(readr)
 
 # ============================================================================
 # CONFIGURATION — run from ossl-manual root:
-#   source("scripts/script_generate_db_description_preview.R")
+#   source("scripts/generate_db_description.R")
 # ============================================================================
 OUTPUT_QMD <- "db-desc.qmd"
 CSS_PATH   <- "styles/db-description.css"

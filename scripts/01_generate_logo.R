@@ -62,5 +62,5 @@ for(i in 1:num_logos){
 
 # Save color scheme
 color_db <- data.frame(new_code = dataset_names, hex_color = dark_shades)
-write.csv(color_db, "datasets/logo_color_palette.csv")
+write.csv(color_db, "tabular/logo_color_palette.csv", row.names = FALSE)
 

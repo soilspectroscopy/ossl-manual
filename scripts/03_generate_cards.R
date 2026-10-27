@@ -12,7 +12,7 @@ gs4_auth(email = "jsafanelli@woodwellclimate.org")
 sheet_id <- "19PuiJx1mzNaFff4odODNzS6ZB72lcz9UbcVPWCt8Gz8"
 raw_data <- read_sheet(sheet_id, sheet = "Access")
 
-readr::write_csv(raw_data, "datasets/OSSL_v2_listed_libraries.csv")
+readr::write_csv(raw_data, "tabular/OSSL_v2_listed_libraries.csv")
 
 # ---------- 2. Helpers ----------
 logo_folder <- "datasets/logo/"

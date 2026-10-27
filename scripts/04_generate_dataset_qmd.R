@@ -29,13 +29,13 @@ ossl_codes_soillab <- read_sheet(coding_sheet_id,
                                  sheet = "ossl_level0_names_soillab")
 
 dataset_files <- read_csv(
-  "datasets/ossl_individual_datasets_urls_v1.3.csv",
+  "tabular/ossl_individual_datasets_urls_v1.3.csv",
   show_col_types = FALSE
 )
 
 # Canonical logo colors — keep hero banners in sync with the hexagon logos
 logo_palette <- read_csv(
-  "datasets/logo_color_palette.csv",
+  "tabular/logo_color_palette.csv",
   show_col_types = FALSE
 ) %>%
   select(new_code, hex_color)
