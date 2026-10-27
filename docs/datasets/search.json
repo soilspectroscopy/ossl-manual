@@ -59,7 +59,7 @@
     "href": "CAF.html#mir",
     "title": "CAF",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 600-7500\nStandardized range: 600-4000\nInstrument: VERTEX 70 FT-IR\nManufacturer: Bruker Optics GmbH (Germany)\nScan accessory: Not available\nSample preparation: Ground &lt; 50 μm\nAdditional info: A gold coated reflectance standard (Infragold NIR-MIR Reflectance Coating, Labsphere) was used as a background material\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 600-7500\nStandardized range: 600-4000\nInstrument: VERTEX 70 FT-IR\nManufacturer: Bruker Optics GmbH (Germany)\nScan accessory: HTS-XT\nSample preparation: Ground &lt; 50 μm\nAdditional info: A gold coated reflectance standard (Infragold NIR-MIR Reflectance Coating, Labsphere) was used as a background material\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "CAF"
@@ -136,7 +136,7 @@
     "href": "BESB.html#mir",
     "title": "BESB",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 600-4000\nStandardized range: 600-4000\nInstrument: Alpha Sample Compartment RTDLaTGS ZnSe\nManufacturer: Bruker Optik GmbH, Ettlingen, Germany\nScan accessory: Not available\nSample preparation: Sieved&lt;2mm, ground\nAdditional info: The sensor has a HeNe laser; A gold reference plate was used as standard\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 600-4000\nStandardized range: 600-4000\nInstrument: Alpha Sample Compartment RTDLaTGS ZnSe\nManufacturer: Bruker Optik GmbH, Ettlingen, Germany\nScan accessory: Not available\nSample preparation: Sieved&lt;2mm, ground\nAdditional info: The sensor has a HeNe laser; A gold reference plate was used as standard\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "BESB"
@@ -147,7 +147,7 @@
     "href": "BESB.html#vnir",
     "title": "BESB",
     "section": " VNIR",
-    "text": "VNIR\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: FieldSpec 3 Spectroradiometer\nManufacturer: Analytical Spectral Devices (ASD, Boulder, CO)\nInstrument co-scans: 100\nScan repeats: 2\nScan accessory: Not available\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: The sensor is calibrated using a white Spectralon plate (Lab-sphere, North Sutton, NH, USA) representing a 100% reflectance standard\n\n\nVNIR plot",
+    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: FieldSpec 3 Spectroradiometer\nManufacturer: Analytical Spectral Devices (ASD, Boulder, CO)\nInstrument co-scans: 100\nScan repeats: 2\nScan accessory: Fiber-optic cable with external 50-W halogen lamps\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: The sensor is calibrated using a white Spectralon plate (Lab-sphere, North Sutton, NH, USA) representing a 100% reflectance standard\n\n\nVNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "BESB"
@@ -224,7 +224,7 @@
     "href": "Geocradle.html#vnir",
     "title": "Geocradle",
     "section": " VNIR",
-    "text": "VNIR\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: ASD FieldSpec Pro & PSR+ Spectrometer\nManufacturer: (PANanalytical BV, Boulder, CO, USA formerly Analytical Spectral Devices) & Spectral Evolution Inc., Lawrence, Massachusetts,USA\nInstrument co-scans: 10\nScan repeats: Not available\nScan accessory: Not available\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available\n\n\nVNIR plot",
+    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: ASD FieldSpec Pro & PSR+ Spectrometer\nManufacturer: (PANanalytical BV, Boulder, CO, USA formerly Analytical Spectral Devices) & Spectral Evolution Inc., Lawrence, Massachusetts,USA\nInstrument co-scans: 10\nScan repeats: Not available\nScan accessory: Not available\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available\n\n\nVNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "Geocradle"
@@ -301,7 +301,7 @@
     "href": "LF_BRA.html#vnir",
     "title": "LF_BRA",
     "section": " VNIR",
-    "text": "VNIR\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 431-2153\nInstrument: Veris MSP3 (USB4000 & C9914GB detectors)\nManufacturer: Veris Technologies (Salina, KS, USA)\nInstrument co-scans: Not available\nScan repeats: 3\nScan accessory: Not available\nOriginal resolution: 5\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available\n\n\nVNIR plot",
+    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 431-2153\nInstrument: Veris MSP3 (USB4000 & C9914GB detectors)\nManufacturer: Veris Technologies (Salina, KS, USA)\nInstrument co-scans: Not available\nScan repeats: 3\nScan accessory: Veris Sample Holder (Light-shielded)\nOriginal resolution: 5\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available\n\n\nVNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "LF_BRA"
@@ -378,7 +378,7 @@
     "href": "GPKOR.html#nir",
     "title": "GPKOR",
     "section": " NIR",
-    "text": "NIR\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 1400-2500\nInstrument: SpectraStar XT\nManufacturer: Unity Scientific, Westborough, MA, USA\nInstrument co-scans: 12\nScan repeats: 12\nScan accessory: Not available\nOriginal resolution: 1 nm\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Equipped with UCal calibration software\n\n\nNIR plot",
+    "text": "NIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 1400-2500\nInstrument: SpectraStar XT\nManufacturer: Unity Scientific, Westborough, MA, USA\nInstrument co-scans: 12\nScan repeats: 12\nScan accessory: Ring-shaped sample holder (50 mm diameter)\nOriginal resolution: 1 nm\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Equipped with UCal calibration software\n\n\nNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "GPKOR"
@@ -455,7 +455,7 @@
     "href": "WS_SWIND.html#mir",
     "title": "WS_SWIND",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: Not available\nIntensity: BC-absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: TENSOR 27 Spectrophotometer\nManufacturer: Bruker (Switzerland)\nScan accessory: Not available\nSample preparation: Sieved&lt;2mm\nAdditional info: Atmospheric variations were integrated by running a potassium bromide background calibration.\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: BC-absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: TENSOR 27 Spectrophotometer\nManufacturer: Bruker (Switzerland)\nScan accessory: Not available\nSample preparation: Sieved&lt;2mm\nAdditional info: Atmospheric variations were integrated by running a potassium bromide background calibration.\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "WS_SWIND"
@@ -488,7 +488,7 @@
     "href": "KSSL.html#database-access",
     "title": "KSSL",
     "section": " Database access",
-    "text": "Database access\nData originally provided by:\n\nContact: Scarlett Murphy\nEmail: Scarlett.Murphy@usda.gov\nOriginal source: https://ncsslabdatamart.sc.egov.usda.gov/\n\nNo file listing available for this dataset.",
+    "text": "Database access\nData originally provided by:\n\nContact: Scarlett Murphy\nEmail: Scarlett.Murphy@usda.gov\nOriginal source: https://ncsslabdatamart.sc.egov.usda.gov/\n\nAvailable files\n\n\n\nType\nFilename\nLink\n\n\n\n\nMIR spectra — CSV (gzip)\nossl_mir_v1.3.csv.gz\nDownload\n\n\nMIR spectra — Parquet\nossl_mir_v1.3.parquet\nDownload\n\n\nSoil lab measurements — CSV (gzip)\nossl_soillab_v1.3.csv.gz\nDownload\n\n\nSoil lab measurements — Parquet\nossl_soillab_v1.3.parquet\nDownload\n\n\nSoil site metadata — CSV (gzip)\nossl_soilsite_v1.3.csv.gz\nDownload\n\n\nSoil site metadata — Parquet\nossl_soilsite_v1.3.parquet\nDownload\n\n\nVisNIR spectra — CSV (gzip)\nossl_visnir_v1.3.csv.gz\nDownload\n\n\nVisNIR spectra — Parquet\nossl_visnir_v1.3.parquet\nDownload",
     "crumbs": [
       "← Back to listed libraries",
       "KSSL"
@@ -510,7 +510,7 @@
     "href": "KSSL.html#soil-site-information",
     "title": "KSSL",
     "section": " Soil site information",
-    "text": "Soil site information\n\nCoordinates precision: precise, county, country\nSampling depth: various\nGeography: soil taxonomy, soil horizon",
+    "text": "Soil site information\n\nCoordinates precision: precise, county, country\nSampling depth: various\nGeography: soil taxonomy, soil horizon\nVariables available (OSSL): 14 out of 14 — see Database description for full schema\nPopulated columns: id.layer_local_c, id.layer_uuid_txt, id.dataset.site_ascii_txt, layer.upper.depth_usda_cm, layer.lower.depth_usda_cm, layer.texture_usda_txt, pedon.taxa_usda_txt, horizon.designation_usda_txt, observation.date.begin_iso.8601_yyyy.mm.dd, observation.date.end_iso.8601_yyyy.mm.dd, longitude.point_wgs84_dd, latitude.point_wgs84_dd, longitude.county_wgs84_dd, latitude.county_wgs84_dd",
     "crumbs": [
       "← Back to listed libraries",
       "KSSL"
@@ -521,7 +521,7 @@
     "href": "KSSL.html#soil-laboratory-information",
     "title": "KSSL",
     "section": " Soil laboratory information",
-    "text": "Soil laboratory information\n\nProperties available (original): 1000+\nProperties standardized (OSSL): 51 — summarized in ?@tbl-soillab-kssl below\nCategories: physical, chemical, biological, hydrological, carbon & nutrients, metal elements\nOriginal source: see Database access\n\nDetailed summary statistics not available for this dataset.",
+    "text": "Soil laboratory information\n\nTotal samples: 64,667\nProperties available (original): 1000+\nProperties standardized (OSSL): 51 — summarized in Table 1 below\nCategories: physical, chemical, biological, hydrological, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nacidity_usda.a795_cmolc.kgAcidity, BaCl2-TEA Extractable, pH 8.2Method: usda.a795Unit: cmolc.kg\n29776\n14.47\n24.31\n0.00\n3.70\n7.14\n13.48\n291.92\n\n\naggstb_usda.a1_w.pctAggregate StabilityMethod: usda.a1Unit: w.pct\n60668\n39.45\n30.11\n0.00\n12.00\n33.00\n65.00\n123.00\n\n\nal.dith_usda.a65_w.pctAluminum, Crystalline, Total Pedogenic IronMethod: usda.a65Unit: w.pct\n26780\n0.20\n0.35\n0.00\n0.05\n0.11\n0.21\n7.70\n\n\nal.ext_usda.a1056_mg.kgAluminum, Extractable, Mehlich3Method: usda.a1056Unit: mg.kg\n63153\n878.63\n774.47\n0.07\n318.70\n751.04\n1158.34\n6748.01\n\n\nal.ext_usda.a69_cmolc.kgAluminum, Extractable, KClMethod: usda.a69Unit: cmolc.kg\n47387\n2.27\n3.39\n0.00\n0.31\n1.03\n2.88\n63.01\n\n\nal.ox_usda.a59_w.pctAluminum, Amorphous, Total Non-Crystalline IronMethod: usda.a59Unit: w.pct\n32485\n0.27\n0.56\n0.00\n0.06\n0.12\n0.23\n12.63\n\n\nawc.33.1500kPa_usda.c80_w.fracAvailable Water Content, Difference 33-1500 kPaMethod: usda.c80Unit: w.frac\n43223\n0.15\n0.07\n0.00\n0.11\n0.14\n0.19\n0.81\n\n\nbd_usda.a21_g.cm3Bulk Density, &lt;2 mm fraction, CoreMethod: usda.a21Unit: g.cm3\n57051\n0.94\n0.50\n0.01\n0.53\n1.04\n1.32\n8.10\n\n\nbd_usda.a4_g.cm3Bulk Density, &lt;2mm fraction, ClodMethod: usda.a4Unit: g.cm3\n42189\n1.38\n0.26\n0.02\n1.26\n1.40\n1.54\n2.53\n\n\nc.tot_usda.a622_w.pctCarbon, Total NCSMethod: usda.a622Unit: w.pct\n223\n4.33\n9.51\n0.00\n0.41\n1.27\n3.13\n63.45\n\n\nca.ext_usda.a1059_mg.kgCalcium, Extractable, Mehlich3Method: usda.a1059Unit: mg.kg\n63153\n5634.75\n9321.06\n3.09\n656.32\n2258.41\n4789.45\n44723.96\n\n\nca.ext_usda.a722_cmolc.kgCalcium, Extractable, NH4OAcMethod: usda.a722Unit: cmolc.kg\n4650\n22.04\n32.60\n0.00\n2.94\n11.46\n29.25\n388.18\n\n\ncaco3_usda.a54_w.pctCarbonate, &lt;2mm FractionMethod: usda.a54Unit: w.pct\n41377\n9.42\n14.87\n0.00\n0.26\n2.56\n13.24\n105.77\n\n\ncec_usda.a723_cmolc.kgCEC, pH 7.0, NH4OAc, 2M KCl displacementMethod: usda.a723Unit: cmolc.kg\n4656\n20.63\n22.91\n0.00\n7.49\n14.97\n24.63\n584.59\n\n\ncf_usda.c236_w.pctCoarse Fragments, Greater 2mmMethod: usda.c236Unit: w.pct\n1655\n8.79\n17.05\n0.00\n0.00\n0.41\n8.00\n100.00\n\n\nclay.tot_usda.a334_w.pctClayMethod: usda.a334Unit: w.pct\n8058\n22.87\n16.30\n0.00\n9.61\n20.84\n32.50\n96.14\n\n\ncu.ext_usda.a1063_mg.kgCopper, Extractable, Mehlich3Method: usda.a1063Unit: mg.kg\n63153\n2.59\n4.25\n0.00\n0.44\n1.66\n3.06\n77.82\n\n\nec_usda.a364_ds.mElectrical Conductivity, (w/w)Method: usda.a364Unit: ds.m\n28827\n2.85\n12.00\n0.00\n0.11\n0.26\n0.87\n313.13\n\n\nfe.dith_usda.a66_w.pctIron, Crystalline, Total Pedogenic IronMethod: usda.a66Unit: w.pct\n26778\n1.24\n1.64\n0.00\n0.32\n0.80\n1.55\n28.44\n\n\nfe.ext_usda.a1064_mg.kgIron, Extractable, Mehlich3Method: usda.a1064Unit: mg.kg\n63153\n113.04\n124.91\n0.00\n51.58\n89.31\n140.02\n2708.08\n\n\nfe.ox_usda.a60_w.pctIron, Amorphous, Total Non-Crystalline IronMethod: usda.a60Unit: w.pct\n32486\n0.43\n0.71\n0.00\n0.09\n0.23\n0.53\n22.27\n\n\nk.ext_usda.a1065_mg.kgPotassium, Extractable, Mehlich3Method: usda.a1065Unit: mg.kg\n63153\n177.58\n170.73\n0.00\n77.71\n139.78\n234.39\n1699.61\n\n\nk.ext_usda.a725_cmolc.kgPotassium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a725Unit: cmolc.kg\n4652\n0.64\n1.04\n0.00\n0.14\n0.34\n0.72\n32.33\n\n\nmg.ext_usda.a1066_mg.kgMagnesium, Extractable, Mehlich3Method: usda.a1066Unit: mg.kg\n63153\n510.49\n528.72\n0.00\n91.39\n369.35\n788.47\n5608.60\n\n\nmg.ext_usda.a724_cmolc.kgMagnesium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a724Unit: cmolc.kg\n4650\n5.36\n8.26\n0.00\n0.87\n2.82\n6.55\n172.64\n\n\nmn.ext_usda.a1067_mg.kgManganese, Extractable, Mehlich3Method: usda.a1067Unit: mg.kg\n63153\n73.41\n81.38\n0.00\n16.19\n45.74\n102.72\n544.19\n\n\nmn.ext_usda.a70_mg.kgManganese, Extractable, KClMethod: usda.a70Unit: mg.kg\n47390\n13.25\n103.15\n0.00\n0.12\n0.80\n4.10\n9787.33\n\n\nn.tot_usda.a623_w.pctNitrogen, Total NCS, usda.a623Method: usda.a623Unit: w.pct\n223\n0.24\n0.55\n0.00\n0.04\n0.09\n0.20\n41.90\n\n\nna.ext_usda.a1068_mg.kgSodium, Extractable, Mehlich3Method: usda.a1068Unit: mg.kg\n63153\n183.75\n701.06\n0.00\n12.05\n30.59\n104.68\n15207.10\n\n\nna.ext_usda.a726_cmolc.kgSodium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a726Unit: cmolc.kg\n4652\n3.95\n23.24\n0.00\n0.00\n0.02\n0.24\n868.36\n\n\noc_usda.c1059_w.pctOrganic Carbon, Total C without CaCO3, N prepMethod: usda.c1059Unit: w.pct\n63499\n4.46\n9.77\n0.01\n0.50\n1.28\n2.81\n56.40\n\n\noc_usda.c729_w.pctOrganic Carbon, Total C without CaCO3, S prepMethod: usda.c729Unit: w.pct\n2231\n3.95\n9.59\n0.00\n0.28\n0.82\n2.36\n63.45\n\n\np.ext_usda.a1070_mg.kgPhosphorus, Extractable, Mehlich3Method: usda.a1070Unit: mg.kg\n63153\n22.20\n36.86\n0.00\n3.47\n10.64\n24.97\n506.24\n\n\np.ext_usda.a270_mg.kgPhosphorus, Extractable, Bray1Method: usda.a270Unit: mg.kg\n56546\n18.52\n48.21\n0.00\n1.00\n4.49\n16.07\n1436.68\n\n\np.ext_usda.a274_mg.kgPhosphorus, Extractable, OlsenMethod: usda.a274Unit: mg.kg\n49180\n12.43\n20.91\n0.00\n1.74\n5.15\n14.59\n623.13\n\n\np.ext_usda.a652_mg.kgPhosphorus, Extractable, Mehlich3Method: usda.a652Unit: mg.kg\n39184\n26.05\n159.17\n0.00\n2.45\n9.18\n29.22\n24425.23\n\n\nph.cacl2_usda.a477_indexpH, 1:2 Soil-CaCl2 Suspension, 0.01 M CaCl2Method: usda.a477Unit: index\n62992\n4.73\n1.25\n1.74\n3.74\n4.61\n5.60\n8.27\n\n\nph.cacl2_usda.a481_indexpH, 1:2 Soil-CaCl2 SuspensionMethod: usda.a481Unit: index\n5087\n5.93\n1.41\n2.14\n4.74\n5.76\n7.33\n10.68\n\n\nph.h2o_usda.a268_indexpH, 1:1 Soil-Water SuspensionMethod: usda.a268Unit: index\n5086\n6.44\n1.35\n1.97\n5.35\n6.32\n7.70\n10.70\n\n\ns.tot_usda.a624_w.pctSulfur, Total NCSMethod: usda.a624Unit: w.pct\n224\n0.16\n0.90\n0.00\n0.00\n0.01\n0.04\n25.24\n\n\nsand.tot_usda.c405_w.pctSand, Total, N prepMethod: usda.c405Unit: w.pct\n63774\n33.76\n27.17\n0.30\n8.90\n24.70\n59.70\n98.40\n\n\nsand.tot_usda.c60_w.pctSand, Total, S prepMethod: usda.c60Unit: w.pct\n8988\n39.33\n28.88\n0.10\n13.30\n34.70\n61.70\n100.00\n\n\nsilt.tot_usda.c407_w.pctSilt, Total, N prepMethod: usda.c407Unit: w.pct\n63774\n35.09\n15.41\n0.90\n24.40\n31.30\n46.20\n78.10\n\n\nsilt.tot_usda.c62_w.pctSilt, Total, S prepMethod: usda.c62Unit: w.pct\n8988\n37.93\n20.20\n0.00\n22.70\n38.00\n53.00\n94.50\n\n\nwr.10kPa_usda.a414_w.pctWater Retention, 1/10 Bar (10 kPa)Method: usda.a414Unit: w.pct\n61617\n30.38\n20.43\n0.68\n17.75\n30.53\n38.83\n355.29\n\n\nwr.10kPa_usda.a8_w.pctWater Retention, 1/10 Bar (10 kPa), ClodMethod: usda.a8Unit: w.pct\n62384\n30.93\n33.40\n2.65\n19.60\n25.58\n31.90\n553.17\n\n\nwr.1500kPa_usda.a417_w.pctWater Retention, 15 Bar (1500 kPa)Method: usda.a417Unit: w.pct\n15316\n14.27\n16.29\n0.02\n6.54\n11.11\n16.37\n303.03\n\n\nwr.33kPa_usda.a415_w.pctWater Retention, 1/3 Bar (33 kPa)Method: usda.a415Unit: w.pct\n61046\n26.09\n23.85\n0.26\n13.04\n23.13\n31.96\n221.34\n\n\nwr.33kPa_usda.a9_w.pctWater Retention, 1/3 Bar (33 kPa), ClodMethod: usda.a9Unit: w.pct\n42185\n26.20\n27.11\n1.34\n17.67\n23.20\n28.90\n2124.87\n\n\nzn.ext_usda.a1073_mg.kgZinc, Extractable, Mehlich3Method: usda.a1073Unit: mg.kg\n63153\n2.48\n12.06\n0.00\n0.36\n0.99\n2.02\n314.72",
     "crumbs": [
       "← Back to listed libraries",
       "KSSL"
@@ -532,7 +532,7 @@
     "href": "KSSL.html#mir",
     "title": "KSSL",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: Vertex 70 FT-IR\nManufacturer: Bruker Optics\nScan accessory: Not available\nSample preparation: Air-dried, finely ground &lt; 80mesh\nAdditional info: MCT (mercury cadmium telluride) detector\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: Vertex 70 FT-IR\nManufacturer: Bruker Optics\nScan accessory: HTS-XT\nSample preparation: Air-dried, finely ground &lt; 80mesh\nAdditional info: MCT (mercury cadmium telluride) detector\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "KSSL"
@@ -543,7 +543,7 @@
     "href": "KSSL.html#vnir",
     "title": "KSSL",
     "section": " VNIR",
-    "text": "VNIR\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: ASD Labspec 2500\nManufacturer: Analytical Spectral Devices Inc., PANalytical NIR Excellence Center\nInstrument co-scans: Not available\nScan repeats: Not available\nScan accessory: Not available\nOriginal resolution: Not available\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: A standard Spectralon panel was used to obtain the white reference at 15-min intervals.\n\n\nVNIR plot",
+    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: ASD Labspec 2500\nManufacturer: Analytical Spectral Devices Inc., PANalytical NIR Excellence Center\nInstrument co-scans: Not available\nScan repeats: 1\nScan accessory: ASD’s MugLite accessory\nOriginal resolution: Not available\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: A standard Spectralon panel was used to obtain the white reference at 15-min intervals.\n\n\nVNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "KSSL"
@@ -554,7 +554,7 @@
     "href": "KSSL.html#references",
     "title": "KSSL",
     "section": " References",
-    "text": "References\n\nPublication 1\nPublication 2",
+    "text": "References\n\nPublication 1\nPublication 2\nPublication 3",
     "crumbs": [
       "← Back to listed libraries",
       "KSSL"
@@ -620,7 +620,7 @@
     "href": "AFSIS1.html#mir",
     "title": "AFSIS1",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 602-4000\nStandardized range: 600-4000\nInstrument: Tensor 27 FT-IR & Alpha I ZnSe\nManufacturer: Bruker Optics\nScan accessory: Not available\nSample preparation: Finely ground &lt;0.1 mm\nAdditional info: Not available\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 602-4000\nStandardized range: 600-4000\nInstrument: Tensor 27 FT-IR & Alpha I ZnSe\nManufacturer: Bruker Optics\nScan accessory: HTS-XT & DRIFT accessory\nSample preparation: Finely ground &lt;0.1 mm\nAdditional info: Not available\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "AFSIS1"
@@ -686,7 +686,7 @@
     "href": "LUCAS.html#soil-laboratory-information",
     "title": "LUCAS",
     "section": " Soil laboratory information",
-    "text": "Soil laboratory information\n\nTotal samples: 43,925\nProperties available (original): 13\nProperties standardized (OSSL): 13 — summarized in Table 1 below\nCategories: physical, chemical, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\ncf_iso.11464_w.pctCoarse Fragments, ISO 11464Method: iso.11464Unit: w.pct\n17601\n14.89\n13.09\n0.00\n5.00\n11.00\n21.00\n92.00\n\n\nclay.tot_iso.11277_w.pctClay, ISO 11277Method: iso.11277Unit: w.pct\n17628\n19.69\n14.63\n0.00\n8.00\n17.00\n28.00\n96.00\n\n\nsilt.tot_iso.11277_w.pctSilt, Total, ISO 11277Method: iso.11277Unit: w.pct\n17630\n37.24\n19.06\n0.00\n24.00\n38.00\n51.00\n93.00\n\n\nsand.tot_iso.11277_w.pctSand, Total, ISO 11277Method: iso.11277Unit: w.pct\n17628\n38.78\n26.01\n0.00\n16.00\n36.00\n59.00\n100.00\n\n\nph.h2o_iso.10390_indexpH, 1:5 Soil-Water Suspension, ISO 10390Method: iso.10390Unit: index\n2\n6.19\n1.34\n3.17\n5.02\n6.18\n7.48\n10.37\n\n\nph.cacl2_iso.10390_indexpH, 1:5 Soil-CaCl2 Suspension, ISO 10390Method: iso.10390Unit: index\n2\n5.71\n1.40\n2.57\n4.50\n5.76\n7.10\n10.00\n\n\noc_iso.10694_w.pctOrganic Carbon, ISO 10694Method: iso.10694Unit: w.pct\n249\n4.52\n8.22\n0.01\n1.26\n2.02\n3.79\n58.68\n\n\ncaco3_iso.10693_w.pctCarbonate, ISO 10693Method: iso.10693Unit: w.pct\n697\n5.44\n13.05\n0.00\n0.00\n0.10\n1.60\n97.60\n\n\nn.tot_iso.11261_w.pctNitrogen, Total NCS, ISO 11261Method: iso.11261Unit: w.pct\n7\n0.30\n0.36\n0.00\n0.12\n0.18\n0.30\n3.86\n\n\np.ext_iso.11263_mg.kgPhosphorus, Extractable, ISO 11263Method: iso.11263Unit: mg.kg\n697\n31.21\n32.69\n0.00\n10.90\n22.70\n43.00\n1366.40\n\n\nk.ext_usda.a725_cmolc.kgPotassium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a725Unit: cmolc.kg\n2\n1.02\n1.18\n0.00\n0.39\n0.74\n1.29\n51.31\n\n\ncec_iso.11260_cmolc.kgCEC, BaCl2, soil's own pH, ISO 11260Method: iso.11260Unit: cmolc.kg\n21882\n17.31\n15.19\n0.00\n7.50\n13.50\n22.80\n234.00\n\n\nec_iso.11265_ds.mElectrical Conductivity, ISO 11265Method: iso.11265Unit: ds.m\n22066\n0.26\n0.33\n0.00\n0.10\n0.17\n0.28\n9.69",
+    "text": "Soil laboratory information\n\nTotal samples: 43,925\nProperties available (original): 13\nProperties standardized (OSSL): 13 — summarized in Table 1 below\nCategories: physical, chemical, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\ncf_iso.11464_w.pctCoarse Fragments, ISO 11464Method: iso.11464Unit: w.pct\n17601\n14.89\n13.09\n0.00\n5.00\n11.00\n21.00\n92.00\n\n\nclay.tot_iso.11277_w.pctClay, ISO 11277Method: iso.11277Unit: w.pct\n17628\n19.69\n14.63\n0.00\n8.00\n17.00\n28.00\n96.00\n\n\nsilt.tot_iso.11277_w.pctSilt, Total, ISO 11277Method: iso.11277Unit: w.pct\n17630\n37.24\n19.06\n0.00\n24.00\n38.00\n51.00\n93.00\n\n\nsand.tot_iso.11277_w.pctSand, Total, ISO 11277Method: iso.11277Unit: w.pct\n17628\n38.78\n26.01\n0.00\n16.00\n36.00\n59.00\n100.00\n\n\nph.h2o_iso.10390_indexpH, 1:5 Soil-Water Suspension, ISO 10390Method: iso.10390Unit: index\n2\n6.19\n1.34\n3.17\n5.02\n6.18\n7.48\n10.37\n\n\nph.cacl2_iso.10390_indexpH, 1:5 Soil-CaCl2 Suspension, ISO 10390Method: iso.10390Unit: index\n2\n5.71\n1.40\n2.57\n4.50\n5.76\n7.10\n10.00\n\n\noc_iso.10694_w.pctOrganic Carbon, ISO 10694Method: iso.10694Unit: w.pct\n249\n4.52\n8.22\n0.01\n1.26\n2.02\n3.79\n58.68\n\n\ncaco3_iso.10693_w.pctCarbonate, ISO 10693Method: iso.10693Unit: w.pct\n697\n5.44\n13.05\n0.00\n0.00\n0.10\n1.60\n97.60\n\n\nn.tot_iso.11261_w.pctNitrogen, Total NCS, ISO 11261Method: iso.11261Unit: w.pct\n7\n0.30\n0.36\n0.00\n0.12\n0.18\n0.30\n3.86\n\n\np.ext_iso.11263_mg.kgPhosphorus, Extractable, ISO 11263Method: iso.11263Unit: mg.kg\n697\n31.21\n32.69\n0.00\n10.90\n22.70\n43.00\n1366.40\n\n\nk.ext_usda.a725_cmolc.kgPotassium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a725Unit: cmolc.kg\n2\n0.51\n0.59\n0.00\n0.20\n0.37\n0.64\n25.66\n\n\ncec_iso.11260_cmolc.kgCEC, BaCl2, soil's own pH, ISO 11260Method: iso.11260Unit: cmolc.kg\n21882\n17.31\n15.19\n0.00\n7.50\n13.50\n22.80\n234.00\n\n\nec_iso.11265_ds.mElectrical Conductivity, ISO 11265Method: iso.11265Unit: ds.m\n22066\n0.26\n0.33\n0.00\n0.10\n0.17\n0.28\n9.69",
     "crumbs": [
       "← Back to listed libraries",
       "LUCAS"
@@ -697,7 +697,7 @@
     "href": "LUCAS.html#mir",
     "title": "LUCAS",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 600-4000\nStandardized range: 628-4000\nInstrument: Vertex 70 FT-IR\nManufacturer: Bruker Optics\nScan accessory: Not available\nSample preparation: Air-dried, finely ground &lt;0.2 mm\nAdditional info: KBr beamsplitter; Gold mirror; Mirror background\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 600-4000\nStandardized range: 628-4000\nInstrument: Vertex 70 FT-IR\nManufacturer: Bruker Optics\nScan accessory: Pike AutoDiff\nSample preparation: Air-dried, finely ground &lt;0.2 mm\nAdditional info: KBr beamsplitter; Gold mirror; Mirror background\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "LUCAS"
@@ -708,7 +708,7 @@
     "href": "LUCAS.html#vnir",
     "title": "LUCAS",
     "section": " VNIR",
-    "text": "VNIR\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 400-2500\nInstrument: FOSS NIRS XDS RapidContent Analyzer\nManufacturer: FOSS NIRSystems Inc., Laurel, MD/ Denmark\nInstrument co-scans: Not available\nScan repeats: Not available\nScan accessory: Not available\nOriginal resolution: 2\nSample preparation: Air-dried, Sieved &lt;2 mm\nAdditional info: Si (400–1100 nm) and PbS (1100–2500 nm) detectors\n\n\nVNIR plot",
+    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 400-2500\nInstrument: FOSS NIRS XDS RapidContent Analyzer\nManufacturer: FOSS NIRSystems Inc., Laurel, MD/ Denmark\nInstrument co-scans: Not available\nScan repeats: Not available\nScan accessory: Black box\nOriginal resolution: 2\nSample preparation: Air-dried, Sieved &lt;2 mm\nAdditional info: Si (400–1100 nm) and PbS (1100–2500 nm) detectors\n\n\nVNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "LUCAS"
@@ -785,7 +785,7 @@
     "href": "MTQ.html#nir",
     "title": "MTQ",
     "section": " NIR",
-    "text": "NIR\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 1100-2498\nInstrument: Foss NIRSystems 5000 spectrophotometer\nManufacturer: Laurel, MD, USA; 2003\nInstrument co-scans: 32\nScan repeats: 2\nScan accessory: Not available\nOriginal resolution: 2 nm\nSample preparation: Oven-dried, Sieved &lt; 2mm\nAdditional info: Not available\n\n\nNIR plot",
+    "text": "NIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 1100-2498\nInstrument: Foss NIRSystems 5000 spectrophotometer\nManufacturer: Laurel, MD, USA; 2003\nInstrument co-scans: 32\nScan repeats: 2\nScan accessory: Ring cup with quartz bottom (Feeder system)\nOriginal resolution: 2 nm\nSample preparation: Oven-dried, Sieved &lt; 2mm\nAdditional info: Not available\n\n\nNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "MTQ"
@@ -862,7 +862,7 @@
     "href": "SRB.html#mir",
     "title": "SRB",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: Nexus 670 FT-IR\nManufacturer: Thermo-Nicolet\nScan accessory: Not available\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: DTGS detector\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: Nexus 670 FT-IR\nManufacturer: Thermo-Nicolet\nScan accessory: Not available\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: DTGS detector\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "SRB"
@@ -939,7 +939,7 @@
     "href": "HLF_CAN.html#mir",
     "title": "HLF_CAN",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: TENSOR 27 Spectrophotometer\nManufacturer: Bruker (Fällanden, Switzerland)\nScan accessory: Not available\nSample preparation: Oven dried, Sieved &lt; 2 mm\nAdditional info: Original raw spectra (imported) and KBr background-corrected spectra\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: TENSOR 27 Spectrophotometer\nManufacturer: Bruker (Fällanden, Switzerland)\nScan accessory: Not available\nSample preparation: Oven dried, Sieved &lt; 2 mm\nAdditional info: Original raw spectra (imported) and KBr background-corrected spectra\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "HLF_CAN"
@@ -1016,7 +1016,7 @@
     "href": "HSDOS.html#vnir",
     "title": "HSDOS",
     "section": " VNIR",
-    "text": "VNIR\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: FieldSpec 4 Spectroradiometer\nManufacturer: ASD (currently Malvern Panalytical)\nInstrument co-scans: 50\nScan repeats: 5\nScan accessory: Not available\nOriginal resolution: 3\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available\n\n\nVNIR plot",
+    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: FieldSpec 4 Spectroradiometer\nManufacturer: ASD (currently Malvern Panalytical)\nInstrument co-scans: 50\nScan repeats: 5\nScan accessory: ASD Contact Probe (internal Halogen bulb)\nOriginal resolution: 3\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available\n\n\nVNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "HSDOS"
@@ -1093,7 +1093,7 @@
     "href": "AFSIS2.html#mir",
     "title": "AFSIS2",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 602-4000\nStandardized range: 600-4000\nInstrument: Tensor 27 & Alpha I ZnSe\nManufacturer: Bruker Optics\nScan accessory: Not available\nSample preparation: Finely ground &lt;0.1 mm\nAdditional info: Not available\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 602-4000\nStandardized range: 600-4000\nInstrument: Tensor 27 & Alpha I ZnSe\nManufacturer: Bruker Optics\nScan accessory: HTS-XT & DRIFT accessory\nSample preparation: Finely ground &lt;0.1 mm\nAdditional info: Not available\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "AFSIS2"
@@ -1159,7 +1159,7 @@
     "href": "ICRAF_ISRIC.html#soil-laboratory-information",
     "title": "ICRAF_ISRIC",
     "section": " Soil laboratory information",
-    "text": "Soil laboratory information\n\nTotal samples: 4,073\nProperties available (original): 46\nProperties standardized (OSSL): 18 — summarized in Table 1 below\nCategories: physical, chemical, hydrological, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nph.h2o_usda.a268_indexpH, 1:1 Soil-Water SuspensionMethod: usda.a268Unit: index\n297\n6.11\n1.40\n3.00\n5.00\n5.90\n7.10\n10.50\n\n\nph.cacl2_usda.a481_indexpH, 1:2 Soil-CaCl2 SuspensionMethod: usda.a481Unit: index\n4039\n4.99\n1.26\n3.10\n4.00\n5.10\n6.05\n7.90\n\n\ncaco3_usda.a54_w.pctCarbonate, &lt;2mm FractionMethod: usda.a54Unit: w.pct\n2956\n9.94\n16.41\n0.00\n1.00\n2.60\n11.60\n99.70\n\n\noc_usda.c1059_w.pctOrganic Carbon, Total C without CaCO3, N prepMethod: usda.c1059Unit: w.pct\n373\n1.20\n2.66\n0.00\n0.22\n0.48\n1.20\n60.00\n\n\nca.ext_usda.a722_cmolc.kgCalcium, Extractable, NH4OAcMethod: usda.a722Unit: cmolc.kg\n401\n10.81\n15.58\n0.00\n0.40\n3.60\n14.90\n168.20\n\n\nmg.ext_usda.a724_cmolc.kgMagnesium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a724Unit: cmolc.kg\n393\n2.81\n4.69\n0.00\n0.20\n1.00\n3.40\n68.00\n\n\nna.ext_usda.a726_cmolc.kgSodium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a726Unit: cmolc.kg\n409\n0.62\n2.39\n0.00\n0.00\n0.10\n0.30\n31.60\n\n\nk.ext_usda.a725_cmolc.kgPotassium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a725Unit: cmolc.kg\n399\n0.33\n0.57\n0.00\n0.10\n0.20\n0.40\n9.80\n\n\nacidity_usda.a795_cmolc.kgAcidity, BaCl2-TEA Extractable, pH 8.2Method: usda.a795Unit: cmolc.kg\n2562\n1.99\n2.95\n0.00\n0.20\n0.90\n2.60\n25.50\n\n\nal.ext_usda.a69_cmolc.kgAluminum, Extractable, KClMethod: usda.a69Unit: cmolc.kg\n2532\n1.58\n2.56\n0.00\n0.00\n0.70\n2.10\n25.30\n\n\ncec_usda.a723_cmolc.kgCEC, pH 7.0, NH4OAc, 2M KCl displacementMethod: usda.a723Unit: cmolc.kg\n419\n16.27\n16.41\n0.00\n5.20\n11.50\n21.60\n189.60\n\n\nsand.tot_usda.c60_w.pctSand, Total, S prepMethod: usda.c60Unit: w.pct\n392\n38.24\n29.15\n0.00\n11.10\n33.00\n61.20\n99.60\n\n\nsilt.tot_usda.c62_w.pctSilt, Total, S prepMethod: usda.c62Unit: w.pct\n339\n29.22\n20.39\n0.00\n13.00\n25.00\n42.50\n256.00\n\n\nclay.tot_usda.a334_w.pctClayMethod: usda.a334Unit: w.pct\n333\n32.60\n22.27\n0.00\n14.70\n30.10\n47.00\n96.80\n\n\nbd_usda.a21_g.cm3Bulk Density, &lt;2 mm fraction, CoreMethod: usda.a21Unit: g.cm3\n3074\n1.26\n0.29\n0.28\n1.10\n1.31\n1.48\n1.89\n\n\nwr.10kPa_usda.a8_w.pctWater Retention, 1/10 Bar (10 kPa), ClodMethod: usda.a8Unit: w.pct\n3145\n36.77\n13.27\n4.40\n28.60\n36.45\n45.62\n77.30\n\n\nwr.33kPa_usda.a9_w.pctWater Retention, 1/3 Bar (33 kPa), ClodMethod: usda.a9Unit: w.pct\n3150\n31.82\n13.34\n2.30\n22.90\n31.40\n41.50\n71.40\n\n\nwr.1500kPa_usda.a417_w.pctWater Retention, 15 Bar (1500 kPa)Method: usda.a417Unit: w.pct\n3102\n21.74\n11.44\n0.10\n12.90\n21.90\n29.55\n56.40",
+    "text": "Soil laboratory information\n\nTotal samples: 4,073\nProperties available (original): 46\nProperties standardized (OSSL): 18 — summarized in Table 1 below\nCategories: physical, chemical, hydrological, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nph.h2o_usda.a268_indexpH, 1:1 Soil-Water SuspensionMethod: usda.a268Unit: index\n297\n6.11\n1.40\n3.00\n5.00\n5.90\n7.10\n10.50\n\n\nph.cacl2_usda.a481_indexpH, 1:2 Soil-CaCl2 SuspensionMethod: usda.a481Unit: index\n4039\n4.99\n1.26\n3.10\n4.00\n5.10\n6.05\n7.90\n\n\ncaco3_usda.a54_w.pctCarbonate, &lt;2mm FractionMethod: usda.a54Unit: w.pct\n2956\n9.94\n16.41\n0.00\n1.00\n2.60\n11.60\n99.70\n\n\noc_usda.c1059_w.pctOrganic Carbon, Total C without CaCO3, N prepMethod: usda.c1059Unit: w.pct\n373\n1.20\n2.66\n0.00\n0.22\n0.48\n1.20\n60.00\n\n\nca.ext_usda.a722_cmolc.kgCalcium, Extractable, NH4OAcMethod: usda.a722Unit: cmolc.kg\n401\n10.81\n15.58\n0.00\n0.40\n3.60\n14.90\n168.20\n\n\nmg.ext_usda.a724_cmolc.kgMagnesium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a724Unit: cmolc.kg\n393\n2.81\n4.69\n0.00\n0.20\n1.00\n3.40\n68.00\n\n\nna.ext_usda.a726_cmolc.kgSodium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a726Unit: cmolc.kg\n409\n0.62\n2.39\n0.00\n0.00\n0.10\n0.30\n31.60\n\n\nk.ext_usda.a725_cmolc.kgPotassium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a725Unit: cmolc.kg\n399\n0.33\n0.57\n0.00\n0.10\n0.20\n0.40\n9.80\n\n\nacidity_usda.a795_cmolc.kgAcidity, BaCl2-TEA Extractable, pH 8.2Method: usda.a795Unit: cmolc.kg\n2562\n1.99\n2.95\n0.00\n0.20\n0.90\n2.60\n25.50\n\n\nal.ext_usda.a69_cmolc.kgAluminum, Extractable, KClMethod: usda.a69Unit: cmolc.kg\n2532\n1.58\n2.56\n0.00\n0.00\n0.70\n2.10\n25.30\n\n\ncec_usda.a723_cmolc.kgCEC, pH 7.0, NH4OAc, 2M KCl displacementMethod: usda.a723Unit: cmolc.kg\n419\n16.27\n16.41\n0.00\n5.20\n11.50\n21.60\n189.60\n\n\nsand.tot_usda.c60_w.pctSand, Total, S prepMethod: usda.c60Unit: w.pct\n392\n38.24\n29.15\n0.00\n11.10\n33.00\n61.20\n99.60\n\n\nsilt.tot_usda.c62_w.pctSilt, Total, S prepMethod: usda.c62Unit: w.pct\n339\n29.22\n20.39\n0.00\n13.00\n25.00\n42.50\n256.00\n\n\nclay.tot_usda.a334_w.pctClayMethod: usda.a334Unit: w.pct\n333\n32.60\n22.27\n0.00\n14.70\n30.10\n47.00\n96.80\n\n\nbd_usda.a21_g.cm3Bulk Density, &lt;2 mm fraction, CoreMethod: usda.a21Unit: g.cm3\n3074\n1.26\n0.29\n0.28\n1.10\n1.31\n1.48\n1.89\n\n\nwr.10kPa_usda.a8_w.pctWater Retention, 1/10 Bar (10 kPa), ClodMethod: usda.a8Unit: w.pct\n3145\n36.77\n13.27\n4.40\n28.60\n36.45\n45.62\n77.30\n\n\nwr.50kPa_usda.a9_w.pct\n3150\n31.82\n13.34\n2.30\n22.90\n31.40\n41.50\n71.40\n\n\nwr.1500kPa_usda.a417_w.pctWater Retention, 15 Bar (1500 kPa)Method: usda.a417Unit: w.pct\n3102\n21.74\n11.44\n0.10\n12.90\n21.90\n29.55\n56.40",
     "crumbs": [
       "← Back to listed libraries",
       "ICRAF_ISRIC"
@@ -1170,7 +1170,7 @@
     "href": "ICRAF_ISRIC.html#mir",
     "title": "ICRAF_ISRIC",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: FTS-7000 FT-IR Spectrometer\nManufacturer: Bruker Optics (Karsruhe, Germany)\nScan accessory: Not available\nSample preparation: Air-dried, finely ground &lt;0.1 mm\nAdditional info: Liquid N2–cooled HgCdTe detector; Al as the reference material\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: FTS-7000 FT-IR Spectrometer\nManufacturer: Bruker Optics (Karsruhe, Germany)\nScan accessory: Pike AutoDiff\nSample preparation: Air-dried, finely ground &lt;0.1 mm\nAdditional info: Liquid N2–cooled HgCdTe detector; Al as the reference material\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "ICRAF_ISRIC"
@@ -1181,7 +1181,7 @@
     "href": "ICRAF_ISRIC.html#vnir",
     "title": "ICRAF_ISRIC",
     "section": " VNIR",
-    "text": "VNIR\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: FieldSpec FR Spectroradiometer\nManufacturer: Analytical Spectral Devices (Boulder, CO, USA)\nInstrument co-scans: 25\nScan repeats: 2\nScan accessory: Not available\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Aluminum reflectors; Ten white reference spectra were recorded using calibrated spectralon\n\n\nVNIR plot",
+    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: FieldSpec FR Spectroradiometer\nManufacturer: Analytical Spectral Devices (Boulder, CO, USA)\nInstrument co-scans: 25\nScan repeats: 2\nScan accessory: High-intensity source probe\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Aluminum reflectors; Ten white reference spectra were recorded using calibrated spectralon\n\n\nVNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "ICRAF_ISRIC"
@@ -1258,7 +1258,7 @@
     "href": "Neospectra.html#nir",
     "title": "Neospectra",
     "section": " NIR",
-    "text": "NIR\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 1350-2550\nInstrument: Neospectra\nManufacturer: SiWare\nInstrument co-scans: Not available\nScan repeats: 6\nScan accessory: Not available\nOriginal resolution: 8-16 cm-1\nSample preparation: Oven-dried, Sieved &lt; 2mm\nAdditional info: Not available\n\n\nNIR plot",
+    "text": "NIR\n\nAcquisition mode: FT-NIR Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 1350-2550\nInstrument: Neospectra\nManufacturer: SiWare\nInstrument co-scans: Not available\nScan repeats: 6\nScan accessory: Direct contact\nOriginal resolution: 8-16 cm-1\nSample preparation: Oven-dried, Sieved &lt; 2mm\nAdditional info: Not available\n\n\nNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "Neospectra"
@@ -1335,7 +1335,7 @@
     "href": "NEON.html#mir",
     "title": "NEON",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 628-4000\nInstrument: Vertex 70 FT-IR & Vertex 70 FT-IR\nManufacturer: Bruker Optics\nScan accessory: Not available\nSample preparation: Air-dried, finely ground &lt; 80mesh\nAdditional info: MCT (mercury cadmium telluride) detector & KBr beamsplitter; Gold mirror; Mirror background\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 628-4000\nInstrument: Vertex 70 FT-IR & Vertex 70 FT-IR\nManufacturer: Bruker Optics\nScan accessory: HTS-XT & Pike AutoDiff\nSample preparation: Air-dried, finely ground &lt; 80mesh\nAdditional info: MCT (mercury cadmium telluride) detector & KBr beamsplitter; Gold mirror; Mirror background\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "NEON"
@@ -1412,7 +1412,7 @@
     "href": "PF_NZL.html#mir",
     "title": "PF_NZL",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 400-8000\nStandardized range: 600-4000\nInstrument: Invenio-S FT-IR\nManufacturer: Bruker Optics\nScan accessory: Not available\nSample preparation: Ground 180s (Zirconia mill)\nAdditional info: Liquid nitrogen cooled mercury cadmium telluride detector; sintered gold plate as the background\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-8000\nStandardized range: 600-4000\nInstrument: Invenio-S FT-IR\nManufacturer: Bruker Optics\nScan accessory: HTS-XT\nSample preparation: Ground 180s (Zirconia mill)\nAdditional info: Liquid nitrogen cooled mercury cadmium telluride detector; sintered gold plate as the background\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "PF_NZL"
@@ -1489,7 +1489,7 @@
     "href": "AUT.html#nir",
     "title": "AUT",
     "section": " NIR",
-    "text": "NIR\n\nAcquisition mode: Not available\nIntensity: reflectance\nOriginal range: 680-2500\nInstrument: SpectraStar™ XL\nManufacturer: Unity Scientific (Brookfield, CT, USA)\nInstrument co-scans: 24\nScan repeats: 2\nScan accessory: Not available\nOriginal resolution: 1 nm\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: A mattesurface gold-plated metal reflector was used as an internal reference; The standard used was White Sand (Lucky Bay, Australia), which enables harmonizing results from different near-infrared spectrometers used within the ProbeField project.\n\n\nNIR plot",
+    "text": "NIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 680-2500\nInstrument: SpectraStar™ XL\nManufacturer: Unity Scientific (Brookfield, CT, USA)\nInstrument co-scans: 24\nScan repeats: 2\nScan accessory: 8.5 cm sample cup with reflective lid\nOriginal resolution: 1 nm\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: A mattesurface gold-plated metal reflector was used as an internal reference; The standard used was White Sand (Lucky Bay, Australia), which enables harmonizing results from different near-infrared spectrometers used within the ProbeField project.\n\n\nNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "AUT"
@@ -1566,7 +1566,7 @@
     "href": "GEMAS.html#mir",
     "title": "GEMAS",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: Not available\nIntensity: absorbance\nOriginal range: 450-7800\nStandardized range: 600-4000\nInstrument: Spectrum-One™ FT-IR Spectrometer\nManufacturer: PerkinElmer Inc. (MA, USA)\nScan accessory: Not available\nSample preparation: Oven dried, Sieved&lt;2mm\nAdditional info: extended range KBr beam-splitter, a high intensity ceramic source, a deuterium triglycine-sulphate (DTGS) Peltier-cooled detector; Background reference scans were carried out using silicon carbide discs (PerkinElmer Life and Analytical Sciences Pty Ltd., Australia)\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 450-7800\nStandardized range: 600-4000\nInstrument: Spectrum-One™ FT-IR Spectrometer\nManufacturer: PerkinElmer Inc. (MA, USA)\nScan accessory: Pike AutoDiff 60-sample auto-sampler\nSample preparation: Oven dried, Sieved&lt;2mm\nAdditional info: extended range KBr beam-splitter, a high intensity ceramic source, a deuterium triglycine-sulphate (DTGS) Peltier-cooled detector; Background reference scans were carried out using silicon carbide discs (PerkinElmer Life and Analytical Sciences Pty Ltd., Australia)\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "GEMAS"

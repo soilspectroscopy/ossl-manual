@@ -69,6 +69,14 @@ ICRAF_ISRIC,ossl_soilsite_v1.3.csv.gz,https://storage.googleapis.com/soilspec4gg
 ICRAF_ISRIC,ossl_soilsite_v1.3.parquet,https://storage.googleapis.com/soilspec4gg-public/datasets/ICRAF_ISRIC/ossl_soilsite_v1.3.parquet
 ICRAF_ISRIC,ossl_visnir_v1.3.csv.gz,https://storage.googleapis.com/soilspec4gg-public/datasets/ICRAF_ISRIC/ossl_visnir_v1.3.csv.gz
 ICRAF_ISRIC,ossl_visnir_v1.3.parquet,https://storage.googleapis.com/soilspec4gg-public/datasets/ICRAF_ISRIC/ossl_visnir_v1.3.parquet
+KSSL,ossl_mir_v1.3.csv.gz,https://storage.googleapis.com/soilspec4gg-public/datasets/KSSL/ossl_mir_v1.3.csv.gz
+KSSL,ossl_mir_v1.3.parquet,https://storage.googleapis.com/soilspec4gg-public/datasets/KSSL/ossl_mir_v1.3.parquet
+KSSL,ossl_soillab_v1.3.csv.gz,https://storage.googleapis.com/soilspec4gg-public/datasets/KSSL/ossl_soillab_v1.3.csv.gz
+KSSL,ossl_soillab_v1.3.parquet,https://storage.googleapis.com/soilspec4gg-public/datasets/KSSL/ossl_soillab_v1.3.parquet
+KSSL,ossl_soilsite_v1.3.csv.gz,https://storage.googleapis.com/soilspec4gg-public/datasets/KSSL/ossl_soilsite_v1.3.csv.gz
+KSSL,ossl_soilsite_v1.3.parquet,https://storage.googleapis.com/soilspec4gg-public/datasets/KSSL/ossl_soilsite_v1.3.parquet
+KSSL,ossl_visnir_v1.3.csv.gz,https://storage.googleapis.com/soilspec4gg-public/datasets/KSSL/ossl_visnir_v1.3.csv.gz
+KSSL,ossl_visnir_v1.3.parquet,https://storage.googleapis.com/soilspec4gg-public/datasets/KSSL/ossl_visnir_v1.3.parquet
 LF_BRA,ossl_soillab_v1.3.csv.gz,https://storage.googleapis.com/soilspec4gg-public/datasets/LF_BRA/ossl_soillab_v1.3.csv.gz
 LF_BRA,ossl_soillab_v1.3.parquet,https://storage.googleapis.com/soilspec4gg-public/datasets/LF_BRA/ossl_soillab_v1.3.parquet
 LF_BRA,ossl_soilsite_v1.3.csv.gz,https://storage.googleapis.com/soilspec4gg-public/datasets/LF_BRA/ossl_soilsite_v1.3.csv.gz

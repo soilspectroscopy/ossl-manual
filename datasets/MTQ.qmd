@@ -93,14 +93,14 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> NIR
 
-- **Acquisition mode:** Not available
+- **Acquisition mode:** Diffuse Reflectance
 - **Intensity:** reflectance
 - **Original range:** 1100-2498
 - **Instrument:** Foss NIRSystems 5000 spectrophotometer
 - **Manufacturer:** Laurel, MD, USA; 2003
 - **Instrument co-scans:** 32
 - **Scan repeats:** 2
-- **Scan accessory:** Not available
+- **Scan accessory:** Ring cup with quartz bottom (Feeder system)
 - **Original resolution:** 2 nm
 - **Sample preparation:** Oven-dried, Sieved < 2mm
 - **Additional info:** Not available

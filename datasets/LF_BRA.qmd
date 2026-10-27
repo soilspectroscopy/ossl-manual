@@ -93,14 +93,14 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> VNIR
 
-- **Acquisition mode:** Not available
+- **Acquisition mode:** Diffuse Reflectance
 - **Intensity:** reflectance
 - **Original range:** 431-2153
 - **Instrument:** Veris MSP3 (USB4000 & C9914GB detectors)
 - **Manufacturer:** Veris Technologies (Salina, KS, USA)
 - **Instrument co-scans:** Not available
 - **Scan repeats:** 3
-- **Scan accessory:** Not available
+- **Scan accessory:** Veris Sample Holder (Light-shielded)
 - **Original resolution:** 5
 - **Sample preparation:** Air-dried, Sieved < 2 mm
 - **Additional info:** Not available

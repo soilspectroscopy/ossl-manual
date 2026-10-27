@@ -93,14 +93,14 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> NIR
 
-- **Acquisition mode:** Not available
+- **Acquisition mode:** Diffuse Reflectance
 - **Intensity:** reflectance
 - **Original range:** 1400-2500
 - **Instrument:** SpectraStar XT
 - **Manufacturer:** Unity  Scientific, Westborough, MA, USA
 - **Instrument co-scans:** 12
 - **Scan repeats:** 12
-- **Scan accessory:** Not available
+- **Scan accessory:** Ring-shaped sample holder (50 mm diameter)
 - **Original resolution:** 1 nm
 - **Sample preparation:** Air-dried, Sieved < 2 mm
 - **Additional info:** Equipped with UCal calibration software

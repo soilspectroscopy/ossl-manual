@@ -93,7 +93,7 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR
 
-- **Acquisition mode:** Not available
+- **Acquisition mode:** DRIFT
 - **Intensity:** absorbance
 - **Original range:** 400-4000
 - **Standardized range:** 600-4000
