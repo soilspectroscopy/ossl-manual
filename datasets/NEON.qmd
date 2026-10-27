@@ -89,13 +89,13 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR
 
-- **Acquisition mode:** Not available
+- **Acquisition mode:** DRIFT
 - **Intensity:** absorbance
 - **Original range:** 400-4000
 - **Standardized range:** 628-4000
 - **Instrument:** Vertex 70 FT-IR & Vertex 70 FT-IR
 - **Manufacturer:** Bruker Optics
-- **Scan accessory:** Not available
+- **Scan accessory:** HTS-XT &  Pike AutoDiff
 - **Sample preparation:** Air-dried, finely ground < 80mesh
 - **Additional info:** MCT (mercury cadmium telluride) detector & KBr beamsplitter; Gold mirror; Mirror background
 

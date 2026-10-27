@@ -95,7 +95,7 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR
 
-- **Acquisition mode:** Not available
+- **Acquisition mode:** DRIFT
 - **Intensity:** absorbance
 - **Original range:** 600-4000
 - **Standardized range:** 600-4000
@@ -111,14 +111,14 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> VNIR
 
-- **Acquisition mode:** Not available
+- **Acquisition mode:** Diffuse Reflectance
 - **Intensity:** reflectance
 - **Original range:** 350-2500
 - **Instrument:** FieldSpec 3 Spectroradiometer
 - **Manufacturer:** Analytical Spectral Devices (ASD, Boulder, CO)
 - **Instrument co-scans:** 100
 - **Scan repeats:** 2
-- **Scan accessory:** Not available
+- **Scan accessory:** Fiber-optic cable with external 50-W halogen lamps
 - **Original resolution:** 1
 - **Sample preparation:** Air-dried, Sieved < 2 mm
 - **Additional info:** The sensor is calibrated using a white Spectralon plate (Lab-sphere, North Sutton, NH, USA) representing a 100% reflectance standard

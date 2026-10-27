@@ -93,7 +93,7 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> VNIR
 
-- **Acquisition mode:** Not available
+- **Acquisition mode:** Diffuse Reflectance
 - **Intensity:** reflectance
 - **Original range:** 350-2500
 - **Instrument:** ASD FieldSpec Pro & PSR+ Spectrometer

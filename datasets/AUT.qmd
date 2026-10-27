@@ -93,14 +93,14 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> NIR
 
-- **Acquisition mode:** Not available
+- **Acquisition mode:** Diffuse Reflectance
 - **Intensity:** reflectance
 - **Original range:** 680-2500
 - **Instrument:** SpectraStar™ XL
 - **Manufacturer:** Unity Scientific (Brookfield, CT, USA)
 - **Instrument co-scans:** 24
 - **Scan repeats:** 2
-- **Scan accessory:** Not available
+- **Scan accessory:** 8.5 cm sample cup with reflective lid
 - **Original resolution:** 1 nm
 - **Sample preparation:** Air-dried, Sieved < 2 mm
 - **Additional info:** A mattesurface gold-plated metal reflector was used as an internal reference; The standard used was White Sand (Lucky Bay, Australia), which enables harmonizing results from different near-infrared spectrometers used within the ProbeField project.

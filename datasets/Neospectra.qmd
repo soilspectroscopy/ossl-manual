@@ -95,14 +95,14 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> NIR
 
-- **Acquisition mode:** Not available
+- **Acquisition mode:** FT-NIR Diffuse Reflectance
 - **Intensity:** reflectance
 - **Original range:** 1350-2550
 - **Instrument:** Neospectra
 - **Manufacturer:** SiWare
 - **Instrument co-scans:** Not available
 - **Scan repeats:** 6
-- **Scan accessory:** Not available
+- **Scan accessory:** Direct contact
 - **Original resolution:** 8-16 cm-1
 - **Sample preparation:** Oven-dried, Sieved < 2mm
 - **Additional info:** Not available

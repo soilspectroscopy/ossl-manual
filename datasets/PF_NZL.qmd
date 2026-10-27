@@ -93,13 +93,13 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 
 ## <i class="bi bi-soundwave ossl-section-icon" aria-hidden="true"></i> MIR
 
-- **Acquisition mode:** Not available
+- **Acquisition mode:** DRIFT
 - **Intensity:** absorbance
 - **Original range:** 400-8000
 - **Standardized range:** 600-4000
 - **Instrument:** Invenio-S FT-IR
 - **Manufacturer:** Bruker Optics
-- **Scan accessory:** Not available
+- **Scan accessory:** HTS-XT
 - **Sample preparation:** Ground 180s (Zirconia mill)
 - **Additional info:** Liquid nitrogen cooled mercury cadmium telluride detector; sintered gold plate as the background
 

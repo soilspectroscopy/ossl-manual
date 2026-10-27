@@ -7,7 +7,7 @@ library(colorspace)
 
 # ---------- 1. Authorize and read the Google Sheet ----------
 # gs4_auth(email = "rzhi@woodwellclimate.org")
-# gs4_auth(email = "jsafanelli@woodwellclimate.org")
+gs4_auth(email = "jsafanelli@woodwellclimate.org")
 
 sheet_id <- "19PuiJx1mzNaFff4odODNzS6ZB72lcz9UbcVPWCt8Gz8"
 raw_data <- read_sheet(sheet_id, sheet = "Access")

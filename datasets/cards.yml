@@ -2,8 +2,8 @@
   title: KSSL
   description: The USDA-NRCS NCSS Kellogg Soil Survey Laboratory (KSSL) soil libraries
     from the United States and other territories
-  sample_size: 80,000+
-  version: snapshot Jul 2022
+  sample_size: 60,000+
+  version: Snapshot Jul 2025
   extent: national
   has_vnir: yes
   has_nir: no
