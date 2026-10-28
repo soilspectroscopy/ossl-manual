@@ -1,8 +1,8 @@
-# Database access {#sec-db-access}
+# Database Access {#sec-db-access}
 
 The OSSL is distributed through Google Cloud Storage bucket, MongoDB (deprecated), and [API (experimental)](https://api.soilspectroscopy.org/__docs__/#/).
 
-Google Cloud storage bucket hosts static files in two formats: compressed csv (`.csv.gz`) and `qs` (from qs R package). The `csv.gz` is intended to work across different platforms, while `qs` is the preferred format for being used within R.
+Google Cloud storage bucket hosts static files in three formats: compressed csv (`.csv.gz`), `parquet`, and `qs` (used in v1.2). The `csv.gz` and `parquet` formats are intended to work across different platforms, while `qs` is deprecated.
 
 MongoDB (deprecated) and the API can be used to construct requests to fetch data with specific filters (e.g. region, dataset source, etc.), differently from the static files where you need to download the whole database.
 
@@ -12,17 +12,21 @@ In the OSSL, a original dataset may share a common id across the VisNIR and MIR 
 
 ## Google Cloud Storage
 
-The datasets in the public bucket can be updated without notice. You can both run the link on a browser (or just click on it) to download the files, or provide the URLs in a programming language to automatically fetch them.
+You can both run the link on a browser (or just click on it) to download the files, or provide the URLs in a programming language to automatically fetch them.
 
-Use the following URLs to access the whole database levels:
+The most recent (v1.3), individualized processed files and their respective URLs are provided in the [**Soil spectral libraries**](#sec-libraries) section, where you need to navigate to a specific dataset card to pull the links.
+
+A comprehensive list of the Cloud Storage v1.3 files is also archived on [GitHub](tabular/ossl_individual_datasets_urls_v1.3.csv).
+
+Use the following URLs to access the previous v1.2 database files:
 
 **Compressed csv**  
 <https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.csv.gz>  
 <https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.csv.gz>  
 
-**qs format (preferred in R)**  
-<https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.qs>  
-<https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.qs>  
+<!-- **qs format (preferred in R)**   -->
+<!-- <https://storage.googleapis.com/soilspec4gg-public/ossl_all_L0_v1.2.qs>   -->
+<!-- <https://storage.googleapis.com/soilspec4gg-public/ossl_all_L1_v1.2.qs>   -->
 
 Use these alternative URLs to access the OSSL as separate files:
 
@@ -33,26 +37,24 @@ Use these alternative URLs to access the OSSL as separate files:
 <https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.csv.gz>  
 <https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.csv.gz>  
 
-**qs format (preferred in R)**  
-<https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.qs>  
-<https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.qs>  
-<https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs>  
-<https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.qs>  
-<https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.qs>  
+<!-- **qs format (preferred in R)**   -->
+<!-- <https://storage.googleapis.com/soilspec4gg-public/ossl_soilsite_L0_v1.2.qs>   -->
+<!-- <https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L0_v1.2.qs>   -->
+<!-- <https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs>   -->
+<!-- <https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.qs>   -->
+<!-- <https://storage.googleapis.com/soilspec4gg-public/ossl_visnir_L0_v1.2.qs>   -->
 
 Example with R. Use `dataset.code_ascii_txt` and `id.layer_uuid_txt.` as joining columns:
 ```{r, eval = FALSE}
 ## Packages
-library("tidyverse")
-library("curl")
-library("qs") # >=0.25.5
+library("readr")
 
 ## Separate files
-soil <-  "https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.qs"
-soil <- qread_url(soil)
+soil <-  "https://storage.googleapis.com/soilspec4gg-public/ossl_soillab_L1_v1.2.csv.gz"
+soil <- read_csv(soil)
 
-mir <- "https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.qs"
-mir <- qread_url(mir)
+mir <- "https://storage.googleapis.com/soilspec4gg-public/ossl_mir_L0_v1.2.csv.gz"
+mir <- read_csv(mir)
 
 ## Join
 ossl <- left_join(mir, soil, by = c("dataset.code_ascii_txt", "id.layer_uuid_txt"))

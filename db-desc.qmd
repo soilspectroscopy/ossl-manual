@@ -1,5 +1,5 @@
 ---
-title: "Database description"
+title: "Database Description"
 format:
   html:
     toc: false

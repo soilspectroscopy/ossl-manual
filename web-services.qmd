@@ -1,4 +1,19 @@
-# Web services {#sec-web-services}
+# Online Tools {#sec-web-services}
+
+## [OSSL Chemometrics](https://soilspectroscopy.github.io/ossl-chemometrics/)
+
+This application streamlines the exploration of the Open Soil Spectral Library (OSSL) for chemometric modeling, letting users easily adjust model parameters and data subsets.
+
+Download spectral libraries, prepare your dataset, and try the most common chemometric methods directly in your browser. All calculations run locally on your computer powered by [**mdatools**](https://mdatools.com/) backend.
+
+```{r chemometrics, echo=FALSE, fig.cap="Chemometrics made easy with the OSSL.", out.width="100%"}
+knitr::include_graphics("img/chemometrics.png")
+```
+
+```{r mdatools, echo=FALSE, fig.cap="Online chemometrics powered by mdatools.", out.width="100%"}
+knitr::include_graphics("img/mdatools.png")
+```
+
 
 ## [OSSL Explorer](https://explorer.soilspectroscopy.org/)
 

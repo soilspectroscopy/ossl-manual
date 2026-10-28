@@ -2,7 +2,7 @@
 engine: knitr
 ---
 
-# Soil spectroscopy {#sec-soilspec}
+# Soil Spectroscopy {#sec-soilspec}
 
 ## What is soil spectroscopy
 

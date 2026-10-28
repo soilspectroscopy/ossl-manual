@@ -1,15 +1,11 @@
-# Hands-on tutorial {#sec-tutorial}
+# Hands-on Tutorial {#sec-tutorial}
 
-After a series of events in 2023, which included a training
-workshop on [**Predictive Soil Spectroscopy**](https://soilspectroscopy.github.io/soilspec-workshop/) at the ACS International Meeting 2023 in St Louis - MO, USA, we made available a hands-on tutorial where we walk-through the reader on processing and predictive modeling steps that are currently employed in the OSSL. Common concepts and analysis are also introduced.
+Originally developed for an in-person training workshop at the CANVAS Meeting in 2023, this hands-on guide has evolved into an open-access living document used across multiple international events, including workshops in Fortaleza, Brazil (FUNCEME, 2024) and at the 2026 CSSS-CSA Meeting in Guelph, Canada.
 
-[![](img/tutorial.png){width=100%}](https://soilspectroscopy.github.io/soilspec-workshop/)
+[![](img/tutorial.png){width=100%}](https://soilspectroscopy.github.io/predictive-soilspec-training/)
 
-In this tutorial, you will find information on why soil spectroscopy should be a fit-for-purpose technology, why good predictions flow from good data, and what are the best practices for model building.
+This material covers the end-to-end development of predictive soil spectroscopy, from project design and building or leveraging large public spectral libraries to data import, preprocessing, resampling, and predictive modeling.
 
-Further on, we walk the reader through examples of data import, preparation, visualization, spectra resampling, preprocessing, and compression.
+All examples leverage the open-source R ecosystem, utilizing modern `tidy` principles, the `tidymodels` machine learning framework, and `mdatools` for chemometrics. Reproducibility is maintained via `renv`. Dedicated packages like `prospectr`, `resemble`, `asdreader`, and `opusreader2` are also featured to support complete spectral workflows.
 
-Lastly, we conclude the guide with an introduction the the MLR3 modeling framework and basic Chemometrics, exploring aspects of data splitting and resampling, model optimization, benchmarking, and uncertainty estimation via conformal prediction.
-
-We hope that this tutorial gives a good overview of predictive soil spectroscopy and helps people explore new ideas.
-
+We hope this evolving material serves as a practical foundation for exploring predictive soil spectroscopy and building custom applications.

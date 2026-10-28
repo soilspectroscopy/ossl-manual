@@ -1,18 +1,35 @@
-# Neospectra database {#sec-neospectra}
+# Neospectra Library {#sec-neospectra}
 
-Recent advances in hardware technology have enabled the development of handheld sensors with similar performance specifications as laboratory-grade near-infrared (NIR) spectrometers.
+## Overview
 
-We have compiled a hand-held NIR spectral library (1350-2550 nm) using the NeoSpectra Handheld NIR Analyzer developed by [Si-Ware](https://www.si-ware.com/). Each scanner is fitted with Fourier-Transform technology based on the semiconductor Micro Electromechanical Systems (MEMS) manufacturing technique, promising accuracy and consistency between devices.
+Recent advances in hardware technology have enabled the development of handheld, field-ready sensors with robust scanning specifications comparable to laboratory-grade near-infrared (NIR) spectrometers.
+
+The Soil Spectroscopy for Global Good project has compiled a targeted NIR spectral library spanning the 1350–2550 nm spectral range using previous iterations of the NeoSpectra Handheld NIR Analyzer developed by Si-Ware Systems. With the recent transition and integration of this technology into the Buchi ProxiScout (formerly NeoSpectra by Si-Ware), these existing spectra are readily compatible with the new platform.
+
+Each instrument is equipped with Fourier-Transform Near-Infrared (FT-NIR) technology integrated on semiconductor Micro-Electro-Mechanical Systems (MEMS) chips. This manufacturing approach ensures high repeatability, device-to-device consistency, and laboratory-grade accuracy in portable soil sensing applications.
 
 ![Laboratory measurements with the Neospectra scanner. Source: @Partida2025](img/neospectra-lab-paper.jpg){width=75%}
 
-This library includes 2,106 distinct mineral soil samples scanned across 9 of these portable low-cost NIR spectrometers (indicated by serial no). 2,016 of these soil samples were selected to represent the diversity of mineral soils found in the United States, and 90 samples were selected across Ghana, Kenya, and Nigeria.
+## Dataset and scanning methodology
 
-519 of the US samples were selected and scanned by [Woodwell Climate Research Center](https://www.woodwellclimate.org/). These samples were queried from the [USDA NRCS NSSC-KSSL Soil Archives](https://ncsslabdatamart.sc.egov.usda.gov/) as having a complete set of eight measured properties (TC, OC, TN, CEC, pH, clay, sand, and silt). They were stratified based on the major horizon and taxonomic order, omitting the categories with less than 500 samples. Three percent of each stratum (i.e., a combination of major horizon and taxonomic order) was then randomly selected as the final subset retrieved from KSSL's physical soil archive as 2-mm sieved samples.
+This spectral library comprises 2,106 distinct mineral soil samples scanned across nine portable NIR spectrometers (identified by device serial number). To represent broad soil diversity, 2,016 samples originate from the United States and 90 samples span regional locations across Ghana, Kenya, and Nigeria.
 
-The remaining 1,604 US samples were queried from the USDA NRCS NSSC-KSSL Soil Archives by the [University of Nebraska - Lincoln](University of Nebraska - Lincoln) to meet the following criteria: Lower depth <= 30 cm, pH range 4.0 to 9.5, Organic carbon <10%, Greater than lower detection limits, Actual physical samples available in the archive, Samples collected and analyzed from 2001 onwards, Samples having complete analyses for high-priority properties (Sand, Silt, Clay, CEC, Exchangeable Ca, Exchangeable Mg, Exchangeable K, Exchangeable Na, CaCO3, OC, TN), & MIR scanned.
+1. Woodwell Climate Research Center Subset (US)
+Selected and scanned by the Woodwell Climate Research Center, this subset contains 519 US samples queried from the physical archives of the USDA NRCS NSSC-KSSL Soil Archives.
+- Criteria: Samples required complete measured data across eight primary soil properties: total carbon (TC), organic carbon (OC), total nitrogen (TN), cation exchange capacity (CEC), pH, clay, sand, and silt.
+- Stratification: Querying was stratified by major horizon and taxonomic order (excluding categories with fewer than 500 total archive samples).
+- Selection: A random 3% sample was drawn from each stratum (the combination of major horizon and taxonomic order) and retrieved from the KSSL archive as 2-mm sieved samples.
 
-All samples were scanned dry 2mm sieved. ~20g of sample was added to a plastic weighing boat where the NeoSpectra scanner would be placed down to make direct contact with the soil surface. The scanner was gently moved across the surface of the sample as 6 replicate scans were taken. These replicates were then averaged so that there is one spectra per sample per scanner in the resulting database.
+2. University of Nebraska–Lincoln Subset (US)
+The remaining 1,497 US samples were queried from the USDA NRCS NSSC-KSSL physical archive by the University of Nebraska–Lincoln based on the following specific criteria:
+- Depth & Chemistry: Lower depth $\le$ 30 cm, pH range 4.0–9.5, and organic carbon $<10\%$.
+- Analysis & Archives: Collected and analyzed from 2001 onwards, with available physical samples in the archive, existing mid-infrared (MIR) spectra, and values exceeding lower detection limits.
+- Complete Property Suites: Full laboratory data required for high-priority properties: sand, silt, clay, CEC, exchangeable cations (Ca, Mg, K, Na), $\text{CaCO}_3$, OC, and TN.
+
+3. Scanning Protocol
+All samples were prepared dry and 2-mm sieved:
+- Setup: Approximately 20 g of soil was placed in a plastic weighing boat.
+- Measurement: The NeoSpectra scanner head was placed in direct contact with the soil surface and moved gently across the sample while 6 replicate scans were collected.
 
 ```{r nir_plot, echo=F, eval=FALSE, include=F, warning=F, message=F}
 ## Packages
@@ -81,139 +98,11 @@ ggsave("./img/pca_neospectra.png", p.pca, dpi = 300, width = 8, height = 6,
 
 ## Database access
 
+Please visit the **Neospectra** card in the [**Soil Spectral Libraries**](#sec-libraries) section for download links and more information.
+
 A persistent copy of the database is hosted on [Zenodo](https://zenodo.org/record/7600137). Please use the following references when using the Neospectra database:
 
 > Partida, C., Safanelli, J. L., Mitu, S. M., Murad, M. O. F., Ge, Y., Ferguson, R., … Sanderman, J. (2025). Building a near-infrared (NIR) soil spectral dataset and predictive machine learning models using a handheld NIR spectrophotometer. Data in Brief, 58(111229), 111229. <https://doi.org/10.1016/j.dib.2024.111229>
 
 > Sanderman, J., Partida, C., Safanelli, J. L., Mitu, S. M., Ge, Y., Murad, O., & Shepherd, K. (2024). Near-infrared (NIR) soil spectral library using the NeoSpectra Handheld NIR Analyzer by Si-Ware (v1.2) [Dataset]. Zenodo. <https://doi.org/10.5281/zenodo.13122321>
 
-### Google Cloud Bucket
-
-Use the following URLs to access the whole database levels:
-
-**Compressed csv**  
-<https://storage.googleapis.com/soilspec4gg-public/neospectra_soillab_v1.2.csv.gz>  
-<https://storage.googleapis.com/soilspec4gg-public/neospectra_soilsite_v1.2.csv.gz>  
-<https://storage.googleapis.com/soilspec4gg-public/neospectra_nir_v1.2.csv.gz>  
-<https://storage.googleapis.com/soilspec4gg-public/neospectra_mir_v1.2.csv.gz>  
-
-**qs format (preferred on R)**  
-<https://storage.googleapis.com/soilspec4gg-public/neospectra_soillab_v1.2.qs>  
-<https://storage.googleapis.com/soilspec4gg-public/neospectra_soilsite_v1.2.qs>  
-<https://storage.googleapis.com/soilspec4gg-public/neospectra_nir_v1.2.qs>  
-<https://storage.googleapis.com/soilspec4gg-public/neospectra_mir_v1.2.qs>  
-
-Example with R.
-```{r, eval = FALSE}
-## Packages
-library("tidyverse")
-library("curl")
-library("qs") # >=0.25.5
-
-## Separate files
-soil <-  "https://storage.googleapis.com/soilspec4gg-public/neospectra_soillab_v1.2.qs"
-soil <- qread_url(soil)
-
-nir <- "https://storage.googleapis.com/soilspec4gg-public/neospectra_nir_v1.2.qs"
-nir <- qread_url(nir)
-
-## Join
-neospectra <- right_join(soil, nir, by = c("id.sample_local_c"))
-```
-
-<!-- ### MongoDB -->
-
-<!-- Available collections:   -->
-
-<!-- - **neospectra_soilsite**: site information, e.g., coordinates, pedons, layers, etc.   -->
-<!-- - **neospectra_soillab**: soil laboratory data (wet chemistry), e.g., soil texture, carbon, etc.   -->
-<!-- - **neospectra_nir**: Near-infrared (NIR) spectral data in the 1350-2550 nm range with metadata.   -->
-<!-- - **neospectra_mir**: Middle-infrared (MIR) spectral data in the 600-4000 cm<sup>-1</sup> range with metadata.   -->
-
-<!-- >**<span style="color:orange;">NOTE: Within the MongoDB, all the dots in column names are replaced by underscore.</span>** -->
-
-<!-- Accessing in R: -->
-<!-- ```{r, eval=F} -->
-<!-- ## Packages and helping functions -->
-<!-- library(mongolite) -->
-<!-- library(jsonify) -->
-
-<!-- soilspec4gg.db = list( -->
-<!--   host = 'api.soilspectroscopy.org', -->
-<!--   name = 'soilspec4gg', -->
-<!--   user = 'soilspec4gg', -->
-<!--   pw = 'soilspec4gg' -->
-<!-- ) -->
-
-<!-- soilspec4gg.db$url <- paste0( -->
-<!--   'mongodb://', soilspec4gg.db$user, ':',  -->
-<!--   soilspec4gg.db$pw, '@',  -->
-<!--   soilspec4gg.db$host, '/',  -->
-<!--   soilspec4gg.db$name, '?ssl=true' -->
-<!-- ) -->
-
-<!-- soilspec4gg.init <- function() { -->
-<!--   print('Creating the access for mongodb collections.') -->
-<!--   soilspec4gg.db$collections <<- list( -->
-<!--     neospectra_soilsite = mongo(collection = 'neospectra_soilsite', url = soilspec4gg.db$url, verbose = TRUE), -->
-<!--     neospectra_soillab = mongo(collection = 'neospectra_soillab', url = soilspec4gg.db$url, verbose = TRUE), -->
-<!--     neospectra_nir = mongo(collection = 'neospectra_nir', url = soilspec4gg.db$url, verbose = TRUE), -->
-<!--     neospectra_mir = mongo(collection = 'neospectra_mir', url = soilspec4gg.db$url, verbose = TRUE) -->
-<!--   )  -->
-<!-- } -->
-
-<!-- ## Accessing the database -->
-
-<!-- # Initialization -->
-<!-- soilspec4gg.init() -->
-
-<!-- # Checking available collections -->
-<!-- names(soilspec4gg.db$collections) -->
-
-<!-- # Get all records for neospectra_soilsite table -->
-<!-- soilspec4gg.db$collections$neospectra_soilsite$count("{}") -->
-
-<!-- # Read all data from a collection back to the R environment -->
-<!-- neospectra_soilsite <- soilspec4gg.db$collections$neospectra_soilsite$find('{}') -->
-
-<!-- # Getting unique values for a field -->
-<!-- soilspec4gg.db$collections$neospectra_soilsite$distinct(key = "scan_nir_model_name_utf8_txt") -->
-
-<!-- # Getting column names -->
-<!-- names(soilspec4gg.db$collections$neospectra_soilsite$find('{}', limit = 1)) -->
-<!-- names(soilspec4gg.db$collections$neospectra_soillab$find('{}', limit = 1)) -->
-<!-- names(soilspec4gg.db$collections$neospectra_nir$find('{}', limit = 1)) -->
-<!-- names(soilspec4gg.db$collections$neospectra_mir$find('{}', limit = 1)) -->
-
-<!-- # Query a specific device -->
-<!-- nir.neo1 <- soilspec4gg.db$collections$neospectra_nir$find('{"scan_nir_model_name_utf8_txt" : "NEO1"}') -->
-
-<!-- # Filtering by ID -->
-<!-- soilspec4gg.db$collections$neospectra_soillab$find('{"id_sample_local_c": "30747"}') -->
-<!-- ``` -->
-
-## Database description
-
-The Neospectra database follows the same specification of the OSSL for soil and site information. For the near-infrared (NIR) spectra, however, additional information is provided for scanning laboratory, scanner code, and scanning accessory.
-
-NIR is provided in reflectance units per wavelength, with values usually ranging between 0 and 1 as fraction percent. The spectral range imported into the OSSL falls between 1350 and 2550 nm, with an interval of 2 nm.
-
-One can convert reflectance (R) values to absorbance units (A) as `A = log10(1/R)`, or backtransform with `R = 1/(10^A)`. Similarly, wavenumber (WN, in cm<sup>-1</sup>) can be converted to wavelength (WL, in nm) with `WN = 1/(WL*10000000)`, or backtransform with `WL = 1/(WL*10000000)`. The factor 10M is used to convert cm to nm.
-
-```{r reference_nir, results='asis', echo=FALSE, message=FALSE, warning=FALSE}
-library("readr")
-visnir.level0.desc <- read_csv("./tabular/neospectra_names_nir.csv")
-for (i in 1:nrow(visnir.level0.desc)) {
-  
-  iossl_name <- visnir.level0.desc[[i,"ossl_name"]]
-  itype <- visnir.level0.desc[[i,"type"]]
-  iexample <- visnir.level0.desc[[i,"example"]]
-  idescription <- visnir.level0.desc[[i,"description"]]
-  
-  cat(paste0('\n### ', iossl_name, '\n'))
-  cat(paste0('- ', emoji::emoji("books"), ' Description: ', idescription, '.\n'))
-  cat(paste0('- ', emoji::emoji("1234"), ' Type: ', itype, '.\n'))
-  cat(paste0('- ', emoji::emoji("book"), ' Example: ', iexample, '.\n'))
-  
-}
-```

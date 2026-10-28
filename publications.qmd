@@ -1,7 +1,22 @@
 
-# Scientific publications {#sec-publications}
+# Scientific Publications {#sec-publications}
 
 Please find bellow all scientific publications that our team or collaborators have published right before or during the project timeline. We will keep listing all soil spectroscopy works derived from the SS4GG activities and extended collaborations:
+
+- Potash, E., Partida, C., Safanelli, J., Forbes, E., Polussa, A., Runge, T., Sheffer, M., & Sanderman, J. (2026). Transfer and Uncertainty for Soil Spectroscopy: A Parsimonious Approach Using Bayesian Mixed Models and Soil Surveys. European Journal of Soil Science, 77(5). <https://doi.org/10.1111/ejss.70429>
+
+- Sabetizade, M., Wesemael, B. V., Baeten, V., Castaldi, F., Chabrillat, S., Demattê, J. A. M., Gholizadeh, A., Haefele, S., Karyotis, K., Klement, A., Milewski, R., Pascucci, S., Paternostre, L., Pignatti, S., Safanelli, J. L., Sanderman, J., Schmid, T., Tziolas, N., & Ben-Dor, E. (2026). Internal soil standard as a tool to assess and correct spectral variability between laboratories for a practical quantitative utilization. Geoderma, 472, 117894. <https://doi.org/10.1016/j.geoderma.2026.117894>
+
+
+- Ramirez-Lopez, L., Viscarra Rossel, R., Orellano, C., Kooijman, L., Perez-Fernandez, E., Wadoux, A. M. J.-C., Plans, M., Breure, T., Summerauer, L., Safanelli, J. L., Behrens, T., & Boqué, R. (2026). When spectral libraries are too complex to search: Evolutionary subset selection for domain-adaptive calibration. Analytica Chimica Acta, 1412, 345651. <https://doi.org/10.1016/j.aca.2026.345651>
+
+- Sun, L., Safanelli, J. L., Sanderman, J., Georgiou, K., Brungard, C., Grover, K., Hopkins, B. G., Liu, S., & Bremer, P.-T. (2026). Self-supervised and multi-fidelity learning for extended predictive soil spectroscopy. Geoderma, 468, 117764. <https://doi.org/10.1016/j.geoderma.2026.117764>
+
+- Sanderman, J., Haig, J., Das, S., Partida, C., Asanopoulos, C., & Bird, M. I. (2025). Comparison of pyrogenic carbon abundance in coarse-textured soil by hydrogen pyrolysis, NMR and dichromate oxidation and MIR-PLSR. Geoderma, 461, 117502. <https://doi.org/10.1016/j.geoderma.2025.117502>
+
+- Grover, K., Safanelli, J. L., Sanderman, J., Hopkins, B. G., & Brungard, C. (2025). The Utility of Laboratory Measurement Uncertainty: A Case‐Study Using the Open Soil Spectral Library Service. European Journal of Soil Science, 76(4). <https://doi.org/10.1111/ejss.70166>
+
+- Kalopesa, E., Tziolas, N., Tsakiridis, N. L., Safanelli, J. L., Hengl, T., & Sanderman, J. (2025). Large-Scale Soil Organic Carbon Estimation via a Multisource Data Fusion Approach. Remote Sensing, 17(5), 771. <https://doi.org/10.3390/rs17050771>
 
 - Sanderman, J., Partida, C., Safanelli, J. L., Shepherd, K., Ge, Y., Mitu, S. M., & Ferguson, R. (2025). Application of a Handheld Near Infrared Spectrophotometer to Farm‐Scale Soil Carbon Monitoring. In European Journal of Soil Science (Vol. 76, Issue 1). Wiley. <https://doi.org/10.1111/ejss.70053>
 
