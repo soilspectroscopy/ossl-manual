@@ -22,4 +22,4 @@ format:
       - cosmo
       dark:
       - cosmo
-      - ../dark.scss
+      - ../styles/dark.scss

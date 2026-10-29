@@ -5,6 +5,7 @@
 /book.pdf
 /book.mobi
 /book.epub
+*_files/
 
 # History files
 .Rhistory
