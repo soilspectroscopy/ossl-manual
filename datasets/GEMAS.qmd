@@ -12,26 +12,20 @@ format:
 
 ```{=html}
 <div class="ossl-hero" style="background: #F4F3FE;">
-  <div class="ossl-hero-logo">
-    <img src="logo/GEMAS.png" alt="GEMAS logo">
-  </div>
+  <div class="ossl-hero-logo"><img src="logo/GEMAS.png" alt="GEMAS logo"></div>
   <div class="ossl-hero-text">
     <h1 class="ossl-hero-title">GEMAS</h1>
     <p class="ossl-hero-desc">Soil spectral library from the Geochemical Mapping of Agricultural and Grazing Land Soil (GEMAS), Europe</p>
     <div class="ossl-hero-meta">
-      <div class="ossl-pill-row">
-        <span class="ossl-pill ossl-pill-off">VNIR</span>
-        <span class="ossl-pill ossl-pill-off">NIR</span>
-        <span class="ossl-pill ossl-pill-on">MIR</span>
-      </div>
+      <div class="ossl-pill-row"><span class="ossl-pill ossl-pill-off">VNIR</span><span class="ossl-pill ossl-pill-off">NIR</span><span class="ossl-pill ossl-pill-on">MIR</span></div>
       <span class="ossl-meta-divider"></span>
-      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>Continental — Europe</span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>Continental</span>
     </div>
   </div>
 </div>
 <div class="ossl-quick-stats">
   <span class="ossl-stat-item"><i class="bi bi-database" aria-hidden="true"></i><span class="ossl-stat-val">4,000+</span> samples</span>
-  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">first release (v1)</span></span>
+  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">First release (v1)</span></span>
   <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">Other (Custom)</span></span>
 </div>
 
@@ -97,11 +91,11 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 - **Intensity:** absorbance
 - **Original range:** 450-7800
 - **Standardized range:** 600-4000
-- **Instrument:** Spectrum-One™ FT-IR Spectrometer
-- **Manufacturer:** PerkinElmer Inc. (MA, USA)
-- **Scan accessory:** Pike AutoDiff 60-sample auto-sampler
-- **Sample preparation:** Oven dried, Sieved<2mm
-- **Additional info:** extended range KBr beam-splitter, a high intensity ceramic source, a deuterium triglycine-sulphate (DTGS) Peltier-cooled detector; Background reference scans were carried out using silicon carbide discs (PerkinElmer Life and Analytical Sciences Pty Ltd., Australia)
+- **Instrument:** Spectrum-One FT-IR
+- **Manufacturer:** PerkinElmer
+- **Scan accessory:** Pike AutoDiff
+- **Sample preparation:** Finely ground
+- **Additional info:** Extended range KBr beamsplitter, a high intensity ceramic source, a deuterium triglycine-sulphate (DTGS) Peltier-cooled detector; Background reference scans were carried out using silicon carbide discs (PerkinElmer Life and Analytical Sciences Pty Ltd., Australia)
 
 ### MIR plot
 

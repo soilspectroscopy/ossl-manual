@@ -12,26 +12,20 @@ format:
 
 ```{=html}
 <div class="ossl-hero" style="background: #F4F4FF;">
-  <div class="ossl-hero-logo">
-    <img src="logo/GPKOR.png" alt="GPKOR logo">
-  </div>
+  <div class="ossl-hero-logo"><img src="logo/GPKOR.png" alt="GPKOR logo"></div>
   <div class="ossl-hero-text">
     <h1 class="ossl-hero-title">GPKOR</h1>
     <p class="ossl-hero-desc">Near-infrared soil spectral library from Gyeonggi Province, South Korea (GPKOR)</p>
     <div class="ossl-hero-meta">
-      <div class="ossl-pill-row">
-        <span class="ossl-pill ossl-pill-off">VNIR</span>
-        <span class="ossl-pill ossl-pill-on">NIR</span>
-        <span class="ossl-pill ossl-pill-off">MIR</span>
-      </div>
+      <div class="ossl-pill-row"><span class="ossl-pill ossl-pill-off">VNIR</span><span class="ossl-pill ossl-pill-on">NIR</span><span class="ossl-pill ossl-pill-off">MIR</span></div>
       <span class="ossl-meta-divider"></span>
-      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National — South Korea</span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National</span>
     </div>
   </div>
 </div>
 <div class="ossl-quick-stats">
   <span class="ossl-stat-item"><i class="bi bi-database" aria-hidden="true"></i><span class="ossl-stat-val">1,000+</span> samples</span>
-  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">version 3</span></span>
+  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">Version 3</span></span>
   <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">CC-BY</span></span>
 </div>
 
@@ -97,13 +91,13 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 - **Intensity:** reflectance
 - **Original range:** 1400-2500
 - **Instrument:** SpectraStar XT
-- **Manufacturer:** Unity  Scientific, Westborough, MA, USA
+- **Manufacturer:** Unity Scientific
 - **Instrument co-scans:** 12
 - **Scan repeats:** 12
 - **Scan accessory:** Ring-shaped sample holder (50 mm diameter)
 - **Original resolution:** 1 nm
-- **Sample preparation:** Air-dried, Sieved < 2 mm
-- **Additional info:** Equipped with UCal calibration software
+- **Sample preparation:** Air-dried, Sieved <2 mm
+- **Additional info:** None
 
 ### NIR plot
 

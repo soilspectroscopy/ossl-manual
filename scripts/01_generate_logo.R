@@ -1,66 +1,54 @@
-# install.packages("colorspace")
-# install.packages("hexSticker")
+## Hexagon logos. Run only when new datasets are added to the Access sheet.
+## Existing colors in tabular/logo_color_palette.csv are kept; new codes get a new color.
+
+library("googlesheets4")
 library("ggplot2")
 library("hexSticker")
 library("colorspace")
-library("googlesheets4")
+library("readr")
 
-# 1. Authorize and Fetch Data from your Spreadsheet
-gs4_auth(email = "rzhi@woodwellclimate.org")
+gs4_auth(email = "jsafanelli@woodwellclimate.org")
 sheet_id <- "19PuiJx1mzNaFff4odODNzS6ZB72lcz9UbcVPWCt8Gz8"
-access_data <- read_sheet(sheet_id, sheet = "Access")
+codes <- read_sheet(sheet_id, sheet = "Access")$new_code
 
-# Use the actual names from your sheet
-dataset_names <- access_data$new_code
-num_logos <- length(dataset_names)
+palette_file <- "tabular/logo_color_palette.csv"
+palette <- read_csv(palette_file, show_col_types = FALSE)
 
-set.seed(123) # For reproducibility
-
-# 2. Color Logic (Random Dark RGB)
-dark_shades <- rgb(
-  runif(num_logos, 0, 90), 
-  runif(num_logos, 0, 90), 
-  runif(num_logos, 0, 90), 
-  maxColorValue = 255
-)
-
-
-# Generate respective lighter shades
-light_shades <- lighten(dark_shades, amount = 0.7)
-
-# 3. Sample Data
-df <- data.frame(x = 1:20, y = c(1, 3, 5, 6, 8, 7, 5, 4, 3, 4, 5, 6, 6, 5, 4, 4, 3, 3, 2, 2))
-
-# 4. The Original Loop
-for(i in 1:num_logos){
+new_codes <- setdiff(codes, palette$new_code)
+if (length(new_codes) > 0) {
   
-  idark  <- dark_shades[i]
-  ilight <- light_shades[i]
-  icode  <- dataset_names[i] # Uses name from Google Sheet
+  n <- length(new_codes)
   
-  p.line <- ggplot(df, aes(x, y)) +
-    stat_smooth(method = "gam", 
-                formula = y ~ s(x, bs = "cs"), 
-                se = FALSE, 
-                color = ilight, 
-                linewidth = 1) +
-    theme_void()
+  palette <- rbind(palette, data.frame(
+    new_code  = new_codes,
+    hex_color = rgb(runif(n, 0, 90), runif(n, 0, 90), runif(n, 0, 90), maxColorValue = 255)
+  ))
   
-  sticker(p.line, 
-          package = icode, 
-          h_fill = idark, 
-          h_color = ilight, 
-          h_size = 1.5, 
-          p_size = 23, 
-          p_y = 1.3, 
-          s_x = 1.0, 
-          s_y = 0.75, 
-          s_width = 1.5, 
-          s_height = 0.55, 
-          filename = paste0(file.path("datasets/logo", icode), ".png"))
+  write_csv(palette, palette_file)
+  
 }
 
-# Save color scheme
-color_db <- data.frame(new_code = dataset_names, hex_color = dark_shades)
-write.csv(color_db, "tabular/logo_color_palette.csv", row.names = FALSE)
+df <- data.frame(x = 1:20, y = c(1, 3, 5, 6, 8, 7, 5, 4, 3, 4, 5, 6, 6, 5, 4, 4, 3, 3, 2, 2))
 
+for (i in seq_len(nrow(palette))) {
+  
+  code <- palette$new_code[i]
+  out  <- file.path("datasets/logo", paste0(code, ".png"))
+  
+  if (file.exists(out)) next
+
+  dark  <- palette$hex_color[i]
+  light <- lighten(dark, amount = 0.7)
+
+  p <- ggplot(df, aes(x, y)) +
+    stat_smooth(method = "gam", formula = y ~ s(x, bs = "cs"),
+                se = FALSE, color = light, linewidth = 1) +
+    theme_void()
+
+  sticker(p, package = code, h_fill = dark, h_color = light, h_size = 1.5,
+          p_size = 23, p_y = 1.3, s_x = 1.0, s_y = 0.75,
+          s_width = 1.5, s_height = 0.55, filename = out)
+  
+  message("Logo: ", code)
+  
+}

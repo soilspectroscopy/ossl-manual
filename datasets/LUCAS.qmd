@@ -12,20 +12,14 @@ format:
 
 ```{=html}
 <div class="ossl-hero" style="background: #E9FBEA;">
-  <div class="ossl-hero-logo">
-    <img src="logo/LUCAS.png" alt="LUCAS logo">
-  </div>
+  <div class="ossl-hero-logo"><img src="logo/LUCAS.png" alt="LUCAS logo"></div>
   <div class="ossl-hero-text">
     <h1 class="ossl-hero-title">LUCAS</h1>
     <p class="ossl-hero-desc">Land Use and Cover Survey (LUCAS) library from European soils (23-28 countries)</p>
     <div class="ossl-hero-meta">
-      <div class="ossl-pill-row">
-        <span class="ossl-pill ossl-pill-on">VNIR</span>
-        <span class="ossl-pill ossl-pill-off">NIR</span>
-        <span class="ossl-pill ossl-pill-on">MIR</span>
-      </div>
+      <div class="ossl-pill-row"><span class="ossl-pill ossl-pill-on">VNIR</span><span class="ossl-pill ossl-pill-off">NIR</span><span class="ossl-pill ossl-pill-on">MIR</span></div>
       <span class="ossl-meta-divider"></span>
-      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>Continental — European Union</span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>Continental</span>
     </div>
   </div>
 </div>
@@ -103,7 +97,7 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 - **Manufacturer:** Bruker Optics
 - **Scan accessory:** Pike AutoDiff
 - **Sample preparation:** Air-dried, finely ground <0.2 mm
-- **Additional info:** KBr beamsplitter; Gold mirror; Mirror background
+- **Additional info:** Scanned at Woodwell Climate (Bruker Vertex 70 with MIR detector, widerange KBr beamsplitter, gold mirror reference)
 
 ### MIR plot
 
@@ -115,9 +109,9 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 - **Intensity:** reflectance
 - **Original range:** 400-2500
 - **Instrument:** FOSS NIRS XDS RapidContent Analyzer
-- **Manufacturer:** FOSS NIRSystems Inc., Laurel, MD/ Denmark
-- **Instrument co-scans:** Not available
-- **Scan repeats:** Not available
+- **Manufacturer:** FOSS NIRSystems
+- **Instrument co-scans:** Unknown
+- **Scan repeats:** Unknown
 - **Scan accessory:** Black box
 - **Original resolution:** 2
 - **Sample preparation:** Air-dried, Sieved <2 mm

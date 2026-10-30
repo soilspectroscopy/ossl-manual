@@ -21,7 +21,7 @@
   description: Soil spectral libraries from the ISRIC World Soil Reference Collection
     (58 countries) scanned by ICRAF
   sample_size: 4,000+
-  version: first release (v1)
+  version: First release (v1)
   extent: global
   has_vnir: yes
   has_nir: no
@@ -57,7 +57,7 @@
   description: Soil spectral library from Africa Soil Information Service Phase I
     (AFSIS1)
   sample_size: 1,000+
-  version: first release (v1)
+  version: First release (v1)
   extent: continental
   has_vnir: no
   has_nir: no
@@ -73,7 +73,7 @@
   description: Soil spectral library from Africa Soil Information Service Phase II
     (AFSIS2)
   sample_size: <1,000
-  version: first release (v1)
+  version: First release (v1)
   extent: continental
   has_vnir: no
   has_nir: no
@@ -88,7 +88,7 @@
   title: CAF
   description: Soil spectral library for Central Africa (CAF)
   sample_size: 1,000+
-  version: first release (v1)
+  version: First release (v1)
   extent: regional
   has_vnir: no
   has_nir: no
@@ -103,7 +103,7 @@
   title: NEON
   description: National Ecological Observatory Network (NEON) soil spectral library
   sample_size: <300
-  version: first release (v1)
+  version: First release (v1)
   extent: national
   has_vnir: no
   has_nir: no
@@ -118,7 +118,7 @@
   title: HLF_CAN
   description: Soil spectral library from High-Latitude Forests of North Canada (HLF_CAN)
   sample_size: <300
-  version: first release (v1)
+  version: First release (v1)
   extent: local
   has_vnir: no
   has_nir: no
@@ -133,7 +133,7 @@
   title: PF_NZL
   description: Soil spectral library from Planted Forest soils of New Zealand (PF_NZL)
   sample_size: <1,000
-  version: first release (v1)
+  version: First release (v1)
   extent: national
   has_vnir: no
   has_nir: no
@@ -148,7 +148,7 @@
   title: SRB
   description: Soil spectral library from Serbia (SRB)
   sample_size: <300
-  version: first release (v1)
+  version: First release (v1)
   extent: national
   has_vnir: no
   has_nir: no
@@ -164,7 +164,7 @@
   description: Near-infrared soil spectral library (Neospectra) from selected KSSL
     samples (USA) and Africa
   sample_size: 2,000+
-  version: second update (v1)
+  version: Second update (v1)
   extent: national
   has_vnir: no
   has_nir: yes
@@ -179,7 +179,7 @@
   title: BESB
   description: Brazilian Soil Spectral Library (BESB)
   sample_size: 15,000+
-  version: version v.002
+  version: Version v.002
   extent: national
   has_vnir: yes
   has_nir: no
@@ -197,7 +197,7 @@
   description: Soil spectral library from the Hungarian Soil Degradation Observation
     System (HSDOS)
   sample_size: 5,000+
-  version: version v3
+  version: Version v3
   extent: national
   has_vnir: yes
   has_nir: no
@@ -212,7 +212,7 @@
   title: AUT
   description: Austrian NIR soil spectral library for soil health assessments (AUT)
   sample_size: 2,000+
-  version: version v4
+  version: Version v4
   extent: national
   has_vnir: no
   has_nir: yes
@@ -228,7 +228,7 @@
   description: Soil spectral library from the Geochemical Mapping of Agricultural
     and Grazing Land Soil (GEMAS), Europe
   sample_size: 4,000+
-  version: first release (v1)
+  version: First release (v1)
   extent: continental
   has_vnir: no
   has_nir: no
@@ -244,7 +244,7 @@
   description: Soil spectral library from the Geocradle region (Balkans, Middle East,
     and North Africa)
   sample_size: 1,000+
-  version: first release (v1)
+  version: First release (v1)
   extent: regional
   has_vnir: yes
   has_nir: no
@@ -260,7 +260,7 @@
   description: Near-infrared soil spectral library from rural areas of the Martinique
     island (MTQ)
   sample_size: <1,000
-  version: version 3.1
+  version: Version 3.1
   extent: national
   has_vnir: no
   has_nir: yes
@@ -275,7 +275,7 @@
   title: LF_BRA
   description: Farm-scale soil spectral library from two local farms from Brazil (LF_BRA)
   sample_size: <300
-  version: version 3
+  version: Version 3
   extent: local
   has_vnir: yes
   has_nir: no
@@ -291,7 +291,7 @@
   description: Near-infrared soil spectral library from Gyeonggi Province, South Korea
     (GPKOR)
   sample_size: 1,000+
-  version: version 3
+  version: Version 3
   extent: national
   has_vnir: no
   has_nir: yes
@@ -307,7 +307,7 @@
   description: Soil spectral library from tropical and sub-humid Watersheds of Southwestern
     India (WS_SWIND)
   sample_size: <300
-  version: version 1
+  version: Version 1
   extent: regional
   has_vnir: no
   has_nir: no

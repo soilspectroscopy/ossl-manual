@@ -12,20 +12,14 @@ format:
 
 ```{=html}
 <div class="ossl-hero" style="background: #E0FFDD;">
-  <div class="ossl-hero-logo">
-    <img src="logo/KSSL.png" alt="KSSL logo">
-  </div>
+  <div class="ossl-hero-logo"><img src="logo/KSSL.png" alt="KSSL logo"></div>
   <div class="ossl-hero-text">
     <h1 class="ossl-hero-title">KSSL</h1>
     <p class="ossl-hero-desc">The USDA-NRCS NCSS Kellogg Soil Survey Laboratory (KSSL) soil libraries from the United States and other territories</p>
     <div class="ossl-hero-meta">
-      <div class="ossl-pill-row">
-        <span class="ossl-pill ossl-pill-on">VNIR</span>
-        <span class="ossl-pill ossl-pill-off">NIR</span>
-        <span class="ossl-pill ossl-pill-on">MIR</span>
-      </div>
+      <div class="ossl-pill-row"><span class="ossl-pill ossl-pill-on">VNIR</span><span class="ossl-pill ossl-pill-off">NIR</span><span class="ossl-pill ossl-pill-on">MIR</span></div>
       <span class="ossl-meta-divider"></span>
-      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National — USA</span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National</span>
     </div>
   </div>
 </div>
@@ -103,7 +97,7 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 - **Manufacturer:** Bruker Optics
 - **Scan accessory:** HTS-XT
 - **Sample preparation:** Air-dried, finely ground < 80mesh
-- **Additional info:** MCT (mercury cadmium telluride) detector
+- **Additional info:** Liquid N2–cooled MCT (mercury cadmium telluride) detector
 
 ### MIR plot
 
@@ -114,14 +108,14 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 - **Acquisition mode:** Diffuse Reflectance
 - **Intensity:** reflectance
 - **Original range:** 350-2500
-- **Instrument:** ASD Labspec 2500
-- **Manufacturer:** Analytical Spectral Devices Inc., PANalytical NIR Excellence Center
-- **Instrument co-scans:** Not available
+- **Instrument:** ASD FieldSpec FR
+- **Manufacturer:** Malvern Panalytical
+- **Instrument co-scans:** 100
 - **Scan repeats:** 1
-- **Scan accessory:** ASD's MugLite accessory
-- **Original resolution:** Not available
+- **Scan accessory:** MugLite (most samples) and Contact Probe accessories
+- **Original resolution:** 1
 - **Sample preparation:** Air-dried, Sieved < 2 mm
-- **Additional info:** A standard Spectralon panel was used to obtain the white reference at 15-min intervals.
+- **Additional info:** The library contains measurements taken both with Muglight (~21k) and Contact Probe (~5k). About 5k samples were measured by both accesories
 
 ### VNIR plot
 

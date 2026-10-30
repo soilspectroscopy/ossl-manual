@@ -12,26 +12,20 @@ format:
 
 ```{=html}
 <div class="ossl-hero" style="background: #E0FFE0;">
-  <div class="ossl-hero-logo">
-    <img src="logo/BESB.png" alt="BESB logo">
-  </div>
+  <div class="ossl-hero-logo"><img src="logo/BESB.png" alt="BESB logo"></div>
   <div class="ossl-hero-text">
     <h1 class="ossl-hero-title">BESB</h1>
     <p class="ossl-hero-desc">Brazilian Soil Spectral Library (BESB)</p>
     <div class="ossl-hero-meta">
-      <div class="ossl-pill-row">
-        <span class="ossl-pill ossl-pill-on">VNIR</span>
-        <span class="ossl-pill ossl-pill-off">NIR</span>
-        <span class="ossl-pill ossl-pill-on">MIR</span>
-      </div>
+      <div class="ossl-pill-row"><span class="ossl-pill ossl-pill-on">VNIR</span><span class="ossl-pill ossl-pill-off">NIR</span><span class="ossl-pill ossl-pill-on">MIR</span></div>
       <span class="ossl-meta-divider"></span>
-      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National — Brazil</span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National</span>
     </div>
   </div>
 </div>
 <div class="ossl-quick-stats">
   <span class="ossl-stat-item"><i class="bi bi-database" aria-hidden="true"></i><span class="ossl-stat-val">15,000+</span> samples</span>
-  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">version v.002</span></span>
+  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">Version v.002</span></span>
   <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">CC-BY</span></span>
 </div>
 
@@ -99,11 +93,11 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 - **Intensity:** absorbance
 - **Original range:** 600-4000
 - **Standardized range:** 600-4000
-- **Instrument:** Alpha Sample Compartment RTDLaTGS ZnSe
-- **Manufacturer:** Bruker Optik GmbH, Ettlingen, Germany
-- **Scan accessory:** Not available
-- **Sample preparation:** Sieved<2mm, ground
-- **Additional info:** The sensor has a HeNe laser; A gold reference plate was used as standard
+- **Instrument:** Alpha II RTDLaTGS ZnSe
+- **Manufacturer:** Bruker Optics
+- **Scan accessory:** QuickSnap
+- **Sample preparation:** Finely ground
+- **Additional info:** RT-DLaTGS ZnSe detector; Roughened gold reference plate
 
 ### MIR plot
 
@@ -114,14 +108,14 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 - **Acquisition mode:** Diffuse Reflectance
 - **Intensity:** reflectance
 - **Original range:** 350-2500
-- **Instrument:** FieldSpec 3 Spectroradiometer
-- **Manufacturer:** Analytical Spectral Devices (ASD, Boulder, CO)
+- **Instrument:** FieldSpec 3
+- **Manufacturer:** Malvern Panalytical
 - **Instrument co-scans:** 100
 - **Scan repeats:** 2
 - **Scan accessory:** Fiber-optic cable with external 50-W halogen lamps
 - **Original resolution:** 1
 - **Sample preparation:** Air-dried, Sieved < 2 mm
-- **Additional info:** The sensor is calibrated using a white Spectralon plate (Lab-sphere, North Sutton, NH, USA) representing a 100% reflectance standard
+- **Additional info:** Spectralon plate as white reflectance standard
 
 ### VNIR plot
 

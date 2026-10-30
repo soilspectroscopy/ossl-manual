@@ -12,26 +12,20 @@ format:
 
 ```{=html}
 <div class="ossl-hero" style="background: #F6F7E3;">
-  <div class="ossl-hero-logo">
-    <img src="logo/NEON.png" alt="NEON logo">
-  </div>
+  <div class="ossl-hero-logo"><img src="logo/NEON.png" alt="NEON logo"></div>
   <div class="ossl-hero-text">
     <h1 class="ossl-hero-title">NEON</h1>
     <p class="ossl-hero-desc">National Ecological Observatory Network (NEON) soil spectral library</p>
     <div class="ossl-hero-meta">
-      <div class="ossl-pill-row">
-        <span class="ossl-pill ossl-pill-off">VNIR</span>
-        <span class="ossl-pill ossl-pill-off">NIR</span>
-        <span class="ossl-pill ossl-pill-on">MIR</span>
-      </div>
+      <div class="ossl-pill-row"><span class="ossl-pill ossl-pill-off">VNIR</span><span class="ossl-pill ossl-pill-off">NIR</span><span class="ossl-pill ossl-pill-on">MIR</span></div>
       <span class="ossl-meta-divider"></span>
-      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National — United States</span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National</span>
     </div>
   </div>
 </div>
 <div class="ossl-quick-stats">
   <span class="ossl-stat-item"><i class="bi bi-database" aria-hidden="true"></i><span class="ossl-stat-val"><300</span> samples</span>
-  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">first release (v1)</span></span>
+  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">First release (v1)</span></span>
   <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">CC-BY</span></span>
 </div>
 
@@ -59,7 +53,7 @@ Data originally provided by:
 
 ## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/NEON/README_files/figure-commonmark/map-1.png)
+![](Not available)
 
 ## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
 
@@ -71,6 +65,10 @@ Data originally provided by:
 
 ## <i class="bi bi-clipboard-data ossl-section-icon" aria-hidden="true"></i> Soil laboratory information
 
+- **Total samples:** 333
+- **Properties available (original):** 73
+- **Properties standardized (OSSL):** 20 — summarized in **@tbl-soillab-neon** below
+- **Categories:** physical, chemical, biological, hydrological, carbon & nutrients, metal elements
 - **Original source:** see [Database access](#database-access)
 
 ```{=html}
@@ -93,11 +91,11 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 - **Intensity:** absorbance
 - **Original range:** 400-4000
 - **Standardized range:** 628-4000
-- **Instrument:** Vertex 70 FT-IR & Vertex 70 FT-IR
+- **Instrument:** Vertex 70 FT-IR
 - **Manufacturer:** Bruker Optics
-- **Scan accessory:** HTS-XT &  Pike AutoDiff
-- **Sample preparation:** Air-dried, finely ground < 80mesh
-- **Additional info:** MCT (mercury cadmium telluride) detector & KBr beamsplitter; Gold mirror; Mirror background
+- **Scan accessory:** Pike AutoDiff
+- **Sample preparation:** Air-dried, finely ground <80 mesh
+- **Additional info:** Scanned at Woodwell Climate (Bruker Vertex 70 with MIR detector, widerange KBr beamsplitter, gold mirror reference)
 
 ### MIR plot
 

@@ -12,26 +12,20 @@ format:
 
 ```{=html}
 <div class="ossl-hero" style="background: #FFF2F1;">
-  <div class="ossl-hero-logo">
-    <img src="logo/PF_NZL.png" alt="PF_NZL logo">
-  </div>
+  <div class="ossl-hero-logo"><img src="logo/PF_NZL.png" alt="PF_NZL logo"></div>
   <div class="ossl-hero-text">
     <h1 class="ossl-hero-title">PF_NZL</h1>
     <p class="ossl-hero-desc">Soil spectral library from Planted Forest soils of New Zealand (PF_NZL)</p>
     <div class="ossl-hero-meta">
-      <div class="ossl-pill-row">
-        <span class="ossl-pill ossl-pill-off">VNIR</span>
-        <span class="ossl-pill ossl-pill-off">NIR</span>
-        <span class="ossl-pill ossl-pill-on">MIR</span>
-      </div>
+      <div class="ossl-pill-row"><span class="ossl-pill ossl-pill-off">VNIR</span><span class="ossl-pill ossl-pill-off">NIR</span><span class="ossl-pill ossl-pill-on">MIR</span></div>
       <span class="ossl-meta-divider"></span>
-      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National — New Zealand</span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National</span>
     </div>
   </div>
 </div>
 <div class="ossl-quick-stats">
   <span class="ossl-stat-item"><i class="bi bi-database" aria-hidden="true"></i><span class="ossl-stat-val"><1,000</span> samples</span>
-  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">first release (v1)</span></span>
+  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">First release (v1)</span></span>
   <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">CC-BY</span></span>
 </div>
 
@@ -100,8 +94,8 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 - **Instrument:** Invenio-S FT-IR
 - **Manufacturer:** Bruker Optics
 - **Scan accessory:** HTS-XT
-- **Sample preparation:** Ground 180s (Zirconia mill)
-- **Additional info:** Liquid nitrogen cooled mercury cadmium telluride detector; sintered gold plate as the background
+- **Sample preparation:** Finely ground 180s (Zirconia mill)
+- **Additional info:** Liquid N2–cooled MCT (mercury cadmium telluride) detector; sintered gold plate as the background
 
 ### MIR plot
 

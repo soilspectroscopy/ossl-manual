@@ -12,26 +12,20 @@ format:
 
 ```{=html}
 <div class="ossl-hero" style="background: #F3F4FF;">
-  <div class="ossl-hero-logo">
-    <img src="logo/LF_BRA.png" alt="LF_BRA logo">
-  </div>
+  <div class="ossl-hero-logo"><img src="logo/LF_BRA.png" alt="LF_BRA logo"></div>
   <div class="ossl-hero-text">
     <h1 class="ossl-hero-title">LF_BRA</h1>
     <p class="ossl-hero-desc">Farm-scale soil spectral library from two local farms from Brazil (LF_BRA)</p>
     <div class="ossl-hero-meta">
-      <div class="ossl-pill-row">
-        <span class="ossl-pill ossl-pill-on">VNIR</span>
-        <span class="ossl-pill ossl-pill-off">NIR</span>
-        <span class="ossl-pill ossl-pill-off">MIR</span>
-      </div>
+      <div class="ossl-pill-row"><span class="ossl-pill ossl-pill-on">VNIR</span><span class="ossl-pill ossl-pill-off">NIR</span><span class="ossl-pill ossl-pill-off">MIR</span></div>
       <span class="ossl-meta-divider"></span>
-      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>Local — Brazil</span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>Local</span>
     </div>
   </div>
 </div>
 <div class="ossl-quick-stats">
   <span class="ossl-stat-item"><i class="bi bi-database" aria-hidden="true"></i><span class="ossl-stat-val"><300</span> samples</span>
-  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">version 3</span></span>
+  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">Version 3</span></span>
   <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">CC-BY</span></span>
 </div>
 
@@ -59,7 +53,7 @@ Data originally provided by:
 
 ## <i class="bi bi-geo-alt ossl-section-icon" aria-hidden="true"></i> Map
 
-![](https://raw.githubusercontent.com/soilspectroscopy/ossl-imports/main/dataset/LF_BRA/README_files/figure-commonmark/map-1.png)
+![](Not available)
 
 ## <i class="bi bi-pin-map ossl-section-icon" aria-hidden="true"></i> Soil site information
 
@@ -97,13 +91,13 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 - **Intensity:** reflectance
 - **Original range:** 431-2153
 - **Instrument:** Veris MSP3 (USB4000 & C9914GB detectors)
-- **Manufacturer:** Veris Technologies (Salina, KS, USA)
-- **Instrument co-scans:** Not available
+- **Manufacturer:** Veris Technologies
+- **Instrument co-scans:** Unknown
 - **Scan repeats:** 3
 - **Scan accessory:** Veris Sample Holder (Light-shielded)
 - **Original resolution:** 5
 - **Sample preparation:** Air-dried, Sieved < 2 mm
-- **Additional info:** Not available
+- **Additional info:** None
 
 ### VNIR plot
 

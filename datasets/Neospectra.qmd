@@ -12,26 +12,20 @@ format:
 
 ```{=html}
 <div class="ossl-hero" style="background: #FBFBC6;">
-  <div class="ossl-hero-logo">
-    <img src="logo/Neospectra.png" alt="Neospectra logo">
-  </div>
+  <div class="ossl-hero-logo"><img src="logo/Neospectra.png" alt="Neospectra logo"></div>
   <div class="ossl-hero-text">
     <h1 class="ossl-hero-title">Neospectra</h1>
     <p class="ossl-hero-desc">Near-infrared soil spectral library (Neospectra) from selected KSSL samples (USA) and Africa</p>
     <div class="ossl-hero-meta">
-      <div class="ossl-pill-row">
-        <span class="ossl-pill ossl-pill-off">VNIR</span>
-        <span class="ossl-pill ossl-pill-on">NIR</span>
-        <span class="ossl-pill ossl-pill-off">MIR</span>
-      </div>
+      <div class="ossl-pill-row"><span class="ossl-pill ossl-pill-off">VNIR</span><span class="ossl-pill ossl-pill-on">NIR</span><span class="ossl-pill ossl-pill-off">MIR</span></div>
       <span class="ossl-meta-divider"></span>
-      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National — USA, Africa</span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National</span>
     </div>
   </div>
 </div>
 <div class="ossl-quick-stats">
   <span class="ossl-stat-item"><i class="bi bi-database" aria-hidden="true"></i><span class="ossl-stat-val">2,000+</span> samples</span>
-  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">second update (v1)</span></span>
+  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">Second update (v1)</span></span>
   <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">CC-BY</span></span>
 </div>
 
@@ -100,12 +94,12 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 - **Original range:** 1350-2550
 - **Instrument:** Neospectra
 - **Manufacturer:** SiWare
-- **Instrument co-scans:** Not available
+- **Instrument co-scans:** 5
 - **Scan repeats:** 6
 - **Scan accessory:** Direct contact
 - **Original resolution:** 8-16 cm-1
-- **Sample preparation:** Oven-dried, Sieved < 2mm
-- **Additional info:** Not available
+- **Sample preparation:** Oven-dried, Sieved <2 mm
+- **Additional info:** This library was built with several scan repeats and multiple scanners. All types of repeats and averaged spectra are provided in the OSSL.
 
 ### NIR plot
 

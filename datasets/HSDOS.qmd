@@ -12,26 +12,20 @@ format:
 
 ```{=html}
 <div class="ossl-hero" style="background: #F4F6FF;">
-  <div class="ossl-hero-logo">
-    <img src="logo/HSDOS.png" alt="HSDOS logo">
-  </div>
+  <div class="ossl-hero-logo"><img src="logo/HSDOS.png" alt="HSDOS logo"></div>
   <div class="ossl-hero-text">
     <h1 class="ossl-hero-title">HSDOS</h1>
     <p class="ossl-hero-desc">Soil spectral library from the Hungarian Soil Degradation Observation System (HSDOS)</p>
     <div class="ossl-hero-meta">
-      <div class="ossl-pill-row">
-        <span class="ossl-pill ossl-pill-on">VNIR</span>
-        <span class="ossl-pill ossl-pill-off">NIR</span>
-        <span class="ossl-pill ossl-pill-off">MIR</span>
-      </div>
+      <div class="ossl-pill-row"><span class="ossl-pill ossl-pill-on">VNIR</span><span class="ossl-pill ossl-pill-off">NIR</span><span class="ossl-pill ossl-pill-off">MIR</span></div>
       <span class="ossl-meta-divider"></span>
-      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National — Hungarian</span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National</span>
     </div>
   </div>
 </div>
 <div class="ossl-quick-stats">
   <span class="ossl-stat-item"><i class="bi bi-database" aria-hidden="true"></i><span class="ossl-stat-val">5,000+</span> samples</span>
-  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">version v3</span></span>
+  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">Version v3</span></span>
   <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">CC-BY</span></span>
 </div>
 
@@ -96,14 +90,14 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 - **Acquisition mode:** Diffuse Reflectance
 - **Intensity:** reflectance
 - **Original range:** 350-2500
-- **Instrument:** FieldSpec 4 Spectroradiometer
-- **Manufacturer:** ASD (currently Malvern Panalytical)
+- **Instrument:** FieldSpec 4
+- **Manufacturer:** Malvern Panalytical
 - **Instrument co-scans:** 50
 - **Scan repeats:** 5
 - **Scan accessory:** ASD Contact Probe (internal Halogen bulb)
 - **Original resolution:** 3
 - **Sample preparation:** Air-dried, Sieved < 2 mm
-- **Additional info:** Not available
+- **Additional info:** None
 
 ### VNIR plot
 

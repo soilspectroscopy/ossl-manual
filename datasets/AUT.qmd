@@ -12,26 +12,20 @@ format:
 
 ```{=html}
 <div class="ossl-hero" style="background: #EAFDD3;">
-  <div class="ossl-hero-logo">
-    <img src="logo/AUT.png" alt="AUT logo">
-  </div>
+  <div class="ossl-hero-logo"><img src="logo/AUT.png" alt="AUT logo"></div>
   <div class="ossl-hero-text">
     <h1 class="ossl-hero-title">AUT</h1>
     <p class="ossl-hero-desc">Austrian NIR soil spectral library for soil health assessments (AUT)</p>
     <div class="ossl-hero-meta">
-      <div class="ossl-pill-row">
-        <span class="ossl-pill ossl-pill-off">VNIR</span>
-        <span class="ossl-pill ossl-pill-on">NIR</span>
-        <span class="ossl-pill ossl-pill-off">MIR</span>
-      </div>
+      <div class="ossl-pill-row"><span class="ossl-pill ossl-pill-off">VNIR</span><span class="ossl-pill ossl-pill-on">NIR</span><span class="ossl-pill ossl-pill-off">MIR</span></div>
       <span class="ossl-meta-divider"></span>
-      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National — Austria</span>
+      <span class="ossl-meta-item"><i class="bi bi-globe-americas" aria-hidden="true"></i>National</span>
     </div>
   </div>
 </div>
 <div class="ossl-quick-stats">
   <span class="ossl-stat-item"><i class="bi bi-database" aria-hidden="true"></i><span class="ossl-stat-val">2,000+</span> samples</span>
-  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">version v4</span></span>
+  <span class="ossl-stat-item"><i class="bi bi-calendar3" aria-hidden="true"></i><span class="ossl-stat-val">Version v4</span></span>
   <span class="ossl-stat-item"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span class="ossl-stat-val">CC-BY</span></span>
 </div>
 
@@ -96,13 +90,13 @@ Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties
 - **Acquisition mode:** Diffuse Reflectance
 - **Intensity:** reflectance
 - **Original range:** 680-2500
-- **Instrument:** SpectraStar™ XL
-- **Manufacturer:** Unity Scientific (Brookfield, CT, USA)
+- **Instrument:** SpectraStar XL
+- **Manufacturer:** Unity Scientific
 - **Instrument co-scans:** 24
 - **Scan repeats:** 2
 - **Scan accessory:** 8.5 cm sample cup with reflective lid
 - **Original resolution:** 1 nm
-- **Sample preparation:** Air-dried, Sieved < 2 mm
+- **Sample preparation:** Air-dried, Sieved <2 mm
 - **Additional info:** A mattesurface gold-plated metal reflector was used as an internal reference; The standard used was White Sand (Lucky Bay, Australia), which enables harmonizing results from different near-infrared spectrometers used within the ProbeField project.
 
 ### NIR plot

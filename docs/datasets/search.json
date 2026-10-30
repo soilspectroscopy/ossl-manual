@@ -4,7 +4,7 @@
     "href": "CAF.html",
     "title": "CAF",
     "section": "",
-    "text": "Soil spectral library for Central Africa (CAF)\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      Regional — Africa",
+    "text": "Soil spectral library for Central Africa (CAF)\n    \n      VNIRNIRMIR\n      \n      Regional",
     "crumbs": [
       "← Back to listed libraries",
       "CAF"
@@ -59,7 +59,7 @@
     "href": "CAF.html#mir",
     "title": "CAF",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 600-7500\nStandardized range: 600-4000\nInstrument: VERTEX 70 FT-IR\nManufacturer: Bruker Optics GmbH (Germany)\nScan accessory: HTS-XT\nSample preparation: Ground &lt; 50 μm\nAdditional info: A gold coated reflectance standard (Infragold NIR-MIR Reflectance Coating, Labsphere) was used as a background material\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 600-7500\nStandardized range: 600-4000\nInstrument: Vertex70 FT-IR\nManufacturer: Bruker Optics\nScan accessory: HTS-XT\nSample preparation: Finely ground &lt; 50 μm\nAdditional info: A gold coated reflectance standard (Infragold NIR-MIR Reflectance Coating, Labsphere) was used as a background material\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "CAF"
@@ -81,7 +81,7 @@
     "href": "BESB.html",
     "title": "BESB",
     "section": "",
-    "text": "Brazilian Soil Spectral Library (BESB)\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      National — Brazil",
+    "text": "Brazilian Soil Spectral Library (BESB)\n    \n      VNIRNIRMIR\n      \n      National",
     "crumbs": [
       "← Back to listed libraries",
       "BESB"
@@ -136,7 +136,7 @@
     "href": "BESB.html#mir",
     "title": "BESB",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 600-4000\nStandardized range: 600-4000\nInstrument: Alpha Sample Compartment RTDLaTGS ZnSe\nManufacturer: Bruker Optik GmbH, Ettlingen, Germany\nScan accessory: Not available\nSample preparation: Sieved&lt;2mm, ground\nAdditional info: The sensor has a HeNe laser; A gold reference plate was used as standard\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 600-4000\nStandardized range: 600-4000\nInstrument: Alpha II RTDLaTGS ZnSe\nManufacturer: Bruker Optics\nScan accessory: QuickSnap\nSample preparation: Finely ground\nAdditional info: RT-DLaTGS ZnSe detector; Roughened gold reference plate\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "BESB"
@@ -147,7 +147,7 @@
     "href": "BESB.html#vnir",
     "title": "BESB",
     "section": " VNIR",
-    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: FieldSpec 3 Spectroradiometer\nManufacturer: Analytical Spectral Devices (ASD, Boulder, CO)\nInstrument co-scans: 100\nScan repeats: 2\nScan accessory: Fiber-optic cable with external 50-W halogen lamps\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: The sensor is calibrated using a white Spectralon plate (Lab-sphere, North Sutton, NH, USA) representing a 100% reflectance standard\n\n\nVNIR plot",
+    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: FieldSpec 3\nManufacturer: Malvern Panalytical\nInstrument co-scans: 100\nScan repeats: 2\nScan accessory: Fiber-optic cable with external 50-W halogen lamps\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Spectralon plate as white reflectance standard\n\n\nVNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "BESB"
@@ -169,7 +169,7 @@
     "href": "Geocradle.html",
     "title": "Geocradle",
     "section": "",
-    "text": "Soil spectral library from the Geocradle region (Balkans, Middle East, and North Africa)\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      Regional — Balkans, Middle East, and North Africa",
+    "text": "Soil spectral library from the Geocradle region (Balkans, Middle East, and North Africa)\n    \n      VNIRNIRMIR\n      \n      Regional",
     "crumbs": [
       "← Back to listed libraries",
       "Geocradle"
@@ -224,7 +224,7 @@
     "href": "Geocradle.html#vnir",
     "title": "Geocradle",
     "section": " VNIR",
-    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: ASD FieldSpec Pro & PSR+ Spectrometer\nManufacturer: (PANanalytical BV, Boulder, CO, USA formerly Analytical Spectral Devices) & Spectral Evolution Inc., Lawrence, Massachusetts,USA\nInstrument co-scans: 10\nScan repeats: Not available\nScan accessory: Not available\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available\n\n\nVNIR plot",
+    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: ASD FieldSpec Pro & PSR+ Spectrometer\nManufacturer: Malvern Panalytical\nInstrument co-scans: 10\nScan repeats: Unknown\nScan accessory: Multiple accessories\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: None\n\n\nVNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "Geocradle"
@@ -246,7 +246,7 @@
     "href": "LF_BRA.html",
     "title": "LF_BRA",
     "section": "",
-    "text": "Farm-scale soil spectral library from two local farms from Brazil (LF_BRA)\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      Local — Brazil",
+    "text": "Farm-scale soil spectral library from two local farms from Brazil (LF_BRA)\n    \n      VNIRNIRMIR\n      \n      Local",
     "crumbs": [
       "← Back to listed libraries",
       "LF_BRA"
@@ -301,7 +301,7 @@
     "href": "LF_BRA.html#vnir",
     "title": "LF_BRA",
     "section": " VNIR",
-    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 431-2153\nInstrument: Veris MSP3 (USB4000 & C9914GB detectors)\nManufacturer: Veris Technologies (Salina, KS, USA)\nInstrument co-scans: Not available\nScan repeats: 3\nScan accessory: Veris Sample Holder (Light-shielded)\nOriginal resolution: 5\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available\n\n\nVNIR plot",
+    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 431-2153\nInstrument: Veris MSP3 (USB4000 & C9914GB detectors)\nManufacturer: Veris Technologies\nInstrument co-scans: Unknown\nScan repeats: 3\nScan accessory: Veris Sample Holder (Light-shielded)\nOriginal resolution: 5\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: None\n\n\nVNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "LF_BRA"
@@ -323,7 +323,7 @@
     "href": "GPKOR.html",
     "title": "GPKOR",
     "section": "",
-    "text": "Near-infrared soil spectral library from Gyeonggi Province, South Korea (GPKOR)\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      National — South Korea",
+    "text": "Near-infrared soil spectral library from Gyeonggi Province, South Korea (GPKOR)\n    \n      VNIRNIRMIR\n      \n      National",
     "crumbs": [
       "← Back to listed libraries",
       "GPKOR"
@@ -378,7 +378,7 @@
     "href": "GPKOR.html#nir",
     "title": "GPKOR",
     "section": " NIR",
-    "text": "NIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 1400-2500\nInstrument: SpectraStar XT\nManufacturer: Unity Scientific, Westborough, MA, USA\nInstrument co-scans: 12\nScan repeats: 12\nScan accessory: Ring-shaped sample holder (50 mm diameter)\nOriginal resolution: 1 nm\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Equipped with UCal calibration software\n\n\nNIR plot",
+    "text": "NIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 1400-2500\nInstrument: SpectraStar XT\nManufacturer: Unity Scientific\nInstrument co-scans: 12\nScan repeats: 12\nScan accessory: Ring-shaped sample holder (50 mm diameter)\nOriginal resolution: 1 nm\nSample preparation: Air-dried, Sieved &lt;2 mm\nAdditional info: None\n\n\nNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "GPKOR"
@@ -400,7 +400,7 @@
     "href": "WS_SWIND.html",
     "title": "WS_SWIND",
     "section": "",
-    "text": "Soil spectral library from tropical and sub-humid Watersheds of Southwestern India (WS_SWIND)\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      Regional — India",
+    "text": "Soil spectral library from tropical and sub-humid Watersheds of Southwestern India (WS_SWIND)\n    \n      VNIRNIRMIR\n      \n      Regional",
     "crumbs": [
       "← Back to listed libraries",
       "WS_SWIND"
@@ -455,7 +455,7 @@
     "href": "WS_SWIND.html#mir",
     "title": "WS_SWIND",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: BC-absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: TENSOR 27 Spectrophotometer\nManufacturer: Bruker (Switzerland)\nScan accessory: Not available\nSample preparation: Sieved&lt;2mm\nAdditional info: Atmospheric variations were integrated by running a potassium bromide background calibration.\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: BC-absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: Tensor 27\nManufacturer: Bruker Optics\nScan accessory: Unknown\nSample preparation: Finely ground\nAdditional info: None\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "WS_SWIND"
@@ -477,7 +477,7 @@
     "href": "KSSL.html",
     "title": "KSSL",
     "section": "",
-    "text": "The USDA-NRCS NCSS Kellogg Soil Survey Laboratory (KSSL) soil libraries from the United States and other territories\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      National — USA",
+    "text": "The USDA-NRCS NCSS Kellogg Soil Survey Laboratory (KSSL) soil libraries from the United States and other territories\n    \n      VNIRNIRMIR\n      \n      National",
     "crumbs": [
       "← Back to listed libraries",
       "KSSL"
@@ -532,7 +532,7 @@
     "href": "KSSL.html#mir",
     "title": "KSSL",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: Vertex 70 FT-IR\nManufacturer: Bruker Optics\nScan accessory: HTS-XT\nSample preparation: Air-dried, finely ground &lt; 80mesh\nAdditional info: MCT (mercury cadmium telluride) detector\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: Vertex 70 FT-IR\nManufacturer: Bruker Optics\nScan accessory: HTS-XT\nSample preparation: Air-dried, finely ground &lt; 80mesh\nAdditional info: Liquid N2–cooled MCT (mercury cadmium telluride) detector\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "KSSL"
@@ -543,7 +543,7 @@
     "href": "KSSL.html#vnir",
     "title": "KSSL",
     "section": " VNIR",
-    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: ASD Labspec 2500\nManufacturer: Analytical Spectral Devices Inc., PANalytical NIR Excellence Center\nInstrument co-scans: Not available\nScan repeats: 1\nScan accessory: ASD’s MugLite accessory\nOriginal resolution: Not available\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: A standard Spectralon panel was used to obtain the white reference at 15-min intervals.\n\n\nVNIR plot",
+    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: ASD FieldSpec FR\nManufacturer: Malvern Panalytical\nInstrument co-scans: 100\nScan repeats: 1\nScan accessory: MugLite (most samples) and Contact Probe accessories\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: The library contains measurements taken both with Muglight (~21k) and Contact Probe (~5k). About 5k samples were measured by both accesories\n\n\nVNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "KSSL"
@@ -565,7 +565,7 @@
     "href": "AFSIS1.html",
     "title": "AFSIS1",
     "section": "",
-    "text": "Soil spectral library from Africa Soil Information Service Phase I (AFSIS1)\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      Continental — Africa",
+    "text": "Soil spectral library from Africa Soil Information Service Phase I (AFSIS1)\n    \n      VNIRNIRMIR\n      \n      Continental",
     "crumbs": [
       "← Back to listed libraries",
       "AFSIS1"
@@ -620,7 +620,7 @@
     "href": "AFSIS1.html#mir",
     "title": "AFSIS1",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 602-4000\nStandardized range: 600-4000\nInstrument: Tensor 27 FT-IR & Alpha I ZnSe\nManufacturer: Bruker Optics\nScan accessory: HTS-XT & DRIFT accessory\nSample preparation: Finely ground &lt;0.1 mm\nAdditional info: Not available\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 602-4000\nStandardized range: 600-4000\nInstrument: Tensor 27 FT-IR & Alpha I ZnSe\nManufacturer: Bruker Optics\nScan accessory: HTS-XT & DRIFT accessory\nSample preparation: Finely ground &lt;0.1 mm\nAdditional info: None\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "AFSIS1"
@@ -642,7 +642,7 @@
     "href": "LUCAS.html",
     "title": "LUCAS",
     "section": "",
-    "text": "Land Use and Cover Survey (LUCAS) library from European soils (23-28 countries)\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      Continental — European Union",
+    "text": "Land Use and Cover Survey (LUCAS) library from European soils (23-28 countries)\n    \n      VNIRNIRMIR\n      \n      Continental",
     "crumbs": [
       "← Back to listed libraries",
       "LUCAS"
@@ -697,7 +697,7 @@
     "href": "LUCAS.html#mir",
     "title": "LUCAS",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 600-4000\nStandardized range: 628-4000\nInstrument: Vertex 70 FT-IR\nManufacturer: Bruker Optics\nScan accessory: Pike AutoDiff\nSample preparation: Air-dried, finely ground &lt;0.2 mm\nAdditional info: KBr beamsplitter; Gold mirror; Mirror background\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 600-4000\nStandardized range: 628-4000\nInstrument: Vertex 70 FT-IR\nManufacturer: Bruker Optics\nScan accessory: Pike AutoDiff\nSample preparation: Air-dried, finely ground &lt;0.2 mm\nAdditional info: Scanned at Woodwell Climate (Bruker Vertex 70 with MIR detector, widerange KBr beamsplitter, gold mirror reference)\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "LUCAS"
@@ -708,7 +708,7 @@
     "href": "LUCAS.html#vnir",
     "title": "LUCAS",
     "section": " VNIR",
-    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 400-2500\nInstrument: FOSS NIRS XDS RapidContent Analyzer\nManufacturer: FOSS NIRSystems Inc., Laurel, MD/ Denmark\nInstrument co-scans: Not available\nScan repeats: Not available\nScan accessory: Black box\nOriginal resolution: 2\nSample preparation: Air-dried, Sieved &lt;2 mm\nAdditional info: Si (400–1100 nm) and PbS (1100–2500 nm) detectors\n\n\nVNIR plot",
+    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 400-2500\nInstrument: FOSS NIRS XDS RapidContent Analyzer\nManufacturer: FOSS NIRSystems\nInstrument co-scans: Unknown\nScan repeats: Unknown\nScan accessory: Black box\nOriginal resolution: 2\nSample preparation: Air-dried, Sieved &lt;2 mm\nAdditional info: Si (400–1100 nm) and PbS (1100–2500 nm) detectors\n\n\nVNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "LUCAS"
@@ -730,7 +730,7 @@
     "href": "MTQ.html",
     "title": "MTQ",
     "section": "",
-    "text": "Near-infrared soil spectral library from rural areas of the Martinique island (MTQ)\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      National — Martinique island",
+    "text": "Near-infrared soil spectral library from rural areas of the Martinique island (MTQ)\n    \n      VNIRNIRMIR\n      \n      National",
     "crumbs": [
       "← Back to listed libraries",
       "MTQ"
@@ -785,7 +785,7 @@
     "href": "MTQ.html#nir",
     "title": "MTQ",
     "section": " NIR",
-    "text": "NIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 1100-2498\nInstrument: Foss NIRSystems 5000 spectrophotometer\nManufacturer: Laurel, MD, USA; 2003\nInstrument co-scans: 32\nScan repeats: 2\nScan accessory: Ring cup with quartz bottom (Feeder system)\nOriginal resolution: 2 nm\nSample preparation: Oven-dried, Sieved &lt; 2mm\nAdditional info: Not available\n\n\nNIR plot",
+    "text": "NIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 1100-2498\nInstrument: Model 5000\nManufacturer: FOSS NIRSystems\nInstrument co-scans: 32\nScan repeats: 2\nScan accessory: Ring cup with quartz bottom (Feeder system)\nOriginal resolution: 2 nm\nSample preparation: Oven-dried, Sieved &lt;2 mm\nAdditional info: None\n\n\nNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "MTQ"
@@ -807,7 +807,7 @@
     "href": "SRB.html",
     "title": "SRB",
     "section": "",
-    "text": "Soil spectral library from Serbia (SRB)\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      National — Serbia",
+    "text": "Soil spectral library from Serbia (SRB)\n    \n      VNIRNIRMIR\n      \n      National",
     "crumbs": [
       "← Back to listed libraries",
       "SRB"
@@ -862,7 +862,7 @@
     "href": "SRB.html#mir",
     "title": "SRB",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: Nexus 670 FT-IR\nManufacturer: Thermo-Nicolet\nScan accessory: Not available\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: DTGS detector\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: Nicolet Nexus 670 FT-IR\nManufacturer: Thermo-Fisher\nScan accessory: Unknown\nSample preparation: Finely ground\nAdditional info: DTGS detector\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "SRB"
@@ -884,7 +884,7 @@
     "href": "HLF_CAN.html",
     "title": "HLF_CAN",
     "section": "",
-    "text": "Soil spectral library from High-Latitude Forests of North Canada (HLF_CAN)\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      Local — Canada",
+    "text": "Soil spectral library from High-Latitude Forests of North Canada (HLF_CAN)\n    \n      VNIRNIRMIR\n      \n      Local",
     "crumbs": [
       "← Back to listed libraries",
       "HLF_CAN"
@@ -939,7 +939,7 @@
     "href": "HLF_CAN.html#mir",
     "title": "HLF_CAN",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: TENSOR 27 Spectrophotometer\nManufacturer: Bruker (Fällanden, Switzerland)\nScan accessory: Not available\nSample preparation: Oven dried, Sieved &lt; 2 mm\nAdditional info: Original raw spectra (imported) and KBr background-corrected spectra\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: Tensor 27\nManufacturer: Bruker (Optics\nScan accessory: Unknown\nSample preparation: Finely ground\nAdditional info: Original raw spectra (imported) and KBr background-corrected spectra\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "HLF_CAN"
@@ -961,7 +961,7 @@
     "href": "HSDOS.html",
     "title": "HSDOS",
     "section": "",
-    "text": "Soil spectral library from the Hungarian Soil Degradation Observation System (HSDOS)\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      National — Hungarian",
+    "text": "Soil spectral library from the Hungarian Soil Degradation Observation System (HSDOS)\n    \n      VNIRNIRMIR\n      \n      National",
     "crumbs": [
       "← Back to listed libraries",
       "HSDOS"
@@ -1016,7 +1016,7 @@
     "href": "HSDOS.html#vnir",
     "title": "HSDOS",
     "section": " VNIR",
-    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: FieldSpec 4 Spectroradiometer\nManufacturer: ASD (currently Malvern Panalytical)\nInstrument co-scans: 50\nScan repeats: 5\nScan accessory: ASD Contact Probe (internal Halogen bulb)\nOriginal resolution: 3\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Not available\n\n\nVNIR plot",
+    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: FieldSpec 4\nManufacturer: Malvern Panalytical\nInstrument co-scans: 50\nScan repeats: 5\nScan accessory: ASD Contact Probe (internal Halogen bulb)\nOriginal resolution: 3\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: None\n\n\nVNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "HSDOS"
@@ -1038,7 +1038,7 @@
     "href": "AFSIS2.html",
     "title": "AFSIS2",
     "section": "",
-    "text": "Soil spectral library from Africa Soil Information Service Phase II (AFSIS2)\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      Continental — Africa",
+    "text": "Soil spectral library from Africa Soil Information Service Phase II (AFSIS2)\n    \n      VNIRNIRMIR\n      \n      Continental",
     "crumbs": [
       "← Back to listed libraries",
       "AFSIS2"
@@ -1093,7 +1093,7 @@
     "href": "AFSIS2.html#mir",
     "title": "AFSIS2",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 602-4000\nStandardized range: 600-4000\nInstrument: Tensor 27 & Alpha I ZnSe\nManufacturer: Bruker Optics\nScan accessory: HTS-XT & DRIFT accessory\nSample preparation: Finely ground &lt;0.1 mm\nAdditional info: Not available\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 602-4000\nStandardized range: 600-4000\nInstrument: Tensor 27 & Alpha I ZnSe\nManufacturer: Bruker Optics\nScan accessory: HTS-XT & DRIFT accessory\nSample preparation: Finely ground &lt;0.1 mm\nAdditional info: None\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "AFSIS2"
@@ -1115,7 +1115,7 @@
     "href": "ICRAF_ISRIC.html",
     "title": "ICRAF_ISRIC",
     "section": "",
-    "text": "Soil spectral libraries from the ISRIC World Soil Reference Collection (58 countries) scanned by ICRAF\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      Global — Africa, Europe, South America, North America, and Asia",
+    "text": "Soil spectral libraries from the ISRIC World Soil Reference Collection (58 countries) scanned by ICRAF\n    \n      VNIRNIRMIR\n      \n      Global",
     "crumbs": [
       "← Back to listed libraries",
       "ICRAF_ISRIC"
@@ -1170,7 +1170,7 @@
     "href": "ICRAF_ISRIC.html#mir",
     "title": "ICRAF_ISRIC",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: FTS-7000 FT-IR Spectrometer\nManufacturer: Bruker Optics (Karsruhe, Germany)\nScan accessory: Pike AutoDiff\nSample preparation: Air-dried, finely ground &lt;0.1 mm\nAdditional info: Liquid N2–cooled HgCdTe detector; Al as the reference material\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 600-4000\nInstrument: FTS-7000 FT-IR\nManufacturer: Bruker Optics\nScan accessory: Pike AutoDiff\nSample preparation: Air-dried, finely ground &lt;0.1 mm\nAdditional info: Liquid N2–cooled HgCdTe detector; Aluminum used as reference material\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "ICRAF_ISRIC"
@@ -1181,7 +1181,7 @@
     "href": "ICRAF_ISRIC.html#vnir",
     "title": "ICRAF_ISRIC",
     "section": " VNIR",
-    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: FieldSpec FR Spectroradiometer\nManufacturer: Analytical Spectral Devices (Boulder, CO, USA)\nInstrument co-scans: 25\nScan repeats: 2\nScan accessory: High-intensity source probe\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Aluminum reflectors; Ten white reference spectra were recorded using calibrated spectralon\n\n\nVNIR plot",
+    "text": "VNIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 350-2500\nInstrument: FieldSpec FR\nManufacturer: Malvern Panalytical\nInstrument co-scans: 25\nScan repeats: 2\nScan accessory: High-intensity source probe\nOriginal resolution: 1\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: Spectralon plate as white reflectance standard\n\n\nVNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "ICRAF_ISRIC"
@@ -1203,7 +1203,7 @@
     "href": "Neospectra.html",
     "title": "Neospectra",
     "section": "",
-    "text": "Near-infrared soil spectral library (Neospectra) from selected KSSL samples (USA) and Africa\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      National — USA, Africa",
+    "text": "Near-infrared soil spectral library (Neospectra) from selected KSSL samples (USA) and Africa\n    \n      VNIRNIRMIR\n      \n      National",
     "crumbs": [
       "← Back to listed libraries",
       "Neospectra"
@@ -1258,7 +1258,7 @@
     "href": "Neospectra.html#nir",
     "title": "Neospectra",
     "section": " NIR",
-    "text": "NIR\n\nAcquisition mode: FT-NIR Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 1350-2550\nInstrument: Neospectra\nManufacturer: SiWare\nInstrument co-scans: Not available\nScan repeats: 6\nScan accessory: Direct contact\nOriginal resolution: 8-16 cm-1\nSample preparation: Oven-dried, Sieved &lt; 2mm\nAdditional info: Not available\n\n\nNIR plot",
+    "text": "NIR\n\nAcquisition mode: FT-NIR Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 1350-2550\nInstrument: Neospectra\nManufacturer: SiWare\nInstrument co-scans: 5\nScan repeats: 6\nScan accessory: Direct contact\nOriginal resolution: 8-16 cm-1\nSample preparation: Oven-dried, Sieved &lt;2 mm\nAdditional info: This library was built with several scan repeats and multiple scanners. All types of repeats and averaged spectra are provided in the OSSL.\n\n\nNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "Neospectra"
@@ -1280,7 +1280,7 @@
     "href": "NEON.html",
     "title": "NEON",
     "section": "",
-    "text": "National Ecological Observatory Network (NEON) soil spectral library\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      National — United States",
+    "text": "National Ecological Observatory Network (NEON) soil spectral library\n    \n      VNIRNIRMIR\n      \n      National",
     "crumbs": [
       "← Back to listed libraries",
       "NEON"
@@ -1324,7 +1324,7 @@
     "href": "NEON.html#soil-laboratory-information",
     "title": "NEON",
     "section": " Soil laboratory information",
-    "text": "Soil laboratory information\n\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nc.tot_usda.a622_w.pctCarbon, Total NCSMethod: usda.a622Unit: w.pct\n0\n3.92\n8.87\n0.02\n0.25\n1.09\n2.96\n55.51\n\n\nn.tot_usda.a623_w.pctNitrogen, Total NCS, usda.a623Method: usda.a623Unit: w.pct\n25\n0.20\n0.32\n0.01\n0.04\n0.07\n0.20\n1.82\n\n\ns.tot_usda.a624_w.pctSulfur, Total NCSMethod: usda.a624Unit: w.pct\n138\n0.05\n0.15\n0.01\n0.01\n0.02\n0.04\n2.01\n\n\noc_usda.c729_w.pctOrganic Carbon, Total C without CaCO3, S prepMethod: usda.c729Unit: w.pct\n0\n3.49\n8.93\n0.00\n0.10\n0.50\n2.00\n55.50\n\n\nph.h2o_usda.a268_indexpH, 1:1 Soil-Water SuspensionMethod: usda.a268Unit: index\n1\n5.72\n1.50\n3.10\n4.60\n5.10\n7.40\n8.70\n\n\nph.cacl2_usda.a481_indexpH, 1:2 Soil-CaCl2 SuspensionMethod: usda.a481Unit: index\n1\n6.40\n1.40\n3.80\n5.30\n5.80\n7.90\n9.20\n\n\nec_usda.a364_ds.mElectrical Conductivity, (w/w)Method: usda.a364Unit: ds.m\n2\n0.40\n1.06\n0.01\n0.03\n0.09\n0.24\n7.70\n\n\ncaco3_usda.a54_w.pctCarbonate, &lt;2mm FractionMethod: usda.a54Unit: w.pct\n0\n3.62\n9.95\n0.00\n0.00\n0.00\n0.00\n68.00\n\n\nca.ext_usda.a722_cmolc.kgCalcium, Extractable, NH4OAcMethod: usda.a722Unit: cmolc.kg\n0\n16.48\n21.40\n0.00\n0.70\n4.70\n26.30\n142.00\n\n\nk.ext_usda.a725_cmolc.kgPotassium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a725Unit: cmolc.kg\n0\n0.46\n0.67\n0.00\n0.10\n0.20\n0.50\n4.30\n\n\nmg.ext_usda.a724_cmolc.kgMagnesium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a724Unit: cmolc.kg\n0\n3.63\n6.12\n0.00\n0.20\n1.50\n5.10\n70.70\n\n\nna.ext_usda.a726_cmolc.kgSodium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a726Unit: cmolc.kg\n0\n0.83\n3.66\n0.00\n0.00\n0.00\n0.00\n36.40\n\n\ncec_usda.a723_cmolc.kgCEC, pH 7.0, NH4OAc, 2M KCl displacementMethod: usda.a723Unit: cmolc.kg\n0\n16.26\n16.19\n0.00\n5.60\n10.60\n21.10\n100.30\n\n\nal.ext_usda.a69_cmolc.kgAluminum, Extractable, KClMethod: usda.a69Unit: cmolc.kg\n161\n2.12\n2.50\n0.00\n0.30\n1.00\n2.92\n11.80\n\n\ncf_usda.c232_w.pct\n0\n5.33\n6.78\n0.00\n0.00\n2.50\n8.60\n36.80\n\n\ncf_usda.c235_w.pct\n0\n6.18\n10.54\n0.00\n0.00\n1.00\n8.60\n72.80\n\n\nsand.tot_usda.c60_w.pctSand, Total, S prepMethod: usda.c60Unit: w.pct\n11\n50.93\n27.81\n1.60\n27.52\n53.20\n74.55\n97.60\n\n\nsilt.tot_usda.c62_w.pctSilt, Total, S prepMethod: usda.c62Unit: w.pct\n11\n31.15\n17.57\n1.30\n17.02\n29.90\n44.03\n78.80\n\n\nclay.tot_usda.a334_w.pctClayMethod: usda.a334Unit: w.pct\n11\n17.92\n14.35\n0.00\n5.90\n14.55\n27.40\n60.30\n\n\nbd_usda.a4_g.cm3Bulk Density, &lt;2mm fraction, ClodMethod: usda.a4Unit: g.cm3\n6\n1.23\n0.42\n0.03\n1.04\n1.30\n1.52\n2.27",
+    "text": "Soil laboratory information\n\nTotal samples: 333\nProperties available (original): 73\nProperties standardized (OSSL): 20 — summarized in Table 1 below\nCategories: physical, chemical, biological, hydrological, carbon & nutrients, metal elements\nOriginal source: see Database access\n\n Hover over any OSSL code in the table below to see its full description.\n\n\n\nTable 1: Summary statistics (mean, SD, percentiles) for OSSL-standardized soil properties.\n\n\n\n\n\nskim_variable\nn_missing\nmean\nsd\np0\np25\np50\np75\np100\n\n\n\n\nc.tot_usda.a622_w.pctCarbon, Total NCSMethod: usda.a622Unit: w.pct\n0\n3.92\n8.87\n0.02\n0.25\n1.09\n2.96\n55.51\n\n\nn.tot_usda.a623_w.pctNitrogen, Total NCS, usda.a623Method: usda.a623Unit: w.pct\n25\n0.20\n0.32\n0.01\n0.04\n0.07\n0.20\n1.82\n\n\ns.tot_usda.a624_w.pctSulfur, Total NCSMethod: usda.a624Unit: w.pct\n138\n0.05\n0.15\n0.01\n0.01\n0.02\n0.04\n2.01\n\n\noc_usda.c729_w.pctOrganic Carbon, Total C without CaCO3, S prepMethod: usda.c729Unit: w.pct\n0\n3.49\n8.93\n0.00\n0.10\n0.50\n2.00\n55.50\n\n\nph.h2o_usda.a268_indexpH, 1:1 Soil-Water SuspensionMethod: usda.a268Unit: index\n1\n5.72\n1.50\n3.10\n4.60\n5.10\n7.40\n8.70\n\n\nph.cacl2_usda.a481_indexpH, 1:2 Soil-CaCl2 SuspensionMethod: usda.a481Unit: index\n1\n6.40\n1.40\n3.80\n5.30\n5.80\n7.90\n9.20\n\n\nec_usda.a364_ds.mElectrical Conductivity, (w/w)Method: usda.a364Unit: ds.m\n2\n0.40\n1.06\n0.01\n0.03\n0.09\n0.24\n7.70\n\n\ncaco3_usda.a54_w.pctCarbonate, &lt;2mm FractionMethod: usda.a54Unit: w.pct\n0\n3.62\n9.95\n0.00\n0.00\n0.00\n0.00\n68.00\n\n\nca.ext_usda.a722_cmolc.kgCalcium, Extractable, NH4OAcMethod: usda.a722Unit: cmolc.kg\n0\n16.48\n21.40\n0.00\n0.70\n4.70\n26.30\n142.00\n\n\nk.ext_usda.a725_cmolc.kgPotassium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a725Unit: cmolc.kg\n0\n0.46\n0.67\n0.00\n0.10\n0.20\n0.50\n4.30\n\n\nmg.ext_usda.a724_cmolc.kgMagnesium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a724Unit: cmolc.kg\n0\n3.63\n6.12\n0.00\n0.20\n1.50\n5.10\n70.70\n\n\nna.ext_usda.a726_cmolc.kgSodium, Extractable, NH4OAc, 2M KCl displacementMethod: usda.a726Unit: cmolc.kg\n0\n0.83\n3.66\n0.00\n0.00\n0.00\n0.00\n36.40\n\n\ncec_usda.a723_cmolc.kgCEC, pH 7.0, NH4OAc, 2M KCl displacementMethod: usda.a723Unit: cmolc.kg\n0\n16.26\n16.19\n0.00\n5.60\n10.60\n21.10\n100.30\n\n\nal.ext_usda.a69_cmolc.kgAluminum, Extractable, KClMethod: usda.a69Unit: cmolc.kg\n161\n2.12\n2.50\n0.00\n0.30\n1.00\n2.92\n11.80\n\n\ncf_usda.c232_w.pct\n0\n5.33\n6.78\n0.00\n0.00\n2.50\n8.60\n36.80\n\n\ncf_usda.c235_w.pct\n0\n6.18\n10.54\n0.00\n0.00\n1.00\n8.60\n72.80\n\n\nsand.tot_usda.c60_w.pctSand, Total, S prepMethod: usda.c60Unit: w.pct\n11\n50.93\n27.81\n1.60\n27.52\n53.20\n74.55\n97.60\n\n\nsilt.tot_usda.c62_w.pctSilt, Total, S prepMethod: usda.c62Unit: w.pct\n11\n31.15\n17.57\n1.30\n17.02\n29.90\n44.03\n78.80\n\n\nclay.tot_usda.a334_w.pctClayMethod: usda.a334Unit: w.pct\n11\n17.92\n14.35\n0.00\n5.90\n14.55\n27.40\n60.30\n\n\nbd_usda.a4_g.cm3Bulk Density, &lt;2mm fraction, ClodMethod: usda.a4Unit: g.cm3\n6\n1.23\n0.42\n0.03\n1.04\n1.30\n1.52\n2.27",
     "crumbs": [
       "← Back to listed libraries",
       "NEON"
@@ -1335,7 +1335,7 @@
     "href": "NEON.html#mir",
     "title": "NEON",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 628-4000\nInstrument: Vertex 70 FT-IR & Vertex 70 FT-IR\nManufacturer: Bruker Optics\nScan accessory: HTS-XT & Pike AutoDiff\nSample preparation: Air-dried, finely ground &lt; 80mesh\nAdditional info: MCT (mercury cadmium telluride) detector & KBr beamsplitter; Gold mirror; Mirror background\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-4000\nStandardized range: 628-4000\nInstrument: Vertex 70 FT-IR\nManufacturer: Bruker Optics\nScan accessory: Pike AutoDiff\nSample preparation: Air-dried, finely ground &lt;80 mesh\nAdditional info: Scanned at Woodwell Climate (Bruker Vertex 70 with MIR detector, widerange KBr beamsplitter, gold mirror reference)\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "NEON"
@@ -1357,7 +1357,7 @@
     "href": "PF_NZL.html",
     "title": "PF_NZL",
     "section": "",
-    "text": "Soil spectral library from Planted Forest soils of New Zealand (PF_NZL)\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      National — New Zealand",
+    "text": "Soil spectral library from Planted Forest soils of New Zealand (PF_NZL)\n    \n      VNIRNIRMIR\n      \n      National",
     "crumbs": [
       "← Back to listed libraries",
       "PF_NZL"
@@ -1412,7 +1412,7 @@
     "href": "PF_NZL.html#mir",
     "title": "PF_NZL",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-8000\nStandardized range: 600-4000\nInstrument: Invenio-S FT-IR\nManufacturer: Bruker Optics\nScan accessory: HTS-XT\nSample preparation: Ground 180s (Zirconia mill)\nAdditional info: Liquid nitrogen cooled mercury cadmium telluride detector; sintered gold plate as the background\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 400-8000\nStandardized range: 600-4000\nInstrument: Invenio-S FT-IR\nManufacturer: Bruker Optics\nScan accessory: HTS-XT\nSample preparation: Finely ground 180s (Zirconia mill)\nAdditional info: Liquid N2–cooled MCT (mercury cadmium telluride) detector; sintered gold plate as the background\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "PF_NZL"
@@ -1434,7 +1434,7 @@
     "href": "AUT.html",
     "title": "AUT",
     "section": "",
-    "text": "Austrian NIR soil spectral library for soil health assessments (AUT)\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      National — Austria",
+    "text": "Austrian NIR soil spectral library for soil health assessments (AUT)\n    \n      VNIRNIRMIR\n      \n      National",
     "crumbs": [
       "← Back to listed libraries",
       "AUT"
@@ -1489,7 +1489,7 @@
     "href": "AUT.html#nir",
     "title": "AUT",
     "section": " NIR",
-    "text": "NIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 680-2500\nInstrument: SpectraStar™ XL\nManufacturer: Unity Scientific (Brookfield, CT, USA)\nInstrument co-scans: 24\nScan repeats: 2\nScan accessory: 8.5 cm sample cup with reflective lid\nOriginal resolution: 1 nm\nSample preparation: Air-dried, Sieved &lt; 2 mm\nAdditional info: A mattesurface gold-plated metal reflector was used as an internal reference; The standard used was White Sand (Lucky Bay, Australia), which enables harmonizing results from different near-infrared spectrometers used within the ProbeField project.\n\n\nNIR plot",
+    "text": "NIR\n\nAcquisition mode: Diffuse Reflectance\nIntensity: reflectance\nOriginal range: 680-2500\nInstrument: SpectraStar XL\nManufacturer: Unity Scientific\nInstrument co-scans: 24\nScan repeats: 2\nScan accessory: 8.5 cm sample cup with reflective lid\nOriginal resolution: 1 nm\nSample preparation: Air-dried, Sieved &lt;2 mm\nAdditional info: A mattesurface gold-plated metal reflector was used as an internal reference; The standard used was White Sand (Lucky Bay, Australia), which enables harmonizing results from different near-infrared spectrometers used within the ProbeField project.\n\n\nNIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "AUT"
@@ -1511,7 +1511,7 @@
     "href": "GEMAS.html",
     "title": "GEMAS",
     "section": "",
-    "text": "Soil spectral library from the Geochemical Mapping of Agricultural and Grazing Land Soil (GEMAS), Europe\n    \n      \n        VNIR\n        NIR\n        MIR\n      \n      \n      Continental — Europe",
+    "text": "Soil spectral library from the Geochemical Mapping of Agricultural and Grazing Land Soil (GEMAS), Europe\n    \n      VNIRNIRMIR\n      \n      Continental",
     "crumbs": [
       "← Back to listed libraries",
       "GEMAS"
@@ -1566,7 +1566,7 @@
     "href": "GEMAS.html#mir",
     "title": "GEMAS",
     "section": " MIR",
-    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 450-7800\nStandardized range: 600-4000\nInstrument: Spectrum-One™ FT-IR Spectrometer\nManufacturer: PerkinElmer Inc. (MA, USA)\nScan accessory: Pike AutoDiff 60-sample auto-sampler\nSample preparation: Oven dried, Sieved&lt;2mm\nAdditional info: extended range KBr beam-splitter, a high intensity ceramic source, a deuterium triglycine-sulphate (DTGS) Peltier-cooled detector; Background reference scans were carried out using silicon carbide discs (PerkinElmer Life and Analytical Sciences Pty Ltd., Australia)\n\n\nMIR plot",
+    "text": "MIR\n\nAcquisition mode: DRIFT\nIntensity: absorbance\nOriginal range: 450-7800\nStandardized range: 600-4000\nInstrument: Spectrum-One FT-IR\nManufacturer: PerkinElmer\nScan accessory: Pike AutoDiff\nSample preparation: Finely ground\nAdditional info: Extended range KBr beamsplitter, a high intensity ceramic source, a deuterium triglycine-sulphate (DTGS) Peltier-cooled detector; Background reference scans were carried out using silicon carbide discs (PerkinElmer Life and Analytical Sciences Pty Ltd., Australia)\n\n\nMIR plot",
     "crumbs": [
       "← Back to listed libraries",
       "GEMAS"
